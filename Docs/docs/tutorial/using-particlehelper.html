@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using ParticleHelper</title>
+ 
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    
+    
+    
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link href="../../css/syntax.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/doc-style.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+            <a class="navbar-brand" href="../../index.html">MoaiForge - Community Docs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+           </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+    
+    <div class="container">
+<div class="row-fluid">
+   
+        <div id="navigation" class="col-md-3">
+            
+<ul id="nav-menu" class="nav nav-list">
+    
+    
+  
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/using-particlehelper.md does NOT contain pathseg /basics/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Moai Basics</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-two.html">Moai SDK Basics Part Two</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-one.html">Moai SDK Basics Part One</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/using-particlehelper.md does NOT contain pathseg /sdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">The Moai SDK</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/what-is-moai-sdk.html">What is Moai SDK?</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-sdk-desktop-basics.html">Moai SDK Desktop Basics</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/the-moai-runtime.html">The Moai Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-hosts.html">Moai Hosts</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/structuring-your-moai-game-in-lua.html">Structuring Your Moai Game in Lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-project-setup.html">Moai Project Setup</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/extending-moai-sdk.html">Extending Moai SDK</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/protecting-your-lua-files.html">Protecting Your Lua Files</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/tools-that-work-with-moai.html">Tools that work with Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/using-particlehelper.md does NOT contain pathseg /buildsdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Build the SDK from Source</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/introduction.html">Introduction</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/installing-cmake.html">Installing CMake</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-libraries-for-android-ndk.html">Building Moai Libraries For Android</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-xcode.html">Building Moai From Source With Xcode</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-visual-studio.html">Building Moai From Source With Visual Studio</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-scons.html">Building Moai From Source With Scons</a></li>
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/using-particlehelper.md does NOT contain pathseg /building/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Building Moai Games</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/setup-landscape-in-moai-games-for-ios-devices.html">Setup landscape in Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/cross-platform-development-with-moai.html">Cross Platform Development With Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-ios-devices.html">Building Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-google-chrome.html">Building Moai Games for Google Chrome</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-android-devices.html">Building Moai Games For Android Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/using-particlehelper.md does NOT contain pathseg /reference/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Reference</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/moai-sdk-samples-guide.html">Moai SDK Samples Guide</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/cmake-basics.html">Crash Course on CMAKE</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/code-snips.html">Code snips</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/how-moai's-c-to-lua-binding-works.html">How Moai's C++ to Lua Binding Works</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/understanding-decks-and-props.html">Understanding Decks and Props</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/using-moaianim.html">Using MOAIAnim</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/wrapping-modes.html">Wrapping modes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/using-particlehelper.md contains pathseg /tutorial/ -->
+        <li class="parent collapsibleListClosed">
+        
+          <div class="subtree-name">Tutorials</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="your-first-game-rocket-lobster.html">Your First Game : Rocket Lobster</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li class="active" ><a href="using-particlehelper.html">Using ParticleHelper</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="textboxes.html">Textboxes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="your-first-cloud-game-wolf-clicker.html">Your First Cloud Game : Wolf Clicker</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="setup-moai-sdk-on-windows-using-sublime2.html">Setup Moai SDK on Windows using Sublime2</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="basic-prop-animations.html">Basic Prop Animations</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="bin2c-lua.html">Bin2c.lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="binding-c-apis-to-moai-using-moailuaobject.html">Binding C++ APIs to Moai using MOAILuaObject</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="build-on-steam-runtime.html">Building Moai with Steam Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="concatenate-your-lua-source-tree.html">Concatenate your Lua source tree</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="density-friction-and-restitution.html">Density, Friction And Restitution</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="getting-started-with-box2d.html">Getting Started With Box2D</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+
+</ul>
+
+<script src="../../js/collapsiblelists.min.js"> </script>
+<script>
+$(function() {
+CollapsibleLists.applyTo(document.getElementById('nav-menu'));
+});
+
+</script>
+        </div>
+
+        <div id="content" class="col-md-9">
+            <a href="https://github.com/moaiforge/moai-sdk/tree/gh-pages/_docs/tutorial/using-particlehelper.md" class="improve-docs btn"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+            <h1>Using ParticleHelper</h1>
+            
+            
+            <p>This page is about the community contributed particle script helper.</p>
+
+<h2>What&#39;s it used for?</h2>
+
+<p>Moai features a particle system which is good enough for you to make any type of eye candies.</p>
+
+<p>Particle system is always a performance critical part of game engine. Moai handles the hard jobs (updating and rendering) in the C host, and provide the users with a assembly-like generic script composition interface.</p>
+
+<p>Honestly, the particle script composition interface is not easy to use, see the code below (MOAI_PATH/samples/basic/particles-distanceEmitter/main.lua)</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="kd">local</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">packReg</span><span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="c1">--------------------------------------------------------------</span>
+<span class="kd">local</span> <span class="n">init</span> <span class="o">=</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+
+<span class="n">init</span><span class="p">:</span><span class="n">vecAngle</span><span class="p">(</span> <span class="n">r1</span><span class="p">,</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_DX</span><span class="p">,</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_DY</span> <span class="p">)</span>
+<span class="n">init</span><span class="p">:</span><span class="n">sub</span><span class="p">(</span> <span class="n">r1</span><span class="p">,</span> <span class="n">CONST</span> <span class="p">(</span> <span class="mi">180</span><span class="p">.</span><span class="mi">0</span> <span class="p">),</span> <span class="n">r1</span> <span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">render</span> <span class="o">=</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+
+<span class="n">render</span><span class="p">:</span><span class="n">add</span><span class="p">(</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_X</span><span class="p">,</span> 
+            <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_X</span><span class="p">,</span> 
+            <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_DX</span> <span class="p">)</span>
+<span class="n">render</span><span class="p">:</span><span class="n">add</span><span class="p">(</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_Y</span><span class="p">,</span> 
+            <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_Y</span><span class="p">,</span> 
+            <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">PARTICLE_DY</span> <span class="p">)</span>
+
+<span class="n">render</span><span class="p">:</span><span class="n">sprite</span><span class="p">()</span>
+<span class="n">render</span><span class="p">:</span><span class="n">set</span><span class="p">(</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">SPRITE_ROT</span><span class="p">,</span> <span class="n">r1</span> <span class="p">)</span>
+<span class="n">render</span><span class="p">:</span><span class="n">ease</span><span class="p">(</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">SPRITE_X_SCL</span><span class="p">,</span> 
+             <span class="n">CONST</span><span class="p">(</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span> <span class="p">),</span> <span class="n">CONST</span><span class="p">(</span> <span class="mi">3</span> <span class="p">),</span> <span class="n">MOAIEaseType</span><span class="p">.</span><span class="n">SHARP_EASE_IN</span> <span class="p">)</span>
+<span class="n">render</span><span class="p">:</span><span class="n">ease</span><span class="p">(</span> <span class="n">MOAIParticleScript</span><span class="p">.</span><span class="n">SPRITE_OPACITY</span><span class="p">,</span> 
+             <span class="n">CONST</span><span class="p">(</span> <span class="mi">1</span> <span class="p">),</span> <span class="n">CONST</span><span class="p">(</span> <span class="mi">0</span> <span class="p">),</span> <span class="n">MOAIEaseType</span><span class="p">.</span><span class="n">EASE_OUT</span> <span class="p">)</span>
+</code></pre></div>
+<p>You have to split your script into many single instructions, it makes the script unreadable. Let&#39;s see what particle helper can help here(YOU_MOAI_PATH/samples/contrib/particle-helper/main.lua):</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="kd">local</span> <span class="n">reg</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">--shared register table</span>
+
+<span class="kd">local</span> <span class="n">init</span><span class="o">=</span><span class="n">makeParticleScript</span><span class="p">(</span> <span class="k">function</span> <span class="p">()</span>
+ <span class="n">r1</span> <span class="o">=</span> <span class="mi">180</span><span class="o">-</span><span class="n">vecAngle</span><span class="p">(</span> <span class="n">p</span><span class="p">.</span><span class="n">dx</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">dy</span> <span class="p">)</span>   <span class="c1">--r1 is a register</span>
+<span class="k">end</span><span class="p">,</span> <span class="n">reg</span> <span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">render</span> <span class="o">=</span> <span class="n">makeParticleScript</span><span class="p">(</span> <span class="k">function</span> <span class="p">()</span>
+ <span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">p</span><span class="p">.</span><span class="n">dx</span>
+ <span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">+</span><span class="n">p</span><span class="p">.</span><span class="n">dy</span>
+
+ <span class="n">sprite</span><span class="p">()</span>
+ <span class="n">sp</span><span class="p">.</span><span class="n">rot</span> <span class="o">=</span> <span class="n">r1</span>
+ <span class="n">sp</span><span class="p">.</span><span class="n">sx</span> <span class="o">=</span> <span class="n">ease</span><span class="p">(</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">EaseType</span><span class="p">.</span><span class="n">SHARP_EASE_IN</span> <span class="p">)</span>
+ <span class="n">sp</span><span class="p">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="n">ease</span><span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">EaseType</span><span class="p">.</span><span class="n">EASE_OUT</span> <span class="p">)</span>
+<span class="k">end</span><span class="p">,</span> <span class="n">reg</span> <span class="p">)</span>
+</code></pre></div>
+<p>These two codes are doing exactly the same thing. Apparently, the latter one is much easier to understand and write.</p>
+
+<h2>How to use it?</h2>
+
+<p>With the helper, you can write particle script just like normal Lua code. However, there are limits (will mention later).</p>
+
+<p>Particle helper has only one function:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="k">function</span> <span class="nf">makeParticleScript</span> <span class="p">(</span><span class="n">script_func</span><span class="p">,</span> <span class="p">[</span><span class="n">register_table</span><span class="p">],</span> <span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>  <strong>script_func:</strong> your particle script, it&#39;s a Lua function</li>
+<li>  <strong>register_table:</strong> when you need to share register between init and render scripts, you can use the parameter to give them a shared register table.</li>
+<li>  <strong>vararg part:</strong> the rest of the arguments will be sent into script_func, you can use them as normal arguments inside your script function.</li>
+<li>  the function returns a MOAIParticleScript, which you can use in MOAIParticleState.setInitScript() and MOAIParticleState.setRenderScript()</li>
+</ul>
+
+<p>Inside the script_func, you can use following variables (see detailed usage in SDK document: http://getmoai.com/docs/class_m_o_a_i_particle_script.html class MOAIParticleScript)</p>
+
+<ul>
+<li>  p.x = PARTICLE_X</li>
+<li>  p.y = PARTICLE_Y</li>
+<li>  p.dx = PARTICLE_DX</li>
+<li>  p.dy = PARTICLE_DY</li>
+</ul>
+
+<!-- -->
+
+<ul>
+<li>  sp.x = SPRITE_X_LOC</li>
+<li>  sp.y = SPRITE_Y_LOC</li>
+<li>  sp.sx = SPRITE_X_SCL</li>
+<li>  sp.sy = SPRITE_Y_SCL</li>
+<li>  sp.rot = SPRITE_ROT</li>
+<li>  sp.opacity = SPRITE_OPACITY</li>
+<li>  sp.r = SPRITE_RED</li>
+<li>  sp.g = SPRITE_GREEN</li>
+<li>  sp.b = SPRITE_BLUE</li>
+<li>  sp.glow = SPRITE_GLOW</li>
+<li>  sp.idx = SPRITE_IDX</li>
+</ul>
+
+<!-- -->
+
+<ul>
+<li>  time = script:time()</li>
+<li>  EaseType = MOAIEaseType {EASE_IN, EASE_OUT, FLAT, LINEAR, SHARP_EASE_IN, SHARP_EASE_OUT, SMOOTH, SOFT_EASE_IN, SOFT_EASE_OUT, SOFT_SMOOTH}</li>
+</ul>
+
+<p>And following functions (see detailed usage in SDK document: http://getmoai.com/docs/class_m_o_a_i_particle_script.html class MOAIParticleScript):</p>
+
+<ul>
+<li>  rand (min, max)</li>
+<li>  randVec (reg1, reg2, min, max)</li>
+<li>  vecAngle(dx, dy)</li>
+<li>  cycle(v0, v1, v2)</li>
+<li>  wrap(v0, v1, v2)</li>
+<li>  ease(v1, v2, easeType=EaseType.LINEAR)</li>
+<li>  easeDelta (v1, v2, easeType=EaseType.LINEAR)</li>
+<li>  sprite ()</li>
+</ul>
+
+<h2>Limits</h2>
+
+<p>The particle helper is just a little wrapper done with Lua metamethod and function environment table, so it has its limits:</p>
+
+<ul>
+<li>  You cannot invoke any function other than the provided ones on the registers/particle variables, because they are just some ID holders.</li>
+<li>  Make sure there&#39;s no local variable named same as the script builtin symbols, e.g.</li>
+</ul>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="kd">local</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="o">...</span>
+<span class="n">makeParticleScript</span><span class="p">(</span> <span class="k">function</span><span class="p">()</span>
+  <span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="n">p</span><span class="p">.</span><span class="n">dx</span>  <span class="c1">--'p' here becomes upvalue, not builtin symbol</span>
+<span class="k">end</span> <span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>  There must be no more than 32 registers, it&#39;s limited by host.</li>
+</ul>
+
+<h2>Tips</h2>
+
+<ul>
+<li>  Since particle script are actually composed and invoked in C host, there&#39;s no performance penalty for using the helper.</li>
+<li>  Particle helper can automatically generate temporary registers, so you can write multiple-level expressions like: sp.x=p.x+rand(0,time/10)</li>
+<li>  You can parameterize your particle script like this:</li>
+</ul>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="k">function</span> <span class="nf">template_spin</span> <span class="p">(</span> <span class="n">rot_velocity</span> <span class="p">)</span>
+  <span class="n">sprite</span><span class="p">()</span>
+  <span class="n">sp</span><span class="p">.</span><span class="n">rot</span> <span class="o">=</span> <span class="n">sp</span><span class="p">.</span><span class="n">rot</span><span class="o">+</span><span class="n">rot_velocity</span>
+<span class="k">end</span>
+
+<span class="c1">-- 10 will get passed into template_spin as argument.</span>
+<span class="n">script_spin_10</span><span class="o">=</span><span class="n">makeParticleScript</span><span class="p">(</span> <span class="n">template_spin</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="n">script_spin_50</span><span class="o">=</span><span class="n">makeParticleScript</span><span class="p">(</span> <span class="n">template_spin</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="mi">50</span> <span class="p">)</span>
+<span class="n">state_slow</span><span class="p">:</span><span class="n">setRenderScript</span><span class="p">(</span> <span class="n">script_spin_10</span> <span class="p">)</span>
+<span class="n">state_fast</span><span class="p">:</span><span class="n">setRenderScript</span><span class="p">(</span> <span class="n">script_spin_50</span> <span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>  You can call Lua functions in your script function to affect the script creation. e.g.</li>
+</ul>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="kd">local</span> <span class="n">math</span> <span class="o">=</span> <span class="n">math</span> <span class="c1">--global table is not exposed to script, so we have to upvalue it</span>
+<span class="k">function</span> <span class="nf">template_circle</span> <span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+  <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="ow">or</span> <span class="mi">3</span>
+  <span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span> <span class="ow">or</span> <span class="mi">10</span>  <span class="c1">--default values</span>
+  <span class="kd">local</span> <span class="n">span</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">count</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">count</span> <span class="k">do</span>
+    <span class="kd">local</span> <span class="n">rad</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">span</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="nb">math.pi</span>
+    <span class="n">sprite</span><span class="p">()</span>   <span class="c1">--create a sprite</span>
+    <span class="n">sp</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">+</span><span class="nb">math.cos</span><span class="p">(</span> <span class="n">rad</span> <span class="p">)</span><span class="o">*</span><span class="n">radius</span>
+    <span class="n">sp</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">+</span><span class="nb">math.sin</span><span class="p">(</span> <span class="n">rad</span> <span class="p">)</span><span class="o">*</span><span class="n">radius</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">script_circle</span><span class="o">=</span><span class="n">makeParticleScript</span><span class="p">(</span> <span class="n">template_circle</span><span class="p">,</span> <span class="n">regs</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">100</span> <span class="p">)</span>
+</code></pre></div>
+        </div>
+               
+</div>
+</div>
+
+
+    <!-- SUB FOOTER-->
+   <!-- <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="text-center"><a href="http://getmoai.com/marketing/made-with-moai.html">License / Attribution</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/tools-partners.html">Useful Tools</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/partner-services.html">Partner Services</a></p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!-- /SUB FOOTER-->
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+       
+        <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; David Pershouse 2024</p>
+            </div>
+        </div>
+    </footer>
+
+      </div>
+    </footer>
+
+      <script src="../../js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

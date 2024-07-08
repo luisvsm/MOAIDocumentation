@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=19&amp;t=2857&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-10-17T02:13:41+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=19&amp;t=2857&amp;mode</id>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-10-17T02:13:41+00:00</updated>
+<published>2014-10-17T02:13:41+00:00</published>
+<id>/forums/viewtopic.php?t=2857&amp;p=15659#p15659</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2857&amp;p=15659#p15659"/>
+<title type="html"><![CDATA[Re: Example DirectX Joystick Host code?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2857&amp;p=15659#p15659"><![CDATA[
+<!-- m --><a class="postlink" href="https://github.com/moaiforge/host-stirfirestudios-sdl">https://github.com/moaiforge/host-stirfirestudios-sdl</a><!-- m --><br /><br />The stirfire studios people made this sweet host (which should still function compiled against 1.5) it has gamepad and joystick support that you might use.  <br /><br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/wiki/Using-External-Hosts">https://github.com/moai/moai-dev/wiki/U ... rnal-Hosts</a><!-- m --> is a very short how to on compiling it.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Fri Oct 17, 2014 2:13 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-10-16T21:42:01+00:00</updated>
+<published>2014-10-16T21:42:01+00:00</published>
+<id>/forums/viewtopic.php?t=2857&amp;p=15656#p15656</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2857&amp;p=15656#p15656"/>
+<title type="html"><![CDATA[Re: Example DirectX Joystick Host code?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2857&amp;p=15656#p15656"><![CDATA[
+~<br />Look at the host and how it registers mouse clicks these is the same way of implemented the joystick call from the host to lua.<br /><br />The joystick implementation in Moai-core fully supports analog-sticks and buttons, just lacks the code in the host.<br /><br />I personally changed the joystick parts of my moai host because I didn't want to register something for each button and each analog-stick.<br /><br /><span style="font-weight: bold">Ezra's gamepad method.</span><br /><ul><li> <!-- l --><a class="postlink-local" href="gamepad-in-moai-core-t1996/index.html">gamepad-in-moai-core-t1996/</a><!-- l --></li></ul><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Thu Oct 16, 2014 9:42 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Ascorbius]]></name></author>
+<updated>2014-10-16T20:11:47+00:00</updated>
+<published>2014-10-16T20:11:47+00:00</published>
+<id>/forums/viewtopic.php?t=2857&amp;p=15655#p15655</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2857&amp;p=15655#p15655"/>
+<title type="html"><![CDATA[Example DirectX Joystick Host code?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2857&amp;p=15655#p15655"><![CDATA[
+Hi Guys,<br /><br />Has anyone built a host which can use a joystick without using SDL?<br /><br />I'm taking my first baby steps in hacking the untz host to pieces to add additional controllers and keys... at a bit of a loss though when it comes to adding joystick/controller support.<br /><br />I could really use someone to appear with some fanfare with some completed/working code and an example of how to use it in the lua if different from the keyboard code. <img src="images/smilies/icon_e_smile.gif" alt=":-)" title="Smile" /><br /><br />Think of it not as me being lazy, but more along the lines of I'm overwhelmed at the moment with other tasks and I'd really like a quick win on this.<br /><br />The Untz host uses DirectX and while I've used SDL in the past, I'd prefer not to have to mess around with things too much.<br />If I'm being an idiot, please feel free to tell me so.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1322">Ascorbius</a> — Thu Oct 16, 2014 8:11 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Problems with make-host on Android</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Problems with make-host on Android</h2>
+		<p><a href="problems-with-make-host-on-android-t2595/index.html">/forums/problems-with-make-host-on-android-t2595/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Problems with make-host on Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 24, 2014 7:15 pm</strong></div>
+				<div class="author">by <strong>Kantholz</strong></div>
+				<div class="content">Hello and sorry to bother you with such a basic problem, but I'm pretty new to Linux and just can't seem to get the android host working.<br /><br />The history:<br />After a few days of experimenting with MOAI on a Windows 7 machine, I noticed that the version I had downloaded did not have Untz enabled. The MOAI-Untz folder was missing a binary, so I decided to switch to Linux and make one. Compiling a host for Linux worked (still no sound yet, but that's another thing), but trying to make a host for android just keeps giving me errors.<br /><br />What I did, step by step:<br />1) Laptop running freshly installed Ubuntu 12.04 x64<br />2) Checked out latest version of MOAI from github and setup environment as explained in the readme here: <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev">https://github.com/moai/moai-dev</a><!-- m --><br />3) Installed Android NDK (32bit) and SDK<br />4) Exported environment variables (by adding to ~/.profile)<br />- MOAI_BIN<br />- MOAI_CONFIG<br />- ANDROID_NDK<br />Variables show up (printenv), I double checked the paths and they seem correct (navigated to every one of them to make sure).<br />5) Successfully built the Linux-Host. The Hello-Moai Sample is working fine, as is my own test-project. So far, so good.<br />6) But when I try to run build-android.sh from the /bin directory, I get mainly errors:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=20&amp;t=2595&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">./build-android.sh: line 3: /home/markus/.bash_profile: No such file or directory</div></li><br /></ol></code></dd></dl><br />But mostly lots of permission-denied errors like this one:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=20&amp;t=2595&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Building C object third-party/tlsf/CMakeFiles/tlsf.dir/home/markus/moai-dev/moai-dev/3rdparty/tlsf-2.0/tlsf.c.o</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/bin/sh: 1: /media/markus/storage/development/android/android-ndk-r9d/toolchains/arm-linux-androideabi-4.8/prebuilt/linux-x86/bin/arm-linux-androideabi-gcc: Permission denied</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make[3]: *** [third-party/tlsf/CMakeFiles/tlsf.dir/home/markus/moai-dev/moai-dev/3rdparty/tlsf-2.0/tlsf.c.o] Error 126</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make[2]: *** [third-party/tlsf/CMakeFiles/tlsf.dir/all] Error 2</div></li><br /></ol></code></dd></dl>( &quot;.../moai-dev/moai-dev/...&quot; is admittedly stupid, but it's the correct path)<br /><br />I tried setting permissions (chmod -R 777) on the moai-dev folder as well as the android-ndk folder, but unfortunately the error remains.<br /><br />I'm guess I'm just missing something obvious? <br />Any help would be greatly appreciated!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Problems with make-host on Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 25, 2014 11:44 am</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content">build android should be run from the sdk root not from the bin path<br />try ./bin/build-android.sh</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Problems with make-host on Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 26, 2014 10:57 am</strong></div>
+				<div class="author">by <strong>Kantholz</strong></div>
+				<div class="content">** PROBLEM FIXED **<br /><br />Thanks for the fast reply, halfnelson!<br />Unfortunately, running build-android.sh from the sdk root still gave the same permission denied errors. <br />So the next thing I tried was moving the Android-NDK from the shared storage partition to the Linux partition. <br />This replaced all the &quot;permission denied&quot; errors I got with &quot;not found&quot; errors instead, like: <dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=20&amp;t=2595&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">arm-linux-androideabi-gcc: not found</div></li><br /></ol></code></dd></dl><br />After confirming that all those files were exactly where they should be, I googled the &quot;not found&quot; messages and stumbled upon the solution: seems like I was missing &quot;ia32-libs&quot;. <br />So I installed ia32-libs, or rather three packages to replace it: lib32z1, lib32ncurses5 and lib32bz2-1.0<br /><br />Build-android now finally works!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Problems with make-host on Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 26, 2014 11:15 am</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content">that is awesome.<br /><br />What are the chances of you making a wiki page (anyone can create them) like<br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/wiki/Building-for-Linux-(ubuntu-13">https://github.com/moai/moai-dev/wiki/B ... (ubuntu-13</a><!-- m -->)<br />or <br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/wiki/Building-for-android-on-windows">https://github.com/moai/moai-dev/wiki/B ... on-windows</a><!-- m --><br /><br />with the steps you took to get it working (including those libs)?<br /><br />It would be a big help to the community</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Problems with make-host on Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 26, 2014 1:53 pm</strong></div>
+				<div class="author">by <strong>Kantholz</strong></div>
+				<div class="content">I have created a Wiki-page describing the steps I took to build the android host on Ubuntu as well as the problems encountered and how to fix them:<br /><a href="https://github.com/moai/moai-dev/wiki/Building-for-Android-on-Linux-(Ubuntu-12.04-64bit)" class="postlink">https://github.com/moai/moai-dev/wiki/Building-for-Android-on-Linux-(Ubuntu-12.04-64bit)</a><br /><br />Please feel free to edit, correct, or add additional information, as I'm sure some problems could have been prevented or solved in a better way.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

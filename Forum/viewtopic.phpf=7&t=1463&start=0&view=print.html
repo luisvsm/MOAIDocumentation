@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Moai + Luajit</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Moai + Luajit</h2>
+		<p><a href="moai-luajit-t1463/index.html">/forums/moai-luajit-t1463/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>4</strong></div>
+		
+			<div class="post">
+				<h3>Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 07, 2012 9:12 pm</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">Hi everybody,<br />Following my usual style, I've made a quick and dirty hack to run Moai with luajit.  And surprisingly it works, hehehe... At least on 64bit architectures.<br /><br />It's Linux only at this time but at least it serves to show how close we are <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />Here's the repository, if anybody wants to play with it.<br /><br /><!-- m --><a class="postlink" href="https://github.com/spacepluk/moai-dev/tree/linux-luajit">https://github.com/spacepluk/moai-dev/tree/linux-luajit</a><!-- m --><br /><br />Have fun <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 08, 2012 7:26 am</strong></div>
+				<div class="author">by <strong>tommo.zhou</strong></div>
+				<div class="content">I've been using LuaJIT for a while, although JIT is disabled on iOS, it still makes quite a difference on old device (I tested on iPod3). <br />Moai includes a precompiled Lua script (src/lua-headers/moai.lua), because JIT's bytecode format is different from normal Lua, you need to remove precompiled version and run that script in text form.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 08, 2012 8:26 pm</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">Great, so is it safe to use? Did you find any other problems besides the precompiled bytecode?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 10:01 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I'm wondering if we can find some way to properly instrument tests to compare things from a MOAI perspective .. I guess the general performance increase will commute, but where will it accrete, performance around the MOAI SDK?<br /><br />Edit: for example, what sort of things can be done with DEFAULT_STEPS_PER_SECOND, *_BOOST_THRESHOLD, &amp;etc.?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 11:16 am</strong></div>
+				<div class="author">by <strong>tommo.zhou</strong></div>
+				<div class="content">I tested on android and iOS, no problem found so far. It's a seamless replacement.<br />Interpreter LuaJIT is about 2x faster than plain Lua on iOS. I believe it reduces some overhead of function/coroutine calling. But it's still not fast enough to take heavy job.<br /><br />BTW, you should take care of Lua gc setting, default gc setting is not aggressive enough, so your game might take more peak memory and the collection cycle will be more noticeable (makes your game laggy).</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jan 29, 2013 11:42 am</strong></div>
+				<div class="author">by <strong>keelo</strong></div>
+				<div class="content">We should really get this into moai-dev! I've been trying to get this to work in XCode, but I get linking errors:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=1463&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&quot;_luaL_unref&quot;, referenced from:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; MOAILuaObject::SetLocal<span class="br0">&#40;</span>MOAILuaState&amp;, int, MOAILuaLocal&amp;<span class="br0">&#41;</span> in libmoai-ios.a<span class="br0">&#40;</span>MOAILuaObject.o<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; _lcurl_easy_close in libmoai-ios-3rdparty.a<span class="br0">&#40;</span>luacurl.o<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; _lcurl_easy_setopt in libmoai-ios-3rdparty.a<span class="br0">&#40;</span>luacurl.o<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; _conn_close in libmoai-ios-3rdparty.a<span class="br0">&#40;</span>ls_sqlite3.o<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; _cur_close in libmoai-ios-3rdparty.a<span class="br0">&#40;</span>ls_sqlite3.o<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; MOAILuaRefTable::Clear<span class="br0">&#40;</span><span class="br0">&#41;</span> in libmoai-ios.a<span class="br0">&#40;</span>MOAILuaRef.o<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />Does anyone know the steps? I added &quot;libluajit&quot; as a &quot;pre-link library.&quot;</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 30, 2013 8:35 am</strong></div>
+				<div class="author">by <strong>keelo</strong></div>
+				<div class="content">Ah I figured it out, on XCode at least.<br /><br />1) remove the reference to the 3rd party/liblua folder from libmoai.xcodeproj<br />2) add path/to/your/luajit-2.0/src to &quot;Header Search Paths&quot; for libmoai.xcodeproj<br />3) build LuaJIT with these instructions: <!-- m --><a class="postlink" href="http://blog.csdn.net/dragoncheng/article/details/8155079">http://blog.csdn.net/dragoncheng/articl ... ls/8155079</a><!-- m --> (I had to remove armv6 from those instructions, because I'm building with iOS SDK 6.1 and I'm unsure how to build armv6 from the command-line with that yet...I think I may need to get an older version of the SDK??)<br />4) add the resulting luajit-2.0/build/libluajit2.a to your top level xcode project<br />5) add luajit-2.0/build/libluajit32.a to your top level Mac project, if you're building that, too<br />6) modify MOAILuaRuntime.cpp to #include lua.h instead of lstate.h, and remove the code that depends on regular lua internals, like in spacepluk's branch above.<br /><br />Build everything in xcode.<br /><br />When you run your project, you'll get errors about missing MOAILayer2D, etc. now. This is because the precompiled bytecode MOAI header included in moai-dev/src/lua-headers/moai_lua.h is for regular lua, and luajit has a different bytecode format. So you have to regen it:<br /><br />7) run &quot;cd moai-dev/src/lua-headers &amp;&amp; moai main.lua&quot; with your new moai binaries to generate a new version of the moai.lua bytecode in moai_lua.h<br />8) build again<br /><br />It should work!<br /><br />Hopefully this saves someone else some time.<br /><br />9) make your damn game <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jan 31, 2013 11:54 am</strong></div>
+				<div class="author">by <strong>seebs</strong></div>
+				<div class="content">That is super awesome. I'm not having much for performance problems now, but I have a history of coming up with things that sound really pretty on paper...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jan 31, 2013 10:13 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Would be really great to get this pushed to the main moai-dev branch some day, being able to switch between lua and lua-jit would be great, indeed.  And also make the 'prepare for delivery with encoded bytecodes' step a little more sensible too ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Feb 11, 2013 3:04 am</strong></div>
+				<div class="author">by <strong>0x1b6e6</strong></div>
+				<div class="content">This is great work. I want to get moai to be installed as a rock (luarocks), and I'm willing to invest time into it. The broad goal is to start a lua interpreter (say, luajit) and type <dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=1463&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;<span style="color: #0000aa;">require</span> <span style="color: #ff6666;">'moai'</span></div></li><br /></ol></code></dd></dl> and have a moai context initialized and ready to be used. Sort of like a debug environment, but which plays nice with other luarocks packages.<br /><br />Anyone interested in giving me some pointers or help me with this?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 20, 2013 5:17 am</strong></div>
+				<div class="author">by <strong>zeldin</strong></div>
+				<div class="content">Nice work.  I updated my Gentoo ebuild to use this branch if you enable the &quot;luajit&quot; USE flag.  Seems to work just fine.  <img src="images/smilies/icon_e_biggrin.gif" alt=":-D" title="Very Happy" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 20, 2013 7:26 am</strong></div>
+				<div class="author">by <strong>franciscotufro</strong></div>
+				<div class="content">Can anybody post some benchmarks on using liajit vs. the shipped lua??</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 20, 2013 7:36 pm</strong></div>
+				<div class="author">by <strong>romainmoreau</strong></div>
+				<div class="content">There are benchmarks on the official website : <!-- m --><a class="postlink" href="http://luajit.org/performance.html">http://luajit.org/performance.html</a><!-- m --><br />Some ratio are very appealing.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 03, 2013 6:45 am</strong></div>
+				<div class="author">by <strong>felixgallo</strong></div>
+				<div class="content">I've tried a few times to get luajit working with android; both tommo's branch and spacepluk's.  They both can be cajoled into working with xcode, but neither of them seems to enjoy working with android.<br /><br />I built android luajit statically using the android ndk for the correct architecture; all went well on that front, after fussing around with the build systems for a bit.<br /><br />However, the resulting moai apk on android errors out with apparent path issues, despite the code appearing to do the right thing and the apk seemingly correctly built, with proper lua scripts in the right places in the assets folder:<br /><br />MoaiRenderer runScripts: Running ../init.lua script<br />I/MoaiLog ( 5784): -- cannot open ../init.lua: No such file or directory<br />I/MoaiLog ( 5784): MoaiRenderer runScripts: Running main.lua script<br />I/MoaiLog ( 5784): -- cannot open main.lua: No such file or directory<br /><br />Intriguingly replacing the luajitted libmoai.so with an older nonjitted one fixes the problem, suggesting that there's some inconsistency in the way that luajit works with pathing.<br /><br />Anyone with a functioning android luajit version recall anything like this, or does it strike any bells that I'm doing anything known to be dumb?<br /><br />F.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 03, 2013 9:35 am</strong></div>
+				<div class="author">by <strong>tommo.zhou</strong></div>
+				<div class="content">It's because MOAI replaced std file functions with zlcore, you have to include that when compile LuaJIT.<br />This is my build script&#058;<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=1463&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">#!/bin/sh</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIROOT=/Users/tommo/dev/moai-dev</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NDK=/Users/tommo/dev/android-ndk-r8</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NDKABI=<span style="">8</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NDKVER=$NDK/toolchains/arm-linux-androideabi-4.4.3</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NDKP=$NDKVER/prebuilt/darwin-x86/bin/arm-linux-androideabi-</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">NDKF=&quot;--sysroot $NDK/platforms/android-$NDKABI/arch-arm&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">CFLAGS=&quot;-I $MOAIROOT/src -include zlcore/zl_replace.h &quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">rm -rf android</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mkdir android</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make HOST_CC=&quot;gcc -m32&quot; CROSS=$NDKP TARGET_CFLAGS=&quot;$CFLAGS&quot; TARGET_FLAGS=&quot;$NDKF&quot; TARGET=arm TARGET_SYS=android clean all</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cp -p src/libluajit.a android/libluajit.a</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make clean</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cp src/luaconf.h src/lua.h src/lauxlib.h src/lualib.h android</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 04, 2013 7:58 am</strong></div>
+				<div class="author">by <strong>felixgallo</strong></div>
+				<div class="content">Tommo, you're a genius.  Thank you.<br /><br />For anyone else who wants to use Tommo's script -- it will appear to error out because running make in luajit's directory will first make the static and shared libraries, and then try to make the luajit executable.  The luajit executable build process will explode with linker errors.  However the libraries have already been built and the script will pick them up and put them in the right place.<br /><br />Also, using tommo's branch directly didn't work for me; for some reason my (fairly recent) android sdk errors out when attempting to import android.widget.EditText as part of the MOAIAndroidKeyboard work.  Since I don't need MOAIAndroidKeyboard, rather than screw with it I grafted tommo's ant directory onto spacepluk's less recently updated moai-dev.  The frankenstein repo then shambled slowly to life.<br /><br />Thanks again Tommo.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 04, 2013 9:07 am</strong></div>
+				<div class="author">by <strong>tommo.zhou</strong></div>
+				<div class="content">My own branch is a mess, quick hacks only ...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 05, 2013 8:54 am</strong></div>
+				<div class="author">by <strong>franciscotufro</strong></div>
+				<div class="content">Guys, we would love to officially switch to luajit.<br />We understand the advantages of it, but don't have the bandwidth right now.<br />Do you think that some of you can coordinate a good pull request that adds all the needed stuff to get it working?<br />That would be amazing!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Mar 16, 2013 6:11 am</strong></div>
+				<div class="author">by <strong>selitvin</strong></div>
+				<div class="content">We use MOAI as a part of a larger lua system that is not based on lua-jit. For us switching to lua-jit (without being able to build MOAI with a regular lua) would be unacceptable.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Mar 16, 2013 10:52 am</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content"><blockquote><div><cite>selitvin wrote:</cite>We use MOAI as a part of a larger lua system that is not based on lua-jit. For us switching to lua-jit (without being able to build MOAI with a regular lua) would be unacceptable.</div></blockquote><br /><br />Well if Moai default is luajit you should be able to compile your own version with regular lua right? For everyone else it would be a great performance boost with luajit so I think having it as the default would be the right move . I'm pretty limited by lua performance in my own game for example.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>4</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

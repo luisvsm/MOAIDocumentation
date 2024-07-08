@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Google Chrome Native Client</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Google Chrome Native Client</h2>
+		<p><a href="google-chrome-native-client-t147/page20.html">/forums/google-chrome-native-client-t147/page20.html</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>2</strong></div>
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 22, 2011 5:36 pm</strong></div>
+				<div class="author">by <strong>magicchicken0</strong></div>
+				<div class="content">I'm able to build and run the tumbler example from both pepper_15 and pepper_16, which is reassuring.
+<br />
+<br />
+<br />I downloaded a fresh zip of most recent moai-dev nacl branch (I'll figure out using git at some point), removed the fmod references for the nacl build, and tried building it against both pepper_15 (using the opengl_context.h/cc file from the tumbler example) and pepper_16 (as is).
+<br />
+<br />
+<br />Both successfully compiled and built nexe files. Using a Lua script from a Moai sample that just creats a MOAIProp2D, neither the 15 or 16 built version had any luck in showing anything on screen. MOAIThreads would still not start.
+<br />
+<br />
+<br />I tried updating Chrome to version 16 (dev channel) and had the same problems.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 22, 2011 5:46 pm</strong></div>
+				<div class="author">by <strong>magicchicken0</strong></div>
+				<div class="content"><div>
+<br />Oh man, just figured it out....
+<br />
+<br />
+<br />
+<br />in moai.cc it tries to run 3 scripts:
+<br />
+<br />line 109: AKURunScript ( "main.lua" );
+<br />
+<br />line 110: AKURunScript ( "config.lua" );
+<br />
+<br />line 111: AKURunScript ( "game.lua" );
+<br />
+<br />
+<br />
+<br />I wasn't sure the best way to organize my code between these three files, so I created all three and just put everything into main.lua, leaving config.lua and game.lua empty.
+<br />
+<br />
+<br />
+<br />Deleting the two empty files, or removing the two lines from moai.cc fixes the issue. Weird bug, and probably nacl unreleated =P
+<br />
+<br /></div></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Oct 23, 2011 11:37 am</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Weird that it causes it to fail if they are empty.
+<br />
+<br />Yeah, everything I'm running here only has main.lua, except one project which required all three to be passed. I think I'm going to pass them in the html for the actual NaCl release  (closest thing to a command line I could think of for native client ). Sorry for the trouble it caused and good to hear its up and running!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 6:22 pm</strong></div>
+				<div class="author">by <strong>magicchicken0</strong></div>
+				<div class="content">With regards to my keyboard input problems: I've only had a few minutes to debug it, but it turns out that in MoaiInputMgr.cpp, the call CheckSensor() is failing because the sensor's type on the MOAIInputDevice* isn't matching. The deviceID and sensorID are both zero, but then the type is set to POINTER (6) when it's verifying that it should be KEYBOARD (3).</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 6:26 pm</strong></div>
+				<div class="author">by <strong>magicchicken0</strong></div>
+				<div class="content">Aha, just a typo :) In moai.cc you want AKUSetInputDeviceKeyboard instead of AKUSetInputDevicePointer for "keyboard"</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 03, 2011 3:37 am</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Ah, thanks!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 22, 2011 9:43 am</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">Just to update this thread - binary NaCl support is now in the main Moai SDK. Check out the new 0.9 release for details.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 07, 2011 1:22 pm</strong></div>
+				<div class="author">by <strong>magicchicken0</strong></div>
+				<div class="content">The release with Chrome binaries is awesome. Thanks a lot!
+<br />
+<br />
+<br />
+<br />I ran into an issue in Moai 0.9. I emailed the address for fogbugz, but posting it here too since I don't know if we can follow issues posted that way.
+<br />
+<br />
+<br />
+<br />When using a MoaiTextBox and the yFlip is set to true, the setLoc() behaves differently in Chrome than it does in win32. I modified the font-bitmap sample:
+<br />
+<br /><div>
+<br /><ul>
+<br /><li>The window size is changed to 960, 640.</li>
+<br /><li>Added the line at the end: textbox:setLoc( 0, 100 )</li>
+<br /></ul>
+<br /></div>
+<br /><div>On win32, this moves the textbox up.</div>
+<br /><div>On Chrome, this moves the textbox down.</div></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 07, 2011 5:16 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Cool, thank you! We'll look into it.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Google Chrome Native Client</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 08, 2011 10:28 am</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">I'm cleaning up a lot of the Native Client integration and moving it to a new place in the main source as we speak. That will fix the y-flip inconsistency and most others.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 8 hours [ <abbr title="Daylight Saving Time">DST</abbr> ]<br />Page <strong>2</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=198&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-06-21T03:54:19+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=198&amp;mode</id>
+<entry>
+<author><name><![CDATA[klomer]]></name></author>
+<updated>2012-06-21T03:54:19+00:00</updated>
+<published>2012-06-21T03:54:19+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=4796#p4796</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=4796#p4796"/>
+<title type="html"><![CDATA[Re: MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=4796#p4796"><![CDATA[
+Bump?  Has anyone else fixed full screen on the PC?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=944">klomer</a> — Thu Jun 21, 2012 3:54 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[klomer]]></name></author>
+<updated>2012-06-19T03:04:35+00:00</updated>
+<published>2012-06-19T03:04:35+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=4716#p4716</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=4716#p4716"/>
+<title type="html"><![CDATA[Re: MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=4716#p4716"><![CDATA[
+Thanks for the reply.  I neglected to mention I was only seeing this on the PC.  Where is the host config?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=944">klomer</a> — Tue Jun 19, 2012 3:04 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-18T09:16:58+00:00</updated>
+<published>2012-06-18T09:16:58+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=4677#p4677</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=4677#p4677"/>
+<title type="html"><![CDATA[Re: MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=4677#p4677"><![CDATA[
+You will have to address full-screen mode in the *HOST* sources, not in any MOAI sources.  The host sources are configured to get a GL View window set up and instantiated within the context of the outer 'container' for each platform - for Android, its based on the Layout config, and for iOS its based on the bundle settings for the project.  If you want full-screen with no menu-bar, you have to tell both iOS and Android to do it, in the host, before it will make any sense in the MOAI environment.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Jun 18, 2012 9:16 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[klomer]]></name></author>
+<updated>2012-06-18T05:55:33+00:00</updated>
+<published>2012-06-18T05:55:33+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=4664#p4664</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=4664#p4664"/>
+<title type="html"><![CDATA[Re: MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=4664#p4664"><![CDATA[
+Was there any followup on this?  I've run into the same issue - the fullscreen view is using the windowed mode size to find the center of the screen (so centered textboxes appear offset in fullscreen mode, etc).<br /><br />--code<br />screenWidth = 1280<br />screenHeight = 1024<br /><br />MOAISim.openWindow ( &quot;newProject&quot;, screenWidth, screenHeight )<br /><br />viewport = MOAIViewport.new ()<br />viewport:setSize ( screenWidth, screenHeight )<br />viewport:setScale ( screenWidth, screenHeight )<br />MOAISim.enterFullscreenMode ()<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=944">klomer</a> — Mon Jun 18, 2012 5:55 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-11-17T12:27:55+00:00</updated>
+<published>2011-11-17T12:27:55+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=970#p970</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=970#p970"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=970#p970"><![CDATA[
+Yes, EVENT_STOP or EVENT_TIMER_LOOP are the right ones to look at. EVENT_TIMER_KEYFRAME is a little ad hoc... you can attach a curve to a timer and use EVENT_TIMER_KEYFRAME to get a callback whenever a keyframe is encountered. So You can use it to do things like time sound effects with animation. Like I said, a little ad hoc.<br /><br />I will look into full screen mode on glut. Will add a demo for that before next release.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Thu Nov 17, 2011 12:27 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jeremy.gabriele]]></name></author>
+<updated>2011-11-17T07:42:36+00:00</updated>
+<published>2011-11-17T07:42:36+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=967#p967</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=967#p967"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=967#p967"><![CDATA[
+I've found the answer to my second question: the event to look at is MOAIAction.EVENT_STOP, not MOAITimer.EVENT_TIMER_KEYFRAME (by the way, what's the use of this one ?).<br /><br /><br /><br />Still didn't find a way to solve the first problem...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=296">jeremy.gabriele</a> — Thu Nov 17, 2011 7:42 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jeremy.gabriele]]></name></author>
+<updated>2011-11-17T05:39:08+00:00</updated>
+<published>2011-11-17T05:39:08+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=965#p965</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=965#p965"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=965#p965"><![CDATA[
+Hi again,<br /><br /><br /><br />As my plan is just to make a "proof of concept", I tried to use Glut (at least MOAISim, I guess it's Glut behind) and called the<br />MOAISim.enterFullscreenMode() function to make a full-screen app. This works fine, but I'd like to adjust my viewport to the full-screen mode, and it does not. I tried viewport:setSize ( <strong> </strong>MOAISim.getDeviceSize() ) but it seems like getDeviceSize() still refer to the windowed mode. How can I do ?<br /><br /><br /><br />Another question, is there a way to get an event when an animation is finished ? I tried something like this :<br /><br /><p style="padding-left: 30px"><em><span style="color: #339966">-- create the curve and the anim</span></em><br /><br /></p><p style="padding-left: 30px">rollCurve = MOAIAnimCurve.new ()<br />rollCurve:reserveKeys ( 2 )<br />rollCurve:setKey ( 1, 0, 0 )<br />rollCurve:setKey ( 2, 1, 64, MOAIEaseType.LINEAR )<br />animStart = MOAIAnim.new ()<br />animStart:reserveLinks ( 1 )<br />animStart:setLink ( 1, tile.rollCurve, tile.prop, MOAIProp2D.ATTR_Y_LOC, true )<br /><br /></p><p style="padding-left: 30px"><br />local function onKeyframe( timeStop, value ) print(timeStop) end <em><span style="color: #339966">-- callback</span></em><br />animStart:setListener(MOAITimer.EVENT_TIMER_KEYFRAME, onKeyframe)<em> <span style="color: #339966">-- set the listener ?</span></em><br /><br /></p><p style="padding-left: 30px"><span style="color: #339966"><span style="color: #000000">animStart:start()</span></span><em><span style="color: #339966"><br /></span></em><br /><br />The animation works fine, but this does not print anything. What am I missing here ?<br /><br /><br /><br />Thanks,<br /><br /><br /><br />Jeremy.<br /></p><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=296">jeremy.gabriele</a> — Thu Nov 17, 2011 5:39 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jeremy.gabriele]]></name></author>
+<updated>2011-11-15T04:56:18+00:00</updated>
+<published>2011-11-15T04:56:18+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=952#p952</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=952#p952"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=952#p952"><![CDATA[
+Ok thanks for your quick answer !<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=296">jeremy.gabriele</a> — Tue Nov 15, 2011 4:56 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-11-15T02:09:03+00:00</updated>
+<published>2011-11-15T02:09:03+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=951#p951</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=951#p951"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=951#p951"><![CDATA[
+Untz should work fine on Windows 7. You'll need to install the DirectX SDK and to compile moai-untz instead of moai. There's a readme in the solution folder about how to set it up.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Tue Nov 15, 2011 2:09 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jeremy.gabriele]]></name></author>
+<updated>2011-11-15T00:18:31+00:00</updated>
+<published>2011-11-15T00:18:31+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=950#p950</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=950#p950"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=950#p950"><![CDATA[
+Ok thanks ! :). Just need to find that OpenGL desktop app ^^.<br /><br /><br /><br />Another question : can we play sounds properly on Windows 7 or do we need to add this feature to our host as well ?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=296">jeremy.gabriele</a> — Tue Nov 15, 2011 12:18 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-11-14T09:09:39+00:00</updated>
+<published>2011-11-14T09:09:39+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=948#p948</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=948#p948"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=948#p948"><![CDATA[
+The glut sample host we ship with the NDK has primitive full screen support, but for a commercial desktop app I'd definitely recommend you provide your own native host. If you already have an OpenGL desktop app that runs full screen you should be able to re-purpose that pretty easily.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Mon Nov 14, 2011 9:09 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jeremy.gabriele]]></name></author>
+<updated>2011-11-14T08:51:59+00:00</updated>
+<published>2011-11-14T08:51:59+00:00</published>
+<id>/forums/viewtopic.php?t=198&amp;p=947#p947</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=198&amp;p=947#p947"/>
+<title type="html"><![CDATA[MOAI and full-screen]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=198&amp;p=947#p947"><![CDATA[
+Hi,<br /><br /><br /><br />I'd like to create a full-screen app on windows, and I'm wondering if there were a way to make a "real" full-screen (maybe with viewports we could create a big enough view but there will still remain the borders). Is there a way to do that ?<br /><br /><br /><br />Thanks and keep up the good work ! :).<br /><br /><br /><br />Jeremy.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=296">jeremy.gabriele</a> — Mon Nov 14, 2011 8:51 am</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - How to build an Android APK , step-by-step</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>How to build an Android APK , step-by-step</h2>
+		<p><a href="how-to-build-an-android-apk-step-by-step-t483/page60.html">/forums/how-to-build-an-android-apk-step-by-step-t483/page60.html</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>4</strong> of <strong>5</strong></div>
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 29, 2012 2:43 pm</strong></div>
+				<div class="author">by <strong>mikegriffin</strong></div>
+				<div class="content">Just looked at dev on github and everything has changed in these scripts! Yay!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Sep 02, 2012 10:41 am</strong></div>
+				<div class="author">by <strong>SH_Black_Hole</strong></div>
+				<div class="content">dear Serapth thanks for your tutorial.<br />I try it again and get this error again:<br /><blockquote class="uncited"><div>/cygdrive/c/ProgrammingTools/Android/android-ndk-r8b/build/core/prebuilt-library.mk:64: *** target pattern contains no `%'. Stop.<br /></div></blockquote><br />on windows 7 64bit. what is your OS? and I try it in windows XP on VMWare and get <br /><blockquote class="uncited"><div>./make-host.sh: line 70: bash: command not found<br /></div></blockquote><br />with MOAI 1-1 and<br /><blockquote class="uncited"><div>./make-host.sh: line 94: bash: command not found<br /></div></blockquote><br />with MOAI 1-2.<br />what do you think about this problem? is it related to conflict on cygwin  and ndk? I use cygwin 2.774</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 03, 2012 9:49 am</strong></div>
+				<div class="author">by <strong>SH_Black_Hole</strong></div>
+				<div class="content">thanks all people write help for build an android apk specially Serapth. this thread have the most view and reply without any official reply and answer (about 3X of other thread on view and reply) !!!!!<br />finally I can build host in Windows XP 32bit on VM. in this way I have 2 problem:<br />first is &quot;bash: command not found&quot; on cygwin terminal. I solve it by add \Cygwin\bin path to PATH. (better add it on Serapth tutorial)<br />second  is after make host when I run &quot;./run-host.sh&quot; on &quot;\ant\untitled-host&quot; I get this error :<br /><blockquote class="uncited"><div>FIND: Invalid switch<br />sed: can't read /cygdrive/c/ProgrammingTools/moai-1-2/ant/untitled-host/build/project/src/com/MyDomain/MyApp/MoaiActivity.java: No such file or directory<br /></div></blockquote><br />how can I solve second problem?<br />I read sample host on sdk and I sow<br /><blockquote class="uncited"><div>	src_dirs=( &quot;../../samples/anim/anim-basic&quot; &quot;../../include/lua-modules&quot; )<br />	dest_dirs=(	&quot;lua&quot; &quot;lua/lua-modules&quot; )<br /></div></blockquote><br />what is &quot;../../include/lua-modules&quot; and why not use it in Serapth tutorial?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 03, 2012 12:47 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Did you use the make-host.bat script to make a new Android project for your sources, using the Template?  &quot;MyDomain&quot; and &quot;MyApp&quot; look like the wrong names for these paths .. they would better be something like &quot;src/com/SH_Black_Hole/some_app_name/MoaiActivityJava&quot; .. where &quot;some_app_name&quot; is of course a proper name.<br /><br />In general, you must use 'make-host' for every Android project target.  This script file creates, from a non-working Template (*), a new Android project, initially in a folder named &quot;untitled-host/&quot;, although this can be changed.  The sources in that folder are *then* usable to build the MOAI Executable for Android, bundle it with some Lua sources, and execute as a MOAI App - it is a project directory which can both be imported into Eclipse, *OR* built from the command line.  Ideally, you wouldn't need to mod much Android stuff in this project folder, and use it simply as a host for MOAI, but you can if needed, modify the onboard Android OS host code, as well.  Ideally, not: you're just using it to build your MOAI executable for Android, and not much more than that.<br /><br />This Android project, named and path'ed as you specify in the &quot;make-host.bat&quot; argument list, also at some point needs to point to your MOAI Sources for the project you are building, because it is a real Android project to build the moai executable and then package it up into a working .apk for distribution on Android, doing absolutely nothing if not given a main.lua file for execution, as well as all your images and whatnot that compose the basis of your MOAI Application.  <br /><br />Please note that the bundling of your sources into the Android APK can go wrong, even if everything else is okay, meaning that you can build an Android project successfully, yet still get nothing on-screen, simply because your Lua sources are missing/not-working.<br /><br />So, there are few bits that need connecting.  In your case, &quot;MyDomain&quot; and &quot;MyApp&quot; don't seem right.<br /><br />So, for me every time I want to start an Android build for a MOAI project, it goes a bit like this (on Linux):<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=9&amp;t=483&amp;start=60&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">~/moai/moai-dev/ant/ $ #My project name is 'fot' ..</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">~/moai/moai-dev/ant/ $ ./make-host.sh -a all -p at.w1xer.droids.fot</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />(This will produce an &quot;untitled-host/&quot; folder .. I then rename untitled-host/ to &quot;fot-android-host/&quot;, move it to my buildserver, and edit the local configuration files (settings-global.sh/settings-local.sh), before then doing:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=9&amp;t=483&amp;start=60&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">~/moai/build-android/fot-android-host/ $ ./run-host.sh</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />.. to test THE BUILD FIRST.  <br /><br />If I get a spinning MOAI logo, I'm all good, because the Template is set up to run a demo. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" />  So I then edit &quot;moai-target&quot;, point it at my project code sources instead, and re-build .. making sure of course to be watching logs with 'adb log' and so on, along the way.<br /><br />If you can do something similar with the Cygwin+Windows side of things, sure it will work.  I guess you just have to get through the 'unix-isms' of the MOAI build setup as it currently stands (I think most MOAI core devs are MacOSX/Linux guys, with a few Windows bravehearts sort of straggling along.. it really is very easy to do cross-platform dev with MOAI, as long as you're using either an OSX or Linux host somewhere in your development chain ..<br /><br />(*EDIT _ Re: Template is non-working - yes, the sources in $MOAI_HOME/ant/host-source *do not work*.  If you find yourself trying to do anything with those files, in Eclipse, or whatever, struggling to get an Android project working, forget it.  You *HAVE* to use make-host.sh/make-host.bat to generate a new project, from the Template sources in this folder.  If you monkey with $MOAI_HOME/ant/host-source, the only possible reason to do so, is to make modifications to the Template for all future invocation of the &quot;Lets Start This Project On Android&quot; #1 script&#058; make-host.[sh,bat])<br /><br />EDIT2: &quot;what is &quot;../../include/lua-modules&quot;&quot; .. this is a remnant from earlier invocations of sample code, I believe .. &quot;lua-modules&quot; isn't strictly part of MOAI, its just a place for lua addons .. I for example, have lua-enumerable.lua in my modules list, and anyone can hard-code other paths at the end of this if they also have external Lua dependencies .. thus I believe that this is 'left in' as a hint that one need not only have a single path to sources in the config ..)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Sep 04, 2012 6:38 am</strong></div>
+				<div class="author">by <strong>SH_Black_Hole</strong></div>
+				<div class="content">I create new host by &quot;make-host.sh&quot; from source (NOT SDK) step by step by Serapth tutorial and my problem is about new generated host not sample host on sdk. after new host generate I used &quot;run-host.sh&quot; and I get some error:<br /><blockquote class="uncited"><div>cp: cannot stat `host-source/project/res/*': No such file or directory<br /></div></blockquote><br />I search and find res folder on &quot;moai-sdk\hosts\ant&quot; that contain some Icon so I copy this folder to &quot;moai-1-2-source\ant\Newhost\host-source\project&quot; and pass that error. after that I get<br /><blockquote class="uncited"><div>cp: cannot stat `host-source/project/.classpath': No such file or directory<br /></div></blockquote><br />I find &quot;.classpath&quot; file on &quot;moai-sdk\hosts\ant\host-source\project&quot;. what is this file and some file in this folder? should I copy it to my new folder manually??<br />I copy that file manually and run &quot;run-host.sh&quot; again now I get<br /><blockquote class="uncited"><div>sed: can't read /cygdrive/c/ProgrammingTools/moai-1-2-source/ant/NewHost/build/project/res/values/strings.xml: No such file or directory<br /></div></blockquote><br />I try copy this file from &quot;moai-sdk\hosts\ant\host-source\project\res\values&quot; but after run &quot;run-host.sh&quot; it deleted and get error again. what should I do?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Sep 04, 2012 3:25 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content"><blockquote class="uncited"><div>what should I do?</div></blockquote><br /><br />Use Linux.  Seriously, something is totally screwed up with your cygwin environment, and the tools being used in make-host.bat ..  &quot;cannot stat 'host-source/project/res/*' -- this means something is definitely missing from your copy of the host sources.  I have no idea how it can be fixed, but one idea for how it happens is, simply, Cygwin isn't doing the job.  So: Use Linux.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Sep 05, 2012 6:58 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content"><blockquote class="uncited"><div> &quot;./run-host.sh&quot; on &quot;\ant\untitled-host&quot;</div></blockquote><br /><br /><br />Just to clarify, when you ran ./run-host.sh, you were actually in the untitled-host folder right?<br /><br /><br />Because:<br /><br />./ant/untitled-host/run-host.sh<br /><br />Is not the same as<br /><br />cd /ant/untitiled-host/<br />./run-host.sh<br /><br />There are so relative pathings in the scripts ( stuff like ../../something.sh ), that will break if you mix this up.<br /><br />Also, confirm your cygwin shell is running correctly, the pathing needs to resolve to cygwin tools FIRST.<br /><br />Load up cygwin terminal, type:<br /><br />echo $PATH<br /><br />It should start with /usr/local/bin;/usr/bin.  If it doesn't, this might be your problem.<br /><br />Sorry for the late response, was a long weekend followed by daughters first day of kindergarten, hectic to say the least.<br /><br />Also, the instructions I gave were tried and tested on Windows 7 and Windows 8 CP, both 64bit flavors, but it shouldn't matter.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Sep 05, 2012 7:00 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content"><blockquote><div><cite>ibisum wrote:</cite><blockquote class="uncited"><div>what should I do?</div></blockquote><br /><br />Use Linux.  Seriously, something is totally screwed up with your cygwin environment, and the tools being used in make-host.bat ..  &quot;cannot stat 'host-source/project/res/*' -- this means something is definitely missing from your copy of the host sources.  I have no idea how it can be fixed, but one idea for how it happens is, simply, Cygwin isn't doing the job.  So: Use Linux.</div></blockquote><br /><br />Is Moai actually supported on Linux?  On my one machine I dual boot Win8/Ubuntu, and I remember trying to configure Moai on Linux and running in to some roadblocks right away ( Chipmunk maybe? ) and posts saying Linux was &quot;coming soon&quot;.  Granted, I didn't put a ton of effort into it.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 06, 2012 6:53 am</strong></div>
+				<div class="author">by <strong>SH_Black_Hole</strong></div>
+				<div class="content">I try<br /><blockquote class="uncited"><div>-bash-4.1$ echo $PATH<br />/usr/local/bin:/usr/bin:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/ProgrammingTools/android-ndk:/cygdrive/c/Program Files/TortoiseSVN/bin:/cygdrive/c/Documents and Settings/Test Program/My Documents/UltraEdit<br />-bash-4.1$ cd /cygdrive/c/ProgrammingTools/moai-1-2/ant-copy/untitled-host<br />-bash-4.1$ ./run-host.sh<br />cp: cannot stat `host-source/project/res/*': No such file or directory<br />-bash-4.1$<br /></div></blockquote><br />is it correct? why I get error? why MOAI not use some windows app to copy, create and manipulate files? what is benefits of this hard and error prone way for create package?<br /><br />EDIT: my path is not correct and i search and solve it in 2 step :<br /> 1st: change location of &quot;cygwin\bin&quot; to first of system PATH on environment variable<br /> 2nd: add &quot;\cygwin\usr\local\bin&quot; to beginning of system PATH<br />and I find <a href="http://www.bsp-gmbh.com/hercules/herc_cygwin.html" class="postlink">http://www.bsp-gmbh.com/hercules/herc_cygwin.html</a> and add &quot;cygwin\user\local\lib\&quot; to path in location that describe. is it necessary?<br />finaly dear Serapth if this steps is necessary please add it to your tutorial for other user.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 06, 2012 9:33 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content"><blockquote class="uncited"><div>Is Moai actually supported on Linux? On my one machine I dual boot Win8/Ubuntu, and I remember trying to configure Moai on Linux and running in to some roadblocks right away ( Chipmunk maybe? ) and posts saying Linux was &quot;coming soon&quot;. Granted, I didn't put a ton of effort into it.</div></blockquote><br /><br />The linux- branch of the moai-dev repo works just fine, at least for most things.  Audio is not quite up to scratch, for example, but as a general environment for coding, the Linux moai client functions fine and my SublimeText2 flow on Linux is virtually indistinguishable from that of Mac OSX.<br /><br />I wouldn't say the Linux build of MOAI is ready for primetime, but that may just be a matter of weeks away, who knows ..<br /><br />EDIT: But, the point is this: You only have to Build your Android releases on Linux, develop with MacOSX/Windows MOAI.EXE client, I suppose ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 06, 2012 1:37 pm</strong></div>
+				<div class="author">by <strong>sgeos</strong></div>
+				<div class="content">You only need to build your APKs on Linux / OSX.  You should test on hardware before releasing your app.  Still, tweaking on Linux and then building for hardware should work when you getting ready to release for Android.  You can do all of your general development on Windows if you want to.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 06, 2012 3:01 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content"><blockquote><div><cite>SH_Black_Hole wrote:</cite>finaly dear Serapth if this steps is necessary please add it to your tutorial for other user.</div></blockquote><br /><br />That looks correct for path.  It is not a part of the process, as if Cygwin is installed correctly, it should take care of all of this for you.<br /><br />You have run make-host.sh and passed it a project name in Java form right?  Something like:<br /><br />cd /cygdrive/c/moai/ant/<br />./make-host.sh   -p yourappname.yourdomainname.com<br /><br /><br />Leave the terminal open. After this, confirm that under the ant directory, a folder named untitled-host has been created.  ( ls untitled-host      If that returns cannot access untitled-host, it wasnt created ).<br /><br />Assuming it does exist<br /><br />At this point you need to change in to the untitled-host folder as described in the guide and edit settings-local.sh.  You can use notepad, or whatever to edit the values.  Do so and save.  Now back at the terminal window<br /><br />cd untitled-host<br />./run-host.sh<br /><br />If this fails, paste the exact results from the terminal window here.<br /><br /><br /><br />Android development works just fine on Windows, *once you've got the environment configured*.  This is the tricky part, but frankly, you've gotta go through this if you are going to work with any of Googles ( shoddy, imho ) developer tools, so might as well get it over with.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Sep 08, 2012 10:09 am</strong></div>
+				<div class="author">by <strong>SH_Black_Hole</strong></div>
+				<div class="content">finally i can create new host. my problem is I create backup of ant folder and use backup and when i use backup folder(ex ant-copy) scripts not work correctly. if that use relative path why it's not work correctly?<br /><br />after create host and imported in eclipse i get some error about &quot;Project '...' is missing required source folder: 'gen'&quot;<br />it solve by use &quot;android tools &gt; fix project properties&quot; after that eclipse get<br /><blockquote class="uncited"><div>Description	Resource	Path	Location	Type<br />The method onSurfaceCreated(GL10, EGLConfig) of type MoaiView.MoaiRenderer must override a superclass method	MoaiView.java	/untitled/src/com/SH_BLACK_HOLE/TESTApp	line 207	Java Problem<br />The method onSurfaceChanged(GL10, int, int) of type MoaiView.MoaiRenderer must override a superclass method	MoaiView.java	/untitled/src/com/SH_BLACK_HOLE/TESTApp	line 197	Java Problem<br />The method onDrawFrame(GL10) of type MoaiView.MoaiRenderer must override a superclass method	MoaiView.java	/untitled/src/com/SH_BLACK_HOLE/TESTApp	line 190	Java Problem<br /></div></blockquote><br />and thay solve by delete &quot;@Override&quot; before error lines.<br /><br />finaly project can use on android devices <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />thanks all people help me to solve my problems.<br /><br /><blockquote><div><cite>Serapth wrote:</cite><blockquote><div><cite>SH_Black_Hole wrote:</cite>finaly dear Serapth if this steps is necessary please add it to your tutorial for other user.</div></blockquote><br /><br />That looks correct for path.  It is not a part of the process, as if Cygwin is installed correctly, it should take care of all of this for you.<br /></div></blockquote><br />when i install cygwin &quot;\cygwin\bin&quot; add to end of PATH and &quot;\cygwin\usr\local\bin&quot; never add to my path and I edit path for get &quot;/usr/local/bin;/usr/bin&quot; in start of &quot;echo $PATH&quot; result. is my cygwin install incorrect?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Sep 09, 2012 10:02 pm</strong></div>
+				<div class="author">by <strong>pyrofool</strong></div>
+				<div class="content">Is anyone willing to post a walk through on setting up the environment staring with a fresh Linux vm, including installing and setting up Android sdk and ndk? I'm also having issues building the native host in linux.I can build the spacepluk / moai-dev branch but it seems to be missing some socket stuff when I run my project.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Sep 11, 2012 3:24 am</strong></div>
+				<div class="author">by <strong>Sergeyka</strong></div>
+				<div class="content"><blockquote class="uncited"><div>cp: cannot stat `host-source/project/res/*': No such file or directory<br /></div></blockquote><br /><br />a month ago, I managed to solve all the problems and create apk under windows. But in a month I have many things I had forgotten=) If I'm not mistaken, the error occurs because, don't you have not installed the console program cpio.<br />Run setup.exe(cygwin). Select your the cygwin folder, etc. Enter the cpio in the search field and click on skip(see screenshot)<br /><br /><a href="http://img440.imageshack.us/i/67403864.png/" class="postlink"><img src="http://img440.imageshack.us/img440/5637/67403864.th.png" alt="Image" /></a></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Sep 14, 2012 9:37 pm</strong></div>
+				<div class="author">by <strong>rhetorical</strong></div>
+				<div class="content">I finally have successfully built from source, imported into eclipse and building error free, but the hello-moai sample is showing up rotated 90 degrees clockwise. Furthermore it is scaled down as if trying to fill in as if the 3:2 ratio of  480 x 320 as 320 as the 3 for height and like 108 as the width. It always opens this way. I am using a Galaxy SII. There are also no errors in the terminal.<br /><br />Is there a step I missed? What should I do?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Sep 15, 2012 1:43 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">When you use 'make-host' to make an Android build project from a template, you inherit the setup of the Android workspace and Manifest, which isn't maybe set up for how your app is supposed to work: and thus you should *always* double-check the host configuration/setup as a last-step when making the template work for a build for your App.  If you need Landscape orientation, don't assume that the MOAI host for Android is set up for that; same is true for iOS, and all other host build projects that typically go into making a cross-platform release.<br /><br />MOAI runs under the constraints of the Host, in a little GL ES window.  The orientation and physical configuration of the device is done in the Host level, MOAI then just plays along.  If all looks good in your MOAI code, but yet you're still getting dizzy results, head into the Host project and double-check, nay triple-check, all your expectations of behaviour.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Sep 15, 2012 2:59 pm</strong></div>
+				<div class="author">by <strong>rhetorical</strong></div>
+				<div class="content">Thanks ibisum that was very helpful. I managed to rotate the app into portrait mode, but it is still downscaled and in now hugging the bottom left corner. I now understand that the issue is within the Manifest. Could you post an appropriate Android Manifest to learn from? Thanks!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Sep 15, 2012 3:39 pm</strong></div>
+				<div class="author">by <strong>rhetorical</strong></div>
+				<div class="content">I just figured out what is going on...my veiwport size was set too small. Is there a function or variable that holds width and height of the actual device. I have a feeling that if I put a 480x800 viewport on a iPod Touch that it will not scale. <br /><br />The manifest would still be good. In Eclipse, I am getting a lot of flags thrown about the order of the Manifest and cannot build until I fix it, but in the terminal it builds and runs just fine.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to build an Android APK , step-by-step</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Sep 16, 2012 9:44 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Have a very deep look at MOAIEnvironment, it is what your app should be checking out first of all to find out what it is running on, what other constraints you might like to know about, and so on .. <br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=9&amp;t=483&amp;start=60&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">-- get MOAI's settings</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">screen_width = nil or MOAIEnvironment.horizontalResolution</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">screen_height = nil or MOAIEnvironment.verticalResolution</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />There are many other things in MOAIEnvironment you'll probably want to know about, such as device features and so on, so worth digging deeper.  Also, beware: it had some refactor'ing that didn't make its way to samples, fields have been changed, so use the docs, bruce .. but also check the code.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>4</strong> of <strong>5</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

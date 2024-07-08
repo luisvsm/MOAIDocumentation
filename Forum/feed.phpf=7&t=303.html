@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=303&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-12-30T18:12:21+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=303&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-30T18:12:21+00:00</updated>
+<published>2011-12-30T18:12:21+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1514#p1514</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1514#p1514"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1514#p1514"><![CDATA[
+It's just a multi-level grid, nothing fancy. You have to set the number of grid levels and cell sizes yourself. You can use it to model a quad tree or (if it makes more sense for your game) a two- or three- level coarse/fine grid setup.<br /><br />Props have three kinds of dimensionality for the purpose of placement in the partition: empty, bounded and global. Empty is used for props that scale down to 0 or have uninitialized rects. Bounded is for props with normal rectangles and global is for props that should be returned for every query - things like tile maps with wrapping turned on.<br /><br />One quirk of our implementation is that each grid level rolls over at the edges. This means you don't have to worry about going off the edge of the partition, but you can wind up with distant objects stacked on top of each other in the same cell. These objects will turn up when walking the partition but get culled out by the broad phase check.<br /><br />FWIW, we wound up never using anything but the default 'one big list' partition for Wolf Toss... unless you have thousands of objects and are doing lots of spatial queries you probably don't need to worry much about it.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Fri Dec 30, 2011 6:12 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-30T16:46:31+00:00</updated>
+<published>2011-12-30T16:46:31+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1513#p1513</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1513#p1513"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1513#p1513"><![CDATA[
+<strong>Mervill said: </strong><br /><blockquote><br />As for what a partition does, I defer to the documentation: Class for optimizing spatial queries against sets of primitives<br /><br />Could use a more straightforward name though, or even better: integration into the layer class. (I.E. layer:propForPoint(x,y) )<br /><br /></blockquote><br />So it's a <a href="http://en.wikipedia.org/wiki/Quadtree" target="_blank">quad tree</a>?  I'm not understanding what it does more then match x,y to all objects...?  I need to investigate the code.  I feel I should have figured out what it does by just looking at it, and yet I don't. <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-embarassed.gif" alt="Embarassed" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Fri Dec 30, 2011 4:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mervills.email]]></name></author>
+<updated>2011-12-28T22:42:16+00:00</updated>
+<published>2011-12-28T22:42:16+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1480#p1480</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1480#p1480"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1480#p1480"><![CDATA[
+Of course.<br /><br />I just ripped that code out of the docs for a quick test. XD<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=344">mervills.email</a> — Wed Dec 28, 2011 10:42 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-28T22:36:42+00:00</updated>
+<published>2011-12-28T22:36:42+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1479#p1479</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1479#p1479"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1479#p1479"><![CDATA[
+Cool, perhaps MOAIThread.blockOnAction( action ) instead of "while action:isBusy () do coroutine:yield () end"<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Wed Dec 28, 2011 10:36 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mervills.email]]></name></author>
+<updated>2011-12-28T22:33:41+00:00</updated>
+<published>2011-12-28T22:33:41+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1478#p1478</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1478#p1478"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1478#p1478"><![CDATA[
+Here is what the code looks like now: <a href="http://pastebin.com/7cit78EZ" target="_blank">http://pastebin.com/7cit78EZ</a><br /><br /><br /><br />As for what a partition does, I defer to the documentation: Class for optimizing spatial queries against sets of primitives<br /><br /><br /><br />Could use a more straightforward name though, or even better: integration into the layer class. (I.E. layer:propForPoint(x,y) )<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=344">mervills.email</a> — Wed Dec 28, 2011 10:33 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mervills.email]]></name></author>
+<updated>2011-12-28T22:19:43+00:00</updated>
+<published>2011-12-28T22:19:43+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1477#p1477</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1477#p1477"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1477#p1477"><![CDATA[
+Your original post about blocking on an action did the trick, as I said in the pastebin file, inserting a prop onto the layer forces partition creation.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=344">mervills.email</a> — Wed Dec 28, 2011 10:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-28T22:03:46+00:00</updated>
+<published>2011-12-28T22:03:46+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1476#p1476</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1476#p1476"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1476#p1476"><![CDATA[
+Nice job pastebin'ing.  Helps us all help each other.<br /><br />You have to create the partition:<br /><br /><blockquote><br /><br />partition = MOAIPartition.new ()<br />layer:setPartition ( partition )<br /><br /></blockquote><br />On the rough chance it is not enough, then the simulation has to do its step; to prove, could try blocking on an action before propForPoint.<br /><br />BTW, I actually don't even know what the partition does/is.  But I do know I need it to read touches/clicks.  I've been able to interchange partitions and layers, but now I only use it for propForPoint. <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Wed Dec 28, 2011 10:03 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mervills.email]]></name></author>
+<updated>2011-12-28T21:59:56+00:00</updated>
+<published>2011-12-28T21:59:56+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1474#p1474</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1474#p1474"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1474#p1474"><![CDATA[
+While we are on this subject... why does this return nil?<br /><br /><a href="http://pastebin.com/ca8KRidZ" target="_blank">http://pastebin.com/ca8KRidZ</a><br /><br />Is it the same error, or am I missing something obvious?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=344">mervills.email</a> — Wed Dec 28, 2011 9:59 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-28T21:54:16+00:00</updated>
+<published>2011-12-28T21:54:16+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1472#p1472</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1472#p1472"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1472#p1472"><![CDATA[
+Bah... found the mistake. Just a dumb regression on my part. Fixed now. Will be in the next release. Or, if you are building from source, the fix was just pushed up to moai-dev/integration, MOAIPartitionResultBuffer.cpp lines 161-165.<br /><br />As always, thanks for your patience and for reporting this stuff.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Dec 28, 2011 9:54 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-28T21:30:01+00:00</updated>
+<published>2011-12-28T21:30:01+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1470#p1470</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1470#p1470"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1470#p1470"><![CDATA[
+Excellent, thanks. I ran your script and saw the repro. Will see what's going on and get you a fix ASAP.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Dec 28, 2011 9:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-28T19:20:32+00:00</updated>
+<published>2011-12-28T19:20:32+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1464#p1464</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1464#p1464"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1464#p1464"><![CDATA[
+<blockquote><br />when all 5 images were stacked it crashes, 3 of 3, also the picking fails when there are 4 in the stack, returns a double entry.<br /><br /></blockquote><br /><img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-surprised.gif" alt="Surprised" /> ??<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Wed Dec 28, 2011 7:20 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[lledwichau]]></name></author>
+<updated>2011-12-28T19:14:26+00:00</updated>
+<published>2011-12-28T19:14:26+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1463#p1463</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1463#p1463"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1463#p1463"><![CDATA[
+So I did something similar.  I modified the Pick sample and proved that the call works, it returns the list of props under the cursor.  Note that when all 5 images were stacked it crashes, 3 of 3, also the picking fails when there are 4 in the stack, returns a double entry.<br /><br /><br /><br />I just have to figure out where my code deviates, however given the above crash, I might have to look into manually performing the pick.<br /><br /><br /><br />Below is the edited callback function for the crash. To repro just drag all the images on top of each other and crash.<br /><br /><br /><br />function clickCallback ( down )<br />   <br />    if down then<br />       <br />        pick = partition:propForPoint ( mouseX, mouseY )<br />       <br />        pickList = partition:propListForPoint  ( mouseX, mouseY )<br />        for pickKey, pickValue in pairs ( pickList ) do<br />       <br />            print ( "Key: " .. pickKey .. ", Value: " .. pickValue.name )<br />        end<br />       <br />        if pick then<br />            print ( pick.name )<br />            pick:setPriority ( priority )<br />            priority = priority + 1<br />            pick:moveScl ( 0.25, 0.25, 0.125, MOAIEaseType.EASE_IN )<br />        end<br />    else<br />        if pick then<br />            pick:moveScl ( -0.25, -0.25, 0.125, MOAIEaseType.EASE_IN )<br />            pick = nil<br />        end<br />    end<br />end<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=354">lledwichau</a> — Wed Dec 28, 2011 7:14 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-28T19:02:21+00:00</updated>
+<published>2011-12-28T19:02:21+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1462#p1462</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1462#p1462"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1462#p1462"><![CDATA[
+In the distant past, I too was getting unexpected results.  I assumed the sorted version would fix it, but before trying it, I re-organized my props so that all the buttons were on top.  Ultimately, I, too, will need to be able to click on props underneath other props reliably.<br /><br />I hope you will consider creating a sample with the issue in <a href="http://pastebin.com/" target="_blank">pastebin</a>, so we can all try/fix it. <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Wed Dec 28, 2011 7:02 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[lledwichau]]></name></author>
+<updated>2011-12-28T18:56:32+00:00</updated>
+<published>2011-12-28T18:56:32+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1461#p1461</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1461#p1461"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1461#p1461"><![CDATA[
+no, it returns the same seemingly random list.<br /><br /><br /><br />I searched the forums a little more deeply and found a few posts about Partition:reserveLayer but the results of that were even worse.<br /><br /><br /><br />Can anyone confirm that these functions perform as indicated, they return a list of all props under the current position?<br /><br /><br /><br />Alternatively is anything else needed to setup layer/viewport/partition?<br /><br /><br /><br />Code Snippet:<br /><br /><br /><br />viewport = MOAIViewport.new ()<br />viewport:setSize ( SCREEN_WIDTH, SCREEN_HEIGHT )<br />viewport:setScale ( SCREEN_UNITS_X, SCREEN_UNITS_Y )<br /><br />uiLayer = MOAILayer2D.new ()<br />uiLayer:setViewport ( viewport )<br />MOAISim.pushRenderPass ( uiLayer )<br /><br /><br /><br />screenUIPartition = MOAIPartition.new ()<br /><br />uiLayer:setPartition ( screenUIPartition )<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=354">lledwichau</a> — Wed Dec 28, 2011 6:56 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-28T18:11:38+00:00</updated>
+<published>2011-12-28T18:11:38+00:00</published>
+<id>/forums/viewtopic.php?t=303&amp;p=1459#p1459</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=303&amp;p=1459#p1459"/>
+<title type="html"><![CDATA[propListForPoint returns unexpected results]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=303&amp;p=1459#p1459"><![CDATA[
+Any luck with <a href="/docs/class_m_o_a_i_partition.html#acae225f18d88e6008556a0868632b9dd" target="_blank">sortedPropListForPoint</a> ?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Wed Dec 28, 2011 6:11 pm</p><hr />
+]]></content>
+</entry>
+</feed>

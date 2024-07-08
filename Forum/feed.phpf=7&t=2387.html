@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=2387&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-11-29T09:32:20+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=2387&amp;mode</id>
+<entry>
+<author><name><![CDATA[BacioiuC]]></name></author>
+<updated>2013-11-29T09:32:20+00:00</updated>
+<published>2013-11-29T09:32:20+00:00</published>
+<id>/forums/viewtopic.php?t=2387&amp;p=12350#p12350</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2387&amp;p=12350#p12350"/>
+<title type="html"><![CDATA[Re: Handling screen resize - setListener callback not workin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2387&amp;p=12350#p12350"><![CDATA[
+Thanks, it works.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1392">BacioiuC</a> — Fri Nov 29, 2013 9:32 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-11-29T01:02:21+00:00</updated>
+<published>2013-11-29T01:02:21+00:00</published>
+<id>/forums/viewtopic.php?t=2387&amp;p=12347#p12347</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2387&amp;p=12347#p12347"/>
+<title type="html"><![CDATA[Re: Handling screen resize - setListener callback not workin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2387&amp;p=12347#p12347"><![CDATA[
+~<br /> switch the order.<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> OnScreenResize<span style="color: #66cc66;">&#40;</span>width<span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;THIS&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;WIDTH: &quot;</span><span style="color: #66cc66;">..</span>width<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot; HEIGHT: &quot;</span><span style="color: #66cc66;">..</span>height<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot;&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIGfxDevice<span style="color: #66cc66;">.</span>setListener<span style="color: #66cc66;">&#40;</span>MOAIGfxDevice<span style="color: #66cc66;">.</span>EVENT_RESIZE<span style="color: #66cc66;">,</span> OnScreenResize <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Fri Nov 29, 2013 1:02 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[BacioiuC]]></name></author>
+<updated>2013-11-28T16:23:05+00:00</updated>
+<published>2013-11-28T16:23:05+00:00</published>
+<id>/forums/viewtopic.php?t=2387&amp;p=12345#p12345</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2387&amp;p=12345#p12345"/>
+<title type="html"><![CDATA[Handling screen resize - setListener callback not working?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2387&amp;p=12345#p12345"><![CDATA[
+I'm trying to handle the resize-ing of a MOAI Window and rescale everything based on the resize event. I tried setting a listener to the GFXDevice.EVENT_RESIZE and a callback but the callback is never triggered. Example:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIGfxDevice<span style="color: #66cc66;">.</span>setListener<span style="color: #66cc66;">&#40;</span>MOAIGfxDevice<span style="color: #66cc66;">.</span>EVENT_RESIZE<span style="color: #66cc66;">,</span> OnScreenResize <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> OnScreenResize<span style="color: #66cc66;">&#40;</span>width<span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;THIS&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;WIDTH: &quot;</span><span style="color: #66cc66;">..</span>width<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot; HEIGHT: &quot;</span><span style="color: #66cc66;">..</span>height<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot;&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />Running the standard MOAI 1.4.0p build. Any ideas what might have gone south?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1392">BacioiuC</a> — Thu Nov 28, 2013 4:23 pm</p><hr />
+]]></content>
+</entry>
+</feed>

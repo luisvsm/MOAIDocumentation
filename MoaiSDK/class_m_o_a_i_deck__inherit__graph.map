@@ -1,0 +1,8 @@
+<map id="MOAIDeck" name="MOAIDeck">
+<area shape="rect" id="node2" href="$class_m_o_a_i_draw_deck.html" title="Scriptable deck objectf for immediate mode drawing with MOAIDraw. " alt="" coords="150,5,261,32"/>
+<area shape="rect" id="node3" href="$class_m_o_a_i_mesh.html" title="Loads a texture and renders the contents of a vertex buffer. Grid drawing not supported. " alt="" coords="164,56,247,83"/>
+<area shape="rect" id="node4" href="$class_m_o_a_i_meta_tile_deck2_d.html" title="This deck renders &#39;metatiles&#39; which are sampled from a tile map. The tile map is specified by the att..." alt="" coords="133,107,277,133"/>
+<area shape="rect" id="node5" href="$class_m_o_a_i_sprite_deck2_d.html" title="Deck of lists of textured quads. UV and model space quads are specified independently and associated ..." alt="" coords="141,157,270,184"/>
+<area shape="rect" id="node6" href="$class_m_o_a_i_stretch_patch2_d.html" title="Moai implementation of a 9&#45;patch. Textured quad with any number of stretchable and non&#45;stretchable &#39;b..." alt="" coords="135,208,275,235"/>
+<area shape="rect" id="node7" href="$class_m_o_a_i_tile_deck2_d.html" title="Subdivides a single texture into uniform tiles enumerated from the texture&#39;s left top to right bottom..." alt="" coords="147,259,263,285"/>
+</map>

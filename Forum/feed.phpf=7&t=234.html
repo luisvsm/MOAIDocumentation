@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=234&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-12-04T20:24:46+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=234&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-04T20:24:46+00:00</updated>
+<published>2011-12-04T20:24:46+00:00</published>
+<id>/forums/viewtopic.php?t=234&amp;p=1112#p1112</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=234&amp;p=1112#p1112"/>
+<title type="html"><![CDATA[Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=234&amp;p=1112#p1112"><![CDATA[
+That's really interesting. We'll look at it on our end tomorrow. Thanks for the info.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Sun Dec 04, 2011 8:24 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[norman.lahme]]></name></author>
+<updated>2011-12-04T09:37:22+00:00</updated>
+<published>2011-12-04T09:37:22+00:00</published>
+<id>/forums/viewtopic.php?t=234&amp;p=1103#p1103</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=234&amp;p=1103#p1103"/>
+<title type="html"><![CDATA[Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=234&amp;p=1103#p1103"><![CDATA[
+ok, this seems to be related to the simulator only. On the device (tested in on an iPad with iOS 5.0.1) it runs smoothly.<br /><br /><br /><br />Conclusion:<br /><br />- For development using the simulator I use the github-version with my little patch, i. e. line 107 of AKU-iphone.mm changed to<br /><br />    MOAIEnvironment::Get ().SetCountryCode ([@"US" UTF8String]);<br /><br />- For testing on the device I can also use the Moai SDK download (in contrast to the github source) after adding the Twitter.framework.<br /><br /><br /><br />One question to the community: Has anyone else experienced this problem with the simulator for iOS 5.0?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=322">norman.lahme</a> — Sun Dec 04, 2011 9:37 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[norman.lahme]]></name></author>
+<updated>2011-12-04T07:19:35+00:00</updated>
+<published>2011-12-04T07:19:35+00:00</published>
+<id>/forums/viewtopic.php?t=234&amp;p=1101#p1101</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=234&amp;p=1101#p1101"/>
+<title type="html"><![CDATA[Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=234&amp;p=1101#p1101"><![CDATA[
+quite interesting:<br /><br />[[ NSLocale currentLocale ] objectForKey: NSLocaleIdentifier ]<br /><br />yields "en" on iOS 5. The constant NSLocaleLanguageCode works as well, but not NSLocaleCountryCode.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=322">norman.lahme</a> — Sun Dec 04, 2011 7:19 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[norman.lahme]]></name></author>
+<updated>2011-12-04T07:06:27+00:00</updated>
+<published>2011-12-04T07:06:27+00:00</published>
+<id>/forums/viewtopic.php?t=234&amp;p=1100#p1100</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=234&amp;p=1100#p1100"/>
+<title type="html"><![CDATA[Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=234&amp;p=1100#p1100"><![CDATA[
+Changing line 107 of AKU-iphone.mm to<br /><br />  MOAIEnvironment::Get ().SetCountryCode ([@"US" UTF8String]);<br /><br />results in a runnable version. Let's see why <br /><br />  [[ NSLocale currentLocale ] objectForKey: NSLocaleCountryCode ]<br /><br />yields null on iOS 5.0<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=322">norman.lahme</a> — Sun Dec 04, 2011 7:06 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[norman.lahme]]></name></author>
+<updated>2011-12-04T06:54:08+00:00</updated>
+<published>2011-12-04T06:54:08+00:00</published>
+<id>/forums/viewtopic.php?t=234&amp;p=1099#p1099</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=234&amp;p=1099#p1099"/>
+<title type="html"><![CDATA[Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=234&amp;p=1099#p1099"><![CDATA[
+The MoaiSample project works fine on iOS 4.3, but does terminate with an exception on iOS 5.0 when running on iPhone 5.0 simulator.<br /><br /><br /><br />It seems that line 107 of AKU-iphone.mm causes the problem:<br /><br />  MOAIEnvironment::Get ().SetCountryCode ( [[[ NSLocale currentLocale ] objectForKey: NSLocaleCountryCode ] UTF8String ]);<br /><br />The reason is that the inner expression<br /><br />  [[ NSLocale currentLocale ] objectForKey: NSLocaleCountryCode ]<br /><br />yields null.<br /><br />Interestingly enough on iOS 4.3 it yields "US" (I am in Germany but left the simulator settings to US).<br /><br /><br /><br />I am using Xcode 4.2 (build 4D199). I tried both the Moai SDK download and compiling the source from github.<br /><br /><br /><br />Anyone experienced the same issue?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=322">norman.lahme</a> — Sun Dec 04, 2011 6:54 am</p><hr />
+]]></content>
+</entry>
+</feed>

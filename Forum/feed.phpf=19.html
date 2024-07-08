@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=19&amp;t&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2016-05-30T10:26:33+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=19&amp;t&amp;mode</id>
+<entry>
+<author><name><![CDATA[premieritzone]]></name></author>
+<updated>2016-05-30T10:26:33+00:00</updated>
+<published>2016-05-30T10:26:33+00:00</published>
+<id>/forums/viewtopic.php?t=2974&amp;p=18051#p18051</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2974&amp;p=18051#p18051"/>
+<title type="html"><![CDATA[Windows • Re: New Account Registrations]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=2974&amp;p=18051#p18051"><![CDATA[
+<blockquote><div><cite>naturally wrote:</cite><br />Yes good idea ezra.<br /><br />Any accounts that have 0 posts have been deleted, hope that doesn't cause a problem for anyone.<br /></div></blockquote><br /><br />if anyone register only for reading the forum question ? so what you'll do with the account<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2275">premieritzone</a> — Mon May 30, 2016 10:26 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-01-16T22:37:45+00:00</updated>
+<published>2016-01-16T22:37:45+00:00</published>
+<id>/forums/viewtopic.php?t=3240&amp;p=17842#p17842</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3240&amp;p=17842#p17842"/>
+<title type="html"><![CDATA[Windows • Re: SDL Haptic Gamepad Support in Windows?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3240&amp;p=17842#p17842"><![CDATA[
+Solved by upgrading to SDL 2.0.4:<br /><br /><!-- l --><a class="postlink-local" href="upgrading-to-sdl-2-0-4-t3241/index.html">upgrading-to-sdl-2-0-4-t3241/</a><!-- l --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Sat Jan 16, 2016 10:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-01-16T02:16:39+00:00</updated>
+<published>2016-01-16T02:16:39+00:00</published>
+<id>/forums/viewtopic.php?t=3240&amp;p=17839#p17839</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3240&amp;p=17839#p17839"/>
+<title type="html"><![CDATA[Windows • Re: SDL Haptic Gamepad Support in Windows?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3240&amp;p=17839#p17839"><![CDATA[
+Hmmmmm..............<br /><br /><!-- m --><a class="postlink" href="https://hg.libsdl.org/SDL/rev/3d08cb641cd5">https://hg.libsdl.org/SDL/rev/3d08cb641cd5</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Sat Jan 16, 2016 2:16 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-01-15T23:47:18+00:00</updated>
+<published>2016-01-15T23:47:18+00:00</published>
+<id>/forums/viewtopic.php?t=3240&amp;p=17838#p17838</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3240&amp;p=17838#p17838"/>
+<title type="html"><![CDATA[Windows • Re: SDL Haptic Gamepad Support in Windows?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3240&amp;p=17838#p17838"><![CDATA[
+Ok, so far (on Windows 8.1), download and install the Windows SDK, then in &quot;bin\create-projects-win.bat&quot; add these lines appropriately:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">SET DXSDK_DIR=C:\Program Files\Windows Kits\<span style="">8.1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">DDIRECTX=TRUE</div></li><br /></ol></code></dd></dl><br /><br />Still compiling... <br /><br />bad news, this version of DirectX 11 doesn't have &quot;dxerr.lib&quot;.  So, now to retry with an older version, DirectX 9...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Fri Jan 15, 2016 11:47 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-01-15T19:34:06+00:00</updated>
+<published>2016-01-15T19:34:06+00:00</published>
+<id>/forums/viewtopic.php?t=3240&amp;p=17837#p17837</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3240&amp;p=17837#p17837"/>
+<title type="html"><![CDATA[Windows • Re: SDL Haptic Gamepad Support in Windows?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3240&amp;p=17837#p17837"><![CDATA[
+Looks like it might be dependent on &quot;HAVE_DINPUT_H&quot; which is dependent on &quot;if(DIRECTX)&quot; which is OFF.<br /><br />How do you enable DIRECTX?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Fri Jan 15, 2016 7:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-01-15T18:57:44+00:00</updated>
+<published>2016-01-15T18:57:44+00:00</published>
+<id>/forums/viewtopic.php?t=3240&amp;p=17835#p17835</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3240&amp;p=17835#p17835"/>
+<title type="html"><![CDATA[Windows • SDL Haptic Gamepad Support in Windows?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3240&amp;p=17835#p17835"><![CDATA[
+Been having a problem getting SDL MOAI host to recognize the Steam Controller.<br /><br />It comes back with an error message: &quot;SDL not built with haptic (force feedback) support&quot;<br /><br />There is no problem on Linux.  I tried a bunch of ways to make sure Haptic is added, but no luck if(SDL_InitSubSystem(SDL_INIT_HAPTIC)==-1) fails.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Fri Jan 15, 2016 6:57 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Kyle873]]></name></author>
+<updated>2016-01-04T01:53:08+00:00</updated>
+<published>2016-01-04T01:53:08+00:00</published>
+<id>/forums/viewtopic.php?t=3236&amp;p=17822#p17822</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3236&amp;p=17822#p17822"/>
+<title type="html"><![CDATA[Windows • Compiling current develop branch with VS2015]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3236&amp;p=17822#p17822"><![CDATA[
+Hey all.<br /><br />So I came back to Moai for a project I wanted to work on, but I see the last (official?) binary seems to be from last January or so for 1.6. I went and looked on Github and noticed quite a lot of changes since then, so I figured I'd build the latest develop branch and work from there. However, I've run into a weird problem doing so that I could use some help with.<br /><br />I edited the bin\build-windows.bat to add a vs2015 argument and the Visual Studio 14 cmake target so I could just let it build with that. However, when it starts to build, it starts to toss a ton of redefinition errors which I don't know how to fix or what is causing them in the first place. Here's a complete <a href="http://puu.sh/miHcW/b78e9f848e.txt" class="postlink">build log</a> showing the issue.<br /><br />Just as a test, I switched over to the 1.6-stable branch and tried building that, and I get the exact same redefinition issues which leads me to believe this is some sort of environment setup issue or something to do with VS2015.<br /><br />I don't know if VS2015 is even officially supported for building or if anybody has successfully built develop using it, but I could use some help here because I really don't want to install VS2013 again just to build Moai. I'm already tight on HDD space as it is and I don't want a second copy of VS clogging it up even more.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1305">Kyle873</a> — Mon Jan 04, 2016 1:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[robertvo]]></name></author>
+<updated>2015-10-27T10:44:48+00:00</updated>
+<published>2015-10-27T10:44:48+00:00</published>
+<id>/forums/viewtopic.php?t=183&amp;p=17743#p17743</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=183&amp;p=17743#p17743"/>
+<title type="html"><![CDATA[Windows • Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=183&amp;p=17743#p17743"><![CDATA[
+I really should have found Long Path Tool myself. Great One... Its very helpful people to resolve this problem!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2212">robertvo</a> — Tue Oct 27, 2015 10:44 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2015-09-28T14:44:00+00:00</updated>
+<published>2015-09-28T14:44:00+00:00</published>
+<id>/forums/viewtopic.php?t=3211&amp;p=17642#p17642</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3211&amp;p=17642#p17642"/>
+<title type="html"><![CDATA[Windows • Windows Bridge for iOS/Android]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3211&amp;p=17642#p17642"><![CDATA[
+Anyone tried messing about with this? My friend managed to start my APK on his Windows Phone, but it wasnt totally working. But there is also possible to open a xcode project in visual studio and build an app and stuff?? Apparently there should be support for opengl and stuff built in. Sounds a bit too good to be true! <br /><br /><!-- m --><a class="postlink" href="https://dev.windows.com/en-us/bridges/ios">https://dev.windows.com/en-us/bridges/ios</a><!-- m --><br /><!-- m --><a class="postlink" href="https://dev.windows.com/en-us/bridges/android">https://dev.windows.com/en-us/bridges/android</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Sep 28, 2015 2:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2015-09-02T19:26:21+00:00</updated>
+<published>2015-09-02T19:26:21+00:00</published>
+<id>/forums/viewtopic.php?t=3201&amp;p=17579#p17579</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3201&amp;p=17579#p17579"/>
+<title type="html"><![CDATA[Windows • Re: Here is Practical Explanation about Next Life,]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3201&amp;p=17579#p17579"><![CDATA[
+~<br />F-this, its a horrible game. it feels like a low budge shovel-ware spam app.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Wed Sep 02, 2015 7:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2015-09-02T11:21:27+00:00</updated>
+<published>2015-09-02T11:21:27+00:00</published>
+<id>/forums/viewtopic.php?t=3201&amp;p=17567#p17567</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3201&amp;p=17567#p17567"/>
+<title type="html"><![CDATA[Windows • Re: Here is Practical Explanation about Next Life,]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3201&amp;p=17567#p17567"><![CDATA[
+Yeah, I'll wait for an update too..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Sep 02, 2015 11:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-08-20T07:40:10+00:00</updated>
+<published>2015-08-20T07:40:10+00:00</published>
+<id>/forums/viewtopic.php?t=3201&amp;p=17550#p17550</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3201&amp;p=17550#p17550"/>
+<title type="html"><![CDATA[Windows • Re: Here is Practical Explanation about Next Life,]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3201&amp;p=17550#p17550"><![CDATA[
+I tried running this game but it was a little boring. Crashy too<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Thu Aug 20, 2015 7:40 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[etai]]></name></author>
+<updated>2015-08-20T06:10:06+00:00</updated>
+<published>2015-08-20T06:10:06+00:00</published>
+<id>/forums/viewtopic.php?t=3201&amp;p=17549#p17549</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3201&amp;p=17549#p17549"/>
+<title type="html"><![CDATA[Windows • Here is Practical Explanation about Next Life,]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3201&amp;p=17549#p17549"><![CDATA[
+Practical Explanation ( For Example ) :- `1st of all can you tell me every single seconds detail from that time when you born ?? ( i need every seconds detail ?? that what- what you have thought and done on every single second )<br /><br />can you tell me every single detail of your `1 cheapest Minute Or your whole hour, day, week, month, year or your whole life ??<br /><br />if you are not able to tell me about this life then what proof do you have that you didn't forget your past ? and that you will not forget this present life in the future ?<br /><br />that is Fact that Supreme Lord Krishna exists but we posses no such intelligence to understand him.<br />there is also next life. and i already proved you that no scientist, no politician, no so-called intelligent man in this world is able to understand this Truth. cuz they are imagining. and you cannot imagine what is god, who is god, what is after life etc.<br />_______<br />for example :Your father existed before your birth. you cannot say that before your birth your father don,t exists.<br /><br />So you have to ask from mother, &quot;Who is my father?&quot; And if she says, &quot;This gentleman is your father,&quot; then it is all right. It is easy.<br />Otherwise, if you makes research, &quot;Who is my father?&quot; go on searching for life; you'll never find your father.<br /><br />( now maybe...maybe you will say that i will search my father from D.N.A, or i will prove it by photo's, or many other thing's which i will get from my mother and prove it that who is my Real father.{ So you have to believe the authority. who is that authority ? she is your mother. you cannot claim of any photo's, D.N.A or many other things without authority ( or ur mother ).<br /><br />if you will show D.N.A, photo's, and many other proofs from other women then your mother. then what is use of those proofs ??} )<br /><br />same you have to follow real authority. &quot;Whatever You have spoken, I accept it,&quot; Then there is no difficulty. And You are accepted by Devala, Narada, Vyasa, and You are speaking Yourself, and later on, all the acaryas have accepted. Then I'll follow.<br />I'll have to follow great personalities. The same reason mother says, this gentleman is my father. That's all. Finish business. Where is the necessity of making research? All authorities accept Krsna, the Supreme Personality of Godhead. You accept it; then your searching after God is finished.<br /><br />Why should you waste your time?<br />_______<br />all that is you need is to hear from authority ( same like mother ). and i heard this truth from authority &quot; Srila Prabhupada &quot; he is my spiritual master.<br />im not talking these all things from my own.<br />___________<br /><br />in this world no `1 can be Peace full. this is all along Fact.<br /><br />cuz we all are suffering in this world 4 Problems which are Disease, Old age, Death, and Birth after Birth.<br /><br />tell me are you really happy ?? you can,t be happy if you will ignore these 4 main problem. then still you will be Forced by Nature.<br />___________________<br /><br />if you really want to be happy then follow these 6 Things which are No illicit sex, No gambling, No drugs ( No tea &amp; coffee ), No meat-eating ( No onion &amp; garlic's )<br /><br />5th thing is whatever you eat `1st offer it to Supreme Lord Krishna. ( if you know it what is Guru parama-para then offer them food not direct Supreme Lord Krishna )<br /><br />and 6th &quot; Main Thing &quot; is you have to Chant &quot; hare krishna hare krishna krishna krishna hare hare hare rama hare rama rama rama hare hare &quot;.<br />_______________________________<br />If your not able to follow these 4 things no illicit sex, no gambling, no drugs, no meat-eating then don,t worry but chanting of this holy name ( Hare Krishna Maha-Mantra ) is very-very and very important.<br /><br />Chant &quot; hare krishna hare krishna krishna krishna hare hare hare rama hare rama rama rama hare hare &quot; and be happy.<br /><br />if you still don,t believe on me then chant any other name for 5 Min's and chant this holy name for 5 Min's and you will see effect. i promise you it works And chanting at least 16 rounds ( each round of 108 beads ) of the Hare Krishna maha-mantra daily.<br />____________<br />Here is no Question of Holy Books quotes, Personal Experiences, Faith or Belief. i accept that Sometimes Faith is also Blind. Here is already Practical explanation which already proved that every`1 else in this world is nothing more then Busy Foolish and totally idiot.<br />_________________________<br />Source(s):<br />every `1 is already Blind in this world and if you will follow another Blind then you both will fall in hole. so try to follow that person who have Spiritual Eyes who can Guide you on Actual Right Path. ( my Authority &amp; Guide is my Spiritual Master &quot; Srila Prabhupada &quot; )<br />_____________<br />if you want to see Actual Purpose of human life then see this link : ( <!-- w --><a class="postlink" href="http://www.asitis.com">www.asitis.com</a><!-- w --> {Bookmark it })<br />read it complete. ( i promise only readers of this book that they { he/she } will get every single answer which they want to know about why im in this material world, who im, what will happen after this life, what is best thing which will make Human Life Perfect, and what is perfection of Human Life. ) purpose of human life is not to live like animal cuz every`1 at present time doing 4 thing which are sleeping, eating, sex &amp; fear. purpose of human life is to become freed from Birth after birth, Old Age, Disease, and Death.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2187">etai</a> — Thu Aug 20, 2015 6:10 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-08-10T13:38:29+00:00</updated>
+<published>2015-08-10T13:38:29+00:00</published>
+<id>/forums/viewtopic.php?t=3194&amp;p=17507#p17507</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3194&amp;p=17507#p17507"/>
+<title type="html"><![CDATA[Windows • Re: Cross Platform from Windows 7 x64?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3194&amp;p=17507#p17507"><![CDATA[
+There are also prebuilt hosts, if MOAI has all the features you need, then you don't have to build the hosts yourself - which makes things a lot easier.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Mon Aug 10, 2015 1:38 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Vavius]]></name></author>
+<updated>2015-08-09T19:34:54+00:00</updated>
+<published>2015-08-09T19:34:54+00:00</published>
+<id>/forums/viewtopic.php?t=3194&amp;p=17502#p17502</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3194&amp;p=17502#p17502"/>
+<title type="html"><![CDATA[Windows • Re: Cross Platform from Windows 7 x64?]]></title>
+
+<category term="Windows" scheme="/forums/viewforum.php?f=19" label="Windows"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3194&amp;p=17502#p17502"><![CDATA[
+<blockquote><div><cite>Rob0 wrote:</cite><br />Splash screen required<br /></div></blockquote><br />Alternatively, a note on the credits screen. <br /><br /><blockquote><div><cite>Rob0 wrote:</cite><br />Compiles to each format through what programs<br /></div></blockquote><br />With native tools for each platform: <br /><ul><li>Android sdk &amp; ndk toolchain</li><li>Xcode for iOS. Requires Mac OS X</li><li>Visual Studio for windows 8 mobile</li></ul><br />You should install appropriate tools to build the app. MOAI is not a &quot;one button to build all&quot; solution like some other closed source SDKs. Sometimes you'll have to dig into native code. <br /><br />MOAI is open source, there is no hidden analytics, ads, enforced splash screens. Any native glitch/problem can be fixed with some effort. Any new native integration can be added. Learning curve is steep, but it definitely pays off later. <br /><br /><blockquote><div><cite>Rob0 wrote:</cite><br />Is your simulator also the compiler? Is the compiled code indecipherable by common means?<br /></div></blockquote><br />There are different options, it's all up to you. You can leave your plain text Lua scripts in the app bundle, or compile them into lua bytecode. I prefer using squish (it makes single file from all lua sources) and embedding it in C++ header which is compiled into the binary.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1427">Vavius</a> — Sun Aug 09, 2015 7:34 pm</p><hr />
+]]></content>
+</entry>
+</feed>

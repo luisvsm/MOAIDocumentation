@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when?</h2>
+		<p><a href="moaikeyboardios-but-no-moaikeyboardandroid-so-when-t795/page60.html">/forums/moaikeyboardios-but-no-moaikeyboardandroid-so-when-t795/page60.html</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>4</strong> of <strong>4</strong></div>
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jan 28, 2013 9:53 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Unless you plan to complete it this week, probably. We need it ASAP now, so its moved to the top of my priority. I'm sure I'll have lots of questions for you though.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jan 29, 2013 8:46 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I'd really rather continue working on adding Camera support this week, so please .. have at it!<br /><br />You can see my work here, in case you haven't already:  <!-- m --><a class="postlink" href="https://github.com/seclorum/moai-dev">https://github.com/seclorum/moai-dev</a><!-- m --><br /><br />Specifically, I modified the Android template sources to include the relevant keyboard handling code, and as well added a TextView in the Android layout which sits outside the view of the main window - this is key (pun intended) because it is the TextView that gets the IME event messages and passes them through to the Lua VM side of things .. you should pay close attention to the way that this view is instantiated and set to be outside the main view, with Margin settings.<br /><br />With regards to my code, there were some changes in the Android host done by Zipline after I had already finished this work, specifically with regards to locking - so you can't just copy/paste my code from the Android host, alas - but it should be enough to give you a full idea of what it takes to make it work.  Also I suggest that you should use the moaigui framework for testing, as this is the best way to see whats going on so far .. at least, its what I used while adding MOAIKeyboardAndroid support.<br /><br />Then, on the flipside, there is the MOAIKeyboardAndroid.cpp/.h code, which by now should be very familiar to you - this is something you probably can just copy from my fork.<br /><br />Anyway, looking forward to the next MOAI release!  <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" />  If you need help or want some testing, just say the word ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Feb 15, 2013 6:08 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">So, I got pulled away from this for a bit but finally got back to it yesterday.<br /><br />I pushed a first pass here <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/tree/feature/android_keyboard">https://github.com/moai/moai-dev/tree/f ... d_keyboard</a><!-- m -->.<br /><br />It functions the same way as ibisum's implementation as far as I can tell, however I'd like to clean it up a bit more and add some more functions to more closely match the iOS version before I push this to master. Any input is welcome.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Feb 16, 2013 12:30 am</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Some more refactors done, going to merge it in now.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Feb 19, 2013 4:17 pm</strong></div>
+				<div class="author">by <strong>orkj</strong></div>
+				<div class="content">Hi. Very cool that this is getting merged in. Any idea when a new SDK build will be out? I guess there is more people than me wanting this, and I feel more comfortable working with that than building moai-dev myself and being cutting edge <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 20, 2013 12:36 am</strong></div>
+				<div class="author">by <strong>franciscotufro</strong></div>
+				<div class="content">The work from adam has been merged a couple of days ago.<br />Would you like to try it out and comment about it???<br /><br />Cheers!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 20, 2013 8:29 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I'll give it a try .. is it merged in master or somewhere else, by the way?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Feb 21, 2013 1:11 am</strong></div>
+				<div class="author">by <strong>franciscotufro</strong></div>
+				<div class="content">Yep, master. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Feb 25, 2013 10:50 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">More updates on github, Fixed some more bugs and added some improvements. We're still testing them right now, so grabbing it is not for the faint of heart.<br /><br />If anyone has input on expected behavior when the keyboard partially covers the screen ( instead of full screen ) I'd love to hear it. Right now I have a EditText pop down from the top so the users can see what they're typing.<br /><br />It'll be shipping ready in a couple weeks.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Feb 26, 2013 7:42 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I don't think I like the idea of having the EditText pop down happen .. if you're using MOAIKEyboardAndroid with moaigui, for example, this interferes with the design layout quite significantly.  Maybe having it attached to the top of the Keyboard view would be cleaner?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Feb 26, 2013 6:53 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Thats a good point, I'll look into that when I get a chance</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 23, 2013 4:02 am</strong></div>
+				<div class="author">by <strong>woyaru</strong></div>
+				<div class="content">Hello, has occured any progress with MOAIKeyboardAndroid?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 23, 2013 9:18 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />Moai android keyboard is completed in the latest Moai branches(dev &amp; master). It also has a working version in Moai release 1.4p0.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Sep 23, 2013 4:19 pm</strong></div>
+				<div class="author">by <strong>woyaru</strong></div>
+				<div class="content">Thanks a million for your answer. I have been reading everywhere that it is still missing functionality.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAIKeyboardIOS .. but no MOAIKeyboardAndroid.  So: when</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Sep 24, 2013 6:09 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I want to confirm: in 1.4p0, Android keyboard works fine.  Also, iOS keyboard.  (and remember kids: always check the dates on posts on the Internet .. a lot of stuff gets old quick!)</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC - 8 hours [ <abbr title="Daylight Saving Time">DST</abbr> ]<br />Page <strong>4</strong> of <strong>4</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

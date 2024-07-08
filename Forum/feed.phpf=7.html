@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2018-03-03T10:55:49+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t&amp;mode</id>
+<entry>
+<author><name><![CDATA[Galdred]]></name></author>
+<updated>2018-03-03T10:55:49+00:00</updated>
+<published>2018-03-03T10:55:49+00:00</published>
+<id>/forums/viewtopic.php?t=2974&amp;p=18440#p18440</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2974&amp;p=18440#p18440"/>
+<title type="html"><![CDATA[Moai SDK • Re: New Account Registrations]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=2974&amp;p=18440#p18440"><![CDATA[
+Actually, bots usually post random nonsensical comments...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1454">Galdred</a> — Sat Mar 03, 2018 10:55 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2018-02-05T16:38:42+00:00</updated>
+<published>2018-02-05T16:38:42+00:00</published>
+<id>/forums/viewtopic.php?t=3382&amp;p=18432#p18432</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3382&amp;p=18432#p18432"/>
+<title type="html"><![CDATA[Moai SDK • Re: Strange text behavior with offset viewport]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3382&amp;p=18432#p18432"><![CDATA[
+Was this an Apple-specific issue?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Mon Feb 05, 2018 4:38 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[WhaleFood]]></name></author>
+<updated>2018-01-31T01:53:37+00:00</updated>
+<published>2018-01-31T01:53:37+00:00</published>
+<id>/forums/viewtopic.php?t=3382&amp;p=18430#p18430</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3382&amp;p=18430#p18430"/>
+<title type="html"><![CDATA[Moai SDK • Re: Strange text behavior with offset viewport]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3382&amp;p=18430#p18430"><![CDATA[
+Figured out a workaround.  Making the viewport way bigger than the window (I chose 2x) seems to fix the issue.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1373">WhaleFood</a> — Wed Jan 31, 2018 1:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[WhaleFood]]></name></author>
+<updated>2018-01-29T06:08:36+00:00</updated>
+<published>2018-01-29T06:08:36+00:00</published>
+<id>/forums/viewtopic.php?t=3382&amp;p=18428#p18428</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3382&amp;p=18428#p18428"/>
+<title type="html"><![CDATA[Moai SDK • Strange text behavior with offset viewport]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3382&amp;p=18428#p18428"><![CDATA[
+I'm trying to update my project to the latest community version of moai and I'm seeing some very odd behavior with textboxes.  In the following code, for some reason only the words &quot;one&quot; and &quot;two&quot; show.  I think it might have something to do with the viewport offset?<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- standard setup</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> screenWidth <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">640</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> screenHeight <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">900</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>openWindow<span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;Window&quot;</span><span style="color: #66cc66;">,</span>screenWidth<span style="color: #66cc66;">,</span>screenHeight<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> viewport <span style="color: #66cc66;">=</span> MOAIViewport<span style="color: #66cc66;">.</span>new<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">viewport<span style="color: #66cc66;">:</span>setSize<span style="color: #66cc66;">&#40;</span>screenWidth<span style="color: #66cc66;">,</span>screenHeight<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">viewport<span style="color: #66cc66;">:</span>setScale<span style="color: #66cc66;">&#40;</span>screenWidth<span style="color: #66cc66;">,</span> <span style="color: #66cc66;">-</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">*</span> screenHeight<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">viewport<span style="color: #66cc66;">:</span>setOffset<span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">-</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> layer <span style="color: #66cc66;">=</span> MOAILayer2D<span style="color: #66cc66;">.</span>new <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">layer<span style="color: #66cc66;">:</span>setViewport <span style="color: #66cc66;">&#40;</span> viewport <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>pushRenderPass <span style="color: #66cc66;">&#40;</span> layer <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- create font</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">charcodes <span style="color: #66cc66;">=</span> <span style="color: #ff6666;">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,:;!?()&amp;/-'</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">font <span style="color: #66cc66;">=</span> MOAIFont<span style="color: #66cc66;">.</span>new <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">font<span style="color: #66cc66;">:</span>loadFromTTF <span style="color: #66cc66;">&#40;</span> <span style="color: #ff6666;">'./arial-rounded.TTF'</span><span style="color: #66cc66;">,</span> charcodes<span style="color: #66cc66;">,</span> <span style="color: #cc66cc;">7.5</span><span style="color: #66cc66;">,</span> <span style="color: #cc66cc;">163</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- add text boxes</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #aa9900; font-weight: bold;">function</span> addTextbox <span style="color: #66cc66;">&#40;</span> str<span style="color: #66cc66;">,</span> left<span style="color: #66cc66;">,</span> height <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">local</span> textbox <span style="color: #66cc66;">=</span> MOAITextBox<span style="color: #66cc66;">.</span>new <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        textbox<span style="color: #66cc66;">:</span>setString <span style="color: #66cc66;">&#40;</span> str<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        textbox<span style="color: #66cc66;">:</span>setFont <span style="color: #66cc66;">&#40;</span> font <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        textbox<span style="color: #66cc66;">:</span>setTextSize <span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">7.5</span><span style="color: #66cc66;">,</span> <span style="color: #cc66cc;">163</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        textbox<span style="color: #66cc66;">:</span>setRect <span style="color: #66cc66;">&#40;</span> left<span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">,</span> screenWidth<span style="color: #66cc66;">,</span> screenHeight<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        textbox<span style="color: #66cc66;">:</span>setAlignment <span style="color: #66cc66;">&#40;</span> MOAITextBox<span style="color: #66cc66;">.</span>LEFT_JUSTIFY<span style="color: #66cc66;">,</span> MOAITextBox<span style="color: #66cc66;">.</span>TOP_JUSTIFY<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        layer<span style="color: #66cc66;">:</span>insertProp <span style="color: #66cc66;">&#40;</span> textbox <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">addTextbox <span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;one&quot;</span><span style="color: #66cc66;">,</span> screenWidth<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">6</span><span style="color: #66cc66;">,</span>screenHeight<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">6</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">addTextbox <span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;two&quot;</span><span style="color: #66cc66;">,</span> screenWidth<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">,</span> screenHeight<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">addTextbox <span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;three&quot;</span><span style="color: #66cc66;">,</span> screenWidth<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">,</span> screenHeight<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">addTextbox <span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;four&quot;</span><span style="color: #66cc66;">,</span> screenWidth<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">4</span><span style="color: #66cc66;">,</span> screenHeight<span style="color: #66cc66;">/</span><span style="color: #cc66cc;">2</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1373">WhaleFood</a> — Mon Jan 29, 2018 6:08 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[WhaleFood]]></name></author>
+<updated>2018-01-20T23:37:47+00:00</updated>
+<published>2018-01-20T23:37:47+00:00</published>
+<id>/forums/viewtopic.php?t=3378&amp;p=18425#p18425</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3378&amp;p=18425#p18425"/>
+<title type="html"><![CDATA[Moai SDK • Re: Issues referencing moai-core files from ios host]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3378&amp;p=18425#p18425"><![CDATA[
+Figured out a solution.  I just added all the moai core files to my solution directly instead of using the compiled library.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1373">WhaleFood</a> — Sat Jan 20, 2018 11:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[WhaleFood]]></name></author>
+<updated>2018-01-20T02:52:02+00:00</updated>
+<published>2018-01-20T02:52:02+00:00</published>
+<id>/forums/viewtopic.php?t=3378&amp;p=18422#p18422</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3378&amp;p=18422#p18422"/>
+<title type="html"><![CDATA[Moai SDK • Issues referencing moai-core files from ios host]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3378&amp;p=18422#p18422"><![CDATA[
+I'm working with moai version 1.7.5 and trying to add a one-off plugin to a fresh ios host created with pito.  I had to add a few of the source folders to my header search paths and have gotten to the point where the files look good, but when I try to build I get the following linker errors:<br /><br />Undefined symbols for architecture x86_64:<br />  &quot;typeinfo for MOAIGlobalClassBase&quot;, referenced from:<br />      typeinfo for MOAIGlobalClass&lt;NSObject, MOAILuaObject&gt; in MOAIView.o<br />  &quot;typeinfo for MOAILuaObject&quot;, referenced from:<br />      typeinfo for MOAIGlobalClass&lt;NSObject, MOAILuaObject&gt; in MOAIView.o<br />      construction vtable for MOAILuaObject-in-TestLuaClass in MOAIView.o<br />      construction vtable for MOAILuaObject-in-MOAIGlobalClass&lt;NSObject, MOAILuaObject&gt; in MOAIView.o<br />ld: symbol(s) not found for architecture x86_64<br />clang: error: linker command failed with exit code 1 (use -v to see invocation)<br /><br />I get the same error when trying to build to device, but different architecture.  Any help/ideas would be very much appreciated.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1373">WhaleFood</a> — Sat Jan 20, 2018 2:52 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rpallen]]></name></author>
+<updated>2017-12-28T13:41:54+00:00</updated>
+<published>2017-12-28T13:41:54+00:00</published>
+<id>/forums/viewtopic.php?t=3376&amp;p=18418#p18418</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3376&amp;p=18418#p18418"/>
+<title type="html"><![CDATA[Moai SDK • FOLLOWUP: config.lua breaks game]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3376&amp;p=18418#p18418"><![CDATA[
+Actually, after some more experimentation, I think something else is going on here.  I'm using ZeroBrane Studio (1.60; MobDebug 0.648) on Windows 10.<br /><br />I was fooling around with this and I made a change in configuration.lua and the program stopped working; same symptoms as with config.lua.  So I tried again.  I copied the project directory from the book into a different location on the desktop.  In ZeroBrane, I tried running it and got the output below, but no game window.<br />Program starting as '&quot;c:/moai-sdk/bin/moai.exe&quot; &quot;C:\Users\randall\Desktop\Nova pasta\concentration-code2\config.lua&quot; &quot;C:\Users\randall\Desktop\Nova pasta\concentration-code2\main.lua&quot;'.<br />Program 'moai.exe' started in 'C:\Users\randall\Desktop\Nova pasta\concentration-code2' (pid: 5848).<br />Moai SDK 1.7 (ad hoc build by &lt;unknown&gt;)<br />Program completed in 1.06 seconds (pid: 5848).<br /><br />I renamed the config.lua file to configuration.lua and changed the associated require statement in main.lua and ran the program.  The game window opened and the I got the output below.Program starting as '&quot;c:/moai-sdk/bin/moai.exe&quot; &quot;C:\Users\randall\Desktop\Nova pasta\concentration-code2\main.lua&quot;'.<br />Program 'moai.exe' started in 'C:\Users\randall\Desktop\Nova pasta\concentration-code2' (pid: 3856).<br />Moai SDK 1.7 (ad hoc build by &lt;unknown&gt;)<br />No Joysticks connected.<br />TEXTURE: 'assets/tiles.png' is not a power of two (w:372, h:124)<br />TEXTURE: '+'     184512k =   0.18MB &lt; assets/tiles.png<br />Program completed in 21.04 seconds (pid: 3856).<br /><br />I did this 3 times.<br />I then did one very minor thing.  In ZeroBrane, I opened the configuration.lua file.  I placed the cursor at the beginning of the line &quot;WORLD_RESOLUTION_X = 480&quot;.  I didn't type anything and I didn't save anything.  in fact, the save icon was unavailable (grayed out) because I hadn't changed anything.  I then ran the program again and it didn't work.  I got the output below.<br />Program starting as '&quot;c:/moai-sdk/bin/moai.exe&quot; &quot;C:\Users\randall\Desktop\Nova pasta\concentration-code2\configuration.lua&quot;'.<br />Program 'moai.exe' started in 'C:\Users\randall\Desktop\Nova pasta\concentration-code2' (pid: 5912).<br />Moai SDK 1.7 (ad hoc build by &lt;unknown&gt;)<br />Program completed in 1.05 seconds (pid: 5912).<br /><br />Again, I didn't change anything and it stopped working.  WHAT'S GOING ON!?!?!?!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2388">rpallen</a> — Thu Dec 28, 2017 1:41 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rpallen]]></name></author>
+<updated>2017-12-28T13:08:51+00:00</updated>
+<published>2017-12-28T13:08:51+00:00</published>
+<id>/forums/viewtopic.php?t=3376&amp;p=18417#p18417</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3376&amp;p=18417#p18417"/>
+<title type="html"><![CDATA[Moai SDK • config.lua breaks game]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3376&amp;p=18417#p18417"><![CDATA[
+I'm at a bit of a loss.  I'm going through the book &quot;Developing Mobile Games with Moai SDK&quot; by Francisco Tufró (Copyright © 2013 Packt Publishing).  I realize this is a bit old, but everything was going fine, including using the code provided with the book, until a config.lua file was introduced.  I can't get any programs to work with a config.lua file.  Is there a problem naming a file config.lua?  <br /><br />I renamed this file to other things, including configuration.lua and the program seemed to run fine.  But with a file named config.lua, it seems that main.lua doesn't run at all.  I  think this because there is no output printed for a print statement in main.lua, but output IS printed if there is no config.lua file.<br /><br />Also, if I use the final code from the book as it is, when I run it, I get nothing.  No errors are reported, but nothing happens.  No window opens, NOTHING.  But if I make two simple changes to the code, rename config.lua to configuration.lua and change the require statement in main.lua to require 'configuration' (instead of require 'config'), it works fine.<br /><br />So is config a reserved word that can't be used as a file name or is there some other explanation?<br />Thanks.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2388">rpallen</a> — Thu Dec 28, 2017 1:08 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mickkeger]]></name></author>
+<updated>2017-11-27T11:14:17+00:00</updated>
+<published>2017-11-27T11:14:17+00:00</published>
+<id>/forums/viewtopic.php?t=3119&amp;p=18395#p18395</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3119&amp;p=18395#p18395"/>
+<title type="html"><![CDATA[Moai SDK • Re: Desktop Touch Support in 1.6]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3119&amp;p=18395#p18395"><![CDATA[
+I can't copy the code. Seems like the forum thread doesn't allow copying materials. Can you please send it to my account at <a href="http://essayforcollege.org/" class="postlink">Essay for college</a> or my e-mail? Thanks.<br />Mick<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2408">mickkeger</a> — Mon Nov 27, 2017 11:14 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[RichardHarkins]]></name></author>
+<updated>2017-11-23T09:58:21+00:00</updated>
+<published>2017-11-23T09:58:21+00:00</published>
+<id>/forums/viewtopic.php?t=3346&amp;p=18390#p18390</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3346&amp;p=18390#p18390"/>
+<title type="html"><![CDATA[Moai SDK • Re: Native Ads from FB Audience Network]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3346&amp;p=18390#p18390"><![CDATA[
+I think yes, why don't you <a href="https://www.writemyessay24h.net/" class="postlink">write an essay for me</a> request to support representatives to clarify this issue for you?<br />Just ask and you will know for sure cause I have no idea.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2404">RichardHarkins</a> — Thu Nov 23, 2017 9:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[elsin8]]></name></author>
+<updated>2017-11-07T06:47:58+00:00</updated>
+<published>2017-11-07T06:47:58+00:00</published>
+<id>/forums/viewtopic.php?t=1745&amp;p=18371#p18371</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1745&amp;p=18371#p18371"/>
+<title type="html"><![CDATA[Moai SDK • Re: Problem running MOAI app on Android - Black screen.]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=1745&amp;p=18371#p18371"><![CDATA[
+Once downloaded, open the archive and extract the folder inside to somewhere on your drive.  In my case the folder was called android-ndk-r8b and I extracted it to c:\.  After it is extracted, rename it to android-ndk.  There are 17,000+ files in that archive, so expect it to take a while to extract.<br /><br /> <br /><br />Later in the process, Moai will need to know the location of the NDK, specifically ndk-build.  The easiest way to make this file discoverable is to add it to your path environment variable, this can be configured via the command line. Get the latest version of app vshare app. Get it from this <a href="http://vshareappmarket.com" class="postlink">guide</a> to install this app.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2394">elsin8</a> — Tue Nov 07, 2017 6:47 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[cookieclicker]]></name></author>
+<updated>2017-10-25T01:01:26+00:00</updated>
+<published>2017-10-25T01:01:26+00:00</published>
+<id>/forums/viewtopic.php?t=1841&amp;p=18360#p18360</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1841&amp;p=18360#p18360"/>
+<title type="html"><![CDATA[Moai SDK • Re: in-app Purchases using MOAI SDK]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=1841&amp;p=18360#p18360"><![CDATA[
+Communal brainsweep cookie clicker can buy from <a href="http://cookieclicker.xyz/" class="postlink">official websites</a>.of cookie clicker<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2382">cookieclicker</a> — Wed Oct 25, 2017 1:01 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ffanzkka75]]></name></author>
+<updated>2017-10-24T12:17:15+00:00</updated>
+<published>2017-10-24T12:17:15+00:00</published>
+<id>/forums/viewtopic.php?t=3359&amp;p=18359#p18359</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3359&amp;p=18359#p18359"/>
+<title type="html"><![CDATA[Moai SDK • IEEE Projects in Marthandam]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3359&amp;p=18359#p18359"><![CDATA[
+Project Centre in Marthandam provides list of projects, and the students choose what they wanted, after that the faculties guide and train the students to do their project and they teach how to execute their project. <br /><a href="http://www.ask2projects.com/ENGINEERING/IEEE-Projects-in-Marthandam" class="postlink">http://www.ask2projects.com/ENGINEERING/IEEE-Projects-in-Marthandam</a><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2381">ffanzkka75</a> — Tue Oct 24, 2017 12:17 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[chakharsh14]]></name></author>
+<updated>2017-09-28T08:56:21+00:00</updated>
+<published>2017-09-28T08:56:21+00:00</published>
+<id>/forums/viewtopic.php?t=1841&amp;p=18343#p18343</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1841&amp;p=18343#p18343"/>
+<title type="html"><![CDATA[Moai SDK • Re: in-app Purchases using MOAI SDK]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=1841&amp;p=18343#p18343"><![CDATA[
+Here's the integration guide - <br /><br />Android: <!-- m --><a class="postlink" href="http://192.168.20.226:3000/docs/class_m_o_a_i_billing_android.html">/docs/class_m_o_a_i_b ... droid.html</a><!-- m --><br />iOS: <!-- m --><a class="postlink" href="http://192.168.20.226:3000/docs/class_m_o_a_i_billing_i_o_s.html">/docs/class_m_o_a_i_b ... i_o_s.html</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2373">chakharsh14</a> — Thu Sep 28, 2017 8:56 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sreejitj]]></name></author>
+<updated>2017-08-17T10:59:12+00:00</updated>
+<published>2017-08-17T10:59:12+00:00</published>
+<id>/forums/viewtopic.php?t=3346&amp;p=18319#p18319</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3346&amp;p=18319#p18319"/>
+<title type="html"><![CDATA[Moai SDK • Native Ads from FB Audience Network]]></title>
+
+<category term="Moai SDK" scheme="/forums/viewforum.php?f=7" label="Moai SDK"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3346&amp;p=18319#p18319"><![CDATA[
+Hi,<br /><br />Is it possible to integrate native ads from FB Audience network? The native ads api requires the client to pass a set of UIViews to display the native ad. Is there a way to do that in Moai SDK?<br /><br />regards,<br />-Sreejit<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2358">sreejitj</a> — Thu Aug 17, 2017 10:59 am</p><hr />
+]]></content>
+</entry>
+</feed>

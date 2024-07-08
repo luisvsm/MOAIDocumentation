@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=160&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-10-22T16:02:20+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=160&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-10-22T16:02:20+00:00</updated>
+<published>2011-10-22T16:02:20+00:00</published>
+<id>/forums/viewtopic.php?t=160&amp;p=743#p743</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=160&amp;p=743#p743"/>
+<title type="html"><![CDATA[iPhone sample project on xcode 4.2 dosen&#39;t build]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=160&amp;p=743#p743"><![CDATA[
+FWIW, our next release should build on Xcode 4.2, iOS SDK 5.0 with no errors/warnings.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Sat Oct 22, 2011 4:02 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stefano.linguerri]]></name></author>
+<updated>2011-10-22T14:59:44+00:00</updated>
+<published>2011-10-22T14:59:44+00:00</published>
+<id>/forums/viewtopic.php?t=160&amp;p=740#p740</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=160&amp;p=740#p740"/>
+<title type="html"><![CDATA[iPhone sample project on xcode 4.2 dosen&#39;t build]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=160&amp;p=740#p740"><![CDATA[
+Yes Ugo,<br /><br /><br /><br />it works :D<br /><br /><br /><br />after code changing also re-linking gamekit lib and libz.1.1.3<br /><br /><br /><br />thanks<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=126">stefano.linguerri</a> — Sat Oct 22, 2011 2:59 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ugo.landini]]></name></author>
+<updated>2011-10-22T14:48:04+00:00</updated>
+<published>2011-10-22T14:48:04+00:00</published>
+<id>/forums/viewtopic.php?t=160&amp;p=739#p739</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=160&amp;p=739#p739"/>
+<title type="html"><![CDATA[iPhone sample project on xcode 4.2 dosen&#39;t build]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=160&amp;p=739#p739"><![CDATA[
+Apparently solved with these modifications:<br /><br /><br /><br />- remove the UIViewController from the MOAIWebView:<br /><br />class MOAIWebView :<br /><br />/*public UIViewController,*/ <br /><br />public MOAIEventSource {<br /><br /><br /><br />change the:<br /><br />UILocalNotification* notification = [[[ NSNotification alloc ] init ] autorelease ];<br /><br />in:<br /><br />UILocalNotification* notification = [[[ UILocalNotification alloc ] init ] autorelease ];<br /><br /><br /><br />in MOAIApp.mm<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=133">ugo.landini</a> — Sat Oct 22, 2011 2:48 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stefano.linguerri]]></name></author>
+<updated>2011-10-22T14:20:20+00:00</updated>
+<published>2011-10-22T14:20:20+00:00</published>
+<id>/forums/viewtopic.php?t=160&amp;p=738#p738</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=160&amp;p=738#p738"/>
+<title type="html"><![CDATA[iPhone sample project on xcode 4.2 dosen&#39;t build]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=160&amp;p=738#p738"><![CDATA[
+I upgraded to xcode 4.2 and the iPhone samples project doesn't build anymore<br /><br /><br /><br />I got a lot of Warning and this error:<br /><br /><br />Base specifier must name a class in ~moai/moai-beta/src/moaiext-iphone/MOAIWebView.h<br /><br /><br /><br />After commenting and tring to build I got many other errors on other parts of the code.<br /><br /><br /><br />The macosx build works (but lusocket it's not linked).<br /><br /><br /><br />HTH<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=126">stefano.linguerri</a> — Sat Oct 22, 2011 2:20 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Moai + Luajit</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Moai + Luajit</h2>
+		<p><a href="moai-luajit-t1463/page60.html">/forums/moai-luajit-t1463/page60.html</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>4</strong> of <strong>4</strong></div>
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Sep 22, 2013 1:19 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />@ joshua@jandyco --&gt; you --&gt; are --&gt; awesome --&gt; <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />I don't have time to test it but I looked over it briefly and it looks very good. One thing that is missing are the  --&gt; bytecode --&gt; C++ header files --&gt; for Lua-Jit android.  I am not sure the correct way to implement this into the build system.<br /><br />Example:<br /><ul><li> \moai-dev-Version-1.4p0\src\lua-headers\android-jit\moai_lua.h</li><li> \moai-dev-Version-1.4p0\src\lua-headers\standard\moai_lua.h</li></ul><br />I also tried to do this again the other day and failed. I can get Lua-Jit-2.0.1 or Lua-Jit-2.0.2 to build under windows(xp,cgywin,ndk-r8e) I will try again someday with ndk-9.<br /><br />Note to all:<br /><ul><li> I have actually stopped using Lua-Jit 2.0.0 on the OUYA because of intermittent crashes that I suspect are caused by Lua-Jit-2.0.0. I am hoping the newer version of Lua-jit would fix this issue. </li><li>So if you are experience unknown crashes on androids try turning off Lua-Jit with --&gt; jit.off</li><li>I have not been able to definitively debug the cause of theses crashes but it I run Lua-Jit game crashes 3/10 times, if I run Standard Lua the game doesn't crash.</li></ul><br />Crashes Similar to: <br /><ul><li> <!-- m --><a class="postlink" href="http://comments.gmane.org/gmane.comp.lang.lua.luajit/2357">http://comments.gmane.org/gmane.comp.la ... uajit/2357</a><!-- m --></li><li> <!-- m --><a class="postlink" href="http://www.freelists.org/post/luajit/Possibly-a-luajit-related-bug-in-android">http://www.freelists.org/post/luajit/Po ... in-android</a><!-- m --></li></ul></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Sep 22, 2013 1:41 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">@ joshua@jandyco<br /><br />I am not familiar with any of the Moai development branch refactoring or lua-jit 2.0.1 so I could be wrong. <br /><br />Does --&gt; include &lt;lua.h&gt; --&gt; need to be set somewhere for lua-jit?<br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/development/src/moai-core/MOAILuaRuntime.cpp">https://github.com/moai/moai-dev/blob/d ... untime.cpp</a><!-- m --><br />example:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=1463&amp;start=60&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="c" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339933;">#if MOAI_WITH_LUAJIT</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #339933;">#include &lt;lua.h&gt;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339933;">#else</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #339933;">#include &lt;lstate.h&gt;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339933;">#endif</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/development/src/config-default/moai_config.h">https://github.com/moai/moai-dev/blob/d ... i_config.h</a><!-- m --><br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=1463&amp;start=60&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="c" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;<span style="color: #339933;">#ifndef MOAI_WITH_LUAJIT</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #339933;">#define MOAI_WITH_LUAJIT 1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; <span style="color: #339933;">#endif</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br /><span style="font-weight: bold">Edit: I am guessing not after looking at some the files</span></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 11, 2013 6:35 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />To get Lua-jit-2.0.2 to build on windows, I needed to switch from --&gt; cygwin --&gt; to --&gt;  MinGw &amp; MSYS<br /><ul><li> <!-- m --><a class="postlink" href="http://www.mingw.org/wiki/MSYS">http://www.mingw.org/wiki/MSYS</a><!-- m --></li></ul><br /><span style="font-weight: bold">Edit:</span> Of course to get Moai to build I need to switch back to cygwin maybe its time to set up a Linux box ;(</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 11, 2013 8:09 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Honestly it's worth. I struggled for months trying to get Windows building older versions of MOAI properly for Android and then listened to somebody on the forum here (ibsium maybe) and just started dual booting my laptop into Ubuntu 12.04.<br /><br />Haven't looked back since, although I do miss VS 2010 occasionally.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 11, 2013 9:50 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content"><blockquote><div><cite>stun wrote:</cite>Honestly it's worth. I struggled for months trying to get Windows building older versions of MOAI properly for Android and then listened to somebody on the forum here (ibsium maybe) and just started dual booting my laptop into Ubuntu 12.04.</div></blockquote><br /><br />Also you can run Ubuntu 12.04 in VirtualBox if dual-booting is too annoying.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 12, 2013 3:36 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Yes, I tried this initially, but VirtualBox didn't like the USB ports on my laptop for some reason, so I had issues connecting Android devices to the VM, hence I'm now dual booting. To be honest I haven't looked back since. Having no Steam client or other PC games available on the Ubuntu side removes quite a few distractions...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 17, 2014 11:10 am</strong></div>
+				<div class="author">by <strong>sshukul</strong></div>
+				<div class="content">Anyone tried building the android host with Luajit in OSX?<br /><br />I'm using the fantastic standardized pre-setup host build scripts we get in Moai 1.5 now, and the android host builds fine for me on my 64-bit Mac without LuaJIT, but when I turn LuaJIT on I get an error during compilation of the openssl library in libmoai<br /><br />[ 50%] Building C object third-party/crypto/CMakeFiles/crypto.dir/Users/saurshuk/Documents/Alt-ws/moai-dev/3rdparty/openssl-1.0.0d/crypto/bf/bf_ecb.c.o<br />Linking C static library /Users/saurshuk/Documents/Alt-ws/moai-dev/ant/libmoai/libs/armeabi-v7a/libcrypto.a<br />[ 50%] Built target crypto<br />make[1]: *** [host-android/CMakeFiles/moai.dir/rule] Error 2<br /><br />Any ideas or should I jump into that Linux dual boot and avoid the OSX issues altogether?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 17, 2014 9:41 pm</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content">This should work as it had been tested. I would love a ticket/issue created at moai/moai-dev with your xcode version, command line used and full output of the build (there should be an error further up the buffer which is what causes make to fail. Just scroll or search the buffer for the word error). I will give this ago today and see if I can reproduce.<br /><br /> Thanks for the feedback, we are trying to get the build system to be super stable so all of these problem reports are valuable!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 18, 2014 6:00 pm</strong></div>
+				<div class="author">by <strong>sshukul</strong></div>
+				<div class="content">Sure thing it's opened here:<br /><br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/issues/865">https://github.com/moai/moai-dev/issues/865</a><!-- m --><br /><br />I did find the error further up with luajit, it's complaining about the pointer size, have detailed in the ticket.<br /><br />Thanks!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 18, 2014 9:45 pm</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content">I replied to the ticket but long story short is that the luajit compile step is missing the -m32 switch. This is because the architecture step is thinking it is already on a i386 host when in fact it is a x64. Not sure if this is a toolchain bug or a cmake bug. It also seems to be using the 32bit prebuilt toolchain (/darwin_x86/) instead of the 64bit toolchain (/darwin_x86_64/).</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai + Luajit</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 23, 2014 11:55 am</strong></div>
+				<div class="author">by <strong>sshukul</strong></div>
+				<div class="content">That worked, thanks! I had downloaded the wrong NDK as you guessed, 32 bit instead of 64 for some reason, but I figured it would auto-detect, which it does now with the build script change. <br /><br />Luajit is totally worth it, blazing fast performance in some scripting heavy areas.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>4</strong> of <strong>4</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

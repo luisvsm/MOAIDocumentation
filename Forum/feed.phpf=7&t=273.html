@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=273&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-12-19T00:06:23+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=273&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-19T00:06:23+00:00</updated>
+<published>2011-12-19T00:06:23+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1314#p1314</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1314#p1314"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1314#p1314"><![CDATA[
+Very cool.<br /><br />This may be moot, but FWIW we use the histogram a lot internally. Check out MOAISim.setHistogramEnabled and MOAISim.reportHistogram.<br /><br />There's also AKUSoftReleaseGfxResources and MOAITexture.release () but... YMMV!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Mon Dec 19, 2011 12:06 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[develop]]></name></author>
+<updated>2011-12-17T11:31:34+00:00</updated>
+<published>2011-12-17T11:31:34+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1307#p1307</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1307#p1307"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1307#p1307"><![CDATA[
+Alright, fixed.<br /><br />For anyone with a similar issue who may find this thread in the future:<br /><br /><br /><br />We mismanaged the stack of tables that held our objects and thus tried setting the same batch of objects to nil over and over if an animation was used in the scene manager. We'd do some clean up on the layer, then push the new layer, then transition and then finalize cleaning of the top-most scene. As time had passed between the initial call and the final cleaning the new layer was now the newest scene which we promptly discarded.<br /><br /><br /><br />Either way, a non-leaking version of our basic scene manager is now up.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=334">develop</a> — Sat Dec 17, 2011 11:31 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[develop]]></name></author>
+<updated>2011-12-17T11:14:27+00:00</updated>
+<published>2011-12-17T11:14:27+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1306#p1306</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1306#p1306"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1306#p1306"><![CDATA[
+Either the simulators output<br /><br />(e.g. TEXTURE: '+'      65536 =   8.38MB < object.png)<br /><br />or Xcode's profiling tools (Allocations, Leaks and VMTracker).<br /><br /><br /><br />I actually found about half of the problems:<br /><br />The texture memory used for fonts is not released even when set to nil. Other objects release fine.<br /><br />Also, one of our tables used to keep track of allocated objects is overwritten somewhere.<br /><br /><br /><br />Tracking that down now. After it is fixed, I'll push the first (hopefully) memory sane and usable version of our scene manager to GitHub.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=334">develop</a> — Sat Dec 17, 2011 11:14 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-17T11:07:31+00:00</updated>
+<published>2011-12-17T11:07:31+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1305#p1305</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1305#p1305"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1305#p1305"><![CDATA[
+What method do you use to check the "memory footprint" ?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Sat Dec 17, 2011 11:07 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-17T09:52:25+00:00</updated>
+<published>2011-12-17T09:52:25+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1303#p1303</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1303#p1303"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1303#p1303"><![CDATA[
+This is an excellent topic.<br /><br />After any layer.clear() or removeProp(), I set the variable (if not local) pointing to it, if any, to nil. <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Sat Dec 17, 2011 9:52 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[develop]]></name></author>
+<updated>2011-12-17T09:46:12+00:00</updated>
+<published>2011-12-17T09:46:12+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1301#p1301</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1301#p1301"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1301#p1301"><![CDATA[
+Unfortunately, that isn't our bottleneck.<br /><br />Forcing GC didn't free up the resources (no [-] spotted yet) and running the creation and destruction of textures and props in loops leads to the devices crashing once their memory is exhausted.<br /><br />But it's good to know I'm not missing anything in principle. There's probably a reference left somewhere.<br /><br />(If there is a good way to track references in Moai, input would be most appreciated)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=334">develop</a> — Sat Dec 17, 2011 9:46 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-17T08:46:31+00:00</updated>
+<published>2011-12-17T08:46:31+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1298#p1298</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1298#p1298"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1298#p1298"><![CDATA[
+I have not tried it, but I plan to see if <a href="/docs/class_m_o_a_i_sim.html#a68c8298729457a936d7b35e2466def09" target="_blank">MOAISim.forceGarbageCollection</a> does the trick.<br /><br />From my experience with Lua and Moai, the textures free when you need more room to add more, and/or over-time.  If you create a lot of texture props, you'll see the old ones free (i.e. "[-]" in the debug window) then.<br /><br /><br />Lua itself has a few configurable garbage collection parameters.  I've always configured it from "C", not inside Lua, yet.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Sat Dec 17, 2011 8:46 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[develop]]></name></author>
+<updated>2011-12-17T01:11:14+00:00</updated>
+<published>2011-12-17T01:11:14+00:00</published>
+<id>/forums/viewtopic.php?t=273&amp;p=1290#p1290</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=273&amp;p=1290#p1290"/>
+<title type="html"><![CDATA[Releasing Texture Memory]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=273&amp;p=1290#p1290"><![CDATA[
+When creating a prop with a texture as such<br /><br /><em>btn.gfx = MOAIGfxQuad2D.new()</em><br /><br /><em>btn.gfx:setTexture("btnStart.png")</em><br /><br /><em>btn.gfx:setRect(-256,-128,256,128)</em><br /><br /><em>btn.prop = MOAIProp2D.new()</em><br /><br /><em>btn.prop:setDeck(btn.gfx)</em><br /><br /><em>l:insertProp(btn.prop)</em><br /><br /><br /><br />is there a way to automatically free the texture memory when the object is destroyed?<br /><br />I am currently removing the prop from the layer using l:clear() and setting btn to <em>nil</em> but the the memory footprint shows that the texture memory is not released.<br /><br />Am I missing something or will I have to track textures and then call release on them manually?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=334">develop</a> — Sat Dec 17, 2011 1:11 am</p><hr />
+]]></content>
+</entry>
+</feed>

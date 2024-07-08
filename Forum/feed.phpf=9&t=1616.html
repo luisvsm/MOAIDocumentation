@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1616&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-02-04T15:23:03+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1616&amp;mode</id>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-02-04T15:23:03+00:00</updated>
+<published>2013-02-04T15:23:03+00:00</published>
+<id>/forums/viewtopic.php?t=1616&amp;p=8820#p8820</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1616&amp;p=8820#p8820"/>
+<title type="html"><![CDATA[Frames and meshes and vertex buffers, oh my...]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1616&amp;p=8820#p8820"><![CDATA[
+So, I have a large mesh that wants to be updated &quot;every frame&quot;.<br /><br />Thing is, if I put the update in a MOAICoroutine, I will at least sometimes generate my entire 1200-vertex mesh twice in a single frame. That's wasteful.<br /><br />The only distinction I've found so far is that a MOAIScriptDeck's draw callback appears to only run during an actual render. So, in theory, I could have my regular stuff do a mesh update, then set a flag, then not do another mesh update until the flag is cleared -- and have a script deck clear the flag.<br /><br />But that can't possibly be the intent.<br /><br />So in general: If I have a task which is by definition worthless to do twice during a single rendering frame, where do I put it? Do I just put it in the code for a ScriptDeck? I found a blog post claiming you could get callbacks from &quot;RenderMgr and friends&quot;, but I couldn't find anything, except maybe the grabNextFrame, which sounds... excessive.<br /><br />What I'm hoping to do is find ways that I could reduce the amount of time I spend rendering giant vertex buffers that aren't ever going to be displayed, because I'll be replacing them before openGL ever sees them.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Mon Feb 04, 2013 3:23 pm</p><hr />
+]]></content>
+</entry>
+</feed>

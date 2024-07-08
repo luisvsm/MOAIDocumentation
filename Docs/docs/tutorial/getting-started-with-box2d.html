@@ -1,0 +1,2691 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started With Box2D</title>
+ 
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    
+    
+    
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link href="../../css/syntax.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/doc-style.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+            <a class="navbar-brand" href="../../index.html">MoaiForge - Community Docs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+           </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+    
+    <div class="container">
+<div class="row-fluid">
+   
+        <div id="navigation" class="col-md-3">
+            
+<ul id="nav-menu" class="nav nav-list">
+    
+    
+  
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/getting-started-with-box2d.md does NOT contain pathseg /basics/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Moai Basics</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-two.html">Moai SDK Basics Part Two</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-one.html">Moai SDK Basics Part One</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/getting-started-with-box2d.md does NOT contain pathseg /sdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">The Moai SDK</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/what-is-moai-sdk.html">What is Moai SDK?</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-sdk-desktop-basics.html">Moai SDK Desktop Basics</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/the-moai-runtime.html">The Moai Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-hosts.html">Moai Hosts</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/structuring-your-moai-game-in-lua.html">Structuring Your Moai Game in Lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-project-setup.html">Moai Project Setup</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/extending-moai-sdk.html">Extending Moai SDK</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/protecting-your-lua-files.html">Protecting Your Lua Files</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/tools-that-work-with-moai.html">Tools that work with Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/getting-started-with-box2d.md does NOT contain pathseg /buildsdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Build the SDK from Source</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/introduction.html">Introduction</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/installing-cmake.html">Installing CMake</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-libraries-for-android-ndk.html">Building Moai Libraries For Android</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-xcode.html">Building Moai From Source With Xcode</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-visual-studio.html">Building Moai From Source With Visual Studio</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-scons.html">Building Moai From Source With Scons</a></li>
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/getting-started-with-box2d.md does NOT contain pathseg /building/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Building Moai Games</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/setup-landscape-in-moai-games-for-ios-devices.html">Setup landscape in Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/cross-platform-development-with-moai.html">Cross Platform Development With Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-ios-devices.html">Building Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-google-chrome.html">Building Moai Games for Google Chrome</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-android-devices.html">Building Moai Games For Android Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/getting-started-with-box2d.md does NOT contain pathseg /reference/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Reference</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/moai-sdk-samples-guide.html">Moai SDK Samples Guide</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/cmake-basics.html">Crash Course on CMAKE</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/code-snips.html">Code snips</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/how-moai's-c-to-lua-binding-works.html">How Moai's C++ to Lua Binding Works</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/understanding-decks-and-props.html">Understanding Decks and Props</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/using-moaianim.html">Using MOAIAnim</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/wrapping-modes.html">Wrapping modes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/getting-started-with-box2d.md contains pathseg /tutorial/ -->
+        <li class="parent collapsibleListClosed">
+        
+          <div class="subtree-name">Tutorials</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="your-first-game-rocket-lobster.html">Your First Game : Rocket Lobster</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="using-particlehelper.html">Using ParticleHelper</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="textboxes.html">Textboxes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="your-first-cloud-game-wolf-clicker.html">Your First Cloud Game : Wolf Clicker</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="setup-moai-sdk-on-windows-using-sublime2.html">Setup Moai SDK on Windows using Sublime2</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="basic-prop-animations.html">Basic Prop Animations</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="bin2c-lua.html">Bin2c.lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="binding-c-apis-to-moai-using-moailuaobject.html">Binding C++ APIs to Moai using MOAILuaObject</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="build-on-steam-runtime.html">Building Moai with Steam Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="concatenate-your-lua-source-tree.html">Concatenate your Lua source tree</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="density-friction-and-restitution.html">Density, Friction And Restitution</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li class="active" ><a href="getting-started-with-box2d.html">Getting Started With Box2D</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+
+</ul>
+
+<script src="../../js/collapsiblelists.min.js"> </script>
+<script>
+$(function() {
+CollapsibleLists.applyTo(document.getElementById('nav-menu'));
+});
+
+</script>
+        </div>
+
+        <div id="content" class="col-md-9">
+            <a href="https://github.com/moaiforge/moai-sdk/tree/gh-pages/_docs/tutorial/getting-started-with-box2d.md" class="improve-docs btn"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+            <h1>Getting Started With Box2D</h1>
+            
+            
+            <p>This series of tutorials will explain how to access and use various key features of the Box2D physics engine from within MOAI. It is assumed that you have been through the Moai Basics articles and at least some of the Platform Tutorials, and have at least a basic grasp of things like viewports, props, threads, etc.</p>
+
+<h2>Creating a Testbed</h2>
+
+<p>In order to learn about Box2D you&#39;ll want to have an environment where you can play around with some of the features, so create a folder somewhere on your machine and place a blank main.lua file there, as well as a copy of cathead.png and the appropriate batch file for your operating system. If you&#39;re unsure about any of this, just copy the contents of one of the Moai samples folders (i.e. anim-basic) into a new folder, blank out the main.lua file and alter the .bat or .sh file so that it points correctly to your Moai.exe.</p>
+
+<p>Here are the first lines of your new main.lua, they should look pretty familiar by now:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--constants</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">STAGE_WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">STAGE_HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--window, viewport, layer</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">MOAISim</span><span class="p">.</span><span class="n">openWindow</span><span class="p">(</span> <span class="s2">"Box2D Testbed"</span><span class="p">,</span> <span class="n">STAGE_WIDTH</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span> <span class="p">)</span>
+
+<span class="n">viewport</span> <span class="o">=</span> <span class="n">MOAIViewport</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">viewport</span><span class="p">:</span><span class="n">setSize</span><span class="p">(</span> <span class="n">STAGE_WIDTH</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span> <span class="p">)</span>
+<span class="n">viewport</span><span class="p">:</span><span class="n">setScale</span><span class="p">(</span> <span class="n">STAGE_WIDTH</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span> <span class="p">)</span>
+
+<span class="n">layer</span> <span class="o">=</span> <span class="n">MOAILayer2D</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">setViewport</span><span class="p">(</span> <span class="n">viewport</span> <span class="p">)</span>
+<span class="n">MOAISim</span><span class="p">.</span><span class="n">pushRenderPass</span><span class="p">(</span> <span class="n">layer</span> <span class="p">)</span>
+</code></pre></div>
+<p>You&#39;ll need some space to move objects around, so this window is a bit larger than the standard 320x480 size most of the samples use. Feel free to adjust these constants to whatever size makes sense for your development environment - of course if you do so you&#39;ll also need to adjust the positions of objects so they are visible onscreen.</p>
+
+<h2>Optional : The Info Box</h2>
+
+<p>As you experiment with Box2D, you may want to be able to view information like object positions, rotations, and velocities in real time. One way to do this is with the code below, which will place a textbox in the upper left quadrant of your Moai window. Later on, you can call setString from within a loop or thread to keep the box populated with current data. Of course, if you have your own preferred solution for viewing debug info you are free to ignore this. Some parts of this tutorial series may prompt you to populate the info box, but these instructions won&#39;t affect how the actual physics code works and you can safely ignore them if desired.</p>
+
+<p>Here&#39;s the code for setting up the info box. Don&#39;t forget to grab the appropriate .ttf and put it in your project folder (the &quot;textBox-alignment&quot; sample folder in the SDK contains a copy of &quot;arial-rounded.TTF&quot; you can grab if you need a font):</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--info box</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">charcodes</span> <span class="o">=</span> <span class="s2">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"</span>
+            <span class="o">..</span><span class="s2">"0123456789 .,:;!?()&amp;/-"</span>
+
+<span class="n">font</span> <span class="o">=</span> <span class="n">MOAIFont</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">font</span><span class="p">:</span><span class="n">loadFromTTF</span><span class="p">(</span> <span class="s2">"arial-rounded.TTF"</span><span class="p">,</span> <span class="n">charcodes</span><span class="p">,</span> <span class="mi">7</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">163</span> <span class="p">)</span>
+
+<span class="n">infoBox</span> <span class="o">=</span> <span class="n">MOAITextBox</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setFont</span><span class="p">(</span> <span class="n">font</span> <span class="p">)</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setTextSize</span><span class="p">(</span> <span class="n">font</span><span class="p">:</span><span class="n">getScale</span><span class="p">())</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setString</span><span class="p">(</span> <span class="s2">"Ready"</span> <span class="p">)</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setRect</span><span class="p">(</span><span class="o">-</span><span class="n">STAGE_WIDTH</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setYFlip</span><span class="p">(</span> <span class="kc">true</span> <span class="p">)</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">insertProp</span><span class="p">(</span> <span class="n">infoBox</span> <span class="p">)</span>
+</code></pre></div>
+<h2>The Box2D World</h2>
+
+<p>To create a working Box2D physics simulation in your Moai project, the first thing you&#39;ll need is a &quot;world&quot;. A Box2D world is the &quot;boss&quot; entity of the physics simulation. It controls things like creating and removing bodies and joints, as well as gravity and the size and speed of the simulation. Here&#39;s the world setup code:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d world</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">MOAIBox2DWorld</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+<span class="n">world</span><span class="p">:</span><span class="n">setGravity</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span> <span class="p">)</span>
+<span class="n">world</span><span class="p">:</span><span class="n">setUnitsToMeters</span><span class="p">(</span> <span class="mi">1</span><span class="o">/</span><span class="mi">30</span> <span class="p">)</span>
+<span class="n">world</span><span class="p">:</span><span class="n">start</span><span class="p">()</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">setBox2DWorld</span><span class="p">(</span> <span class="n">world</span> <span class="p">)</span>
+</code></pre></div>
+<p>Units to Meters is an important variable that controls the size of the simulation. Box2D works best on simulated objects between 0.1 and 10 meters in size, or as the manual puts it, &quot;between soup cans and buses&quot;. You&#39;ll want to adjust the UnitsToMeters setting until the average pixel size of the objects you are using translates roughly into simulated physics objects of an appropriate size. Not scaling your simulation properly will result in Box2D trying to apply billiard-ball style physics to objects it thinks are the size of ocean liners and office buildings, which will not produce the behavior you want.</p>
+
+<p>This example world&#39;s scale will be set at 30 units to one meter (the name setUnitsToMeters is a little misleading here; with a value of 1/30 it would make more sense as setMetersToUnits). When you create, for example, a circle with a radius of 20 pixels, what Box2D will see is a circle that is (diameter 40 pixels divided by 30 pixels per meter) one and one third meters across, which is a size that Box2D can handle comfortably. Keep in mind also that the only reason we can use &quot;units&quot; and &quot;pixels&quot; interchangeably is that our viewport scale is set to exactly the viewport&#39;s size in pixels; if we were scaling the view we would have to account for that when determining how many pixels are in a meter.</p>
+
+<p>Once you have your scale worked out, you can set the gravity value. Gravity is expressed as the x and y directional movement to be applied &quot;per-second per-second&quot; to each object in the scene that is subject to gravity (more on this under bodies, below). To make this example world fairly realistic, a value of around 10 makes sense (actual gravity is around 9.8 m/s2), and since your bodies are scaled to represent normal-sized objects, they should fall in a reasonably convincing manner.</p>
+
+<p>Finally, world:start puts the simulation in motion, and setBox2DWorld applies the physics simulation to a rendering layer, so the physics objects will be drawn properly.</p>
+
+<h2>The Three Types Of Bodies</h2>
+
+<p>Bodies in Box2D come in three flavors: Static, Dynamic and Kinematic. Here&#39;s the code to add one of each to your world:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d bodies</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--a static body</span>
+<span class="n">staticBody</span> <span class="o">=</span> <span class="n">world</span><span class="p">:</span><span class="n">addBody</span><span class="p">(</span> <span class="n">MOAIBox2DBody</span><span class="p">.</span><span class="n">STATIC</span> <span class="p">)</span>
+<span class="n">staticBody</span><span class="p">:</span><span class="n">setTransform</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span> <span class="p">)</span>
+<span class="c1">--a dynamic body</span>
+<span class="n">dynamicBody</span> <span class="o">=</span> <span class="n">world</span><span class="p">:</span><span class="n">addBody</span><span class="p">(</span> <span class="n">MOAIBox2DBody</span><span class="p">.</span><span class="n">DYNAMIC</span> <span class="p">)</span>
+<span class="n">dynamicBody</span><span class="p">:</span><span class="n">setTransform</span><span class="p">(</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+<span class="c1">--a kinematic body</span>
+<span class="n">kinematicBody</span> <span class="o">=</span> <span class="n">world</span><span class="p">:</span><span class="n">addBody</span> <span class="p">(</span> <span class="n">MOAIBox2DBody</span><span class="p">.</span><span class="n">KINEMATIC</span> <span class="p">)</span>
+<span class="n">kinematicBody</span><span class="p">:</span><span class="n">setTransform</span><span class="p">(</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+</code></pre></div>
+<p>If you add this code and run it, you should see ... nothing. Why&#39;s that? Well, a Box2D body is an intangible object. It cannot be drawn or interacted with. What you actually see and manipulate are Fixtures, which are attached to bodies and discussed below. So what are bodies? They are containers for information about the physics object, like position (that&#39;s what setTransform is doing in the code above), angle, the speed at which its moving (in a line and/or rotating) and subtler things like inertia. We&#39;ll get to manipulating these properties soon, but for now it&#39;s enough that you understand that you don&#39;t interact directly with bodies, and move on to putting something onscreen you <em>can</em> interact with.</p>
+
+<p>The three types of bodies will make more sense once you see them in action, but for now here&#39;s an overview: Static bodies do not move on their own. They can be placed using setTransform, but they don&#39;t respond to gravity or collisions. Kinematic bodies are also impervious to being affected by other bodies, but they can move under their own power. With dynamic bodies, anything goes, and they will be affected by all forces and other objects they come into contact with, unless you specifically set them up to ignore some forces (doing so is discussed below).</p>
+
+<p>Here&#39;s a simple way to picture the three types: Suppose you are making a platformer game in Box2D. The ground beneath the player will probably be a Static body. The player and any monsters will be represented by dynamic bodies: they can interact and affect one another. A kinematic body would be used to create a floating platform that moves back and forth. It moves under its own power, but it is not affected by gravity or other forces, and there is nothing the player can do to affect its movement.</p>
+
+<h2>Fixtures</h2>
+
+<p>Time to get some fixtures on-screen. Enter the following code and run the program:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d polys and fixtures</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">rectFixture</span> <span class="o">=</span> <span class="n">staticBody</span><span class="p">:</span><span class="n">addRect</span><span class="p">(</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">15</span> <span class="p">)</span>
+<span class="n">circleFixture</span> <span class="o">=</span> <span class="n">dynamicBody</span><span class="p">:</span><span class="n">addCircle</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span> <span class="p">)</span>
+<span class="n">hexPoly</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>
+ <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> 
+ <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+ <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+ <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+ <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">hexFixture</span> <span class="o">=</span> <span class="n">kinematicBody</span><span class="p">:</span><span class="n">addPolygon</span><span class="p">(</span> <span class="n">hexPoly</span> <span class="p">)</span>
+</code></pre></div>
+<p>If everything is in order, you should see a circle, a rectangle, and a hexagon. The circle, affixed to a dynamic body, should immediately drop until it encounters the rectangle, which is attached to the static body. The hexagon (kinematic body) should not move.</p>
+
+<p><img src="../../img/docs/box2d1.png" alt=""></p>
+
+<p>There are a number of things to note in this example. First, Moai provides you with the addRect and addCircle functions for creating simple shapes. For more complex shapes, you&#39;ll need to create a polygon, as is done in the code above, by building a table containing the x and y values of each vertex of the polygon. Box2D only supports convex polygons, meaning that if you were walking around the outside of the polygon, you would always be turning in the same direction. Concave polygons are possible with a little extra code, and will be discussed later.</p>
+
+<p>The parameters of addCircle and addRect control not only the size of the fixture, but the offset from the center of the body. Since multiple fixtures are possible on any body, you can use these offsets to create more complex shapes. For example, replace the previous code with the following code, and you&#39;ll get an idea about how you can build more complex shapes using multiple fixtures:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d polys and fixtures</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">rectFixture</span> <span class="o">=</span> <span class="n">staticBody</span><span class="p">:</span><span class="n">addRect</span><span class="p">(</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">15</span> <span class="p">)</span>
+<span class="n">circleFixture</span> <span class="o">=</span> <span class="n">dynamicBody</span><span class="p">:</span><span class="n">addCircle</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span> <span class="p">)</span>
+<span class="n">hexPoly</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> 
+  <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+  <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+  <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">hexFixture</span> <span class="o">=</span> <span class="n">dynamicBody</span><span class="p">:</span><span class="n">addPolygon</span><span class="p">(</span> <span class="n">hexPoly</span> <span class="p">)</span>
+</code></pre></div>
+<p><img src="http://192.168.20.226:3030/docs/tutorial/box2d2.png" alt="|center" title="|center"></p>
+
+<p>Another thing to note is that when your dynamic object hits the &quot;floor&quot; of a static object, it will dim out. The brighter color indicates that the body attached to that fixture is &quot;active&quot;. Box2D is getting information about it every time the simulation moves forward by one &quot;step&quot;. If the object is no longer moving on its own or being affected by any forces, Box2D will temporarily put that object in a &quot;sleeping&quot; state, in order to conserve processing power by only paying attention to objects currently in action. When something happens to that object, the simulation wakes it up and starts tracking it again. If for some reason you need an object to be permanently awake, you can make use of the setActive function to do this.</p>
+
+<p>Keep in mind that what you are seeing here is the result of Box2D&#39;s built in &quot;debug draw&quot; functionality. In your actual game, you will have props that are attached to your physics objects with setParent, and these luminous squares and circles will be invisible. Controlling the visibility of your physics simulation will be discussed in a future tutorial.</p>
+
+<p>That ends this first article in the series, but there is lots more to learn before you are ready to create a game using Moai and Box2D. Take a moment or two to alter some of the variables in your code and see what kinds of things you can make happen. When you&#39;re ready, continue on to the next tutorial. Below is the complete code from this first tutorial, it will be referenced as a starting point in future installments:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--constants</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">STAGE_WIDTH</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">STAGE_HEIGHT</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--window, viewport, layer</span>
+<span class="c1">----------------------------------------------------------------</span>
+
+<span class="cm">--[[ DEBUG LINES
+MOAIDebugLines.setStyle ( MOAIDebugLines.PROP_MODEL_BOUNDS, 2, 1, 1, 1 )
+MOAIDebugLines.setStyle ( MOAIDebugLines.PROP_WORLD_BOUNDS, 2, 0.75, 0.75, 0.75 )
+MOAIDebugLines.setStyle ( MOAIDebugLines.TEXT_BOX, 2, 1, 1, 1 )
+ --]]</span>
+
+<span class="n">MOAISim</span><span class="p">.</span><span class="n">openWindow</span><span class="p">(</span> <span class="s2">"Box2D Testbed"</span><span class="p">,</span> <span class="n">STAGE_WIDTH</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span> <span class="p">)</span>
+
+<span class="n">viewport</span> <span class="o">=</span> <span class="n">MOAIViewport</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">viewport</span><span class="p">:</span><span class="n">setSize</span><span class="p">(</span> <span class="n">STAGE_WIDTH</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span> <span class="p">)</span>
+<span class="n">viewport</span><span class="p">:</span><span class="n">setScale</span><span class="p">(</span> <span class="n">STAGE_WIDTH</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span> <span class="p">)</span>
+
+<span class="n">layer</span> <span class="o">=</span> <span class="n">MOAILayer2D</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">setViewport</span><span class="p">(</span> <span class="n">viewport</span> <span class="p">)</span>
+<span class="n">MOAISim</span><span class="p">.</span><span class="n">pushRenderPass</span><span class="p">(</span> <span class="n">layer</span> <span class="p">)</span>
+
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--info box</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">charcodes</span> <span class="o">=</span> <span class="s2">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"</span>
+            <span class="o">..</span> <span class="s2">"0123456789 .,:;!?()&amp;/-"</span>
+
+<span class="n">font</span> <span class="o">=</span> <span class="n">MOAIFont</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">font</span><span class="p">:</span><span class="n">loadFromTTF</span><span class="p">(</span> <span class="s2">"arial-rounded.TTF"</span><span class="p">,</span> <span class="n">charcodes</span><span class="p">,</span> <span class="mi">7</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">163</span> <span class="p">)</span>
+
+<span class="n">infoBox</span> <span class="o">=</span> <span class="n">MOAITextBox</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setFont</span><span class="p">(</span> <span class="n">font</span> <span class="p">)</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setTextSize</span><span class="p">(</span> <span class="n">font</span><span class="p">:</span><span class="n">getScale</span> <span class="p">())</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setString</span><span class="p">(</span> <span class="s2">"Ready"</span> <span class="p">)</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setRect</span><span class="p">(</span><span class="o">-</span><span class="n">STAGE_WIDTH</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">STAGE_HEIGHT</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">infoBox</span><span class="p">:</span><span class="n">setYFlip</span><span class="p">(</span> <span class="kc">true</span> <span class="p">)</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">insertProp</span><span class="p">(</span> <span class="n">infoBox</span> <span class="p">)</span>
+
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d world</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">world</span> <span class="o">=</span> <span class="n">MOAIBox2DWorld</span><span class="p">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">world</span><span class="p">:</span><span class="n">setGravity</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span> <span class="p">)</span>
+<span class="n">world</span><span class="p">:</span><span class="n">setUnitsToMeters</span><span class="p">(</span> <span class="p">.</span><span class="mi">10</span> <span class="p">)</span>
+<span class="n">world</span><span class="p">:</span><span class="n">start</span><span class="p">()</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">setBox2DWorld</span><span class="p">(</span> <span class="n">world</span> <span class="p">)</span>
+
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d bodies</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--a static body</span>
+<span class="n">staticBody</span> <span class="o">=</span> <span class="n">world</span><span class="p">:</span><span class="n">addBody</span><span class="p">(</span> <span class="n">MOAIBox2DBody</span><span class="p">.</span><span class="n">STATIC</span> <span class="p">)</span>
+<span class="n">staticBody</span><span class="p">:</span><span class="n">setTransform</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span> <span class="p">)</span>
+<span class="c1">--a dynamic body</span>
+<span class="n">dynamicBody</span> <span class="o">=</span> <span class="n">world</span><span class="p">:</span><span class="n">addBody</span><span class="p">(</span> <span class="n">MOAIBox2DBody</span><span class="p">.</span><span class="n">DYNAMIC</span> <span class="p">)</span>
+<span class="n">dynamicBody</span><span class="p">:</span><span class="n">setTransform</span><span class="p">(</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+<span class="c1">--a kinematic body</span>
+<span class="n">kinematicBody</span> <span class="o">=</span> <span class="n">world</span><span class="p">:</span><span class="n">addBody</span><span class="p">(</span> <span class="n">MOAIBox2DBody</span><span class="p">.</span><span class="n">KINEMATIC</span> <span class="p">)</span>
+<span class="n">kinematicBody</span><span class="p">:</span><span class="n">setTransform</span><span class="p">(</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span> 
+
+<span class="c1">----------------------------------------------------------------</span>
+<span class="c1">--box2d polys and fixtures</span>
+<span class="c1">----------------------------------------------------------------</span>
+<span class="n">rectFixture</span> <span class="o">=</span> <span class="n">staticBody</span><span class="p">:</span><span class="n">addRect</span><span class="p">(</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">15</span> <span class="p">)</span>
+<span class="n">circleFixture</span> <span class="o">=</span> <span class="n">dynamicBody</span><span class="p">:</span><span class="n">addCircle</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span> <span class="p">)</span>
+<span class="n">hexPoly</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>
+  <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> 
+  <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+  <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span>
+  <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">hexFixture</span> <span class="o">=</span> <span class="n">kinematicBody</span><span class="p">:</span><span class="n">addPolygon</span><span class="p">(</span> <span class="n">hexPoly</span> <span class="p">)</span>
+</code></pre></div>
+        </div>
+               
+</div>
+</div>
+
+
+    <!-- SUB FOOTER-->
+   <!-- <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="text-center"><a href="http://getmoai.com/marketing/made-with-moai.html">License / Attribution</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/tools-partners.html">Useful Tools</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/partner-services.html">Partner Services</a></p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!-- /SUB FOOTER-->
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+       
+        <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; David Pershouse 2024</p>
+            </div>
+        </div>
+    </footer>
+
+      </div>
+    </footer>
+
+      <script src="../../js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

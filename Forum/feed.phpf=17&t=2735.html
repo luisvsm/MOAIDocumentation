@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=17&amp;t=2735&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-07-08T17:36:59+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=17&amp;t=2735&amp;mode</id>
+<entry>
+<author><name><![CDATA[Nodepond]]></name></author>
+<updated>2014-07-08T17:36:59+00:00</updated>
+<published>2014-07-08T17:36:59+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14888#p14888</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14888#p14888"/>
+<title type="html"><![CDATA[Re: OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14888#p14888"><![CDATA[
+Hm... uncommenting the line<br />mMoaiView.pause ( true );<br />in MainActivity.java just seems to solve this problem. <br /><br />It looks like, that I played with the wrong MainActivity.java-file earlier that day. Thanks ezraanderson for the hint!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1677">Nodepond</a> — Tue Jul 08, 2014 5:36 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Nodepond]]></name></author>
+<updated>2014-07-08T17:11:10+00:00</updated>
+<published>2014-07-08T17:11:10+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14887#p14887</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14887#p14887"/>
+<title type="html"><![CDATA[Re: OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14887#p14887"><![CDATA[
+And here the MoaiActivity.java: <!-- m --><a class="postlink" href="http://pastebin.com/AjaRcsz1">http://pastebin.com/AjaRcsz1</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1677">Nodepond</a> — Tue Jul 08, 2014 5:11 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Nodepond]]></name></author>
+<updated>2014-07-08T16:51:13+00:00</updated>
+<published>2014-07-08T16:51:13+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14886#p14886</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14886#p14886"/>
+<title type="html"><![CDATA[Re: OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14886#p14886"><![CDATA[
+Hi there.<br /><br />I now made several tests and digged a little deeper. Indeed it seems, that this problem is based around Androids call to onPause() on the GLSurfaceView. I tried to configure things in the MoaiView.java in my host - even disabling everything in the &quot;public void pause ( boolean paused )&quot; function. But nothing helps to solve this issue.<br /><br />I found also something on the web, that talk about the same problem:<br /><!-- m --><a class="postlink" href="http://gamedev.stackexchange.com/questions/12629/workaround-to-losing-the-opengl-context-when-android-pauses">http://gamedev.stackexchange.com/questi ... oid-pauses</a><!-- m --><br /><!-- m --><a class="postlink" href="http://gamedev.stackexchange.com/questions/20664/recreating-assets-after-onresume">http://gamedev.stackexchange.com/questi ... r-onresume</a><!-- m --><br /><br />Currently I try to completely circumvent Android going to pause (maybe directly determinating the app). Not an ideal solution, but better than this black-texture-thing...<br /><br />Oh, we also use a custom shader in our project, but also disabling the shader does not help - still black textures...<br /><br />PS: Our &quot;MoaiView.java&quot; is just the default-one that comes with the project (that's why I am wondering, that nobody else is experiencing this kind of problems...). Here is a pastebin: <!-- m --><a class="postlink" href="http://pastebin.com/ZH33WgM1">http://pastebin.com/ZH33WgM1</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1677">Nodepond</a> — Tue Jul 08, 2014 4:51 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-07-01T19:15:49+00:00</updated>
+<published>2014-07-01T19:15:49+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14866#p14866</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14866#p14866"/>
+<title type="html"><![CDATA[Re: OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14866#p14866"><![CDATA[
+~<br />I have seen this before, if you have a git version, I can quickly look over your &quot;moaiactivity.java&quot;to see if I see anything obvious.<br /><br />I had a custom host that called &quot;mGLView.onPause();&quot; which destroyed all my textures.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Tue Jul 01, 2014 7:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Nodepond]]></name></author>
+<updated>2014-07-01T08:37:02+00:00</updated>
+<published>2014-07-01T08:37:02+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14862#p14862</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14862#p14862"/>
+<title type="html"><![CDATA[Re: OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14862#p14862"><![CDATA[
+We started the project on an older version, upgraded and merged some files. Maybe this is the cause of this behavior. I'll try to reproduce with a small project, just like you suggested and post results. Thanks for helping!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1677">Nodepond</a> — Tue Jul 01, 2014 8:37 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-06-30T22:26:19+00:00</updated>
+<published>2014-06-30T22:26:19+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14857#p14857</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14857#p14857"/>
+<title type="html"><![CDATA[Re: OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14857#p14857"><![CDATA[
+Sounds like something wrong with texture invalidation when the opengl context is lost. Which version/branch of moai are you using, and do you have a small reproducible test case for us to get to the bottom of this. I have certainly not seen it before<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Mon Jun 30, 2014 10:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Nodepond]]></name></author>
+<updated>2014-06-30T21:23:17+00:00</updated>
+<published>2014-06-30T21:23:17+00:00</published>
+<id>/forums/viewtopic.php?t=2735&amp;p=14856#p14856</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2735&amp;p=14856#p14856"/>
+<title type="html"><![CDATA[OpenGL Textures are not loaded onPause / on Resume]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2735&amp;p=14856#p14856"><![CDATA[
+I have a successfully built project, but an issue occurs when I built the project for Android. <br /><br />When I start the game, everything works like expected. But when I pause the game (onPause-event) on the Android device and return (onResume-event), all cached openGL textures simply disappear!! Only the freshly loaded are visible, the others are just black.<br /><br />When I close and restart the game (onDestroy-event is coming up in the debugger), then textures are there again. The problem looks closely to this:<br /><!-- m --><a class="postlink" href="http://stackoverflow.com/questions/5965899/losing-opengl-textures-in-android-after-a-resume">http://stackoverflow.com/questions/5965 ... r-a-resume</a><!-- m --><br /><!-- m --><a class="postlink" href="http://stackoverflow.com/questions/2112768/prevent-onpause-from-trashing-opengl-context">http://stackoverflow.com/questions/2112 ... gl-context</a><!-- m --><br /><br />Any ideas what I can do about it?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1677">Nodepond</a> — Mon Jun 30, 2014 9:23 pm</p><hr />
+]]></content>
+</entry>
+</feed>

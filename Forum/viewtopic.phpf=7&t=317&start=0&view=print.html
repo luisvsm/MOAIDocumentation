@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Jerky translation animation with linear ease mode</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Jerky translation animation with linear ease mode</h2>
+		<p><a href="jerky-translation-animation-with-linear-ease-mode-t317/index.html">/forums/jerky-translation-animation-with-linear-ease-mode-t317/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Jerky translation animation with linear ease mode</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 04, 2012 1:12 pm</strong></div>
+				<div class="author">by <strong>cedric.darne</strong></div>
+				<div class="content">Hi,
+<br />
+<br />
+<br />
+<br />I'm trying to make a 'path' animation for a prop, moving it at several coordinates then looping. But I have a problem: when I use a linear ease mode, the animation looks jerky, as if it was lagging. But with other ease modes the animation is smoother. How can I make my animation smoother while keeping the linear ease mode?
+<br />
+<br />
+<br />
+<br />Here's a repro script:
+<br />
+<br /><blockquote>
+<br />
+<br /><div>MOAISim.openWindow ( "test", 640, 320 )</div>
+<br /><div>viewport = MOAIViewport.new ()</div>
+<br /><div>viewport:setSize ( 640, 320 )</div>
+<br /><div>viewport:setScale ( 640, 320 )</div>
+<br /><div>layer = MOAILayer2D.new ()</div>
+<br /><div>layer:setViewport ( viewport )</div>
+<br /><div>MOAISim.pushRenderPass ( layer )</div>
+<br /><div></div>
+<br /><div>gfxQuad = MOAIGfxQuad2D.new ()</div>
+<br /><div>gfxQuad:setTexture ( "cathead.png" )</div>
+<br /><div>gfxQuad:setRect ( -64, -64, 64, 64 )</div>
+<br /><div>prop = MOAIProp2D.new ()</div>
+<br /><div>prop:setDeck ( gfxQuad )</div>
+<br /><div>layer:insertProp ( prop )</div>
+<br /><div></div>
+<br /><div>mode = MOAIEaseType.LINEAR</div>
+<br /><div></div>
+<br /><div>curveX = MOAIAnimCurve.new ()</div>
+<br /><div>curveX:reserveKeys ( 5 )</div>
+<br /><div>curveX:setKey ( 1, 0, 0, mode )</div>
+<br /><div>curveX:setKey ( 2, 1, 6, mode )</div>
+<br /><div>curveX:setKey ( 3, 2, -6, mode )</div>
+<br /><div>curveX:setKey ( 4, 3, -12, mode )</div>
+<br /><div>curveX:setKey ( 5, 4, -6, mode )</div>
+<br /><div></div>
+<br /><div>curveY = MOAIAnimCurve.new ()</div>
+<br /><div>curveY:reserveKeys ( 5 )</div>
+<br /><div>curveY:setKey ( 1, 0, 0, mode )</div>
+<br /><div>curveY:setKey ( 2, 1, 6, mode )</div>
+<br /><div>curveY:setKey ( 3, 2, 6, mode )</div>
+<br /><div>curveY:setKey ( 4, 3, -6, mode )</div>
+<br /><div>curveY:setKey ( 5, 4, -6, mode )</div>
+<br /><div></div>
+<br /><div>anim = MOAIAnim.new ()</div>
+<br /><div>anim:reserveLinks ( 2 )</div>
+<br /><div>anim:setLink ( 1, curveX, prop, MOAIProp2D.ATTR_X_LOC )</div>
+<br /><div>anim:setLink ( 2, curveY, prop, MOAIProp2D.ATTR_Y_LOC )</div>
+<br /><div>anim:setMode ( MOAITimer.LOOP )</div>
+<br /><div>anim:start ()</div>
+<br />
+<br />
+<br /></blockquote>
+<br />
+<br />
+<br />Thanks for your advices.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Jerky translation animation with linear ease mode</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 04, 2012 1:31 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">I ran the script. Just to double check, I tried it with a different path:
+<br />
+<br /><a href="http://pastebin.com/RQj6gqNQ" target="_blank">http://pastebin.com/RQj6gqNQ</a>
+<br />
+<br />We don't have spline curves at the moment. That may be a feature we add later. For now to smooth out a path you'd need to add more samples... or use another ease type.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Jerky translation animation with linear ease mode</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 04, 2012 1:34 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Also: there are other things that can cause jerkiness depending on your environment. I'd be really surprised if your simulation is dropping frames, but there are some environments where even a simple game loop can look jerky due to timer issues. There are a lot of tradeoffs around using system time in the sim loop. We've exposed a lot of these in MOAISim, mainly because there's doesn't seem to be a best 'one size fits all' answer.
+<br />
+<br />So if you're seeing a lot of hitching and jerking even with a simple, smooth or linear animation then you may need to dig into the way the sim is being updates on your particular platform.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Jerky translation animation with linear ease mode</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 04, 2012 2:28 pm</strong></div>
+				<div class="author">by <strong>cedric.darne</strong></div>
+				<div class="content">I understand, the jerkiness may appear because the deltas between x/y loc are short. I'll try to add more steps to my 'path'.
+<br />
+<br />About the environment: the jerkiness, for my case, is more visible on android. But by adding frequent MOAISim.getPerformance() I didn't notice frames drops. And I didn't notice this problem on other animations for the same scene. So hopefully it does seem to be a timer issue.
+<br />
+<br />
+<br />
+<br />Thanks for your help, patrick.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Jerky translation animation with linear ease mode</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 04, 2012 3:33 pm</strong></div>
+				<div class="author">by <strong>cedric.darne</strong></div>
+				<div class="content">I'm trying to play with setSpeed and setSpan to reduce the jerkiness.
+<br />
+<br />Raising the speed helps but the anim runs obviously faster which is not quite the desired effect...</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

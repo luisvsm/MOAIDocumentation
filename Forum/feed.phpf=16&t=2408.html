@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=16&amp;t=2408&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-12-18T16:22:15-07:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=16&amp;t=2408&amp;mode</id>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2013-12-18T16:22:15-07:00</updated>
+<published>2013-12-18T16:22:15-07:00</published>
+<id>/forums/viewtopic.php?t=2408&amp;p=12513#p12513</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2408&amp;p=12513#p12513"/>
+<title type="html"><![CDATA[Re: Isometric Sprites Sorting Problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2408&amp;p=12513#p12513"><![CDATA[
+<blockquote><div><cite>akak wrote:</cite><br />Sort by Y axis, make center of thin walls props to be its bottom-most corner, object props' center to be in the center of the cell<br /></div></blockquote><br /><br />This is definitely part of my strategy!  Just replace object prop center with object physics center.  However, often the sprite is of larger width than the &quot;bounds&quot; you might expect.  For example, if the arm sticks out quite far, or is holding a large item, inevitably that will stick out beyond the &quot;physical&quot; bounds of the object.  No matter where I center the sort on the object, at some point it will be able to stick out between two thin walls.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Wed Dec 18, 2013 4:22 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[akak]]></name></author>
+<updated>2013-12-12T10:27:44-07:00</updated>
+<published>2013-12-12T10:27:44-07:00</published>
+<id>/forums/viewtopic.php?t=2408&amp;p=12451#p12451</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2408&amp;p=12451#p12451"/>
+<title type="html"><![CDATA[Re: Isometric Sprites Sorting Problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2408&amp;p=12451#p12451"><![CDATA[
+Sort by Y axis, make center of thin walls props to be its bottom-most corner, object props' center to be in the center of the cell<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1573">akak</a> — Thu Dec 12, 2013 10:27 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2013-12-12T08:57:45-07:00</updated>
+<published>2013-12-12T08:57:45-07:00</published>
+<id>/forums/viewtopic.php?t=2408&amp;p=12449#p12449</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2408&amp;p=12449#p12449"/>
+<title type="html"><![CDATA[Isometric Sprites Sorting Problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2408&amp;p=12449#p12449"><![CDATA[
+Isometric Extrusion Problem<br /><br />I've been stuck on a problem for quite some time and welcome feedback on it.  How do you properly &quot;layer&quot; sprites in an isometric world?  In what order do you draw them on the screen?  It is a fairly easy problem when you are talking about characters wandering around.  It is similarly easy when you are dealing with completely blocked structure tiles and object sprites smaller than those tiles.<br /><br />However my particular problem comes from the introduction of &quot;thin walls&quot;:<br /><br /><img src="http://i.imgur.com/Ay2htV6.png" alt="Image" /><br /><br />In both cases, A and B, the red/purple object sprites are extruding between two thin-wall tiles.  The reason for this is my sprites are sorted based on a Y-axis priority.  The problem is, how do you draw both walls over top of the red/purple blobs without causing a problem for other sprites in the vacinity (blue/green/yellow/orange)?<br /><br />SOLUTION 1:<br /><br />Cut isometric extrusions.  Detect when an object is near thin-wall problem spaces and then cut off the part that would extrude.  Using a scissor rect to chop off part of the sprite seems like the obvious solution, but it doesn't quite work because scissor rect is limited to squares and our walls have diagonal top edges.<br /><br />SOLUTION 2:<br /><br />Change priority when an object is near a problem space.  This works, but then objects behind that are drawn over top.  In Case A, the walls would be properly drawn over the red object, but the yellow object would also be drawn over top!  Also, changing the priority of the wall in Case A to draw over the red object would also cause it to go over the orange object.  It is, to me, an impossible situation.  Any attempt to fix it results in an eventual cascade of other problems.<br /><br />SOLUTION 3:<br /><br />Do not allow thin walls, or make the walls a little bit thick.  This solution will work, but only so long as you never use a sprite big enough to extrude.  However, the thicker walls require additional physics definition, can be a problem for pathfinding, and ruin the fun of thin walls.  This solution is basically giving up.<br /><br />SOLUTION 4:<br /><br />Sort not by Y height, but along an isometric angle (ex: from top-left to bottom-right).  This is an intuitive solution and would work sorting the sprites in case A but what about case B?  Case B would still remain, so it only solves half the problem, and vice versa going another direction.  Still, it *is* better than Y-axis priority.  I only thought of this solution while writing this post and wonder if it might work despite my concerns, but have yet to try it.<br /><br />WHAT IS THE SOLUTION?<br /><br />This seems like an unsolvable mathematical problem to me.  In every case, adjusting the priority of the walls for one object can cause a problem for other objects.  Yet to the human mind the solution seems obvious.  So does anyone have a way to articulate that solution?<br /><br /> <img src="images/smilies/icon_question.gif" alt=":?:" title="Question" /> <br /><br />BOTTOM EXTRUSIONS:<br /><br />A further problem, that I am not too worried about, but thought I would mention, are the extrusions underneath walls.  See the bright blue sprite in Case A.  Where would you cut that?  What about it's shadow?  Cutting it at any place causes it to look odd.  In my opinion, it actually looks best to leave it alone.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu Dec 12, 2013 8:57 am</p><hr />
+]]></content>
+</entry>
+</feed>

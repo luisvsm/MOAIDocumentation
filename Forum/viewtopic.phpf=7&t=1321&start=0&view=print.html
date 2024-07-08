@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Trouble building Chrome NaCL Host (scons)</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Trouble building Chrome NaCL Host (scons)</h2>
+		<p><a href="trouble-building-chrome-nacl-host-scons-t1321/index.html">/forums/trouble-building-chrome-nacl-host-scons-t1321/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Oct 22, 2012 9:14 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content">I will start this off by saying I know almost nothing about configuring scons.<br /><br />Anyways, when attempting to build the Chrome NaCL host, the pathing doesn't seem to work.<br /><br />I set and configure everything, running Cygwin, and run ./build.sh and it pukes on finding any of the libraries in 3rdParty.<br /><br />I am guessing the line <br />Repository ( &quot;../3rdparty&quot;, &quot;../src&quot;, &quot;src&quot; )<br /><br />Is what is supposed to set the path to the 3rdparty directory, but it doesn't seem to work.  <br /><br />Copying the contents of 3rd party into the scons folder seems to solve the problem to a certain degree, but seems a horrific hack.  Is there a solution?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 23, 2012 4:38 am</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">Thanks for writing the guide Serapth. I'll get Adam to check in on this.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 23, 2012 9:01 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">is your 3rdParty folder in that location relative to the build script? In the source it should be in that location by default, but if you move it, you'll need to adjust the paths.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 23, 2012 9:17 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content">Yeah, an unmodified pull of the github master... probably 3 weeks ago.<br /><br />Run as admin, in cygwin terminal, in the scons directory with no parameters.<br /><br />It's not just 3rdParty actually, it's all 3 paths that fail.  Copy them in locally and all works swimmingly well.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 23, 2012 9:41 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Sounds like an issue with your Scons, it works fine on all our machines...<br /><br />the Repository command specifies any additional directories it should look for source code in ( since you can't specify source paths out side of the top level directory ).<br /><br />Do you know what version of the NaCl sdk and scons you are using?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 23, 2012 10:50 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content">Pepper_17 ,will have to get back to you on scons version,  but its the one bundled with naclsdk. Coincidentally its been removes from the nacl later versions which of course breaks the build scipt too.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Oct 24, 2012 2:11 am</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content">It's scons2.0.1, and if you run it:<br /><br /><br />scons: done reading SConscript files.<br />scons: Building targets ...<br />scons: *** [opt_x86_32/box2d-2.2.1/Box2D/Collision/b2BroadPhase.o] Source `box2d-2.2.1/Box2D/Collision/b2BroadPhase.cpp' not found, needed by target `opt_x86_32/box2d-2.2.1/Box2D/Collision/b2BroadPhase.o'.<br />scons: building terminated because of errors.<br /><br /><br /><br />Verified on two different machines ( both win7 ).<br /><br />Obviously if I move the Box2D library to the scons directory, it errors out on the first source file of the next library.  If I copy all the sources into the scons directory, it works just fine.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Oct 24, 2012 6:12 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">Ah, did you try running it outside on cygwin, on a normal command prompt?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Oct 24, 2012 8:50 pm</strong></div>
+				<div class="author">by <strong>Serapth</strong></div>
+				<div class="content">Just checked, it builds normally with a normal command prompt.<br /><br />This is a pain in the arse though, as you then need to configure your build environment for both ( aka, I had to change the NACL paths and install Python again ).<br /><br />Can you think of a reason that scons is harfing under cygwin?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Trouble building Chrome NaCL Host (scons)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Oct 25, 2012 1:18 am</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">my first guess would be the paths aren't right. Windows vs Unix path seperators, but it could be lots of things.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

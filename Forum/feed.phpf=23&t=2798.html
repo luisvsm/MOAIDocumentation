@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=23&amp;t=2798&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-09-19T11:09:04+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=23&amp;t=2798&amp;mode</id>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2014-09-19T11:09:04+00:00</updated>
+<published>2014-09-19T11:09:04+00:00</published>
+<id>/forums/viewtopic.php?t=2798&amp;p=15372#p15372</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2798&amp;p=15372#p15372"/>
+<title type="html"><![CDATA[Re: Midi - Position and &quot;notes in region&quot; - Untz]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2798&amp;p=15372#p15372"><![CDATA[
+<blockquote class="uncited"><div><br />Maybe this could be used? I'm not sure what advantage miby has...<br /></div></blockquote><br /><br />miby has the advantage that its a very clean C library for parsing MIDI content with a callback mechanism.  This is very easy to use from Lua.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Fri Sep 19, 2014 11:09 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[joelt]]></name></author>
+<updated>2014-09-19T02:08:39+00:00</updated>
+<published>2014-09-19T02:08:39+00:00</published>
+<id>/forums/viewtopic.php?t=2798&amp;p=15370#p15370</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2798&amp;p=15370#p15370"/>
+<title type="html"><![CDATA[Re: Midi - Position and &quot;notes in region&quot; - Untz]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2798&amp;p=15370#p15370"><![CDATA[
+Maybe this could be used? I'm not sure what advantage miby has...<br /><!-- m --><a class="postlink" href="http://www.pjb.com.au/comp/lua/MIDI.html">http://www.pjb.com.au/comp/lua/MIDI.html</a><!-- m --><br /><br />I'm trying to figure out if I can control fmod to only play one track, obviously I could use this library and write a new file with just one track, but I was trying to find something as &quot;direct&quot; as possible.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1548">joelt</a> — Fri Sep 19, 2014 2:08 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[joelt]]></name></author>
+<updated>2014-09-18T03:53:30+00:00</updated>
+<published>2014-09-18T03:53:30+00:00</published>
+<id>/forums/viewtopic.php?t=2798&amp;p=15350#p15350</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2798&amp;p=15350#p15350"/>
+<title type="html"><![CDATA[Re: Midi - Position and &quot;notes in region&quot; - Untz]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2798&amp;p=15350#p15350"><![CDATA[
+miby makes sense in conjunction with fmod I suppose. I understand I can play midi and get the current position in fmod. I'd just need something to find the notes to render with miby. Hopefully making the position/parsing sync up wouldn't be too bad. However, playing say a single track sounds a little more awkward, possibly means writing a file to be picked up by fmod.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1548">joelt</a> — Thu Sep 18, 2014 3:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2014-09-11T12:35:13+00:00</updated>
+<published>2014-09-11T12:35:13+00:00</published>
+<id>/forums/viewtopic.php?t=2798&amp;p=15285#p15285</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2798&amp;p=15285#p15285"/>
+<title type="html"><![CDATA[Re: Midi - Position and &quot;notes in region&quot; - Untz]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2798&amp;p=15285#p15285"><![CDATA[
+I've done this already with a prototype application I wrote a couple years ago - rendered MIDI files with MOAI.  The approach I took was to use a custom Lua parser for MIDI files (very easy), and then I used a MOAIScriptDeck to render the MIDI note data.  Depending on the size of the MIDI file, it may work for you to just generate a Prop-per-data-item, and then arrange them in relation to each other - meaning you can easily scroll through the whole song - or instead you might need to have a 'window' of MIDI events you want to look into, and then create Props from that .. <br /><br />As far as playback is concerend, my app had a real MIDI interface hooked up to it and I just rendered everything with external synths.  I did have a look at adding something like Timidity to MOAI, but decided it wasn't necessary for the prototype.<br /><br />As far as the parser is concerned, you can either add a C-based MIDI parser to MOAI pretty easily (for example, miby - see <!-- m --><a class="postlink" href="https://code.google.com/p/miby/">https://code.google.com/p/miby/</a><!-- m -->)  or just build your own simple parser in plain ol' Lua.  I'm actually quite interested in adding miby to the MOAI stack, so if you want to go that route, lets discuss it ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Sep 11, 2014 12:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-09-11T05:25:42+00:00</updated>
+<published>2014-09-11T05:25:42+00:00</published>
+<id>/forums/viewtopic.php?t=2798&amp;p=15281#p15281</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2798&amp;p=15281#p15281"/>
+<title type="html"><![CDATA[Re: Midi - Position and &quot;notes in region&quot; - Untz]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2798&amp;p=15281#p15281"><![CDATA[
+~<br />I don't think there is anything in Moai by default to play midi files. You could implement something in C++ yourself if you are up for the task.<br /><br /><span style="font-weight: bold">edit:</span><br /><ul><li> <!-- l --><a class="postlink-local" href="untz-can-we-change-the-sound-pitch-t1421/index.html">untz-can-we-change-the-sound-pitch-t1421/</a><!-- l --></li></ul><blockquote class="uncited"><div><br />I'm not using UNTZ or anything like that - I have a small synth library which generates audio, similar to something like sfxr that runs under both Android and OSX audio subsystems, and I pass parameters to it like a MIDI device - with MIDI CC #'s and so on. This synth is something I developed outside the context of MOAI - I just wanted to point out that you can do sound in the MOAI hosts, but you have to set it up yourself.<br /></div></blockquote><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Thu Sep 11, 2014 5:25 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[joelt]]></name></author>
+<updated>2014-09-11T04:09:11+00:00</updated>
+<published>2014-09-11T04:09:11+00:00</published>
+<id>/forums/viewtopic.php?t=2798&amp;p=15280#p15280</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2798&amp;p=15280#p15280"/>
+<title type="html"><![CDATA[Midi - Position and &quot;notes in region&quot; - Untz]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2798&amp;p=15280#p15280"><![CDATA[
+I want to play a midi file and be able to graph the notes currently being played. What Moai API would I use to determine:<br /><br />1) current position<br />2) find the relevant notes within the midi to graph (ie. current time + time delta)?<br /><br />Is this possible and is it cross-platform (if so, which ones)? I know that specifically for FMOD they do not support any information about specific midi notes (question 2).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1548">joelt</a> — Thu Sep 11, 2014 4:09 am</p><hr />
+]]></content>
+</entry>
+</feed>

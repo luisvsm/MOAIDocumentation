@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=11&amp;t=1844&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-10-17T15:19:23+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=11&amp;t=1844&amp;mode</id>
+<entry>
+<author><name><![CDATA[robertwahler]]></name></author>
+<updated>2013-10-17T15:19:23+00:00</updated>
+<published>2013-10-17T15:19:23+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11921#p11921</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11921#p11921"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11921#p11921"><![CDATA[
+@raleigh, thanks for posting the template.  Since the MOAI binaries are no longer available,  I tried using the 1.40 tag in the main MOAI repo but the include structure has changed, no more AKU.h.  I'm able to build iOS projects but I either get the rotation wrong or the touch events are not handled properly when in landscape.  <br /><br />What version of MOAI are folks using that works in iOS in landscape?  I'm happy to build it myself if I knew the proper git tag that works with Hanappe and iOS in landscape.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1172">robertwahler</a> — Thu Oct 17, 2013 3:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[raleigh]]></name></author>
+<updated>2013-10-16T00:41:15+00:00</updated>
+<published>2013-10-16T00:41:15+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11896#p11896</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11896#p11896"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11896#p11896"><![CDATA[
+<!-- m --><a class="postlink" href="https://anonfiles.com/file/8d0adf8659ab8bb98abc2906fabfd935">https://anonfiles.com/file/8d0adf8659ab ... 06fabfd935</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1359">raleigh</a> — Wed Oct 16, 2013 12:41 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[robertwahler]]></name></author>
+<updated>2013-10-15T12:13:29+00:00</updated>
+<published>2013-10-15T12:13:29+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11886#p11886</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11886#p11886"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11886#p11886"><![CDATA[
+I'm struggling to get Landscape working with iOS.  This thread looks promising. Unfortunately, the download link for <!-- m --><a class="postlink" href="http://no-sheet.com/temp/moai_forum/ios_host.zip">http://no-sheet.com/temp/moai_forum/ios_host.zip</a><!-- m --> no longer works.  Could some kind soul upload a copy or point me to a solution to landscape in the stock iOS host?  Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1172">robertwahler</a> — Tue Oct 15, 2013 12:13 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-10-04T08:17:18+00:00</updated>
+<published>2013-10-04T08:17:18+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11801#p11801</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11801#p11801"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11801#p11801"><![CDATA[
+@nosheet Thank you for your prompt detailed reply.<br /><br />I am using Xcode 5, and I am on the actual master branch of moai-dev.<br /><br />I am able to run the bash clean.sh without errors, but when I run the build.sh I get the following error:<br /><blockquote class="uncited"><div><br />Building libmoai/libmoai-osx/macosx for osx Debug...Done.<br />Building libmoai/libmoai-osx-3rdparty/macosx for osx Debug...** BUILD FAILED **<br /><br /><br />The following build commands failed:<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/base64.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/base64.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/connect.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/connect.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/content_encoding.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/content_encoding.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/cookie.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/cookie.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/curl_addrinfo.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/curl_addrinfo.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/curl_rand.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/curl_rand.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/curl_memrchr.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/curl_memrchr.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/curl_sspi.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/curl_sspi.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />CompileC /var/root/Library/Developer/Xcode/DerivedData/libmoai-gbxeyatdgmwkmsgydvixosgxbruw/Build/Intermediates/libmoai.build/Debug/libmoai-osx-3rdparty.build/Objects-normal/x86_64/dict.o /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/dict.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler<br />(9 failures)<br />Failed.<br />Logs in /tmp/moai/osx/libmoai-osx-3rdparty/macosx/Debug/xcodebuild.log. Last few lines of failure:<br />In file included from /Users/n2oula/Documents/Work/MOAI/moai-dev/3rdparty/curl-7.19.7/lib/dict.c:24:<br />In file included from ../../3rdparty/curl-7.19.7/lib/setup.h:82:<br />../../3rdparty/curl-7.19.7/include-iphone/curl/curlrules.h:144:6: error: '__curl_rule_01__' declared as an array with a negative size<br />    [CurlchkszEQ(long, CURL_SIZEOF_LONG)];<br />     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br />../../3rdparty/curl-7.19.7/include-iphone/curl/curlrules.h:133:27: note: expanded from macro 'CurlchkszEQ'<br />#define CurlchkszEQ(t, s) sizeof(t) == s ? 1 : -1<br /></div></blockquote><br /><br />Might be caused because I switched to Xcode 5? <br /><br /><br />On the other hand, concerning the AKU headers, the latest master branch does not list a moai/include/ directory (check out <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev">https://github.com/moai/moai-dev</a><!-- m -->)<br /><br />I can find SOME of them in src/moai-iphone/ but many are missing, i.e. AKU.h<br /><br />Any clue?<br /><br />Thanks again!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Fri Oct 04, 2013 8:17 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-10-03T14:57:38+00:00</updated>
+<published>2013-10-03T14:57:38+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11798#p11798</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11798#p11798"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11798#p11798"><![CDATA[
+Hey N2ouls, <br />what kind of XCode errors are you getting (and what version of XCode are you using)? More importantly, which moai branch are you using? I am not sure which ones are broken, but I assume almost noone works correctly (I hope someone why maintains the branch can give us more detailed info).<br /><br />Are you getting problems linking to Libraries, or to AKU Headers?<br /><br />Oh damn, I just realized the images I've posted no longer works due to some misfortunate event with my webserver. I need to find and upload those images again, it makes the process much easier.<br /><br />The way I build host, I just run in Terminal following lines:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd moai/xcode/libmoai</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">bash clean.sh</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">bash build.sh</div></li><br /></ol></code></dd></dl><br /><br />Instead of moai/xcode/libmoai I put absolute path to the folder where libmoai.xcodeproj is residing.<br />This will first clean the build (if there is something built already) and then build all the targets of libmoai xcode project.<br />Before even running the build.sh script, I would normally edit it in text editor, to avoid building stuff that I don't want to use, namely facebook, fmod etc...So the relevant part of build.sh would be:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ios_schemes=&quot;libmoai-ios libmoai-ios-3rdparty libmoai-ios-luaext libmoai-ios-untz libmoai-ios-zlcore&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ios_sdks=&quot;iphoneos iphonesimulator&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ios_architectures_iphonesimulator=&quot;i386&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ios_architectures_iphoneos=&quot;armv7 armv7s&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br /><br /><br />The build process will create library files, and it will save it somewhere in /tmp/moai... folder (see the output in terminal to find the folder). In order to open that temp folder in Finder (because it will be hidden by default), simply copy the folder path and press CMD+SHIFT+G in Finder to open the &quot;Go To Folder&quot; dialog box and paste the path there. You want  to look for Release (not Debug) folder, which will have following subfolders:<br />/armv7<br />/armv7s<br />/i386<br />/universal<br />Then I would normally copy the contents of that build folder (the 4 above subfolders) to somewhere on hard disk where I want to keep it. The content of folder /universal is the one I include in my XCode project (as in step 3 in my tutorial: Link Binaries) - I normally don't do anything with other 3 folders (maybe I should?)<br />In addition to that, univeral folder is what I want to point with using my MOAI_DIR_LIB Xcode variable.<br /><br />As far as AKU headers go, I would normally point to the moai/include/ folder of the downloaded sources.<br /><br />Now depending on errors you get, we might be able to troubleshoot.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Thu Oct 03, 2013 2:57 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-10-03T09:41:40+00:00</updated>
+<published>2013-10-03T09:41:40+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11796#p11796</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11796#p11796"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11796#p11796"><![CDATA[
+@nosheet<br /><br />I am trying to run your host using the latest moai-dev branch on github.<br />I generated the new libraries running the script build-xcode-ios but I am unable to get all the AKU headers used in the step 5 of your guide: &quot;5) Set up paths to Moai libraries and headers to be included&quot;<br /><br />Any indications on how to proceed to get / generate the updated AKU headers compatible with new branches on github?<br /><br />I might be missing something in the whole process of adapting a new branch of moai-dev to your host.<br />It would be great if you could help us with a step-by-step guide to do so.<br />(correctly building the new libraries, finding the new headers to be included in the header path...)<br /><br /><br />Any help around this would be extremely appreciated as I've been struggling around this whole process for days and I could not find any well-documented walkthrough on the wiki / forums.<br /><br />I think this would bring a lot to newbies who are sometimes stuck at this level.<br /><br />Thanks a lot!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Thu Oct 03, 2013 9:41 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[POPC]]></name></author>
+<updated>2013-08-05T11:04:17+00:00</updated>
+<published>2013-08-05T11:04:17+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=11030#p11030</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=11030#p11030"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=11030#p11030"><![CDATA[
+@nosheet<br />Please make Gyroscope public API for both iOS and Android!<br />No Gyroscope, No Future.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1524">POPC</a> — Mon Aug 05, 2013 11:04 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-05-24T08:21:33+00:00</updated>
+<published>2013-05-24T08:21:33+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10282#p10282</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10282#p10282"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10282#p10282"><![CDATA[
+@francisco, you're right, thats why i called it a &quot;hack&quot;.  originally the gyro code was in there in the host i use personally, but it had its own event type that I made  by extending Moai source. However, for the host I share here, I didnt want it to be dependant on any particular  branch, so that users could work with a release version of Moai without tinkering with source. Therefore I could either have deleted the gyro code, or put it as a conditial to override the built-in accel behavior, and for some reason I opted for the later.<br />It might be better to delete it though, at least until I have the source code for &quot;real&quot; gyro event ready to submit.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Fri May 24, 2013 8:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[franciscotufro]]></name></author>
+<updated>2013-05-23T21:01:31+00:00</updated>
+<published>2013-05-23T21:01:31+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10276#p10276</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10276#p10276"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10276#p10276"><![CDATA[
+One thing I'm not sure about is Gyro vs. Accelerometer.<br />I mean, they're two different things, why do you disable accelerometer to use gyroscope?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1098">franciscotufro</a> — Thu May 23, 2013 9:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-05-21T17:30:43+00:00</updated>
+<published>2013-05-21T17:30:43+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10251#p10251</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10251#p10251"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10251#p10251"><![CDATA[
+@ibisum, @francisco, whatever way you find suitable to distribute this, it's all great with me. The host code and the instruction was meant to be shared as much as possible. I can make a slightly more polished PDF instructions, or we can put it on wiki. There is one shortcoming with my approach with this host, and that is there is no out of the box way to have both orientations, and that's something I'll probably (have to) work on very soon. In the meantime I still think this is good enough for 95% applications, as there is not many games that use all orientations.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Tue May 21, 2013 5:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2013-05-21T16:52:41+00:00</updated>
+<published>2013-05-21T16:52:41+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10250#p10250</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10250#p10250"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10250#p10250"><![CDATA[
+I vote for merging this in to the mainline MOAI sources, there doesn't seem to be much reason not to - I also think that a PDF with nosheets' instructions could be included in the $MOAI_SDK/hosts/xcode folder, or whatever, but thats just me ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Tue May 21, 2013 4:52 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[franciscotufro]]></name></author>
+<updated>2013-05-21T16:35:29+00:00</updated>
+<published>2013-05-21T16:35:29+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10249#p10249</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10249#p10249"/>
+<title type="html"><![CDATA[Re: [CONTRIB] Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10249#p10249"><![CDATA[
+Trying to start working on the Community Contributions forum, I moved this topic as a CONTRIB proposal.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1098">franciscotufro</a> — Tue May 21, 2013 4:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[franciscotufro]]></name></author>
+<updated>2013-05-21T16:32:42+00:00</updated>
+<published>2013-05-21T16:32:42+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10248#p10248</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10248#p10248"/>
+<title type="html"><![CDATA[Re: Code Share: Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10248#p10248"><![CDATA[
+nosheet, is there a reason why we shouldn't ship this with Moai SDK?<br />If you all believe is a good fit for the SDK we can discuss about integrating it in the actual release.<br />Cheers!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1098">franciscotufro</a> — Tue May 21, 2013 4:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2013-05-20T22:56:51+00:00</updated>
+<published>2013-05-20T22:56:51+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10242#p10242</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10242#p10242"/>
+<title type="html"><![CDATA[Re: Code Share: Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10242#p10242"><![CDATA[
+<blockquote><div><cite>nosheet wrote:</cite><br />If you talk about the actual gyro values (ie. roll, pitch, yaw returned from CMAttitude), yes it's quite a mess as actually they are **not** tied to orientation.<br /></div></blockquote><br /><br />I'm talking strictly the orientation of the device.  You can lay an ipad on a table and it is facing up towards you, with a rotated viewport -90 degrees (with the home button in the left middle side) - then when you pick the device up off the table with your right hand, you may accidentally rotate it a bit clockwise... which triggers the orientation flip because it still has your orientation fixed to the home button being on the bottom (not on the left with a rotated viewport).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Mon May 20, 2013 10:56 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[scottwb]]></name></author>
+<updated>2013-05-20T19:28:06+00:00</updated>
+<published>2013-05-20T19:28:06+00:00</published>
+<id>/forums/viewtopic.php?t=1844&amp;p=10241#p10241</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1844&amp;p=10241#p10241"/>
+<title type="html"><![CDATA[Re: Code Share: Easy To Use iOS Host With Landscape and Gyro]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1844&amp;p=10241#p10241"><![CDATA[
+Wow! Totally awesome post @nosheet ! This should be pinned or put somewhere special.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1269">scottwb</a> — Mon May 20, 2013 7:28 pm</p><hr />
+]]></content>
+</entry>
+</feed>

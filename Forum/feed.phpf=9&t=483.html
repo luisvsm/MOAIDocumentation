@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=483&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-09-17T19:37:05+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=483&amp;mode</id>
+<entry>
+<author><name><![CDATA[rhetorical]]></name></author>
+<updated>2012-09-17T19:37:05+00:00</updated>
+<published>2012-09-17T19:37:05+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6515#p6515</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6515#p6515"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6515#p6515"><![CDATA[
+Thanks for the reply ibisum.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1086">rhetorical</a> — Mon Sep 17, 2012 7:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-09-16T09:47:49+00:00</updated>
+<published>2012-09-16T09:47:49+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6479#p6479</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6479#p6479"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6479#p6479"><![CDATA[
+<blockquote><div><cite>rhetorical wrote:</cite><br />The manifest would still be good. In Eclipse, I am getting a lot of flags thrown about the order of the Manifest and cannot build until I fix it, but in the terminal it builds and runs just fine.<br /></div></blockquote><br /><br />Fix the order of the Manifest, I'd say.  I don't have such problems with the Manifest in my android projects, but there is nothing special about them - I just double-checked to make sure I set my main view to full-screen, forced-Portrait (as needed), keyboard and internet permissions, and so on, though .. you do have to assume responsibility for the MOAI host projects from the perspective of a native Android (iOS&amp;etc.) developer, as well: turn on Accelerometer if you need it (or don't if you don't need it, for battery-saving purposes), and so on.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sun Sep 16, 2012 9:47 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-09-16T09:44:25+00:00</updated>
+<published>2012-09-16T09:44:25+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6478#p6478</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6478#p6478"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6478#p6478"><![CDATA[
+Have a very deep look at MOAIEnvironment, it is what your app should be checking out first of all to find out what it is running on, what other constraints you might like to know about, and so on .. <br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">-- get MOAI's settings</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">screen_width = nil or MOAIEnvironment.horizontalResolution</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">screen_height = nil or MOAIEnvironment.verticalResolution</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />There are many other things in MOAIEnvironment you'll probably want to know about, such as device features and so on, so worth digging deeper.  Also, beware: it had some refactor'ing that didn't make its way to samples, fields have been changed, so use the docs, bruce .. but also check the code.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sun Sep 16, 2012 9:44 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhetorical]]></name></author>
+<updated>2012-09-15T15:39:31+00:00</updated>
+<published>2012-09-15T15:39:31+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6460#p6460</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6460#p6460"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6460#p6460"><![CDATA[
+I just figured out what is going on...my veiwport size was set too small. Is there a function or variable that holds width and height of the actual device. I have a feeling that if I put a 480x800 viewport on a iPod Touch that it will not scale. <br /><br />The manifest would still be good. In Eclipse, I am getting a lot of flags thrown about the order of the Manifest and cannot build until I fix it, but in the terminal it builds and runs just fine.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1086">rhetorical</a> — Sat Sep 15, 2012 3:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhetorical]]></name></author>
+<updated>2012-09-15T14:59:50+00:00</updated>
+<published>2012-09-15T14:59:50+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6459#p6459</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6459#p6459"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6459#p6459"><![CDATA[
+Thanks ibisum that was very helpful. I managed to rotate the app into portrait mode, but it is still downscaled and in now hugging the bottom left corner. I now understand that the issue is within the Manifest. Could you post an appropriate Android Manifest to learn from? Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1086">rhetorical</a> — Sat Sep 15, 2012 2:59 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-09-15T13:43:02+00:00</updated>
+<published>2012-09-15T13:43:02+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6457#p6457</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6457#p6457"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6457#p6457"><![CDATA[
+When you use 'make-host' to make an Android build project from a template, you inherit the setup of the Android workspace and Manifest, which isn't maybe set up for how your app is supposed to work: and thus you should *always* double-check the host configuration/setup as a last-step when making the template work for a build for your App.  If you need Landscape orientation, don't assume that the MOAI host for Android is set up for that; same is true for iOS, and all other host build projects that typically go into making a cross-platform release.<br /><br />MOAI runs under the constraints of the Host, in a little GL ES window.  The orientation and physical configuration of the device is done in the Host level, MOAI then just plays along.  If all looks good in your MOAI code, but yet you're still getting dizzy results, head into the Host project and double-check, nay triple-check, all your expectations of behaviour.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sat Sep 15, 2012 1:43 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhetorical]]></name></author>
+<updated>2012-09-14T21:37:48+00:00</updated>
+<published>2012-09-14T21:37:48+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6442#p6442</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6442#p6442"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6442#p6442"><![CDATA[
+I finally have successfully built from source, imported into eclipse and building error free, but the hello-moai sample is showing up rotated 90 degrees clockwise. Furthermore it is scaled down as if trying to fill in as if the 3:2 ratio of  480 x 320 as 320 as the 3 for height and like 108 as the width. It always opens this way. I am using a Galaxy SII. There are also no errors in the terminal.<br /><br />Is there a step I missed? What should I do?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1086">rhetorical</a> — Fri Sep 14, 2012 9:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Sergeyka]]></name></author>
+<updated>2012-09-11T03:24:03+00:00</updated>
+<published>2012-09-11T03:24:03+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6343#p6343</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6343#p6343"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6343#p6343"><![CDATA[
+<blockquote class="uncited"><div><br />cp: cannot stat `host-source/project/res/*': No such file or directory<br /></div></blockquote><br /><br />a month ago, I managed to solve all the problems and create apk under windows. But in a month I have many things I had forgotten=) If I'm not mistaken, the error occurs because, don't you have not installed the console program cpio.<br />Run setup.exe(cygwin). Select your the cygwin folder, etc. Enter the cpio in the search field and click on skip(see screenshot)<br /><br /><a href="http://img440.imageshack.us/i/67403864.png/" class="postlink"><img src="http://img440.imageshack.us/img440/5637/67403864.th.png" alt="Image" /></a><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=735">Sergeyka</a> — Tue Sep 11, 2012 3:24 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[pyrofool]]></name></author>
+<updated>2012-09-09T22:02:02+00:00</updated>
+<published>2012-09-09T22:02:02+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6325#p6325</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6325#p6325"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6325#p6325"><![CDATA[
+Is anyone willing to post a walk through on setting up the environment staring with a fresh Linux vm, including installing and setting up Android sdk and ndk? I'm also having issues building the native host in linux.I can build the spacepluk / moai-dev branch but it seems to be missing some socket stuff when I run my project.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1072">pyrofool</a> — Sun Sep 09, 2012 10:02 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[SH_Black_Hole]]></name></author>
+<updated>2012-09-08T10:09:49+00:00</updated>
+<published>2012-09-08T10:09:49+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6310#p6310</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6310#p6310"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6310#p6310"><![CDATA[
+finally i can create new host. my problem is I create backup of ant folder and use backup and when i use backup folder(ex ant-copy) scripts not work correctly. if that use relative path why it's not work correctly?<br /><br />after create host and imported in eclipse i get some error about &quot;Project '...' is missing required source folder: 'gen'&quot;<br />it solve by use &quot;android tools &gt; fix project properties&quot; after that eclipse get<br /><blockquote class="uncited"><div><br />DescriptionResourcePathLocationType<br />The method onSurfaceCreated(GL10, EGLConfig) of type MoaiView.MoaiRenderer must override a superclass methodMoaiView.java/untitled/src/com/SH_BLACK_HOLE/TESTAppline 207Java Problem<br />The method onSurfaceChanged(GL10, int, int) of type MoaiView.MoaiRenderer must override a superclass methodMoaiView.java/untitled/src/com/SH_BLACK_HOLE/TESTAppline 197Java Problem<br />The method onDrawFrame(GL10) of type MoaiView.MoaiRenderer must override a superclass methodMoaiView.java/untitled/src/com/SH_BLACK_HOLE/TESTAppline 190Java Problem<br /></div></blockquote><br />and thay solve by delete &quot;@Override&quot; before error lines.<br /><br />finaly project can use on android devices <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />thanks all people help me to solve my problems.<br /><br /><blockquote><div><cite>Serapth wrote:</cite><br /><blockquote><div><cite>SH_Black_Hole wrote:</cite>finaly dear Serapth if this steps is necessary please add it to your tutorial for other user.<br /></div></blockquote><br /><br />That looks correct for path.  It is not a part of the process, as if Cygwin is installed correctly, it should take care of all of this for you.<br /></div></blockquote><br />when i install cygwin &quot;\cygwin\bin&quot; add to end of PATH and &quot;\cygwin\usr\local\bin&quot; never add to my path and I edit path for get &quot;/usr/local/bin;/usr/bin&quot; in start of &quot;echo $PATH&quot; result. is my cygwin install incorrect?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1007">SH_Black_Hole</a> — Sat Sep 08, 2012 10:09 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-09-06T15:01:39+00:00</updated>
+<published>2012-09-06T15:01:39+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6277#p6277</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6277#p6277"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6277#p6277"><![CDATA[
+<blockquote><div><cite>SH_Black_Hole wrote:</cite><br />finaly dear Serapth if this steps is necessary please add it to your tutorial for other user.<br /></div></blockquote><br /><br />That looks correct for path.  It is not a part of the process, as if Cygwin is installed correctly, it should take care of all of this for you.<br /><br />You have run make-host.sh and passed it a project name in Java form right?  Something like:<br /><br />cd /cygdrive/c/moai/ant/<br />./make-host.sh   -p yourappname.yourdomainname.com<br /><br /><br />Leave the terminal open. After this, confirm that under the ant directory, a folder named untitled-host has been created.  ( ls untitled-host      If that returns cannot access untitled-host, it wasnt created ).<br /><br />Assuming it does exist<br /><br />At this point you need to change in to the untitled-host folder as described in the guide and edit settings-local.sh.  You can use notepad, or whatever to edit the values.  Do so and save.  Now back at the terminal window<br /><br />cd untitled-host<br />./run-host.sh<br /><br />If this fails, paste the exact results from the terminal window here.<br /><br /><br /><br />Android development works just fine on Windows, *once you've got the environment configured*.  This is the tricky part, but frankly, you've gotta go through this if you are going to work with any of Googles ( shoddy, imho ) developer tools, so might as well get it over with.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Thu Sep 06, 2012 3:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-09-06T13:37:58+00:00</updated>
+<published>2012-09-06T13:37:58+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6276#p6276</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6276#p6276"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6276#p6276"><![CDATA[
+You only need to build your APKs on Linux / OSX.  You should test on hardware before releasing your app.  Still, tweaking on Linux and then building for hardware should work when you getting ready to release for Android.  You can do all of your general development on Windows if you want to.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Thu Sep 06, 2012 1:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-09-06T09:33:48+00:00</updated>
+<published>2012-09-06T09:33:48+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6273#p6273</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6273#p6273"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6273#p6273"><![CDATA[
+<blockquote class="uncited"><div><br />Is Moai actually supported on Linux? On my one machine I dual boot Win8/Ubuntu, and I remember trying to configure Moai on Linux and running in to some roadblocks right away ( Chipmunk maybe? ) and posts saying Linux was &quot;coming soon&quot;. Granted, I didn't put a ton of effort into it.<br /></div></blockquote><br /><br />The linux- branch of the moai-dev repo works just fine, at least for most things.  Audio is not quite up to scratch, for example, but as a general environment for coding, the Linux moai client functions fine and my SublimeText2 flow on Linux is virtually indistinguishable from that of Mac OSX.<br /><br />I wouldn't say the Linux build of MOAI is ready for primetime, but that may just be a matter of weeks away, who knows ..<br /><br />EDIT: But, the point is this: You only have to Build your Android releases on Linux, develop with MacOSX/Windows MOAI.EXE client, I suppose ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Sep 06, 2012 9:33 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[SH_Black_Hole]]></name></author>
+<updated>2012-09-06T06:53:35+00:00</updated>
+<published>2012-09-06T06:53:35+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6272#p6272</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6272#p6272"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6272#p6272"><![CDATA[
+I try<br /><blockquote class="uncited"><div><br />-bash-4.1$ echo $PATH<br />/usr/local/bin:/usr/bin:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/ProgrammingTools/android-ndk:/cygdrive/c/Program Files/TortoiseSVN/bin:/cygdrive/c/Documents and Settings/Test Program/My Documents/UltraEdit<br />-bash-4.1$ cd /cygdrive/c/ProgrammingTools/moai-1-2/ant-copy/untitled-host<br />-bash-4.1$ ./run-host.sh<br />cp: cannot stat `host-source/project/res/*': No such file or directory<br />-bash-4.1$<br /></div></blockquote><br />is it correct? why I get error? why MOAI not use some windows app to copy, create and manipulate files? what is benefits of this hard and error prone way for create package?<br /><br />EDIT: my path is not correct and i search and solve it in 2 step :<br /> 1st: change location of &quot;cygwin\bin&quot; to first of system PATH on environment variable<br /> 2nd: add &quot;\cygwin\usr\local\bin&quot; to beginning of system PATH<br />and I find <a href="http://www.bsp-gmbh.com/hercules/herc_cygwin.html" class="postlink">http://www.bsp-gmbh.com/hercules/herc_cygwin.html</a> and add &quot;cygwin\user\local\lib\&quot; to path in location that describe. is it necessary?<br />finaly dear Serapth if this steps is necessary please add it to your tutorial for other user.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1007">SH_Black_Hole</a> — Thu Sep 06, 2012 6:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-09-05T19:00:07+00:00</updated>
+<published>2012-09-05T19:00:07+00:00</published>
+<id>/forums/viewtopic.php?t=483&amp;p=6265#p6265</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=483&amp;p=6265#p6265"/>
+<title type="html"><![CDATA[Re: How to build an Android APK , step-by-step]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=483&amp;p=6265#p6265"><![CDATA[
+<blockquote><div><cite>ibisum wrote:</cite><br /><blockquote class="uncited"><div>what should I do?<br /></div></blockquote><br /><br />Use Linux.  Seriously, something is totally screwed up with your cygwin environment, and the tools being used in make-host.bat ..  &quot;cannot stat 'host-source/project/res/*' -- this means something is definitely missing from your copy of the host sources.  I have no idea how it can be fixed, but one idea for how it happens is, simply, Cygwin isn't doing the job.  So: Use Linux.</div></blockquote><br /><br />Is Moai actually supported on Linux?  On my one machine I dual boot Win8/Ubuntu, and I remember trying to configure Moai on Linux and running in to some roadblocks right away ( Chipmunk maybe? ) and posts saying Linux was &quot;coming soon&quot;.  Granted, I didn't put a ton of effort into it.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Wed Sep 05, 2012 7:00 pm</p><hr />
+]]></content>
+</entry>
+</feed>

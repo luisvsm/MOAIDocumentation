@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=23&amp;t=2404&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-12-10T19:26:09+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=23&amp;t=2404&amp;mode</id>
+<entry>
+<author><name><![CDATA[kreios]]></name></author>
+<updated>2013-12-10T19:26:09+00:00</updated>
+<published>2013-12-10T19:26:09+00:00</published>
+<id>/forums/viewtopic.php?t=2404&amp;p=12429#p12429</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2404&amp;p=12429#p12429"/>
+<title type="html"><![CDATA[Re: Music games in Moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2404&amp;p=12429#p12429"><![CDATA[
+Thanks for the reply!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1468">kreios</a> — Tue Dec 10, 2013 7:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-12-10T15:44:30+00:00</updated>
+<published>2013-12-10T15:44:30+00:00</published>
+<id>/forums/viewtopic.php?t=2404&amp;p=12424#p12424</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2404&amp;p=12424#p12424"/>
+<title type="html"><![CDATA[Re: Music games in Moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2404&amp;p=12424#p12424"><![CDATA[
+Hi, I am working on a music app using UNTZ, iOS only.<br /><br />At first I have to say that I have never worked with FMOD; apparently it's a sort of an industry standard, although just by looking at API that has been exposed to MOAI Lua part, I don't see advantages over the UNTZ (doesn't have more functionality). I might be wrong and FMOD might have some additional capabilities exposed to Moai that I'm not aware of.<br /><br />As for UNTZ, the way it ships by default it will likely introduce a lag when playing sounds on iOS and Windows. Please check one of the threads in this forum where we came up with a fix for the lag. After fixing the lag, I was actually quite happy (and surprised) that it worked quite reliably (I didn't try Android though).<br />I have preloaded to memory some 15 short samples (think percussion sounds of a second or two each) and some 10-15 loops (up to 30 seconds each), and it holds up quite well. In my app, user can turn on/off particular loops (that contain &quot;layers&quot; of music such as bass track, drums) as well as it can play some attack sounds (percussions, effects, etc...).<br />For this I found out UNTZ to be quite reliable actually.<br /><br />If you need to sync everything to the beat (ie. you have 80 beats per second), I advise you don't use the looping on sounds, but instead manually stop and play the sound again when the time comes. So if a sound to be looped is 10 seconds, don't let it play looped and forget, but actually put a timer on and play it again manually after 10 seconds. Otherwise, you may find that your music is getting out of sync after some time.<br />Also, you can use MOAIUntzSound:setPosition( seconds ) to move playhead to whatever time stamp you want, which is a pretty neat function that doesn't come out of the box in some other sound engines (ie OpenAL). This method is extremely useful if you want to make sure that all sounds are always synced, for example, if a user taps the button in my app to turn on the loop, at that moment I would read the time elapsed from the last &quot;beat&quot; and move the playhead on my loop sound by the same amount - so the loop will not start playing from beginning, skipping the part of the sound that should have elapsed from the last &quot;beat&quot; - and so the loop is perfectly synced with the rest of the song.<br />Please have in mind that when I say &quot;loop&quot; I still never use setLooping(true) method, because it tends to hand a very small fraction of the second (which is enough to cause a lag after some time) - that's why always loop sounds manually as I explained above.<br /><br />What UNTZ painfully lacks is the ability to set the pitch of the sound. So for example, you will not be able to make a &quot;keyboard&quot; where each button would play a different note of the same sound - if you want this functionality, you should either create separate sounds for each note, or look for some more robust solution. I usually target only iOS and OSX, and it already includes OpenAL which has some of these capabilities, and hooking it up with Moai shouldn't be very difficult.<br />Also, if you want to add some sound processing such as reverb, etc, you better look elsewhere - Novocaine engine may be very interesting actually!<br /><br />If you want to play the video in the back, I think with UNTZ you shouldn't have problem as it has its own streaming routine and it doesn't depend on OS (because for example in iOS I think you can only use AVAssetReader to stream one file at the time). However, putting video behind other props on screen is a bit difficult, as you would need to implement video streaming onto OpenGL texture. I have made this functionality for iOS, and if you really need it I can give you some code, but beware it's not production ready and may cause some texture bugs occasionally (plus it will be a pain in the ass to merge with your code because I don't use GitHub).<br /><br />Hope this helps.<br />N<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Tue Dec 10, 2013 3:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kreios]]></name></author>
+<updated>2013-12-10T10:31:34+00:00</updated>
+<published>2013-12-10T10:31:34+00:00</published>
+<id>/forums/viewtopic.php?t=2404&amp;p=12423#p12423</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2404&amp;p=12423#p12423"/>
+<title type="html"><![CDATA[Music games in Moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2404&amp;p=12423#p12423"><![CDATA[
+I posted this in the main SDK forum without realising there is a special one for sound. <br /><br />Anyway, I've been tasked with making a prototype music game for iOS (and likely to be ported to other platforms).<br />Think guitar-hero meets JPop.<br /><br />In terms of graphics and portability, Moai is a clear choice. But I'm not sure how the engine stacks up for sound and music.<br /><br />I'd likely need to sync certain events to specific positions in a song, play multiple sound effects at the same time (over an audio track), and more than likely play a video clip in the background (though I'm thinking no sound in the video, and don't worry to much about accurate syncing to the music).<br /><br />From what I've read on the forums, this sounds achievable using Untz, but I have zero experience with sound and video on Moai.<br /><br />Can anyone offer advice on the issues I'm likely to run into, whether Untz would be better than FMod, and if I should just give up on the Video?<br /><br />Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1468">kreios</a> — Tue Dec 10, 2013 10:31 am</p><hr />
+]]></content>
+</entry>
+</feed>

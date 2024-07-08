@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=846&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-09-19T08:19:49-07:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=846&amp;mode</id>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-09-19T08:19:49-07:00</updated>
+<published>2012-09-19T08:19:49-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=6549#p6549</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=6549#p6549"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=6549#p6549"><![CDATA[
+Well .. I've got a Raspberry Pi, and am sitting here watching moai-dev (linux branch) compile .. I guess its going to take a few hours at this pace, but maybe it will produce a binary at the end of it, who knows .. <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Sep 19, 2012 8:19 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-18T05:39:02-07:00</updated>
+<published>2012-06-18T05:39:02-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4690#p4690</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4690#p4690"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4690#p4690"><![CDATA[
+Thats an un-cool situation, indeed.  I am spoiled by AngstromOS/PandoraOS: its a lot easier to use GLES1.1/2.0 in that environment.  Oh well, hope it gets sorted out - and in the meantime I will look at building MOAI for Pandaboard ES (UbuntuOS) in the next week or so ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Jun 18, 2012 5:39 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jgroman]]></name></author>
+<updated>2012-06-18T04:43:20-07:00</updated>
+<published>2012-06-18T04:43:20-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4688#p4688</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4688#p4688"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4688#p4688"><![CDATA[
+<span style="font-weight: bold">ibisum</span>, I think that would not be enough. I believe one needs to include Broadcom specific libraries into source code and explicitly call some proprietary initialisation and other stuff. Also currently there is no X driver for Pi and calls for getting display surface need to be changed to not use X and go straight to EGL. But I am far from being an expert in this area and I might be completely wrong here.<br /><br />See code in <a href="https://github.com/raspberrypi/firmware/blob/master/opt/vc/src/hello_pi/hello_triangle/triangle.c" class="postlink">this example</a>, look for <span style="font-style: italic">bcm_, vc_</span> and <span style="font-style: italic">dispman_</span> prefixes. Those are proprietary to Broadcom.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=301">jgroman</a> — Mon Jun 18, 2012 4:43 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-18T01:02:45-07:00</updated>
+<published>2012-06-18T01:02:45-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4670#p4670</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4670#p4670"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4670#p4670"><![CDATA[
+<blockquote class="uncited"><div><br />MOAI definitely needs to be patched to use Broadcom GLES libraries before it will be usable on RasPi.<br /></div></blockquote><br /><br />Can you not just do something like &quot;LD_PRELOAD=/usr/lib/libGLES.so ./maoi&quot; or is your RaspPi build doing static linking?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Jun 18, 2012 1:02 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[telarium]]></name></author>
+<updated>2012-06-17T08:10:19-07:00</updated>
+<published>2012-06-17T08:10:19-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4646#p4646</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4646#p4646"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4646#p4646"><![CDATA[
+I was just using Debian Squeeze. I suppose I will change if I'm really determined to get Moai working, but it sounds like it's not in a useable state right now.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=922">telarium</a> — Sun Jun 17, 2012 8:10 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jgroman]]></name></author>
+<updated>2012-06-17T04:47:30-07:00</updated>
+<published>2012-06-17T04:47:30-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4644#p4644</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4644#p4644"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4644#p4644"><![CDATA[
+OK, so compilation took almost exactly one hour on non-overclocked Pi running Raspbian with recent kernel.<br /><br />I tried to run a few samples:<br />- hello-moai: Segmentation fault, seems to be related to font loading<br />- anim/anim-basic: empty MOAI window<br />- deck/scriptDeck: sort of works, but fps is not all that great<br />Seems to me it is using software OpenGL emulation only.<br /><br />MOAI definitely needs to be patched to use Broadcom GLES libraries before it will be usable on RasPi.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=301">jgroman</a> — Sun Jun 17, 2012 4:47 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jgroman]]></name></author>
+<updated>2012-06-17T01:36:59-07:00</updated>
+<published>2012-06-17T01:36:59-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4642#p4642</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4642#p4642"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4642#p4642"><![CDATA[
+<span style="font-weight: bold">telarium</span>, what distro you use on your RasPi? Not sure about libjansson, but chipmunk is not available in squeeze for sure. You'll need at least wheezy to successfully compile MOAI without any source modification. And since Lua makes heavy use of floating point stuff, I'd recommend you'd give <a href="http://www.raspbian.org/PiscesImages" class="postlink">Raspbian</a> a spin. Standard Debian from RasPi site is armel based and doesn't use floating point arithmetics unit.<br /><br />I am compiling MOAI on RasPi just now because my SD card died a horrible death. Will post here if there will be any new compilation problems.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=301">jgroman</a> — Sun Jun 17, 2012 1:36 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[telarium]]></name></author>
+<updated>2012-06-15T09:42:49-07:00</updated>
+<published>2012-06-15T09:42:49-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4603#p4603</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4603#p4603"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4603#p4603"><![CDATA[
+Okay, granted I'm still a bit rusty with Linux, but I can't seem to install the chipmunk-dev or libjansson-dev packages, due to it being unable to find them. Any idea why this would be the case? Even after I update and try to install.<br /><br /><blockquote class="uncited"><div><br />pi@raspberrypi:/Desktop$ sudo aptitude install libjansson-dev<br />Couldn't find any package whose name or description matched &quot;libjansson-dev&quot;<br /></div></blockquote><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=922">telarium</a> — Fri Jun 15, 2012 9:42 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[telarium]]></name></author>
+<updated>2012-06-14T13:33:58-07:00</updated>
+<published>2012-06-14T13:33:58-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4589#p4589</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4589#p4589"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4589#p4589"><![CDATA[
+Got my Pi last night. Was able to get about 50% of the way through compiling on device (taking several hours) before it died related to Chipmunk. <br /><br />jgroman, did you end up removing Chipmunk support to get it to compile? Otherwise, I may try installing the packages you listed again just to make sure I wasn't missing something.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=922">telarium</a> — Thu Jun 14, 2012 1:33 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-14T04:56:35-07:00</updated>
+<published>2012-06-14T04:56:35-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4580#p4580</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4580#p4580"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4580#p4580"><![CDATA[
+Ah cool!  Would be interesting to know if it works .. I'd be quite happily surprised if it did!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Jun 14, 2012 4:56 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jgroman]]></name></author>
+<updated>2012-06-14T04:14:31-07:00</updated>
+<published>2012-06-14T04:14:31-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4579#p4579</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4579#p4579"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4579#p4579"><![CDATA[
+Well, I managed to compile MOAI on rPi running Raspbian (Debian compiled for ARMv6+VFP). Didn't have time to test it yet, though. I guess it will be necessary to patch MOAI to use Broadcom GLES libraries before it will be of any use on rPi.<br />Just FYI, list of packages I had to install before compiling (I might have missed some):<dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cmake liblua5.1-0-dev libcurl4-openssl-dev libfreetype6-dev freeglut3-dev libxmu-dev libxi-dev libexpat1-dev libglew-dev chipmunk-dev libtinyxml-dev libpng12-dev libjpeg8-dev libjansson-dev</div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=301">jgroman</a> — Thu Jun 14, 2012 4:14 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-14T03:01:33-07:00</updated>
+<published>2012-06-14T03:01:33-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4577#p4577</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4577#p4577"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4577#p4577"><![CDATA[
+Not me, personally - I don't have an rPi, since I do have Beagleboards, Pandaboards, and the Open Pandora game console .. but I will start a project next week to get the moai host built for these platforms, and undoubtedly this will help rPi users too.  Stay tuned.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Jun 14, 2012 3:01 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[tnlogy]]></name></author>
+<updated>2012-06-14T02:51:51-07:00</updated>
+<published>2012-06-14T02:51:51-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4576#p4576</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4576#p4576"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4576#p4576"><![CDATA[
+Any success on running moai on raspberry pi?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=773">tnlogy</a> — Thu Jun 14, 2012 2:51 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-07T00:44:42-07:00</updated>
+<published>2012-06-07T00:44:42-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4370#p4370</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4370#p4370"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4370#p4370"><![CDATA[
+Probably Debian-ARM (and Ubuntu) would be a simple target to get working .. maybe not so easy for AngstromOS and so on, but doable.  I've done a lot of porting work to Angstrom, and I think MOAI on such platforms as the rPi and the Pandora console would be well worth the effort .. so I'll do a little work on this once other things settle down, I think ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Jun 07, 2012 12:44 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[telarium]]></name></author>
+<updated>2012-06-06T08:02:36-07:00</updated>
+<published>2012-06-06T08:02:36-07:00</published>
+<id>/forums/viewtopic.php?t=846&amp;p=4362#p4362</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=846&amp;p=4362#p4362"/>
+<title type="html"><![CDATA[Re: Raspberry Pi?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=846&amp;p=4362#p4362"><![CDATA[
+Might be too advanced for me to figure out on my own. Are there any ARM Linux varieties that are supported out of the box for Moai? Arch or Fedora?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=922">telarium</a> — Wed Jun 06, 2012 8:02 am</p><hr />
+]]></content>
+</entry>
+</feed>

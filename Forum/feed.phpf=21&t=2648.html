@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=21&amp;t=2648&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-04-21T08:15:08+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=21&amp;t=2648&amp;mode</id>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-04-21T08:15:08+00:00</updated>
+<published>2014-04-21T08:15:08+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14252#p14252</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14252#p14252"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14252#p14252"><![CDATA[
+<blockquote><div><cite>halfnelson wrote:</cite><br />ahh, ok still too huge. what a pain. I fixed that for moaicli ages ago. Here is the workaround:<br /><br /><!-- m --><a class="postlink" href="https://github.com/halfnelson/moaicli/blob/master/0002-mods-to-emscripten-cmake-so-that-it-works-with-moai.patch">https://github.com/halfnelson/moaicli/b ... moai.patch</a><!-- m --><br /><br />this calls the python script as &quot;python emar&quot; via cmakes &quot;process_create&quot; instead of calling emar.bat which calls the python script via cmd.exe which limits the command line size.<br /><br />Actually, those could probably be moved into our main cmake scripts (the root cmakelists.txt) with an if(BUILD_HTML) guard, and would save us having to edit the one included with emscripten. If you do this and it works, let me know or issue a pull so everyone wins <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /></div></blockquote><br /><br />Thanks man that worked great <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> Now I won't have to fire up my slow ubuntu any more it seems.. !<br /><br />Heres a pull request, could you check that it's alright ? <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/pull/906/">https://github.com/moai/moai-dev/pull/906/</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Apr 21, 2014 8:15 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-04-20T21:11:39+00:00</updated>
+<published>2014-04-20T21:11:39+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14237#p14237</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14237#p14237"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14237#p14237"><![CDATA[
+Glad you got it going. See the patch in the post above yours to work around that. Working on a permanent fix.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sun Apr 20, 2014 9:11 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Ascorbius]]></name></author>
+<updated>2014-04-20T14:46:50+00:00</updated>
+<published>2014-04-20T14:46:50+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14231#p14231</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14231#p14231"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14231#p14231"><![CDATA[
+I took your advice halfnelson, I ditched emscripten and uninstalled the nodejs set-up I had.<br /><br />I downloaded the emsdk-1.12.0-web.32bit.exe file - which did as it said and installed everything it needed to..<br />I then had to move it from Program Files(86) to the root and alter the environment variables, my path and the .enscripten file in my home directory.<br /><br />After a couple of false starts, I finally got it to start building - took a really long time.<br /><br />then It errored with:<br /><br /><blockquote class="uncited"><div><br />[ 97%] Building CXX object moai-sim/CMakeFiles/moai-sim.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/src/moai-sim/pch.cpp.o<br />Linking CXX static library libmoai-sim.a<br />The command line is too long.<br />moai-sim\CMakeFiles\moai-sim.dir\build.make:3546: recipe for target 'moai-sim/li<br />bmoai-sim.a' failed<br />mingw32-make.exe[3]: *** [moai-sim/libmoai-sim.a] Error 1<br />CMakeFiles\Makefile2:1702: recipe for target 'moai-sim/CMakeFiles/moai-sim.dir/all' failed<br />mingw32-make.exe[2]: *** [moai-sim/CMakeFiles/moai-sim.dir/all] Error 2<br />mingw32-make.exe[1]: *** [host-html/CMakeFiles/host-html-template.dir/rule] Error 2<br />CMakeFiles\Makefile2:2132: recipe for target 'host-html/CMakeFiles/host-html-template.dir/rule' failed<br />Makefile:589: recipe for target 'host-html-template' failed<br />mingw32-make.exe: *** [host-html-template] Error 2<br /></div></blockquote><br /><br />Looks like this is an issue with the build process that you're aware of.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1322">Ascorbius</a> — Sun Apr 20, 2014 2:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-04-20T13:10:20+00:00</updated>
+<published>2014-04-20T13:10:20+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14230#p14230</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14230#p14230"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14230#p14230"><![CDATA[
+ahh, ok still too huge. what a pain. I fixed that for moaicli ages ago. Here is the workaround:<br /><br /><!-- m --><a class="postlink" href="https://github.com/halfnelson/moaicli/blob/master/0002-mods-to-emscripten-cmake-so-that-it-works-with-moai.patch">https://github.com/halfnelson/moaicli/b ... moai.patch</a><!-- m --><br /><br />this calls the python script as &quot;python emar&quot; via cmakes &quot;process_create&quot; instead of calling emar.bat which calls the python script via cmd.exe which limits the command line size.<br /><br />Actually, those could probably be moved into our main cmake scripts (the root cmakelists.txt) with an if(BUILD_HTML) guard, and would save us having to edit the one included with emscripten. If you do this and it works, let me know or issue a pull so everyone wins <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sun Apr 20, 2014 1:10 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-04-20T12:48:19+00:00</updated>
+<published>2014-04-20T12:48:19+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14229#p14229</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14229#p14229"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14229#p14229"><![CDATA[
+<dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="txt" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">[ 97%] Building CXX object moai-sim/CMakeFiles/moai-sim.dir/E_/dev/dist/moai-dev-jblo/src/moai-sim/MOAIWheelSensor.cpp.o</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">[ 97%] Building CXX object moai-sim/CMakeFiles/moai-sim.dir/E_/dev/dist/moai-dev-jblo/src/moai-sim/pch.cpp.o</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Linking CXX static library libmoai-sim.a</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">The command line is too long.</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">moai-sim\CMakeFiles\moai-sim.dir\build.make:3572: recipe for target 'moai-sim/libmoai-sim.a' failed</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mingw32-make.exe[3]: *** [moai-sim/libmoai-sim.a] Error 1</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">CMakeFiles\Makefile2:1751: recipe for target 'moai-sim/CMakeFiles/moai-sim.dir/all' failed</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">CMakeFiles\Makefile2:2201: recipe for target 'host-html/CMakeFiles/host-html-template.dir/rule' failed</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mingw32-make.exe[2]: *** [moai-sim/CMakeFiles/moai-sim.dir/all] Error 2</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mingw32-make.exe[1]: *** [host-html/CMakeFiles/host-html-template.dir/rule] Error 2</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mingw32-make.exe: *** [host-html-template] Error 2</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Makefile:615: recipe for target 'host-html-template' failed</div></li><br /></ol></code></dd></dl><br /><br />build.make:3572<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="txt" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        @$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold &quot;Linking CXX static library libmoai-sim.a&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        cd /d E:\dev\dist\moai-dev-jblo\cmake\build-html\moai-sim &amp;&amp; $(CMAKE_COMMAND) -P CMakeFiles\moai-sim.dir\cmake_clean_target.cmake</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        cd /d E:\dev\dist\moai-dev-jblo\cmake\build-html\moai-sim &amp;&amp; $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\moai-sim.dir\link.txt --verbose=$(VERBOSE)</div></li><br /></ol></code></dd></dl><br />So I guess linking the sim is a mighty long command! (Altough that hints at some link.txt file?) I could re run it in some kind of verbose mode if you like <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Sun Apr 20, 2014 12:48 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-04-20T12:34:44+00:00</updated>
+<published>2014-04-20T12:34:44+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14227#p14227</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14227#p14227"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14227#p14227"><![CDATA[
+<blockquote><div><cite>halfnelson wrote:</cite><br />jdance: how long ago was this?  is this with 1.5 and the latest emscripten? I have a work around on windows for this but thought the problem had gone away with 1.5<br /><br />edit: I had a link on the original html5/js contrib thread for the latest prebuild host: <!-- m --><a class="postlink" href="https://app.box.com/s/364pmddu0nymztg3rctt">https://app.box.com/s/364pmddu0nymztg3rctt</a><!-- m --><br /></div></blockquote><br /><br />Yeah it was the latest and greatest, it was like 3 weeks ago. I checked my emscripten version now and seems i used 1.13.0 - which seems newer then the stable 1.12.0 - not sure how I ended up with that version. Not sure if that had anything to do with it. I'll rerun and post the results.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Sun Apr 20, 2014 12:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-04-20T11:58:59+00:00</updated>
+<published>2014-04-20T11:58:59+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14226#p14226</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14226#p14226"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14226#p14226"><![CDATA[
+jdance: how long ago was this?  is this with 1.5 and the latest emscripten? I have a work around on windows for this but thought the problem had gone away with 1.5<br /><br />edit: I had a link on the original html5/js contrib thread for the latest prebuild host: <!-- m --><a class="postlink" href="https://app.box.com/s/364pmddu0nymztg3rctt">https://app.box.com/s/364pmddu0nymztg3rctt</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sun Apr 20, 2014 11:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-04-20T11:24:40+00:00</updated>
+<published>2014-04-20T11:24:40+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14223#p14223</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14223#p14223"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14223#p14223"><![CDATA[
+By the way: html host would be one of the easiest platforms to offer a prebuilt version of moai, since it's architecture independent. I guess people could just download moaijs.js from moaifiddle if they find the url <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Sun Apr 20, 2014 11:24 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-04-20T11:16:38+00:00</updated>
+<published>2014-04-20T11:16:38+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14222#p14222</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14222#p14222"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14222#p14222"><![CDATA[
+I couldn't get emscripten to build moai on windows. It started compiling without problem but eventually it hit &quot;too long command line&quot; at like 50% or something, a limitation in the way windows handles commands. I move my moai root to E:\m to keep it short but the command line still got too long at like 90% or something <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> I switched to building it through virtual ubuntu again instead. I think cmake handles the problem with long command lines on windows but the emscripten script for cmake probably isn't. Way over my head to fix that.<br /><br />Maybe I should report issues for stuff like this.. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Sun Apr 20, 2014 11:16 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-04-19T21:27:43+00:00</updated>
+<published>2014-04-19T21:27:43+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14219#p14219</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14219#p14219"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14219#p14219"><![CDATA[
+To be honest, it sounds like you are having problems with emscripten not moai.<br /><br />I suggest ditching the emscripten setup you have and starting fresh by following the guide <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/master/src/host-html/README.md">https://github.com/moai/moai-dev/blob/m ... /README.md</a><!-- m --> linked to from the main repo readme.md.<br /><br />That should take you to the <!-- m --><a class="postlink" href="https://github.com/kripken/emscripten/wiki/Tutorial">https://github.com/kripken/emscripten/wiki/Tutorial</a><!-- m --> <br /><br />Having a working emscripten is required for the cmake build to work (just like having a working gcc for the linux build)<br /><br />The tutorial has a link to the downloads <!-- m --><a class="postlink" href="https://github.com/kripken/emscripten/wiki/Emscripten-SDK">https://github.com/kripken/emscripten/w ... ripten-SDK</a><!-- m --> <br /><br />you can just grab the emsdk-1.12.0-portable-32bit.zip which should work ok. The emscripten guys realized that setting up emscripten on anything but linux was a pain (as you found out) and have given us an all in one zip file that contains the correct python, clang, llvm and node versions.<br /><br />(as an aside, the moaicli program uses the same cmake files from the repo, it just downloads cmake binaries and a known good copy of emscripten and sets them up first, it isn't really a different way of building, just a way of ensuring known good dependencies are installed. kinda like that emscripten portable zip, which has all the working versions needed squished together)<br /><br />Then there might be a small patch needed to upgrade the host to work with the generated moaijs.js file (if it doesn't just work out of the box for you and you end up with a black screen)<br /><br />change src/host-html/host-template/www/moaihost.js (line 357)<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  that<span style="color: #66cc66;">.</span>emscripten<span style="color: #66cc66;">.</span>addOnPreMain<span style="color: #66cc66;">&#40;</span><span style="color: #aa9900; font-weight: bold;">function</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#123;</span> that<span style="color: #66cc66;">.</span>runhost<span style="color: #66cc66;">&#40;</span>mainLua<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span> <span style="color: #66cc66;">&#125;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">           that<span style="color: #66cc66;">.</span>emscripten<span style="color: #66cc66;">.</span>run<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span>   </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />to<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">   that<span style="color: #66cc66;">.</span>emscripten<span style="color: #66cc66;">.</span>run<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">   that<span style="color: #66cc66;">.</span>runhost<span style="color: #66cc66;">&#40;</span>mainLua<span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span>   </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />Thanks for the feedback, we are all trying to get builds going smoothly. Best of luck and let us know if that doesn't work for you.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sat Apr 19, 2014 9:27 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-04-19T17:19:18+00:00</updated>
+<published>2014-04-19T17:19:18+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14218#p14218</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14218#p14218"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14218#p14218"><![CDATA[
+~<br />I feel your pain, sometimes it can be very frustrating to get it to build successfully for any host. That's the cost for using a MOAI as an open source  SDK. But the benefit is, someone made an HTML host and shared it with the community.  <br /><br /><blockquote class="uncited"><div><br />Is this stuff all experimental?<br /></div></blockquote><br /><br />The new build system &amp; the HTML is experimental(WIP), and needs further testing. However the HTML host builds for me perfectly  on my windows-xp. <br /><br /><br />The only noticeable difference in my setup is a system variable to --&gt; C:\msys\bin <br /><ul><li> <!-- m --><a class="postlink" href="http://www.mingw.org/wiki/MSYS/">http://www.mingw.org/wiki/MSYS/</a><!-- m --></li></ul><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Sat Apr 19, 2014 5:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Ascorbius]]></name></author>
+<updated>2014-04-19T16:35:39+00:00</updated>
+<published>2014-04-19T16:35:39+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14217#p14217</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14217#p14217"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14217#p14217"><![CDATA[
+Thanks for the tip on the python version. 2.3 gave slightly better results.<br />I'm hesitant to use a different build method though, there should be one well understood build method for all platforms IMHO - however, my current experience with this (and I'm an incredibly patient person) are starting to cause me to doubt MOAI itself as a viable platform.<br /><br />So now my system is:<br />Installed MinGW 32<br />Installed CMake 2.8<br />Installed Python 2.3.0  (downgraded from 3.4)<br />Installed NodeJS<br />Installed LLVM 3.4  &lt;--- only available windows pre-built binary.. Enscripten expects 3.3<br />Enscripten now knows where they all are...<br /><br />I now get this:<br /><br /><blockquote class="uncited"><div><br />-- Configuring done<br />-- Generating done<br />-- Build files have been written to: C:/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/cmake/build<br />Scanning dependencies of target zlib<br />[  0%] Building C object third-party/zlib/CMakeFiles/zlib.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/3rdparty/zlib-1.2.3/adler32.c.o<br />WARNING  root: LLVM version appears incorrect (seeing &quot;3.4&quot;, expected &quot;3.3&quot;)<br />WARNING  root: could not check fastcomp: [Error 2] The system cannot find the file specified INFO     root: (Emscripten: Running sanity checks)<br />CRITICAL root: Cannot find C:\Program Files (x86)\LLVM\bin\llvm-link, check the paths in ~/.emscripten<br />third-party\zlib\CMakeFiles\zlib.dir\build.make:57: recipe for target 'third-party/zlib/CMakeFiles/zlib.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/3rdparty/zlib-1.2.3/adler32.c.o' failed<br />mingw32-make.exe[3]: *** [third-party/zlib/CMakeFiles/zlib.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/3rdparty/zlib-1.2.3/adler32.c.o] Error 1<br />CMakeFiles\Makefile2:1386: recipe for target 'third-party/zlib/CMakeFiles/zlib.dir/all' failed<br />CMakeFiles\Makefile2:2132: recipe for target 'host-html/CMakeFiles/host-html-template.dir/rule' failed<br />Makefile:589: recipe for target 'host-html-template' failed<br />mingw32-make.exe[2]: *** [third-party/zlib/CMakeFiles/zlib.dir/all] Error 2<br />mingw32-make.exe[1]: *** [host-html/CMakeFiles/host-html-template.dir/rule] Error 2<br />mingw32-make.exe: *** [host-html-template] Error 2<br /></div></blockquote><br /><br />So next do I have to get LLVM 3.3 from source and build it? The file llvm-linkexists in my cygwin install - is this build process using cygwin too?<br /><br />I feel a little like Alice tumbling down the rabbit hole, but instead of following to see where it goes, I'm tempted to throw some grenades and say screw the white rabbit.<br /><br />Is this stuff all experimental?<br />I get the feeling that there are too many disparate tools being relied upon for this to be reliable for a long-term solution - too much effort will be required to keep the build chain compatible. Doesn't this worry anyone?<br /><br />It worries me, I love MOAI, I've spent over a year writing an engine on the top of it in MOAI, producing 2 games, one for a client which is almost finished and another with quite a way to go still. I've not really struggled with it before and although the documentation was lacking, at least there was something and it was relevant - I even purchased the book. The guides issued with the 1.5 release contain no mention of building with cmake or any of the pre-requisites, and the host solutions aren't included anyway.<br /><br />Maybe I'm not up to this task, I've been writing software professionally for almost 20 years, no language has defeated me, no system too complicated - but it seems that I can't get MOAI to be built to use the HTML5 host so I can pitch a browser based version to my client.<br /><br />I really really truly hope that up-to-date documentation on how to build the various hosts is on it's way, along with pre-compiled hosts for each platform (a fully featured OUYA host would be really nice BTW).<br /><br />Compared to the alternatives Unity2D, Game Maker Studio - which are all gaining ground, MOAI is being left behind - which is a shame because it has the potential to be much better, and for a time, it was.<br /><br /><br />Disclaimer: This post is written by a frustrated developer who's spent the last several hours trying to understand something which should be straight forward given the patience and direction. It is in no way to be read as a personal attack on anyone and hopes to serve as an indicator as to what other developers may be feeling too.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1322">Ascorbius</a> — Sat Apr 19, 2014 4:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-04-19T13:14:00+00:00</updated>
+<published>2014-04-19T13:14:00+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14214#p14214</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14214#p14214"/>
+<title type="html"><![CDATA[Re: Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14214#p14214"><![CDATA[
+python 2.7 is probably a better bet.<br />Or you could try out the updated moaicli released today <a href="http://halfnelson.github.io/moaicli/" class="postlink">http://halfnelson.github.io/moaicli/</a><br />(it is what I use to build, I hated trying to set up emscripten and android builds by hand)<br /><br />If you get stuck let me know.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sat Apr 19, 2014 1:14 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Ascorbius]]></name></author>
+<updated>2014-04-19T12:05:18+00:00</updated>
+<published>2014-04-19T12:05:18+00:00</published>
+<id>/forums/viewtopic.php?t=2648&amp;p=14213#p14213</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2648&amp;p=14213#p14213"/>
+<title type="html"><![CDATA[Trying to build HTML host - getting cmake error.]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2648&amp;p=14213#p14213"><![CDATA[
+OK Guys,<br /><br />I need help here..<br /><br />I've installed enscripten - set the environment variable (by hand) ENSCRIPTEN_HOME<br />Installed MinGW 32<br />Installed CMake 2.8<br />Installed Python 3.4.0 <br /><br />--Running Windows7 Pro SP1 just in case it's relevant.<br /><br />I open a console window and cd to the moai-dev-master (which is the recent 1.5 release)<br />type bin\build-html-win and it returns an error.<br /><br />What am I doing wrong?<br /><br />It returns this:<br /><br /><blockquote class="uncited"><div><br />-- Configuring done<br />-- Generating done<br />-- Build files have been written to: C:/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/cmake/build<br />Scanning dependencies of target zlib<br />[  0%] Building C object third-party/zlib/CMakeFiles/zlib.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/3rdparty/zlib-1.2.3/adler32.c.o<br />  File &quot;C:\emscripten\\emcc&quot;, line 553<br />    ''' % (this, this, this)<br />      ^<br />SyntaxError: invalid syntax<br />third-party\zlib\CMakeFiles\zlib.dir\build.make:57: recipe for target 'third-party/zlib/CMakeFiles/zlib.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/3rdparty/zlib-1.2.3/adler32.c.o' failed<br />mingw32-make.exe[3]: *** [third-party/zlib/CMakeFiles/zlib.dir/C_/Users/jasonf/Desktop/moai-dev-master-15/moai-dev-master/3rdparty/zlib-1.2.3/adler32.c.o] Error 1<br />CMakeFiles\Makefile2:1386: recipe for target 'third-party/zlib/CMakeFiles/zlib.dir/all' failed<br />CMakeFiles\Makefile2:2132: recipe for target 'host-html/CMakeFiles/host-html-template.dir/rule' failed<br />Makefile:589: recipe for target 'host-html-template' failed<br />mingw32-make.exe[2]: *** [third-party/zlib/CMakeFiles/zlib.dir/all] Error 2<br />mingw32-make.exe[1]: *** [host-html/CMakeFiles/host-html-template.dir/rule] Error 2<br />mingw32-make.exe: *** [host-html-template] Error 2<br /></div></blockquote><br /><br />I'm running out of energy on this now, it's been hours and I'm hitting a wall - the documentation is spartan and I feel like only Sherlock Holmes or Linus Torvalds can get this stuff done easily, never mind a guy trying to make a game in Lua.  <img src="images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /> <br /><br />Help!...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1322">Ascorbius</a> — Sat Apr 19, 2014 12:05 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</h2>
+		<p><a href="does-not-run-on-ios-5-0-moai-sdk-beta-version-0-9-beta-t234/index.html">/forums/does-not-run-on-ios-5-0-moai-sdk-beta-version-0-9-beta-t234/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 04, 2011 6:54 am</strong></div>
+				<div class="author">by <strong>norman.lahme</strong></div>
+				<div class="content">The MoaiSample project works fine on iOS 4.3, but does terminate with an exception on iOS 5.0 when running on iPhone 5.0 simulator.
+<br />
+<br />
+<br />
+<br />It seems that line 107 of AKU-iphone.mm causes the problem:
+<br />
+<br />  MOAIEnvironment::Get ().SetCountryCode ( [[[ NSLocale currentLocale ] objectForKey: NSLocaleCountryCode ] UTF8String ]);
+<br />
+<br />The reason is that the inner expression
+<br />
+<br />  [[ NSLocale currentLocale ] objectForKey: NSLocaleCountryCode ]
+<br />
+<br />yields null.
+<br />
+<br />Interestingly enough on iOS 4.3 it yields "US" (I am in Germany but left the simulator settings to US).
+<br />
+<br />
+<br />
+<br />I am using Xcode 4.2 (build 4D199). I tried both the Moai SDK download and compiling the source from github.
+<br />
+<br />
+<br />
+<br />Anyone experienced the same issue?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 04, 2011 7:06 am</strong></div>
+				<div class="author">by <strong>norman.lahme</strong></div>
+				<div class="content">Changing line 107 of AKU-iphone.mm to
+<br />
+<br />  MOAIEnvironment::Get ().SetCountryCode ([@"US" UTF8String]);
+<br />
+<br />results in a runnable version. Let's see why 
+<br />
+<br />  [[ NSLocale currentLocale ] objectForKey: NSLocaleCountryCode ]
+<br />
+<br />yields null on iOS 5.0</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 04, 2011 7:19 am</strong></div>
+				<div class="author">by <strong>norman.lahme</strong></div>
+				<div class="content">quite interesting:
+<br />
+<br />[[ NSLocale currentLocale ] objectForKey: NSLocaleIdentifier ]
+<br />
+<br />yields "en" on iOS 5. The constant NSLocaleLanguageCode works as well, but not NSLocaleCountryCode.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 04, 2011 9:37 am</strong></div>
+				<div class="author">by <strong>norman.lahme</strong></div>
+				<div class="content">ok, this seems to be related to the simulator only. On the device (tested in on an iPad with iOS 5.0.1) it runs smoothly.
+<br />
+<br />
+<br />
+<br />Conclusion:
+<br />
+<br />- For development using the simulator I use the github-version with my little patch, i. e. line 107 of AKU-iphone.mm changed to
+<br />
+<br />    MOAIEnvironment::Get ().SetCountryCode ([@"US" UTF8String]);
+<br />
+<br />- For testing on the device I can also use the Moai SDK download (in contrast to the github source) after adding the Twitter.framework.
+<br />
+<br />
+<br />
+<br />One question to the community: Has anyone else experienced this problem with the simulator for iOS 5.0?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Does not run on iOS 5.0 (Moai SDK Beta Version 0.9 Beta)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 04, 2011 8:24 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">That's really interesting. We'll look at it on our end tomorrow. Thanks for the info.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

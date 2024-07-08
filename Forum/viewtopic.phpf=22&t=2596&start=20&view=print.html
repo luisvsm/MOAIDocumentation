@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - LiquidFun 1.0 - enhanced Box2d library</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>LiquidFun 1.0 - enhanced Box2d library</h2>
+		<p><a href="liquidfun-1-0-enhanced-box2d-library-t2596/page20.html">/forums/liquidfun-1-0-enhanced-box2d-library-t2596/page20.html</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>2</strong> of <strong>3</strong></div>
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 30, 2014 4:55 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Thanks for that, although it seems I've missed the changes for the MOAIBox2DBody I made to support the additional 'wake body' parameter for Box2D 2.3.0. Work on getting another pull request to expose that up tonight. It'll work as it stands, because I just set the parameter to 'true' for the relevant calls, which matches the Box 2.2.1 functionality.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Apr 02, 2014 10:41 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Still working on this, just want to add MOAIBox2DMotorJoint to MOAIBox2DWorld for the next Box2D 2.3.0 motor joint, before moving forward to Liquid Fun 1.0.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Apr 04, 2014 7:47 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Just wanted to let you know that I'm waiting for this with high interest!  <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Apr 04, 2014 1:10 pm</strong></div>
+				<div class="author">by <strong>davek</strong></div>
+				<div class="content">Yeah, thanks stun!  <br /><br />Don't want to add more to your plate, but there is also full raycast exposure needed...   <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Apr 05, 2014 3:54 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Right well I've submitted another pull request this weekend. This includes the 'wake' parameter that Box2D 2.3.0 adds to various force applying functions on b2Body. In the past applying forces through calls like MOAIBox2DBody:applyAngularImpulse, applyForce, applyLinearImpulse and applyTorque were guaranteed to 'wake' the Box2D body. Now apparently it's optional under Box2D 2.3.0, although the default remains to wake the body. Seems like something that might be useful.<br /><br />I've also added a preliminary version of MOAIBox2DMotorJoint, which equates to the Box2D 2.3.0 'motorJoint' which is new. I'm a little hazy on how you're actually supposed to use this joint in Box2D. There's an example in the Box 2.3.0 Testbed under 'motorJoint.h' but it seems to manually drive the joint each step by recalculating the forces required. Haven't quite got around to writing a MOAI demo that does the same thing but I probably should. The MOAIBox2DMotorJoint as it stands will not crash, as I've at least tested the setters/getters that are exposed. Any Box2D experts on here care to try using MOAIBox2DMotorJoint under MOAI?<br /><br />Next up is swapping MOAI to LiquidFun 1.0 and a bunch of coding to expose the Particles functionality and trying to get some LiquidFun demos going under MOAI.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Apr 07, 2014 9:12 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Right, posted a sample of the new MOAIBody2DMotorJoint working under Box2D 2.3.0, so I'm reasonably confident I've actually exposed the MotorJoint correctly in MOAI. Now it's time to start getting LiquidFun working in MOAI. This may take me some time as I'm doing it in my spare time. Pity it's not my day job really (because it is considerably more interesting that my day job)!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 08, 2014 9:49 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Moved to LiquidFun in my personal github fork. Looks like I have to add three classes to MOAI for LiquidFun particles:<br /><br />1) MOAIBox2DParticleSystem which will expose b2ParticleSystemDef<br />2) MOAIBox2DParticle which will expose b2ParticleDef<br />3) MOAIBox2DParticleGroup which will expose b2ParticleGroupDef<br /><br />And then I'll try porting some of the LiquidFun testbed samples to MOAI.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 08, 2014 11:10 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Just want to give you a little &quot;atta boy!&quot; acknowledgement for this work - as soon as you deem it clear for public release, I'll be all over it and will test, test, test ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 08, 2014 7:45 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Thanks ibisum, there's probably at least a couple of weeks of spare time coding to go. Unfortunately the timing is a bit bad as I'll be heading to Australia for 10 days, mid next week for my sister's wedding - don't think I'll be allowed to take my laptop <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" />! I'm hoping I can at least get a first cut of basic functionality going before then which will just be in my own repo here: <!-- m --><a class="postlink" href="https://github.com/fivevolthigh/moai-dev">https://github.com/fivevolthigh/moai-dev</a><!-- m --> under the 'fvh-liquidfun' branch. It'll probably stay there for quite a while until I'm happy enough to submit a pull request.<br /><br />The particle system looks interesting, it has support for colour blending built in for example, and supports a 'particle life duration' (going to be interesting figuring out how to release props tied to particles that have been killed by LiquidFun) as well as a system for attempting to detect 'stuck particles' and giving the caller a way of dealing with them. It's a nice clean addition to Box2D as well which will hopefully make things easier.<br /><br />The LiquidFun Testbed includes a bunch of good examples of the system in work (and even a couple of simple games), so if you haven't done so already I'd recommend building it and having a play. Performs fine on my laptop of course, with plenty of particles. I'm very curious about how it'll perform on an Android phone though.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 08, 2014 9:47 pm</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content">@stun<br />Thanks for the update, sounds awesome.<br />Enjoy your trip to my country, and if you end up near Brisbane, I should buy you a drink.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Apr 09, 2014 7:54 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Hey - have a good time down under (I'm Australian, but living in Austria) and let us know when you get back.  Stay away from the sharks and the drop bears!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Apr 10, 2014 4:38 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Heh thanks all. I'm a New Zealander so it's a short jaunt across the ditch to Melbourne for me and my family. Halfnelson, you don't happen to be going to PAX Melbourne this year at all do you? I plan to attend again. Maybe we could have a quiet beer then.<br /><br />Started working on MOAIBox2DParticleSystem last night and already seeing some interesting things. For example the MOAI model in Box2D generally seems to be to try and generate a 1:1 equivalency between say a 'b2' object (like b2Body) and a MOAIBox2D object (like MOAIBox2DBody). That's fine, but sort of falls down when it comes to particles.<br /><br />LiquidFun obviously deals with a LOT of particles. Thousands of them. It provides ways to address them individually from a 'b2ParticleSystem', but it would seem to be overkill to expose that to MOAI and have an equivalent MOAIBox2DParticle class. In particular I'm loathe to add another 'userData' pointer to the b2Particle class (which would be required for a simple b2Particle &lt;-&gt; MOAIBox2DParticle mapping) in LiquidFun because that'll consume a fair chunk of extra memory for a large set of particles.<br /><br />So it seems MOAIBox2DParticle might be the first casualty, and the equivalent functionality would be exposed through MOAIBox2DParticleSystem functions with indexes basically. I'll have to grub around in the MOAI codebase some more and see how they handle similar problems - in the existing MOAI particle system for example, a different beast but with similar problems.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Apr 14, 2014 4:19 pm</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content">I started to put up bindings for LiquidFun. Small demo: <!-- m --><a class="postlink" href="http://youtu.be/AY2-qXYT6Lg">http://youtu.be/AY2-qXYT6Lg</a><!-- m --><br />It's just the beginning, much work to do. <br /><br />Some problems for discussion:<br />1) LiquidFun ParticleSystem and ParticleGroup have a lot values in Def struct, but they don't have setters/getters for these values. So the only option is to pass a key-value table from lua to object factory. This kinda different from current bindings<br />2) I think that MOAI converts too much things to units. For example, density. Reasonable value for UnitsToMeters is 0.05 (or 0.03 as it is close to box2d default). Therefore, reasonable value for density is 1 * 0.05^2 = 0.0025. I doubt that anyone using MOAI uses densities in the range [0.00025, 0.025]. But this is most stable values. Stability is crucial in fluid simulation. <br />3) Rendering. Particle debug drawing is done with Points. I suppose that circles will be too much overhead (with current naive debug draw implementation). For production rendering we must find a way to bind particle positions and colors to sprites - maybe this can be done with MOAIParticleSystem (but we'll get here huge memory overhead of allocating both MOAI and box2d particles). I'd better grab draw method from MOAIParticleSystem and just supply luqiuid fun values to it. Even deck indexes can be used through particle's userData. <br /><br />Code: <!-- m --><a class="postlink" href="https://github.com/Vavius/moai-dev/tree/liquidfun">https://github.com/Vavius/moai-dev/tree/liquidfun</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Apr 14, 2014 6:16 pm</strong></div>
+				<div class="author">by <strong>davek</strong></div>
+				<div class="content"><blockquote><div><cite>Vavius wrote:</cite>3) Rendering. Particle debug drawing is done with Points. I suppose that circles will be too much overhead (with current naive debug draw implementation). For production rendering we must find a way to bind particle positions and colors to sprites - maybe this can be done with MOAIParticleSystem (but we'll get here huge memory overhead of allocating both MOAI and box2d particles). I'd better grab draw method from MOAIParticleSystem and just supply luqiuid fun values to it. Even deck indexes can be used through particle's userData.</div></blockquote><br /><br />If there was some way to generalize this, for example MOAIMultiProp2D, which is given a list of locations, scales, and possibly index, color, rotation, and priority for each particle, might be a powerful feature, but I am not sure.  I recall seeing a new ScriptDeck draw texture feature incoming, would this be suitable?  <br /><br />A ScriptDeck drawing rects should be fast enough, for a temporary solution.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Apr 14, 2014 7:52 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Hmmm, seems like we're duplicating effort now and you've moved ahead of me judging from your code. Yeah my debug draw implementation was the obvious naive one too. Ah well I'll leave you to it Vavius since I'm offline for 10 days. Hopefully you'll have finished it by the time I get back! If not perhaps we could collaborate on the effort to get all the LiquidFun features exposed in MOAI, since there's a fair bit there.<br /><br />How much more work before you're going to consider submitting to 1.5-development?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 15, 2014 4:11 am</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content"><blockquote><div><cite>stun wrote:</cite>How much more work before you're going to consider submitting to 1.5-development?</div></blockquote><br />1) Implement some missing methods in MOAIBox2dParticleSystem<br />2) Add bindings for MOAIBox2dParticleGroup<br />3) Debug memory issues. This one can be tricky<br />4) Rendering<br /><br />10 days should be enough</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Aug 18, 2014 8:39 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Did this work ever get a pull request for MOAI 1.5-development?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Aug 18, 2014 10:15 am</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content"><!-- m --><a class="postlink" href="https://github.com/Vavius/moai-dev/commits/liquidfun">https://github.com/Vavius/moai-dev/commits/liquidfun</a><!-- m --> has some work, not sure how complete, could always take it for a spin. There is an interesting fix to MoaiLuaState::GetLuaObject which should probably be merged into master</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Aug 18, 2014 8:42 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Yes I was considering trying out Vavius' branch and seeing what was left to do/missing. Seems a shame not to knock the thing off since we've moved to Box2D 2.3.0 and Vavius has done enough to show a reasonable demo.<br /><br />Is there any etiquette involved in doing so? I don't want to offend anybody by taking their work and extending it.<br /><br />I notice LiquidFun has moved on a bit too, up to version 1.1.0.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: LiquidFun 1.0 - enhanced Box2d library</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Aug 19, 2014 4:24 am</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">He'd more likely be honored than offended, go for it !   <img src="images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>2</strong> of <strong>3</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

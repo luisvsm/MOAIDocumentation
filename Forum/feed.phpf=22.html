@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=22&amp;t&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2016-05-30T10:26:33+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=22&amp;t&amp;mode</id>
+<entry>
+<author><name><![CDATA[premieritzone]]></name></author>
+<updated>2016-05-30T10:26:33+00:00</updated>
+<published>2016-05-30T10:26:33+00:00</published>
+<id>/forums/viewtopic.php?t=2974&amp;p=18051#p18051</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2974&amp;p=18051#p18051"/>
+<title type="html"><![CDATA[Physics • Re: New Account Registrations]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=2974&amp;p=18051#p18051"><![CDATA[
+<blockquote><div><cite>naturally wrote:</cite><br />Yes good idea ezra.<br /><br />Any accounts that have 0 posts have been deleted, hope that doesn't cause a problem for anyone.<br /></div></blockquote><br /><br />if anyone register only for reading the forum question ? so what you'll do with the account<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2275">premieritzone</a> — Mon May 30, 2016 10:26 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2016-05-16T16:32:06+00:00</updated>
+<published>2016-05-16T16:32:06+00:00</published>
+<id>/forums/viewtopic.php?t=3284&amp;p=18047#p18047</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3284&amp;p=18047#p18047"/>
+<title type="html"><![CDATA[Physics • Re: Box2D Physics Slows Down but rest of sim doesn't]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3284&amp;p=18047#p18047"><![CDATA[
+<blockquote class="uncited"><div><br />It was the BOOST flag.<br /></div></blockquote><br /><br />Good catch!  Can confirm this on one of my box2d games..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon May 16, 2016 4:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-05-13T17:00:05+00:00</updated>
+<published>2016-05-13T17:00:05+00:00</published>
+<id>/forums/viewtopic.php?t=3284&amp;p=18045#p18045</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3284&amp;p=18045#p18045"/>
+<title type="html"><![CDATA[Physics • Re: Box2D Physics Slows Down but rest of sim doesn't]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3284&amp;p=18045#p18045"><![CDATA[
+It was the BOOST flag.  <br /><br />When a system couldn't handle 60 FPS, it would slow down or skip the physics to compensate, resulting in really weird behaviour (usually noticeable as some projectiles slowing down).<br /><br />I also added a 30FPS option to our game for slower systems.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Fri May 13, 2016 5:00 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-05-12T04:00:07+00:00</updated>
+<published>2016-05-12T04:00:07+00:00</published>
+<id>/forums/viewtopic.php?t=3284&amp;p=18043#p18043</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3284&amp;p=18043#p18043"/>
+<title type="html"><![CDATA[Physics • Re: Box2D Physics Slows Down but rest of sim doesn't]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3284&amp;p=18043#p18043"><![CDATA[
+Some settings I have:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- ENGINE THREAD</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>setStep<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span> <span style="color: #66cc66;">/</span> <span style="color: #cc66cc;">60</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>setStepMultiplier<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>clearLoopFlags<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>setLoopFlags<span style="color: #66cc66;">&#40;</span>MOAISim<span style="color: #66cc66;">.</span>LOOP_FLAGS_FIXED<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>setLoopFlags<span style="color: #66cc66;">&#40;</span>MOAISim<span style="color: #66cc66;">.</span>SIM_LOOP_LONG_DELAY<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>setLoopFlags<span style="color: #66cc66;">&#40;</span>MOAISim<span style="color: #66cc66;">.</span>SIM_LOOP_ALLOW_SOAK<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">if</span> Game<span style="color: #66cc66;">.</span>mobile <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">--  will allow the simulation step to run multiple times per update to try </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">-- and catch up with device time, but will abort if processing the </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">-- simulation exceeds the configfured step time</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        MOAISim<span style="color: #66cc66;">.</span>setLoopFlags<span style="color: #66cc66;">&#40;</span>MOAISim<span style="color: #66cc66;">.</span>SIM_LOOP_ALLOW_SPIN<span style="color: #66cc66;">&#41;</span> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">--MOAISim.setLoopFlags(MOAISim.LOOP_FLAGS_MULTISTEP)</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">if</span> Game<span style="color: #66cc66;">.</span>desktop <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">--  will permit a *variable* update step if simulation time falls too far behind </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">--   device time (based on the boost threshold). Be warned: this can wreak havok </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">--   with physics and stepwise animation or game AI</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        MOAISim<span style="color: #66cc66;">.</span>setLoopFlags<span style="color: #66cc66;">&#40;</span>MOAISim<span style="color: #66cc66;">.</span>SIM_LOOP_ALLOW_BOOST<span style="color: #66cc66;">&#41;</span> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--MOAISim.setLeakTrackingEnabled(false)</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAISim<span style="color: #66cc66;">.</span>setBoostThreshold<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu May 12, 2016 4:00 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2016-05-12T03:56:19+00:00</updated>
+<published>2016-05-12T03:56:19+00:00</published>
+<id>/forums/viewtopic.php?t=3284&amp;p=18042#p18042</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3284&amp;p=18042#p18042"/>
+<title type="html"><![CDATA[Physics • Box2D Physics Slows Down but rest of sim doesn't]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3284&amp;p=18042#p18042"><![CDATA[
+A user was playing the game and the Box2d physics calculations looked to be too slow, but the rest of the sim wasn't slowing down with it.  Is there any way to tie the rest of the sim to the &quot;slowest&quot; framerate, in this case Box2D?<br /><br /> <img src="images/smilies/icon_e_confused.gif" alt=":?" title="Confused" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu May 12, 2016 3:56 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[djeezus]]></name></author>
+<updated>2015-10-20T20:09:13+00:00</updated>
+<published>2015-10-20T20:09:13+00:00</published>
+<id>/forums/viewtopic.php?t=2710&amp;p=17727#p17727</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2710&amp;p=17727#p17727"/>
+<title type="html"><![CDATA[Physics • Re: RUBE and Box2D Joint initialisation with local anchors]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=2710&amp;p=17727#p17727"><![CDATA[
+Hi Stun,<br /><br />just got into MOAI recently, lots to learn, lots to read, discovered lots of tools to help ... TexturePacker for one ! And now just recently discovered r.u.b.e ... and I found this post about you making available an importer for MOAI.  Is it released somewhere ?<br /><br />grtz,<br />gert<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2197">djeezus</a> — Tue Oct 20, 2015 8:09 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2015-09-02T19:19:43+00:00</updated>
+<published>2015-09-02T19:19:43+00:00</published>
+<id>/forums/viewtopic.php?t=3189&amp;p=17575#p17575</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3189&amp;p=17575#p17575"/>
+<title type="html"><![CDATA[Physics • Re: Squish Detection [Box2D]]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3189&amp;p=17575#p17575"><![CDATA[
+~<br />I have this issue sometimes too, it really kills fps quickly if an object gets stuck between too walls in my game, the object will continually bounce back and forth. I have not found a solution, you would think there would be some kind of default setting.<br /><br /><br /><blockquote class="uncited"><div><br />Using Arbiters?<br /><!-- m --><a class="postlink" href="http://www.slowkoala.com/handling-collisions-in-box2d/">http://www.slowkoala.com/handling-collisions-in-box2d/</a><!-- m --><br /></div></blockquote><br /><br />It seams a bit overkill, but it maybe the only way. Cache a list of objects it hits, and if its the same pattern in a short period of time, move the objects somewhere else, or my game the object could explode.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Wed Sep 02, 2015 7:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2015-09-02T11:35:31+00:00</updated>
+<published>2015-09-02T11:35:31+00:00</published>
+<id>/forums/viewtopic.php?t=3189&amp;p=17572#p17572</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3189&amp;p=17572#p17572"/>
+<title type="html"><![CDATA[Physics • Re: Squish Detection [Box2D]]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3189&amp;p=17572#p17572"><![CDATA[
+Using Arbiters?<br /><br /><!-- m --><a class="postlink" href="http://www.slowkoala.com/handling-collisions-in-box2d/">http://www.slowkoala.com/handling-collisions-in-box2d/</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Sep 02, 2015 11:35 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-08-03T20:06:16+00:00</updated>
+<published>2015-08-03T20:06:16+00:00</published>
+<id>/forums/viewtopic.php?t=3189&amp;p=17477#p17477</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3189&amp;p=17477#p17477"/>
+<title type="html"><![CDATA[Physics • Squish Detection [Box2D]]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3189&amp;p=17477#p17477"><![CDATA[
+What would be a good way to determine if an object is/has been squished by two other objects?<br /><br />When I use two kinetic bodies squishing a dynamic body, eventually the dynamic body pops into one of the kinetic bodies and gets trapped inside (which is bad).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Mon Aug 03, 2015 8:06 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[amerllica]]></name></author>
+<updated>2015-04-01T14:15:17+00:00</updated>
+<published>2015-04-01T14:15:17+00:00</published>
+<id>/forums/viewtopic.php?t=2974&amp;p=17045#p17045</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2974&amp;p=17045#p17045"/>
+<title type="html"><![CDATA[Physics • Re: New Account Registrations]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=2974&amp;p=17045#p17045"><![CDATA[
+what?! why you copy my words?!! %-)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1718">amerllica</a> — Wed Apr 01, 2015 2:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[shamonde]]></name></author>
+<updated>2015-03-27T06:20:26+00:00</updated>
+<published>2015-03-27T06:20:26+00:00</published>
+<id>/forums/viewtopic.php?t=2974&amp;p=16994#p16994</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2974&amp;p=16994#p16994"/>
+<title type="html"><![CDATA[Physics • Re: New Account Registrations]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=2974&amp;p=16994#p16994"><![CDATA[
+I know someone who its account isn't fake but it is so low and scurvy to stay on moai forum.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2126">shamonde</a> — Fri Mar 27, 2015 6:20 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-03-08T11:17:24+00:00</updated>
+<published>2015-03-08T11:17:24+00:00</published>
+<id>/forums/viewtopic.php?t=3078&amp;p=16890#p16890</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3078&amp;p=16890#p16890"/>
+<title type="html"><![CDATA[Physics • Re: Getting a list of objects colliding with a body]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3078&amp;p=16890#p16890"><![CDATA[
+Ok, thank you <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> so I assume that I have to rebuild my android host as well?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Sun Mar 08, 2015 11:17 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Vavius]]></name></author>
+<updated>2015-03-08T11:12:21+00:00</updated>
+<published>2015-03-08T11:12:21+00:00</published>
+<id>/forums/viewtopic.php?t=3078&amp;p=16889#p16889</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3078&amp;p=16889#p16889"/>
+<title type="html"><![CDATA[Physics • Re: Getting a list of objects colliding with a body]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3078&amp;p=16889#p16889"><![CDATA[
+<!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/pull/1073">https://github.com/moai/moai-dev/pull/1073</a><!-- m --><br /><br />However, this is for develop branch (1.6). If you're building from source, you can just add this change to your local copy.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1427">Vavius</a> — Sun Mar 08, 2015 11:12 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-03-03T11:20:05+00:00</updated>
+<published>2015-03-03T11:20:05+00:00</published>
+<id>/forums/viewtopic.php?t=3078&amp;p=16862#p16862</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3078&amp;p=16862#p16862"/>
+<title type="html"><![CDATA[Physics • Re: Getting a list of objects colliding with a body]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3078&amp;p=16862#p16862"><![CDATA[
+I am using Moai 1.5 (the last one I guess).<br />This feature would be usefull!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Tue Mar 03, 2015 11:20 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Vavius]]></name></author>
+<updated>2015-03-02T21:15:05+00:00</updated>
+<published>2015-03-02T21:15:05+00:00</published>
+<id>/forums/viewtopic.php?t=3078&amp;p=16861#p16861</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3078&amp;p=16861#p16861"/>
+<title type="html"><![CDATA[Physics • Re: Getting a list of objects colliding with a body]]></title>
+
+<category term="Physics" scheme="/forums/viewforum.php?f=22" label="Physics"/>
+<content type="html" xml:base="/forums/viewtopic.php?t=3078&amp;p=16861#p16861"><![CDATA[
+What moai version are you using? I think I can add this method to MOAIBox2DBody. <br />Something like this: <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- returns list of MOAIBox2DFixture that in contact with this body</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- bool touching     if true, only touching fixtures are reported</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">fixtures <span style="color: #66cc66;">=</span> body<span style="color: #66cc66;">:</span>getContactList<span style="color: #66cc66;">&#40;</span>touching<span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1427">Vavius</a> — Mon Mar 02, 2015 9:15 pm</p><hr />
+]]></content>
+</entry>
+</feed>

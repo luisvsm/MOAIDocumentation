@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=208&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-11-21T14:11:49+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=208&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-11-21T14:11:49+00:00</updated>
+<published>2011-11-21T14:11:49+00:00</published>
+<id>/forums/viewtopic.php?t=208&amp;p=1004#p1004</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=208&amp;p=1004#p1004"/>
+<title type="html"><![CDATA[Moai SDK 0.9 Beta (revision 5) with NaCl, Box2D 2.2.1]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=208&amp;p=1004#p1004"><![CDATA[
+There's a new moai-beta and binary SDK with NaCl Binaries and an updated Box2D physics engine. Details after the fold...<br /><!--more--><br />The big news with this update is the inclusion of the Native Client binaries for Chrome, and the physics engine has been updated to Box2D 2.2.1 (kindly updated and submitted by Byron Wright). We also had some other great contributions and fixes from the community, so thanks to everyone who helped!<br /><br />There are myriad other fixes and improvements, including an overhaul of the traits system. As usual, see our git log for the detailed release notes.  Release summary:<br /><br />- MOAIFont loadFromTTF - dpi param now optional<br />- MOAIFont loadFromTTF - now also loads OTF (it's a secret!)<br />- MOAIFont, MOAITextBox - exposed additional metrics<br />- MOAIFont - fixed serialization bugs (uninitialized values)<br />- Box2D - converted sleep constants to world members<br />- Box2D - exposed contact normal through arbiter<br />- Box2D - updated to Box2D 2.2.1 and new features (thank you, Byron Wright!)<br />- MOAICameraFitter2D - improved functionality; added fitting modes<br />- MOAIImage - added resize, copyRect (with scaling and filtering)<br />- MOAIJsonParser - fixed encode bug (nested arrays exported improperly)<br />- MOAILayerBridge2D - updated/fixed and added an example<br />- MOAIShader - improved uniform binding (now uses attribute system)<br />- MOAIEaseDriver - improved to allow targeted attributes (i.e. chasing)<br />- MOAISerializer - support for custom fields on Lua objects<br />- MOAITransform - added pivot point<br />- Overhaul of traits system (trait inheritance now handled by attributes system)<br />- Integration with TLSF memory manager (via zipfs)<br />- Improved substitution model for stdio, stlib via header injection (all libraries)<br />- Reverted to 'pristine' Lua-5.1.3 (modifications no longer due to header injection)<br />- Code organization, refactor: moved all Lua binding, contexts, lifecycle code into moaicore<br />- Added Tapjoy SDK, binaries and video support (iOS)<br />- Improved Android build and host<br />- Added Lua contributions from community (cpRect, ParticleHelper - thanks to Andrew Scott and Tommo Zhou!)<br />- Lots of little bug fixes and API tweaks; integrated bug fixes from community<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Mon Nov 21, 2011 2:11 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=5&amp;t=1498&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-07-06T22:11:43+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=5&amp;t=1498&amp;mode</id>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2013-07-06T22:11:43+00:00</updated>
+<published>2013-07-06T22:11:43+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=10688#p10688</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=10688#p10688"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=10688#p10688"><![CDATA[
+Update:<br />Windows will now build and run the Android host and install automatically the JFK,sdk,build-tools, platform-tools,and the requested build target (Android-10). It will also launch it on a device using &quot;moaicli start Android&quot;<br /><br />To get plugins working and to make them easier to author, I have got  the windows  and libmoai to compile under mingw. This should mean that for windows devs who just want to use moai and Lua, they will not have to download visual c. It also means that plugins could be distributed as .a files and just linked in or turned into so or dll without having to worry about abi changes between vs versions. Mingw can be auto downloaded if  a compile is needed.<br /><br />I have also investigated jnlua as a way to make java plugins easier for Android. should only need to ship a jar.<br /><br />my proof of concept would be to make untz a plugin<br /><br />Will keep you posted.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sat Jul 06, 2013 10:11 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2013-06-30T22:25:02+00:00</updated>
+<published>2013-06-30T22:25:02+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=10638#p10638</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=10638#p10638"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=10638#p10638"><![CDATA[
+I have been working on one that might be ready to try soonish. I made it to improve my workflow since I dev the same game on at least 3 different boxes and got annoyed at having to setup android sdk etc on each one. It might be useful to people.<br /><br />I am still working on phase one:<br /><ul><li>Cross platform support: code runs on windows, mac, linux : Done</li><li>Create a new project &quot;moalcli new sampleapp&quot;: Done </li><li>Can build simple windows project &quot;moaicli build windows&quot; : Done (just copies lua files into folder with host executable)</li><li>Can run simple windows project &quot;moaicli start windows&quot;: Done</li><li>Can build android project &quot;moaicli build android&quot;: WIP <br /><ul><li>Detect or install Apache Ant: Done</li><li>Detect or install JDK: Done</li><li>Detect or install Android SDK: Done</li><li>Detect or install Android platform tools: Done</li><li>Detect or install specific platform sdk eg Android-10: WIP</li></ul></li></ul><br />Initial goal is to have windows and android builds working on windows and linux and android builds working on linux.<br />I don't own a mac or xcode so I am out of luck there.<br /><br />once phase one is done, I want to have it able to build the moai lib on each platform and auto install tools to do so. This might require me to use mingw to build libmoai on windows. Once this is in place it should be easy to come up with a plugin structure that will allow someone to bundle an extension to moai and the cli tool can include it into the host and libmoai and build the lot.<br /><br />The whole thing is done in JRuby. I looked at lua, in particular &quot;lake&quot; but the ecosystem is better (IMHO) in jruby (although I have uncovered some bugs, so maybe it will be just normal ruby, also cross platform)<br /><br />This was not meant to replace a future version of easter. It only exists because easter does not, and I needed the tools.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sun Jun 30, 2013 10:25 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2013-06-25T07:02:46+00:00</updated>
+<published>2013-06-25T07:02:46+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=10559#p10559</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=10559#p10559"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=10559#p10559"><![CDATA[
+<blockquote><div><cite>Nepherhotep wrote:</cite><br />Such a toolset will be extremely useful. Although writing it from scratch will probably be quite hard. What about using existing build systems?<br />For example - <!-- m --><a class="postlink" href="http://www.scons.org/">http://www.scons.org/</a><!-- m -->, which can be used for building complicated software (like Moai is).<br />Instead of launching &quot;easter run-some-command&quot; it will require to run appropriate target &quot;scons build-some-target&quot;. At least easter can be made as a simple wrapper script upon those build systems.<br />Another idea - for pure lua modules use LuaRocks deployment system. I think it won't be difficult to create MOAI mirror of lua libraries.<br /></div></blockquote><br /><br />Personally, I don't like an official repository since it makes personal fork more difficult. It's not meant to mirror or replace LuaRocks, rather, if you want lua rock libraries (which should be pure lua), you can just point your dependency to those folders. The aim is to create a tool which manages dependencies and automates building for different systems.<br /><br />MOAI itself is moving towards a CMake based system. Moreover, even without it, you can still build Moai using platform specific commands like vs-build or xcodebuild. This is also geared towards Android/iOS app building rather than building Moai.<br /><br /><blockquote class="uncited"><div><br />This is a really nice idea. Any update on it?<br /></div></blockquote><br />I will be very busy at least until next year. So no <img src="images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Tue Jun 25, 2013 7:02 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Gianmichele]]></name></author>
+<updated>2013-03-31T22:30:32+00:00</updated>
+<published>2013-03-31T22:30:32+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=9526#p9526</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=9526#p9526"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=9526#p9526"><![CDATA[
+This is a really nice idea. Any update on it?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1062">Gianmichele</a> — Sun Mar 31, 2013 10:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Nepherhotep]]></name></author>
+<updated>2013-03-11T14:35:25+00:00</updated>
+<published>2013-03-11T14:35:25+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=9289#p9289</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=9289#p9289"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=9289#p9289"><![CDATA[
+Such a toolset will be extremely useful. Although writing it from scratch will probably be quite hard. What about using existing build systems?<br />For example - <!-- m --><a class="postlink" href="http://www.scons.org/">http://www.scons.org/</a><!-- m -->, which can be used for building complicated software (like Moai is).<br />Instead of launching &quot;easter run-some-command&quot; it will require to run appropriate target &quot;scons build-some-target&quot;. At least easter can be made as a simple wrapper script upon those build systems.<br />Another idea - for pure lua modules use LuaRocks deployment system. I think it won't be difficult to create MOAI mirror of lua libraries.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1279">Nepherhotep</a> — Mon Mar 11, 2013 2:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-12-21T12:28:46+00:00</updated>
+<published>2012-12-21T12:28:46+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8183#p8183</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8183#p8183"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8183#p8183"><![CDATA[
+<blockquote><div><cite>ibisum wrote:</cite><br />Got a repo?<br /></div></blockquote><br />Not yet, I'm busy with projects right now. And school's about to start soon. I may start a serious Moai project in the next few months so easter is a tool that I want for myself, but I just want to share the ideas.<br /><br /><blockquote><div><cite>dooms101 wrote:</cite><br />So easter would end up being a command line tool written in Lua, correct?<br /></div></blockquote><br />Yes.<br /><br />For me, the best IDE is gvim. When I use Visual Studio, I <span style="font-weight: bold">must</span> have visvim installed or I won't be able to code at all. It has all the features you mentioned with the proper plugins.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Fri Dec 21, 2012 12:28 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dooms101]]></name></author>
+<updated>2012-12-21T05:47:03+00:00</updated>
+<published>2012-12-21T05:47:03+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8178#p8178</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8178#p8178"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8178#p8178"><![CDATA[
+So easter would end up being a command line tool written in Lua, correct? I might be interested in writing a little IDE in Java (for portability) around it. I've been growing really tired of my current workflow using all these batch files and different editors... I use Visual Studio 2010 and SQL Server Management Studio for my day job so you can imagine how pampered I am. I know there was another IDE floating around here somewhere but I think that project was abandoned.<br /><br />If I did write an IDE it would be more like a glorified text editor, with the ability to manage a project file structure (or maybe multiple projects), use a syntax highlighted multi-tab editor, and an easy interface to deploy to a host (or simulator) and whatnot. I mostly want to write it for my own sake but I'll happily share the source. I would love to have a tool like easter to build it off.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=852">dooms101</a> — Fri Dec 21, 2012 5:47 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-12-18T10:25:01+00:00</updated>
+<published>2012-12-18T10:25:01+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8146#p8146</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8146#p8146"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8146#p8146"><![CDATA[
+Got a repo?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Tue Dec 18, 2012 10:25 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-12-18T03:22:06+00:00</updated>
+<published>2012-12-18T03:22:06+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8136#p8136</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8136#p8136"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8136#p8136"><![CDATA[
+<blockquote><div><cite>JDance wrote:</cite><br /><blockquote><div><cite>thebullno1 wrote:</cite>It's in the plan, have a look at line 4 of easter.lua. there's moai = ...<br /></div></blockquote><br /><br />Woot where can I find easter.lua?</div></blockquote><br />In the my first post. This is a plan. I haven't started yet  <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Tue Dec 18, 2012 3:22 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2012-12-17T13:06:23+00:00</updated>
+<published>2012-12-17T13:06:23+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8128#p8128</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8128#p8128"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8128#p8128"><![CDATA[
+<blockquote><div><cite>thebullno1 wrote:</cite><br />It's in the plan, have a look at line 4 of easter.lua. there's moai = ...<br /></div></blockquote><br /><br />Woot where can I find easter.lua?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Dec 17, 2012 1:06 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2012-12-17T13:05:49+00:00</updated>
+<published>2012-12-17T13:05:49+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8127#p8127</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8127#p8127"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8127#p8127"><![CDATA[
+<blockquote><div><cite>stun wrote:</cite><br />Sounds like a great idea, I'd happily contribute. <br /><br />I'm curious about the plug in system. Is that going to be able to patch files in the moai-dev repo? I ask because I've also added several bits and pieces to the moai-dev repo in my own fork that I'd happily convert to plug-ins for distribution.<br /><br />How are you going to manage multiple plug-ins patching the same moai-dev files though? For example GLUTHost and AKU-luaext need to be patched for every additional 3rd party library that is added?<br /></div></blockquote><br /><br />Well I guess the &quot;patch&quot; would really be just one init line or something like that. For example with every lua extension another line of &quot;luaopenXX&quot; has to be added. Adding those lines from several plugins should not be a problem.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Dec 17, 2012 1:05 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-12-17T11:58:53+00:00</updated>
+<published>2012-12-17T11:58:53+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8125#p8125</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8125#p8125"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8125#p8125"><![CDATA[
+<blockquote class="uncited"><div><br />I guess it might be good to leave the C++/Java plugins until later since that seems rather complex.<br /></div></blockquote><br />Of course, the first step is to be able to create a project using vanilla Moai and pure lua plugin, build and deploy.<br />However, Java and C++ plugins are one of the primary motivation: to integrate community developed features. Also Moai's current make-host.sh script is quite a mess.<br /><br /><blockquote class="uncited"><div><br />I guess it needs to work on OS X as well if it's supposed to build for iphone? I have no clue how to make xcode build stuff from the command line but ofcourse it's possible.<br /></div></blockquote><br />I found this: <!-- m --><a class="postlink" href="https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/xcodebuild.1.html">https://developer.apple.com/library/mac ... ild.1.html</a><!-- m --><br />I don't own a Mac though.<br /><br /><blockquote class="uncited"><div><br />One thing I'd add is support for specifying a custom moai-fork in the settings file. Since I have some modifications to the core I would like to build from my own:)<br /></div></blockquote><br />It's in the plan, have a look at line 4 of easter.lua. there's moai = ...<br /><br /><blockquote class="uncited"><div><br />I'm curious about the plug in system. Is that going to be able to patch files in the moai-dev repo? I ask because I've also added several bits and pieces to the moai-dev repo in my own fork that I'd happily convert to plug-ins for distribution.<br /></div></blockquote><br />It will inject text into code (text file) just like what Moai's already doing to generate the android host. However, it will use a more understandable template engine and the templating code will be Lua. I'm still partial about mustache due to it's {{ }} marker. {{ and }} are actually valid syntax in C++ and Java, although no sane person would open a scope like that (One brace is enough).<br /><br />You can look at the current Android host, it generates a new source file if you change your plugin settings. (Yes, Moai already has a make-shift plugin system).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Mon Dec 17, 2012 11:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-12-17T09:49:32+00:00</updated>
+<published>2012-12-17T09:49:32+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8116#p8116</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8116#p8116"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8116#p8116"><![CDATA[
+Really great idea!  Lets get rolling .. github?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Dec 17, 2012 9:49 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2012-12-16T21:56:34+00:00</updated>
+<published>2012-12-16T21:56:34+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8092#p8092</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8092#p8092"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8092#p8092"><![CDATA[
+Sounds like a great idea, I'd happily contribute. <br /><br />I'm curious about the plug in system. Is that going to be able to patch files in the moai-dev repo? I ask because I've also added several bits and pieces to the moai-dev repo in my own fork that I'd happily convert to plug-ins for distribution.<br /><br />How are you going to manage multiple plug-ins patching the same moai-dev files though? For example GLUTHost and AKU-luaext need to be patched for every additional 3rd party library that is added?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Sun Dec 16, 2012 9:56 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2012-12-16T20:19:59+00:00</updated>
+<published>2012-12-16T20:19:59+00:00</published>
+<id>/forums/viewtopic.php?t=1498&amp;p=8091#p8091</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1498&amp;p=8091#p8091"/>
+<title type="html"><![CDATA[Re: easter - A community toolset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1498&amp;p=8091#p8091"><![CDATA[
+Sounds great. I think a proper tool like this would really help in coordinating community efforts like you say. Need android keyboard? Sure it's in plugin format, just add it to you config, no need for zipline to merge it. It's a bit out of my comfort zone to build a tool like this, but I would definitely use it and contribute. I'm used to maven, npm etc developing for other platforms and they're just a joy to use:) If you got something up and running I could definitely code some parts of it and extend it (with your help). I guess it might be good to leave the C++/Java plugins until later since that seems rather complex.<br /><br />I guess it needs to work on OS X as well if it's supposed to build for iphone? I have no clue how to make xcode build stuff from the command line but ofcourse it's possible.<br /><br />It will be at least a few months until my game is finished, and I would really like a smooth build process for that, releasing updates and what not. And then it might be on to the next game.<br /><br />One thing I'd add is support for specifying a custom moai-fork in the settings file. Since I have some modifications to the core I would like to build from my own:)<br /><br />Edit: Read your other post now, great stuff <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Sun Dec 16, 2012 8:19 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Higher level framework for MOAI</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Higher level framework for MOAI</h2>
+		<p><a href="higher-level-framework-for-moai-t965/index.html">/forums/higher-level-framework-for-moai-t965/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jul 05, 2012 6:06 pm</strong></div>
+				<div class="author">by <strong>BlueByLiquid</strong></div>
+				<div class="content">MOAI Team:<br /><br />So will MOAI ever have a higher level framework such as RapaNui? That is part of the official standard. I realize some people will want to do everything themselves but I really believe to get mass adoption MOAI needs some higher level framework. Maybe mass adoption isn't what the MOAI team want'ss but it seems like the best business goal to get people using MOAI cloud.<br /><br />I really like RapaNui (though I am new to working with it) but I am leery of working on a new project with it for fear that I will be the one maintaining the framework in the future if it looses support, developer is tired of it, etc. I have seen too many projects trust a hardworking developer who gets overwelmed or the project just takes a different direction.<br /><br />So if you will humor me with my architecture/business suggestion: I would propose the following<br />1. The MOAI framework just as it is providing the lower level abstraction for graphics and platform specific APIs and giving access to these in LUA.<br />2a. Develop framework (lets call it TukuTuri) entirely in LUA for code that makes some choice for the developer but reduces development time for many games. This could be very similar to RapaNui encapsolating physics and providing general needs. This would allow for other tool developers to easily make them comparable with MOAI (without having to write their own codebase) but still allow people to have the control they want and many of the newer developers need.<br />2b. Develop a plugin framework (lets call it Tuff) for the TukuTuri API that allows for developers to write their own C code as specific points so they still have the functionality they need and have the ability to write at a lower level for specific pieces of code. <br /><br />I think RapaNui is on the right track for what I think the development community is looking for I just believe it needs to be part of Moai in an official capacity. Maybe RapaNui is doing too much but I think it makes a good balance. Maybe I am being naive but I know a few developers who looked at moai and walked away because of its complexity. I like MOAI and I see its potential but I think a higher layer will win you a lot of business for Moai and (more important to you guys) Moai Cloud.<br /><br />Words can hurt I hope I didn't do that here. <br /><br />Glossary:<br />Tukuturi - Unique Moai who is kneeling. <br />Tuff - Volanic Ash which most Moai's were made from</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jul 05, 2012 8:10 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I think there is room for multiple frameworks in the MOAI system.  MOAI represents an extraordinary multi-platform solution with a collection of already-useful frameworks: box2d, truetype, GLES, etc.  So in fact, MOAI is already a big collection of frameworks, and therefore is evidence enough that MOAI supports a continually evolving/growing framework eco-system.<br /><br />Rapanui is good if you like its features, and fortunately you can use it: very easily.  moaigui is also good and very easy to use for some things too, as is Hanappe.  I personally hope to be able to contribute to all of them, never mind if its support is 'official' or not, simply because the open nature of the frameworks can always lead to refinement and continued beauty .. Would be really interesting, actually, to see more interesting GUI-style control frameworks out there.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jul 06, 2012 2:32 am</strong></div>
+				<div class="author">by <strong>BlueByLiquid</strong></div>
+				<div class="content">Time has shown over and over that many (not all) Open Source project who are not backed by a company which makes money of said product become obsolete, change focus, and most importantly are buggy and lack polish: something in the App Store you can't afford.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jul 06, 2012 9:35 am</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">I just read yesterday great news that Zipline games has got a good round of funding, so Moai is here to stay ( congratulations, guys! )... Also I hope that adoption of Moai by high profile studios such as Double Fine will both solidify its position as well as the expand the SDK through professional contribution.<br /><br />As far as high level frameworks go, I completely agree with Ibisum, I like having different options, and I believe many of us actually mix and match features of these user contributed frameworks to our liking.<br /><br />I would always prefer Zipline games focus on core technology and leave high level API to us to contribute, otherwise it will go Corona route, which may be highly profitable for company but frustratingly limiting the creativity of the people working with SDK.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jul 06, 2012 2:13 pm</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">As Ibisum and Nosheet said, our philosophy to date has been to let the developer/studio create their own high level framework. This is way most of the game studios we have spoken to prefer to work and it's been successful so far given the quality of games produced.<br /><br />We realize that isn't ideal for all developers, which is why Rapa Nui exists, as well as other alternatives that give you a little more. A community model for that is the best approach for now. I'm not ruling out that we could include some of those in the 'official' Moai release, but most of our developers are better served by the Zipline team concentrating on other feature work, plus QA and docs. And I don't see a need to be concerned about Rapa Nui - it is definitely going to be around!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jul 06, 2012 2:16 pm</strong></div>
+				<div class="author">by <strong>BlueByLiquid</strong></div>
+				<div class="content">I think you guys are missing my point. I don't think higher level frameworks such as RapaNUI and Hanappe should not be included or somehow they should be prevented from existing far from it. I was still saying to keep both levels of the framework open source. I don't want to take ANYTHING away from the current community and am not suggesting a system which does. I am simply suggesting a framework such as RapaNui or other provided by the MOAI team and be open sourced. You would still have all the control as you would have the source code or if you didn't want to be limited you could use another high level framework (or combinations thereof). <br /><br />Both of you guys are asking for more frameworks and that you want to use the best of each and that this exactly what I am advocating...more frameworks. Specifically one more provided by MOAI. The problem with tools like Corona is you have to use the official framework and you don't have access to the source. That is not at all what I am advocating.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jul 08, 2012 8:46 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I think the licenses for Hanappe and Rapanui are pretty decent, but if that ever changes, I think one of the rewards of MOAI's power is that .. its 'easy' .. to write new frameworks for it.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jul 09, 2012 5:05 am</strong></div>
+				<div class="author">by <strong>Mud</strong></div>
+				<div class="content"><blockquote><div><cite>BlueByLiquid wrote:</cite>I think you guys are missing my point. [..]  I am simply suggesting a framework such as RapaNui or other <span style="font-weight: bold">provided by the MOAI team</span></div></blockquote><br /><br />He addressed this point rather directly:<br /><br /><blockquote><div><cite>todd wrote:</cite>our philosophy to date has been to let the developer/studio create their own high level framework. [...] <span style="font-weight: bold">most of our developers are better served by the Zipline team concentrating on other feature work</span>, plus QA and docs.</div></blockquote><br /><br />Zipline is not a huge team, resources are finite. Any work on developing/maintaining/documenting a high level framework necessarily takes away from developing/maintaining/documenting the core framework. So &quot;A community model for [high level frameworks] is the best approach for now.&quot;</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Higher level framework for MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jul 11, 2012 1:37 am</strong></div>
+				<div class="author">by <strong>BlueByLiquid</strong></div>
+				<div class="content"><blockquote><div><cite>Mud wrote:</cite>He addressed this point rather directly</div></blockquote><br /><br />Todd and I made our posts at about the same time and I had not seen his reply until after my post went through. I certainly see your points I just was making a recommendation on what I felt was needed. We can all have disagreements and still be happy.  <img src="images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

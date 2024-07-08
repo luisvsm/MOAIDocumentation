@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=19&amp;t=2098&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-11-27T12:31:44+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=19&amp;t=2098&amp;mode</id>
+<entry>
+<author><name><![CDATA[andrqxa]]></name></author>
+<updated>2013-11-27T12:31:44+00:00</updated>
+<published>2013-11-27T12:31:44+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=12337#p12337</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=12337#p12337"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=12337#p12337"><![CDATA[
+I tried to complile moai with VS2010 and moai.exe crached too. Then I try to use bat file in moai-dev\bin\build-vs2010.bat<br />and I get error - solution is not make. Then I read errors and edit next files<br />1) bin/build-vs2010.bat<br />    ---&gt;  vs2010 replace with  ..\vs2010<br /> <dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="bash" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000000; font-weight: bold;">@@</span> -<span style="color: #000000;">1</span>,<span style="color: #000000;">7</span> +<span style="color: #000000;">1</span>,<span style="color: #000000;">7</span> <span style="color: #000000; font-weight: bold;">@@</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> call <span style="color: #ff0000;">&quot;C:\Program Files\Microsoft Visual Studio 10.0<span style="color: #000099; font-weight: bold;">\V</span>C<span style="color: #000099; font-weight: bold;">\v</span>cvarsall.bat&quot;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #660033;">-cd</span> vs2010</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+<span style="color: #7a0874; font-weight: bold;">cd</span> ..\vs2010</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> msbuild moai.sln <span style="color: #000000; font-weight: bold;">/</span>property:<span style="color: #007800;">Configuration</span>=Debug-Lua-<span style="color: #000000;">5.1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> <span style="color: #000000; font-weight: bold;">if</span> ERRORLEVEL <span style="color: #000000;">1</span> <span style="color: #7a0874; font-weight: bold;">exit</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> msbuild moai.sln <span style="color: #000000; font-weight: bold;">/</span>property:<span style="color: #007800;">Configuration</span>=Release-Lua-<span style="color: #000000;">5.1</span></div></li><br /></ol></code></dd></dl><br />2)Patch VS2010<br />    edit %ProgramsFile%\MSBuild\Microsoft.cpp\v4.0\Microsoft.CPPBuild.Targets <br />        patch<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="bash" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #660033;">--</span>  <span style="color: #000000; font-weight: bold;">&lt;</span>Target <span style="color: #007800;">Name</span>=<span style="color: #ff0000;">&quot;GetResolvedLinkLibs&quot;</span> <span style="color: #007800;">Returns</span>=<span style="color: #ff0000;">&quot;@(LibFullPath)&quot;</span> <span style="color: #007800;">DependsOnTargets</span>=<span style="color: #ff0000;">&quot;<span style="color: #007800;">$(CommonBuildOnlyTargets)</span>&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">++  <span style="color: #000000; font-weight: bold;">&lt;</span>Target <span style="color: #007800;">Name</span>=<span style="color: #ff0000;">&quot;GetResolvedLinkLibs&quot;</span> <span style="color: #007800;">Returns</span>=<span style="color: #ff0000;">&quot;@(LibFullPath)&quot;</span> <span style="color: #007800;">DependsOnTargets</span>=<span style="color: #ff0000;">&quot;<span style="color: #007800;">$(CommonBuildOnlyTargets)</span>;ResolvedLinkLib&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span> </div></li><br /></ol></code></dd></dl><br />3) Install FMOD Ex Designer (<!-- m --><a class="postlink" href="http://www.fmod.org/download/">http://www.fmod.org/download/</a><!-- m -->)<br />4) Install latest Direct X SDK (<!-- m --><a class="postlink" href="http://www.microsoft.com/en-us/download/details.aspx?id=6812">http://www.microsoft.com/en-us/download ... px?id=6812</a><!-- m -->)<br />5) Edit    moai-dev\vs2010\moai-lib-fmod-designer\moai-lib-fmod-designer.vcxproj and moai-dev\vs2010\moai-lib-fmod-ex\moai-lib-fmod-ex.vcxproj<br /> add in all &lt;AdditionalIncludeDirectories&gt; ==&gt; C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\fmoddesignerapi\api\inc<br />6) Edit    moai-dev\vs2010\moai-exe-fmod\moai-fmod.vcxproj<br />add in all &lt;AdditionalLibraryDirectories&gt;  ==&gt; C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\lib; C:\Program Files\FMOD SoundSystem\FMOD Programmers API Windows\fmoddesignerapi\api\lib<br /><br />After that I ran bin/build-vs2010.bat and it compile and build OK. Then I copied moai-dev\vs2010\bin\win32\Release-Lua-5.2\*.* to c:\moai-sdk. After that all samples works in zerobrane fine<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1599">andrqxa</a> — Wed Nov 27, 2013 12:31 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[watrworld]]></name></author>
+<updated>2013-10-16T15:21:34+00:00</updated>
+<published>2013-10-16T15:21:34+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11905#p11905</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11905#p11905"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11905#p11905"><![CDATA[
+So in either case  (Command Line) or from ZeroBrane...it runs once successfully...next time I try to run it it crashes.<br /><br />Thats after a clean reboot.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1576">watrworld</a> — Wed Oct 16, 2013 3:21 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[watrworld]]></name></author>
+<updated>2013-10-16T14:38:15+00:00</updated>
+<published>2013-10-16T14:38:15+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11903#p11903</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11903#p11903"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11903#p11903"><![CDATA[
+I ran it from ZeroBrane.<br /><br />I now tried the run.bat...had to setup MOAI_BIN=C:\moai-sdk\bin\Win32    and    MOAI_CONFIG=C:\moai-sdk\samples\config<br /><br />Still the same error.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1576">watrworld</a> — Wed Oct 16, 2013 2:38 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-10-15T20:39:27+00:00</updated>
+<published>2013-10-15T20:39:27+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11892#p11892</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11892#p11892"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11892#p11892"><![CDATA[
+~<br />Are you running it with with sample ?<br /><br /><ul><li> <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/master/samples/anim/anim-basic/run.bat">https://github.com/moai/moai-dev/blob/m ... ic/run.bat</a><!-- m --></li></ul><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Tue Oct 15, 2013 8:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[watrworld]]></name></author>
+<updated>2013-10-15T18:59:28+00:00</updated>
+<published>2013-10-15T18:59:28+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11890#p11890</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11890#p11890"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11890#p11890"><![CDATA[
+Well not quite there...so I built the Debug...and I can run it once and then it crashes.<br /><br />The Release version dies right away...<br /><br />I dont want to give up on moai...but I may just have to...Can someone provide just the bin\win32?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1576">watrworld</a> — Tue Oct 15, 2013 6:59 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2013-10-11T14:45:18+00:00</updated>
+<published>2013-10-11T14:45:18+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11855#p11855</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11855#p11855"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11855#p11855"><![CDATA[
+Glad you got that solved. It is always good to be able to build from source.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Fri Oct 11, 2013 2:45 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[watrworld]]></name></author>
+<updated>2013-10-11T14:01:48+00:00</updated>
+<published>2013-10-11T14:01:48+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11854#p11854</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11854#p11854"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11854#p11854"><![CDATA[
+Ok, I built it by downloading VS2010 and building Solution<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1576">watrworld</a> — Fri Oct 11, 2013 2:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[watrworld]]></name></author>
+<updated>2013-10-11T13:17:35+00:00</updated>
+<published>2013-10-11T13:17:35+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11853#p11853</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11853#p11853"/>
+<title type="html"><![CDATA[Re: Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11853#p11853"><![CDATA[
+Anybody??? Dont develop on windows then?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1576">watrworld</a> — Fri Oct 11, 2013 1:17 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[watrworld]]></name></author>
+<updated>2013-10-10T14:19:46+00:00</updated>
+<published>2013-10-10T14:19:46+00:00</published>
+<id>/forums/viewtopic.php?t=2098&amp;p=11843#p11843</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2098&amp;p=11843#p11843"/>
+<title type="html"><![CDATA[Where to get windows bin for moai-sdk?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2098&amp;p=11843#p11843"><![CDATA[
+Coming from Corona, try Gideros, and now thinking I would like Moai (even bought the book0.<br /><br />Problem: I develop on windows, so I downloaded the sdk from <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev">https://github.com/moai/moai-dev</a><!-- m --> (master and tag p0) but there is nothing in the <span style="font-weight: bold">bin</span> directory, only the distribute file. No <span style="font-weight: bold">win32</span> subdir as specified in the book so cannot even try the samples.<br /><br />Where can I get this win32 dir? Anything else that I am missing?<br /><br />Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1576">watrworld</a> — Thu Oct 10, 2013 2:19 pm</p><hr />
+]]></content>
+</entry>
+</feed>

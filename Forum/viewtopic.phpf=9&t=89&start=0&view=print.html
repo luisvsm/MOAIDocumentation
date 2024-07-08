@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Moai + OpenGL ES</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Moai + OpenGL ES</h2>
+		<p><a href="moai-opengl-es-t89/index.html">/forums/moai-opengl-es-t89/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Aug 09, 2011 6:22 am</strong></div>
+				<div class="author">by <strong>dlannan68</strong></div>
+				<div class="content">Hi, new to Moai, and loving it so far. Have been a Lua developer since 2001 at Pandemic Studios. Its a great little binder/rapid dev environment. So, a couple of very quick questions about it:
+<br />
+<br />1. OpenGL ES is accessible? I have seen some general 2D vertex based samples, but is the android and ios gles api complete? If not, is it easy enough to extend to use it (I have done this before with Lua, so just hoping this is available).
+<br />
+<br />2. Building libs. Is moai able to handle loadable modules like a normal lua 5.1? Im hoping to write a couple of simple libs/modules for some special purpose gear, so I also hope this is available :)
+<br />
+<br />3. Does moai have a recommended development IDE? Apart from the lua addon for eclipse, is there any specific moai setups that would assist in dev? If not, Im quite keen on building something a little like Unity that is a 'Builder Tool' environment that might well help out :) .. I have built these sorts of things for simulator systems and such before, so it should be fairly straight forward to do.
+<br />
+<br />Thanks for any responses. What you have here looks really great, and will potentially save me alot of time having to build a similar framework! :)
+<br />
+<br />Cheers,
+<br />
+<br />Dave.
+<br />
+<br />PS Very glad I found this, I was working with Monkey, but it is a bit too rigid and I have wasted too much time just trying to do simple things in it. Moai seems to be a great balance.. and uses my fave scripting language (see LuaEng.. :) ).</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Aug 09, 2011 11:37 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">1.
+<br />
+<br />Would be interested in talking more about that. I can link in an off the shelf OpenGL/Lua binding without a lot of trouble. Moai's implementation is a retained mode for OpenGL that does some optimization via state change caching and tries to ease compatibility issues between fixed function and programmable for games that use both.
+<br />
+<br />Here are some thoughts re how to proceed. One path would be to expose the OpenGL API and then create some extensible objects that let you call OpenGL directly from inside the scene render. So you'd have a prop, deck and layer object with a callback to let you do native rendering. That way you could still use Moai's animation and dependency graph to organize your scene, but render however you want to.
+<br />
+<br />The other approach would be to add more retained mode objects that can efficiently render vector style graphics, advanced effects or whatever you want. If we take this approach I can make sure those objects play well with our optimization path.
+<br />
+<br />The approaches aren't mutually exclusive and I'd eventually like to support both. Let me know what's important to you and I'll keep it in mind as we move forward.
+<br />
+<br />
+<br />
+<br />2.
+<br />
+<br />If they are Lua modules, absolutely. I'll eventually be doing a DLL configuration of Moai for desktop so you can load native modules as well, but given our focus on mobile in general and iPhone in particular it hasn't been our top priority.
+<br />
+<br />
+<br />
+<br />3.
+<br />
+<br />That would be fantastic. Most of the team here has been using Notepad++ and print (), but a good builder tool/IDE would be appreciated by a lot of people. We don't have the bandwidth to tackle it internally right now. There are a few tools projects out there - a better desktop host from Bach Le and an IDE from James Rhodes - you might want to ping them first.
+<br />
+<br />...
+<br />
+<br />Glad you are digging Moai.
+<br />
+<br />Feedback is hugely appreciated. It's still young technology, so hearing back from people using it helps us a lot. And very cool to get the perspective of someone at a top shelf studio like Pandemic. Thanks for reaching out!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Aug 09, 2011 5:49 pm</strong></div>
+				<div class="author">by <strong>dlannan68</strong></div>
+				<div class="content">Thanks for the quick and utterly positive attitude! :)
+<br />
+<br />1. This sounds great. Retained mode I assume is used due to the cross platform'ness' that you need to maintain. The sorts of things I am looking for are extremely simple things like: Texture binding access, Vertex/Normal/Color enabling (which by the looks of it you do have this is a way?), General matrix stack accesss (perspective and modelview) and some simple ops (which again I think you have most covered).
+<br />
+<br />I was wondering if maybe this makes sense as a customized layer? Not completely understanding all your components yet – A prop would involve adding quite a bit of api to it?
+<br />
+<br />Anyway.. sounds like you are already thinking about this, which is damn kool anyway. I might have a dig through the source and make some suggestions? I have previously built a Lua module with a full OpenGL ES api, is it worth sending you that to see whether there is much use in it?
+<br />
+<br />2. Awesome. Love it!! Not sure if you have used Leadwerks.. but it was one of the biggest annoyances to find after making a number of Lua modules, that it was effectively disabled.
+<br />
+<br />3. Ok. This looks like something worth belting out :)  I'll make some plans and kick it along.
+<br />
+<br />I promised my daughter to finish a game we have been planning, so I hope to implement it in Moai over the next few weeks. Very excited that I'll be belting this out with Lua..!! :)
+<br />
+<br />Btw not at Pandemic anymore (have been in the Sim industry for last 4 yrs) - I worked there back in 2001->2003, they were an utterly awesome company to work for. One of the guys I worked with introduced Pandemic to Lua back then, and it was golden. Have been a bit of an evangelist for Lua/LuaJit ever since :) It doesnt solve every problem set, but for gaming 'glue' and general game systems its ideal.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Aug 09, 2011 7:05 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Huzzah!
+<br />
+<br />1. That's right. It's a good way to gloss over some of the cross platform quirks. Also, it lets us do optimization tricks like sorting on draw state, batching draw operations and viewport culling. Will be even more relevant down the road when we need to support things like skinning and occlusion.
+<br />
+<br />We're pushing out a new release tomorrow or the next day that will support programmable pipeline. So my comments below apply to that release, not the current version...
+<br />
+<br />You can set up a custom vertex format using MOAIVertexFormat. This object does double duty for fixed function and programmable pipeline. If you don't care about fixed function at all, you can just describe your vertex attributes directly. If you want to be backward compatible with fixed function, you use the named vertex component declarations. MOAIMesh is a special kind of deck that binds a vertex buffer to a texture. You then attach the mesh to a prop to place in your scene and render it. If you want to draw using your own shader, you can attach the shader to either the deck or the prop. When you're setting up your uniform bindings to the shader you can link them to custom dep node Attributes (on the MOAIShader object), MOAITransform objects, or set them up to be populated with matrices from Moai's transformation pipeline (so you can get your model, view, projection transforms directly).
+<br />
+<br />The decks right now don't support multitexturing; that's something I need to add. As you work more with it, would be interested to hear about what effects you need to create so I can revise/extend the retained mode to handle them. Also, check out the next release and see what you think of the new programmable pipeline stuff. You should be able to do a *lot* more without giving up retained mode.
+<br />
+<br />As for the Lua/GLES binding you wrote, heck yeah. If you put it up on github under a license we can use (MIT or something like that) I can grab it and look at linking it in as an extension. Alternatively, if you fill out our contributor agreement you can send it to me directly. For us to support it, should be as simple as adding some rendering callbacks you can service from Lua.
+<br />
+<br />2. Haven't. Odd that they would disable modules. I'll have to look more at dll/.so configuration - though may not get to it for a while given the mobile focus at the moment.
+<br />
+<br />3. Very cool. A one click builder would be a big help to a lot of devs. I know first time Xcode/Eclipse/Visual Studio users have struggled coming to Moai for lack of a dedicated IDE/builder. The other thing that would help those devs would be a high level wrapper written in Lua. Mainly a scene manager, but also a friendlier game object that wraps up props, decks, textures and physics objects and hides things like UV coordinates, etc.
+<br />
+<br />...
+<br />
+<br />Yeah, let us know how we can help you move that project along. Sounds like you have a built-in audience for it! <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 10, 2011 8:31 am</strong></div>
+				<div class="author">by <strong>dlannan68</strong></div>
+				<div class="content">Sounds real good. Will jump into the new version when it gets released. A couple of quick ones, which Id be happy to add myself: Frustum control? Maybe as part of the Camera objects? Not sure… This is why I wondered whether a '3D Layer' made sense. You could composite 2D and 3D layers to create say a nice HUD overlaying 3D game views.
+<br />
+<br />Heres the source – looking at it now, I think I'll have a stab at hooking it in as a module (will need converting from Lua5). But you are welcome to any of the source, its all MIT and respective licenses (has ogg vorbis audio etc).
+<br />
+<br /><a rel="nofollow" href="http://www.gagagames.com/files/luaeng/LuaEng_Source_1_1.rar" target="_blank">http://www.gagagames.com/files.....ce_1_1.rar</a>
+<br />
+<br />Heres the webby and binary too (not spamming.. just if you need more docs):
+<br />
+<br /><a href="http://www.gagagames.com/index.php?option=com_content&view=article&id=50:luaeng-downloads&catid=35:luaeng&Itemid=12" rel="nofollow" target="_blank">http://www.gagagames.com/index.....;Itemid=12</a>
+<br />
+<br />Its the source under that GraphicsLib folder. Im really not sure how hard/easy this would be to put in. I suspect some of the image library stuff may not map well (I use the Lua developers imlib for image handling – nice and cross platform friendly).
+<br />
+<br />3. Yeah totally agree, a scene manager would help greatly. Hrm.. LuaEng has much of that in script, might be worth revisiting that too :) (I wrote it about 5 yrs ago.. so it may be a little crusty).
+<br />
+<br />So far.. have written a little 2D pedestrian controller which has little peds wandering around a screen. Might retro fit OpenSteer.. see how it goes. Very impressed so far, VBO's working fine (allows me to define 3D verts – but cant do too much with them :) ). Luckily for the simple game.. I really just need a general "3D effect" and the vbo's give me all I need so far.
+<br />
+<br />Well done btw.. so far, really enjoying the toolset.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 10, 2011 10:35 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Excellent. Will grab the code and have a look after I get the release pushed out.
+<br />
+<br />Minimal 3D support won't be tough to add. And you've intuited my direction: there will be a MOAILayer3D and a 3D camera object with frustum control. It may be a few release before I can get to it, but it's pretty high on my TODO list.
+<br />
+<br />Glad you have having fun with it! <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-laugh.gif" alt="Laugh" /> There are still plenty of rough edges, so just let me know as you run into stuff. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Aug 11, 2011 8:04 am</strong></div>
+				<div class="author">by <strong>dlannan68</strong></div>
+				<div class="content">Wow. Thats just plain awesome. Seriously.. it sounds like you are really kickin this along with extremely 'like-minded' intentions :)  Im happy to wait for the features, gives me some time to get the little game done, and start on a Studio :)
+<br />
+<br />Awesome stuff. I managed to get my camera and hud in and working - so impressed how easy it is to use. Btw, if you want/need donations I am quite happy to do so. ( I dont want others to feel obliged, its just I am impressed enough already that it exceeds other tools I have paid good money for ).
+<br />
+<br />Cheers,
+<br />
+<br />Dave</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Moai + OpenGL ES</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Aug 11, 2011 11:02 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Hey, awesome! No need for donations. The best way to help us business-wise is to make great games on the platform, contribute tools and libraries for the community to use, try out the cloud service and convince other devs you know to join the fun.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

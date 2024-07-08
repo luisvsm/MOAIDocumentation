@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Guide - How to setup MOAI SDK for Windows/Android</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Guide - How to setup MOAI SDK for Windows/Android</h2>
+		<p><a href="guide-how-to-setup-moai-sdk-for-windows-android-t774/index.html">/forums/guide-how-to-setup-moai-sdk-for-windows-android-t774/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri May 11, 2012 8:52 pm</strong></div>
+				<div class="author">by <strong>bach</strong></div>
+				<div class="content">Hey everyone,<br /><br />Well I wanted to setup MOAI on my machine today. Starting out, I was confident that this would be a relatively easy task. I mean, come on I've been doing this for years now. It's just another SDK.. Oh boy, let's just say I was in for a treat <img src="images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /><br /><br />To save the next person the pain I've been through I decided to write a nice little guide with which will allow you to run MOAI on your desktop as well as on your Android phone never even leaving the IDE. It also provides a nice little template project to work with.<br /><br />This guide focuses solely on a Windows 7 dev environment. However I'm sure that adapting this to Mac and other versions of Windows shouldn't be a big deal.<br /><br />I looked around for the best IDE for a while. After trying out many different ones (intellij, eclipse, etc.) I ended up with Sublime2. Unless someone can convince me otherwise, it's the best option for MOAI developing right now. I used a lot of different resources I found from around the forums, but mainly I made great use of Moai Nao made by thebullno1. I adjusted some of his scripts to create a nice workflow with Sublime2. Hope he's ok with it <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />Here we go:<br /><br /><span style="font-size: 130%; line-height: 116%;">1. Download and install Sublime2(<a href="http://www.sublimetext.com/2" class="postlink">http://www.sublimetext.com/2</a>)</span><br /><br />I assume this step explains itself. Have a look around the IDE and play around with the different color schemes under Preferences -&gt; Color Schemes. You can also turn on folder view as a sidebar under View -&gt; Sidebar -&gt; Show Sidebar.<br /><br /><span style="font-size: 130%; line-height: 116%;">2. Download the Android SDK (<a href="http://developer.android.com/sdk/index.html" class="postlink">http://developer.android.com/sdk/index.html</a>)</span><br /><br />The sdk just comes as a zip file. Extract it to a folder of your choice. For simplicity reasons let's take &quot;C:\android-sdk&quot;. As a next step we need to add the android sdk platform tools to our PATH environment variable. In windows 7 this is done by going to Control Panel -&gt; System -&gt; Advanced System Settings. At the bottom of the window that pops up click &quot;Environment Variables&quot;. Under &quot;System&quot; (the bottom list) find the &quot;Path&quot; variable and edit it. Add this to the end of the string (DON'T replace):<br /><br /><span style="font-style: italic">&quot;;C:\android-sdk\platform-tools&quot;</span> (minus the quotes, but it needs the semi-colon)<br /><br /><span style="font-size: 130%; line-height: 116%;"> 3. Download the MOAI SDK (<a href="https://dashboard.moaicloud.com/signup.php" class="postlink">https://dashboard.moaicloud.com/signup.php</a>) </span><br /><br />Login and download the sdk. Again this is not an installer, just a zip file. Extract the zip file to your location of choice. For this guide let's use &quot;C:\moai-sdk&quot;.<br /><br />Now, let's have a quick look at the sdk folder structure:<br /><br />/3dparty (some glut libs)<br />/bin (this folder contains all the hosts (i.e what will run your lua scripts)<br />/docs (the api reference guide)<br />/hosts (has stuff in there for hosts building, we'll ignore in this guide)<br />/include (some lua includes)<br />/samples (the sdk samples)<br /><br />Before we go any further, you should go into the samples folder and run some samples. This will work without any extra setup. Just go into any samples folder and double click the run.bat file and it'll execute the sample. Familiarize yourself with all the different functionalities the sdk has to offer. There are a lot of samples!<br /><br />Next we need to add the sdk to the &quot;Path&quot; environment variable. Follow the instructions in point 2. and add the following to the end of the string:<br /><br /><span style="font-style: italic">&quot;;C:\moai-sdk\bin\win32&quot;</span> (again, minus the quotes)<br /><br /><span style="font-size: 130%; line-height: 116%;">4. Install 7zip (<a href="http://www.7-zip.org/" class="postlink">http://www.7-zip.org/</a>)</span><br /><br />This is needed for the Android deployment. Just run the installer. By default it'll install to &quot;C:\Program Files (x86)\7-Zip&quot;.<br /><br />Go ahead and also add this folder to the &quot;Path&quot; enviroment variable.<br /><br /><span style="font-style: italic">&quot;;C:\Program Files (x86)\7-Zip&quot;</span><br /><br /><span style="font-size: 130%; line-height: 116%;">5. Download my project template (<a href="http://www.thegreystudios.com/moai/project-template.zip" class="postlink">http://www.thegreystudios.com/moai/project-template.zip</a>) </span><br /><br />This zip file gives you a clean basic project that you can use to work off. It has everything ready setup for deploying to Android (using Moai Nao). Of course you can also use this to test on and develop on desktop.<br /><br />Alright, extract the zip file to a folder of your choice. Have a quick look at the extracted folder structure. You should have a folder structure like this:<br /><br />/main<br />../assets (some test asset)<br />../main.lua<br />../config.lua<br />/tools(various batch files and txt files in here)<br /><br /><span style="font-size: 130%; line-height: 116%;">6. Get the project running on Desktop </span><br /><br />Now the fun can begin. Open Sublime2 and go to File -&gt; Open Folder. Navigate to the location you just extracted the template to and open up the root folder (the folder that has main &amp; tools in it).<br /><br />This will open up the project template in Sublime2. You should have the above folder structure visible on the left now (make sure you have the sidebar visible, View -&gt; Sidebar -&gt; Show Sidebar).<br /><br />The next thing we need to do is define a build for MOAI-Desktop. You only have to do this one time. This will be saved with your Sublime2 install so all subsequent projects you create will have it already.<br /><br />Go to Tools -&gt; Build System -&gt; New Build System .. This will open up a new file. Replace the text with the following:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=19&amp;t=774&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="json" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">{</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &quot;cmd&quot;: [&quot;${project_path:${folder}}/tools/run.bat&quot;]</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">}</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />Press save and specify an appropriate name for the build, i.e MOAI-Desktop. Verify that the new build configuration has been selected by going to Tools -&gt; Build System -&gt; (x) MOAI-Desktop.<br /><br />Now navigate to main.lua via the sidebar and open it by double clicking. You can now either start this by going to Tools -&gt; Build or simply use Ctrl+B. This will  start the script running in the windows host. If everything has worked you should seet the moai logo spinning in front of you.<br /><br /><span style="font-size: 130%; line-height: 116%;">7. Get the project running on Android</span><br /><br />First, download MoaiNoa from here: <a href="http://www.host-a.net/u/bullno1/moainao.zip" class="postlink">http://www.host-a.net/u/bullno1/moainao.zip</a><br /><br />The only thing we care about is the MoaiNao-debug.apk. Move that file over to your Android device somehow (via adb, or dropbox, gdrive) and install the apk.<br /><br />Next, we need to connect the device to the PC via adb (Android Developer Bridge). You can do this via USB or wifi. Have a read through this if you've never done it before: <a href="http://developer.android.com/guide/developing/device.html#setting-up" class="postlink">http://developer.android.com/guide/developing/device.html#setting-up</a><br /><br />I personally use adbWireless which allows a wifi connection to adb and gets rid of the annoying usb cable <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /> But you need to have your phone rooted in order for that to work.<br /><br />Alright, assuming you have a connection setup we're going to create another Build System specifically for Android. Same process as for Desktop, Tools -&gt; Build System -&gt; New Build System<br /><br />Replace the text with this:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=19&amp;t=774&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="json" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">{</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &quot;cmd&quot;: [&quot;${project_path:${folder}}/tools/deploy-to-device.bat&quot;]</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">}</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />Press save and specify a name for the build system, i.e. MOAI-Android. Verify that it's the current build system via Tools -&gt; Build System -&gt; (x) MOAI-Android.<br /><br />Navigate to main.lua and press Ctrl+B or Tools-&gt;Build. This should now automatically deploy your script to Android and run it. MAGIC! (not really)<br /><br /><br />And that's the end of this longer than expected guide. I hope this helps the next person trying out this incredible little SDK. Let me know if this has worked for you and if not where you got stuck!<br /><br />I'm still only just starting out (first day today <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" />) so I may have done things in a weird, uncommon way and I'm more than happy to be shown a better way. However I've found this setup works surprisingly well and allows for very quick testing on Android (&lt;4s startup).<br /><br />Thanks to thebullno1 who really made this possible.<br /><br />Cheers,<br />Bach</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 12:25 am</strong></div>
+				<div class="author">by <strong>zjay87</strong></div>
+				<div class="content">Thank you for the tutorial. I am stuck on step 6. I get this error when trying to run the program.<br /><br />C:\project-template\project-template\main&gt;moai &quot;config.lua&quot; &quot;main.lua&quot; <br />'moai' is not recognized as an internal or external command,<br />operable program or batch file.<br />[Finished]</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 1:14 am</strong></div>
+				<div class="author">by <strong>derickdong</strong></div>
+				<div class="content">It sounds like you either don't have the environment variable set up properly, or Windows is failing to recognize it. If you're certain the environment variable is correct, you may need to reboot. Windows often doesn't realize a change has been made until after you've rebooted.<br /><br />Unfortunately for me, I simply cannot get the Android SDK to work on my machine. I tried before this tutorial was available, and I tried again by following these steps. In both cases, I get the same results - when I run it, a console window quickly flashes, then disappears. Looking around the web, it seems this is a somewhat common problem, but none of the solutions I've found so far work.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 1:21 am</strong></div>
+				<div class="author">by <strong>zjay87</strong></div>
+				<div class="content">I fixed the problem. My path names had a different name. That is why the system could not find them.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 5:10 am</strong></div>
+				<div class="author">by <strong>bach</strong></div>
+				<div class="content"><blockquote><div><cite>derickdong wrote:</cite>It sounds like you either don't have the environment variable set up properly, or Windows is failing to recognize it. If you're certain the environment variable is correct, you may need to reboot. Windows often doesn't realize a change has been made until after you've rebooted.<br /><br />Unfortunately for me, I simply cannot get the Android SDK to work on my machine. I tried before this tutorial was available, and I tried again by following these steps. In both cases, I get the same results - when I run it, a console window quickly flashes, then disappears. Looking around the web, it seems this is a somewhat common problem, but none of the solutions I've found so far work.</div></blockquote><br /><br />Hey,<br /><br />can you tell me what you've done up to this point? Did you extract the sdk? What were you trying to do when the window popped up and disappeared again?<br /><br />Try and manually do the steps in cmd line. The one tool you need access to is ADB. You should be able to start ADB from the commandline by typing &quot;adb&quot;.<br /><br />If it doesn't work you'll at least get feedback on what's wrong since the window won't disappear.<br /><br />Cheers,<br />Bach</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 4:41 pm</strong></div>
+				<div class="author">by <strong>derickdong</strong></div>
+				<div class="content"><blockquote><div><cite>bach wrote:</cite>can you tell me what you've done up to this point? Did you extract the sdk? What were you trying to do when the window popped up and disappeared again?</div></blockquote><br />Instead of the zip file, I used the installer (although, I believe I've tried both at some point). I installed the SDK into the folder C:\android-sdk. I've also re-downloaded the file a couple times, to make sure I hadn't gotten a corrupted file.<br /><br />The window pops up when I try to run the Android SDK manager. I tried the Android AVD Manager as well, just for the hell of it, but I get the same response. I've run it both by double-clicking the .exe file in the folder, and through the Start menu, though it shouldn't make a difference.<br /><br /><blockquote><div><cite>bach wrote:</cite>Try and manually do the steps in cmd line. The one tool you need access to is ADB. You should be able to start ADB from the commandline by typing &quot;adb&quot;.<br /><br />If it doesn't work you'll at least get feedback on what's wrong since the window won't disappear.</div></blockquote><br />I'm afraid that won't work. The ADB tool isn't downloaded until <span style="font-style: italic">after</span> you've run the SDK manager. There's a couple .txt files included that say as much:<br /><br /><blockquote class="uncited"><div>The adb tool has moved to platform-tools/<br /><br />If you don't see this directory in your SDK,<br />launch the SDK and AVD Manager (execute the android tool)<br />and install &quot;Android SDK Platform-tools&quot;<br /><br />Please also update your PATH environment variable to<br />include the platform-tools/ directory, so you can<br />execute adb from any location.<br /><br /></div></blockquote><br /><br />I tried running the SDK manager from a command prompt, but the program silently fails.<br /><br />I'll going to download Eclipse, and attempt to run it through the ADT plugin. I didn't want to have to do this, but I figure I may as well give it a shot.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 4:45 pm</strong></div>
+				<div class="author">by <strong>bach</strong></div>
+				<div class="content">Hey,<br /><br />Adb is definitely included in the archived zip file. I followed these steps when writing the guide and it's there. I recommend you download them again and look for it in the specified folder.<br /><br />I guarantee you it'll be there <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />Cheers,<br />Bach</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 5:44 pm</strong></div>
+				<div class="author">by <strong>derickdong</strong></div>
+				<div class="content">I'm not sure what you're downloading, or from where, but I'm not seeing it. I just re-downloaded the .zip file (android-sdk_r18-windows.zip), and its not there.<br /><br />Here's what I got, at the top level:<br /><br />- add-ons<br />- platforms<br />- tools<br />- AVD Manager.exe<br />- SDK Manager.exe<br />- SDK Readme.txt<br /><br />Under the tools folder, there's a .txt file, called adb_has_moved, with the message I included in my last post. I'm also not seeing a platform-tools folder.<br /><br />I'm not sure how you got the ADB executable with your download, but the readme explicitly states its not included in this .zip file:<br /><blockquote class="uncited"><div>The Android SDK archive initially contains only the basic SDK tools. It does<br />not contain an Android platform or any third-party libraries. In fact, it<br />doesn't even have all the tools you need to develop an application.<br /><br />In order to start developing applications, you must install the Platform-tools<br />and at least one version of the Android platform, using the SDK Manager.<br /><br />Platform-tools contains build tools that are periodically updated to support new<br />features in the Android platform (which is why they are separate from basic<br />SDK tools), including adb, dexdump, and others.</div></blockquote><br /><br />However, the readme also says that you can perform an update through the command line. After some fiddling, I think I got it to run through there. There were a few error messages at the beginning, but it seems to be downloading a bunch of files now.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 6:03 pm</strong></div>
+				<div class="author">by <strong>bach</strong></div>
+				<div class="content">Hey,<br /><br />You are absolutely right. Apologies, my bad <img src="images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /> I just downloaded the zip file again and it is indeed not in there. I will fix the guide up asap.<br /><br />*EDIT: I guess I can't edit the original post.  <img src="images/smilies/icon_neutral.gif" alt=":|" title="Neutral" /> <br /><br />Cheers,<br />Bach</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 14, 2012 10:19 pm</strong></div>
+				<div class="author">by <strong>derickdong</strong></div>
+				<div class="content">No worries.<br /><br />For those who end up in the same boat as myself, here's what I ended up doing.<br /><br />1. Add an &quot;ANDROID_SWT&quot; environment variable. Have this point to the location for the swt file appropriate for your OS. These are located at &quot;android-sdk/tools/lib/x86&quot; and &quot;android-sdk/tools/lib/x86_64&quot;. I recommend rebooting afterward, as Windows often doesn't recognize new environment variables otherwise.<br />2. Open a command window, and navigate to &quot;android-sdk/tools&quot;. The easiest way is to hold shift, right-click on the &quot;tools&quot; folder in Windows explorer, and select &quot;Open command window here&quot;.<br />3. Type &quot;android.bat update sdk --no-ui&quot;, without the quotes. I got a couple errors at the beginning, saying it can't find a .jar file, and &quot;The system cannot find the path specified.&quot; I'm not entirely sure how to fix these, or if they're important. However, after a few moments, it should start downloading the files. This will take a while.<br /><br />However, while updating, it seemed to halt several times, so I've had to rerun the command. It looks as though its able to restart from where it left off. I'm still waiting for all the updates, and will report back what's happened.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue May 15, 2012 4:59 am</strong></div>
+				<div class="author">by <strong>bach</strong></div>
+				<div class="content"><blockquote><div><cite>derickdong wrote:</cite>No worries.<br /><br />For those who end up in the same boat as myself, here's what I ended up doing.<br /><br />1. Add an &quot;ANDROID_SWT&quot; environment variable. Have this point to the location for the swt file appropriate for your OS. These are located at &quot;android-sdk/tools/lib/x86&quot; and &quot;android-sdk/tools/lib/x86_64&quot;. I recommend rebooting afterward, as Windows often doesn't recognize new environment variables otherwise.<br />2. Open a command window, and navigate to &quot;android-sdk/tools&quot;. The easiest way is to hold shift, right-click on the &quot;tools&quot; folder in Windows explorer, and select &quot;Open command window here&quot;.<br />3. Type &quot;android.bat update sdk --no-ui&quot;, without the quotes. I got a couple errors at the beginning, saying it can't find a .jar file, and &quot;The system cannot find the path specified.&quot; I'm not entirely sure how to fix these, or if they're important. However, after a few moments, it should start downloading the files. This will take a while.<br /><br />However, while updating, it seemed to halt several times, so I've had to rerun the command. It looks as though its able to restart from where it left off. I'm still waiting for all the updates, and will report back what's happened.</div></blockquote><br /><br />Ah, very interesting. This looks like you might not have Java JDK setup properly? Are you running this on Windows 7?<br /><br />I'm just baffled at the fact that it's making it so hard for you :/ It was very easy for me to get Android SDK setup. But I will add a note to the guide (which is now on the wiki as well) that you need Java JDK setup before installing.<br /><br />Cheers,<br />Bach</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue May 15, 2012 6:14 pm</strong></div>
+				<div class="author">by <strong>derickdong</strong></div>
+				<div class="content"><blockquote><div><cite>bach wrote:</cite>This looks like you might not have Java JDK setup properly? Are you running this on Windows 7?</div></blockquote><br />Possibly, but the .jar file is one in the android-sdk - android-sdk/tools/lib/archquery.jar, as I recall. I am running Windows 7.<br /><br /><blockquote><div><cite>bach wrote:</cite>I'm just baffled at the fact that it's making it so hard for you :/ It was very easy for me to get Android SDK setup. But I will add a note to the guide (which is now on the wiki as well) that you need Java JDK setup before installing.</div></blockquote><br />When I used the installer, a check was run to verify whether or not a suitable JDK could be located on my machine. I already did, so nothing really happened. I believe the installer will automatically setup a JDK for you, if necessary. If you use the zip archive, you'll probably need to install the JDK yourself.<br /><br />I finally did manage to get the app to run on my device. The SDK Manager took several hours to download everything, as it looks like it got everything for every version of Android. During the download, I was asked for my login information for the developer.motorola.com and htcdev.com websites, so it was necessary to have a profile at both sites. It also asked for my domain, and something else I can't remember, but I didn't enter anything, and the download continued anyway.<br /><br />After that, I was able to follow your instructions, and everything worked out, so thanks for the help.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue May 15, 2012 6:22 pm</strong></div>
+				<div class="author">by <strong>bach</strong></div>
+				<div class="content">Glad it worked out in the end. I'm still very confused how it's possible that you had such a different process to get the sdk installed  <img src="images/smilies/icon_e_geek.gif" alt=":geek:" title="Geek" /><br /><br />Oh well <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 17, 2012 10:30 pm</strong></div>
+				<div class="author">by <strong>SatheeshJM</strong></div>
+				<div class="content">Hi, <br /><br />I set up everything as you mentioned.<br />When I click Ctrl+B to build, it is built successfully<br />I get in console<br /><blockquote class="uncited"><div>Starting: Intent { act=android.intent.action.VIEW dat=file:///data/local/tmp/../tools/sample.moai cmp=com.bullno1.moainao/.MoaiActivityLandscape }<br /><br />[Finished]</div></blockquote><br /><br /><br /><br />But in the device(Nexus One running 4.0)  I just get a black screen. No moai logo spins.    <br />But If I build for Desktop, everything works perfectly. <br /><br />What am I doing wrong?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 24, 2012 4:01 pm</strong></div>
+				<div class="author">by <strong>Kyrra</strong></div>
+				<div class="content">Hi bach, great guide, thanks for posting it.<br /><br />Quick question, I got everything up and running on Win7, but I'm noticing that when I run through Moai, any print statements I do within my Lua code aren't shown until after the program exits.  Maybe this is an issue with using the default windows host?  do you know a way to get print statements to actively show up in Sublime Text console while it's running?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon May 28, 2012 5:39 pm</strong></div>
+				<div class="author">by <strong>dooms101</strong></div>
+				<div class="content">Great guide! I too have been trying several IDEs for developing MOAI with but with little luck. Sublime2 looks very promising, especially with deploying to Android being so quick and easy! Big thanks to <span style="font-weight: bold">bach</span> and <span style="font-weight: bold">thebullno1</span>!<br /><br />Is there anyway to add debugging support? Or possibly autocomplete for MOAI api?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 10, 2013 8:13 pm</strong></div>
+				<div class="author">by <strong>hugohomesquita</strong></div>
+				<div class="content">Congratulations great guide.<br />the galaxy from a friend of mine is working but not in the emulator works the following error:<br /><br />the screen goes black and closes.<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=19&amp;t=774&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">06-10 20:08:33.834: E/InputDispatcher(61): channel '406fc0d8 com.bullno1.moainao/com.bullno1.moainao.MoaiActivityLandscape (server)' ~ Consumer closed input channel or an error occurred. &nbsp;events=0x8</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">06-10 20:08:33.834: E/InputDispatcher(61): channel '406fc0d8 com.bullno1.moainao/com.bullno1.moainao.MoaiActivityLandscape (server)' ~ Channel is unrecoverably broken and will be disposed!</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jun 11, 2013 3:19 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">look at this thread<br /><br /><!-- l --><a class="postlink-local" href="android-game-won-t-start-once-released-t1606/index.html#p8777">android-game-won-t-start-once-released-t1606/#p8777</a><!-- l --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Guide - How to setup MOAI SDK for Windows/Android</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jun 25, 2013 1:49 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Nice guide, desktop works fine for me and I've installed the USB drivers for my LG P705 and can see it in the 'adb devices' list. Running the build targeting that device appears to launch fine but all I get is a blank, black screen and no spinning MOAI logo. Looking at the 'adb logcat' I can't see any obvious errors that appear to do with MOAI or moai-nao.<br /><br />Can anybody offer me any other debugging tips?</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

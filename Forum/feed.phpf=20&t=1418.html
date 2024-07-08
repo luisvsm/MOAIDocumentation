@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=20&amp;t=1418&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-02-09T01:57:30+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=20&amp;t=1418&amp;mode</id>
+<entry>
+<author><name><![CDATA[framp]]></name></author>
+<updated>2013-02-09T01:57:30+00:00</updated>
+<published>2013-02-09T01:57:30+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8906#p8906</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8906#p8906"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8906#p8906"><![CDATA[
+MOAI is now in the AUR too, for all the Arch Linux users out there!<br /><br /><!-- m --><a class="postlink" href="https://aur.archlinux.org/packages/moai-git/">https://aur.archlinux.org/packages/moai-git/</a><!-- m --><br />It's using the linux branch of moai-dev on github (for more info: <!-- m --><a class="postlink" href="http://franciscotufro.com/2013/01/compiling-moai-on-linux/">http://franciscotufro.com/2013/01/compi ... -on-linux/</a><!-- m -->)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=751">framp</a> — Sat Feb 09, 2013 1:57 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Larza]]></name></author>
+<updated>2013-01-19T18:51:40+00:00</updated>
+<published>2013-01-19T18:51:40+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8512#p8512</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8512#p8512"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8512#p8512"><![CDATA[
+Problem solved. Library order needed to be specific meaning that aku had to be added to Qt LIBS before moaicore otherwise it didn't work. Small mistake but caused a lot of trouble.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1266">Larza</a> — Sat Jan 19, 2013 6:51 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[zeldin]]></name></author>
+<updated>2013-01-13T07:28:10+00:00</updated>
+<published>2013-01-13T07:28:10+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8432#p8432</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8432#p8432"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8432#p8432"><![CDATA[
+In case someone is interrested, I just made an ebuild for compiling MOAI on Gentoo, using spacepluk's linux-cmake branch.<br /><br />The ebuild is in my overlay, which is available <a href="http://github.com/zeldin/gentoo.overlay" class="postlink">on GitHub</a>.  This also contains an ebuild for the correct version of Chipmunk.<br /><br />There is also an <a href="http://raw.github.com/zeldin/gentoo.overlay/master/overlay.xml" class="postlink">overlay.xml</a> if you are using layman...<br /><br />If you enabled the &quot;examples&quot; USE flag, you should be able to do <dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="sh" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd /usr/share/doc/moai-9999/examples/hello-moai</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">moai-untz main.lua</div></li><br /></ol></code></dd></dl> after emerging moai.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=884">zeldin</a> — Sun Jan 13, 2013 7:28 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Larza]]></name></author>
+<updated>2013-01-11T22:14:21+00:00</updated>
+<published>2013-01-11T22:14:21+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8412#p8412</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8412#p8412"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8412#p8412"><![CDATA[
+If you mean by manually compiling compiling with command line yes I have tried it and it gives longer error information seems about the same as on Qt Creator.<br /><br />I put compiling error file <a href="http://www.students.tut.fi/~jarvenpl/error_log.log" class="postlink">here</a> (forum doesn't allow putting it as attachment) if that helps to get better impression of the problem.<br /><br />We use QGLWidget to integrate moai to Qt and our host works already quite fine on Windows so we are now trying to get it work on Linux and OS X too,<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1266">Larza</a> — Fri Jan 11, 2013 10:14 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[spacepluk]]></name></author>
+<updated>2013-01-11T18:37:40+00:00</updated>
+<published>2013-01-11T18:37:40+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8404#p8404</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8404#p8404"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8404#p8404"><![CDATA[
+Hi there,<br />I don't really understand your problem. Can you provide some logs or source? I'd say is a problem with your QtCreator setup.  Have you tried compiling manually?<br /><br />BTW your Qt host project sounds very interesting. How are you planning to integrate Moai with Qt? Graphics View?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=825">spacepluk</a> — Fri Jan 11, 2013 6:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Larza]]></name></author>
+<updated>2013-01-11T02:11:19+00:00</updated>
+<published>2013-01-11T02:11:19+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8403#p8403</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8403#p8403"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8403#p8403"><![CDATA[
+Hi,<br /><br />me and my friends are trying to make moai host with qt but we decided to use precompiled libs (just o make developing faster) from other projects. This works fine on windows when we use libs that are compiled with VS2010 project. And we decided to use spacepluk's project for compiling the libs for linux and there is some problem with libaku.a.<br /><br />These are the steps we do:<br />1. build spacepluk's project (host that is compiled as result of spacepluk's project works fine)<br />2. copy all library files under libs folder of our moai qt host project (all of those files are defined as precompiled libs to be used)<br />3. compile in Qt Creator<br /><br />This gives errors which are saying that file AKU.cpp is not found from libaku.a for other libs there is no errors (I tested removing them and then there was errors so it means that all other libs are ok for our qt project but the aku lib is not). <br /><br />So is there some special stuff we should have noticed when compiling the whole project? I mean is there something special stuff connected to libaku.a?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1266">Larza</a> — Fri Jan 11, 2013 2:11 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[spacepluk]]></name></author>
+<updated>2012-12-16T10:16:15+00:00</updated>
+<published>2012-12-16T10:16:15+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8075#p8075</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8075#p8075"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8075#p8075"><![CDATA[
+Hehehe, cool <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=825">spacepluk</a> — Sun Dec 16, 2012 10:16 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[RurouniGPL]]></name></author>
+<updated>2012-12-15T18:25:48+00:00</updated>
+<published>2012-12-15T18:25:48+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8060#p8060</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8060#p8060"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8060#p8060"><![CDATA[
+Another detail: that &quot;black&quot; screen is in fact the global clear color... It does not use the fb clear color.<br /><br />Excuse me! It was my fault!!! The render order of the layers was incorrect... solved then <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=967">RurouniGPL</a> — Sat Dec 15, 2012 6:25 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[RurouniGPL]]></name></author>
+<updated>2012-12-15T17:50:05+00:00</updated>
+<published>2012-12-15T17:50:05+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8058#p8058</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8058#p8058"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8058#p8058"><![CDATA[
+Uhmmm... the command line I write is this one:<br /><br />git clone <!-- m --><a class="postlink" href="https://github.com/spacepluk/moai-dev">https://github.com/spacepluk/moai-dev</a><!-- m --> moai-dev.spacepluk<br /><br />Do you refer to that?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=967">RurouniGPL</a> — Sat Dec 15, 2012 5:50 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[spacepluk]]></name></author>
+<updated>2012-12-15T17:45:13+00:00</updated>
+<published>2012-12-15T17:45:13+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8057#p8057</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8057#p8057"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8057#p8057"><![CDATA[
+That's interesting, MOAIFramebuffer also works fine for me. Are you sure you're on the correct branch?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=825">spacepluk</a> — Sat Dec 15, 2012 5:45 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[RurouniGPL]]></name></author>
+<updated>2012-12-15T17:30:59+00:00</updated>
+<published>2012-12-15T17:30:59+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=8056#p8056</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=8056#p8056"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=8056#p8056"><![CDATA[
+I think I found another bug:<br /><br />MOAIFrameBuffer renders a black screen and changing &quot;setClearColor&quot; does nothing.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=967">RurouniGPL</a> — Sat Dec 15, 2012 5:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[fospitia]]></name></author>
+<updated>2012-12-12T13:15:43+00:00</updated>
+<published>2012-12-12T13:15:43+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=7983#p7983</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=7983#p7983"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=7983#p7983"><![CDATA[
+Hi!<br /><br />For build on Fedora 17 is need to install the following dependencies<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="sh" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sudo yum install cmake libpng-devel libvorbis-devel chipmunk-devel libXmu-devel libXi-devel freeglut-devel glew-devel mesa-libGLU-devel libjpeg-turbo-devel freetype-devel lua-devel jansson-devel tinyxml-devel libcurl-devel zlib-devel expat-devel pulseaudio-libs-devel openssl-devel alsa-lib-devel</div></li><br /></ol></code></dd></dl><br /><br />work like a charm<br /><br />Cheers<br /><br />Fabio<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1229">fospitia</a> — Wed Dec 12, 2012 1:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bbbha]]></name></author>
+<updated>2012-12-06T21:04:28+00:00</updated>
+<published>2012-12-06T21:04:28+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=7820#p7820</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=7820#p7820"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=7820#p7820"><![CDATA[
+[edit] ... MOAITimer works just fine, i messed up.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1214">bbbha</a> — Thu Dec 06, 2012 9:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-12-05T15:43:36+00:00</updated>
+<published>2012-12-05T15:43:36+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=7787#p7787</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=7787#p7787"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=7787#p7787"><![CDATA[
+Nice fix!  I don't have time for a curl investigation locally ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Dec 05, 2012 3:43 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[RurouniGPL]]></name></author>
+<updated>2012-12-05T06:13:40+00:00</updated>
+<published>2012-12-05T06:13:40+00:00</published>
+<id>/forums/viewtopic.php?t=1418&amp;p=7780#p7780</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1418&amp;p=7780#p7780"/>
+<title type="html"><![CDATA[Re: Developing and building from Linux]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1418&amp;p=7780#p7780"><![CDATA[
+I have solved the mouse events problem. I've changed the code from:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer<span style="color: #66cc66;">:</span>setCallback <span style="color: #66cc66;">&#40;</span> pointerCallbackHome <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">else</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>touch<span style="color: #66cc66;">:</span>setCallback <span style="color: #66cc66;">&#40;</span> touchCallbackHome <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">end</span> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />to<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>mouseLeft<span style="color: #66cc66;">:</span>setCallback <span style="color: #66cc66;">&#40;</span> pointerCallbackHome <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">else</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>touch<span style="color: #66cc66;">:</span>setCallback <span style="color: #66cc66;">&#40;</span> touchCallbackHome <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />Then, on the event callback:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> pointerCallbackHome <span style="color: #66cc66;">&#40;</span> x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>mouseLeft<span style="color: #66cc66;">:</span>isDown<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">      <span style="color: #aa9900; font-weight: bold;">return</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">else</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">      x<span style="color: #66cc66;">,</span>y <span style="color: #66cc66;">=</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer<span style="color: #66cc66;">:</span>getLoc <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  mouseX<span style="color: #66cc66;">,</span> mouseY <span style="color: #66cc66;">=</span> layer<span style="color: #66cc66;">:</span>wndToWorld <span style="color: #66cc66;">&#40;</span> x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #66cc66;">&#91;</span><span style="color: #66cc66;">...</span><span style="color: #66cc66;">&#93;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> touchCallbackHome <span style="color: #66cc66;">&#40;</span> eventType<span style="color: #66cc66;">,</span> idx<span style="color: #66cc66;">,</span> x<span style="color: #66cc66;">,</span> y<span style="color: #66cc66;">,</span> tapCount <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>touch<span style="color: #66cc66;">:</span>up <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    pointerCallbackHome <span style="color: #66cc66;">&#40;</span> x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />So... It behaves the same with the touch events or pointer. It was my fault... not to think.<br /><br />Let's see if I can solve the &quot;curl&quot; problem too and a pair of details more... and this would be a good week <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=967">RurouniGPL</a> — Wed Dec 05, 2012 6:13 am</p><hr />
+]]></content>
+</entry>
+</feed>

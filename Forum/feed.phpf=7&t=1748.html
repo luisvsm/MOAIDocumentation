@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=1748&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-04-28T10:02:23+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=1748&amp;mode</id>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-04-28T10:02:23+00:00</updated>
+<published>2013-04-28T10:02:23+00:00</published>
+<id>/forums/viewtopic.php?t=1748&amp;p=9845#p9845</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1748&amp;p=9845#p9845"/>
+<title type="html"><![CDATA[Re: image-framebuffer-grab sample not working]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1748&amp;p=9845#p9845"><![CDATA[
+This seems to have been fixed in moai-dev now.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Sun Apr 28, 2013 10:02 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[tommo.zhou]]></name></author>
+<updated>2013-03-27T09:58:31+00:00</updated>
+<published>2013-03-27T09:58:31+00:00</published>
+<id>/forums/viewtopic.php?t=1748&amp;p=9464#p9464</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1748&amp;p=9464#p9464"/>
+<title type="html"><![CDATA[Re: image-framebuffer-grab sample not working]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1748&amp;p=9464#p9464"><![CDATA[
+It's moved into framebuffer object, but they forgot to change Lua argument order. <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">int MOAIFrameBuffer::_grabNextFrame <span class="br0">&#40;</span> lua_State* L <span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        ...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        MOAIImage* image = state.GetLuaObject &lt; MOAIImage &gt;<span class="br0">&#40;</span> <span style="">2</span>, true <span class="br0">&#41;</span>; // +<span style="">1</span> here</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        ...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        self-&gt;SetLocal <span class="br0">&#40;</span> state, <span style="">3</span>, self-&gt;mOnFrameFinish <span class="br0">&#41;</span>; //+<span style="">1</span> here</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        ...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=239">tommo.zhou</a> — Wed Mar 27, 2013 9:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[shrike]]></name></author>
+<updated>2013-03-27T06:43:51+00:00</updated>
+<published>2013-03-27T06:43:51+00:00</published>
+<id>/forums/viewtopic.php?t=1748&amp;p=9461#p9461</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1748&amp;p=9461#p9461"/>
+<title type="html"><![CDATA[image-framebuffer-grab sample not working]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1748&amp;p=9461#p9461"><![CDATA[
+Hi, with latest moai version i'm unable to make the image-framebuffer-grab sample to work.<br /><br />The debug output is:<br /><br />Bad cast at position 1: unexpected 'MOAIFrameBuffer'<br />stack traceback:<br />[C] in function 'grabNextFrame'<br />moai.lua:329 in function 'grabNextFrame'<br />main.lua:40 in function &lt;main.lua:39&gt;<br /><br /><br />Moreover I have some doubt on how to correctly use the grabNextFrame function: looking at the documentation both MOAIRenderMgr and MOAIFrameBuffer have a grabNextFrame function. Should it be the same using one or the other?<br /><br />Is it possible to have a sample on how to transform a scene or part of a scene into an image?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1166">shrike</a> — Wed Mar 27, 2013 6:43 am</p><hr />
+]]></content>
+</entry>
+</feed>

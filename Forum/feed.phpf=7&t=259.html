@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=259&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-12-29T11:33:00+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=259&amp;mode</id>
+<entry>
+<author><name><![CDATA[gromina]]></name></author>
+<updated>2011-12-29T11:33:00+00:00</updated>
+<published>2011-12-29T11:33:00+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1487#p1487</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1487#p1487"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1487#p1487"><![CDATA[
+@bonzo thanks a lot for your detailed post. It is a real useful snippet!<br /><br />I'll try this in a week or two. <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=312">gromina</a> — Thu Dec 29, 2011 11:33 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-29T10:53:31+00:00</updated>
+<published>2011-12-29T10:53:31+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1486#p1486</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1486#p1486"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1486#p1486"><![CDATA[
+<strong>Compiling Moai Lua Example:</strong><br /><br />1) Install <a href="http://code.google.com/p/luaforwindows/downloads/list" target="_blank">lua5.1.4-45</a><br />2) At top of main.lua:<br /><br /><blockquote><br /><br />package.path = "?<strong>.luo</strong>"<br /><br />require ( "util" )<br />require ( "game" )<br /><br />…<br /><br /></blockquote><br />3) Compile each .lua with "lua -o <em>filename</em><strong>.luo</strong> <em>filename</em>.lua"<br />4) "del *.lua", for this <em>test.</em><br />5) Execute run.bat with .luo:<br /><br /><blockquote><br /><br />. . / . . / . . / . . /bin/win32/moai.exe ". . / . . / . . /config/config.lua" "main<strong>.luo</strong>" <br /><br /></blockquote><br /><br /><br /><strong>NOTES:</strong><br /><br />1) Use "require", <em>not </em>"dofile"<br />2) Do <em>not </em>use an extension in the require (ex. "util", not "util.lua")<br />3) The trick here is setting "package.path".  Often people use ".[backslash]?.luo" instead (may need 2 backslashes for string)<br />4) I prefer <strong>.luo</strong> over <strong>.luac</strong>, but .luac in all places of .luo, will work.<br />5) I ran this on Win32 only (i.e. not iOS)<br />6) Your <a href="http://pastebin.com/A6iWQ9tK" target="_blank">recursive compiling script</a> looks awesome, but I did not try it, in this first attempt.  I may actually give it a whirl.<br />7) Though this step-by-step shows only 2+ requires, my actual test project had <strong>15</strong>, all sharing globals. (i.e. a good test)<br />8) Section <a href="http://www.lua.org/manual/5.1/manual.html" target="_blank">5.3 Modules</a> explains in detail.  You may not want to use such a brute force package.path setting if you require other modules, etc. <br />9) I did not review the need to compile ". . / . . / . . /config/config.lua"<br />10) Set package.path to "?.<strong>lua</strong>;?.<strong>luo</strong>" to support script and compiled (i.e. development)<br />11) This forum editor has issues with 2 dots and backslashes, so do not copy/paste any without fixing-up. <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Thu Dec 29, 2011 10:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[gromina]]></name></author>
+<updated>2011-12-29T09:33:17+00:00</updated>
+<published>2011-12-29T09:33:17+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1485#p1485</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1485#p1485"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1485#p1485"><![CDATA[
+ I'm not so confident with lua. And because of this simply can't catch the pipeline.<br /><br /><br /><br />1. I develop using pure lua code<br /><br />2. at some moment i should compile sources and pack the release project. <br /><br /><br /><br />Optimal Scheme is just compiling without changing code and removing *.lua<br /><br />But it seems 'require' do not work with compiled code and i need to make 'dofile' instead. Correct me if I'm wrong<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=312">gromina</a> — Thu Dec 29, 2011 9:33 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-29T09:10:32+00:00</updated>
+<published>2011-12-29T09:10:32+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1484#p1484</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1484#p1484"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1484#p1484"><![CDATA[
+I can look into this, I have quite a bit of lua experience.  But before I begin, what is the issue now when (1) you compile and (2) execute the compiled code?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Thu Dec 29, 2011 9:10 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[gromina]]></name></author>
+<updated>2011-12-29T08:33:56+00:00</updated>
+<published>2011-12-29T08:33:56+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1483#p1483</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1483#p1483"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1483#p1483"><![CDATA[
+It is not a blocker for me at all. I'm fine with current code.<br /><br />Lua compilation pipeline is higher priority for now for me.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=312">gromina</a> — Thu Dec 29, 2011 8:33 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-28T18:19:19+00:00</updated>
+<published>2011-12-28T18:19:19+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1460#p1460</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1460#p1460"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1460#p1460"><![CDATA[
+@gromina I haven't forgotten - just swamped. I have a note to look into a more generalized transformation bind/unbind in my todo list; will revisit the issue then. Is your workaround OK for now, or are you blocked on this?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Dec 28, 2011 6:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[gromina]]></name></author>
+<updated>2011-12-28T00:21:17+00:00</updated>
+<published>2011-12-28T00:21:17+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1438#p1438</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1438#p1438"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1438#p1438"><![CDATA[
+Need sample and/or tutorial on how to run compiled lua code.<br /><br /><br /><br />Still need explanation on props (un)binding (upper this thread)<br /><br /><br /><br /><img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-wink.gif" alt="Wink" /><br /><br />P.S. This forum have not so many people, guess it is reasonable to make wiki registration open (or open+approval from administrators) This SDK is hardly lacking documentation<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=312">gromina</a> — Wed Dec 28, 2011 12:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[anddrewscott]]></name></author>
+<updated>2011-12-27T15:21:24+00:00</updated>
+<published>2011-12-27T15:21:24+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1418#p1418</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1418#p1418"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1418#p1418"><![CDATA[
+Send an email to:<br /><br />mike at ziplinegames dot com<br /><br /> or <br /><br />getmoai at getmoai dot com<br /><br /><br /><br />and ask for an account<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=223">anddrewscott</a> — Tue Dec 27, 2011 3:21 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-27T14:38:37+00:00</updated>
+<published>2011-12-27T14:38:37+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1415#p1415</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1415#p1415"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1415#p1415"><![CDATA[
+@andrew, how were you able to edit the Wiki?  I was unable to create an account:<br /><br /><blockquote><br />You do not have permission to create this user account, for the following reason:<br />The action you have requested is limited to users in the group: <a class="new" title="Moai Wiki:Administrators (page does not exist)" href="http://192.168.20.226:3000/forums/Administrators&amp;action=edit&amp;redlink=1" target="_blank">Administrators</a>.<br /><br /></blockquote><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Tue Dec 27, 2011 2:38 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mikea]]></name></author>
+<updated>2011-12-21T12:11:05+00:00</updated>
+<published>2011-12-21T12:11:05+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1352#p1352</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1352#p1352"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1352#p1352"><![CDATA[
+Thanks for the thoughts.  Our goal is to get to a single OpenID login for everything on getmoai.com.  We're in progress on a new web site architecture right now.<br /><br />Mike.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=103">mikea</a> — Wed Dec 21, 2011 12:11 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[milleniummike]]></name></author>
+<updated>2011-12-20T02:48:59+00:00</updated>
+<published>2011-12-20T02:48:59+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1340#p1340</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1340#p1340"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1340#p1340"><![CDATA[
+I agree.. having a forum and wiki with different user details is confusing.<br /><br /><br /><br />In fact I can't work out how to get a user account on the wiki? It isn't linked to the wordpress forum and there is no option to sign up for an account..... <a href="http://192.168.20.226:3000/forums/UserLogin/signup" target="_blank">/wiki/Specia.....gin/signup</a><br /><br /><br /><br />In an ideal world there would be 1 forum with the ability to store documentation and code (ie syntax aware) posts (not using pastebin)<br /><br /><br /><br />In the meantime I'll keep dropping any useful "gems" or code snippets into pastebin and reference them from this forum.<br /><br /><br /><br />Maybe it makes sense to create a "Code Snippet" section under "Moai Development Forums" for the purpose?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=324">milleniummike</a> — Tue Dec 20, 2011 2:48 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[gromina]]></name></author>
+<updated>2011-12-19T05:16:57+00:00</updated>
+<published>2011-12-19T05:16:57+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1318#p1318</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1318#p1318"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1318#p1318"><![CDATA[
+Is it possible to make same login/password for forum and wiki?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=312">gromina</a> — Mon Dec 19, 2011 5:16 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[anddrewscott]]></name></author>
+<updated>2011-12-19T03:18:25+00:00</updated>
+<published>2011-12-19T03:18:25+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1315#p1315</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1315#p1315"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1315#p1315"><![CDATA[
+<a href="/wiki/Code_snips" target="_blank">/wiki/Code_snips</a><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=223">anddrewscott</a> — Mon Dec 19, 2011 3:18 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[gromina]]></name></author>
+<updated>2011-12-18T01:11:05+00:00</updated>
+<published>2011-12-18T01:11:05+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1311#p1311</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1311#p1311"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1311#p1311"><![CDATA[
+I'm sure when they'll got time to answer previous questions, they then port this thread to wiki :)<br /><br /><br /><br />At the same time, here is new snippet:<br /><br /><br /><br /><a href="http://pastebin.com/A6iWQ9tK" target="_blank">http://pastebin.com/A6iWQ9tK</a><br /><br /><br /><br />maybe it'll help someone. It compiles lua files using moai SDK itself (so you're sure lua version is the same)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=312">gromina</a> — Sun Dec 18, 2011 1:11 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-17T14:14:16+00:00</updated>
+<published>2011-12-17T14:14:16+00:00</published>
+<id>/forums/viewtopic.php?t=259&amp;p=1309#p1309</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=259&amp;p=1309#p1309"/>
+<title type="html"><![CDATA[Code snips sharing thread]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=259&amp;p=1309#p1309"><![CDATA[
+I actually believe for Code Snippets, a Wiki would work better, or here in the forum, where each problem can have it's own thread.  To combine multiple issues in one thread could make it too long to be practical, and with multiple issues going on could even be hard to follow.  It may eventually stop growing, and it will just sit pinned on the top, over-powering new and bumped posts.  Just feedback, the Moai Team is top-notch!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Sat Dec 17, 2011 2:14 pm</p><hr />
+]]></content>
+</entry>
+</feed>

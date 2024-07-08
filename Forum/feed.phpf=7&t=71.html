@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=71&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-08-04T16:42:08+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=71&amp;mode</id>
+<entry>
+<author><name><![CDATA[rdaltonjr]]></name></author>
+<updated>2011-08-04T16:42:08+00:00</updated>
+<published>2011-08-04T16:42:08+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=387#p387</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=387#p387"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=387#p387"><![CDATA[
+<strong>john in tucson said: </strong><br /><blockquote><br />Hi all!  New to Moai here, absolutely love it so far.  Especially excited about better audio support.<br /><br /><br /><br />So at this time does anyone know if UNTZ is suitable for developing music games that require very low latency and synchronized playback of multiple audio sound files?  I realize Android's audio capabilities are behind that of iOS, but how might a Moai/UNTZ solution compare in performance to something written directly in an iOS environment?<br /><br /></blockquote><br /><br /><br />I think UNTZ would be a great solution for a music game.  UNTZ can have very low latency on iOS, OSX, and Windows, unfortunately high latency (approx. 100ms) is currently unavoidable on Android 2.2.  The output buffer size controls the latency and that is set when you initialize UNTZ (1024, 512, 256, etc.).  Currently, there is no way to exactly sync two or more sounds, but calling play consecutively on each sound object gets you pretty close.  We are rapidly developing UNTZ on multiple platforms, if there are features that you would like to see incorporated then please let us know, or grab the source and go to town!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=178">rdaltonjr</a> — Thu Aug 04, 2011 4:42 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[john.w.mcmahon]]></name></author>
+<updated>2011-08-04T13:32:23+00:00</updated>
+<published>2011-08-04T13:32:23+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=386#p386</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=386#p386"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=386#p386"><![CDATA[
+Hi all!  New to Moai here, absolutely love it so far.  Especially excited about better audio support.<br /><br /><br /><br />So at this time does anyone know if UNTZ is suitable for developing music games that require very low latency and synchronized playback of multiple audio sound files?  I realize Android's audio capabilities are behind that of iOS, but how might a Moai/UNTZ solution compare in performance to something written directly in an iOS environment?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=199">john.w.mcmahon</a> — Thu Aug 04, 2011 1:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[wahyudinata]]></name></author>
+<updated>2011-07-12T11:49:35+00:00</updated>
+<published>2011-07-12T11:49:35+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=316#p316</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=316#p316"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=316#p316"><![CDATA[
+Not directly but through another lua library that uses OpenAL, it has worked fine it seems? And very intuitive (however I have not used FMOD before) There is a bug however on iOS that after suspend, audios would stop.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=177">wahyudinata</a> — Tue Jul 12, 2011 11:49 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-07-12T09:42:44+00:00</updated>
+<published>2011-07-12T09:42:44+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=312#p312</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=312#p312"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=312#p312"><![CDATA[
+You know, we have more experience with FMOD. I got the impression OpenAL was mostly about 3D sound. Have you used it a lot?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Tue Jul 12, 2011 9:42 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[wahyudinata]]></name></author>
+<updated>2011-07-11T23:19:51+00:00</updated>
+<published>2011-07-11T23:19:51+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=310#p310</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=310#p310"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=310#p310"><![CDATA[
+oh how is UNTZ compared to openAL?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=177">wahyudinata</a> — Mon Jul 11, 2011 11:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[zach]]></name></author>
+<updated>2011-07-11T22:47:24+00:00</updated>
+<published>2011-07-11T22:47:24+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=308#p308</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=308#p308"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=308#p308"><![CDATA[
+<strong>Bach Le said: </strong><br /><blockquote><br />How about Android support?<br /><br />If you find JNI a PITA, check out <a href="http://code.google.com/p/android-cpp-sdk/" target="_blank">http://code.google.com/p/andro.....d-cpp-sdk/</a> .<br /><br />Sadly, OpenSL is 2.3 only.<br /><br /></blockquote><br /><br /><br /><div><br />I'm hard at work on Android support.... Hopefully it'll be up to speed soon. Thanks for the link. <br /><br /></div><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=185">zach</a> — Mon Jul 11, 2011 10:47 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2011-07-11T21:07:39+00:00</updated>
+<published>2011-07-11T21:07:39+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=306#p306</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=306#p306"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=306#p306"><![CDATA[
+How about Android support?<br /><br />If you find JNI a PITA, check out <a href="http://code.google.com/p/android-cpp-sdk/" target="_blank">http://code.google.com/p/andro.....d-cpp-sdk/</a> .<br /><br />Sadly, OpenSL is 2.3 only.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Mon Jul 11, 2011 9:07 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[wahyudinata]]></name></author>
+<updated>2011-07-11T19:24:53+00:00</updated>
+<published>2011-07-11T19:24:53+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=303#p303</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=303#p303"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=303#p303"><![CDATA[
+cant wait for the tutorial to come out :)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=177">wahyudinata</a> — Mon Jul 11, 2011 7:24 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mikea]]></name></author>
+<updated>2011-07-11T15:36:53+00:00</updated>
+<published>2011-07-11T15:36:53+00:00</published>
+<id>/forums/viewtopic.php?t=71&amp;p=301#p301</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=71&amp;p=301#p301"/>
+<title type="html"><![CDATA[UNTZ Audio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=71&amp;p=301#p301"><![CDATA[
+If you're working with the Moai beta, you may have noticed that Moai now includes a new open source audio library, UNTZ.  We haven't posted a tutorial yet, but stay tuned.<br /><br />The UNTZ library was designed to offer everything mobile developers need to easily add cross-platform audio management and playback support to their projects. As a central component of the Moai framework, UNTZ will be continually updated as new platforms & devices are added to the SDK.  The Moai open-source license ensures that developers have the freedom & flexibility to use and extend the library as needed for their projects.<br /><br />UNTZ was developed by <a href="http://retronyms.com" target="_blank">Retronyms</a>.  Retronyms' background as a developer of high-performance music apps like Rebirth, FourTrack, StudioTrack and DopplerPad, and innovative mobile games like Dokobots and Seek n' Spell, made them an obvious choice to develop the audio framework to Moai, and we're thrilled to offer the UNTZ library now as part of the Moai Platform.<br /><br />Please let us know what you think, and post your audio library wishlist items in the forums.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=103">mikea</a> — Mon Jul 11, 2011 3:36 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=2733&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-06-28T12:34:23-07:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=2733&amp;mode</id>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-06-28T12:34:23-07:00</updated>
+<published>2014-06-28T12:34:23-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14851#p14851</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14851#p14851"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14851#p14851"><![CDATA[
+~<br />@noSheets, Excellent replay and spot on.<br /><br /><blockquote class="uncited"><div><br />Wondering if I can translate my scenes to Chipmunk<br /></div></blockquote><br /><br />unless performance is an issue I wouldn't bother.<br /><br /><blockquote class="uncited"><div><br />Is the joint<br /></div></blockquote><br /><br />I have never tried joints.<br /><br /><blockquote class="uncited"><div><br />basically I use one static body per scene<br /></div></blockquote><br /><br />This is how I use box2D, I use one &quot;Static object&quot; for all my static objects.<br /><br /><br /><br />Here is a good comparison between box2D vs Chipmunk: <br /><ul><li> <!-- m --><a class="postlink" href="http://forums.tigsource.com/index.php?topic=9318.0">http://forums.tigsource.com/index.php?topic=9318.0</a><!-- m --></li></ul><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Sat Jun 28, 2014 12:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2014-06-28T06:28:16-07:00</updated>
+<published>2014-06-28T06:28:16-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14850#p14850</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14850#p14850"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14850#p14850"><![CDATA[
+What I've read recently that in the beginning Chipmunk had a solver based loosely on Box2D but then over the years it went to a completely different direction. There are some differences between the two, I guess the biggest one is that the  CpSpace is not the same thing as Box2DWorld - where Box2d uses world as a container for all objects, Chipmunk uses space only for objects that need to be updated on frame by frame basis (equivalent on Box2D dynamic bodies). However, bodies that are sensors are not to be inserted into CpSpace - and although they are not inside of the space, they will still capture collisions, etc... This is different from Box2D where if something is not in the world it is completely discarded.<br /><br />There are also some differences on STATIC bodies in Chipmunk (I never tried MOAICpBody.newStatic(), so far I always used CpSpace.getStaticBody() which means basically I use one static body per scene, adding different shapes to it).<br /><br />Collision-wise, Chipmunk offers more control that Box2d, offering GROUPS and TYPES. If two objects share the same group (and the group is not 0), they will not interact (ie. if you want to avoid player's bullets to interact between them, put them in the group). This is similar to Box2D filter.<br />Additionally, bodies can have a TYPE. TYPES offer easy collision detection, so you can easily check detection between the bodies of two collision types through:<br /><br />space:setCollisionHandler ( 1, 5, MOAICpSpace.BEGIN, onCollision )<br /><br />which will capture all collisions between the bodies of type 1 (ie. player bullets) and 5 (ie. enemies), which I find vastly easier to use (and update) than setting collision handlers per body.<br /><br />I didn't try joints so can't tell you how that works.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Sat Jun 28, 2014 6:28 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2014-06-28T00:10:23-07:00</updated>
+<published>2014-06-28T00:10:23-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14847#p14847</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14847#p14847"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14847#p14847"><![CDATA[
+Interesting. Chipmunk is based on Box2d isn't it? Is the joint and fixture functionality similar? Would it be possible to map Box2d scenes logically to Chipmunk? I've been be throwing together a RUBE editor scene loader in Moai. Wondering if I can translate my scenes to Chipmunk...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Sat Jun 28, 2014 12:10 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-06-27T12:39:03-07:00</updated>
+<published>2014-06-27T12:39:03-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14845#p14845</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14845#p14845"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14845#p14845"><![CDATA[
+~<br />I like chipmunk also, Chipmunk also uses spatial-hashes  which can be a massive improvement on collision when scenes have lots of objects. Chipmunk Pro which costs a lot has some interesting feature that I haven't tried.<br /><br /><blockquote class="uncited"><div><br />Chipmunk2D Pro is specifically optimized for speed by offering a multi-threaded and vectorized solver<br /></div></blockquote><br /><ul><li> <!-- m --><a class="postlink" href="https://chipmunk-physics.net/chipmunkPro.php">https://chipmunk-physics.net/chipmunkPro.php</a><!-- m --></li></ul><br /><br />Chipmunk vs box2d bullets perform about the same, there is a lot of pass-through with both <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />That being said, I do use box2d in &quot;Dead Dark&quot;, and I really wish I had stayed with chipmunk(I might switch back).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Fri Jun 27, 2014 12:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2014-06-27T03:53:50-07:00</updated>
+<published>2014-06-27T03:53:50-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14844#p14844</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14844#p14844"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14844#p14844"><![CDATA[
+If you're just starting with Box2D I would also recommend taking a look at Chipmunk physics. While I worked with Box2D for several years, I just recently started playing around with Chipmunk in Moai and found out, quite surprisingly, many advantages over Box2D:<br />- Chipmunk performance around 2 times faster than Box2d on the same scene and comparably similar number of iterations (your mileage may vary) .<br />- Chipmunk has much simpler API, and you don't need to take such a meticulous care of unit scale like in Box2D.<br />- Overall physical objects behave much more naturally in Chipmunk than Box2D - Box2D usually requires a lot of fine tuning, plus I found that Box2D simulation is much easier to mess up.<br />- I may be wrong here, but it seems to me that Chipmunk Moai binding offer more information about collision (through Arbiter), plus there are some very handy methods to check manually if a point, rect, circle or a line intersects with anything in the scene.<br /><br />That said, I repeat that I didn't test Chipmunk enough to see how it behaves using more complex joint structures, and things like bullets (where I assume Box2D would be more accurate as it can turn on continuous collision detection which prevents the fast bullets to fly through the bodies).<br />But overall I am very surprised to see how much more comfortable using Chipmunk is, and it's worth looking into.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Fri Jun 27, 2014 3:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2014-06-26T23:24:55-07:00</updated>
+<published>2014-06-26T23:24:55-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14843#p14843</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14843#p14843"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14843#p14843"><![CDATA[
+Not a problem.I also made a humble donation a while back. Keep up the good work!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Thu Jun 26, 2014 11:24 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[paulclinger]]></name></author>
+<updated>2014-06-26T23:09:06-07:00</updated>
+<published>2014-06-26T23:09:06-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14841#p14841</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14841#p14841"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14841#p14841"><![CDATA[
+@stun, thank you for the kind feedback; I'm very glad it's working well for you! Paul.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1048">paulclinger</a> — Thu Jun 26, 2014 11:09 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2014-06-26T20:04:09-07:00</updated>
+<published>2014-06-26T20:04:09-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14836#p14836</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14836#p14836"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14836#p14836"><![CDATA[
+I can heartily recommend it. The integrated debugging on ZBS is invaluable to me. You can also debug callbacks by inserting require('mobdebug').on() in the callback. ZBS has it's quirks, but is also regularly updated and seems to be getting consistently better.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Thu Jun 26, 2014 8:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mattpace]]></name></author>
+<updated>2014-06-26T18:31:08-07:00</updated>
+<published>2014-06-26T18:31:08-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14835#p14835</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14835#p14835"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14835#p14835"><![CDATA[
+thanks for the input everyone I'll play around when I get home. <br /><br />I've been meaning to check out zerobrane maybe I'll do that tonight. Usually it's just vim and bash<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1390">mattpace</a> — Thu Jun 26, 2014 6:31 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-06-26T15:35:16-07:00</updated>
+<published>2014-06-26T15:35:16-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14834#p14834</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14834#p14834"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14834#p14834"><![CDATA[
+and with both of stuns fixes (although less thrust than he recommended)<br /> <strong>iframe</strong> <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Thu Jun 26, 2014 3:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-06-26T15:31:21-07:00</updated>
+<published>2014-06-26T15:31:21-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14833#p14833</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14833#p14833"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14833#p14833"><![CDATA[
+yep, changing the force was enough to get the big rectangle to move, <!-- m --><a class="postlink" href="http://moaifiddle.com/JMUKSPQ4B/3">http://moaifiddle.com/JMUKSPQ4B/3</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Thu Jun 26, 2014 3:31 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-06-26T15:29:10-07:00</updated>
+<published>2014-06-26T15:29:10-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14832#p14832</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14832#p14832"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14832#p14832"><![CDATA[
+here it is as a fiddle<br /> <strong>iframe</strong> <p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Thu Jun 26, 2014 3:29 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2014-06-26T15:08:47-07:00</updated>
+<published>2014-06-26T15:08:47-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14831#p14831</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14831#p14831"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14831#p14831"><![CDATA[
+Replying to myself again. Your thrust code doesn't work because you're comparing the keys pressed naively. Unfortunately you get key codes rather than ascii strings for the keys being pressed. Instead of 'a' compare the keypress to 97.<br /><br />Your thrust is also too low. Try: -2000 * 60 * shipBody:getMass(). That's a thrust value, times 60fps * body mass. That'll make the ship body react.<br /><br />What IDE are you using? Can I recommend <!-- m --><a class="postlink" href="http://studio.zerobrane.com/">http://studio.zerobrane.com/</a><!-- m --> Zero Brane Studio? It has support for step by step debugging MOAI + Lua code and is superb for seeing what's going on in the bowels of your app.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Thu Jun 26, 2014 3:08 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2014-06-26T14:44:36-07:00</updated>
+<published>2014-06-26T14:44:36-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14830#p14830</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14830#p14830"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14830#p14830"><![CDATA[
+Ah. Actually the problem is because you're explicitly setting the body mass. Your fixtures have no density, which is why they won't rotate. Instead of<br /><br />shipBody:setMass(30)<br /><br />Try this, after you create the fixture.<br /><br />shipFixture = shipBody:addRect(-60,-20,60,20)<br />shipFixture:setDensity(1)<br />shipBody:resetMassData()<br /><br />I'd also suggest reading the Box2d.org documentation, and examining any MOAI Box2D samples you can find. Also consider building and examining the 'Testbed' application that comes with Box2D under the MOAI/3rdParty/box2d*/ folder. That contains a bunch of excellent C++ based Box2D samples. Examining them can give you a lot of hints about the ways to use Box2D.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Thu Jun 26, 2014 2:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2014-06-26T14:29:06-07:00</updated>
+<published>2014-06-26T14:29:06-07:00</published>
+<id>/forums/viewtopic.php?t=2733&amp;p=14829#p14829</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2733&amp;p=14829#p14829"/>
+<title type="html"><![CDATA[Re: Box2D body rotation and applyForce each frame]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2733&amp;p=14829#p14829"><![CDATA[
+Regarding your shipBody:applyForce call, the x, y values are zero. In my experience of Box2D you probably want those set to the world coordinates of the shipBody's center itself (or at least relative to the shipBody's centre). As in:<br /><br />local sx, sy = shipBody:getWorldCenter()<br />shipBody:applyForce(0, -2000, sx, sy)<br /><br />Also I typically apply force as a factor of the mass of the body that the force is being applied to. That means the force will scale with the density/mass of the body (should you change it). However I guess you're ok here since you're explicitly setting both the shipBody mass and the force being applied.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Thu Jun 26, 2014 2:29 pm</p><hr />
+]]></content>
+</entry>
+</feed>

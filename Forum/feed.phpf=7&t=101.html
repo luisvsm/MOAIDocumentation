@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=101&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-08-18T03:15:22+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=101&amp;mode</id>
+<entry>
+<author><name><![CDATA[david.given]]></name></author>
+<updated>2011-08-18T03:15:22+00:00</updated>
+<published>2011-08-18T03:15:22+00:00</published>
+<id>/forums/viewtopic.php?t=101&amp;p=445#p445</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=101&amp;p=445#p445"/>
+<title type="html"><![CDATA[Alpha modulation without MOAISimpleShader]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=101&amp;p=445#p445"><![CDATA[
+Ah, of course --- I'm not used to premultiplied alpha, and I was using prop-color to test with, which renders againsta  black background...<br /><br />Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=215">david.given</a> — Thu Aug 18, 2011 3:15 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-08-17T23:38:06+00:00</updated>
+<published>2011-08-17T23:38:06+00:00</published>
+<id>/forums/viewtopic.php?t=101&amp;p=444#p444</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=101&amp;p=444#p444"/>
+<title type="html"><![CDATA[Alpha modulation without MOAISimpleShader]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=101&amp;p=444#p444"><![CDATA[
+OK, wasn't able to reproduce the alpha problem. It appears the alpha is set and blended correctly. Moai's default blend mode is for premultiplied alpha, so if you are just setting the alpha alone you may not see any effect if your prop is over a dark background. You can either scale all color components to create the dissolve effect or switch your blend mode. Which brings me to...<br /><br />Turns out setBlendMode must have gotten lost in the shuffle. The function was there, but not in MOAIProp2D's function table. That's been fixed and pushed up to moai-dev. Will have a new binary release that incorporates it (and some other fixes/additions) over the weekend or first thing next week.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Aug 17, 2011 11:38 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-08-17T15:48:33+00:00</updated>
+<published>2011-08-17T15:48:33+00:00</published>
+<id>/forums/viewtopic.php?t=101&amp;p=443#p443</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=101&amp;p=443#p443"/>
+<title type="html"><![CDATA[Alpha modulation without MOAISimpleShader]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=101&amp;p=443#p443"><![CDATA[
+Hey, sorry about the breaking change. You should be able to do prop:setColor and prop:setBlendMode... so if that's not working, something must have slipped through the cracks. I am slammed until later this evening, but will look and that and try to get a fix pushed up to moai-dev ASAP.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Aug 17, 2011 3:48 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[david.given]]></name></author>
+<updated>2011-08-17T15:41:27+00:00</updated>
+<published>2011-08-17T15:41:27+00:00</published>
+<id>/forums/viewtopic.php?t=101&amp;p=442#p442</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=101&amp;p=442#p442"/>
+<title type="html"><![CDATA[Alpha modulation without MOAISimpleShader]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=101&amp;p=442#p442"><![CDATA[
+I've just got the Moai 0.5 SDK.<br /><br />My game, of course, now no longer works due to API changes. The main one is that I've been using MOAISimpleShader a lot to change the alpha value of a prop:<br /><br /><br /><br /><p style="padding-left: 30px">﻿﻿local shader = MOAISimpleShader.new()<br /><br /></p><p style="padding-left: 30px">shader:setBlendMode(MOAISimpleShader.GL_ONE, MOAISimpleShader.GL_ONE_MINUS_SRC_ALPHA)<br /><br /></p><p style="padding-left: 30px">shader:setColor(1, 1, 1, a)<br /><br /></p><p style="padding-left: 30px">prop:setShader(shader)<br /><br /></p><p style="padding-left: 30px"><br /><br />I can now change the colour of the shader, and the transparency of the prop changes.<br /><br />Now that MOAISimpleShader's gone, what's the recommended (and GLES 1 compatible) way of achieving this effect? I have tried changing the alpha value of the prop colour, but it appears to have no effect. The 0.4 docs that ship with the SDK refer to MOAIProp2D::setBlendMode(), but that doesn't seem to be present in the 0.5 beta. Any suggestions?<br /><br />This is all running via wine on Linux, by the way.<br /></p><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=215">david.given</a> — Wed Aug 17, 2011 3:41 pm</p><hr />
+]]></content>
+</entry>
+</feed>

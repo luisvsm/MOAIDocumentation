@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=10&amp;t=1342&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-11-08T22:16:49+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=10&amp;t=1342&amp;mode</id>
+<entry>
+<author><name><![CDATA[adam]]></name></author>
+<updated>2012-11-08T22:16:49+00:00</updated>
+<published>2012-11-08T22:16:49+00:00</published>
+<id>/forums/viewtopic.php?t=1342&amp;p=7323#p7323</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1342&amp;p=7323#p7323"/>
+<title type="html"><![CDATA[Re: Camera, projection matrix and viewport size to scale rat]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1342&amp;p=7323#p7323"><![CDATA[
+Well, short of scaling all the props ( its transform would be our world/model matrix ), you can scale the Camera Matrix as well to get that effect.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=229">adam</a> — Thu Nov 08, 2012 10:16 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2012-11-08T07:31:07+00:00</updated>
+<published>2012-11-08T07:31:07+00:00</published>
+<id>/forums/viewtopic.php?t=1342&amp;p=7310#p7310</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1342&amp;p=7310#p7310"/>
+<title type="html"><![CDATA[Re: Camera, projection matrix and viewport size to scale rat]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1342&amp;p=7310#p7310"><![CDATA[
+Hey, thanks for answering!<br /><br />How do I adjust the world matrix then? I tried messing with the camera without success.<br /><br />And what is really the purpose of viewport scale to size ratio changing the perspective matrix?<br /><br />The problem is essentially solved by now by always settings the 3D-viewport scale to the same as the size, but it would be interesting to know what the best practice is.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Thu Nov 08, 2012 7:31 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[adam]]></name></author>
+<updated>2012-11-08T00:55:26+00:00</updated>
+<published>2012-11-08T00:55:26+00:00</published>
+<id>/forums/viewtopic.php?t=1342&amp;p=7307#p7307</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1342&amp;p=7307#p7307"/>
+<title type="html"><![CDATA[Re: Camera, projection matrix and viewport size to scale rat]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1342&amp;p=7307#p7307"><![CDATA[
+Yes the viewport scale is just intended to scale the viewport and work with 2D coordinates. For example if you have a scene with a window size of 320x480, a scale of 160x240 and an object that has a width of 128, the object would appear to be double that ( 256 ) on the actual window.<br /><br />So, in your case you set the 'coordinate system' of the viewport to be almost a third the size of the window, so it caused it to 'zoom in' to about 3 times the size.<br /><br />What you want to adjust in 3D coordinates to correct this is the World Matrix to adjust the scale of the 3D scene. Also, adjusting the FOV to adjust the scale is generally a bad idea ( can cause some weird effects later in your games ).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=229">adam</a> — Thu Nov 08, 2012 12:55 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2012-11-07T08:40:49+00:00</updated>
+<published>2012-11-07T08:40:49+00:00</published>
+<id>/forums/viewtopic.php?t=1342&amp;p=7298#p7298</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1342&amp;p=7298#p7298"/>
+<title type="html"><![CDATA[Re: Camera, projection matrix and viewport size to scale rat]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1342&amp;p=7298#p7298"><![CDATA[
+Yeah thats true, I messed up some numbers there. Shouldn't make a difference for the problem though!<br /><br />Thinking about this some more an easy solution would probably be to always use a viewport for 3D-scenes where the scale is the same as the size. Then you can use other viewports for 2D-stuff like GUI to handle screen size differences etc. The way I understand it the viewport is really just a size/scale configuration and is not a &quot;physical&quot; object or part of the screen.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Wed Nov 07, 2012 8:40 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dustar]]></name></author>
+<updated>2012-11-06T18:59:49+00:00</updated>
+<published>2012-11-06T18:59:49+00:00</published>
+<id>/forums/viewtopic.php?t=1342&amp;p=7286#p7286</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1342&amp;p=7286#p7286"/>
+<title type="html"><![CDATA[Re: Camera, projection matrix and viewport size to scale rat]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1342&amp;p=7286#p7286"><![CDATA[
+wouldn't the scale be 150*100?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1139">dustar</a> — Tue Nov 06, 2012 6:59 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2012-10-29T14:37:03+00:00</updated>
+<published>2012-10-29T14:37:03+00:00</published>
+<id>/forums/viewtopic.php?t=1342&amp;p=7177#p7177</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1342&amp;p=7177#p7177"/>
+<title type="html"><![CDATA[Camera, projection matrix and viewport size to scale ratio]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1342&amp;p=7177#p7177"><![CDATA[
+So I had a project with viewport size 480*320 and scale 480*320. With it I had a 3D-scene and a camera with FOV 60 overlooking my level.<br /><br />I decided to change my project scale to around 100 for various reasons so that my viewport size was still 480*320 but my scale was 133 * 100. Strangely this messed up my camera and resulted in a heavily zoomed in view of the level. I was confused since I thought the 3D-world projection stuff would work in -1, 1 coordinates and not be affected by scaling of the viewport.<br /><br />After messing around for a while I managed to get the thing to look right again by increasing the FOV to about 130. So what does FOV have to do with viewport scale?<br /><br />Source code from MOAICamera.cpp<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="cpp" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">USVec2D viewScale <span style="color: #000080;">=</span> viewport.<span style="color: #007788;">GetScale</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000ff;">if</span> <span style="color: #008000;">&#40;</span> this<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>mOrtho <span style="color: #008000;">&#41;</span> <span style="color: #008000;">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000ff;">float</span> xs <span style="color: #000080;">=</span> <span style="color: #008000;">&#40;</span> <span style="color:#800080;">2.0f</span> <span style="color: #000040;">/</span> viewport.<span style="color: #007788;">Width</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #000040;">*</span> viewScale.<span style="color: #007788;">mX</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000ff;">float</span> ys <span style="color: #000080;">=</span> <span style="color: #008000;">&#40;</span> <span style="color:#800080;">2.0f</span> <span style="color: #000040;">/</span> viewport.<span style="color: #007788;">Height</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#41;</span> <span style="color: #000040;">*</span> viewScale.<span style="color: #007788;">mY</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        mtx.<span style="color: #007788;">Ortho</span> <span style="color: #008000;">&#40;</span> xs, ys, this<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>mNearPlane, this<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>mFarPlane <span style="color: #008000;">&#41;</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #008000;">&#125;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000ff;">else</span> <span style="color: #008000;">&#123;</span>          </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000ff;">float</span> xs <span style="color: #000080;">=</span> Cot <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#40;</span> this<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>mFieldOfView <span style="color: #000040;">*</span> <span style="color: #008000;">&#40;</span> <span style="color: #0000ff;">float</span> <span style="color: #008000;">&#41;</span>D2R <span style="color: #008000;">&#41;</span> <span style="color: #000040;">/</span> <span style="color:#800080;">2.0f</span> <span style="color: #008000;">&#41;</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #0000ff;">float</span> ys <span style="color: #000080;">=</span> xs <span style="color: #000040;">*</span> viewport.<span style="color: #007788;">GetAspect</span> <span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        xs <span style="color: #000040;">*</span><span style="color: #000080;">=</span> viewScale.<span style="color: #007788;">mX</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        ys <span style="color: #000040;">*</span><span style="color: #000080;">=</span> viewScale.<span style="color: #007788;">mY</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        mtx.<span style="color: #007788;">Perspective</span> <span style="color: #008000;">&#40;</span> xs, ys, this<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>mNearPlane, this<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>mFarPlane <span style="color: #008000;">&#41;</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #008000;">&#125;</span></div></li><br /></ol></code></dd></dl><br /><br />You would want to look in the second, non ortho part. Viewscale here is confusing, it is not the scale on the view port, but rather the ratio between viewport.size and viewport.scale. The viewport size to scale ratio is then used to create the perspective matrix, explaining our problem. Originally with my 480 size, 480 scale setup I had a viewport size to scale ratio of 1, and 3D was working as intended. As that ratio changed to 480 to 133 (and will change all the time due to different device resolutions, say 640 to 133), my scene will have a different camera for every screen size.<br /><br />Simply removing<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="cpp" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">xs <span style="color: #000040;">*</span><span style="color: #000080;">=</span> viewScale.<span style="color: #007788;">mX</span><span style="color: #008080;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">ys <span style="color: #000040;">*</span><span style="color: #000080;">=</span> viewScale.<span style="color: #007788;">mY</span><span style="color: #008080;">;</span></div></li><br /></ol></code></dd></dl><br />effectively solves this problem, and I have done so in my moai-dev fork.<br /><br />I am new to 3D development and don't know much about frustum math and projection so I really don't know what the practice is here. If this is working as intended, could you guide me to how I setup my camera correctly? If it's a bug, it would be awesome if you fixed it:)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Oct 29, 2012 2:37 pm</p><hr />
+]]></content>
+</entry>
+</feed>

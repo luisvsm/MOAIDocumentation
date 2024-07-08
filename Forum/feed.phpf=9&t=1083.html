@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1083&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-08-27T13:26:38+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1083&amp;mode</id>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-27T13:26:38+00:00</updated>
+<published>2012-08-27T13:26:38+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6134#p6134</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6134#p6134"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6134#p6134"><![CDATA[
+Clearly I'm doing something wrong.  Can ogg be disabled?  Some people say mp3 works on Android, some say it does not.  The best format would be mp3.<br /><br /><span style="font-weight: bold">EDIT:</span>  I found the problem.  The <a href="http://audio.online-convert.com/convert-to-ogg" class="postlink">ogg converter</a> changed hyphens into underscores.  Once the ogg files were named properly, everything worked fine.  (This even shows up in the ls output, above.)<br /><br /><span style="font-weight: bold">EDIT mkII:</span>  In case anyone wants to know, ogg works for both BGMs and SFX on Android.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Mon Aug 27, 2012 1:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-08-27T10:56:26+00:00</updated>
+<published>2012-08-27T10:56:26+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6132#p6132</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6132#p6132"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6132#p6132"><![CDATA[
+Oh, maybe ogg support is not enabled in your Android host then?  I thought .ogg was working in Android, but I don't know much about it ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Aug 27, 2012 10:56 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-27T09:46:28+00:00</updated>
+<published>2012-08-27T09:46:28+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6129#p6129</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6129#p6129"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6129#p6129"><![CDATA[
+<blockquote><div><cite>ibisum wrote:</cite><br />Are you sure you've got the .ogg files in the right place?<br /></div></blockquote><br />No.<br /><br /><blockquote><div><cite>ibisum wrote:</cite><br />Are you using MOAIEnvironment to get your Document directory to find the files, or are you assuming that they're local to the app package?<br /></div></blockquote><br />I'm assuming they are local to the app package.  This works for mp3 files on iOS and OSX.  Do I need to copy the files on Android?  I had to do this for the SQLite database.<br /><br />FWIW, the sample is not copying any files over and it works.  This is all the audio handing code in the sample:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIUntzSystem<span style="color: #66cc66;">.</span>initialize <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sound <span style="color: #66cc66;">=</span> MOAIUntzSound<span style="color: #66cc66;">.</span>new <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sound<span style="color: #66cc66;">:</span>load <span style="color: #66cc66;">&#40;</span> <span style="color: #ff6666;">'mono16.wav'</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sound<span style="color: #66cc66;">:</span>setVolume <span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">1</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sound<span style="color: #66cc66;">:</span>setLooping <span style="color: #66cc66;">&#40;</span> <span style="color: #aa9900;">false</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sound<span style="color: #66cc66;">:</span>play <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><br />My code is similar.  It looks like this:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">----------------------------------------</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- in main.lua</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- Main Loop</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> mainLoop <span style="color: #66cc66;">&#40;</span> pState <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  MOAIUntzSystem<span style="color: #66cc66;">.</span>initialize <span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #808080; font-style: italic;">-- game loop here</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">----------------------------------------</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- Sound.lua</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">module <span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">...,</span> package<span style="color: #66cc66;">.</span>seeall <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> bgm</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> playSound<span style="color: #66cc66;">&#40;</span>pFileName<span style="color: #66cc66;">,</span> pLoadIntoMemory<span style="color: #66cc66;">,</span> pVolume<span style="color: #66cc66;">,</span> pLoop<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> result <span style="color: #66cc66;">=</span> MOAIUntzSound<span style="color: #66cc66;">.</span>new <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  result<span style="color: #66cc66;">:</span>load<span style="color: #66cc66;">&#40;</span> pFileName<span style="color: #66cc66;">,</span> pLoadIntoMemory <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  result<span style="color: #66cc66;">:</span>setVolume<span style="color: #66cc66;">&#40;</span> pVolume <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  result<span style="color: #66cc66;">:</span>setLooping<span style="color: #66cc66;">&#40;</span> pLoop <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  result<span style="color: #66cc66;">:</span>play<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">return</span> result</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> playSFX<span style="color: #66cc66;">&#40;</span>pFileName<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> loadIntoMemory <span style="color: #66cc66;">=</span> <span style="color: #aa9900;">false</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> volume         <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">2</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> loop           <span style="color: #66cc66;">=</span> <span style="color: #aa9900;">false</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  sfx <span style="color: #66cc66;">=</span> playSound<span style="color: #66cc66;">&#40;</span>pFileName<span style="color: #66cc66;">,</span> loadIntoMemory<span style="color: #66cc66;">,</span> volume<span style="color: #66cc66;">,</span> loop<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">return</span> sfx</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> playBGM<span style="color: #66cc66;">&#40;</span>pFileName<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> loadIntoMemory <span style="color: #66cc66;">=</span> <span style="color: #aa9900;">false</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> volume         <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">0.5</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">local</span> loop           <span style="color: #66cc66;">=</span> <span style="color: #aa9900;">true</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">if</span> bgm <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    bgm<span style="color: #66cc66;">:</span>stop<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    bgm <span style="color: #66cc66;">=</span> <span style="color: #aa9900;">nil</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  bgm <span style="color: #66cc66;">=</span> playSound<span style="color: #66cc66;">&#40;</span>pFileName<span style="color: #66cc66;">,</span> loadIntoMemory<span style="color: #66cc66;">,</span> volume<span style="color: #66cc66;">,</span> loop<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  <span style="color: #aa9900; font-weight: bold;">return</span> bgm</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /></ol></code></dd></dl><br /><br /><blockquote><div><cite>ibisum wrote:</cite><br />It seems to me that a message like &quot;Can't open .ogg file for reading&quot; means it can't find the file, or open it for some reason - permissions?<br /></div></blockquote><br />This is an OSX error throws at me.  Permissions look fine to me.  The ogg files are at least as permissive as the working mp3 files.<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="bash" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">shinmeikai:rotn1 bsechter$ <span style="color: #c20cb9; font-weight: bold;">ls</span> <span style="color: #660033;">-l</span> <span style="color: #000000; font-weight: bold;">*</span>bgm<span style="color: #000000; font-weight: bold;">*</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">-rw-r--r--<span style="color: #000000; font-weight: bold;">@</span> <span style="color: #000000;">1</span> bsechter  staff  <span style="color: #000000;">3175515</span> Jun <span style="color: #000000;">26</span> <span style="color: #000000;">10</span>:<span style="color: #000000;">29</span> bgm-title.mp3</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">-rw-r--r--<span style="color: #000000; font-weight: bold;">@</span> <span style="color: #000000;">1</span> bsechter  staff  <span style="color: #000000;">2570886</span> May <span style="color: #000000;">11</span>  <span style="color: #000000;">2011</span> bgm_test.ogg</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">-rw-rw-rw-<span style="color: #000000; font-weight: bold;">@</span> <span style="color: #000000;">1</span> bsechter  staff  <span style="color: #000000;">2521657</span> Aug <span style="color: #000000;">27</span> <span style="color: #000000;">10</span>:<span style="color: #000000;">53</span> bgm_title.ogg</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">shinmeikai:rotn1 bsechter$</div></li><br /></ol></code></dd></dl><br />I can play mp3 files on OSX, but not Android.  The wav file in the sample is the only thing that seems to be working on Android.  I can play the ogg file in VLC Player, so the file is valid.  Maybe the error indicates that the ogg file is not compatible with Untz for some reason.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Mon Aug 27, 2012 9:46 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-08-27T08:38:43+00:00</updated>
+<published>2012-08-27T08:38:43+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6127#p6127</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6127#p6127"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6127#p6127"><![CDATA[
+Are you sure you've got the .ogg files in the right place?  Are you using MOAIEnvironment to get your Document directory to find the files, or are you assuming that they're local to the app package?  It seems to me that a message like &quot;Can't open .ogg file for reading&quot; means it can't find the file, or open it for some reason - permissions?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Aug 27, 2012 8:38 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-27T06:58:59+00:00</updated>
+<published>2012-08-27T06:58:59+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6123#p6123</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6123#p6123"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6123#p6123"><![CDATA[
+I'm still having trouble getting sound to work on Android.  After converting the MP3s to ogg, the OSX host reports:<br />Cannot open bgm-test.ogg for reading...<br /><br />The Untz audio test sample works on Android hardware, but ogg and mp3 are silent.  Is Untz fussy about some sort of file setting?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Mon Aug 27, 2012 6:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Zoolax]]></name></author>
+<updated>2012-08-22T17:22:37+00:00</updated>
+<published>2012-08-22T17:22:37+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6066#p6066</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6066#p6066"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6066#p6066"><![CDATA[
+Hi,<br />It seems to me all platform (android/iOS) support 16-bit wav files<br />iOs and mac support mp3,caf,aac<br />Androids also support mp3 and ogg.<br />I like the ogg for android since it makes the file size very small.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1050">Zoolax</a> — Wed Aug 22, 2012 5:22 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Aardvark03]]></name></author>
+<updated>2012-08-19T10:10:29+00:00</updated>
+<published>2012-08-19T10:10:29+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6030#p6030</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6030#p6030"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6030#p6030"><![CDATA[
+til now I was only playing around, made one little Asteroids clone, so a I can't say anything about performance, but if there are any they are MOAI specific. I used ogg for my last project (in Gosu) and there was no difference to MP3. My sound effects are also .ogg, but I think you could consider .wavs there. But I did not try that.<br /><br />EDIT: Sorry, I just noticed the part about sound effects is bullshit. I did not use any Sound effects in my game <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1030">Aardvark03</a> — Sun Aug 19, 2012 10:10 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-18T00:48:11+00:00</updated>
+<published>2012-08-18T00:48:11+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=6002#p6002</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=6002#p6002"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=6002#p6002"><![CDATA[
+Nice to know.  Do you know if there is a performance hit?  Are you also using .ogg for sound effects?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Sat Aug 18, 2012 12:48 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Aardvark03]]></name></author>
+<updated>2012-08-17T21:45:21+00:00</updated>
+<published>2012-08-17T21:45:21+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5999#p5999</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5999#p5999"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5999#p5999"><![CDATA[
+For me, .ogg works on both iOS and Android.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1030">Aardvark03</a> — Fri Aug 17, 2012 9:45 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-15T23:49:10+00:00</updated>
+<published>2012-08-15T23:49:10+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5943#p5943</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5943#p5943"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5943#p5943"><![CDATA[
+Does it make the most sense to ship the iOS version with MP3 and the Android version with OGG?  What audio formats work on both iOS and Android?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Wed Aug 15, 2012 11:49 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Aardvark03]]></name></author>
+<updated>2012-08-11T11:50:48+00:00</updated>
+<published>2012-08-11T11:50:48+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5888#p5888</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5888#p5888"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5888#p5888"><![CDATA[
+The problem seems to be mp3 specific. I was using ogg vorbis. I just tried it out and MP3 is not working for me, too. I suggest using ogg, I don't think there is any disadvantage. Plus it's free.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1030">Aardvark03</a> — Sat Aug 11, 2012 11:50 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-11T05:26:47+00:00</updated>
+<published>2012-08-11T05:26:47+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5887#p5887</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5887#p5887"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5887#p5887"><![CDATA[
+<blockquote><div><cite>Aardvark03 wrote:</cite><br />I can confirm that it's working with the stable build. So maybe they changed something in the nightly build.<br /></div></blockquote><br />What file formats are your using?  Does MP3 work or are you using something else?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Sat Aug 11, 2012 5:26 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Aardvark03]]></name></author>
+<updated>2012-08-10T15:25:30+00:00</updated>
+<published>2012-08-10T15:25:30+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5881#p5881</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5881#p5881"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5881#p5881"><![CDATA[
+I can confirm that it's working with the stable build. So maybe they changed something in the nightly build.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1030">Aardvark03</a> — Fri Aug 10, 2012 3:25 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Qard]]></name></author>
+<updated>2012-08-08T18:37:30+00:00</updated>
+<published>2012-08-08T18:37:30+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5846#p5846</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5846#p5846"/>
+<title type="html"><![CDATA[Re: Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5846#p5846"><![CDATA[
+Same here. Am I missing something? Does Untz not work on Android?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1019">Qard</a> — Wed Aug 08, 2012 6:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-08-05T15:10:07+00:00</updated>
+<published>2012-08-05T15:10:07+00:00</published>
+<id>/forums/viewtopic.php?t=1083&amp;p=5792#p5792</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1083&amp;p=5792#p5792"/>
+<title type="html"><![CDATA[Untz Sound on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1083&amp;p=5792#p5792"><![CDATA[
+My app is silent on Android.  I'm using the nightly build and attempting to play MP3 files with Untz.  Are there any gotchas one needs to be aware of?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Sun Aug 05, 2012 3:10 pm</p><hr />
+]]></content>
+</entry>
+</feed>

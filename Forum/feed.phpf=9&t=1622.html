@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1622&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-02-08T00:58:18+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1622&amp;mode</id>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-02-08T00:58:18+00:00</updated>
+<published>2013-02-08T00:58:18+00:00</published>
+<id>/forums/viewtopic.php?t=1622&amp;p=8894#p8894</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1622&amp;p=8894#p8894"/>
+<title type="html"><![CDATA[Re: x,y grid and Resolution Independence]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1622&amp;p=8894#p8894"><![CDATA[
+this is really cool, this is what i really like about moai and this forum i keep find better ways to do things. WndToWorld/WorldToWnd  will make my life so much easier.<br /><br /> WndToWorld/WorldToWnd <br /><!-- m --><a class="postlink" href="http://192.168.20.226:3000/moai-platform-tutorials/moai-tutorials-bug-squisher.html">/moai-platform-tutori ... isher.html</a><!-- m --><br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mouseX<span style="color: #66cc66;">,</span> mouseY <span style="color: #66cc66;">=</span> layer<span style="color: #66cc66;">:</span>wndToWorld <span style="color: #66cc66;">&#40;</span>  MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>pointer<span style="color: #66cc66;">:</span>getLoc <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">if</span> MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>mouseLeft<span style="color: #66cc66;">:</span>down <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> obj <span style="color: #66cc66;">=</span> partition<span style="color: #66cc66;">:</span>propForPoint <span style="color: #66cc66;">&#40;</span> mouseX<span style="color: #66cc66;">,</span> mouseY <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Fri Feb 08, 2013 12:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-02-08T00:36:37+00:00</updated>
+<published>2013-02-08T00:36:37+00:00</published>
+<id>/forums/viewtopic.php?t=1622&amp;p=8891#p8891</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1622&amp;p=8891#p8891"/>
+<title type="html"><![CDATA[Re: x,y grid and Resolution Independence]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1622&amp;p=8891#p8891"><![CDATA[
+that's very interesting i will have to try that for my next project. I have put together by resolution independence with an anchor, camera and a fitter, so far it work well on all the different screen sizes i have tried, but i do remember it being confusing and frustrating to get it to work correctly.<br /><br /><!-- l --><a class="postlink-local" href="question-on-coordinate-system-t1151/index.html">question-on-coordinate-system-t1151/</a><!-- l --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Fri Feb 08, 2013 12:36 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2013-02-08T00:24:23+00:00</updated>
+<published>2013-02-08T00:24:23+00:00</published>
+<id>/forums/viewtopic.php?t=1622&amp;p=8890#p8890</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1622&amp;p=8890#p8890"/>
+<title type="html"><![CDATA[Re: x,y grid and Resolution Independence]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1622&amp;p=8890#p8890"><![CDATA[
+Thats a 'fix' ezraanderson, but in MOAI its better to use cartesian coordinates and WndToWorld/WorldToWnd when you need it - the reason being that resolution independence becomes a lot simpler..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Fri Feb 08, 2013 12:24 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-02-08T00:21:05+00:00</updated>
+<published>2013-02-08T00:21:05+00:00</published>
+<id>/forums/viewtopic.php?t=1622&amp;p=8889#p8889</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1622&amp;p=8889#p8889"/>
+<title type="html"><![CDATA[Re: x,y grid and Resolution Independence]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1622&amp;p=8889#p8889"><![CDATA[
+its done by setting your view-port up to use the top left corner as 0,0<br /><br />viewport = MOAIViewport.new ()<br />viewport:setSize ( 320, 480 )<br />viewport:setScale ( 320, -480 )<br />viewport:setOffset ( -1, 1 )<br /><br /><!-- m --><a class="postlink" href="http://dev.ionous.net/2012/08/controlling-moai-rendering-order-part-1.html">http://dev.ionous.net/2012/08/controlli ... art-1.html</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Fri Feb 08, 2013 12:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-02-05T14:29:23+00:00</updated>
+<published>2013-02-05T14:29:23+00:00</published>
+<id>/forums/viewtopic.php?t=1622&amp;p=8842#p8842</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1622&amp;p=8842#p8842"/>
+<title type="html"><![CDATA[Re: x,y grid and Resolution Independence]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1622&amp;p=8842#p8842"><![CDATA[
+I think that's something like wndToWorld() which converts from window coordinates to object-space coordinates. You can use transforms on objects to solve that.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Tue Feb 05, 2013 2:29 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[shvilam]]></name></author>
+<updated>2013-02-05T13:54:44+00:00</updated>
+<published>2013-02-05T13:54:44+00:00</published>
+<id>/forums/viewtopic.php?t=1622&amp;p=8841#p8841</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1622&amp;p=8841#p8841"/>
+<title type="html"><![CDATA[x,y grid and Resolution Independence]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1622&amp;p=8841#p8841"><![CDATA[
+I am trying to understand the Moai coordinate system <br />I seen that when I am listen to the muse move event and print out the mousX and the MousY when the mouse is in the top left corner the values are 0,0 but when I am adding a prop in that location he is more or less in the middle of the screen <br />how can I convert and put the prop as well in the upper left corner . what is the right Calculation that is needed? and yes I do need to keep my game Resolution Independence.<br /><br />Thanks <br />Amit Shvil<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1308">shvilam</a> — Tue Feb 05, 2013 1:54 pm</p><hr />
+]]></content>
+</entry>
+</feed>

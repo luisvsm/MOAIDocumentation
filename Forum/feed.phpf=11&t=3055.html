@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=11&amp;t=3055&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2015-03-18T01:45:04+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=11&amp;t=3055&amp;mode</id>
+<entry>
+<author><name><![CDATA[Motig]]></name></author>
+<updated>2015-03-18T01:45:04+00:00</updated>
+<published>2015-03-18T01:45:04+00:00</published>
+<id>/forums/viewtopic.php?t=3055&amp;p=16954#p16954</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3055&amp;p=16954#p16954"/>
+<title type="html"><![CDATA[Re: MoaiAdmobAndroid - Google Admob for Android plugin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3055&amp;p=16954#p16954"><![CDATA[
+Thanks for posting your findings, I hope the instructions were clear enough! Let me know if you run into any issues or have any questions!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1556">Motig</a> — Wed Mar 18, 2015 1:45 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2015-03-17T07:31:17+00:00</updated>
+<published>2015-03-17T07:31:17+00:00</published>
+<id>/forums/viewtopic.php?t=3055&amp;p=16949#p16949</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3055&amp;p=16949#p16949"/>
+<title type="html"><![CDATA[Re: MoaiAdmobAndroid - Google Admob for Android plugin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3055&amp;p=16949#p16949"><![CDATA[
+I just want to document what it took for me to get this to work.  This is the first Moai plugin I've used.<br /><br />I got this working following the instructions on the github page.  When following the how-to here <!-- m --><a class="postlink" href="https://github.com/moaiforge/moai-sdk/wiki/Using-Plugins">https://github.com/moaiforge/moai-sdk/w ... ng-Plugins</a><!-- m -->, these are the flags to use (I put the MoaiAdmobAndroid directory in the existing src/moai-plugins dir):<br /><br />-DPLUGIN_MOAI-ADMOB-ANDROID=1<br />-DPLUGIN_DIR=../../src/moai-plugins<br /><br />Additionally, those flags will also need to be added to your build.sh file:<br /><br />-DPLUGIN_MOAI-ADMOB-ANDROID=1 -DPLUGIN_DIR=../../src/moai-plugins \<br /><br />Also worth noting: you can see the new MoaiAdmob project showing up in visual studio, but you can't build it (for windows) in visual studio.  It will only build for android devices (by running build.sh)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Tue Mar 17, 2015 7:31 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Motig]]></name></author>
+<updated>2015-03-15T03:00:48+00:00</updated>
+<published>2015-03-15T03:00:48+00:00</published>
+<id>/forums/viewtopic.php?t=3055&amp;p=16935#p16935</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3055&amp;p=16935#p16935"/>
+<title type="html"><![CDATA[Re: MoaiAdmobAndroid - Google Admob for Android plugin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3055&amp;p=16935#p16935"><![CDATA[
+I basically copied someone else's cmake file and just changed out the names, I'm not very experienced with cmake. It's been working fine for me though!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1556">Motig</a> — Sun Mar 15, 2015 3:00 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2015-03-14T23:55:53+00:00</updated>
+<published>2015-03-14T23:55:53+00:00</published>
+<id>/forums/viewtopic.php?t=3055&amp;p=16934#p16934</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3055&amp;p=16934#p16934"/>
+<title type="html"><![CDATA[Re: MoaiAdmobAndroid - Google Admob for Android plugin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3055&amp;p=16934#p16934"><![CDATA[
+Typo on line 15 of your CMakeLists.txt (I think):<br /><br />- target_include_directories( moai-admob-android PUBLIC ${MOAI_ADMOB_INCLUDES})<br />+ target_include_directories( moai-admob-android PUBLIC ${MOAI_ADMOB_ANDROID_INCLUDES})<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Sat Mar 14, 2015 11:55 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JKON]]></name></author>
+<updated>2015-03-14T08:44:22+00:00</updated>
+<published>2015-03-14T08:44:22+00:00</published>
+<id>/forums/viewtopic.php?t=3055&amp;p=16926#p16926</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3055&amp;p=16926#p16926"/>
+<title type="html"><![CDATA[Re: MoaiAdmobAndroid - Google Admob for Android plugin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3055&amp;p=16926#p16926"><![CDATA[
+- AWESOME, Thanks!<br /><br />// JKON<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1724">JKON</a> — Sat Mar 14, 2015 8:44 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Motig]]></name></author>
+<updated>2015-02-09T23:04:21+00:00</updated>
+<published>2015-02-09T23:04:21+00:00</published>
+<id>/forums/viewtopic.php?t=3055&amp;p=16646#p16646</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3055&amp;p=16646#p16646"/>
+<title type="html"><![CDATA[MoaiAdmobAndroid - Google Admob for Android plugin]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3055&amp;p=16646#p16646"><![CDATA[
+I've created a plugin that allows you to easily use google admob through lua. <br /><br /><!-- m --><a class="postlink" href="https://github.com/Mattenklopper/MoaiAdmobAndroid">https://github.com/Mattenklopper/MoaiAdmobAndroid</a><!-- m --><br /><br />You can show interstitials and a banner ad. There's currently no way to setup multiple banner ads with diferent settings, just one. Let me know about any issues! Installation steps are in the readme.<br /><br />Functionality overview:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Calling this before any other functions and you will receive test ads. </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Do this while testing to prevent accidental clicks which can apparently result in account suspension.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>requestTestAds<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Start loading a banner ad. On the google admob management page you can specify whether banners should auto refresh or not.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--There's no harm in calling this while a banner is still loading, if a banner is still loading this will do nothing instead.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>loadBanner<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Boolean whether your banner is ready or not. If a banner is still loading this will return false. </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--loadBanner does not cause another banner to load if it's still loading a previous banner.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--There's no harm in continously checking between your gamestates whether an ad is ready and if not loading one.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>bannerReady<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Makes the banner visible and unpauses it. On first call this will insert the window.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>showBanner<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Boolean whether the banner is currently visible.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>bannerVisible<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Hides banner and pauses it.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>hideBanner<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--If you're using banners call this when exiting your app to properly get rid of the banner adview without a window leaking.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>destroyAdview<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Start loading an interstitial. Operates the same as loadBanner</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>loadInterstitial<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Same as bannerReady</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>interstitialReady<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--Same as banner. You can not close an interstitial, it has to be closed by the user.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>showInterstitial<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--This returns true as long as the interstitial is on screen. If a user presses back button or closes the interstitial this will return false. </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--I use this to try and prevent accidental clicks while changing gamestates.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIAdmobAndroid<span style="color: #66cc66;">.</span>interstitialVisible<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1556">Motig</a> — Mon Feb 09, 2015 11:04 pm</p><hr />
+]]></content>
+</entry>
+</feed>

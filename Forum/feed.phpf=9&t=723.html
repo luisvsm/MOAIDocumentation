@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=723&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-05-01T04:41:58+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=723&amp;mode</id>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-05-01T04:41:58+00:00</updated>
+<published>2012-05-01T04:41:58+00:00</published>
+<id>/forums/viewtopic.php?t=723&amp;p=3591#p3591</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=723&amp;p=3591#p3591"/>
+<title type="html"><![CDATA[Re: Baked in Localization Support?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=723&amp;p=3591#p3591"><![CDATA[
+I drop my messages into SQLite databases.  As I mentioned, I'm using a resource override systems that will select files based on the locale.  Obviously I need to override messages and I also have a tags.lua for every locale.  Other resources like art and sound effects may also need to be overridden.  In any case, it sounds like supporting this on the client side should not be a big deal.<br /><br />I read a thread about keyboard input on iOS devices.  Does Moai also support non-English input on Android devices?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Tue May 01, 2012 4:41 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-04-30T19:07:56+00:00</updated>
+<published>2012-04-30T19:07:56+00:00</published>
+<id>/forums/viewtopic.php?t=723&amp;p=3575#p3575</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=723&amp;p=3575#p3575"/>
+<title type="html"><![CDATA[Re: Baked in Localization Support?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=723&amp;p=3575#p3575"><![CDATA[
+Don't even bother worrying about it - Lua is where you should be doing localization, and leaving MOAI for its job as a 2D game engine.<br /><br />And by 'Lua is where you do localization&quot;, I mean: put your locale strings (which you'd expect to be organizing, anyway..) into plain old Lua resources, set up the right Font resource, and pass the strings around for the users language selection.  End of problem.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon Apr 30, 2012 7:07 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-04-28T15:06:36+00:00</updated>
+<published>2012-04-28T15:06:36+00:00</published>
+<id>/forums/viewtopic.php?t=723&amp;p=3537#p3537</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=723&amp;p=3537#p3537"/>
+<title type="html"><![CDATA[Re: Baked in Localization Support?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=723&amp;p=3537#p3537"><![CDATA[
+I'm not sure about detecting locale but Moai has a virtual filesystem, you can mount an archive into it. So each of  your locale can be an archive.<br /><br />Also, Moai is quite low-level, it gives you all the pieces but you have to build a resource management system yourself. Prepending something to a resource name should be trivial.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Sat Apr 28, 2012 3:06 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[sgeos]]></name></author>
+<updated>2012-04-28T12:29:28+00:00</updated>
+<published>2012-04-28T12:29:28+00:00</published>
+<id>/forums/viewtopic.php?t=723&amp;p=3526#p3526</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=723&amp;p=3526#p3526"/>
+<title type="html"><![CDATA[Baked in Localization Support?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=723&amp;p=3526#p3526"><![CDATA[
+Does Moai have any support for localization baked in?  Features that come to mind include text IO and a mechanism for detecting the locale.<br /><br />I have a fairly robust messaging system and a cascading resource override system in my own Lua based project.  Both take advantage of the iOS locale settings.  The resource override system tries the find the localized version of any file before looking in the root project directory.  (~/myapp/en/FILE or ~/myapp/ja/FILE before ~/myapp/FILE, finally ~/documents/FILE and probably a couple of other places.)  This way you can localize something like the title screen, drop it in the right place and everything just works.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=844">sgeos</a> — Sat Apr 28, 2012 12:29 pm</p><hr />
+]]></content>
+</entry>
+</feed>

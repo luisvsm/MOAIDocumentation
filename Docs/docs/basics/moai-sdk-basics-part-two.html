@@ -1,0 +1,2674 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Moai SDK Basics Part Two</title>
+ 
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    
+    
+    
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link href="../../css/syntax.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/doc-style.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+            <a class="navbar-brand" href="../../index.html">MoaiForge - Community Docs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+           </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+    
+    <div class="container">
+<div class="row-fluid">
+   
+        <div id="navigation" class="col-md-3">
+            
+<ul id="nav-menu" class="nav nav-list">
+    
+    
+  
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/basics/moai-sdk-basics-part-two.md contains pathseg /basics/ -->
+        <li class="parent collapsibleListClosed">
+        
+          <div class="subtree-name">Moai Basics</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li class="active" ><a href="moai-sdk-basics-part-two.html">Moai SDK Basics Part Two</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="moai-sdk-basics-part-one.html">Moai SDK Basics Part One</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/basics/moai-sdk-basics-part-two.md does NOT contain pathseg /sdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">The Moai SDK</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/what-is-moai-sdk.html">What is Moai SDK?</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-sdk-desktop-basics.html">Moai SDK Desktop Basics</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/the-moai-runtime.html">The Moai Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-hosts.html">Moai Hosts</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/structuring-your-moai-game-in-lua.html">Structuring Your Moai Game in Lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-project-setup.html">Moai Project Setup</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/extending-moai-sdk.html">Extending Moai SDK</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/protecting-your-lua-files.html">Protecting Your Lua Files</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/tools-that-work-with-moai.html">Tools that work with Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/basics/moai-sdk-basics-part-two.md does NOT contain pathseg /buildsdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Build the SDK from Source</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/introduction.html">Introduction</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/installing-cmake.html">Installing CMake</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-libraries-for-android-ndk.html">Building Moai Libraries For Android</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-xcode.html">Building Moai From Source With Xcode</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-visual-studio.html">Building Moai From Source With Visual Studio</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-scons.html">Building Moai From Source With Scons</a></li>
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/basics/moai-sdk-basics-part-two.md does NOT contain pathseg /building/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Building Moai Games</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/setup-landscape-in-moai-games-for-ios-devices.html">Setup landscape in Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/cross-platform-development-with-moai.html">Cross Platform Development With Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-ios-devices.html">Building Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-google-chrome.html">Building Moai Games for Google Chrome</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-android-devices.html">Building Moai Games For Android Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/basics/moai-sdk-basics-part-two.md does NOT contain pathseg /reference/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Reference</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/moai-sdk-samples-guide.html">Moai SDK Samples Guide</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/cmake-basics.html">Crash Course on CMAKE</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/code-snips.html">Code snips</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/how-moai's-c-to-lua-binding-works.html">How Moai's C++ to Lua Binding Works</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/understanding-decks-and-props.html">Understanding Decks and Props</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/using-moaianim.html">Using MOAIAnim</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/wrapping-modes.html">Wrapping modes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/basics/moai-sdk-basics-part-two.md does NOT contain pathseg /tutorial/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Tutorials</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/your-first-game-rocket-lobster.html">Your First Game : Rocket Lobster</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/using-particlehelper.html">Using ParticleHelper</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/textboxes.html">Textboxes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/your-first-cloud-game-wolf-clicker.html">Your First Cloud Game : Wolf Clicker</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/setup-moai-sdk-on-windows-using-sublime2.html">Setup Moai SDK on Windows using Sublime2</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/basic-prop-animations.html">Basic Prop Animations</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/bin2c-lua.html">Bin2c.lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/binding-c-apis-to-moai-using-moailuaobject.html">Binding C++ APIs to Moai using MOAILuaObject</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/build-on-steam-runtime.html">Building Moai with Steam Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/concatenate-your-lua-source-tree.html">Concatenate your Lua source tree</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/density-friction-and-restitution.html">Density, Friction And Restitution</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/getting-started-with-box2d.html">Getting Started With Box2D</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+
+</ul>
+
+<script src="../../js/collapsiblelists.min.js"> </script>
+<script>
+$(function() {
+CollapsibleLists.applyTo(document.getElementById('nav-menu'));
+});
+
+</script>
+        </div>
+
+        <div id="content" class="col-md-9">
+            <a href="https://github.com/moaiforge/moai-sdk/tree/gh-pages/_docs/basics/moai-sdk-basics-part-two.md" class="improve-docs btn"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+            <h1>Moai SDK Basics Part Two</h1>
+            
+            
+            <p>This article discusses the Moai dependency graph architecture and the action tree. There’s a lot to discuss on the way to fully understanding the best way to do animation and manage game objects in Moai. That discussion starts with an under-the-hood look at how Moai works – you&#39;ll learn how to use that knowledge to organize your animation data next time.</p>
+
+<h2>The Action Tree</h2>
+
+<p>If you’ve looked at the demos included with the SDK you’ve probably noticed that some objects expose convenience methods for animation:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">prop</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span>
+</code></pre></div>
+<p>This causes the prop to rotate 360 degrees for 1.5 seconds. If you want the sprite to do more than rotate, there are other convenience methods you can call:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">sprite</span><span class="p">:</span><span class="n">moveLoc</span> <span class="p">(</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span> <span class="c1">-- move the sprite 64 units along the X axis</span>
+<span class="n">sprite</span><span class="p">:</span><span class="n">moveScl</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span> <span class="c1">-- add a scale factor of 1 to the X width of the sprite and 2 to the height</span>
+</code></pre></div>
+<p>If you enter in all three calls, you will see that they combine. Each animation starts at the same moment in time. Your sprite will rotate, translate and scale all at once.</p>
+
+<p>These simple convenience routines are actually special cases of a more generalized and powerful system.</p>
+
+<p>The helpers called in these examples all work by creating a new instance of a MOAIEaseDriver object. MOAIEaseDriver is a subclass of MOAIAction, a special kind of object that receives an update and timestep every frame of the simulation. You can get the MOAIAction object created by an animation routine by assigning it to a variable:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">rotateAction</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span>
+</code></pre></div>
+<p>The Moai runtime organizes actions into a tree. Any action added to the tree will receive updates. When removed from the tree the action (and its children) will no longer receive updates.</p>
+
+<p>Most actions pass simulation updates to their children, though certain actions may modify this behavior. For example, an action might scale the timestep to cause its child actions to run in slow motion or to fast forward or control the order in which its children are updated.</p>
+
+<p>By default, the actions created by the animation helper routines are automatically added to the root of the action tree. You can prevent this by removing an action from the action tree immediately after creation:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">rotateAction</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span>
+<span class="n">rotateAction</span><span class="p">:</span><span class="n">stop</span> <span class="p">()</span>
+</code></pre></div>
+<p>You can create extra actions for the purpose of grouping actions together. The base class MOAIAction simply passes its update events along to its children:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">rotateAction</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span>
+<span class="n">translateAction</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveLoc</span> <span class="p">(</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span>
+
+<span class="n">actionGroup</span> <span class="o">=</span> <span class="n">MOAIAction</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+
+<span class="n">actionGroup</span><span class="p">:</span><span class="n">addChild</span> <span class="p">(</span> <span class="n">rotateAction</span> <span class="p">)</span>
+<span class="n">actionGroup</span><span class="p">:</span><span class="n">addChild</span> <span class="p">(</span> <span class="n">translateAction</span> <span class="p">)</span>
+</code></pre></div>
+<p>Note that you don’t have to explicitely stop the rotate or translate action. They are implicitely stopped by the call to addChild () which removes them from the root of the action tree. Since they are no longer connected to the action tree, they won’t receive any updates until actionGroup:start () is called. When the action tree is started, it will remain active in the action tree until all of its children have finished.</p>
+
+<p>You can tell if an action is currently in the action tree by calling:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">action</span><span class="p">:</span><span class="n">isActive</span> <span class="p">()</span>
+</code></pre></div>
+<p>Actions have several states they can be in: ‘active,’ ‘busy’ and ‘done.’ An action is ‘active’ if it is in the action tree. An action is ‘busy’ if it is in the action tree and has more work to do. An action is ‘done’ if it has completed its work. In most cases, there is no practical difference between being ‘active’ and being ‘busy.’</p>
+
+<h2>Action Sequencing</h2>
+
+<p>To create an action sequence you can use Lua coroutines. A coroutine is simply a function that can yield execution to be resumed at a later time. Moai provides a coroutine wrapper called MOAICoroutine. MOAICoroutine is derived from MOAIAction and may therefore be added to the action tree. The behavior of MOAICoroutine is simply to resume the coroutine every time an action update is received. The coroutine the action is running may then inspect the game state and optionally do some processing before yielding for the next thread.</p>
+
+<p>Here&#39;s an example of a simple action sequence:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="k">function</span> <span class="nf">threadFunc</span> <span class="p">()</span>
+
+    <span class="c1">-- set up sprite here</span>
+    <span class="kd">local</span> <span class="n">action</span><span class="p">;</span>
+
+    <span class="n">action</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="k">while</span> <span class="n">action</span><span class="p">:</span><span class="n">isBusy</span> <span class="p">()</span> <span class="k">do</span> <span class="n">coroutine</span><span class="p">:</span><span class="n">yield</span> <span class="p">()</span> <span class="k">end</span> <span class="c1">-- spin lock until action is done</span>
+
+    <span class="n">action</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveLoc</span> <span class="p">(</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="k">while</span> <span class="n">action</span><span class="p">:</span><span class="n">isBusy</span> <span class="p">()</span> <span class="k">do</span> <span class="n">coroutine</span><span class="p">:</span><span class="n">yield</span> <span class="p">()</span> <span class="k">end</span>
+
+    <span class="n">action</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveScl</span> <span class="p">(</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="k">while</span> <span class="n">action</span><span class="p">:</span><span class="n">isBusy</span> <span class="p">()</span> <span class="k">do</span> <span class="n">coroutine</span><span class="p">:</span><span class="n">yield</span> <span class="p">()</span> <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="n">thread</span> <span class="o">=</span> <span class="n">MOAICoroutine</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+<span class="n">thread</span><span class="p">:</span><span class="n">run</span> <span class="p">(</span> <span class="n">threadFunc</span> <span class="p">)</span>
+</code></pre></div>
+<p>In the above sequence, the sprite first rotates, then translates, then scales. Moai waits for each action to finish by spinlocking: we poll its state and yield until done.</p>
+
+<p>There’s a slightly more efficient way to wait for an action to finish than spinlocking:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">action</span> <span class="o">=</span> <span class="n">sprite</span><span class="p">:</span><span class="n">moveScl</span> <span class="p">(</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="n">MOAICoroutine</span><span class="p">.</span><span class="n">blockOnAction</span> <span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
+</code></pre></div>
+<p>Blocking prevents your coroutine from executing until the action it is blocked on finishes. You can call blockOnAction () during your coroutine. It will act on the currently running coroutine.</p>
+
+<p>In practice you’ll use both spinlocking and blocking. While blocking is efficient, spinlocking allows you to put logic into your loop: you can yield on any set of conditions, not the just the completion of an action. For example, you might want your coroutine to wait until a button is pressed or a collision occurs.</p>
+
+<h2>Blocking vs. Callbacks</h2>
+
+<p>If blocking isn’t to your liking, you can certainly build up sequences of actions by installing listeners on each action and writing callbacks to handle them. But before you go down that path, consider what this does to your code:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="k">function</span> <span class="nf">doMoves</span> <span class="p">()</span>
+    <span class="kd">local</span> <span class="n">action</span> <span class="o">=</span> <span class="n">prop</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="n">action</span><span class="p">:</span><span class="n">setListener</span> <span class="p">(</span> <span class="n">MOAIAction</span><span class="p">.</span><span class="n">EVENT_STOP</span><span class="p">,</span> <span class="n">actionDone1</span> <span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">actionDone1</span> <span class="p">()</span>
+    <span class="kd">local</span> <span class="n">action</span> <span class="o">=</span> <span class="n">prop</span><span class="p">:</span><span class="n">moveLoc</span> <span class="p">(</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="n">action</span><span class="p">:</span><span class="n">setListener</span> <span class="p">(</span> <span class="n">MOAIAction</span><span class="p">.</span><span class="n">EVENT_STOP</span><span class="p">,</span> <span class="n">actionDone2</span> <span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">actionDone2</span> <span class="p">()</span>
+    <span class="n">prop</span><span class="p">:</span><span class="n">moveScl</span> <span class="p">(</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">doMoves</span> <span class="p">()</span>
+</code></pre></div>
+<p>You have to create multiple methods and daisy-chain them together. This seems more like the kind of construct you’d see in Objective-C or C++ than Lua. Having to track these multiple functions can make the code less readable. Once a lot of logic and branching creeps in you can wind up with a real mess on your hands. Callbacks do have their place, but for coding long sequences, you can write much more naturalistic and readable code by taking advantage of coroutines. You can even create your own library of blocking functions to help out:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="k">function</span> <span class="nf">wait</span> <span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
+    <span class="k">while</span> <span class="n">action</span><span class="p">:</span><span class="n">isBusy</span> <span class="p">()</span> <span class="k">do</span> <span class="n">coroutine</span><span class="p">:</span><span class="n">yield</span> <span class="p">()</span> <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">threadFunc</span> <span class="p">()</span>
+    <span class="n">wait</span> <span class="p">(</span> <span class="n">prop</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">1</span> <span class="p">))</span>
+    <span class="n">wait</span> <span class="p">(</span> <span class="n">prop</span><span class="p">:</span><span class="n">moveLoc</span> <span class="p">(</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="p">))</span>
+    <span class="n">wait</span> <span class="p">(</span> <span class="n">prop</span><span class="p">:</span><span class="n">moveScl</span> <span class="p">(</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">))</span>
+<span class="k">end</span>
+
+<span class="n">thread</span> <span class="o">=</span> <span class="n">MOAIThread</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+<span class="n">thread</span><span class="p">:</span><span class="n">run</span> <span class="p">(</span> <span class="n">threadFunc</span> <span class="p">)</span>
+</code></pre></div>
+<p>It’s hard to beat the contents of the thread function above for simple readability.</p>
+
+<h2>Animation Nuts &amp; Bolts</h2>
+
+<p>Now that you know a bit about the action tree, it&#39;s time to get into a little more detail about exactly how animation works in Moai.</p>
+
+<p>The basic idea behind all animation is the process of changing some attribute of an object over time. The MOAIEaseDriver actions created by the animation helpers work this way: each action contains a set of deltas that are gradually applied to an object’s attributes over time. The effect of the deltas is to offset the value of the attributes. For example, an action might apply a delta with a magnitude of 64 units to the X translation attribute of an object over a period of 10 seconds. After the action is complete, the object’s X translation will have increased by 64 units. Deltas are also cumulative: there’s no reason that several deltas couldn’t be applied to the same attribute.</p>
+
+<p>Under the hood, Moai accomplishes all this through its Attributes system. Certain Moai objects, like MOAITransform2D and MOAIProp2D, expose a set of Attributes than can be used for animation or to create relationships between nodes. Any object that inherits from MOAINode has this capability.</p>
+
+<p>Attributes enable user configurable action-to-node and node-to-node binding. Importantly, node can be bound anonymously: the MOAIEaseDriver has no knowledge of what kind of node it is controlling. Because of this, it can be used to animate any Attribute on any node.</p>
+
+<p>You can get and set the value of Attributes directly:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="c1">-- you can set the value of Attributes directly</span>
+<span class="n">prop</span><span class="p">:</span><span class="n">setAttr</span> <span class="p">(</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_X_LOC</span><span class="p">,</span> <span class="mi">32</span> <span class="p">)</span>
+<span class="n">prop</span><span class="p">:</span><span class="n">setAttr</span> <span class="p">(</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_Y_LOC</span><span class="p">,</span> <span class="mi">16</span> <span class="p">)</span>
+
+<span class="c1">-- this is equivalent to:</span>
+<span class="n">prop</span><span class="p">:</span><span class="n">setLoc</span> <span class="p">(</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">16</span> <span class="p">)</span>
+
+<span class="c1">-- you can also get the value of Attributes</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">prop</span><span class="p">:</span><span class="n">getAttr</span> <span class="p">(</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_X_LOC</span> <span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">prop</span><span class="p">:</span><span class="n">getAttr</span> <span class="p">(</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_X_LOC</span> <span class="p">)</span>
+
+<span class="c1">-- this is equivalent to:</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">prop</span><span class="p">:</span><span class="n">getLoc</span> <span class="p">()</span>
+</code></pre></div>
+<p>As you can see from the above example, getLoc () and setLoc () are just convenience methods for accessing Attributes.</p>
+
+<p>Attributes can be used by an object for both input and output. When one Attribute is connected to another, the first is said to be ‘driven’ by the second. Before the node that exposes the Attribute being driven is processed, the driven Attribute will take on the same value as the Attribute driving it. Any Attribute can be used to drive any other, provided the other Attribute is exposed by a different node and the connection doesn’t form any cycles between nodes.</p>
+
+<p>This example uses the attributes of one prop to drive another:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">prop1</span><span class="p">:</span><span class="n">setAttrLink</span> <span class="p">(</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_X_LOC</span><span class="p">,</span> <span class="n">prop2</span><span class="p">,</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_Z_ROT</span> <span class="p">)</span>
+<span class="n">prop2</span><span class="p">:</span><span class="n">moveRot</span> <span class="p">(</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span>
+</code></pre></div>
+<p>The above command sets the X location attribute of the first sprite to be driven by the Z rotation attribute of the second sprite. As second sprite is rotates, we’ll see the first sprite translate along the X axis.</p>
+
+<p>Actions, like MOAIEaseDriver, can operate on Attributes directly. You may have to specify which objects and attributes to operate on, but the actions themselves don’t list Attributes as outputs. In other words, actions apply their output to Attributes using a push model; nodes draw their Attribute values from other nodes using a pull model.</p>
+
+<p>Here&#39;s a more generalized way of using MOAIEaseDriver, this time based on Attributes:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">ease</span> <span class="o">=</span> <span class="n">MOAIEaseDriver</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+
+<span class="n">ease</span><span class="p">:</span><span class="n">reserveLinks</span> <span class="p">(</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="n">ease</span><span class="p">:</span><span class="n">setLink</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_X_LOC</span><span class="p">,</span> <span class="mi">64</span> <span class="p">)</span>
+<span class="n">ease</span><span class="p">:</span><span class="n">setLink</span> <span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_Y_LOC</span><span class="p">,</span> <span class="mi">64</span> <span class="p">)</span>
+<span class="n">ease</span><span class="p">:</span><span class="n">setLink</span> <span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">ATTR_Z_ROT</span><span class="p">,</span> <span class="mi">360</span> <span class="p">)</span>
+<span class="n">ease</span><span class="p">:</span><span class="n">setLength</span> <span class="p">(</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="p">)</span>
+<span class="n">ease</span><span class="p">:</span><span class="n">start</span> <span class="p">()</span>
+</code></pre></div>
+<p>The code snippet above creates an ease driver, reserves three channels then sets each channel to target a specific attribute of a single prop.</p>
+
+<p>If you want multiple props to move in concert, that&#39;s easily arranged:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">ease</span><span class="p">:</span><span class="n">setLink</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="n">prop1</span><span class="p">,</span> <span class="n">MOAISprite</span><span class="p">.</span><span class="n">ATTR_Z_ROT</span><span class="p">,</span> <span class="mi">180</span> <span class="p">)</span>
+<span class="n">ease</span><span class="p">:</span><span class="n">setLink</span> <span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="n">prop2</span><span class="p">,</span> <span class="n">MOAISprite</span><span class="p">.</span><span class="n">ATTR_Z_ROT</span><span class="p">,</span> <span class="o">-</span><span class="mi">180</span> <span class="p">)</span>
+</code></pre></div>
+<p>Moai’s Attribute system allows you to easily introduce new actions and objects to the Moai framework that can immediately operate with the rest of the system without the need to rewrite or update any bindings or animation code. In addition, this system provides a rich and evolving set of objects and actions that can drive parameters in new ways.</p>
+
+<h2>The Dependency Graph</h2>
+
+<p>The main point of the preceding discussion of attributes and nodes was to give an introduction to the dependency graph. The purpose of the dependency graph is to resolve the order in which objects are updated. If one object depends on another, we want to be sure to update it only after we’ve updated the object it depends on. If the update order is processed correctly, visual and animation artifacts will be minimized. For example, creating a parent/child relationship between two transforms also creates a dependency. Without the dependency to ensure that the parent is updated before the child, the two objects could appear to be slightly out of sync if the child is updated first.</p>
+
+<p>The classic approach to implementing a dependency graph is to first perform a topological sort over all of the nodes in the graph. The sort gives the correct ordering of the nodes with respect to their dependencies. After the sort, the nodes may be updated in order every frame until the structure of the graph changes and must be re-sorted.</p>
+
+<p>Moai attempts to avoid sorting the entire graph on every change and updating the graph on every frame. Internally, Moai maintains a list of nodes scheduled for update. When a node is changed and needs to be updated, it is placed in the update list. The update then cascades to the node’s dependencies, stopping at any nodes that have already been scheduled.</p>
+
+<p>When working with Moai it’s important to understand how the action tree is related to the dependency graph and how Moai performs its simulation loop.</p>
+
+<p>In Moai, simulation steps are of fixed size. The simulation loop tries to fit as many simulation steps into the time elapsed between frames as it can. Every step, Moai first updates each action in the action tree. Only actions are passed the time step. Updating the action tree may result in dependency graph nodes being scheduled. These nodes will only be updated after processing the action tree has been finished.</p>
+
+<p>The upshot of Moai’s two-step simulation loop is that nodes changed by actions will not propagate those changes to their dependents until after one simulation step has been completed. For example, if you create a parent/child relationship between two nodes, the child node’s transform will not be updated. If you immediately try to transform a point from world space unto the local space of the child node, the relationship to the parent will not be taken into account until the next update step. This usually isn’t a problem, but in the rare case that it would be you can force the node to resolve its dependencies and update ahead of time:</p>
+<div class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="n">transform</span> <span class="o">=</span> <span class="n">MOAITransform</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+<span class="n">transform</span><span class="p">:</span><span class="n">setLoc</span> <span class="p">(</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+
+<span class="n">prop</span> <span class="o">=</span> <span class="n">MOAIProp2D</span><span class="p">.</span><span class="n">new</span> <span class="p">()</span>
+<span class="n">prop</span><span class="p">:</span><span class="n">setDeck</span> <span class="p">(</span> <span class="n">gfxQuad</span> <span class="p">)</span>
+<span class="n">prop</span><span class="p">:</span><span class="n">setParent</span> <span class="p">(</span> <span class="n">transform</span> <span class="p">)</span>
+<span class="n">layer</span><span class="p">:</span><span class="n">insertProp</span> <span class="p">(</span> <span class="n">prop</span> <span class="p">)</span>
+
+<span class="c1">-- force the dep graph to update so prop:inside () will take parent transform into account</span>
+<span class="n">prop</span><span class="p">:</span><span class="n">forceUpdate</span> <span class="p">()</span>
+
+<span class="k">if</span> <span class="n">prop</span><span class="p">:</span><span class="n">inside</span> <span class="p">(</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span> <span class="k">then</span>
+    <span class="nb">print</span> <span class="p">(</span> <span class="s1">'INSIDE!'</span> <span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>Use forceUpdate () sparingly, if at all.</p>
+
+<h2>More to Come</h2>
+
+<p>This article covered a lot of territory: programming for concurrency using the action tree, creating bindings between objects using attributes and links and the workings of the dependency graph.</p>
+
+<p>At this point, physics notwithstanding, this series has been through the guts of Moai, but there are a few more &#39;basics&#39; to cover. Still to come, some more practical ways to describe and manage animations using MOAIAnimCurve and MOAIAnim, how to create flipbook animations by animating the index attribute of MOAIProp2D and how to work with grids to create large, efficient tile maps for scrolling games. There will also be articles about handling input using MOAIInputDevice and how to use some of Moai’s built-in utility classes. Please stay tuned.</p>
+
+        </div>
+               
+</div>
+</div>
+
+
+    <!-- SUB FOOTER-->
+   <!-- <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="text-center"><a href="http://getmoai.com/marketing/made-with-moai.html">License / Attribution</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/tools-partners.html">Useful Tools</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/partner-services.html">Partner Services</a></p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!-- /SUB FOOTER-->
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+       
+        <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; David Pershouse 2024</p>
+            </div>
+        </div>
+    </footer>
+
+      </div>
+    </footer>
+
+      <script src="../../js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

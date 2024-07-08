@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<title>Moai | The mobile platform for pro game developers</title>
+	
+	<meta property="og:title" content="Moai" />
+	<meta property="og:site_name" content="Moai" />	
+	<meta property="og:image" content="/wp-content/uploads/2011/04/moai960x400.jpg" />
+	<meta property="og:description" content="Moai is the mobile platform for pro game developers. It's open source, based on Lua, and has a complete set of client libraries and cloud services. Get Moai." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.getmoai.com/" />
+    
+	<link rel="profile" href="http://gmpg.org/xfn/11" />	
+	<link rel="shortcut icon" href="http://192.168.20.226:3000/forums/new-users/physics-touch-accelerometer-example/favicon.ico" />
+	<link rel="stylesheet" type="text/css" media="all" href="http://192.168.20.226:3000/wp-content/themes/default/style.css" />
+							
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.2 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-20537835-2']);
+	_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+		<script type='text/javascript'>
+		var pcbExclusions = new Array(
+		"sfcbdummy"
+		);
+		</script>
+		<script type='text/javascript' src='http://192.168.20.226:3000/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-includes/js/jquery/jquery.js?ver=1.6.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/collapsing-archives/collapsFunctions.js?ver=1.7'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/themes/default/js/jquery.cycle.all.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/themes/default/js/moai.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/jscript/checkboxes/prettyCheckboxes.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/jscript/highslide/highslide.js?ver=3.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sfSettings = {
+	url: "/"
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/jscript/tags/sf-tags.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/jscript/print/jquery.jqprint.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/jscript/jquery/jcookie.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/jscript/forum/sf-forum.js?ver=3.2.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://192.168.20.226:3000/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://192.168.20.226:3000/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Moai' href='http://192.168.20.226:3000/' />
+<link rel='next' title='Moai' href='http://192.168.20.226:3000/moai/' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='shortlink' href='http://wp.me/P1si3f-6' />
+<style type='text/css'>
+    
+    </style>
+<link rel="stylesheet" type="text/css" href="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/skins/structure/structure.css" />
+<link rel="canonical" href="index.html" />
+<link rel="stylesheet" type="text/css" href="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/skins/structure/sf-post.css" />
+	<link rel="stylesheet" type="text/css" href="http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/css/highslide/highslide.css" />
+	<meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.3" />
+	
+</head>
+
+<body class="page page-id-6 page-template page-template-forums-php">
+
+<div class="container_24">
+
+	<div class="grid_24">
+	
+        <div class="nav">
+            <div class="menu-global-menu-container"><ul id="menu-global-menu" class="menu"><li id="menu-item-517" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-517"><a href="http://192.168.20.226:3000/">home</a></li>
+<li id="menu-item-518" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-518"><a href="http://192.168.20.226:3000/moai/">moai</a>
+<ul class="sub-menu">
+	<li id="menu-item-552" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-552"><a href="http://192.168.20.226:3000/moai/">Overview</a></li>
+	<li id="menu-item-549" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-549"><a href="http://192.168.20.226:3000/moai/moai-cloud/">Moai Cloud</a></li>
+	<li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-551"><a href="http://192.168.20.226:3000/moai/moai-sdk/">Moai SDK</a></li>
+</ul>
+</li>
+<li id="menu-item-519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519"><a href="http://192.168.20.226:3000/get-started/">get started</a>
+<ul class="sub-menu">
+	<li id="menu-item-550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550"><a href="http://192.168.20.226:3000/get-started/moai-faq/">Moai FAQ</a></li>
+</ul>
+</li>
+<li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-520"><a href="../../index.html">forums</a></li>
+<li id="menu-item-521" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-521"><a href="http://192.168.20.226:3000/blog/">blog</a></li>
+<li id="menu-item-2342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2342"><a href="http://192.168.20.226:3000/wiki">docs</a></li>
+<li id="menu-item-2256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2256"><a href="http://dashboard.moaicloud.com/login.php">Login</a></li>
+</ul></div>
+	        <ul class="localNav">
+	        	<li class="facebook" style='padding-top: 2px;'>
+	        		<a href="index.html#"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.getmoai.com&amp;layout=button_count&amp;show_faces=true&amp;width=80&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:21px;" allowTransparency="true"></iframe></a>
+	        	</li>
+	        	<li class="twitter"><a style="padding-right:0px" href="http://www.twitter.com/getmoai/" target="_blank"><img src="http://192.168.20.226:3000/wp-content/themes/default/img/icon_twitter_24.png"/></a></li>
+	        </ul>
+        
+
+        </div>
+
+
+        <div class="logo">
+            <a href="index.html"><img src="http://192.168.20.226:3000/wp-content/themes/default/img/header/moai_logo.png"/></a>
+        </div>       
+
+
+        <div class="tagline specialFont">
+            The mobile platform for pro game developers        </div>
+        
+    </div>
+    
+    <div class="clear"></div>
+
+    <div class="columns">
+
+				
+	
+							
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.2 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-20537835-2']);
+	_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://192.168.20.226:3000/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://192.168.20.226:3000/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Moai' href='http://192.168.20.226:3000/' />
+<link rel='next' title='Moai' href='http://192.168.20.226:3000/moai/' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='shortlink' href='http://wp.me/P1si3f-6' />
+<style type='text/css'>
+    
+    </style>
+<link rel="stylesheet" type="text/css" href="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/skins/structure/structure.css" />
+<link rel="canonical" href="index.html" />
+<link rel="stylesheet" type="text/css" href="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/skins/structure/sf-post.css" />
+	<link rel="stylesheet" type="text/css" href="http://192.168.20.226:3000/wp-content/plugins/simple-forum/resources/css/highslide/highslide.css" />
+	<meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.3" />
+				
+			<noscript><div class="sfregmessage">This forum requires Javascript to be enabled for posting content</div></noscript>
+
+
+<!-- Start of SPF Container (sforum) -->
+
+<div id="sforum">
+<a id="forumtop">&nbsp;</a>
+<div id="sflogininfo"></div>
+<div class="sfloginstrip">
+<div class="inline_edit" id="sfthisuser"></div><table cellpadding="1" cellspacing="0"><tr>
+<td rowspan="2" width="45"><div class="sfuseravatar"><img class="sfavatar" src="http://192.168.20.226:3000/wp-content/forum-avatars/guestdefault.png" width="40"  alt="" /></div></td><td class="sfusercell">
+<strong>You must be logged in to post</strong>
+<a href="http://192.168.20.226:3000/index.php?sf_ahah=permissions&amp;forum=9&amp;forumname=New&#32;Users&amp;user=&amp;displayname=" onclick="return hs.htmlExpand(this, { objectType: 'ajax', preserveContent: true, width: 650, height: 570, anchor: 'top'} )"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/user-permissions.png" alt="" title="Your Permissions"/></a></td>
+<td class="sflogincell">
+<a class="sficon" onclick="sfjtoggleLayer('sfloginform');"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/login.png" alt="" title="Login" /> Login </a>
+</td></tr><tr><td class="sfusercell"></td><td class="sflogincell">
+<div id="sfinboxcount"></div></td>
+</tr></table>
+</div>
+<div id="sfloginform">
+<fieldset style="vertical-align: top; height: 200px;">
+<form name="loginform" id="loginform" action="http://192.168.20.226:3000/wp-login.php?action=login&amp;view=forum" method="post">
+
+    <script type="text/javascript">
+    <!--
+    window.onload = function()
+    {
+        var rpx_lf = document.getElementById("sfloginform");
+        rpx_lf.style.width = "100%";
+        rpx_lf.style.backgroundColor = "#ffffff";
+        rpx_lf.style.margin = "0 auto";
+
+        var rpx_up = document.createElement("DIV");
+        rpx_up.style.paddingBottom = "10px";
+        if (document.getElementById("sforum"))
+        {
+            if (document.getElementById("sforum").offsetWidth < 625)
+            {
+                rpx_up.style.clear = "both";
+                rpx_up.style.paddingTop = "20px";
+            }
+        }
+        rpx_up.innerHTML = "<span id=\"spf_rpx_password\"><h2 style=\"text-align:center\">Sign in with Site Password</h2></span>";
+        rpx_lf.insertBefore(rpx_up, rpx_lf.firstChild );
+
+        var rpx_wrap = document.createElement("DIV");
+        rpx_wrap.id = "spf_rpx_wrap";
+        rpx_lf.insertBefore(rpx_wrap, rpx_lf.firstChild);
+
+        var sign_in = document.createElement("H2");
+        sign_in.id = "spf_rpx_signin";
+        sign_in.innerHTML = "Sign in with 3rd Party Account";
+        sign_in.style.paddingBottom = "10px";
+        sign_in.style.textAlign = "center";
+        rpx_wrap.appendChild(sign_in);
+    
+            if (document.getElementById("sforum"))
+            {
+                if (document.getElementById("sforum").offsetWidth >= 625)
+                {
+                    rpx_wrap.style.styleFloat = "left";
+                    rpx_wrap.style.cssFloat = "left";
+                    rpx_wrap.style.marginRight = "20px";
+                } else {
+                    rpx_wrap.style.textAlign = "center";
+                }
+            }
+
+            var rpx_fieldset = document.createElement("FIELDSET");
+            rpx_fieldset.id = "spf_rpx_fieldset";
+            rpx_fieldset.style.height = "240px";
+            rpx_fieldset.style.margin = "0";
+            rpx_fieldset.style.padding = "0";
+            rpx_wrap.appendChild(rpx_fieldset);
+        
+        var rpx_iframe = document.createElement("IFRAME");
+        rpx_iframe.id = "spf_rpx_iframe";
+        rpx_iframe.src = "https://login.moaicloud.com/openid/embed?token_url=http%3A%2F%2Fgetmoai.com%2Fforums%2F%3Frpx_response%3D1%26goback%3Dhttp%3A%2F%2Fgetmoai.com%2Fforums%2F&#038;flags=hide_sign_in_with&#038;language_preference=";
+        rpx_iframe.style.width = "373px";
+        rpx_iframe.style.height = "240px";
+        rpx_iframe.scrolling = "no";
+        rpx_iframe.frameBorder = "no";
+        rpx_fieldset.appendChild(rpx_iframe);
+    }
+    //-->
+    </script>
+    <p><label for="log">Username:&nbsp;<input type="text" class="sfcontrol" tabindex="84" name="log" id="log" value="" size="11" /></label></p>
+<p><label for="login_password">Password:&nbsp;<input type="password" class="sfcontrol" tabindex="85" name="pwd" id="login_password" value="" size="11" /></label></p>
+<p><input type="checkbox" tabindex="86" id="rememberme" name="rememberme" value="forever" /><label for="rememberme">&nbsp;Remember me</label></p><div class="sfclear"></div><div class="sfclear"></div><p><input type="submit" class="sfcontrol" name="submit" id="submit" value="Login" tabindex="87" /></p>
+<input type="hidden" name="redirect_to" value="/forums/new-users/physics-touch-accelerometer-example/" />
+</form>
+<br /><p><a href="http://192.168.20.226:3000/wp-login.php?action=lostpassword&amp;view=forum">Lost Your Password?</a>
+</p>
+</fieldset></div>
+<div class="sfclear"></div><div class="sfmessagestrip">
+<table><tr>
+<td width="105"><div id="sftopsearch"><a class="sficon" onclick="sfjtoggleLayer('sfsearchform');"><img class="sficon" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/search.png" alt="" title="Search" /> Search </a>
+</div></td>
+<td>
+<div id="sftopql"><select class="sfquicklinks sfcontrol" name="sfquicklinks" onchange="javascript:sfjchangeURL(this)">
+<option>Select Forum</option>
+<optgroup class="sflist" label="&nbsp;&nbsp;Moai Community Forums">
+<option value="/forums/moai-roadmap/">Moai Roadmap</option>
+<option value="/forums/made-with-moai/">Made With Moai</option>
+</optgroup><optgroup class="sflist" label="&nbsp;&nbsp;Moai Development Forums">
+<option value="/forums/moai-sdk-developer-support/">Moai SDK Developer Support</option>
+<option value="/forums/moai-cloud-developer-support/">Moai Cloud Developer Support</option>
+<option value="/forums/new-users/">New Users</option>
+<option value="/forums/bug-reports/">Bug Reports</option>
+</optgroup></select>
+<div id="sfqlposts"><select class="sfquicklinks sfcontrol" name="sfquicklinksPost" id="sfquicklinksPost" size="1" onchange="javascript:sfjchangeURL(this)">
+<option>New/Recently Updated Topics</option>
+<optgroup class="sflist" label="&nbsp;&nbsp;Moai Roadmap">
+<option  value="/forums/moai-roadmap/big-news-moai-for-chrome/#p1704">&nbsp;&nbsp;Big news: Moai for Chrome</option>
+</optgroup><optgroup class="sflist" label="&nbsp;&nbsp;Made With Moai">
+<option  value="/forums/made-with-moai/rapanui-a-new-open-source-high-level-programming-framework-for-moai/page-2/#p1689">&nbsp;&nbsp;RapaNui: a new, open-source, high-l&#8230;</option>
+<option  value="/forums/made-with-moai/android-moai-sdk-player/#p1682">&nbsp;&nbsp;Android Moai SDK Player</option>
+</optgroup><optgroup class="sflist" label="&nbsp;&nbsp;Moai SDK Developer Support">
+<option  value="/forums/moai-sdk-developer-support/does-moai-support-an-api-like-settimeout/#p1668">&nbsp;&nbsp;Does Moai support an API like 'setT&#8230;</option>
+<option  value="/forums/moai-sdk-developer-support/moai-build-for-macosx-misses-socket-libs/#p1679">&nbsp;&nbsp;Moai build for macosx misses socket&#8230;</option>
+<option  value="/forums/moai-sdk-developer-support/how-to-extnd-moai-sdk-to-have-moailayer3d-or-like/#p1697">&nbsp;&nbsp;How to extnd Moai SDK to have MOAIL&#8230;</option>
+<option  value="/forums/moai-sdk-developer-support/simple-3d-benchmark/#p1693">&nbsp;&nbsp;simple 3D benchmark</option>
+<option  value="/forums/moai-sdk-developer-support/cannot-build-0-9-in-xcode-4-2/#p1687">&nbsp;&nbsp;cannot build 0.9 in Xcode 4.2</option>
+<option  value="/forums/moai-sdk-developer-support/error-when-build-moaisample-ios/#p1688">&nbsp;&nbsp;Error when build MoaiSample ios</option>
+<option  value="/forums/moai-sdk-developer-support/moai-sdk-0-95-beta-revision-1-with-synchronous-http-android-enhancements-a-native-client-sample-app-and-lots-of-bug-fixes-and-cleanup/#p1706">&nbsp;&nbsp;Moai SDK 0.95 Beta (revision 1) wit&#8230;</option>
+</optgroup><optgroup class="sflist" label="&nbsp;&nbsp;Moai Cloud Developer Support">
+<option  value="/forums/moai-cloud-developer-support/downloading-files-from-moai-cloud/#p1683">&nbsp;&nbsp;Downloading files from MOAI Cloud</option>
+</optgroup><optgroup class="sflist" label="&nbsp;&nbsp;New Users">
+<option  value="/forums/new-users/ios-landscape-view/#p1676">&nbsp;&nbsp;iOS Landscape view</option>
+<option  value="/forums/new-users/timers-actions-a-few-questions/#p1667">&nbsp;&nbsp;Timers, actions&#8230; A few questions.</option>
+<option  value="/forums/new-users/setnodelink/#p1708">&nbsp;&nbsp;setNodeLink</option>
+</optgroup><optgroup class="sflist" label="&nbsp;&nbsp;Bug Reports">
+<option  value="/forums/bug-reports/moaibox2d-api-automatic-unit-conversion/#p1678">&nbsp;&nbsp;MoaiBox2D API automatic unit conver&#8230;</option>
+</optgroup></select>
+</div></div></td>
+</tr></table></div>
+<div id="sfsearchform">
+<form action="http://192.168.20.226:3000/index.php?sf_ahah=search" method="post" name="sfsearch">
+<fieldset>
+<legend>Search Forums:</legend>
+<div class="sfsearchblock">
+<input type="text" class="sfcontrol" size="20" name="searchvalue" value="" />
+<br /><br />
+<img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/searchicon.png" alt="" />&nbsp;
+<input type="submit" class="sfcontrol" name="search" value="Search Forum" />
+</div>
+<div class="sfsearchblock">
+<div class="sfradioblock sfalignleft">
+<input type="hidden" name="forumslug" value="new-users" />
+<label class="sfradio" for="sfradio1">&nbsp;&nbsp;Current Forum</label><input type="radio" id="sfradio1" name="searchoption" value="Current" checked="checked" /><br />
+<label class="sfradio" for="sfradio2">&nbsp;&nbsp;All Forums</label><input type="radio" id="sfradio2" name="searchoption" value="All Forums"  />
+</div>
+<div class="sfradioblock sfalignleft">
+<label class="sfradio" for="sfradio3">&nbsp;&nbsp;Match Any Word</label><input type="radio" id="sfradio3" name="searchtype" value="1" checked="checked" /><br />
+<label class="sfradio" for="sfradio4">&nbsp;&nbsp;Match All Words</label><input type="radio" id="sfradio4" name="searchtype" value="2" /><br />
+<label class="sfradio" for="sfradio5">&nbsp;&nbsp;Match Phrase</label><input type="radio" id="sfradio5" name="searchtype" value="3" />
+</div>
+<div class="sfradioblock sfalignleft">
+<label class="sfradio" for="sfradio6">&nbsp;&nbsp;Posts And Topic Titles</label><input type="radio" id="sfradio6" name="encompass" value="1" checked="checked" /><br />
+<label class="sfradio" for="sfradio7">&nbsp;&nbsp;Posts Only</label><input type="radio" id="sfradio7" name="encompass" value="2" /><br />
+<label class="sfradio" for="sfradio8">&nbsp;&nbsp;Topic Titles Only</label><input type="radio" id="sfradio8" name="encompass" value="3" />
+<label class="sfradio" for="sfradio9">&nbsp;&nbsp;Tags Only (limited to single tag)</label><input type="radio" id="sfradio9" name="encompass" value="4" />
+</div>
+</div><br />
+<p style="clear:both">Minimum search word length is <b>4</b> characters &#8211; Maximum search word length is <b>84</b> characters<br />
+<strong>Wildcard Usage:</strong><br />*&nbsp; matches any number of characters&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp; matches exactly one character</p></fieldset>
+</form>
+</div>
+<div class="sfmessagestrip sfbreadcrumbs">
+<table><tr>
+<td valign="middle"><p><a class="sficon sfpath" href="../../index.html"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/arrowr.png" alt="" />
+Forums</a>
+<a class="sficon sfpath" href="../index.html"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/arrowr.png" alt="" />
+New Users</a>
+<a class="sficon sfpath" href="index.html"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/arrowr.png" alt="" />
+Physics &#8211; Touch &#8211; Accelerometer Example</a>
+</p></td><td valign="top" width="40"><span class="sfalignright"><a class="sficon" href="index.html#forumbottom"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/bottom.png" alt="" title="go to bottom" /></a></span>
+</td></tr></table>
+</div>
+<div id="topic-258" class="sfblock">
+<div class="sfheading"><table><tr>
+<td class="sficoncell"><img class="" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/topic.png" alt="" /></td>
+<td><div class="sftitle"><p>Physics &#8211; Touch &#8211; Accelerometer Example</p></div>
+</td><td class="sfadditemcell">
+<div class="sfalignright"><a class="sficon" href="javascript:void(0);" onclick="javscript:jQuery('#topic-258').jqprint({debug:true}); return false;"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/print.png" alt="" title="Print This Topic"/> Print this Post </a></div></td>
+</tr></table></div>
+<table class="sffooter"><tr>
+<td class="sfpagelinks">Page:  &nbsp;&nbsp;<a href="index.html" class="current">1</a>&nbsp;&nbsp;
+
+</td>
+<td style="padding-top:4px;"></td>
+</tr></table>
+
+<table class="sfposttable">
+<tr>
+<th>User</th><th>Post</th>
+</tr>
+<tr id="post-1180" class="rank-member sftype-user" valign="top">
+<td class="sfuserinfoside ">
+<a id="p1180"></a>
+<table class="sfinnerusertable" cellpadding="0" cellspacing="0" border="0"><tr align="center"><td class="sfposticonstrip ">
+<p>4:36 am<br />December 8, 2011</p>
+</td></tr><tr><td class="sfusername sfuser-224 rank-member sftype-user "><p><br /><strong>milleniummike</strong></p></td></tr><tr><td class=""></td></tr><tr align="center"><td class=""><div class="sfuseravatar"><img class="sfavatar" src="http://192.168.20.226:3000/wp-content/forum-avatars/userdefault.png" width="50"  alt="" /></div></td></tr>
+<tr><td class=""></td></tr><tr align="center"><td class=""><div class="sfuserrank rank-member sftype-user">Member</div></td></tr><tr align="center"><td class=""><p>posts 47</p></td></tr><tr align="center"><td class=""></td></tr></table></td>
+<td class="">
+<table class="sfinnerposttable">
+<tr>
+<td class="sfposticonstrip "><div class="sfposticoncontainer"><div class="sfposticon sfonlineicon"><img class="sficon sfonlinestatus" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/offline.png" alt="" title="Member is Off-Line" /></div><div class="sftoplink"><a href="index.html#forumtop"><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/top.png" alt="" title="go to top" /></a></div>
+<div class="sfposticon sfpostNumberOnPage">1</div></div></td></tr>
+<tr>
+<td class="sfpostcontent ">
+<div id="post1180">
+<p><small><i>Post edited 4:38 am &#8211; December 8, 2011 by milleniummike<br /></i></small></p><hr /><p>Features</p>
+<p>Uses touch input or mouse input</p>
+<p>On release of mouse or touch applies physics impulse to player ball using distance (similar effect to Corona SDK&#039;s pool example)</p>
+<p>Uses the camera limiter to follow player ball</p>
+<p>Adjusts gravity with accelerometer (similar effect to Corona SKD&#039;s tumbler example)</p>
+<p>&nbsp;</p>
+<p><a href="http://pastebin.com/Y1rVZt32" target="_blank">http://pastebin.com/Y1rVZt32</a></p>
+</div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<div class="sfdivider"></div></div>
+<div class="sfmessagestrip">
+<table cellpadding="0" cellspacing="0"><tr><td width="45%">
+<a class="sficon sfalignleft" href="http://192.168.20.226:3000/forums/?forum=new-users&amp;topic=physics-touch-accelerometer-example&amp;xfeed=topic&amp;feedkey="><img src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/feedtopic.png" alt="" title="Topic RSS" /> Topic RSS </a>
+<img class="sficon sfalignleft" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/spacer.png" alt="" title="" /></td><td align="center"><a href="index.html#forumtop"><img class="sficon" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/top.png" alt="" title="go to top" /></a><br />
+</td><td class="sflogincell" width="45%"></td></tr></table></div>
+<div id="sfversion"><table width="100%"><tr><td width="100%">&copy; <a href="http://simple-press.com" target="_blank">Simple:Press</a>&nbsp;&nbsp;<a href="http://192.168.20.226:3000/index.php?sf_ahah=acknowledge" onclick="return hs.htmlExpand(this, { objectType: 'ajax', preserveContent: true, reflow: true, width: 650} )"><img class="sficon" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/styles/icons/default/information.png" alt="" title="Acknowledgements" /></a></td></tr></table></div><br />
+<a id="forumbottom">&nbsp;</a>
+
+<!-- End of SPF Container (sforum) -->
+
+</div>
+
+				<script type="text/javascript">
+		var jspf = jQuery.noConflict();
+		jspf(document).ready(function() {
+
+							jspf("input[type=checkbox],input[type=radio]").prettyCheckboxes();
+			
+			
+			
+							hs.graphicsDir = "/wp-content/plugins/simple-forum/resources/jscript/highslide/support/";
+				hs.outlineType = "rounded-white";
+				hs.outlineWhileAnimating = true;
+				hs.cacheAjax = false;
+				hs.showCredits = false;
+				hs.lang = {
+					cssDirection : 'ltr',
+					closeText : '',
+					closeTitle : 'Close',
+					moveText  : '',
+					moveTitle : 'Move',
+					loadingText  : 'Loading'
+				};
+
+				/* pre-load wait image */
+				waitImage = new Image(27,27);
+				waitImage.src = '/wp-content/plugins/simple-forum/styles/icons/default/wait.png';
+
+			
+		});
+	</script>
+	<script type="text/javascript" src="http://192.168.20.226:3000/wp-content/plugins/simple-forum/editors/tinymce/tiny_mce.js"></script>
+	<script type="text/javascript">
+	tinyMCE.init({
+		canimage: 0,
+		canmedia: 0,
+		canfile: 0,
+		cansignature: 0,
+		issignature: 0,
+		mode : "exact",
+		elements : "postitem, signature",
+		theme : "advanced",
+		theme_advanced_layout_manager : "SimpleLayout",
+		skin : "o2k7",
+		content_css : "/wp-content/plugins/simple-forum/styles/editors/tinymce/content.css",
+		popup_css : "/wp-content/plugins/simple-forum/styles/editors/tinymce/dialog.css",
+		editor_css : "/wp-content/plugins/simple-forum/styles/editors/tinymce/ui.css",
+		language : "en",
+		directionality : "ltr",
+		auto_reset_designmode : true,
+		width : "100%",
+		height: "360",
+				relative_urls : false,
+				extended_valid_elements: "code",
+		apply_source_formatting : true,
+		paste_convert_middot_lists : true,
+		paste_remove_spans : true,
+		paste_remove_styles : true,
+		paste_convert_headers_to_strong : true,
+		paste_strip_class_attributes : "mso",
+		remove_redundant_brs : true,
+		force_p_newlines : true,
+		force_br_newlines : false,
+		remove_linebreaks: false,
+		convert_newlines_to_brs : false,
+		remove_redundant_brs : true,
+		entities:"38,amp,60,lt,62,gt",
+		plugins : "inlinepopups,safari,media,preview,spoiler,ddcode,spellchecker,paste",
+		theme_advanced_toolbar_location : "top",
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location: "bottom",
+		theme_advanced_resizing : true,
+		theme_advanced_resizing_use_cookie : false,
+		theme_advanced_buttons1 : "bold,italic,underline,|,bullist,numlist,|,blockquote,outdent,indent,|,link,unlink,|,undo,redo,forecolor,charmap,|,image",
+		theme_advanced_buttons2 : "",
+		theme_advanced_buttons3 : "",
+		theme_advanced_buttons1_add : "media,|,spoiler,|,|,pastetext,pasteword,|,selectall,preview,code,|,spellchecker",
+		plugin_preview_width : "750",
+		plugin_preview_height : "400",
+		gecko_spellcheck: true,
+		brushes: ""
+	});
+	</script>
+<!--stats_footer_test--><script src="http://stats.wordpress.com/e-201202.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'21518913',v:'ext',post:'6'});
+var load_cmc = function(){linktracker_init(21518913,6,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+
+				
+		<div class="clear"></div>
+		
+	</div>	
+</div><!-- end .container_24 -->
+<div class="footer drop-shadow">
+	<div class="container_24">
+    	<div class="grid_24" style="margin-right:-20px">
+			<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a href="http://192.168.20.226:3000/get-started/moai-faq/contact/">Contact Us</a></li>
+<li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="http://192.168.20.226:3000/moai/">Moai</a>
+<ul class="sub-menu">
+	<li id="menu-item-540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-540"><a href="http://192.168.20.226:3000/moai/moai-cloud/">Moai Cloud</a></li>
+	<li id="menu-item-542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-542"><a href="http://192.168.20.226:3000/moai/moai-sdk/">Moai SDK</a></li>
+</ul>
+</li>
+<li id="menu-item-524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a href="http://192.168.20.226:3000/get-started/">Get Started</a>
+<ul class="sub-menu">
+	<li id="menu-item-541" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-541"><a href="http://192.168.20.226:3000/get-started/moai-faq/">Moai FAQ</a></li>
+</ul>
+</li>
+<li id="menu-item-525" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-525"><a href="../../index.html">Forums</a></li>
+<li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="http://192.168.20.226:3000/blog/">Blog</a></li>
+<li id="menu-item-2257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2257"><a href="http://dashboard.moaicloud.com/login.php">Login</a></li>
+</ul></div>        </div>
+
+    </div>
+</div>
+
+<div class="copyright">
+	<p>(c) 2011 Zipline Games, Inc. &nbsp;&nbsp; <a href="http://192.168.20.226:3000/get-started/moai-faq/privacy/">Privacy Policy</a></p>
+    </div>
+
+		<script type="text/javascript">
+		var jspf = jQuery.noConflict();
+		jspf(document).ready(function() {
+
+							jspf("input[type=checkbox],input[type=radio]").prettyCheckboxes();
+			
+			
+			
+							hs.graphicsDir = "/wp-content/plugins/simple-forum/resources/jscript/highslide/support/";
+				hs.outlineType = "rounded-white";
+				hs.outlineWhileAnimating = true;
+				hs.cacheAjax = false;
+				hs.showCredits = false;
+				hs.lang = {
+					cssDirection : 'ltr',
+					closeText : '',
+					closeTitle : 'Close',
+					moveText  : '',
+					moveTitle : 'Move',
+					loadingText  : 'Loading'
+				};
+
+				/* pre-load wait image */
+				waitImage = new Image(27,27);
+				waitImage.src = '/wp-content/plugins/simple-forum/styles/icons/default/wait.png';
+
+			
+		});
+	</script>
+	<!--stats_footer_test--><script src="http://stats.wordpress.com/e-201202.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'21518913',v:'ext',post:'6'});
+var load_cmc = function(){linktracker_init(21518913,6,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+
+
+</body>
+</html>

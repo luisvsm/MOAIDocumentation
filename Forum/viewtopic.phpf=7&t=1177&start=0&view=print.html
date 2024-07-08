@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - How to add src/lua-modules/moai/*.lua to host?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>How to add src/lua-modules/moai/*.lua to host?</h2>
+		<p><a href="how-to-add-src-lua-modules-moai-lua-to-host-t1177/index.html">/forums/how-to-add-src-lua-modules-moai-lua-to-host-t1177/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>How to add src/lua-modules/moai/*.lua to host?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Sep 05, 2012 7:56 pm</strong></div>
+				<div class="author">by <strong>joarb</strong></div>
+				<div class="content">I'm trying to run the app-tapjoy sample, but I believe I haven't compiled in all the necessary lua-modules for it to work properly from my host.<br /><br />How do I get these modules added so that other scripts can call them? Thanks! <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: How to add src/lua-modules/moai/*.lua to host?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Sep 06, 2012 8:07 pm</strong></div>
+				<div class="author">by <strong>joarb</strong></div>
+				<div class="content">So I figured this one out. You don't include the lua modules into the host per se. The problem is that samples/config/config.lua is pointing to the wrong location. Replace the contents in config.lua with the following path will solve the problem: <dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=1177&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">package<span style="color: #66cc66;">.</span>path <span style="color: #66cc66;">=</span> package<span style="color: #66cc66;">.</span>path <span style="color: #66cc66;">..</span> <span style="color: #ff6666;">';../../../src/lua-modules/moai/?.lua'</span></div></li><br /></ol></code></dd></dl>Hope this will be corrected in the public repo. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

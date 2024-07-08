@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1600&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-02-04T15:18:17+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1600&amp;mode</id>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-02-04T15:18:17+00:00</updated>
+<published>2013-02-04T15:18:17+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8819#p8819</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8819#p8819"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8819#p8819"><![CDATA[
+Well, for at least some things, I can get a tolerable first pass by having large numbers of lines in a single MOAIMesh and then I can :setColor() the prop holding them.<br /><br />Poking around, with large numbers of children, manual propagation of changes would get expensive fast.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Mon Feb 04, 2013 3:18 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-02-04T15:15:56+00:00</updated>
+<published>2013-02-04T15:15:56+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8818#p8818</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8818#p8818"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8818#p8818"><![CDATA[
+I do the groups the manual way, by decorating MOAITransform with lua functions to add/ remove children, and then iterate through all the children when setting attributes such as alpha and visibility. So far it performs well, mostly because I dont handle too many children and because I dont need to change alpha and such on every frame.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Mon Feb 04, 2013 3:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-02-01T03:42:22+00:00</updated>
+<published>2013-02-01T03:42:22+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8712#p8712</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8712#p8712"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8712#p8712"><![CDATA[
+Looking more at the docs:<br /><br />It seems to me that &quot;layer&quot; is very close to the kind of thing I am thinking of, in that it is a thing which can contain multiple props such that they are sort of logically tied together. A bit of Internet research turns up at least one claim that layers can be inserted in other layers, and at least one claim that this will result in crashes. And it doesn't appear that the layer will actually do anything with a shader assigned to it, even though it has :setShader() because it inherits from prop.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Fri Feb 01, 2013 3:42 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-02-01T00:52:08+00:00</updated>
+<published>2013-02-01T00:52:08+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8706#p8706</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8706#p8706"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8706#p8706"><![CDATA[
+So the underlying GPU stuff can't do &quot;render all these things with these settings, then render the resulting hunk with these other settings&quot;? &lt;-- has no OpenGL background.<p>Statistics: Posted by <a href="/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Fri Feb 01, 2013 12:52 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2013-01-31T22:15:28+00:00</updated>
+<published>2013-01-31T22:15:28+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8703#p8703</id>
+<link href="/forums/viewtopic.php?t=1600&amp;p=8703#p8703"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8703#p8703"><![CDATA[
+Since most all of MOAI's primitives are Tables, you can parse your tree's as you would any other Lua structure .. I personally use &quot;lua-enumerable.lua&quot; a lot in my projects, it makes for very simple expressions .. <br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000aa;">table</span><span style="color: #66cc66;">.</span>all<span style="color: #66cc66;">&#40;</span>anims<span style="color: #66cc66;">,</span> <span style="color: #aa9900; font-weight: bold;">function</span> <span style="color: #66cc66;">&#40;</span>anim<span style="color: #66cc66;">,</span> index<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                                anim<span style="color: #66cc66;">.</span>name <span style="color: #66cc66;">=</span> index</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                                anim<span style="color: #66cc66;">.</span>quad<span style="color: #66cc66;">:</span>setTexture <span style="color: #66cc66;">&#40;</span> anim<span style="color: #66cc66;">.</span>pngfile<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                                anim<span style="color: #66cc66;">.</span>quad<span style="color: #66cc66;">:</span>setRect <span style="color: #66cc66;">&#40;</span> anim<span style="color: #66cc66;">.</span>x1<span style="color: #66cc66;">,</span> anim<span style="color: #66cc66;">.</span>y1<span style="color: #66cc66;">,</span> anim<span style="color: #66cc66;">.</span>x2<span style="color: #66cc66;">,</span> anim<span style="color: #66cc66;">.</span>y2<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- &amp;etc.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                          <span style="color: #aa9900; font-weight: bold;">end</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />.. as for access to Shaders, there are some samples floating around the bleeding edges of moai-dev's test/ dir, methinks ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Jan 31, 2013 10:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-01-31T12:39:14+00:00</updated>
+<published>2013-01-31T12:39:14+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8685#p8685</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8685#p8685"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8685#p8685"><![CDATA[
+<blockquote><div><cite>Muzz wrote:</cite><br />Moai doesn't have a do all parenting function.<br /><br />You are expected to write your own systems for things like this. It's harder but it is more flexible.<br /><br />It shouldn't be too hard to write the class using attribute linking though.<br /></div></blockquote><br /><br />I guess my question is: Is there anything short of &quot;manually recompute all the alpha values and locations recursively down the tree&quot; for things similar to this? I mean, assuming I wanted to write my own system for it, do the primitives exist from which to assemble something wherein the layering of shader effects is handled by the rendering hardware?<br /><br />I mean, obviously, I can do a lua object which has a table of props, and has its own alpha setting, and every time it's time to render, it goes through them all adjusting their alpha settings to the product of their logical settings and its logical setting, but I'm wondering whether that's actually necessary, or there's some way to hand that off to the graphics hardware.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Thu Jan 31, 2013 12:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Muzz]]></name></author>
+<updated>2013-01-31T12:10:21+00:00</updated>
+<published>2013-01-31T12:10:21+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8684#p8684</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8684#p8684"/>
+<title type="html"><![CDATA[Re: Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8684#p8684"><![CDATA[
+Moai doesn't have a do all parenting function.<br /><br />You are expected to write your own systems for things like this. It's harder but it is more flexible.<br /><br />It shouldn't be too hard to write the class using attribute linking though.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=894">Muzz</a> — Thu Jan 31, 2013 12:10 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[seebs]]></name></author>
+<updated>2013-01-31T12:01:05+00:00</updated>
+<published>2013-01-31T12:01:05+00:00</published>
+<id>/forums/viewtopic.php?t=1600&amp;p=8683#p8683</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1600&amp;p=8683#p8683"/>
+<title type="html"><![CDATA[Props, shaders, and more-props?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1600&amp;p=8683#p8683"><![CDATA[
+I'm still sort of getting my head around Moai's model. I have done a bunch of fooling around in Corona, which is wildly different as it turns out.<br /><br />Corona has a thing called &quot;groups&quot;. Whereas most objects are fairly similar to props, a &quot;group&quot; is a thing that's sort of like a prop which is not itself displayed in any particular way, but which can contain other things which are. They have locations relative to the group, and modifications to the group (moving it, rotating it, and so on) affect all of those objects. And one of the things you can modify for a group is its alpha, so you can have a bunch of objects which may themselves have whatever settings (such as alpha, rotation, and so on), and then the group's settings are applied to them in turn. And this &quot;just works&quot; -- a group with alpha 0.5 containing an object with alpha 0.5 produces the same visual effect as an object with alpha 0.25.<br /><br />Is there a comparable concept/tool/something in Moai that can contain-and-modify other things? I've been browsing the SDK docs and examples, but most of the examples are very tightly focused on a single thing, so interactions between things are not always clear.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1298">seebs</a> — Thu Jan 31, 2013 12:01 pm</p><hr />
+]]></content>
+</entry>
+</feed>

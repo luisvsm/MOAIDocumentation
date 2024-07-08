@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=1177&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-09-06T20:07:55+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=1177&amp;mode</id>
+<entry>
+<author><name><![CDATA[joarb]]></name></author>
+<updated>2012-09-06T20:07:55+00:00</updated>
+<published>2012-09-06T20:07:55+00:00</published>
+<id>/forums/viewtopic.php?t=1177&amp;p=6282#p6282</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1177&amp;p=6282#p6282"/>
+<title type="html"><![CDATA[Re: How to add src/lua-modules/moai/*.lua to host?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1177&amp;p=6282#p6282"><![CDATA[
+So I figured this one out. You don't include the lua modules into the host per se. The problem is that samples/config/config.lua is pointing to the wrong location. Replace the contents in config.lua with the following path will solve the problem: <dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">package<span style="color: #66cc66;">.</span>path <span style="color: #66cc66;">=</span> package<span style="color: #66cc66;">.</span>path <span style="color: #66cc66;">..</span> <span style="color: #ff6666;">';../../../src/lua-modules/moai/?.lua'</span></div></li><br /></ol></code></dd></dl>Hope this will be corrected in the public repo. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=437">joarb</a> — Thu Sep 06, 2012 8:07 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[joarb]]></name></author>
+<updated>2012-09-05T19:56:07+00:00</updated>
+<published>2012-09-05T19:56:07+00:00</published>
+<id>/forums/viewtopic.php?t=1177&amp;p=6267#p6267</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1177&amp;p=6267#p6267"/>
+<title type="html"><![CDATA[How to add src/lua-modules/moai/*.lua to host?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1177&amp;p=6267#p6267"><![CDATA[
+I'm trying to run the app-tapjoy sample, but I believe I haven't compiled in all the necessary lua-modules for it to work properly from my host.<br /><br />How do I get these modules added so that other scripts can call them? Thanks! <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=437">joarb</a> — Wed Sep 05, 2012 7:56 pm</p><hr />
+]]></content>
+</entry>
+</feed>

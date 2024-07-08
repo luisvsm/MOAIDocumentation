@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=772&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-05-12T18:04:16+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=772&amp;mode</id>
+<entry>
+<author><name><![CDATA[bach]]></name></author>
+<updated>2012-05-12T18:04:16+00:00</updated>
+<published>2012-05-12T18:04:16+00:00</published>
+<id>/forums/viewtopic.php?t=772&amp;p=3902#p3902</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=772&amp;p=3902#p3902"/>
+<title type="html"><![CDATA[Re: Distribution Questions]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=772&amp;p=3902#p3902"><![CDATA[
+Hey,<br /><br />Thanks a ton for your answer. I'll need to dig into these things a bit more. I actually got debugging setup today with Koneki and Dacoda. So that's a good step forward. I'll probably write up a quick guide for anyone wanting to do the same.<br /><br />Cheers,<br />Bach<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=878">bach</a> — Sat May 12, 2012 6:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-05-12T06:43:25+00:00</updated>
+<published>2012-05-12T06:43:25+00:00</published>
+<id>/forums/viewtopic.php?t=772&amp;p=3890#p3890</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=772&amp;p=3890#p3890"/>
+<title type="html"><![CDATA[Re: Distribution Questions]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=772&amp;p=3890#p3890"><![CDATA[
+The current filesystem is not yet pluggable so there's no trivial way to do game wide encryption.<br />However, there are several ways to hide your game code. <br /><br />You can precompile them with luac. To be able to load them normally, you need to append ?.luac to the end of package.path.<br />You need to be careful as lua bytecode is NOT portable. Most mobiles are 32bit little endian. For windows, stick to the 32bit distribution of lua and moai and it should work even on 64 bit machines. Linux can be a problem depending on distro(some ship with both 32 and 64 bit libraries, others dont). Im not sure about Mac. Do PowerPc(big endian) Mac still exists?<br /><br />You can also zip all resources and append the zip file to your exe. The exe header contains a size field so extra content wont spoil it. As for zip, the file index is at the end so extra stuffs at the beginning is fine too. You can mount your exe file at the start and your game should work as normal. Most zip archivers have no problem recognizing it too so dont rely too much on this method.<br /><br />Lua allows you to create a custom module loader. You can write your own in C/C++(so it's harder to decompile) and add it to the package.loaders array. That way, you can use some encryption for lua code.<br />All these are just obfuscation anyway. Anything can be cracked.<br /><br />Somewhere in this forum, there's a tutorial on setting up a debugger which integrates  with Eclipse or IntelliJ. It's called Koneki. Whatever socket related issues mentioned in those threads should be gone by now.<br />I personally use a commercial debugger called Decoda which works out of the box with any engine that uses Lua. It only needs a pdb file.<br />Recent moai-dev revision allows you to use your own error handler. I hook it up with this script&#058; <!-- m --><a class="postlink" href="https://github.com/ignacio/StackTracePlus">https://github.com/ignacio/StackTracePlus</a><!-- m --><br />It prints out value of local variables in addition to just the function names.<br />There is also a moai-ide which has debugging support. Although quite functional, it's still beta quality.<br />My custom host and recent versions of Moai's host can reload the project whenever a change to its file is detected. When I'm editing, I usually modify my scripts so that the game always go to the state I'm interested in (e.g: skip main menu and jump straight to a particular level). I can see how changes to the code affect the game. Coupled with a detailed stack trace(StacktracePlus), a debugger is not needed most of the time.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Sat May 12, 2012 6:43 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bach]]></name></author>
+<updated>2012-05-11T08:35:43+00:00</updated>
+<published>2012-05-11T08:35:43+00:00</published>
+<id>/forums/viewtopic.php?t=772&amp;p=3874#p3874</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=772&amp;p=3874#p3874"/>
+<title type="html"><![CDATA[Distribution Questions]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=772&amp;p=3874#p3874"><![CDATA[
+Hey everyone,<br /><br />Just checking out moai, and loving the concept and flexibility of an open-source solution. A few questions:<br /><br />- What is the minimum apk size you can currently achieve with moai? If understand things right I could very well build my own host that only uses functionality required by my game. Is that right? Anyone got experience with this and can tell me what kind of sizes are achievable?<br />- Distribution on desktop: What's the best way to distribute here? Obviously I don't just want leave all the scripts lying around in the open. Is there a way of compiling everything into an executable (incl. the host)?<br />- Are there any debugging solutions? I've searched the forums but haven't found any clear answers or anything that made sense to me. All I'm after is to be able to debug on desktop with locals, step-through, etc. Logging only gets you so far <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><br /><br />Looking forward to a response!<br /><br />Cheers,<br />Bach<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=878">bach</a> — Fri May 11, 2012 8:35 am</p><hr />
+]]></content>
+</entry>
+</feed>

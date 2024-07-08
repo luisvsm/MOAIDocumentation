@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - iPhone Device Orientation with MOAI</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>iPhone Device Orientation with MOAI</h2>
+		<p><a href="iphone-device-orientation-with-moai-t80/index.html">/forums/iphone-device-orientation-with-moai-t80/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jul 26, 2011 12:17 am</strong></div>
+				<div class="author">by <strong>vitapoly</strong></div>
+				<div class="content">I am trying to get MOAI to display in landscape mode on an iPhone device.
+<br />
+<br />I am able to get the GLUT simulator to display correctly. I am also able to get the device to start in Landscape mode, however, MOAI appears to be drawing as if the device was still in Portrait mode. 
+<br />
+<br />main.lua:
+<br />
+<br />MOAISim.openWindow ( "test", 480, 320 )
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( 480, 320 )
+<br />viewport:setScale ( 480, 320 ) 
+<br />viewport:setOffset ( -1, -1 ) 
+<br />
+<br />
+<br />
+<br />Info.plist:
+<br />
+<br />UIInterfaceOrientation, UIInterfaceOrientationLandscapeRight
+<br />
+<br />
+<br />
+<br />What am I missing?
+<br />
+<br />
+<br />
+<br />Thanks.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jul 27, 2011 9:34 am</strong></div>
+				<div class="author">by <strong>josh</strong></div>
+				<div class="content">The specific solution will vary based on the rest of your set up, but what we've done with our internal projects so far is also rotate the Moai View so that it begins in landscape orientation. This is accomplished by using a line like this in your host code:
+<br />
+<br />
+<br />
+<br />[ mMoaiView setTransform:CGAffineTransformMakeRotation ( 90 * ( float ) DEGREES_TO_RADIANS )];
+<br />
+<br />
+<br />
+<br />We have defined conversion values like this (for reference):
+<br />
+<br />
+<br />
+<br />#ifndef RADIANS_TO_DEGREES
+<br />
+<br /><span>	</span>#define RADIANS_TO_DEGREES<span>		</span>57.2957795
+<br />
+<br />#endif
+<br />
+<br />
+<br />
+<br />#ifndef DEGREES_TO_RADIANS
+<br />
+<br /><span>	</span>#define DEGREES_TO_RADIANS<span>		</span>( 1.0 / RADIANS_TO_DEGREES )
+<br />
+<br />#endif
+<br />
+<br />
+<br />
+<br />You'll also want to set the anchor point for the MoaiView to its center so that it will rotate properly. With a little tweaking you can get it to line up properly on its side in the simulator or on a device.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jul 27, 2011 7:33 pm</strong></div>
+				<div class="author">by <strong>vitapoly</strong></div>
+				<div class="content">Thanks Josh.
+<br />
+<br />
+<br />
+<br />I added the following line after the [ mMoaiView run]:
+<br />
+<br />"[ mMoaiView setTransform:CGAffineTransformMakeRotation ( 90 * ( float ) DEGREES_TO_RADIANS )]; "
+<br />
+<br />Since I am using retina display, I also updated the main.lua:
+<br />
+<br />MOAISim.openWindow ( "test", 960, 640 )
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( 960, 640 )
+<br />viewport:setScale ( 480, 320 ) 
+<br />viewport:setOffset ( -1, -1 )
+<br />
+<br />
+<br />
+<br />The result is the contents of the world is properly rotated. It's also the correct size. However, I get these two white bars on the left and right side. It's as if the contents of the world and the device rotated but not the viewport. I tried setting the view bounds to 640,960 but it zooms the world coordinates. Any ideas?
+<br />
+<br />
+<br />
+<br />P.S., I tried to set the mMoaiView.layer.anchorPoint, but the compiler complains about unknown anchorPoint component property.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jul 27, 2011 8:01 pm</strong></div>
+				<div class="author">by <strong>vitapoly</strong></div>
+				<div class="content">OK. I have something working, but it is very hackish.
+<br />
+<br />
+<br />
+<br />This is my main.lua:
+<br />
+<br />MOAISim.openWindow ( "test", 960, 640 )
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( 960, 640 )
+<br />viewport:setScale ( 960, 640 ) 
+<br />viewport:setOffset ( -1, -1 )
+<br />
+<br />
+<br />
+<br />Note that my graphics were set up for 480x320, so setting the scale to 960x640 will draw 4x the amount in the GLUT viewer on OSX. It is the same on the device, however, because I have those white bars on the left and right, I can "zoom in" to the portion that I need.
+<br />
+<br />
+<br />
+<br />To do so, I did this: mMoaiView.bounds = CGRectMake(0,0,640,960). 
+<br />
+<br />
+<br />
+<br />Not sure what the "proper" solution should be, but I will dig a bit more.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Aug 12, 2011 4:00 pm</strong></div>
+				<div class="author">by <strong>nsardo</strong></div>
+				<div class="content">I am having trouble with this as well.
+<br />
+<br />
+<br />
+<br />I have added what Josh has instructed.
+<br />
+<br />
+<br />
+<br />What changes are needed below?
+<br />
+<br />
+<br />
+<br />MOAISim.openWindow ( "test", 320, 480 )
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( 320, 480 )
+<br />viewport:setScale ( 320, -480 )
+<br />
+<br />
+<br />
+<br /><em>^copied and pasted from a sample project to start from scratch</em>
+<br />
+<br />
+<br />
+<br />I have tried almost every permutation and the closest I have gotten was what appeared to be Landscape mode but with stretched textures.
+<br />
+<br />
+<br />
+<br />Any help would be much appreciated.
+<br />
+<br />-Thx</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Aug 12, 2011 4:38 pm</strong></div>
+				<div class="author">by <strong>josh</strong></div>
+				<div class="content"><strong>vitapoly said: </strong>
+<br />
+<br /><blockquote>
+<br />
+<br />Thanks Josh.
+<br />
+<br />
+<br />
+<br />I added the following line after the [ mMoaiView run]:
+<br />
+<br />"[ mMoaiView setTransform:CGAffineTransformMakeRotation ( 90 * ( float ) DEGREES_TO_RADIANS )]; "
+<br />
+<br />Since I am using retina display, I also updated the main.lua:
+<br />
+<br />MOAISim.openWindow ( "test", 960, 640 )
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( 960, 640 )
+<br />viewport:setScale ( 480, 320 ) 
+<br />viewport:setOffset ( -1, -1 )
+<br />
+<br />
+<br />
+<br />The result is the contents of the world is properly rotated. It's also the correct size. However, I get these two white bars on the left and right side. It's as if the contents of the world and the device rotated but not the viewport. I tried setting the view bounds to 640,960 but it zooms the world coordinates. Any ideas?
+<br />
+<br />
+<br />
+<br />P.S., I tried to set the mMoaiView.layer.anchorPoint, but the compiler complains about unknown anchorPoint component property.
+<br />
+<br /></blockquote>
+<br />If you are getting those white bars, the solution I used was to modify the MOAIView in Interface Builder. I set it's width to 480, and its height to 320. I set it's autosizing with all of the bars and arrow lines selected as red. I set its pivot point to the center of the object. With this configuration, and the line of code in your AppDelegate that rotates the view, it should work.
+<br />
+<br />Let me know if I can do anything else to help out.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 11, 2011 3:53 pm</strong></div>
+				<div class="author">by <strong>sparkart</strong></div>
+				<div class="content">I'm pretty new to developing on a Mac and using xcode, but for anyone who might be new, too… you can set the width and height by going to: "View>Utilities>Show Size Inspector"
+<br />
+<br />
+<br />
+<br />Took me a while to find that.
+<br />
+<br />
+<br />
+<br />Also, I did as suggested:
+<br />
+<br />-Switch the width and height around (480x320) on the MOAI View in Interface Builder.
+<br />
+<br />-Set autosizing so that all the arrows/bars are solid red (not dotted red).
+<br />
+<br />-Set origin to center.
+<br />
+<br />
+<br />
+<br />Nothing seemed to change. The whitebars were still on either side.
+<br />
+<br />
+<br />
+<br />I went to: "View>Utilities>Show Attributes Inspector"
+<br />
+<br />Under the "View" category, the mode was set to: "Scale to Fill"
+<br />
+<br />Changed it to "center"
+<br />
+<br />
+<br />
+<br />Now the white bars are gone.
+<br />
+<br />
+<br />
+<br />Just wondering if you also set this setting to "center" or is it still set on "scale to fill"?
+<br />
+<br />
+<br />
+<br /><strong>edit:</strong>
+<br />
+<br />Another issue I just ran into is that the origin is not correct.
+<br />
+<br />
+<br />
+<br />viewport:setOffset(-1, -1)
+<br />
+<br />
+<br />
+<br />(0, 0) should be at the corner of the screen but it is not.
+<br />
+<br />
+<br />
+<br />The origin actually shows as (-128, -128). I get this number by drawing the mouse/touch position.
+<br />
+<br />
+<br />
+<br /><strong>another edit:</strong>
+<br />
+<br />I think it is not necessary to rotate the view in the AppDelegate. I changed the size of MOAIView and then changed the "shouldAutorotateToInterfaceOrientation()" method of the viewcontroller. Basically I removed the comments and set it to right landscape.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed May 30, 2012 11:54 am</strong></div>
+				<div class="author">by <strong>evgeni.i.petrov</strong></div>
+				<div class="content">Should'nt there be way to do all this in Lua? <br /><br />There should be callbacks when orientation change and ability to rescale the view.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: iPhone Device Orientation with MOAI</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed May 30, 2012 9:47 pm</strong></div>
+				<div class="author">by <strong>adam</strong></div>
+				<div class="content">We've talked about it, until then you can always look at:<br /><br /><!-- m --><a class="postlink" href="http://192.168.20.226:3000/wiki/index.php?title=Setup_landscape_in_Moai_Games_For_iOS_Devices">/wiki/index.php?title ... OS_Devices</a><!-- m --></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

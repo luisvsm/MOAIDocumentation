@@ -1,0 +1,2737 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Binding C++ APIs to Moai using MOAILuaObject</title>
+ 
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    
+    
+    
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link href="../../css/syntax.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/doc-style.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+            <a class="navbar-brand" href="../../index.html">MoaiForge - Community Docs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+           </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+    
+    <div class="container">
+<div class="row-fluid">
+   
+        <div id="navigation" class="col-md-3">
+            
+<ul id="nav-menu" class="nav nav-list">
+    
+    
+  
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md does NOT contain pathseg /basics/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Moai Basics</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-two.html">Moai SDK Basics Part Two</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-one.html">Moai SDK Basics Part One</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md does NOT contain pathseg /sdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">The Moai SDK</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/what-is-moai-sdk.html">What is Moai SDK?</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-sdk-desktop-basics.html">Moai SDK Desktop Basics</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/the-moai-runtime.html">The Moai Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-hosts.html">Moai Hosts</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/structuring-your-moai-game-in-lua.html">Structuring Your Moai Game in Lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-project-setup.html">Moai Project Setup</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/extending-moai-sdk.html">Extending Moai SDK</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/protecting-your-lua-files.html">Protecting Your Lua Files</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/tools-that-work-with-moai.html">Tools that work with Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md does NOT contain pathseg /buildsdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Build the SDK from Source</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/introduction.html">Introduction</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/installing-cmake.html">Installing CMake</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-libraries-for-android-ndk.html">Building Moai Libraries For Android</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-xcode.html">Building Moai From Source With Xcode</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-visual-studio.html">Building Moai From Source With Visual Studio</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-scons.html">Building Moai From Source With Scons</a></li>
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md does NOT contain pathseg /building/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Building Moai Games</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/setup-landscape-in-moai-games-for-ios-devices.html">Setup landscape in Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/cross-platform-development-with-moai.html">Cross Platform Development With Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-ios-devices.html">Building Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-google-chrome.html">Building Moai Games for Google Chrome</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-android-devices.html">Building Moai Games For Android Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md does NOT contain pathseg /reference/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Reference</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/moai-sdk-samples-guide.html">Moai SDK Samples Guide</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/cmake-basics.html">Crash Course on CMAKE</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/code-snips.html">Code snips</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/how-moai's-c-to-lua-binding-works.html">How Moai's C++ to Lua Binding Works</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/understanding-decks-and-props.html">Understanding Decks and Props</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/using-moaianim.html">Using MOAIAnim</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../reference/wrapping-modes.html">Wrapping modes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md contains pathseg /tutorial/ -->
+        <li class="parent collapsibleListClosed">
+        
+          <div class="subtree-name">Tutorials</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="your-first-game-rocket-lobster.html">Your First Game : Rocket Lobster</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="using-particlehelper.html">Using ParticleHelper</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="textboxes.html">Textboxes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="your-first-cloud-game-wolf-clicker.html">Your First Cloud Game : Wolf Clicker</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="setup-moai-sdk-on-windows-using-sublime2.html">Setup Moai SDK on Windows using Sublime2</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="basic-prop-animations.html">Basic Prop Animations</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="bin2c-lua.html">Bin2c.lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li class="active" ><a href="binding-c-apis-to-moai-using-moailuaobject.html">Binding C++ APIs to Moai using MOAILuaObject</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="build-on-steam-runtime.html">Building Moai with Steam Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="concatenate-your-lua-source-tree.html">Concatenate your Lua source tree</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="density-friction-and-restitution.html">Density, Friction And Restitution</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="getting-started-with-box2d.html">Getting Started With Box2D</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+
+</ul>
+
+<script src="../../js/collapsiblelists.min.js"> </script>
+<script>
+$(function() {
+CollapsibleLists.applyTo(document.getElementById('nav-menu'));
+});
+
+</script>
+        </div>
+
+        <div id="content" class="col-md-9">
+            <a href="https://github.com/moaiforge/moai-sdk/tree/gh-pages/_docs/tutorial/binding-c-apis-to-moai-using-moailuaobject.md" class="improve-docs btn"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+            <h1>Binding C++ APIs to Moai using MOAILuaObject</h1>
+            
+            
+            <p>In this tutorial we&#39;ll cover techniques for binding instance objects (objects allocated with the &#39;new&#39; operator) as well as singleton objects to Lua using MOAILuaObject.</p>
+
+<p>For a discussion of how to add support for events and callback registration using setEvent () to instance and class objects and how to implement common objects such as nodes, props and decks see Advanced C++ Object Implementation using MOAILuaObject.</p>
+
+<p>For a discussion of how Moai&#39;s C++ to Lua binding works see <a href="../reference/how-moai's-c-to-lua-binding-works.html">How Moai&#39;s C++ to Lua Binding Works</a>.</p>
+
+<h2>How to Bind Instance Objects to Lua</h2>
+
+<p>Let&#39;s look at a simple example object. As of Moai 1.0 r4, MOAIFoo is included as a template for you to use when adding classes to Moai. Just copy the .cpp and .h files, rename and start adding your own methods.</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//================================================================//</span>
+<span class="c1">// MOAIFoo</span>
+<span class="c1">//================================================================//</span>
+<span class="n">class</span> <span class="n">MOAIFoo</span> <span class="o">:</span>
+    <span class="n">public</span> <span class="k">virtual</span> <span class="n">MOAILuaObject</span> <span class="p">{</span>
+<span class="nl">private:</span>
+
+    <span class="c1">//----------------------------------------------------------------//</span>
+    <span class="k">static</span> <span class="kt">int</span>      <span class="n">_classHello</span>         <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">);</span>
+    <span class="k">static</span> <span class="kt">int</span>      <span class="n">_instanceHello</span>      <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">);</span>
+
+<span class="nl">public:</span>
+
+    <span class="n">DECL_LUA_FACTORY</span> <span class="p">(</span> <span class="n">MOAIFoo</span> <span class="p">)</span>
+
+    <span class="c1">//----------------------------------------------------------------//</span>
+                    <span class="n">MOAIFoo</span>             <span class="p">();</span>
+                    <span class="o">~</span><span class="n">MOAIFoo</span>            <span class="p">();</span>
+    <span class="kt">void</span>            <span class="n">RegisterLuaClass</span>    <span class="p">(</span> <span class="n">MOAILuaState</span><span class="o">&amp;</span> <span class="n">state</span> <span class="p">);</span>
+    <span class="kt">void</span>            <span class="n">RegisterLuaFuncs</span>    <span class="p">(</span> <span class="n">MOAILuaState</span><span class="o">&amp;</span> <span class="n">state</span> <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>As you can see, this class inherits from MOAILuaObject. As we make use of multiple inheritance, our convention is to always use virtual inheritance for MOAILuaObject.</p>
+
+<p>Methods we intend to expose to Lua are private, static methods. We include them in the class so they will have access to its other private methods and constants. They are static so that their calling convention will allow them to be passed into Lua.</p>
+
+<p>The DECL_LUA_FACTORY macro declares implementations for the abstract virtual methods required by MOAILuaObject. These methods are GetLuaClass (), RegisterLuaType () and TypeName (). As these methods are easily implemented using boilerplate code, it made sense to make a macro. The sole parameter passed to DECL_LUA_FACTORY is the class name.</p>
+
+<p>Now let&#39;s look at the implementation:</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#include</span> <span class="cpf">&lt;moaicore/MOAIFoo.h&gt;</span><span class="cp">
+</span>
+<span class="c1">//================================================================//</span>
+<span class="c1">// lua</span>
+<span class="c1">//================================================================//</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="cm">/** @name   classHello
+    @text   Class (a.k.a. static) method. Prints the string 
+            'MOAIFooclass foo!' to the console.
+
+    @out    nil
+*/</span>
+<span class="kt">int</span> <span class="n">MOAIFoo</span><span class="o">::</span><span class="n">_classHello</span> <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">UNUSED</span> <span class="p">(</span> <span class="n">L</span> <span class="p">);</span>
+
+    <span class="n">printf</span> <span class="p">(</span> <span class="s">"MOAIFoo class hello!</span><span class="se">\n</span><span class="s">"</span> <span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="cm">/** @name   instanceHello 
+    @text   Prints the string 'MOAIFoo instance foo!' to the console.
+
+    @out    nil
+*/</span>
+<span class="kt">int</span> <span class="n">MOAIFoo</span><span class="o">::</span><span class="n">_instanceHello</span> <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// this macro initializes the 'self' variable </span>
+    <span class="c1">// and type checks arguments</span>
+    <span class="n">MOAI_LUA_SETUP</span> <span class="p">(</span> <span class="n">MOAIFoo</span><span class="p">,</span> <span class="s">"U"</span> <span class="p">)</span>
+
+    <span class="n">printf</span> <span class="p">(</span> <span class="s">"MOAIFoo instance hello!</span><span class="se">\n</span><span class="s">"</span> <span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//================================================================//</span>
+<span class="c1">// MOAIFoo</span>
+<span class="c1">//================================================================//</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="n">MOAIFoo</span><span class="o">::</span><span class="n">MOAIFoo</span> <span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// register all classes MOAIFoo derives from</span>
+    <span class="c1">// we need this for custom RTTI implementation</span>
+    <span class="n">RTTI_BEGIN</span>
+        <span class="n">RTTI_EXTEND</span> <span class="p">(</span> <span class="n">MOAILuaObject</span> <span class="p">)</span>
+
+        <span class="c1">// and any other objects from multiple inheritance...</span>
+        <span class="c1">// RTTI_EXTEND ( MOAIFooBase )</span>
+    <span class="n">RTTI_END</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="n">MOAIFoo</span><span class="o">::~</span><span class="n">MOAIFoo</span> <span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="kt">void</span> <span class="n">MOAIFoo</span><span class="o">::</span><span class="n">RegisterLuaClass</span> <span class="p">(</span> <span class="n">MOAILuaState</span><span class="o">&amp;</span> <span class="n">state</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// call any initializers for base classes here:</span>
+    <span class="c1">// MOAIFooBase::RegisterLuaClass ( state );</span>
+
+    <span class="c1">// also register constants:</span>
+    <span class="c1">// state.SetField ( -1, "FOO_CONST", ( u32 )FOO_CONST );</span>
+
+    <span class="c1">// here are the class methods:</span>
+    <span class="n">luaL_Reg</span> <span class="n">regTable</span> <span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="s">"classHello"</span><span class="p">,</span>     <span class="n">_classHello</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="n">luaL_register</span> <span class="p">(</span> <span class="n">state</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">regTable</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="kt">void</span> <span class="n">MOAIFoo</span><span class="o">::</span><span class="n">RegisterLuaFuncs</span> <span class="p">(</span> <span class="n">MOAILuaState</span><span class="o">&amp;</span> <span class="n">state</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// call any initializers for base classes here:</span>
+    <span class="c1">// MOAIFooBase::RegisterLuaFuncs ( state );</span>
+
+    <span class="c1">// here are the instance methods:</span>
+    <span class="n">luaL_Reg</span> <span class="n">regTable</span> <span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="s">"instanceHello"</span><span class="p">,</span>  <span class="n">_instanceHello</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="n">luaL_register</span> <span class="p">(</span> <span class="n">state</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">regTable</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>That&#39;s all there is to it. The Lua methods at the top of the file show an example of a &#39;class&#39; method and an &#39;instance&#39; method. The class method may be invoked by calling MOAIFoo.classHello () and the instance method by calling foo:hello () where &#39;foo&#39; is an instance of MOAIFoo created by calling MOAIFoo.new ().</p>
+
+<p>The methods RegisterLuaClass () and RegisterLuaFuncs () both take a Lua table. MOAILuaState is a helper class that wrapps lua_State. It is overloaded to return a pointer to lua_State when cast, so you may use it with the Lua C API. RegisterLuaClass () receives the class table to which any addition class methods and constants should be added. RegisterLuaFuncs () receives the instance table which will be shared as a metatable of any instances of MOAIFoo. Add the class instance interface to the instance table.</p>
+
+<p>When writing an instance method you can use the MOAI_LUA_SETUP macro to initialize a local variable called &#39;self&#39; which will point at the instance of the class as well as to check any parameters to the method. The first parameter is traditionally &#39;U&#39; (for userdata). You can find the declaration of MOAI_LUA_SETUP in MOAILogMessages.h and the implementation of CheckParams (), which MOAI_LUA_SETUP calls, in MOAILuaSetup.cpp.</p>
+
+<p>The final item to note is the use of the RTTI macros in MOAIFoo&#39;s constructor. Because Moai implements a custom RTTI system, you need to register any classes inherited by your class in its constructor. The class inheritance registration block begins with RTTI_BEGIN and ends with RTTI_END. Each class inherited should be declared using RTTI_EXTEND ().</p>
+
+<p>To make the class available to the Lua runtime, just call:</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">REGISTER_LUA_CLASS</span> <span class="p">(</span> <span class="n">MOAIFoo</span> <span class="p">)</span>
+</code></pre></div>
+<p>You can call this anywhere in your code as long as it&#39;s called before the class is needed by a script. For an example, see moaicore.cpp.</p>
+
+<h2>How to Bind Singletons to Lua</h2>
+
+<p>Binding a singleton to Lua is a variation of binding an instance object. Usually a singleton has some global state associated with it, but you can also use singletons as a lazy way to bind the global methods of an API. We are very lazy, so we do this a lot.</p>
+
+<p>Note that in Moai, &#39;global&#39; and &#39;singleton&#39; are almost always scoped to the current Moai context. In this regards they aren&#39;t true &#39;globals&#39; in that they are allocated by the memory manager and will be swapped out if the context is changed. We use the singleton pattern to avoid having to pass around references to manager or context objects, thereby simplifying some aspects of our API. As previously mentioned, we are very lazy.</p>
+
+<p>Here&#39;s the header of an example singleton:</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#include</span> <span class="cpf">&lt;moaicore/MOAILua.h&gt;</span><span class="cp">
+</span>
+<span class="c1">//================================================================//</span>
+<span class="c1">// MOAIFooMgr</span>
+<span class="c1">//================================================================//</span>
+<span class="cm">/**  @name   MOAIFooMgr
+ @text   Example singleton for extending Moai using MOAILuaObject.
+               Copy this object, rename it and add your own stuff.
+               Just don't forget to register it with the runtime
+               using the REGISTER_LUA_CLASS macro (see moaicore.cpp).
+*/</span>
+<span class="n">class</span> <span class="n">MOAIFooMgr</span> <span class="o">:</span>
+ <span class="n">public</span> <span class="n">MOAIGlobalClass</span> <span class="o">&lt;</span> <span class="n">MOAIFooMgr</span><span class="p">,</span> <span class="n">MOAILuaObject</span> <span class="o">&gt;</span> <span class="p">{</span>
+<span class="nl">private:</span>
+
+    <span class="c1">//----------------------------------------------------------------//</span>
+    <span class="k">static</span> <span class="kt">int</span>      <span class="n">_singletonHello</span>     <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">);</span>
+
+<span class="nl">public:</span>
+
+    <span class="n">DECL_LUA_SINGLETON</span> <span class="p">(</span> <span class="n">MOAIFooMgr</span> <span class="p">)</span>
+
+ <span class="c1">//----------------------------------------------------------------//</span>
+                    <span class="n">MOAIFooMgr</span>          <span class="p">();</span>
+                    <span class="o">~</span><span class="n">MOAIFooMgr</span>         <span class="p">();</span>
+    <span class="kt">void</span>            <span class="n">RegisterLuaClass</span>    <span class="p">(</span> <span class="n">MOAILuaState</span><span class="o">&amp;</span> <span class="n">state</span> <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>MOAIGlobalClass &lt;&gt; is a template base class that integrates with Moai&#39;s context and singleton management system. It&#39;s parameters are the name of the class itself and a class it will inherit from (in this case MOAILuaObject).</p>
+
+<p>DECL_LUA_SINGLETON is the singleton&#39;s analogue to DECL_LUA_FACTORY. It implements the same abstract virtual methods DECL_LUA_FACTORY as but provides the machinery to interface with a singleton instead of an instance.</p>
+
+<p>As this class is a singleton, there is no need for the RegisterLuaFuncs () method.</p>
+
+<p>Here&#39;s the implementation:</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#include</span> <span class="cpf">&lt;moaicore/MOAIFooMgr.h&gt;</span><span class="cp">
+</span>
+<span class="c1">//================================================================//</span>
+<span class="c1">// lua</span>
+<span class="c1">//================================================================//</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="cm">/** @name   _singletonHello
+    @text   Prints the string 'MOAIFooMgr singleton foo!' to the console.
+
+    @out    nil
+*/</span>
+<span class="kt">int</span> <span class="n">MOAIFooMgr</span><span class="o">::</span><span class="n">_singletonHello</span> <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">)</span> <span class="p">(</span> <span class="n">lua_State</span><span class="o">*</span> <span class="n">L</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">UNUSED</span> <span class="p">(</span> <span class="n">L</span> <span class="p">);</span>
+
+    <span class="n">printf</span> <span class="p">(</span> <span class="s">"MOAIFooMgr singleton foo!</span><span class="se">\n</span><span class="s">"</span> <span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//================================================================//</span>
+<span class="c1">// MOAIFooMgr</span>
+<span class="c1">//================================================================//</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="n">MOAIFooMgr</span><span class="o">::</span><span class="n">MOAIFooMgr</span> <span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// register all classes MOAIFooMgr derives from</span>
+    <span class="c1">// we need this for custom RTTI implementation</span>
+    <span class="n">RTTI_BEGIN</span>
+        <span class="n">RTTI_EXTEND</span> <span class="p">(</span> <span class="n">MOAILuaObject</span> <span class="p">)</span>
+
+        <span class="c1">// and any other objects from multiple inheritance...</span>
+        <span class="c1">// RTTI_EXTEND ( MOAIFooMgrBase )</span>
+    <span class="n">RTTI_END</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="n">MOAIFooMgr</span><span class="o">::~</span><span class="n">MOAIFooMgr</span> <span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">//----------------------------------------------------------------//</span>
+<span class="kt">void</span> <span class="n">MOAIFooMgr</span><span class="o">::</span><span class="n">RegisterLuaClass</span> <span class="p">(</span> <span class="n">MOAILuaState</span><span class="o">&amp;</span> <span class="n">state</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// call any initializers for base classes here:</span>
+    <span class="c1">// MOAIFooBase::RegisterLuaClass ( state );</span>
+
+    <span class="c1">// also register constants:</span>
+    <span class="c1">// state.SetField ( -1, "FOO_CONST", ( u32 )FOO_CONST );</span>
+
+    <span class="c1">// here are the class methods:</span>
+    <span class="n">luaL_Reg</span> <span class="n">regTable</span> <span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span> <span class="s">"singletonHello"</span><span class="p">,</span>     <span class="n">_singletonHello</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span> <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="n">luaL_register</span> <span class="p">(</span> <span class="n">state</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">regTable</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>As you can see, it is virtually identical to the implementation of an instance class save the omission of RegisterLuaFuncs ().</p>
+
+<p>Just like an instance class you must also register the singleton with the runtime using REGISTER_LUA_CLASS :</p>
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">REGISTER_LUA_CLASS</span> <span class="p">(</span> <span class="n">MOAIFooMgr</span> <span class="p">)</span>
+</code></pre></div>
+<p>After registration, your singleton (or API) will be available for use in Lua.</p>
+
+<h2>Organizing your Code</h2>
+
+<p>We do not recommend adding extension classes directly to moaicore.cpp or any of the files that ship with Moai. Instead, create a separate C++ file for your extension classes and register them there. This will make it easier for you to keep up to date with new versions of Moai.</p>
+
+<h2>Notes and Future Changes</h2>
+
+<p>The virtual function name &#39;RegisterLuaFuncs ()&#39; is a bit misleading as &#39;RegisterLuaClass ()&#39; may also register functions. In fact, each method is just passed a Lua table placed at the top of Lua&#39;s stack for you to initialize. In addition, the choice to pass a MOAILuaState instead of a lua_State confronts you with Moai&#39;s helper class, which you may have no use for - there is nothing that can be done with MOAILuaState that can&#39;t be done with the Lua API.</p>
+
+<p>At some point the future we may rename RegisterLuaClass () and RegisterLuaFuncs () to InitLuaClassTable () and InitLuaInstanceTable () and pass in a pointer to lua_State instead of a reference to MOAILuaState.</p>
+
+<p>Another quirk is the ability to pass a base class to the MOAIGlobalClass &lt;&gt; template. This is a throwback to a time before we embraced multiple inheritance but needed to implement helper base classes via templates. In the future, MOAIGlobalClass () should virtual inherit MOAIObject and leave it to the child class to virtually inherit MOAILuaObject.</p>
+
+<p>None of these changes are pressing as the current system works and they would be only cosmetic. Just be aware as you implement your extensions that a future release may require some find and replace work on your part.</p>
+
+        </div>
+               
+</div>
+</div>
+
+
+    <!-- SUB FOOTER-->
+   <!-- <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="text-center"><a href="http://getmoai.com/marketing/made-with-moai.html">License / Attribution</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/tools-partners.html">Useful Tools</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/partner-services.html">Partner Services</a></p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!-- /SUB FOOTER-->
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+       
+        <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; David Pershouse 2024</p>
+            </div>
+        </div>
+    </footer>
+
+      </div>
+    </footer>
+
+      <script src="../../js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

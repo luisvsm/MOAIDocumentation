@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Google In-app Billing v3</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Google In-app Billing v3</h2>
+		<p><a href="google-in-app-billing-v3-t2942/index.html">/forums/google-in-app-billing-v3-t2942/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 13, 2014 1:50 pm</strong></div>
+				<div class="author">by <strong>alex1line</strong></div>
+				<div class="content">Does Google In-app Billing <span style="font-weight: bold">v3</span> work for MOAI on Android? Where can I see sample lua code for using v3 API?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 13, 2014 4:44 pm</strong></div>
+				<div class="author">by <strong>alex1line</strong></div>
+				<div class="content">Keep in mind the Google said:<br /><blockquote class="uncited"><div>We plan to turn off the In-app Billing Version 2 service on January 27, 2015, after which time users will no longer be able to purchase in-app items and subscriptions through the Version 2 API.</div></blockquote></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 13, 2014 11:57 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />Not sure if it works by just changing the files, but should be relatively simple to get to work</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 14, 2014 10:21 pm</strong></div>
+				<div class="author">by <strong>orkj</strong></div>
+				<div class="content">hm. nice reminder.<br /><br />Looking at this commit a long time ago, things seems like it should be almost ready: <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/commit/64b75f4ca0fd91b4bef6667538df4c08a5d3a12b">https://github.com/moai/moai-dev/commit ... 08a5d3a12b</a><!-- m --><br /><br />So I tried to just switch &quot;google-billing&quot; to &quot;google-billingv3&quot; in my settings-global.sh file and use the new functions. Specifically purchaseProduct instead of requestPurchase and using checkInAppSupported and manually calling the callback I had for support result before.<br /><br />Now this was very smooth. I got my test purchases through and all is well, seemingly. <br /><br />But the part with setPublicKey does not work. The method is not implemented. Should it be? Should I be doing something else here? Anyone that has this working (pseudo code or real code very welcome) ;p</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 14, 2014 10:33 pm</strong></div>
+				<div class="author">by <strong>alex1line</strong></div>
+				<div class="content">Unfortunately I get error &quot;MOAIBillingAndroid: Unable to find static java method getPurchasedProducts&quot; even after including &quot;google-billingv3&quot; in file settings-global.sh<br />I am on tag Version-1.5.2-binary-desktop</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 16, 2014 5:35 pm</strong></div>
+				<div class="author">by <strong>orkj</strong></div>
+				<div class="content">I got this working now.<br /><br />I am on master built around 1.5.2 some time, with just one specific customization (not related).<br /><br />Since the repo is private, i can not post the actual commit, but here is a summary.<br /><br />- Changed google-billing to google-billingv3 in settings-global.sh<br />- Changed MOAIBilling.requestPurchase(product) to MOAIBilling.purchaseProduct(product, BILLINGV3_PRODUCT_INAPP)<br />- Removed MOAIBilling.setPublicKey(KEY)<br />- To get the supported callback as backward compatible as possible, just added this: <br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=24&amp;t=2942&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> supported <span style="color: #66cc66;">=</span> MOAIBilling<span style="color: #66cc66;">.</span>checkInAppSupported<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">onBillingSupported<span style="color: #66cc66;">&#40;</span>supported<span style="color: #66cc66;">&#41;</span> <span style="color: #808080; font-style: italic;">-- This used to be a listener.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br />- Changed the code about &quot;if not MOAIBilling.checkBillingSupported () then&quot; to &quot;if not MOAIBilling.checkInAppSupported() then&quot;<br /><br />Then, the things I struggled with the most:<br />At first I was only allowed to make test purchases, which was strange, because when I used v2 I was only able to make &quot;real&quot; purchases. I then removed my account from the tests list (on <!-- m --><a class="postlink" href="https://play.google.com/apps/publish/?dev_acc=">https://play.google.com/apps/publish/?dev_acc=</a><!-- m -->&lt;NUMBER&gt;#ProfilePlace) and waited a few hours. Then it worked.<br /><br />Then the next problem. I was not able to buy any &quot;non-managed&quot; products I had test purchased before. First I thought this was related to them becoming subscriptions or something in v3, but seems that you have to &quot;consume&quot; the earlier purchases before you can buy some new ones.<br />So since all my products are consumables, I just consumed all of them with no effect in the game, and it worked. I suspect this would not be a problem for users just upgrading, but more of a problem if you install the app again with v3 in it.<br /><br />Anyway, seems to work now. Just pushed a new version to the play store, so hopefully that will be fine now. Not that I actually sell anything of these IAP anyway <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><br /><br />Hope that helps someone!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Google In-app Billing v3</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 18, 2014 8:48 am</strong></div>
+				<div class="author">by <strong>alex1line</strong></div>
+				<div class="content">Thank you! Your recipe look like working. At least it works for purchase test product &quot;android.test.purchased&quot;</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

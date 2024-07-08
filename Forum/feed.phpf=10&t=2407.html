@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=10&amp;t=2407&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-12-12T19:35:30+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=10&amp;t=2407&amp;mode</id>
+<entry>
+<author><name><![CDATA[kreios]]></name></author>
+<updated>2013-12-12T19:32:52+00:00</updated>
+<published>2013-12-12T19:32:52+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12456#p12456</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12456#p12456"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12456#p12456"><![CDATA[
+FYI, the source of the bug appears to be in the ZLDeviceTime::GetTimeInSeconds () function (in src/zl-util/ZLDeviceTime_apple.cpp), but the code actually looks like it should work<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1468">kreios</a> — Thu Dec 12, 2013 7:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kreios]]></name></author>
+<updated>2013-12-12T19:27:37+00:00</updated>
+<published>2013-12-12T19:27:37+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12455#p12455</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12455#p12455"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12455#p12455"><![CDATA[
+You're right! <br />Confirmed working on OSX and iOS<br /><br />So I wonder why the API for MOAISim.getDeviceTime says this:<br />&quot;Gets the raw device clock. This is a replacement for Lua's os.time ().&quot;<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1468">kreios</a> — Thu Dec 12, 2013 7:27 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-12-12T19:35:30+00:00</updated>
+<published>2013-12-12T19:17:42+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12454#p12454</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12454#p12454"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12454#p12454"><![CDATA[
+Try<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">      dd <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">'%Y%m%d'</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">      <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">'date'</span><span style="color: #66cc66;">,</span>dd<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--or</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">     dd <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">     <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">'date'</span><span style="color: #66cc66;">,</span>dd<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--time</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000aa;">time</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;*t&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #0000aa;">table.concat</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#123;</span><span style="color: #0000aa;">time</span><span style="color: #66cc66;">.</span>hour<span style="color: #66cc66;">,</span> <span style="color: #0000aa;">time</span><span style="color: #66cc66;">.</span><span style="color: #0000aa;">min</span><span style="color: #66cc66;">,</span> <span style="color: #0000aa;">time</span><span style="color: #66cc66;">.</span>sec<span style="color: #66cc66;">&#125;</span><span style="color: #66cc66;">,</span> <span style="color: #ff6666;">&quot;:&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--date &amp; time</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> <span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">time</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.time</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">date</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;%Y_%m_%d_%H_%M_%S&quot;</span><span style="color: #66cc66;">,</span><span style="color: #0000aa;">time</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #0000aa;">date</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />these give me the correct date &amp; time.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Thu Dec 12, 2013 7:17 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-12-12T19:12:51+00:00</updated>
+<published>2013-12-12T19:12:51+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12453#p12453</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12453#p12453"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12453#p12453"><![CDATA[
+~<br />That's hilarious, I have never noticed but I export screen shots with this date function.<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">time</span> <span style="color: #66cc66;">=</span> MOAISim<span style="color: #66cc66;">.</span>getDeviceTime<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">date</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;%Y_%m_%d_%H_%M_%S&quot;</span><span style="color: #66cc66;">,</span><span style="color: #0000aa;">time</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> fileName <span style="color: #66cc66;">=</span> system<span style="color: #66cc66;">&#91;</span><span style="color: #ff6666;">'useDir'</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot;//deaddark//app_screenshots//&quot;</span><span style="color: #66cc66;">..</span><span style="color: #0000aa;">date</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />And the dates are wrong, I have a folder full of of files starting at &quot;1969_10_31_20_40_43.png&quot;<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Thu Dec 12, 2013 7:12 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kreios]]></name></author>
+<updated>2013-12-12T18:50:12+00:00</updated>
+<published>2013-12-12T18:50:12+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12452#p12452</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12452#p12452"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12452#p12452"><![CDATA[
+Is there currently any way that works that will allow me to get the current system date? Or am I going to need to roll up my sleeves and dig into the code?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1468">kreios</a> — Thu Dec 12, 2013 6:50 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-12-12T15:19:39+00:00</updated>
+<published>2013-12-12T15:19:39+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12448#p12448</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12448#p12448"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12448#p12448"><![CDATA[
+Ok, this function definitely doesn't work, at least not on OSX where I've just tried it.<br />If I try this:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> systemDate <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span> <span style="color: #ff6666;">&quot;*t&quot;</span><span style="color: #66cc66;">,</span> MOAISim<span style="color: #66cc66;">.</span>getDeviceTime<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><br />I'm getting this values in the table:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  hour : <span style="">4</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  min : <span style="">41</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  wday : <span style="">5</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  day : <span style="">1</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  month : <span style="">1</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  year : <span style="">1970</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  sec : <span style="">8</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  yday : <span style="">1</span>    &lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.  isdst : false    &lt;boolean&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />None of the above is correct.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Thu Dec 12, 2013 3:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2013-12-12T15:17:01+00:00</updated>
+<published>2013-12-12T15:17:01+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12447#p12447</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12447#p12447"/>
+<title type="html"><![CDATA[Re: MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12447#p12447"><![CDATA[
+Funny thing, I'm getting 19700101...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Thu Dec 12, 2013 3:17 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kreios]]></name></author>
+<updated>2013-12-12T13:23:28+00:00</updated>
+<published>2013-12-12T13:23:28+00:00</published>
+<id>/forums/viewtopic.php?t=2407&amp;p=12446#p12446</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2407&amp;p=12446#p12446"/>
+<title type="html"><![CDATA[MOAISim.getDeviceTime gives me 1970]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2407&amp;p=12446#p12446"><![CDATA[
+The following code should be returning the current system time formatted as YYYYMMDD<br /><br />local systemDate = os.date( &quot;%Y%m%d&quot;, MOAISim.getDeviceTime() )<br /><br />It works... but the date I'm getting is 19700104<br /><br />Am I not doing it right? I assume I'm missing something, but its 11pm and I'm nodding off  <img src="http://192.168.20.226:3000/forums/images/smilies/icon_cry.gif" alt=":cry:" title="Crying or Very Sad" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1468">kreios</a> — Thu Dec 12, 2013 1:23 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=116&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-08-30T19:34:50+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=116&amp;mode</id>
+<entry>
+<author><name><![CDATA[gobble.wa]]></name></author>
+<updated>2011-08-30T19:34:50+00:00</updated>
+<published>2011-08-30T19:34:50+00:00</published>
+<id>/forums/viewtopic.php?t=116&amp;p=507#p507</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=116&amp;p=507#p507"/>
+<title type="html"><![CDATA[android src install running xpdf/INSTALL ... strange]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=116&amp;p=507#p507"><![CDATA[
+oops, (i now think) obviously this is a path problem. sry might have posted too soon. uggh.  i think i have xpdf in before ant... not sure why it's an issue with the src build. i'll check it out.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=219">gobble.wa</a> — Tue Aug 30, 2011 7:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[gobble.wa]]></name></author>
+<updated>2011-08-30T19:23:00+00:00</updated>
+<published>2011-08-30T19:23:00+00:00</published>
+<id>/forums/viewtopic.php?t=116&amp;p=506#p506</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=116&amp;p=506#p506"/>
+<title type="html"><![CDATA[android src install running xpdf/INSTALL ... strange]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=116&amp;p=506#p506"><![CDATA[
+Hi,<br /><br /><br /><br />I'm getting odd behavior from the src build 0.6r2 / android. For some reason it's running <br />/cygdrive/c/Program Files (x86)/xpdf/install<br /><br />When it's doing this bit:<br /><br /><div style="border-top: 2px solid #ccc;padding: 10px"><pre style="font-size: 90%"><target name="build-libmoai-windows" if="isWindows"><br /><exec executable="cmd" dir="../libmoai"><br />                    <arg value="/c"/><br />                    <arg value="build-windows.bat false"/><br />                    <arg value="-p"/><br />                </exec><br />        </target><br /><br /></pre><br /></div><br />It tries to run a text file from the xpdf distribution.<br /><br /><div style="border-top: 2px solid #ccc;padding: 10px"><pre style="font-size: 90%"> [exec] Install        : libmoai.so => libs/armeabi/libmoai.so<br />     [exec] Error: Can't open display:<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 2: $'=====================r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 3: $'r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 4: The: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 5: copyright: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 5: Cog,: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 6: $'r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 7: Email:: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 8: WWW:: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 9: $'r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 10: $'r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 11: To: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 12: $'r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 13: 1.: command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 14: C:/Program: No such file or directory<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 15: $'r': command not found<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 16: syntax error near unexpected token `('<br />     [exec] /cygdrive/c/Program Files (x86)/xpdf/install: line 16: `2. Edit the xpdfrc file (as distributed, everything is commented out)<br />     [exec] 'make: *** [/cygdrive/c/moai-0.62/eclipse/libmoai/libs/armeabi/libmoai.so] Error 2<br /></pre><br /></div><br />All those errors barfed out are from the INSTALL text file for xpdf.. looking through the code to see why the heck it would try to run the INSTALL text file for xpdf. :-) hmmm<br /><br />The binary distribution works swell, no issues<br /><br />Any suggestions or pointers would be much appreciated. Thank you.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=219">gobble.wa</a> — Tue Aug 30, 2011 7:23 pm</p><hr />
+]]></content>
+</entry>
+</feed>

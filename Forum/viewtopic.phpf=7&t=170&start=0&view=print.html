@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Integrate with TexturePacker</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Integrate with TexturePacker</h2>
+		<p><a href="integrate-with-texturepacker-t170/index.html">/forums/integrate-with-texturepacker-t170/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Oct 26, 2011 12:31 am</strong></div>
+				<div class="author">by <strong>zhayupeng</strong></div>
+				<div class="content">Hi, guys
+<br />
+<br />
+<br />
+<br />Thanks for the great engine! I just noticed that in the latest release notes and wiki, we support TextPacker integration. Is there any code sample or document about how to do that? I can generate lua file from TextPacker but so far I have no clue about how to use it in moai.
+<br />
+<br />
+<br />
+<br />Thanks a lot</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Oct 26, 2011 1:18 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">It should work with the same loader used by the JSFL Flash example (in samples/flash/flash-spriteDeck). If you look at the format that TexturePacker outputs, it is very close to the format we used for JSFL, though TexturePacker also includes a table of names (I think). You may have to noodle with it a bit, but probably not much.
+<br />
+<br />Let me know how it works for you. If I have time later in the week I'll put an example together, but if you figure it out first please post here. <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Oct 26, 2011 2:06 am</strong></div>
+				<div class="author">by <strong>zhayupeng</strong></div>
+				<div class="content">patrick, thanks for the reply. Yes, the format is similar with the loader in the example. It should be straightforward to modify the code and use the file from TexturePacker. I will try it let you know if I encounter any issues.
+<br />
+<br />Thanks again! <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-laugh.gif" alt="Laugh" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Oct 27, 2011 3:34 pm</strong></div>
+				<div class="author">by <strong>paul.dubois</strong></div>
+				<div class="content">I found that the TexturePacker moai support was pretty lacking, at least as of the beta release of last week. I haven't peeked at the JSFL example; we just wrote our own utility to import from the moai-format .lua file. We ran into a couple issues.
+<br />
+<br />First, texturepacker will try to rotate textures; but the rotation isn't recorded in the output. We work around this by disabling rotation.
+<br />
+<br />Texturepacker also won't trim whitespace when using moai output. We just take the memory hit right now. I think a more reasonable approach would be to write a loader for the corona output, which is presumably more stable and debugged. I expect it won't be too bad; the hardest part will be getting the conversion from pixel offsets -> UV exactly correct.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 12:23 am</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">Hi,
+<br />
+<br />
+<br />
+<br />ok - so let's make this a better one ;-) I am no Moai expert so I am happy to take advice from here and get an improved version for you.
+<br />
+<br />
+<br />
+<br />I have some loader code which is currently located here:
+<br />
+<br /><a href="http://www.texturepacker.com/uncategorized/texturepacker-2-3-6-beta-supports-moai/" rel="nofollow" target="_blank">http://www.texturepacker.com/u.....orts-moai/</a>
+<br />
+<br />
+<br />
+<br />The rotated flag can be added easily - I'll add that with the next update - or create a beta version for the forum here. Which OS would be best for testing? I would prefer building TexturePacker for MacOS - don't' want to run a build cycle on all platforms.
+<br />
+<br />
+<br />
+<br />The bigger problem is the trimming. With trimmed sprites we will need to offset the sprite's destination position when calling setLoc. I am currently not sure how to accomplish that out of the box.
+<br />
+<br />
+<br />
+<br />If somebody wants to help me with this I would offer a free TexturePackerPro license.
+<br />
+<br />
+<br />
+<br />Cheers!
+<br />
+<br />Andreas</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 3:38 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Can you tell me more about the trimming problem? You should be able to create any kind of geometry using the uv and model space coordinates. Or am I missing something about the problem?
+<br />
+<br />Post an image if you have a moment. Will try to be of help.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 4:42 am</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">@<strong>patrick</strong>
+<br />
+<br /><img src="http://farm7.static.flickr.com/6115/6288718038_fd9554d55c.jpg" alt="Trimming" width="363" height="172" />
+<br />
+<br />After trimming you get the smaller image without all the transparent parts around it. But to place it in your scene you have to move it so that the displacement compensates for the missing pixels. I guess this should be no problem with the quads - don't know why I missed that.
+<br />
+<br />But in this case you would not have access to the original size of the sprite - e.g. for centering it. At least this should be added too.
+<br />
+<br />
+<br />
+<br />@<strong>paul.dubois</strong> Rotation is recorded. It's just not present if the sprite is not rotated. If preferred I can also <span style="color: #3366ff">add ['r'] = false</span> 
+<br />
+<br /><strong>
+<br /></strong><pre><span style="color: #3366ff">			[2] = {
+<br />				['x0'] = 0.699219,
+<br />				['y0'] = 0.238281,
+<br />				['x1'] = 0.984375,
+<br />				['y1'] = 0.4375,
+<br />				<strong>['r'] = true,</strong>
+<br />			},
+<br />			[3] = {
+<br />				['x0'] = 0.0078125,
+<br />				['y0'] = 0.337891,
+<br />				['x1'] = 0.5,
+<br />				['y1'] = 0.46875,
+<br />			},</span>
+<br /></pre><pre>
+<br /></pre><pre>
+<br /></pre></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 12:29 pm</strong></div>
+				<div class="author">by <strong>paul.dubois</strong></div>
+				<div class="content">Hi, Andreas and Patrick. Patrick, the trimming problem is mostly that the information is not passed all the way through to the .lua file. It is with the "corona" format.
+<br />
+<br />Andreas, I just realized that the rotation issue is my mistake. I didn't notice the ['r'] value; and after I did, I thought the file was missing a rotation angle. Now that I think about it, it's obvious that the rotation angle is implied.
+<br />
+<br />Is the output format documented anywhere? I couldn't figure out what the 'prims' and 'sprites' arrays were for, since I've only seen trivial information in them.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 12:35 pm</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">Orientation is always the same. Since there is no need to rotate CW or CCW as long as I use rectangles as basic format. Maybe I'll add a polygon based packing algorithm someday…
+<br />
+<br />I took the basic format from the flash example that's included in moai. 
+<br />
+<br />Here's what patrick answered when I asked him the same question:
+<br />
+<br /><blockquote>
+<br />
+<br />The sprites are runs of prims. A single sprite can be made up of
+<br />multiple prims, but instead of listing each prim inside of the sprite,
+<br />the sprite indexes into the master list of prims using a base offset
+<br />and the number of prims to draw after. In other words, the prims do
+<br />mark the relationship between quads and uvs, but will repeat that
+<br />relationship if the same quad/uv pair appears in other sprites. For
+<br />example:
+<br />
+<br />prims for sprite 1
+<br /> 1: prim 1, 1
+<br /> 2: prim 2, 2
+<br /> 3: prim 3, 3
+<br />
+<br />prims for sprite 2
+<br /> 4: prim 1, 1
+<br /> 5: prim 4, 4
+<br />
+<br />sprites
+<br /> 1: sprite 1, 3
+<br /> 2: sprite 4, 2
+<br />
+<br />So the idea is that sprite 1 draw 3 prims starting at prim 1. Sprite 2
+<br />draws 2 prims starting at prim 4. The first prim in sprite 2 repeats
+<br />the quad/uv pair of the first prim of sprite 1.
+<br />
+<br /></blockquote></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 12:41 pm</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">You can suggest another format if you want – I have no problem with that. I added it to get started – but I think it's better to have something to show and discuss that start with nothing.
+<br />
+<br />If you want to use the corona or another format I would still want to clone it and name it Moai since this makes things independent and more transparent for the user. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 28, 2011 11:32 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Hehe... I haven't looked into it, but I bet someone could write an importer for the Corona format pretty easily. I wonder where that line of thinking might lead. Hmmm...
+<br />
+<br />But yeah, philosophically we're not planning to canonize any particular table layout as an official format. If you guys wanted to trick out the format Andreas is using now and post it on the Wiki as a tools standard that would be cool. I could bring the JSFL exporter into compliance when I get back to it... or not. Might be nice to have TexturePacker support some special features, esp. since the JSFL is there for anyone to modify.
+<br />
+<br />(We'll be expanding JSFL features soon for things like nested movie clips, but I can't say I'm looking forward to it. Flash automation not exactly the most fun thing ever.)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 29, 2011 8:45 pm</strong></div>
+				<div class="author">by <strong>paul.dubois</strong></div>
+				<div class="content">Huh, I could have sworn I replied to this earlier. I have an importer for the corona format implemented and working; I'd be happy to turn it into an sdk sample.
+<br />
+<br />Andreas, about the only change I'd make is to output the texture rect in UV rather than pixels. And, I haven't been able to get texturepacker to try to rotate any of our sprites, so I can't test out the rotation code  (I might have rotated my uv rect the wrong way). I'd also be happy to take you up on that offer of a license! I don't have one for my personal workstation at home. :-D</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 29, 2011 10:58 pm</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">@paul.dubois Great ;-)
+<br />
+<br />Can you send me a mail to <a href="mailto:support@code-and-web.de" target="_blank">support@code-and-web.de</a> ?
+<br />
+<br />
+<br />
+<br />A trick to get it rotated would be to make some sprites with 100x50 px and fit them into a fixed texture of 64x512.
+<br />
+<br /><img src="http://farm7.static.flickr.com/6215/6293471261_2c6d2e059e.jpg" alt="" width="348" height="87" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Oct 30, 2011 1:10 am</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">I created a mac version with the new exporter. You can get it here:
+<br />
+<br /><a href="http://code-and-web.de/downloads/texturepacker/2.4.1a1/TexturePacker-2.4.1a1.dmg" rel="nofollow" target="_blank">http://code-and-web.de/downloa......4.1a1.dmg</a>
+<br />
+<br />I did not make an official beta from this - just in case we need some more changes.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Oct 30, 2011 5:15 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Paul - would be happy to include the Corona format loader in the next SDK release if you'd like to submit it. Don't particularly want to infuriate Ansca or their fans, but seems like some crossover is inevitable.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Oct 30, 2011 10:10 pm</strong></div>
+				<div class="author">by <strong>paul.dubois</strong></div>
+				<div class="content">Probably there will be no antagonism; rather than have moai natively support --format corona, it sounds like Andreas and I are going to work on getting the --format moai output to be a little more featureful, with sample code for loading it in.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Oct 31, 2011 6:43 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Sounds good.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 11, 2011 6:02 am</strong></div>
+				<div class="author">by <strong>gossi74</strong></div>
+				<div class="content">I updated the format to this one:
+<br />
+<br /> <pre><span style="color: #3366ff">-- This file is for use with Moai SDK
+<br />--
+<br />-- This file is automatically generated with TexturePacker (http://texturepacker.com). Do not edit
+<br />-- $TexturePacker:SmartUpdate:1af1121801ee5d4848baf1689aab0500$
+<br />--
+<br />
+<br />local SpriteSheet = {}
+<br />SpriteSheet.getSpriteSheetData = function ()
+<br />	return {
+<br />		frames = {
+<br />			{
+<br />				name = "AR_fire_01.png",
+<br />				spriteColorRect = { x = 0, y = 12, width = 260, height = 88 },
+<br />				uvRect = { u0 = 0.00390625, v0 = 0.730469, u1 = 0.175781, v1 = 0.984375 },
+<br />				spriteSourceSize = { width = 290, height = 120 },
+<br />				spriteTrimmed = true,
+<br />				textureRotated = true
+<br />			},
+<br />			{
+<br />				name = "AR_fire_02.png",
+<br />				spriteColorRect = { x = 3, y = 39, width = 218, height = 56 },
+<br />				uvRect = { u0 = 0.566406, v0 = 0.160156, u1 = 0.675781, v1 = 0.373047 },
+<br />				spriteSourceSize = { width = 290, height = 120 },
+<br />				spriteTrimmed = true,
+<br />				textureRotated = true
+<br />			}
+<br />		}
+<br />	}
+<br />end
+<br />return SpriteSheet</span>
+<br />
+<br /></pre><pre><span style="color: #000000">It is similar to the corona exporter but uses relative coordinates in the uvRect.</span></pre><pre><span style="color: #000000">Any comments welcome.</span></pre><pre><span style="color: #000000">
+<br /></span></pre><pre>Beta version is available at http://www.texturepacker.com/download</pre><pre>
+<br /></pre><pre>Cheers</pre><pre>Andreas</pre><pre>
+<br /></pre><pre><span style="color: #000000">
+<br /></span></pre></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Nov 13, 2011 3:41 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Looking good. <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Integrate with TexturePacker</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 16, 2011 2:06 am</strong></div>
+				<div class="author">by <strong>paul.dubois</strong></div>
+				<div class="content">A sample app is available on my github branch; when the next release of texturepacker gets out of beta I'll send you a pull request.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

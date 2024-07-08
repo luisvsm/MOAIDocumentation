@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=17&amp;t=2797&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-09-15T08:08:10+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=17&amp;t=2797&amp;mode</id>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-15T08:08:10+00:00</updated>
+<published>2014-09-15T08:08:10+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15311#p15311</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15311#p15311"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15311#p15311"><![CDATA[
+So far my new code for getting the touches straight from the latest MotionEvent without any regard for event order seems to work pretty well. This cannot be used for event handling but it can be used to query current touches. I will post the code but I had a crash in it probably due to some race condition with touches. So I have tried to make it thread safe now by synchronizing in Java but I have not yet played my game enough to confirm that its safe.<br /><br /><!-- m --><a class="postlink" href="https://github.com/JDaance/moai-gettouches-android">https://github.com/JDaance/moai-gettouches-android</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Sep 15, 2014 8:08 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-15T07:44:57+00:00</updated>
+<published>2014-09-15T07:44:57+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15310#p15310</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15310#p15310"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15310#p15310"><![CDATA[
+<blockquote><div><cite>Vavius wrote:</cite><br />I've experienced that too. It's Android only issue. <br />AFAIK, the reason is that android can send DOWN, MOVE and UP events all in one frame (and sometimes in wrong order - like MOVE after UP). This breaks MOAIInputMgr. I've done some monkey patching in MOAIInputMgr - it helped a bit, but problem wasn't solved completely. <br />Patrick had reworked input handling, maybe he experienced that bug too =)<br /></div></blockquote><br /><br />Thanks for the feedback! Yeah I saw Patrick was doing some stuff, maybe we will get to his code eventually <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Sep 15, 2014 7:44 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-15T07:44:16+00:00</updated>
+<published>2014-09-15T07:44:16+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15309#p15309</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15309#p15309"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15309#p15309"><![CDATA[
+<blockquote><div><cite>halfnelson wrote:</cite><br />https://github.com/moai/moai-dev/blob/1.5-development/ant/libmoai/jni/src/moai.cpp#L56<br />so android queues them up in some kind of lockingqueue waiting for the next sim.update, It looks like there is a limit to the number of events it can queue up before each update (100), and the code for dealing with going over the limit is to throw the entire queue away!?, at least that is how I read the code.<br /></div></blockquote><br /><br /><blockquote><div><cite>halfnelson wrote:</cite><br />It also looks like touch cancel might be commented out? <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/1016b53e85f73094f2b5bef65b6a15f098429b9b/ant/host-source/source/project/src/app/MoaiView.java#L96">https://github.com/moai/moai-dev/blob/1 ... w.java#L96</a><!-- m --><br /></div></blockquote><br /><br />I don't think it ever will hit 100 so no problem there. I actually implemented touch cancel for android, but it didn't make any difference in these cases. I think it's when you lock the screen and stuff. Or you app gets minimized maybe.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Sep 15, 2014 7:44 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-15T07:42:59+00:00</updated>
+<published>2014-09-15T07:42:59+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15308#p15308</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15308#p15308"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15308#p15308"><![CDATA[
+<blockquote><div><cite>naturally wrote:</cite><br />If a MOVE event comes without a DOWN event, couldn't you just react to it as if it were a DOWN event?  Since it would be a new idx value...<br /></div></blockquote><br /><br />Yeah thats what I do but the stuck stuff is the real problem<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Mon Sep 15, 2014 7:42 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Vavius]]></name></author>
+<updated>2014-09-12T05:23:31+00:00</updated>
+<published>2014-09-12T05:23:31+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15293#p15293</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15293#p15293"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15293#p15293"><![CDATA[
+I've experienced that too. It's Android only issue. <br />AFAIK, the reason is that android can send DOWN, MOVE and UP events all in one frame (and sometimes in wrong order - like MOVE after UP). This breaks MOAIInputMgr. I've done some monkey patching in MOAIInputMgr - it helped a bit, but problem wasn't solved completely. <br />Patrick had reworked input handling, maybe he experienced that bug too =)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1427">Vavius</a> — Fri Sep 12, 2014 5:23 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-09-12T01:38:12+00:00</updated>
+<published>2014-09-12T01:38:12+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15292#p15292</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15292#p15292"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15292#p15292"><![CDATA[
+It also looks like touch cancel might be commented out? <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/1016b53e85f73094f2b5bef65b6a15f098429b9b/ant/host-source/source/project/src/app/MoaiView.java#L96">https://github.com/moai/moai-dev/blob/1 ... w.java#L96</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Fri Sep 12, 2014 1:38 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-09-12T01:36:04+00:00</updated>
+<published>2014-09-12T01:36:04+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15291#p15291</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15291#p15291"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15291#p15291"><![CDATA[
+<!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/1.5-development/ant/libmoai/jni/src/moai.cpp#L56">https://github.com/moai/moai-dev/blob/1 ... ai.cpp#L56</a><!-- m --><br />so android queues them up in some kind of lockingqueue waiting for the next sim.update, It looks like there is a limit to the number of events it can queue up before each update (100), and the code for dealing with going over the limit is to throw the entire queue away!?, at least that is how I read the code.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Fri Sep 12, 2014 1:36 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2014-09-12T00:45:47+00:00</updated>
+<published>2014-09-12T00:45:47+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15290#p15290</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15290#p15290"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15290#p15290"><![CDATA[
+If a MOVE event comes without a DOWN event, couldn't you just react to it as if it were a DOWN event?  Since it would be a new idx value...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Fri Sep 12, 2014 12:45 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-11T05:41:57+00:00</updated>
+<published>2014-09-11T05:41:57+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15282#p15282</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15282#p15282"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15282#p15282"><![CDATA[
+<blockquote><div><cite>naturally wrote:</cite><br />I'm inclined to think it's an Android glitch that went away after an upgrade.  <br /><br />What version of Android do you get this problem?<br /></div></blockquote><br /><br />Unfortunately its a very new version! 4.4 something.<br /><br />But it can also be device specific I guess, Google Nexus 7. But I'm certain that my lua code sometimes gets a TOUCH_MOVE event for a pointer id that did not yet receive a TOUCH_DOWN event. This has happened on many Android devices. So something isn't perfect with the touch handling on Android. Still not sure if this happens on iOS!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Thu Sep 11, 2014 5:41 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2014-09-10T22:44:33+00:00</updated>
+<published>2014-09-10T22:44:33+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15279#p15279</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15279#p15279"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15279#p15279"><![CDATA[
+I'm inclined to think it's an Android glitch that went away after an upgrade.  <br /><br />What version of Android do you get this problem?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Wed Sep 10, 2014 10:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-10T19:46:20+00:00</updated>
+<published>2014-09-10T19:46:20+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15278#p15278</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15278#p15278"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15278#p15278"><![CDATA[
+Yeah I cant rule out that its my own code thats causing it <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> we will see what happens, gotta be patient with these rare occuring ones<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Wed Sep 10, 2014 7:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2014-09-10T16:58:15+00:00</updated>
+<published>2014-09-10T16:58:15+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15277#p15277</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15277#p15277"/>
+<title type="html"><![CDATA[Re: Anyone else had problems with &quot;stuck&quot; touches on Android]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15277#p15277"><![CDATA[
+I have experienced this too... but like you said, it's really rare, and never caused a major problem, and I've never been able to reproduce it consistently.  It's been a while since I look into it, but I think my solution was to clear all active inputs when user opened a menu, giving them a way to get out of it if they were stuck.  But it's been a lot of months since I've encountered this, so I figured I must have fixed my own faulty code.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Wed Sep 10, 2014 4:58 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-09-10T15:39:02+00:00</updated>
+<published>2014-09-10T15:39:02+00:00</published>
+<id>/forums/viewtopic.php?t=2797&amp;p=15276#p15276</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2797&amp;p=15276#p15276"/>
+<title type="html"><![CDATA[Anyone else had problems with &quot;stuck&quot; touches on Android?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2797&amp;p=15276#p15276"><![CDATA[
+Very rarely I get a touch in my game while playing on my nexus pad that just gets stuck (I have some virtual buttons that you can hold down) until I touch somewhere again and then it releases. Anyone experienced anything similar? I have yet to see it on any of my iOS devices.<br /><br />I have also noticed I sometimes get a MOVE event for a pointer ID without having a corresponding DOWN event for that pointer before - but this is not what causes the problem I believe. Also something I have yet to see on any iOS device.<br /><br />I have looked through the Android code down through to the touch sensor and have not been able to spot anything fishy, it all looks very good.<br /><br />Anyway I have now made an alternative implementation bypassing all inputmanager/touchsensor stuff to just get to the location of the current touches. Basicly it just doesn't care about event codes or anything and just gets the pointer locations from the latest MotionEvent. If the problem disappears I'll make sure to post about the workaround.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Wed Sep 10, 2014 3:39 pm</p><hr />
+]]></content>
+</entry>
+</feed>

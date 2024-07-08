@@ -1,0 +1,16 @@
+<map id="MOAITransform" name="MOAITransform">
+<area shape="rect" id="node6" href="$class_m_o_a_i_camera.html" title="Perspective or orthographic camera. " alt="" coords="896,5,995,32"/>
+<area shape="rect" id="node7" href="$class_m_o_a_i_particle_emitter.html" title="Particle emitter. " alt="" coords="877,56,1013,83"/>
+<area shape="rect" id="node10" href="$class_m_o_a_i_particle_force.html" title="Particle force. " alt="" coords="882,107,1009,133"/>
+<area shape="rect" id="node11" href="$class_m_o_a_i_partition_hull.html" title="Base class for props. " alt="" coords="885,157,1006,184"/>
+<area shape="rect" id="node14" href="$class_m_o_a_i_pin_transform.html" title="2D transform for connecting transforms across layers. Useful for HUD overlay items and map pins..." alt="" coords="880,208,1011,235"/>
+<area shape="rect" id="node15" href="$class_m_o_a_i_scissor_rect.html" title="Class for clipping props when drawing. " alt="" coords="886,259,1005,285"/>
+<area shape="rect" id="node2" href="$class_m_o_a_i_transform_base.html" title="Base class for 2D affine transforms. " alt="" coords="528,132,668,159"/>
+<area shape="rect" id="node3" href="$class_m_o_a_i_node.html" title="Base for all attribute bearing Moai objects and dependency graph nodes. " alt="" coords="397,132,480,159"/>
+<area shape="rect" id="node4" href="$class_m_o_a_i_instance_event_source.html" title="Derivation of MOAIEventSource for non&#45;global Lua objects. " alt="" coords="177,132,349,159"/>
+<area shape="rect" id="node5" href="$class_m_o_a_i_event_source.html" title="Base class for all Lua&#45;bound Moai objects that emit events and have an event table. " alt="" coords="5,132,129,159"/>
+<area shape="rect" id="node8" href="$class_m_o_a_i_particle_distance_emitter.html" title="Particle emitter. " alt="" coords="1061,31,1245,57"/>
+<area shape="rect" id="node9" href="$class_m_o_a_i_particle_timed_emitter.html" title="Particle emitter. " alt="" coords="1067,81,1239,108"/>
+<area shape="rect" id="node12" href="$class_m_o_a_i_graphics_prop_base.html" title="Base class for graphics props. " alt="" coords="1076,157,1231,184"/>
+<area shape="rect" id="node13" href="$class_m_o_a_i_text_label.html" title="MOAITextLabel" alt="" coords="1293,157,1401,184"/>
+</map>

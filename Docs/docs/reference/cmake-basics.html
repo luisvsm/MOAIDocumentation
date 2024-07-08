@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Crash Course on CMAKE</title>
+ 
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.css" rel="stylesheet">
+    
+    
+    
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link href="../../css/syntax.css" rel="stylesheet">
+    <link href="../../css/styles.css" rel="stylesheet">
+    <link href="../../css/doc-style.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    
+  </head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+            <a class="navbar-brand" href="../../index.html">MoaiForge - Community Docs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+           </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+    
+    <div class="container">
+<div class="row-fluid">
+   
+        <div id="navigation" class="col-md-3">
+            
+<ul id="nav-menu" class="nav nav-list">
+    
+    
+  
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/reference/cmake-basics.md does NOT contain pathseg /basics/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Moai Basics</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-two.html">Moai SDK Basics Part Two</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../basics/moai-sdk-basics-part-one.html">Moai SDK Basics Part One</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/reference/cmake-basics.md does NOT contain pathseg /sdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">The Moai SDK</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/what-is-moai-sdk.html">What is Moai SDK?</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-sdk-desktop-basics.html">Moai SDK Desktop Basics</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/the-moai-runtime.html">The Moai Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-hosts.html">Moai Hosts</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/structuring-your-moai-game-in-lua.html">Structuring Your Moai Game in Lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/moai-project-setup.html">Moai Project Setup</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/extending-moai-sdk.html">Extending Moai SDK</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/protecting-your-lua-files.html">Protecting Your Lua Files</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../sdk/tools-that-work-with-moai.html">Tools that work with Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/reference/cmake-basics.md does NOT contain pathseg /buildsdk/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Build the SDK from Source</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/introduction.html">Introduction</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/installing-cmake.html">Installing CMake</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-libraries-for-android-ndk.html">Building Moai Libraries For Android</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-xcode.html">Building Moai From Source With Xcode</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-visual-studio.html">Building Moai From Source With Visual Studio</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../buildsdk/building-moai-from-source-with-scons.html">Building Moai From Source With Scons</a></li>
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/reference/cmake-basics.md does NOT contain pathseg /building/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Building Moai Games</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/setup-landscape-in-moai-games-for-ios-devices.html">Setup landscape in Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/cross-platform-development-with-moai.html">Cross Platform Development With Moai</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-ios-devices.html">Building Moai Games For iOS Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-google-chrome.html">Building Moai Games for Google Chrome</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../building/building-moai-games-for-android-devices.html">Building Moai Games For Android Devices</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/reference/cmake-basics.md contains pathseg /reference/ -->
+        <li class="parent collapsibleListClosed">
+        
+          <div class="subtree-name">Reference</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="moai-sdk-samples-guide.html">Moai SDK Samples Guide</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li class="active" ><a href="cmake-basics.html">Crash Course on CMAKE</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="code-snips.html">Code snips</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="how-moai's-c-to-lua-binding-works.html">How Moai's C++ to Lua Binding Works</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="understanding-decks-and-props.html">Understanding Decks and Props</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="using-moaianim.html">Using MOAIAnim</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="wrapping-modes.html">Wrapping modes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- DEBUG page relative path _docs/reference/cmake-basics.md does NOT contain pathseg /tutorial/ -->
+        <li class="parent collapsibleListOpen"> 
+        
+          <div class="subtree-name">Tutorials</div>
+        
+        
+        <ul class="nav nav-list">
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/your-first-game-rocket-lobster.html">Your First Game : Rocket Lobster</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/using-particlehelper.html">Using ParticleHelper</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/textboxes.html">Textboxes</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/your-first-cloud-game-wolf-clicker.html">Your First Cloud Game : Wolf Clicker</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/setup-moai-sdk-on-windows-using-sublime2.html">Setup Moai SDK on Windows using Sublime2</a></li>
+                
+            
+        
+             
+             
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/basic-prop-animations.html">Basic Prop Animations</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/bin2c-lua.html">Bin2c.lua</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/binding-c-apis-to-moai-using-moailuaobject.html">Binding C++ APIs to Moai using MOAILuaObject</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/build-on-steam-runtime.html">Building Moai with Steam Runtime</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/concatenate-your-lua-source-tree.html">Concatenate your Lua source tree</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/density-friction-and-restitution.html">Density, Friction And Restitution</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+                  <li  ><a href="../tutorial/getting-started-with-box2d.html">Getting Started With Box2D</a></li>
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+             
+             
+            
+            
+                
+            
+        
+        </ul>
+      </li>
+    
+
+</ul>
+
+<script src="../../js/collapsiblelists.min.js"> </script>
+<script>
+$(function() {
+CollapsibleLists.applyTo(document.getElementById('nav-menu'));
+});
+
+</script>
+        </div>
+
+        <div id="content" class="col-md-9">
+            <a href="https://github.com/moaiforge/moai-sdk/tree/gh-pages/_docs/reference/cmake-basics.md" class="improve-docs btn"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+            <h1>Crash Course on CMAKE</h1>
+            
+               <div class="panel panel-danger">
+  <div class="panel-heading">Warning: Out of Date</div>
+  <div class="panel-body">
+    <p>
+    This documentation is obsolete or out of date and requires community help to clean it up.
+  </p>
+    <a href="https://github.com/moaiforge/moai-sdk/tree/gh-pages/_docs/reference/cmake-basics.md" class="btn btn-primary"><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+  </div>
+</div>
+            
+            
+            <h1>Moai&#39;s CMake build system</h1>
+
+<h2>Crash Course on CMAKE</h2>
+
+<h4>The problem</h4>
+
+<p>What do vcxproj, xcodeproj, Makefile all have in common? They all tell the build system which files combine with which options to produce which outputs.</p>
+
+<p>What they don&#39;t have in common is syntax, or portability or easy diff merges in a distributed development environment. If you have a project that builds on systems using all of the above formats, then every time you need to add a file as a dependency of an output, you will need to:
+ * boot up windows and visual studio (once for each version you support)
+ * boot up a macOSX box and xcode, (you have one of them too right?)
+ * fire up vim and edit a makefile (you know that syntax too of course)</p>
+
+<p>Wouldn&#39;t it be good if we could just specify the files and settings needed for each output and have it generate a makefile, xcodeproj and a vcxproj file for each major version of visual studio?</p>
+
+<h4>A Possible Solution</h4>
+
+<p><a href="http://www.cmake.org/">CMake</a> is one tool that claims to do this for us and prior to MOAI 1.5, it was already in use for the linux and blackberry builds, so it seemed like a logical choice to use CMake as a way to keep the project files in sync for other platforms.</p>
+
+<h4>The Basics</h4>
+
+<p>The CMake build system is a set of <code>CMakeList.txt</code> files in the folders under <code>cmake/</code> in the moai sdk. Each file defines:
+ * a project
+ * the files that make up that project
+ * compiler settings for that project and any sub projects
+ * variables for that project and any sub projects
+ * the outputs of the project (executable, static lib or shared lib)</p>
+
+<p>it uses these files to generate the correct makefiles, projects etc required to produce the specified outputs. CMake is a makefile/project generator the building of the final moai executable is still done by make, msbuild, xcodebuild etc.</p>
+
+<h4>A CMakeLists.txt File</h4>
+
+<p>Here is an example from the build system:</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">cmake_minimum_required ( VERSION 2.8.5 )
+
+project ( contrib )
+
+set ( CMAKE_CURRENT_SOURCE_DIR "${MOAI_ROOT}/3rdparty/contrib/" )
+
+set ( CONTRIB_INCLUDES
+  "${MOAI_ROOT}/3rdparty/"
+)
+
+set ( CONTRIB_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/utf8.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/whirlpool.c
+)
+
+include_directories(${CONTRIB_INCLUDES})
+add_library( contrib STATIC ${CONTRIB_SOURCES})
+target_include_directories (contrib PUBLIC ${CONTRIB_INCLUDES})
+set_target_properties( contrib PROPERTIES FOLDER Third-Party )
+</code></pre></div>
+<p>Not too scary, lets break it down:</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">cmake_minimum_required ( VERSION 2.8.5 )
+</code></pre></div>
+<p>this line tells us the minimum required version of cmake needed to parse this file.</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">project ( contrib )
+</code></pre></div>
+<p>this acts to group the files, settings and targets (outputs) together. In our build system it is usually named after the source folder it represents, in this case <code>contrib</code>.</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">set ( CMAKE_CURRENT_SOURCE_DIR "${MOAI_ROOT}/3rdparty/contrib/" )
+</code></pre></div>
+<p>this sets up a variable called CMAKE<em>CURRENT</em>SOURCE_DIR for later use. You have probably have noticed that all cmake commands are like function calls and follow the <code>&lt;directive&gt; ( &lt;param&gt; [&lt;param&gt;*] )</code> format. The <code>set</code> directive updates or creates a variable with the <code>&lt;param&gt;</code> as the value.</p>
+
+<p>the <code>${MOAI_ROOT}</code> is a variable that is set in a parent project <em>(the root project in fact)</em> and contains the path to our checked out moai sdk. The variables name is MOAI<em>ROOT and we wrap it in <code>${}</code> so that it will output its value. `${MOAI</em>ROOT}/3rdparty/contrib/<code>expands to</code>/home/dave/moai-sdk/3rdparty/contrib` on my box.</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">set ( CONTRIB_INCLUDES
+  "${MOAI_ROOT}/3rdparty/"
+)
+
+set ( CONTRIB_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/utf8.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/whirlpool.c
+)
+</code></pre></div>
+<p>this sets the <code>CONTRIBS_INCLUDES</code> variable to the string <code>${MOAI_ROOT}/3rdparty/</code>. and sets up the <code>CONTRIB_SOURCES</code> variable with our source files. Note that cmake separates parameters by spaces, and will grab multiple parameters like the source files above and treat them like a list.</p>
+
+<p>Why set the variables (that&#39;s all they are, nothing special about them), well most projects in moai use the pattern
+<code>CMake
+set (xxxx_INCLUDES &lt;include dirs&gt;)
+set (xxxx_SOURCES &lt;source files&gt;)
+</code>
+to collect all of the source files and all the include directories into a couple of variables to make the part where we define the output/target cleaner and easier to read.</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">include_directories(${CONTRIB_INCLUDES})
+</code></pre></div>
+<p>Adds the directories in our <code>CONTRIB_INCLUDES</code> variable to the list of search paths for header files (-I for gcc)</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">add_library( contrib STATIC ${CONTRIB_SOURCES})
+</code></pre></div>
+<p>Tells cmake to generate a static library from files listed in the <code>CONTRIB_SOURCES</code> variable. It will compile all source files and generate a <code>libcontrib.a</code> file (CMake shoves the lib in front by default). </p>
+
+<p>It is important to note here that the first parameter is the name of our target, we use this and not the project name (which is just for grouping settings) when we need to link to this library/target or update its settings.</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">target_include_directories (contrib PUBLIC ${CONTRIB_INCLUDES})
+</code></pre></div>
+<p>This is a handy feature that says: any other targets that need to link with contrib, should have the directories in the <code>CONTRIB_INCLUDES</code> variable added to their search path. This means that if my code relies on libcontrib.a and has a header file located in deep in contrib&#39;s source directory, the header path for my project will be updated to include that path just by me specifying the dependency on contrib.</p>
+
+<p>So anyone linking against libcontrib gets <code>CONTRIB_INCLUDES</code> header paths too.</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">set_target_properties( contrib PROPERTIES FOLDER Third-Party )
+</code></pre></div>
+<p>This is not essential to the building of moai, but it helps the generated IDE projects (if used) to be more organised. It will place the contrib target inside a solution folder called Third-Party.</p>
+
+<p>And thats it!.</p>
+
+<p>We have everything cmake needs to generate a makefile, vcxproj, xcodeproj, CDT, etc for the contrib project.</p>
+
+<h4>Using the CMakeLists File</h4>
+
+<p>Is it usable like this? SURE!</p>
+
+<p>if you go to the folder where this file is located and type 
+<code>bash
+cmake -DMOAI_ROOT=/home/david/moai-dev .
+</code></p>
+
+<p>It will detect which build environment is best for your system (xcode, makefile or visualstudio) and generate a project to build contrib.a which you can then open in the ide or build using make</p>
+
+<p>the <code>-DMOAI_ROOT=/home/david/moai-dev</code> is a way of defining a variable on the commandline for use in the script. It is the same as using <code>set ( MOAI_ROOT /home/david/moai-dev)</code> in the <code>CMakeLists.txt</code>. We need it because: 
+<code>CMake
+set ( CMAKE_CURRENT_SOURCE_DIR &quot;${MOAI_ROOT}/3rdparty/contrib/&quot; )
+</code>
+expects it to exist so it can find our source.</p>
+
+<p><strong>What about linking to it from another CMakeLists.txt?</strong></p>
+
+<p>Easy! First CMake will need to know about the target. This is done by including the directory in which the CMakeLists.txt file is located, into your script. For example, if we were a <code>CMakeLists.txt</code> in <code>/</code> and contrib was located in <code>/contrib</code> then we could:</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">   add_subdirectory(contrib)
+</code></pre></div>
+<p>This would add contrib to the list of project files generated, <strong>but</strong> would <em>not</em> define a relationship or dependency to our current target. To do that we need another command:</p>
+<div class="highlight"><pre><code class="language-CMake" data-lang="CMake">target_link_libraries(my_executable contrib)
+</code></pre></div>
+<p>This will make sure <code>contrib</code> is built before <code>my_executable</code> and then included in the linking phase of my<em>executable. It will also ensure that the c files defined for my</em>executable have the path to the contrib headers included in their search paths.</p>
+
+<h4>What about settings?</h4>
+
+<p>The other core feature of CMake that is in heavy use throughout the moai project is the <code>CMAKE_C_FLAGS</code> and <code>CMAKE_CXX_FLAGS</code> variables. These are just normal variables except that their contents will be added after the compiler command so that:
+<code>CMake
+set (CMAKE_C_FLAGS &quot;-m32&quot;)
+</code>
+when compiled for linux, would generate makefiles for this project (and all sub projects included via add_subdirectory) which compiled with the commandline <code>gcc -m32</code>.</p>
+
+<p>If you want to add to the list of flags in a sub project for example, you would:
+<code>CMake
+set (CMAKE_C_FLAGS &quot;${CMAKE_C_FLAGS} -DAnotherSetting=1&quot;)
+</code>
+this would generate the compiler command <code>gcc -m32 -DAnotherSetting=1</code> for the sub project, but keep in mind that it only takes effect for this project and sub projects, the parent project would still just generate <code>gcc -m32</code></p>
+
+<h4>How it applies to MOAI</h4>
+
+<p>The whole MOAI build system is built of these simple cmake commands. The <code>bin/build-linux-sdl.sh</code> just calls <code>cmake</code> with a bunch of variable definitions and points to the <code>CMakeLists.txt</code> file under <code>/cmake</code> which slurps up CMakeLists for each moai module and 3rdparty library using a bunch of <code>add_subdirectory()</code> commands and joins them all together with their dependencies using <code>target_link_libraries()</code></p>
+
+<p>Libraries and source files are included or excluded as dependancies based on the supplied command line variables such as <code>-DMOAI_UNTZ</code> and C defines are added to the command lines using <code>CMAKE_C_FLAGS</code> and its CPP equiv <code>CMAKE_CXX_FLAGS</code></p>
+
+<p>CMake has conditional functions that execute one set of definitions or another depending on the result which helps with handling platform differences eg (from the sdl host):
+```CMake
+if ( BUILD<em>WINDOWS )
+  target</em>link<em>libraries ( moai 
+    SDL2-static
+    ${OPENGL</em>LIBRARIES}
+    winmm
+  )
+endif (BUILD_WINDOWS)</p>
+
+<p>if ( BUILD<em>LINUX )
+  target</em>link<em>libraries ( moai 
+    pthread 
+    rt
+  )
+endif ( BUILD</em>LINUX )
+```</p>
+
+<p>which links the moai executable target against different libraries depending on platform (in this case sdl and wimm for windows and pthread and rt for linux). <code>BUILD_LINUX</code> and <code>BUILD_WINDOWS</code> are just variables we have included on the cmake command line in our build-xxx.sh files  <code>-DBUILD_LINUX=TRUE</code></p>
+
+<p>The CMakeLists files for moai are laid out in a folder structure that loosely follows the structure of the src. If you were to add a new third party library to moai called <code>libmoney</code> you would put the src files in <code>3rdParty/money</code> and create a <code>CMakeLists.txt</code> file under <code>/cmake/third-party/money</code>. You would add a <code>add_subdirectory(money)</code> call in the <code>CMakeLists.txt</code> located in <code>/cmake/third-party</code> and make sure to link it to the target you want by adding it to a <code>target_link_libraries(xxxx money)</code> call.</p>
+
+<h4>Go Forth and CMake Things</h4>
+
+<p>This was only a breif introduction, but should be enough to give you a general idea of how it all fits together and allow you to read and get the gist of the <code>CMakeLists.txt</code> files in the moai <code>cmake</code> folder. </p>
+
+<p>There is plenty in there to copy and paste from so when in doubt, find a similar library or use case and copy that.</p>
+
+<p>Further cmake reading can be found at:  http://www.cmake.org/cmake/help/v2.8.12/cmake.html</p>
+
+<p>where you should be able to find out what any of the unexplained commands in the cmake files do.</p>
+
+        </div>
+               
+</div>
+</div>
+
+
+    <!-- SUB FOOTER-->
+   <!-- <div class="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <p class="text-center"><a href="http://getmoai.com/marketing/made-with-moai.html">License / Attribution</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/tools-partners.html">Useful Tools</a></p>
+          </div>
+          <div class="col-sm-4">
+            <p class="text-center"><a class="text-center" href="http://getmoai.com/partner-services.html">Partner Services</a></p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!-- /SUB FOOTER-->
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+       
+        <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; David Pershouse 2024</p>
+            </div>
+        </div>
+    </footer>
+
+      </div>
+    </footer>
+
+      <script src="../../js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

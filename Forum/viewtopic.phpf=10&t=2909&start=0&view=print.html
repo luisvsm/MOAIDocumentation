@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Possible Memory Problem with Pathfinder?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Possible Memory Problem with Pathfinder?</h2>
+		<p><a href="possible-memory-problem-with-pathfinder-t2909/index.html">/forums/possible-memory-problem-with-pathfinder-t2909/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Possible Memory Problem with Pathfinder?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 20, 2014 11:03 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Just want to share something I've had a problem with recently.<br /><br />If the pathfinder can't find a solution on a large search space (ex: destination is on unreachable tile), then not only does the sim slow down drastically (to be expected) but the sim subsequently slows down permantenly and never recovers until GC is run (on my Android tablet, desktop is fine).<br /><br />I solved this myself by cancelling searches that are unreachable tiles, but thought I'd post this anyways for discussion.<br /><br /> <img src="http://192.168.20.226:3000/forums/images/smilies/icon_arrow.gif" alt=":arrow:" title="Arrow" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Possible Memory Problem with Pathfinder?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 21, 2014 2:27 am</strong></div>
+				<div class="author">by <strong>Taroven</strong></div>
+				<div class="content">Seems to me that there are a few issues with pathfinding besides this, based on the current back-and-forth in the Game Dev section [1].<br /><br />Perhaps a GC pass should be forced in (moai-sim/MOAIPathFinder.cpp) MOAIPathFinder::_findPath as a (hopefully temporary) workaround?<br /><br />[1] <a href="moaipathfinder-not-giving-shortest-path-t2065/index.html" class="postlink">/forums/moaipathfinder-not-giving-shortest-path-t2065/</a></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Possible Memory Problem with Pathfinder?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 21, 2014 6:02 am</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Pathfinding is working well for me, although I have hacked it a bit and commented out some of the features I didn't need, hopefully for a speed boost.  I'd recommend considering integrating a third-party C/C++ pathfinder, since they are bound to be faster and with more features.<br /><br />I would hope that GC doesn't have to be forced for this, since it would kill sim speed running it frequently.  But you can always force it after if you want, maybe if the path size returned is quite large?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Possible Memory Problem with Pathfinder?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Mar 27, 2015 9:06 am</strong></div>
+				<div class="author">by <strong>amity soft</strong></div>
+				<div class="content">Hi Friends,<br />I am new to this forum, happy to join here.<br />Thanks for your information.  <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Possible Memory Problem with Pathfinder?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jul 03, 2015 4:06 pm</strong></div>
+				<div class="author">by <strong>RurouniGPL</strong></div>
+				<div class="content"><blockquote><div><cite>naturally wrote:</cite>Pathfinding is working well for me, although I have hacked it a bit and commented out some of the features I didn't need, hopefully for a speed boost.  I'd recommend considering integrating a third-party C/C++ pathfinder, since they are bound to be faster and with more features.<br /><br />I would hope that GC doesn't have to be forced for this, since it would kill sim speed running it frequently.  But you can always force it after if you want, maybe if the path size returned is quite large?</div></blockquote><br /><br />Can you share your changes? I'm having troubles with the default path finding (it isn't calculating the shortest path with diagonals).<br /><br />Thanks!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Possible Memory Problem with Pathfinder?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Jul 04, 2015 1:35 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Check here for diagonal solution: <!-- l --><a class="postlink-local" href="moaipathfinder-not-giving-shortest-path-t2065/index.html%3Fhilit=diagonal.html#p14070">moaipathfinder-not-giving-shortest-path-t2065/?hilit=diagonal#p14070</a><!-- l --><br /><br />My changes are simply commenting out all the features I don't use, like the case statements for heuristics.  The other changes are specific to my map tiles so wouldn't be of use outside to anyone.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

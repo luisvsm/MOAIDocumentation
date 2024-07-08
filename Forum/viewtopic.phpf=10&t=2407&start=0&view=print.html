@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - MOAISim.getDeviceTime gives me 1970</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>MOAISim.getDeviceTime gives me 1970</h2>
+		<p><a href="moaisim-getdevicetime-gives-me-1970-t2407/index.html">/forums/moaisim-getdevicetime-gives-me-1970-t2407/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 1:23 pm</strong></div>
+				<div class="author">by <strong>kreios</strong></div>
+				<div class="content">The following code should be returning the current system time formatted as YYYYMMDD<br /><br />local systemDate = os.date( &quot;%Y%m%d&quot;, MOAISim.getDeviceTime() )<br /><br />It works... but the date I'm getting is 19700104<br /><br />Am I not doing it right? I assume I'm missing something, but its 11pm and I'm nodding off  <img src="http://192.168.20.226:3000/forums/images/smilies/icon_cry.gif" alt=":cry:" title="Crying or Very Sad" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 3:17 pm</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">Funny thing, I'm getting 19700101...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 3:19 pm</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">Ok, this function definitely doesn't work, at least not on OSX where I've just tried it.<br />If I try this:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=10&amp;t=2407&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> systemDate <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span> <span style="color: #ff6666;">&quot;*t&quot;</span><span style="color: #66cc66;">,</span> MOAISim<span style="color: #66cc66;">.</span>getDeviceTime<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><br />I'm getting this values in the table:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=10&amp;t=2407&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;hour : <span style="">4</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;min : <span style="">41</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;wday : <span style="">5</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;day : <span style="">1</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;month : <span style="">1</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;year : <span style="">1970</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;sec : <span style="">8</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;yday : <span style="">1</span> &nbsp; &nbsp;&lt;number&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">. &nbsp;isdst : false &nbsp; &nbsp;&lt;boolean&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />None of the above is correct.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 6:50 pm</strong></div>
+				<div class="author">by <strong>kreios</strong></div>
+				<div class="content">Is there currently any way that works that will allow me to get the current system date? Or am I going to need to roll up my sleeves and dig into the code?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 7:12 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />That's hilarious, I have never noticed but I export screen shots with this date function.<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=10&amp;t=2407&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">time</span> <span style="color: #66cc66;">=</span> MOAISim<span style="color: #66cc66;">.</span>getDeviceTime<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">date</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;%Y_%m_%d_%H_%M_%S&quot;</span><span style="color: #66cc66;">,</span><span style="color: #0000aa;">time</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> fileName <span style="color: #66cc66;">=</span> system<span style="color: #66cc66;">&#91;</span><span style="color: #ff6666;">'useDir'</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot;//deaddark//app_screenshots//&quot;</span><span style="color: #66cc66;">..</span><span style="color: #0000aa;">date</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />And the dates are wrong, I have a folder full of of files starting at &quot;1969_10_31_20_40_43.png&quot;</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 7:17 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">Try<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=10&amp;t=2407&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; dd <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">'%Y%m%d'</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">'date'</span><span style="color: #66cc66;">,</span>dd<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--or</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp;dd <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp;<span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">'date'</span><span style="color: #66cc66;">,</span>dd<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--time</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000aa;">time</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;*t&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #0000aa;">table.concat</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#123;</span><span style="color: #0000aa;">time</span><span style="color: #66cc66;">.</span>hour<span style="color: #66cc66;">,</span> <span style="color: #0000aa;">time</span><span style="color: #66cc66;">.</span><span style="color: #0000aa;">min</span><span style="color: #66cc66;">,</span> <span style="color: #0000aa;">time</span><span style="color: #66cc66;">.</span>sec<span style="color: #66cc66;">&#125;</span><span style="color: #66cc66;">,</span> <span style="color: #ff6666;">&quot;:&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--date &amp; time</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;<span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">time</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.time</span><span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #0000aa;">date</span> <span style="color: #66cc66;">=</span> <span style="color: #0000aa;">os.date</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;%Y_%m_%d_%H_%M_%S&quot;</span><span style="color: #66cc66;">,</span><span style="color: #0000aa;">time</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;<span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #0000aa;">date</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />these give me the correct date &amp; time.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 7:27 pm</strong></div>
+				<div class="author">by <strong>kreios</strong></div>
+				<div class="content">You're right! <br />Confirmed working on OSX and iOS<br /><br />So I wonder why the API for MOAISim.getDeviceTime says this:<br />&quot;Gets the raw device clock. This is a replacement for Lua's os.time ().&quot;</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAISim.getDeviceTime gives me 1970</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Dec 12, 2013 7:32 pm</strong></div>
+				<div class="author">by <strong>kreios</strong></div>
+				<div class="content">FYI, the source of the bug appears to be in the ZLDeviceTime::GetTimeInSeconds () function (in src/zl-util/ZLDeviceTime_apple.cpp), but the code actually looks like it should work</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

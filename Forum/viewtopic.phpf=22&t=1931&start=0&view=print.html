@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - About box2d and multiresolution game</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>About box2d and multiresolution game</h2>
+		<p><a href="about-box2d-and-multiresolution-game-t1931/index.html">/forums/about-box2d-and-multiresolution-game-t1931/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>About box2d and multiresolution game</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jul 09, 2013 4:31 am</strong></div>
+				<div class="author">by <strong>npcduy</strong></div>
+				<div class="content">Hi everyone,<br /><br />I am pretty new to box2d and MOAI. The problem I am facing is the difference in physics behavior of different devices. I spend 2 hours google search, lurk around here, but still no luck. So I decided to make this post.<br /><br />I think the core of this problem is the density of an object. <br />- Higher resolution screen means bigger sprite for that screen. (For example, a 100x100 object on iPad 1 would be a 200x200 object on iPad 3). Bigger sprite means bigger collision polygon (otherwise the collision will go haywire). Bigger collision polygon means bigger mass, because the density of an object remains the same. This is where it go wrong. Physic behavior is  different because the mass of an object is different across different devices.<br /><br />What I tried to do:<br />- How about reduce the density by half when running on iPad3 ? Its close, but not even nearly the same. (I know it is nearly impossible to have exact same physics behavior, it is still cannot be accepted). Not recommended by the box2d guys.<br /><br />- How about double the force in setLinearImpulse ? The same result above. Not recommended by the box2d guys.<br /><br />- The mass is determined by density and the area of the collision polygon, if we changed neither of them, things go wrong. How about overriding the mass using setMassData function, without setting a density ? Same mass, same force -&gt; profit. BUT, the object wont rotate is this way. YES, it wont rotate unless you setDensity for it. But setDensity will cause (please look above). Here is the body creation code:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=22&amp;t=1931&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #aa9900; font-weight: bold;">local</span> body <span style="color: #66cc66;">=</span> world<span style="color: #66cc66;">:</span>addBody<span style="color: #66cc66;">&#40;</span> MOAIBox2DBody<span style="color: #66cc66;">.</span>DYNAMIC <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #aa9900; font-weight: bold;">local</span> fixture <span style="color: #66cc66;">=</span> body<span style="color: #66cc66;">:</span>addCircle<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">,</span> <span style="color: #cc66cc;">15</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">--fixture:setDensity(1) -- uncomment this, and the body rotates, comment it, NO </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">--body:resetMassData()</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; fixture<span style="color: #66cc66;">:</span>setFriction<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; fixture<span style="color: #66cc66;">:</span>setRestitution<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; body<span style="color: #66cc66;">:</span>setFixedRotation<span style="color: #66cc66;">&#40;</span><span style="color: #aa9900;">false</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; body<span style="color: #66cc66;">:</span>setMassData<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /> <br />On my iPad, I set the setUnitsToMeters to 1/128, that means the whole iPad screen is 8 meters to 6 meters (landscape orientation)<br />And on the iPad 3, the setUnitsToMeters is 1/256, still the same 8 meters to 6 meters. <br />Gravity is (0, 20) for both devices.<br /><br />Sorry for the wall of text. But I think I should explain things clearly when asking question. If you have done a multi resolution game with box2D and MOAI, please let me know how you do it. Any other suggestions, ideas will be appreciated.<br /><br />Thanks in advance.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: About box2d and multiresolution game</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jul 09, 2013 8:02 am</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">Hi actually what you should do is handle multiresolution using MOAIViewport, not Box2D.<br />What I mean is that you can set viewport size to the device pixel size (ie 1024x768 or 2048x1536px), and then viewport scale fixed to (1024x768). That means that on Retina and non-Retina iPad the view will be same size in OpenGL POINTS, although the retina device has the double pixel size. <br /><span style="font-weight: bold">All the coordinates in Moai operate in openGL points,not the device pixels</span>: one point in Moai coordinate system will so equal to 1 pixel on older iPads (and Mini) or 2 pixels on Retina iPad. You can also set your viewport scale to a completely arbitrary relation between points and pixels, according to your needs.<br />The concept of viewport scale greatly helps handle multiple resolutions. Check samples, and also check my post in Community Contribions -&gt; IOS Host, I made an example of how to handle multiple resolutions for iPhones and iPads.<br /><br />In regard to Box2D, you will never want to use different setting for different devices after you handle resolution via viewport scale.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: About box2d and multiresolution game</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jul 10, 2013 1:54 am</strong></div>
+				<div class="author">by <strong>npcduy</strong></div>
+				<div class="content">Thank you nosheet. I will look into it as soon as I finish this post.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=3026&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2015-01-27T21:47:30+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=3026&amp;mode</id>
+<entry>
+<author><name><![CDATA[pfeiring]]></name></author>
+<updated>2015-01-27T21:47:30+00:00</updated>
+<published>2015-01-27T21:47:30+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16537#p16537</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16537#p16537"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16537#p16537"><![CDATA[
+Thanks, I'll check that out. I don't usually use the simulator, my android phone i'snt working properly and I haven't bought a new one yet. Just wanted to try things out.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1397">pfeiring</a> — Tue Jan 27, 2015 9:47 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[scottwb]]></name></author>
+<updated>2015-01-27T20:44:33+00:00</updated>
+<published>2015-01-27T20:44:33+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16536#p16536</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16536#p16536"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16536#p16536"><![CDATA[
+It normally means that no compatible GL surface can be found. Check your simulator config.<br /><br />However, you don't really want to develop Android apps using the simulator. It's way too slow IMO.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1269">scottwb</a> — Tue Jan 27, 2015 8:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[pfeiring]]></name></author>
+<updated>2015-01-27T18:03:25+00:00</updated>
+<published>2015-01-27T18:03:25+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16527#p16527</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16527#p16527"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16527#p16527"><![CDATA[
+I am getting this error when I try to run the host on the android simulator, can anyone help me out with this one?<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="java" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">01<span style="color: #339933;">-</span><span style="color: #cc66cc;">27</span> <span style="color: #cc66cc;">18</span><span style="color: #339933;">:</span>01<span style="color: #339933;">:</span><span style="color: #cc66cc;">37.604</span>    <span style="color: #cc66cc;">1347</span><span style="color: #339933;">-</span><span style="color: #cc66cc;">1362</span><span style="color: #339933;">/</span>com.<span style="color: #339933;">***</span>.<span style="color: #339933;">***</span> E<span style="color: #339933;">/</span>AndroidRuntime﹕ FATAL EXCEPTION<span style="color: #339933;">:</span> GLThread <span style="color: #cc66cc;">147</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aprocess+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">Process</span></a><span style="color: #339933;">:</span> com.<span style="color: #339933;">***</span>.<span style="color: #339933;">***</span>, PID<span style="color: #339933;">:</span> <span style="color: #cc66cc;">1347</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    java.<span style="color: #006633;">lang</span>.<a href="http://www.google.com/search?hl=en&amp;q=allinurl%3Aillegalargumentexception+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span style="color: #003399;">IllegalArgumentException</span></a><span style="color: #339933;">:</span> No config chosen</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            at android.<span style="color: #006633;">opengl</span>.<span style="color: #006633;">GLSurfaceView</span>$BaseConfigChooser.<span style="color: #006633;">chooseConfig</span><span style="color: #009900;">&#40;</span>GLSurfaceView.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">869</span><span style="color: #009900;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            at android.<span style="color: #006633;">opengl</span>.<span style="color: #006633;">GLSurfaceView</span>$EglHelper.<span style="color: #006633;">start</span><span style="color: #009900;">&#40;</span>GLSurfaceView.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">1023</span><span style="color: #009900;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            at android.<span style="color: #006633;">opengl</span>.<span style="color: #006633;">GLSurfaceView</span>$GLThread.<span style="color: #006633;">guardedRun</span><span style="color: #009900;">&#40;</span>GLSurfaceView.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">1400</span><span style="color: #009900;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            at android.<span style="color: #006633;">opengl</span>.<span style="color: #006633;">GLSurfaceView</span>$GLThread.<span style="color: #006633;">run</span><span style="color: #009900;">&#40;</span>GLSurfaceView.<span style="color: #006633;">java</span><span style="color: #339933;">:</span><span style="color: #cc66cc;">1239</span><span style="color: #009900;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1397">pfeiring</a> — Tue Jan 27, 2015 6:03 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-26T22:20:43+00:00</updated>
+<published>2015-01-26T22:20:43+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16517#p16517</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16517#p16517"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16517#p16517"><![CDATA[
+It looks like I have some &quot;lags&quot; with Android. I'm playing with the accelerometer, I thought that it could be the origin of the little lags, but after Scott's message I think that it's the same performances issues in my case.<br />But just asking if I am wrong, does anyone know if accelerometer can introduce some lags in the app?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Mon Jan 26, 2015 10:20 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-01-26T01:41:46+00:00</updated>
+<published>2015-01-26T01:41:46+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16510#p16510</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16510#p16510"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16510#p16510"><![CDATA[
+Thanks for the info. So if you were to use this in your workflow you would create a ezra-android host template (probably based off the existing gradle one but with different host source files). The host creation scripts are simple lua scripts<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Mon Jan 26, 2015 1:41 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[scottwb]]></name></author>
+<updated>2015-01-25T23:30:23+00:00</updated>
+<published>2015-01-25T23:30:23+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16508#p16508</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16508#p16508"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16508#p16508"><![CDATA[
+<blockquote><div><cite>halfnelson wrote:</cite><br />What do you think of the workflow (where each project has its own set of per platform host projects that can be regenerated from config file). Does it sort of match what you do at your studios? If not, what is your workflow for managing multiple apps<br /></div></blockquote><br /><br />At the moment we do what I guess most of us do and that is have separate host 'templates' where we just copy over the lua files and build the hosts. Most of what changes between the apps is the lua files and associated assets. The peripheral stuff, chartboost, game centre etc is all in our custom libraries which we just include.<br /><br />We are currently migrating all of our apps from 1.3 to 1.6 so we have a lot of custom stuff at the moment which has been superseded by some of the 1.6 works.<br /><br />One slight change for us is that we ship with the @ezraanderson android host as we find the out of the box performance not acceptable. Even with 1.6 improvements we couldn't get the performance we get out of Ezra's host.<br /><br />The turn key template approach is definitely the way forward.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1269">scottwb</a> — Sun Jan 25, 2015 11:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-01-25T21:56:29+00:00</updated>
+<published>2015-01-25T21:56:29+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16507#p16507</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16507#p16507"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16507#p16507"><![CDATA[
+Thanks. <br /><br />The windows host is just the host-sdl source files from moai, which is slowly getting better. All I added was the resource file to allow custom icon, window title, and file information.<br /><br />Now that I have the pattern working, I would love to drag in stirfires proven windows/osx sdl host. It has been proven on steam for osx and windows (<!-- m --><a class="postlink" href="http://store.steampowered.com/app/262770/">http://store.steampowered.com/app/262770/</a><!-- m -->). I would also like to get the linux port of it going, so that we could have a new solid desktop host with good resolution/joystick/fullscreen etc support.<br /><br />What do you think of the workflow (where each project has its own set of per platform host projects that can be regenerated from config file). Does it sort of match what you do at your studios? If not, what is your workflow for managing multiple apps<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sun Jan 25, 2015 9:56 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[scottwb]]></name></author>
+<updated>2015-01-25T18:42:55+00:00</updated>
+<published>2015-01-25T18:42:55+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16506#p16506</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16506#p16506"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16506#p16506"><![CDATA[
+These are great <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />How 'ready' is the windows host for prime time on for e.g. steam or windows app store?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1269">scottwb</a> — Sun Jan 25, 2015 6:42 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[pfeiring]]></name></author>
+<updated>2015-01-25T17:41:14+00:00</updated>
+<published>2015-01-25T17:41:14+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16504#p16504</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16504#p16504"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16504#p16504"><![CDATA[
+This is great! Thanks<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1397">pfeiring</a> — Sun Jan 25, 2015 5:41 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-21T14:39:05+00:00</updated>
+<published>2015-01-21T14:39:05+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16485#p16485</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16485#p16485"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16485#p16485"><![CDATA[
+That's pretty good, after all this time failing I finally successfully executed my code on my android and to move something with the motion sensor, thanks to your binary <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Wed Jan 21, 2015 2:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-01-21T13:08:14+00:00</updated>
+<published>2015-01-21T13:08:14+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16484#p16484</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16484#p16484"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16484#p16484"><![CDATA[
+uploaded new zip of sdk with release moai and its required dll <!-- m --><a class="postlink" href="https://www.dropbox.com/s/aug4knz8y1imdio/moai-sdk-binary-windows.7z?dl=0">https://www.dropbox.com/s/aug4knz8y1imd ... ws.7z?dl=0</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Wed Jan 21, 2015 1:08 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-21T12:42:40+00:00</updated>
+<published>2015-01-21T12:42:40+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16483#p16483</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16483#p16483"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16483#p16483"><![CDATA[
+I tried with this package but it seems that the debug dll is not included. I am installing vs 2013 on my big laptop, it should fix that! Anyway one day I will probably need vs, so it's not wasted <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Wed Jan 21, 2015 12:42 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-01-21T12:26:10+00:00</updated>
+<published>2015-01-21T12:26:10+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16482#p16482</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16482#p16482"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16482#p16482"><![CDATA[
+i will just reship with a release build instead. Of course the windows box I tested it on had vs2013 installed since i wanted to test the vs2013 host template.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Wed Jan 21, 2015 12:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-01-21T12:16:02+00:00</updated>
+<published>2015-01-21T12:16:02+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16481#p16481</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16481#p16481"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16481#p16481"><![CDATA[
+yeah, that is my bad for shipping moai.exe debug version without the dll. Visual studio 2013 community edition should solve that problem for you.  Or maybe this <!-- m --><a class="postlink" href="http://www.microsoft.com/en-au/download/details.aspx?id=40784">http://www.microsoft.com/en-au/download ... x?id=40784</a><!-- m --><br />I will try to update the release with the missing dll. Thanks for the feedback!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Wed Jan 21, 2015 12:16 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-21T11:38:58+00:00</updated>
+<published>2015-01-21T11:38:58+00:00</published>
+<id>/forums/viewtopic.php?t=3026&amp;p=16480#p16480</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3026&amp;p=16480#p16480"/>
+<title type="html"><![CDATA[Re: 1.6 Windows/OSX Binary SDK package (preview)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3026&amp;p=16480#p16480"><![CDATA[
+I tryed to run the command moaiutil host create android but I get an error that tells  &quot;MSVCP120D.dll&quot; is missing.<br />I get that on my win 7 and on my win 8 laptops. I tried to update Visual c++ redistrubuable but the problem remain (thought I have got a MSVCP120.dll file, with no D). <br />Launching moai.exe throw me the same error.<br /><br />Could have I done something wrong while setting up moai? I added moai-sdk/util to my path.<br />What should I install to fix that? I have seen websites that offer to download this dll but usually there are a bunch of malwares  on these sites...<br /><br />Gonna try to install visual studio 2013, currently I have VS 2010<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Wed Jan 21, 2015 11:38 am</p><hr />
+]]></content>
+</entry>
+</feed>

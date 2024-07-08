@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - MOAI on Debian</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>MOAI on Debian</h2>
+		<p><a href="moai-on-debian-t738/index.html">/forums/moai-on-debian-t738/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>3</strong></div>
+		
+			<div class="post">
+				<h3>MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed May 02, 2012 11:40 pm</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content"><span style="font-style: italic"><span style="font-weight: bold">UPDATE:</span> It seems that for now it only works on 32bit systems.</span><br /><br />Hi there,<br />I've updated the old cmake files to work with 1.0 and it seems to be working good so far. I've uploaded the changes to my fork in github.  For some of the dependencies it's using the system libraries, so you'll need to install some packages to be able to compile.<br /><br />Quick guide for Debian (wheezy):<br /><blockquote class="uncited"><div># Install the dependencies:<br />sudo aptitude install freeglut3-dev libglew-dev libglu1-mesa-dev libxmu-dev libxi-dev chipmunk-dev libjpeg8-dev libpng-dev libfreetype6-dev liblua5.1-0-dev libjansson-dev libtinyxml-dev libcurl4-openssl-dev zlib1g-dev libexpat1-dev cmake build-essential<br /><br /># Clone the repository:<br />git clone <!-- m --><a class="postlink" href="git://github.com/spacepluk/moai-beta.git">git://github.com/spacepluk/moai-beta.git</a><!-- m --><br />cd moai-beta<br />git checkout linux-cmake<br /><br /># Compile:<br />mkdir build<br />cd build<br />cmake ..<br />make -j4<br /></div></blockquote><br /><br />Have fun <img src="images/smilies/icon_mrgreen.gif" alt=":mrgreen:" title="Mr. Green" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 7:59 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Yay!  <br /><br />Boo: &quot;Permission denied (publickey)&quot;<br /><br />EDIT: n/m, I just cloned directly from your repo page (https:// method..) and got a copy of the repo just fine. Maybe you want to update your URL.<br /><br />Okay .. I was quite optimistic, but ran into this brick wall:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=738&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">j@aaa-build:~/Desktop/MOAI/moai-beta/build$ make </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">16</span>%&amp;#<span style="">93</span>; Built target Box2D</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">16</span>%&amp;#<span style="">93</span>; Built target utf8</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">17</span>%&amp;#<span style="">93</span>; Built target tlsf</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">20</span>%&amp;#<span style="">93</span>; Built target zipfs</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">40</span>%&amp;#<span style="">93</span>; Built target uslscore</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">99</span>%&amp;#<span style="">93</span>; Built target moaicore</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">99</span>%&amp;#<span style="">93</span>; Built target aku</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Linking CXX executable gluthost</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/usr/bin/ld: ../moaicore/libmoaicore.a<span class="br0">&#40;</span>MOAIGfxDevice.cpp.o<span class="br0">&#41;</span>: undefined reference to symbol 'glEnable'</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/usr/bin/ld: note: 'glEnable' is defined in DSO /usr/lib/libGL.so.1 so try adding it to the linker command line</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/usr/lib/libGL.so.1: could not read symbols: Invalid operation</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">collect2: ld returned <span style="">1</span> exit status</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make&amp;#<span style="">91</span>;<span style="">2</span>&amp;#<span style="">93</span>;: *** &amp;#<span style="">91</span>;src/hosts/gluthost&amp;#<span style="">93</span>; Error <span style="">1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make&amp;#<span style="">91</span>;<span style="">1</span>&amp;#<span style="">93</span>;: *** &amp;#<span style="">91</span>;src/hosts/CMakeFiles/gluthost.dir/all&amp;#<span style="">93</span>; Error <span style="">2</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make: *** &amp;#<span style="">91</span>;all&amp;#<span style="">93</span>; Error <span style="">2</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />Anything I can do to help debug this?<br /><br />EDIT: I was able to build gluthost by adding &quot;-lGL&quot; after &quot;-lglut&quot; to the file in build/src/hosts/CMakeFiles/gluthost.dir/link.txt .. I'm not familiar with cmake so I don't know of a better place to include -lGL in the CMake eco-system .. perhaps you can inform me where this dependency is made?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 8:35 am</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">I tried running Moai in Wine and it works perfectly too. But native is still better. Let's see if I can get Akuma to build under ArchLinux.<br /><br />@ibisium: Try adding find_package(OpenGL) to the CMake file.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 8:49 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Alas, it seems its not terribly functional yet:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=738&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">j@aaa-build:~/Desktop/MOAI/moai-beta/samples/physics/physics-box2d$ ~/bin/moai.gluthost ../../config/config.lua main.lua </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Initializing Chipmunk v5.3.4 <span class="br0">&#40;</span>Debug Enabled<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Compile with -DNDEBUG defined to disable debug mode and runtime assertion checks</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">PANIC: unprotected error in call to Lua API <span class="br0">&#40;</span>attempt to call a nil value<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">j@aaa-build:~/Desktop/MOAI/moai-beta/samples/physics/physics-box2d$</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 8:50 am</strong></div>
+				<div class="author">by <strong>TeKa</strong></div>
+				<div class="content">After <span style="font-weight: bold">mkdir build</span>, you forgot <span style="font-weight: bold">cd build</span>.<br /><br />Ok, it has built... now what should I do?<br />I cannot find any <span style="font-weight: bold">moai</span> executable.<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=738&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="shell" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.../build$ find -type f -executable </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">./CMakeFiles/CMakeDetermineCompilerABI_C.bin</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">./CMakeFiles/CMakeDetermineCompilerABI_CXX.bin</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">./CMakeFiles/CompilerIdCXX/a.out</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">./CMakeFiles/CompilerIdC/a.out</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">./src/hosts/gluthost</div></li><br /></ol></code></dd></dl><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=738&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="shell" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.../build$ ./src/hosts/gluthost main.lua</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Initializing Chipmunk v5.3.4 (Debug Enabled)</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Compile with -DNDEBUG defined to disable debug mode and runtime assertion checks</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">PANIC: unprotected error in call to Lua API (attempt to call a nil value)</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 9:17 am</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">Just chill for now. With both Shadowrun Returns and Double Fine Adventure promise to target Linux. Linux support should come soon.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 9:51 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I believe we are pretty darn close on this, so spacepluk, if there is anything I can to do help, please let us know.  I'll be hot on this thread until I get MOAI running on my Linux workstation! (Not gonna wait for the 'commercial' shops to catch up, heh heh ..)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:12 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Just wanted to follow up that I fixed the linking problem by modifying MOAI/moai-beta/src/hosts/CMakeLists.txt so that it looks like this:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=738&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">find_package<span class="br0">&#40;</span>OpenGL REQUIRED<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">add_executable<span class="br0">&#40;</span>gluthost</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; GlutHost.cpp</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; GlutHostMain.cpp</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">target_link_libraries<span class="br0">&#40;</span>gluthost</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; aku</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; moaicore</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; utf8</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; jansson</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; glut</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; GLEW</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; GL</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:20 am</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">Hey! I've corrected the guide now. It was very late here <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />I also forgot to mention that untz is *NOT* available on linux (yet), so any attempt to use it will throw an error.  I took a look at the code and it seems pretty straight forward to implement linux support for untz with something like rtaudio.  I'll give it a go when I've some spare time.  Meanwhile, you can make a fake module in lua to avoid the errors without hacking too much on your code.  I think the rest of the plaform works fine, but please let me know about any further issues <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" />  I'm a MOAI newbie so I can't test very thoroughly.<br /><br />@ibisum: did aptitude complain about any package??  I had to put the linking flags there by hand, so I guess the GL is also needed.  I'll push the patch in a minute.<br /><br />@thebullno1: I tried to use find_package but cmake is missing the scripts for most of the libraries used in this project including OpenGL.  So I finally gave up and put the flags myself which leds to problems like ibisum's.  I think it would probably better to use something like non-recursive autotools to have a solid configuration phase on linux... but reusing bjorn work was just easier for now.  I want to give it a go though, just don't know when <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:40 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">spacepluk: no errors installing the dependencies .. it seems that cmake just didn't know to include GL when linking.  Like I said, my changes to the src/hosts/CMakeLists.txt file, as above, fixed the problem ..<br /><br />But I'm still getting &quot;PANIC: unprotected error..&quot; after I do a clean build.  Am I understanding you correctly that this is a problem with the untz module not being available, and if so, all I need to do is make a 'dummy untz' module to use?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:46 am</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">Ok, I mixed up things.  It was GLEW the one that didn't have a cmake script.  Pushing the fix right now,  you'll need to install two new libraries though:<br /><br /><blockquote class="uncited"><div>sudo aptitude install libxmu-dev libxi-dev</div></blockquote></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:48 am</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">ibisum, I think so.  You can also try commenting out your untz calls if they're few and close to each other</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:54 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">This error happens when I just try to call the executable (gluthost) even without passing it a script to run .. so is gluthost trying to make a binding to untz (or something) that results in this problem, or could it be something else .. I'm curious, you didn't get this error after you finished porting the cmake files and built your own gluthost, spacepluk?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 10:59 am</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">If it fails without passing a script it has to be something else...  Can you send me your binary so I can get a backtrace?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 11:00 am</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">here it's working just fine, except for the lack of untz.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 11:58 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Binary is available here: <!-- m --><a class="postlink" href="http://w1xer.at/gluthost">http://w1xer.at/gluthost</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 12:19 pm</strong></div>
+				<div class="author">by <strong>spacepluk</strong></div>
+				<div class="content">hi ibisum, I can see you're running a 64bit kernel, that might have something to do since I haven't tested it.  My main machine runs at 32bit so it'll take me a while to get the backtrace.  Maybe you could try to compile a 32bit version on your system to see if it makes any difference.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 12:26 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Ah!  That would make sense .. how do I tell cmake to build a 32bit version?<br /><br />Maybe you want to meet on IRC to debug this?  ##moai on FreeNode?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 2:52 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Okay - for those folks reading this thread, we met in IRC and have been working out the problems I have had - which are related to the fact I'm running Ubuntu 12.04 - AMD64bit version, and haven't had the chance to set up the 32-bit development environment, including headers, yet.  This has been a bit of a dead-end, because its not so easy to have a full-blown 32-bit development environment under Ubuntu 12.04-amd64, I guess, unless we go the full-blown chroot environment path.  And I don't wanna do that right now, but in case someone else works it out, please let us know.<br /><br />So now instead I am trying to install in an Ubuntu-11.04 VM (32bit), and for that I found that both libjansson-dev and libchipmunk-dev are not in the default repositories for 11.04, but are available through PPA's:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=738&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sudo add-apt-repository ppa:josebagar/ppa</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sudo add-apt-repository ppa:petri/ppa</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sudo apt-get update</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />After those three lines, I was able to install the packages smoothly as listed by spacepluk at the top of the thread .. fyi.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI on Debian</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 03, 2012 3:18 pm</strong></div>
+				<div class="author">by <strong>apomk2</strong></div>
+				<div class="content">Thanks for the update! I'm thrilled to see that there's finally some progress on that front.<br /><br />If you do manage to build it in 32bit, could you possibly upload a binary for us?</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>3</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

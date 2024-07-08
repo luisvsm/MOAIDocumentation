@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=5&amp;t=837&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-05-31T13:16:15+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=5&amp;t=837&amp;mode</id>
+<entry>
+<author><name><![CDATA[superlukas]]></name></author>
+<updated>2012-05-31T13:16:15+00:00</updated>
+<published>2012-05-31T13:16:15+00:00</published>
+<id>/forums/viewtopic.php?t=837&amp;p=4285#p4285</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=837&amp;p=4285#p4285"/>
+<title type="html"><![CDATA[Re: MoonScript (CoffeeScript for Lua)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=837&amp;p=4285#p4285"><![CDATA[
+I spent the morning porting a little more code to MoonScript and I think I stick with it for now. I like the function syntax (looks like Haskell) and it forces you to really think about scoping. (Implicit return feels like a good idea, too).<br /><br />You don't have to use the fancy syntax if you don't want to, eg:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print foo!</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print foo()</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print( foo! )</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print( foo() )</div></li><br /></ol></code></dd></dl><br /><br />The only thing that really bothers me is the backslash<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">quad\setUVRect 0, 0, 1, 1</div></li><br /></ol></code></dd></dl><br /><br /><a href="http://hastebin.com/nigogafeve.moon" class="postlink">Here is a little breakdown of the things I like</a><br />Have fun<br /><br />// Some more<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">import sin, cos, atan2, sqrt, deg, random from math</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">someFunc = (a, b) =&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">local fomeFunc = function(self, a, b)</div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=893">superlukas</a> — Thu May 31, 2012 1:16 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[todd]]></name></author>
+<updated>2012-05-30T21:21:32+00:00</updated>
+<published>2012-05-30T21:21:32+00:00</published>
+<id>/forums/viewtopic.php?t=837&amp;p=4277#p4277</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=837&amp;p=4277#p4277"/>
+<title type="html"><![CDATA[Re: MoonScript (CoffeeScript for Lua)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=837&amp;p=4277#p4277"><![CDATA[
+Moonscript looks very interesting. We haven't had a chance to dig into it, but I did exchange a couple of emails with the author, Leaf. I will ask him to join this thread.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=102">todd</a> — Wed May 30, 2012 9:21 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[superlukas]]></name></author>
+<updated>2012-05-30T15:34:40+00:00</updated>
+<published>2012-05-30T15:34:40+00:00</published>
+<id>/forums/viewtopic.php?t=837&amp;p=4275#p4275</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=837&amp;p=4275#p4275"/>
+<title type="html"><![CDATA[Re: MoonScript (CoffeeScript for Lua)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=837&amp;p=4275#p4275"><![CDATA[
+<span style="font-style: italic">I hope you don't mind the double post. I want to keep the first one clean.</span><br /><br />I ported <a href="https://github.com/moai/moai-dev/blob/master/samples/tutorials/WolfClicker/modules/state-manager.lua" class="postlink">state-manager.lua</a> to MoonScript.<br /><br /><a href="http://pastebin.com/3J617nYj" class="postlink">stateManager.moon</a><br /><a href="http://pastebin.com/snZNygdU" class="postlink">stateManager.lua</a> (added some line breaks)<br /><br />Just wanted to give you guys a quick example. Not sure if I like MoonScript or not.<br />Some things are pretty cool, some are really weird...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=893">superlukas</a> — Wed May 30, 2012 3:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[superlukas]]></name></author>
+<updated>2012-05-30T19:09:39+00:00</updated>
+<published>2012-05-30T13:30:46+00:00</published>
+<id>/forums/viewtopic.php?t=837&amp;p=4274#p4274</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=837&amp;p=4274#p4274"/>
+<title type="html"><![CDATA[MoonScript (CoffeeScript for Lua)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=837&amp;p=4274#p4274"><![CDATA[
+<blockquote class="uncited"><div><br />MoonScript is a dynamic scripting language that compiles into Lua. It gives you the power of the fastest scripting language combined with a rich set of features.<br /><br />MoonScript can either be compiled into Lua and run at a later time, or it can be dynamically compiled and run using the moonloader. It’s as simple as <span style="font-style: italic">require &quot;moonscript&quot;</span> in order to have Lua understand how to load and run any MoonScript file.<br /><br />Because it compiles right into Lua code, it is completely compatible with alternative Lua implementations like LuaJIT, and it is also compatible with all existing Lua code and libraries. [...]<br /><br />MoonScript provides a clean syntax using significant whitespace that avoids all the keyword noise typically seen in a Lua script. [...] It also adds table comprehensions, implicit return on functions, classes, inheritance, scope management statements import &amp; export, and a convenient object creation statement called <span style="font-style: italic">with</span>.<br /><br /><a href="http://moonscript.org/" class="postlink"><span style="font-weight: bold">moonscript.org</span></a><br /></div></blockquote><br /><br />Never used MoonScript or CoffeeScript but I'm a big fan of LESS. What do you guys think?<br /><br />// <a href="http://pastebin.com/x69XtAmZ" class="postlink">Mac OS X setup</a><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=893">superlukas</a> — Wed May 30, 2012 1:30 pm</p><hr />
+]]></content>
+</entry>
+</feed>

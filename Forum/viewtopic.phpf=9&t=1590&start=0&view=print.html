@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Silly newbie question: MOAIDialog ('a nil value')</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Silly newbie question: MOAIDialog ('a nil value')</h2>
+		<p><a href="silly-newbie-question-moaidialog-a-nil-value-t1590/index.html">/forums/silly-newbie-question-moaidialog-a-nil-value-t1590/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jan 30, 2013 5:36 am</strong></div>
+				<div class="author">by <strong>seebs</strong></div>
+				<div class="content">Downloaded SDK, tried to run a couple of samples. The iOS dialog example won't run because MOAIDialog is a nil value; is this an expected behavior when using the moai app for simulation? If so, is there a reasonable workaround for testing code without moving it to devices?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jan 31, 2013 9:53 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">How are you calling it?  <br /><br />Do you use &quot;:&quot; or &quot;.&quot;?<br /><br />Yes, trick question.  <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><br /><br />Also, what host?  Latest moai-dev iOS host works.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Feb 02, 2013 4:57 am</strong></div>
+				<div class="author">by <strong>seebs</strong></div>
+				<div class="content">Long story short:<br /><br />I was looking at the samples, and some had a &quot;run.sh&quot; which basically did .../../bin/moai main.lua.<br /><br />That doesn't work for any of the iOS or Android specific things -- those all require that you be actually building for that target. And while MOAIDialog isn't iOS or Android specific, it doesn't have a generic implementation without reference to a specific host, so the simulator can't do it.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Feb 05, 2013 6:03 am</strong></div>
+				<div class="author">by <strong>psdias</strong></div>
+				<div class="content">Hello, seebs !<br />(Sorry for my bad English)<br /><br />I am a begginer in MOAI, Rapanui and mobile development.<br /><br />I use Windows 7. I'm trying to run the example<br />C:\MOAI\moai-sdk\samples\ios\app-dialog\main.lua, but the following message appears:<br /><br />------------------------------<br />main.lua: 25: attempt to index global 'MOAIDialog' (a nil value)<br />stack traceback:<br />         main.lua: 25 in main chunk<br />------------------------------<br /><br />My run.bat file contains the following line:<br /><br />&quot;c:\MOAI\moai-sdk\bin\win32\moai.exe&quot; &quot;c:/MOAI/moai-sdk/samples/config/config.lua&quot;   &quot;main.lua&quot;<br /><br />Have you discovered the solution to this error?<br /><br />Thanks you very much!<br />Paulo</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Feb 05, 2013 7:15 am</strong></div>
+				<div class="author">by <strong>seebs</strong></div>
+				<div class="content">Yes. You can't use MOAIDialog examples with the generic MOAI simulator, only with Android and iOS targets (or the Android and iOS simulators).</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 06, 2013 6:21 pm</strong></div>
+				<div class="author">by <strong>psdias</strong></div>
+				<div class="content">Hi, Seebs !<br /><br />(Sorry for my bad English)<br /><br />You mean I'll have to use the simulator that is in C:\MOAI\moai-sdk\bin\ios (and \android) ?<br />I still don't know how to compile the files that are in that folder. I will study this subject because I'm still at the beginning of my learning in MOAI, and way of doing things is very different from what I was used with Delphi for Windows ...<br /><br />Do you know where I can find a tutorial about install my app on iOS and Android (in the physical device and in the simulator)<br /><br />Thank you for your attention!<br />Paulo</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Feb 06, 2013 9:59 pm</strong></div>
+				<div class="author">by <strong>seebs</strong></div>
+				<div class="content">No, not any part of the MOAI SDK or code base. The &quot;simulator&quot; I refer to is, for instance, the iPhone/iPad simulator which is part of Xcode.<br /><br />If you use Apple's tools to build a Moai project, you end up with an executable you can run on Apple's simulator (or hardware), and that will have the MOAIDialog available.<br /><br />If you use the Android tools to build for Android, you can use the Android simulator or hardware, and that will have the MOAIDialog available.<br /><br />I don't know about tutorials, I just opened the moai.xcodeproj and kicked it a few times and it worked.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Silly newbie question: MOAIDialog ('a nil value')</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Feb 10, 2013 5:31 am</strong></div>
+				<div class="author">by <strong>psdias</strong></div>
+				<div class="content">Ok.<br /><br />Thank you very much !<br /><br />Paulo</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

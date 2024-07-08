@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=272&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-12-27T15:28:40+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=272&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-27T15:28:40+00:00</updated>
+<published>2011-12-27T15:28:40+00:00</published>
+<id>/forums/viewtopic.php?t=272&amp;p=1421#p1421</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=272&amp;p=1421#p1421"/>
+<title type="html"><![CDATA[Saving/Restoring State]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=272&amp;p=1421#p1421"><![CDATA[
+You should be able to. To the best of my knowledge you shouldn't have to do anything special re filenames... just make sure you have changed your working directory to a writable folder. Also, the iOS file system is case sensitive.<br /><br />Let me know if you run into trouble.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Tue Dec 27, 2011 3:28 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bonozogames]]></name></author>
+<updated>2011-12-26T16:07:34+00:00</updated>
+<published>2011-12-26T16:07:34+00:00</published>
+<id>/forums/viewtopic.php?t=272&amp;p=1392#p1392</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=272&amp;p=1392#p1392"/>
+<title type="html"><![CDATA[Saving/Restoring State]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=272&amp;p=1392#p1392"><![CDATA[
+Is it possible to use <a href="http://192.168.20.226:3000/docs/class_m_o_a_i_data_buffer.html" target="_blank">MOAIDataBuffer</a> to save/load game data, for iOS and Android?  Are there any issues with the filename?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=282">bonozogames</a> — Mon Dec 26, 2011 4:07 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-16T15:46:56+00:00</updated>
+<published>2011-12-16T15:46:56+00:00</published>
+<id>/forums/viewtopic.php?t=272&amp;p=1286#p1286</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=272&amp;p=1286#p1286"/>
+<title type="html"><![CDATA[Saving/Restoring State]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=272&amp;p=1286#p1286"><![CDATA[
+ MOAISerializer works pretty well. It will handle cycles of Lua tables, but not functions or closures. It also can serialize/deserialize Moai framework objects, though we've only written actual serialization code for a few of the objects (MOAIGrid and MOAITransform, I believe).<br /><br />Supporting functions/closures and writing handlers for the rest of the framework is on the list, but has been more about as-needed for our own projects. If you need more of the framework serialized LMK.<br /><br />Of course you can also use Lua pickle or pluto. They are fine for game state, and pluto handles functions and closures (I think) though neither of these will serialize Moai objects.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Fri Dec 16, 2011 3:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[toaterra]]></name></author>
+<updated>2011-12-16T11:13:44+00:00</updated>
+<published>2011-12-16T11:13:44+00:00</published>
+<id>/forums/viewtopic.php?t=272&amp;p=1281#p1281</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=272&amp;p=1281#p1281"/>
+<title type="html"><![CDATA[Saving/Restoring State]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=272&amp;p=1281#p1281"><![CDATA[
+Hi:<br /><br /><br /><br />What is the method Moai supports for saving and restoring a game during play. A lot of the examples require creating C++ based user data. How is this information saved/restored to/from a save file so a user can pick up where they left off when saving and exiting the application?<br /><br /><br /><br />Thanks.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=339">toaterra</a> — Fri Dec 16, 2011 11:13 am</p><hr />
+]]></content>
+</entry>
+</feed>

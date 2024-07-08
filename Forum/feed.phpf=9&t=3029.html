@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=3029&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2015-02-08T14:15:53+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=3029&amp;mode</id>
+<entry>
+<author><name><![CDATA[kj_handsome]]></name></author>
+<updated>2015-02-08T14:15:53+00:00</updated>
+<published>2015-02-08T14:15:53+00:00</published>
+<id>/forums/viewtopic.php?t=3029&amp;p=16638#p16638</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3029&amp;p=16638#p16638"/>
+<title type="html"><![CDATA[Re: Trying to build android host, etc]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3029&amp;p=16638#p16638"><![CDATA[
+Hi <br />I had the same problem and i was working on running moai version 1.5.2 it for nearly three weeks to run android on windows 8 !!!!!!!!<br />I finally managed myself to SOLVE the problem <br /><br />just make sure that you have already provided all the requested requirements including the correct version of NDK which should be 32 bit for sure ( both are so important ) and setting environment variables ANDROID_NDK , ANDROID_SDK , JAVA_HOME , ANT_HOME and also adding the NDK path right to the &quot;BEGINNING&quot; of the PATH variable and after that adding cmake bin,TDM-GCC-64 bin , cygwin bin , android sdk/platform-tools , and appache ant  respectively to the PATH. <br />Do not forget to download the cygwin 86 (and only 86 not 64 ) along with DEVEL package ( it is so necessary ) and CPIO <br /><br />Then run the make-host.bat and if you had the following error <br /><br />ERROR : Could not find any working toolchain in the NDK.  Probably your Android NDK is broken.<br /> <br />All you have to do is to remove the cygwin cmake ( remove the cmake.exe form cygwin/bin )and run the make-host.sh again and thats it <br /><br />IMPORTANT ISSUE : after all these stuff you have to run untitled-host/run-host.sh then you should attach your android device to your pc and there would be some issues related to windows 8 privacy and security when it creates the new folders . <br />if you had the following error :<br /><br />-package-resources:<br />     [aapt] Creating full resource package...<br />     [aapt] Warning: AndroidManifest.xml already defines debuggable (in <!-- m --><a class="postlink" href="http://s">http://s</a><!-- m --><br />chemas.android.com/apk/res/android); using existing value in manifest.<br />     [aapt]       Unable to add 'C:\moai-sdk\moai-dev-Version-1.5.2\ant\untitled<br />-host\build\project\assets\lua\main.lua': Zip add failed (-1)<br />     [aapt] ERROR: unable to process assets while packaging 'C:\moai-sdk\moai-de<br />v-Version-1.5.2\ant\untitled-host\build\project\bin\Lost Piece.ap_'<br />     [aapt] ERROR: packaging of 'C:\moai-sdk\moai-dev-Version-1.5.2\ant\untitled<br />-host\build\project\bin\Lost Piece.ap_' failed<br /><br />BUILD FAILED<br />C:\Android\android-sdk\tools\ant\build.xml:932: The following error occurred whi<br />le executing this line:<br />C:\Android\android-sdk\tools\ant\build.xml:950: null returned: 1<br /><br />first DO not attach your device just run make-host.sh it will creates the build folder in the same directory and the running pauses . in the mean while you have to go to ant/untitled-host/ and right click on new-created build folder go to security tab and change all the groups accessibility to full control and then enable inheritance for children and sub folders this way all the following  problems would be solved. then you may attach ur android device to ur pc and after a while you may see ur program running on ur device .<br /><br />SOMETHING ELSE : Do not forget to run ant/libmoai/build.sh to get the libmoai.so before all these . if you dont do that the program wont run on the android device  <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><br /><br />I tried so much for almost three weeks to figure out all these stuff and to finally  run moai on android and i hope this help you all.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1447">kj_handsome</a> — Sun Feb 08, 2015 2:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-19T20:49:56+00:00</updated>
+<published>2015-01-19T20:49:56+00:00</published>
+<id>/forums/viewtopic.php?t=3029&amp;p=16472#p16472</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3029&amp;p=16472#p16472"/>
+<title type="html"><![CDATA[Re: Trying to build android host, etc]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3029&amp;p=16472#p16472"><![CDATA[
+Ok Halfnelson, I will try with that.<br />Since Android Studio became the official dev tool it seems to make sense to use it for a new app. I'll tell you if it works <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Mon Jan 19, 2015 8:49 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-01-19T23:32:00+00:00</updated>
+<published>2015-01-19T20:23:07+00:00</published>
+<id>/forums/viewtopic.php?t=3029&amp;p=16471#p16471</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3029&amp;p=16471#p16471"/>
+<title type="html"><![CDATA[Re: Trying to build android host, etc]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3029&amp;p=16471#p16471"><![CDATA[
+Windows build is designed for Windows cmake not cygwin cmake. Remove cygwin cmake.<br /><br />I have a prebuilt libmoai 1.6 here <!-- l --><a class="postlink-local" href="1-6-windows-osx-binary-sdk-package-preview-t3026/index.html">1-6-windows-osx-binary-sdk-package-preview-t3026/</a><!-- l --> if you want to try it out. But it uses android studio.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Mon Jan 19, 2015 8:23 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-19T20:01:07+00:00</updated>
+<published>2015-01-19T20:01:07+00:00</published>
+<id>/forums/viewtopic.php?t=3029&amp;p=16470#p16470</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3029&amp;p=16470#p16470"/>
+<title type="html"><![CDATA[Re: Trying to build android host, etc]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3029&amp;p=16470#p16470"><![CDATA[
+I downloaded the NDK r8e (on zip).<br /><br />Here is the complete error: <!-- m --><a class="postlink" href="http://pastebin.com/BHen1ayM">http://pastebin.com/BHen1ayM</a><!-- m --><br /><br />Maybe my CMake installation is bad (it's installed out of cygwin)<br />If it's necessary I will make that on a VM...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Mon Jan 19, 2015 8:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2015-01-19T19:37:54+00:00</updated>
+<published>2015-01-19T19:37:54+00:00</published>
+<id>/forums/viewtopic.php?t=3029&amp;p=16469#p16469</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3029&amp;p=16469#p16469"/>
+<title type="html"><![CDATA[Re: Trying to build android host, etc]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3029&amp;p=16469#p16469"><![CDATA[
+~<br />1. Moai 1.5 stable probably builds the best on windows.<br />2. You could try running Ubuntu on a virtual box, android hosts build the best on Linux systems.<br />3. Post entire error to paste-bin, then add the link here.<br /><br /><blockquote class="uncited"><div><br />Probably your Android NDK is broken<br /></div></blockquote><br /><br />Do you have android NDK installed, which version? try the 32bit one.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Mon Jan 19, 2015 7:37 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Bartho]]></name></author>
+<updated>2015-01-19T11:50:47+00:00</updated>
+<published>2015-01-19T11:50:47+00:00</published>
+<id>/forums/viewtopic.php?t=3029&amp;p=16468#p16468</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3029&amp;p=16468#p16468"/>
+<title type="html"><![CDATA[Trying to build android host, etc]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3029&amp;p=16468#p16468"><![CDATA[
+Hello everyone!<br /><br />I've been playing arround with Moai and Box2D for a while without any serious problem, so I wanted to go further and build some little project to Android app. But it didn't went like I expected and I'm stuck since ~2 days with that.<br /><br />I'm on Windows 7. Until this morning I was using Moai 1.4. I tryed to build android host using cygwin, first with the last android NDK, then with the r8e because I saw that Moai doesn't like most recents ndks. <br />I only managed to get errors like &quot;Could not find any working toolchain in the NDK.  Probably your Android NDK  is broken.&quot; Seeking on the internet didn't helped a lot to solve that.<br />So in a foolish moment this morning I though that updating to the last moai-dev from github would be a good idea, but with that I can't no more build my files to test them on the desktop. I get the &quot;[Decode error - output not utf-8]&quot;. I guess that the environnment variable must be changed to fit with the new version of moai but I'm pretty lost and some help would be welcome.<br /><br />Probably on Ubuntu I would have less problems, but I've my eclipse environment setted up on windows (and many others tools) and I don't want to play with a dual boot right now.<br /><br />Can anyone help me? Thank you in advance<br /><br />EDIT<br />I managed to repair my installation, I can run my projects on desktop. But I'm still confused about how I will export this stuff to eclipse<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2101">Bartho</a> — Mon Jan 19, 2015 11:50 am</p><hr />
+]]></content>
+</entry>
+</feed>

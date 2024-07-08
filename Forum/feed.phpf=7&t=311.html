@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=311&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-01-07T20:47:03+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=311&amp;mode</id>
+<entry>
+<author><name><![CDATA[sean]]></name></author>
+<updated>2012-01-07T20:47:03+00:00</updated>
+<published>2012-01-07T20:47:03+00:00</published>
+<id>/forums/viewtopic.php?t=311&amp;p=1654#p1654</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=311&amp;p=1654#p1654"/>
+<title type="html"><![CDATA[I&#39;m New]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=311&amp;p=1654#p1654"><![CDATA[
+@taylorringo Apologies - the documentation for Android on the wiki is sorely outdated as I have not been able to keep up with the rapid changes in the code and process. However, I will be finished updating it early this week. <br /><br />In the meantime, there are some READMEs that should help you get started. If you're using the binary SDK downloaded from getmoai.com, then look in the hosts/android/ folder. If you're enlisted in the github source, then look in the android/ folder. Basically, you need to run the make-host script, which will create a new Android host for you. Inside the untitled-host/ directory that it creates, you will find a run-host script that will package up a full Android project into it's build/ sub-directory - the contents of that directory can be loaded into eclipse. DO NOTE that every time the make-host or run-host scripts is run, it obliterates its working directory, so if you intend to edit/debug the project in eclipse, I highly recommend that you take the untitled-host/build/ folder and move it elsewhere on your computer before importing it into eclipse.<br /><br />I'll be tweeking/improving the Android process more in the next couple of weeks, so if you have any suggestions, complaints or other feedback, please let me know and I'll do my best to address it in upcoming SDK releases.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=289">sean</a> — Sat Jan 07, 2012 8:47 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[milleniummike]]></name></author>
+<updated>2012-01-05T03:45:04+00:00</updated>
+<published>2012-01-05T03:45:04+00:00</published>
+<id>/forums/viewtopic.php?t=311&amp;p=1580#p1580</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=311&amp;p=1580#p1580"/>
+<title type="html"><![CDATA[I&#39;m New]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=311&amp;p=1580#p1580"><![CDATA[
+<a href="https://github.com/latestpost/Moai-SDK-Player" target="_blank">https://github.com/latestpost/Moai-SDK-Player</a><br /><br /><br /><br />You could pull down this eclipse project and have a play with it to get you started.<br /><br /><br /><br />The deployment method on android takes a the file in the<br /><br />/res/raw/ called bundle<br /><br /><br /><br />This file is actually a zip file without .zip on the end. I was originally creating a zip file with the lua files and assets and renaming from bundle.zip to bundle - and then re-deploying through eclipse<br /><br />At runtime the android harness unpacks this file and then executes the files - (Note: it doesn't like to unpack folders so just use flat files)<br /><br /><br /><br />To create the above project for Eclipse in a nutshell on a Windows platform - <br /><br />pre-requisites - Eclipse and Android SDK installed<br /><br />1) Get ant working<br /><br />2) install cygwin<br /><br />3) download the android source<br /><br />4) run the build.sh script to create a working android project<br /><br />5) import the project into eclipse<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=324">milleniummike</a> — Thu Jan 05, 2012 3:45 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mervills.email]]></name></author>
+<updated>2012-01-03T10:02:29+00:00</updated>
+<published>2012-01-03T10:02:29+00:00</published>
+<id>/forums/viewtopic.php?t=311&amp;p=1542#p1542</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=311&amp;p=1542#p1542"/>
+<title type="html"><![CDATA[I&#39;m New]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=311&amp;p=1542#p1542"><![CDATA[
+Alright, someone else should be able to help you out.<br /><br />Do me a favour, when you have everything up and running for android development, can you send me an email with the process you took? I'll update the wiki page.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=344">mervills.email</a> — Tue Jan 03, 2012 10:02 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[anddrewscott]]></name></author>
+<updated>2012-01-03T02:20:55+00:00</updated>
+<published>2012-01-03T02:20:55+00:00</published>
+<id>/forums/viewtopic.php?t=311&amp;p=1540#p1540</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=311&amp;p=1540#p1540"/>
+<title type="html"><![CDATA[I&#39;m New]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=311&amp;p=1540#p1540"><![CDATA[
+That tutorial is outdated. For example, the directory it says it uses "Moai SDK/hosts/eclipse" does not exist, I believe "Moai SDK/android" replaced it.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=223">anddrewscott</a> — Tue Jan 03, 2012 2:20 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mervills.email]]></name></author>
+<updated>2012-01-02T23:00:56+00:00</updated>
+<published>2012-01-02T23:00:56+00:00</published>
+<id>/forums/viewtopic.php?t=311&amp;p=1535#p1535</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=311&amp;p=1535#p1535"/>
+<title type="html"><![CDATA[I&#39;m New]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=311&amp;p=1535#p1535"><![CDATA[
+Hi taylorringo! Welcome.<br /><br />I haven't worked with the android platform myself, but I would start <a href="http://192.168.20.226:3000/wiki/Building_Moai_Games_For_Android_Devices" target="_blank">with this handy guide on the wiki</a>. Let us know how you do.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=344">mervills.email</a> — Mon Jan 02, 2012 11:00 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[taylorringo]]></name></author>
+<updated>2012-01-02T19:39:57+00:00</updated>
+<published>2012-01-02T19:39:57+00:00</published>
+<id>/forums/viewtopic.php?t=311&amp;p=1534#p1534</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=311&amp;p=1534#p1534"/>
+<title type="html"><![CDATA[I&#39;m New]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=311&amp;p=1534#p1534"><![CDATA[
+Hey  Everyone. I'm new, I want to know how do I set up the Moai SDK for Android Developement, I have a windows 7(64-bit), Micrsoft Visual C#, and C++ Express, I want to know How do I set up the SDK for Android Developement, with either C#expres, or C++ Express.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=359">taylorringo</a> — Mon Jan 02, 2012 7:39 pm</p><hr />
+]]></content>
+</entry>
+</feed>

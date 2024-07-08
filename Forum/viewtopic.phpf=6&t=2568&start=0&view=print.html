@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Indie Space Opera released! (we're happy about it)</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Indie Space Opera released! (we're happy about it)</h2>
+		<p><a href="indie-space-opera-released-we-re-happy-about-it-t2568/index.html">/forums/indie-space-opera-released-we-re-happy-about-it-t2568/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 12, 2014 5:44 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Hi Everyone,<br /><br />This is my first post...I've been working on a mobile game with my wife for a little over a year using Moai SDK.  It's a Space  Opera (Star Control 2 type) game.  We released today and it's a pretty cool feeling to finally get it out there <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />I wanted to share this with the community here.<br /><br />iOS: <!-- m --><a class="postlink" href="https://itunes.apple.com/nz/app/500-years-act-1/id823790714">https://itunes.apple.com/nz/app/500-yea ... d823790714</a><!-- m --><br />android: <!-- m --><a class="postlink" href="https://play.google.com/store/apps/details?id=ca.poorwillgames.years1">https://play.google.com/store/apps/deta ... mes.years1</a><!-- m --><br /><br />This is a link to our site as well: <!-- m --><a class="postlink" href="http://www.poorwillgames.com/">http://www.poorwillgames.com/</a><!-- m --><br /><br />Any comments, positive, negative, other (not sure what other means... <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> are really welcome.<br /><br />Thanks in advance for taking a look at what we made!<br /><br />Jonas</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 12, 2014 6:28 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Looks good! I like the original hand drawn art style, reminds me of Metal Hurlant artwork. Care to share any particular technical challenges/gotchas you had along the way to with MOAI and releasing a cross platform title?<br /><br />Also, do you have a dev blog that I can follow?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 12:43 am</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Hi Stun,<br /><br />Thank you very much!<br /><br />For technical challenges I can say that sound was a big issue.  For android especially...<br /><br />On android:<br />First I had serious clipping issues with Untz, I worked through that by capping the volume and setup a sound pool.  That worked but I was still getting crashes and at first I did not know they were related to the sound.  The way the hosts are setup  it would have taken quite a while to get gbd working to get error output, and adb only shows the lua-level errors.  So, I went over to iOs and tinkered and finally found that the crash was from within Untz (well, I had a good feeling anyways).<br />So, I forked my moai builds for my hosts and gutted the untz sound object to simply hold the info on the sound/music that I wanted to play.  I then wired up my android host with JNI and used the android sound pool and media player.<br /><br />That meant I got great sound on android and I used untz on ios and NO code changes on the lua level (w00t)!<br /><br /><br />I also had memory crashes on ios that drove me nearly insane.  My game was crashing and I was getting crash reports that DID NOT show my game being jettisioned.  totally wtf moment right there.  So I changed up my lua code to handle texture swapping better (I was loading a LOT at first and running with it).  That didn't solve it and memory usage was really low.  I finally reboot my ipad and bingo, worked without any issues.  There is something very fishey going on inside iOS, not sure what though.<br /><br /><br />What else...I didn't use rapa nui or hanape...I rolled my own stuff for that early on; little MVC with front controller.  I didn't do anything special for texture management...I would if I did that again.<br /><br /><br />Setup some arraylists and linked lists early on with function that return object, that worked really nice.<br /><br /><br />One funny thing...the drawing functions to very funny things sometimes, you have to be careful to give them proper values.   And my sound still does some funny things on some android devices.<br /><br /><br />That's about all I can think of for now Stun.<br /><br /><br />I don't have a blog sorry, I probably should have set one up on the way....my bad.<br /><br />Thank you!<br />Jonas</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 7:35 am</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content">Hey seems cool! I'll probably buy it to try. But I wonder about your price, you must do some great marketing to charge that much. We're gonna try a free to play 2 chapter out of 5 - then pay to unlock the whole game approach. Just to get people to play the game. And we're probably gonna charge like 1$ for the unlock sadly <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> I'm new to the business but it seems players on mobile simply don't want to pay unless it's Minecraft or something.<br /><br />Do you have a video of the game? It would help to get me to shell out $5. Yes as a mobile user I am that cheap <img src="images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 1:28 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Thank's for the feedback JDance.<br /><br />I set the price to tier 4, which should be $3.99, and that's what it shows up as in the store.  I have no idea why it's saying $5 on the website for itunes.  It's a little crazy-making <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />That said, I'm tending to agree with you that it's a little over priced so I dropped it to tier 3 this morning.  I don't think I'll go any lower than that though, I'll have to take my chances really and hope.  Marketing has been less-than-good.  Just have to see what happens and pick up the pieces where they fall.<br /><br />I did put a video together but it's not good.  I don't have a device with an hdmi out, and recording from the screen really sucks.  Basically I didn't make the investment, if I pay for that I'll put it in the lessons learned bucket for next time.<br /><br />The game I'm currently working on isn't a mobile target, it's PC first, mobile second.  I'll have to see how that goes too when it's time. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />Thanks again!<br />....Jonas</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 4:13 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Ok, I happened to post a link to the New Zealand localized version of my game.  That's why the price was funny.  I wonder how many other places have that link.<br /><br />Here is the US version: <!-- m --><a class="postlink" href="https://itunes.apple.com/us/app/500-years-act-1/id823790714">https://itunes.apple.com/us/app/500-yea ... d823790714</a><!-- m --><br /><br />Embarrassing <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 4:27 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />If you use a windows PC try FRAPS for recording videos, I find the recording quality is very good with it but getting the quality to stay good when uploading it to youtube is an enigma to me.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 4:31 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Thanks...I'll have to give it a FRAPS a try.  I was working mostly on a Mac (art I still did in Windows)...and used quicktime to do the video grab.  Not good.<br /><br />Then I tried both iMovie and Windows Movie Maker...poor results.<br /><br />I used the movie for my IGF submission ( <!-- m --><a class="postlink" href="http://www.youtube.com/watch?v=DfBjPKwH_KU">http://www.youtube.com/watch?v=DfBjPKwH_KU</a><!-- m --> ) but I was really unhappy with the result so I left it out of the store pages.<br /><br />I need to invest some skill points in video editing <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 5:14 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Congrats on finishing!  Will give your game a shot.<br /><br />For video editors I really like OpenShot and Pitivi, both opensource, free, and really easy to use.<br /><br />How come you waited until your project was done to come to these forums?  Might've found help with your issues before.  And now it looks like you're moving on to Unity... <img src="http://192.168.20.226:3000/forums/images/smilies/icon_cry.gif" alt=":cry:" title="Crying or Very Sad" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 6:40 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Cool, thank you.<br /><br />For video software, thanks for the advice...I was only really aware of cinelerra in the open source world and didn't want to deal with the learning curve.<br /><br />Now, why did I wait to come to the forum...that's a bigger question.  I did check them out on occasion and had trouble finding answers to the problems I was looking for; but that's fine really...I could have asked and I'm sure I would have received suggestions right away.  There is a really good community here from everything I've seen.<br /><br />Not sure, I'm going on 15 years in software engineering and this is likely the first time I've ever used a forum.  I'm thinking it's a personality thing like not asking for directions <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />Regarding Unity...yes unfortunately I did decide to go with it on my next game.....sorry...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 10:19 pm</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Hey! You don't happen to be based in New Zealand do you? If so might I ask where in New Zealand?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 13, 2014 11:36 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">No, we're up in Canada.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 23, 2014 10:57 pm</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Hi JDance,<br /><br />You're so right about the pricing.  I was honestly not expecting to sell a whole lot, I sold even less than I thought I would.  But that's fine, put that in the lessons learned bucket <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />I'm thinking of porting to Windows, maybe Ouya and giving it a shot there so see how the market is...learn.<br /><br />We got a review which was pretty exciting though!<br /><br /><!-- m --><a class="postlink" href="http://www.objectivegamereviews.com/500-years-act-1-review/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=500-years-act-1-review">http://www.objectivegamereviews.com/500 ... t-1-review</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 24, 2014 1:44 pm</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content">Hey thanks for the feedback!<br /><br />I would and will go for some kind of free to try approach. Maybe not free-to-play because that's boring, but some kind of demo so that people get a chance to see what you have to offer. I have yet to try your game so I'm not sure what a good way to do it would be. But I'm installing it now so I'll try it and see <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 25, 2014 2:36 am</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Thanks JDance!<br /><br />I would love to go with a demo-type offering, I'm not sure how to do that.  I see people with &quot;lite&quot; versions, but I've got something story based.  I guess I could go with the beginning of the story as the &quot;lite&quot; version.  Not sure if people are doing that.<br /><br />In semi-related news we just got a review from 148apps today, so I'm super-happy: <!-- m --><a class="postlink" href="http://www.148apps.com/reviews/500-years-act-1-review/">http://www.148apps.com/reviews/500-years-act-1-review/</a><!-- m --><br /><br />Right now I'm trying to build on some work from the community here and put xbox 360 controller support into my windows host (using glut).  Then I'll likely rework the trailer and go for a steam greenlight, try to learn about how the PC world of gaming works.<br /><br />fun stuff! <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Apr 03, 2014 12:41 am</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Hi Everyone,<br /><br />I just wanted to share what's happening with my project in case anyone is interested.<br /><br />Our sales on both iOs and Android were poor even after the reviews.  I've currently ported to windows using a glut host (works great), hooked up and xbox controller with xinput and have a little bit of work fixing up the UI to work with the controller.<br /><br />I also put it up on steam greenlight, so with a little luck <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br /><!-- m --><a class="postlink" href="http://steamcommunity.com/sharedfiles/filedetails/?id=244517115">http://steamcommunity.com/sharedfiles/f ... =244517115</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Apr 03, 2014 1:28 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Good luck! I integrated XInput into MOAI a while ago, although I don't think I did it correctly (and now I can't find my code dammit). I'd be nice if we could actually get XBox Controller support into the Windows host properly, because it's certainly a handy feature to have on Windows.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Indie Space Opera released! (we're happy about it)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Apr 03, 2014 1:37 am</strong></div>
+				<div class="author">by <strong>poorwillgames</strong></div>
+				<div class="content">Hi stun,<br /><br />Thank you!<br /><br />I actually saw your code for the XBox controller, a stub of it anyways, not complete...and I used an action the same way you did...the code I ended up with is different though.<br /><br />I didn't put it through the input manager (I was lazy I suppose)<br /><br />I can post my code if people are interested; let me know (and actually let me know where to post it too as this is likely not the best place <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> )</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

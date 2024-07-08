@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Raspberry Pi?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Raspberry Pi?</h2>
+		<p><a href="raspberry-pi-t846/index.html">/forums/raspberry-pi-t846/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+		
+			<div class="post">
+				<h3>Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 04, 2012 9:01 pm</strong></div>
+				<div class="author">by <strong>telarium</strong></div>
+				<div class="content">Hello, I'm thinking of developing my app in Windows and trying to run it on a Raspberry Pi. Before I actually buy one, I wanted to check first if there was any reason why it would not support compiled Moai code. The system will be running Debian, and like I said, I'll be using Windows to do the actual development and compiling.<br /><br />It seems like it would work, but I wanted to make sure there were no surprises later on...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 04, 2012 10:03 pm</strong></div>
+				<div class="author">by <strong>anddrewscott</strong></div>
+				<div class="content">If it runs on Debian, then read this thread on Moai compatibilit with Debian: <!-- l --><a class="postlink-local" href="moai-on-debian-t738/index.html">moai-on-debian-t738/</a><!-- l --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 04, 2012 10:42 pm</strong></div>
+				<div class="author">by <strong>telarium</strong></div>
+				<div class="content">So, dumb question, but do you have to compile from within Debian? I was hoping to compile it from my Windows machine, and then just load the resulting binary on the Pi.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jun 05, 2012 8:08 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Once you've built the MOAI host binary for Debian-ARM (for Raspberry Pi), you don't have to rebuild it ever again and can re-use the MOAI host binary for every project - copying the Lua sources over to your rPi is all you need to do to 'install' your app - but you do of course first need to get the MOAI host compiled.<br /><br />I myself have &quot;Port MOAI to AngstromOS for the Open Pandora game console&quot; on my personal MOAI TODO list, where its been for a few months now.  With the new work on Debian builds for MOAI, the step gets a little closer, but I fear that things won't work out of the box right now - there is still some work to get the gluthost (linux target) ready for use with AngstromOS/Debian distribution GLES binary issues.  I'll be working on the Pandora stuff sooner or later, and will update as soon as I get a working build - I believe your work on Debian-rPi as a target and my work with PandoraOS (Angstrom) will benefit each other.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jun 06, 2012 3:02 pm</strong></div>
+				<div class="author">by <strong>telarium</strong></div>
+				<div class="content">Might be too advanced for me to figure out on my own. Are there any ARM Linux varieties that are supported out of the box for Moai? Arch or Fedora?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 07, 2012 7:44 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Probably Debian-ARM (and Ubuntu) would be a simple target to get working .. maybe not so easy for AngstromOS and so on, but doable.  I've done a lot of porting work to Angstrom, and I think MOAI on such platforms as the rPi and the Pandora console would be well worth the effort .. so I'll do a little work on this once other things settle down, I think ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 14, 2012 9:51 am</strong></div>
+				<div class="author">by <strong>tnlogy</strong></div>
+				<div class="content">Any success on running moai on raspberry pi?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 14, 2012 10:01 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Not me, personally - I don't have an rPi, since I do have Beagleboards, Pandaboards, and the Open Pandora game console .. but I will start a project next week to get the moai host built for these platforms, and undoubtedly this will help rPi users too.  Stay tuned.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 14, 2012 11:14 am</strong></div>
+				<div class="author">by <strong>jgroman</strong></div>
+				<div class="content">Well, I managed to compile MOAI on rPi running Raspbian (Debian compiled for ARMv6+VFP). Didn't have time to test it yet, though. I guess it will be necessary to patch MOAI to use Broadcom GLES libraries before it will be of any use on rPi.<br />Just FYI, list of packages I had to install before compiling (I might have missed some):<dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=21&amp;t=846&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cmake liblua5.1-0-dev libcurl4-openssl-dev libfreetype6-dev freeglut3-dev libxmu-dev libxi-dev libexpat1-dev libglew-dev chipmunk-dev libtinyxml-dev libpng12-dev libjpeg8-dev libjansson-dev</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 14, 2012 11:56 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Ah cool!  Would be interesting to know if it works .. I'd be quite happily surprised if it did!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 14, 2012 8:33 pm</strong></div>
+				<div class="author">by <strong>telarium</strong></div>
+				<div class="content">Got my Pi last night. Was able to get about 50% of the way through compiling on device (taking several hours) before it died related to Chipmunk. <br /><br />jgroman, did you end up removing Chipmunk support to get it to compile? Otherwise, I may try installing the packages you listed again just to make sure I wasn't missing something.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jun 15, 2012 4:42 pm</strong></div>
+				<div class="author">by <strong>telarium</strong></div>
+				<div class="content">Okay, granted I'm still a bit rusty with Linux, but I can't seem to install the chipmunk-dev or libjansson-dev packages, due to it being unable to find them. Any idea why this would be the case? Even after I update and try to install.<br /><br /><blockquote class="uncited"><div>pi@raspberrypi:/Desktop$ sudo aptitude install libjansson-dev<br />Couldn't find any package whose name or description matched &quot;libjansson-dev&quot;<br /></div></blockquote></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jun 17, 2012 8:36 am</strong></div>
+				<div class="author">by <strong>jgroman</strong></div>
+				<div class="content"><span style="font-weight: bold">telarium</span>, what distro you use on your RasPi? Not sure about libjansson, but chipmunk is not available in squeeze for sure. You'll need at least wheezy to successfully compile MOAI without any source modification. And since Lua makes heavy use of floating point stuff, I'd recommend you'd give <a href="http://www.raspbian.org/PiscesImages" class="postlink">Raspbian</a> a spin. Standard Debian from RasPi site is armel based and doesn't use floating point arithmetics unit.<br /><br />I am compiling MOAI on RasPi just now because my SD card died a horrible death. Will post here if there will be any new compilation problems.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jun 17, 2012 11:47 am</strong></div>
+				<div class="author">by <strong>jgroman</strong></div>
+				<div class="content">OK, so compilation took almost exactly one hour on non-overclocked Pi running Raspbian with recent kernel.<br /><br />I tried to run a few samples:<br />- hello-moai: Segmentation fault, seems to be related to font loading<br />- anim/anim-basic: empty MOAI window<br />- deck/scriptDeck: sort of works, but fps is not all that great<br />Seems to me it is using software OpenGL emulation only.<br /><br />MOAI definitely needs to be patched to use Broadcom GLES libraries before it will be usable on RasPi.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jun 17, 2012 3:10 pm</strong></div>
+				<div class="author">by <strong>telarium</strong></div>
+				<div class="content">I was just using Debian Squeeze. I suppose I will change if I'm really determined to get Moai working, but it sounds like it's not in a useable state right now.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 18, 2012 8:02 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content"><blockquote class="uncited"><div>MOAI definitely needs to be patched to use Broadcom GLES libraries before it will be usable on RasPi.<br /></div></blockquote><br /><br />Can you not just do something like &quot;LD_PRELOAD=/usr/lib/libGLES.so ./maoi&quot; or is your RaspPi build doing static linking?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 18, 2012 11:43 am</strong></div>
+				<div class="author">by <strong>jgroman</strong></div>
+				<div class="content"><span style="font-weight: bold">ibisum</span>, I think that would not be enough. I believe one needs to include Broadcom specific libraries into source code and explicitly call some proprietary initialisation and other stuff. Also currently there is no X driver for Pi and calls for getting display surface need to be changed to not use X and go straight to EGL. But I am far from being an expert in this area and I might be completely wrong here.<br /><br />See code in <a href="https://github.com/raspberrypi/firmware/blob/master/opt/vc/src/hello_pi/hello_triangle/triangle.c" class="postlink">this example</a>, look for <span style="font-style: italic">bcm_, vc_</span> and <span style="font-style: italic">dispman_</span> prefixes. Those are proprietary to Broadcom.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 18, 2012 12:39 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Thats an un-cool situation, indeed.  I am spoiled by AngstromOS/PandoraOS: its a lot easier to use GLES1.1/2.0 in that environment.  Oh well, hope it gets sorted out - and in the meantime I will look at building MOAI for Pandaboard ES (UbuntuOS) in the next week or so ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Sep 19, 2012 3:19 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Well .. I've got a Raspberry Pi, and am sitting here watching moai-dev (linux branch) compile .. I guess its going to take a few hours at this pace, but maybe it will produce a binary at the end of it, who knows .. <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Raspberry Pi?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Mar 16, 2013 4:42 pm</strong></div>
+				<div class="author">by <strong>Ascorbius</strong></div>
+				<div class="content">Any luck with this?<br /><br />It'd be great if there was a binary for the host - compiled and working with the Raspberry Pi<br /><br />I'd be very intersted to check the performance of my game wth it.<br /><br />(posted from my raspberry Pi)</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

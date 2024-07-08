@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=17&amp;t=2906&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-11-20T08:07:06+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=17&amp;t=2906&amp;mode</id>
+<entry>
+<author><name><![CDATA[JDance]]></name></author>
+<updated>2014-11-20T08:07:06+00:00</updated>
+<published>2014-11-20T08:07:06+00:00</published>
+<id>/forums/viewtopic.php?t=2906&amp;p=15991#p15991</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2906&amp;p=15991#p15991"/>
+<title type="html"><![CDATA[Re: [SOLVED] Android version stuck on 2.3.3 / API 10]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2906&amp;p=15991#p15991"><![CDATA[
+If you are using a new Android Studio build which is based on Gradle this setting is found in the build.gradle file. I had problems with this as well because my manifest changes were not updated in play store. If you are using gradle/studio just remove &lt;uses-sdk&gt; from the manifest because its just overwritten with gradle settings anyway.<br /><br />build.gradle<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">apply plugin: 'com.android.application'</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">android <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    compileSdkVersion <span style="">20</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    buildToolsVersion &quot;20.0.0&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    defaultConfig <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        applicationId &quot;se.skyturns&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        minSdkVersion <span style="">11</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        targetSdkVersion <span style="">19</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1128">JDance</a> — Thu Nov 20, 2014 8:07 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2014-11-20T02:09:56+00:00</updated>
+<published>2014-11-20T02:09:56+00:00</published>
+<id>/forums/viewtopic.php?t=2906&amp;p=15990#p15990</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2906&amp;p=15990#p15990"/>
+<title type="html"><![CDATA[Re: Android version stuck on 2.3.3 / API 10]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2906&amp;p=15990#p15990"><![CDATA[
+That did the trick, thanks once more.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu Nov 20, 2014 2:09 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2014-11-19T23:28:16+00:00</updated>
+<published>2014-11-19T23:28:16+00:00</published>
+<id>/forums/viewtopic.php?t=2906&amp;p=15986#p15986</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2906&amp;p=15986#p15986"/>
+<title type="html"><![CDATA[Re: Android version stuck on 2.3.3 / API 10]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2906&amp;p=15986#p15986"><![CDATA[
+look for the string android-10 in all files in the project folder. I had same issue previously and remember that had something to do with it (but can remember the exact fix sorry)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Wed Nov 19, 2014 11:28 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2014-11-20T02:10:12+00:00</updated>
+<published>2014-11-19T22:00:48+00:00</published>
+<id>/forums/viewtopic.php?t=2906&amp;p=15984#p15984</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2906&amp;p=15984#p15984"/>
+<title type="html"><![CDATA[[SOLVED] Android version stuck on 2.3.3 / API 10]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2906&amp;p=15984#p15984"><![CDATA[
+How do you get the host to use a newer version?<br /><br />Tried substituting inside built host AndroidManifest.xml: <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="xml" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;uses-sdk</span> <span style="color: #000066;">android:minSdkVersion</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">android:targetSdkVersion</span>=<span style="color: #ff0000;">&quot;19&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #808080; font-style: italic;">&lt;!--uses-sdk android:minSdkVersion=&quot;8&quot;/--&gt;</span></div></li><br /></ol></code></dd></dl><br /><br />but get this warning:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="bash" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>gettarget<span style="color: #7a0874; font-weight: bold;">&#93;</span> Project Target:   Android 2.3.3</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>gettarget<span style="color: #7a0874; font-weight: bold;">&#93;</span> API level:        <span style="color: #000000;">10</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>gettarget<span style="color: #7a0874; font-weight: bold;">&#93;</span> WARNING: Attribute minSdkVersion <span style="color: #000000; font-weight: bold;">in</span> AndroidManifest.xml <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">15</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> is higher than the project target API level <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">10</span><span style="color: #7a0874; font-weight: bold;">&#41;</span></div></li><br /></ol></code></dd></dl><br /><br />Installing 4.3.3 API 19 via Android updater didn't seem to have an effect.<br /><br /><img src="images/smilies/icon_e_confused.gif" alt=":?" title="Confused" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Wed Nov 19, 2014 10:00 pm</p><hr />
+]]></content>
+</entry>
+</feed>

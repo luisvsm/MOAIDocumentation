@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Fun with Particles</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Fun with Particles</h2>
+		<p><a href="fun-with-particles-t84/index.html">/forums/fun-with-particles-t84/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Fun with Particles</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Jul 27, 2011 5:25 pm</strong></div>
+				<div class="author">by <strong>christianklepac</strong></div>
+				<div class="content">Hi all, I recently found the need to whip up some quick particle effects for my current project. I dug through the SDK and some example code, and finally got some good results. I'm posting the contents of my main.lua file here in case anyone else might find it useful. This is really basic, there's a ton more you can do, but if you're totally lost (like I was) this could help point you in the right direction.
+<br />
+<br />
+<br />
+<br />To run it, you'll need a 10x10 pixel white .png called "spark.png" in the same folder as main.lua, plus a .ttf of your choice (don't forget to change the loadfromTTF line to reference your own font), and a run.bat (if you're on Windows). 
+<br />
+<br />
+<br />
+<br /> <pre>------------------------------
+<br />-- Window, viewport, and layer
+<br />------------------------------
+<br />MOAISim.openWindow ( "Particles", 320, 480 )
+<br />
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( 320, 480 )
+<br />viewport:setScale ( 320, 480 )
+<br />
+<br />layer = MOAILayer2D.new ()
+<br />layer:setViewport ( viewport )
+<br />MOAISim.pushRenderPass ( layer )
+<br />
+<br />------------------------------
+<br />-- Instructional textbox
+<br />------------------------------
+<br />font = MOAIFont.new ()
+<br />charcodes = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,:;!?()&/-'
+<br />font:loadFromTTF ( 'GenBasR.ttf', charcodes, 16, 163 )
+<br />
+<br />textbox = MOAITextBox.new ()
+<br />textbox:setString ( "Press TAB to surge" )
+<br />textbox:setFont ( font )
+<br />textbox:setTextSize ( font:getScale ())
+<br />textbox:setRect ( -150, -230, 150, 230 )
+<br />textbox:setYFlip ( true )
+<br />layer:insertProp ( textbox )
+<br />
+<br />------------------------------
+<br />-- Deck for particles
+<br />------------------------------
+<br />-- a white 10x10 .png
+<br />sparkDeck = MOAIGfxQuad2D.new ()
+<br />sparkDeck:setTexture ( "spark.png" )
+<br />sparkDeck:setRect ( -5, -5, 5, 5 )
+<br />
+<br />------------------------------
+<br />-- Particle scripts
+<br />------------------------------
+<br />
+<br />-- pack registers for scripts
+<br />reg1 = MOAIParticleScript.packReg ( 1 )
+<br />reg2 = MOAIParticleScript.packReg ( 2 )
+<br />reg3 = MOAIParticleScript.packReg ( 3 )
+<br />reg4 = MOAIParticleScript.packReg ( 4 )
+<br />reg5 = MOAIParticleScript.packReg ( 5 )
+<br />CONST = MOAIParticleScript.packConst
+<br />
+<br /> ----------
+<br /> --init script
+<br /> ----------
+<br />sparkInitScript = MOAIParticleScript.new ()
+<br />-- this takes the registers you created above and turns them into random number generators
+<br />-- returning values between the last two parameters
+<br />sparkInitScript:randVec ( reg1, reg2, CONST(12), CONST(128) )
+<br />sparkInitScript:rand ( reg3, CONST(-90), CONST(90) )
+<br />sparkInitScript:rand ( reg4, CONST(0.5), CONST(1.2) )
+<br />
+<br />----------
+<br />-- render script
+<br />----------
+<br />sparkRenderScript = MOAIParticleScript.new ()
+<br />--this makes the sprite appear
+<br />sparkRenderScript:sprite ()
+<br />-- this controls the amount your particle cloud will spread out over the x axis
+<br />-- and how fast / smooth it spreads. Note it is getting a random value from
+<br />-- one of the script registers
+<br />sparkRenderScript:easeDelta	( MOAIParticleScript.PARTICLE_X, CONST(0), reg1, MOAIEaseType.SHARP_EASE_IN )
+<br />-- this does the same over the y axis
+<br />sparkRenderScript:easeDelta	( MOAIParticleScript.PARTICLE_Y, CONST(0), reg2, MOAIEaseType.SHARP_EASE_IN )
+<br />-- this sets a random starting rotation for each particle
+<br />sparkRenderScript:set ( MOAIParticleScript.SPRITE_ROT, reg3 )
+<br />-- this applies a random amount of rotation to each particle during its lifetime
+<br />sparkRenderScript:ease ( MOAIParticleScript.SPRITE_ROT, CONST(0), reg3, MOAIEaseType.LINEAR )
+<br />-- this makes the particle fade out near the end of its lifetime
+<br />sparkRenderScript:ease ( MOAIParticleScript.SPRITE_OPACITY, CONST(1), CONST(0), MOAIEaseType.SHARP_EASE_OUT )
+<br />-- this makes each particle randomly bigger or smaller than the original size
+<br />sparkRenderScript:set	( MOAIParticleScript.SPRITE_X_SCL, reg4 )
+<br />sparkRenderScript:set	( MOAIParticleScript.SPRITE_Y_SCL, reg4 )
+<br />
+<br />------------------------------
+<br />-- Particle system
+<br />------------------------------
+<br />sparkSystem = MOAIParticleSystem.new ()
+<br />-- max num of particles, size of each
+<br />sparkSystem:reserveParticles ( 64, 10 )
+<br />-- max num of sprites
+<br />sparkSystem:reserveSprites ( 64 )
+<br />sparkSystem:reserveStates ( 1 )
+<br />-- deck can be set like a prop
+<br />sparkSystem:setDeck ( sparkDeck )
+<br />sparkSystem:start ()
+<br />-- particle system can be inserted like a prop
+<br />layer:insertProp ( sparkSystem )
+<br />
+<br />------------------------------
+<br />-- Particle forces
+<br />------------------------------
+<br />gravity = MOAIParticleForce.new ()
+<br />gravity:initLinear ( 0, -100 )
+<br />gravity:setType( MOAIParticleForce.FORCE )
+<br />
+<br />------------------------------
+<br />-- Particle state
+<br />------------------------------
+<br />-- a state holds a particle cloud's lifetime, physics properties
+<br />-- and which scripts govern its behavior
+<br />sparkState = MOAIParticleState.new ()
+<br />-- particle lifetime, random between the two values in seconds
+<br />sparkState:setTerm ( 0.5, 2 )
+<br />sparkState:setInitScript ( sparkInitScript )
+<br />sparkState:setRenderScript ( sparkRenderScript )
+<br />sparkState:pushForce (gravity)
+<br />
+<br />-- sets the system to this state
+<br />sparkSystem:setState ( 1, sparkState )
+<br />
+<br />------------------------------
+<br />-- Thread for user input
+<br />------------------------------
+<br />mainThread = MOAIThread.new ()
+<br />mainThread:run(
+<br />	function()
+<br />		local run = true
+<br />		while run do
+<br />			coroutine.yield()
+<br />			if MOAIInputMgr.device.keyboard:keyDown(9) then -- Tab
+<br />				-- parameters for surge
+<br />				-- 1 : number of sprites emitted
+<br />				-- 2, 3 : (x, y) origin point of particle cloud
+<br />				-- 4, 5 : (x, y) destination point for particle cloud drift
+<br />				-- Note that I'm manually applying a small X-direction movement here
+<br />				-- but the downward movement is a result of the particle force
+<br />				-- defined as 'gravity' above
+<br />				sparkSystem:surge(64, 0, 0, 25, 0)
+<br />			end
+<br />		end
+<br />	end
+<br />)
+<br />
+<br /></pre></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Fun with Particles</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jul 28, 2011 9:40 pm</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">Thanks Christian!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Fun with Particles</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Jan 06, 2012 9:28 am</strong></div>
+				<div class="author">by <strong>Dwi</strong></div>
+				<div class="content"><img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /> nice . :) thanks , it is very useful for me
+<br />already try . work like charm</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Fun with Particles</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 05, 2012 9:00 pm</strong></div>
+				<div class="author">by <strong>recastrodiaz</strong></div>
+				<div class="content">I had to change the image size to a multiple of 2^n to make it work on my windows host. Otherwise it worked like a charm. Well done !</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

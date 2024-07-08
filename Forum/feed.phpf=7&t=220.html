@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=220&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-12-04T20:19:58+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=220&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-04T20:19:58+00:00</updated>
+<published>2011-12-04T20:19:58+00:00</published>
+<id>/forums/viewtopic.php?t=220&amp;p=1111#p1111</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=220&amp;p=1111#p1111"/>
+<title type="html"><![CDATA[how to load lua bytecode from moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=220&amp;p=1111#p1111"><![CDATA[
+Great, glad it worked out! <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Sun Dec 04, 2011 8:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kengo.nakajima]]></name></author>
+<updated>2011-12-02T13:01:44+00:00</updated>
+<published>2011-12-02T13:01:44+00:00</published>
+<id>/forums/viewtopic.php?t=220&amp;p=1088#p1088</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=220&amp;p=1088#p1088"/>
+<title type="html"><![CDATA[how to load lua bytecode from moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=220&amp;p=1088#p1088"><![CDATA[
+Hi.<br /><br />Finally resolved. Thank you for help!<br /><br /><br /><br />This is what i've done:<br /><br /><br /><br />to save:<br /><br />f = loadfile("main.lua")<br /><br />of = io.open("hoge.luac","w")<br /><br />s = string.dump(f)<br /><br />of:write(s)<br /><br />of:close()<br /><br /><br /><br />to load:<br /><br />f=loadfile("hoge.luac")<br /><br />f()<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=197">kengo.nakajima</a> — Fri Dec 02, 2011 1:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kengo.nakajima]]></name></author>
+<updated>2011-12-02T13:01:43+00:00</updated>
+<published>2011-12-02T13:01:43+00:00</published>
+<id>/forums/viewtopic.php?t=220&amp;p=1087#p1087</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=220&amp;p=1087#p1087"/>
+<title type="html"><![CDATA[how to load lua bytecode from moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=220&amp;p=1087#p1087"><![CDATA[
+Hi.<br /><br />Finally resolved. Thank you for help!<br /><br /><br /><br />This is what i've done:<br /><br /><br /><br />to save:<br /><br />f = loadfile("main.lua")<br /><br />of = io.open("hoge.luac","w")<br /><br />s = string.dump(f)<br /><br />of:write(s)<br /><br />of:close()<br /><br /><br /><br />to load:<br /><br />f=loadfile("hoge.luac")<br /><br />f()<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=197">kengo.nakajima</a> — Fri Dec 02, 2011 1:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-11-29T01:14:13+00:00</updated>
+<published>2011-11-29T01:14:13+00:00</published>
+<id>/forums/viewtopic.php?t=220&amp;p=1051#p1051</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=220&amp;p=1051#p1051"/>
+<title type="html"><![CDATA[how to load lua bytecode from moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=220&amp;p=1051#p1051"><![CDATA[
+It is. We're doing it for our own games, in fact. One gotcha is that Moai still uses Lua 5.1.3, so if you are using luac from Lua 5.1.4 it won't run. Try using the luac included in the Visual Studio project (or a 5.1.3 binary).<br /><br />You can also use string.dump to convert files to bytecode from inside Lua itself. Check out samples/basics/util-serialize-to-header for an example.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Tue Nov 29, 2011 1:14 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kengo.nakajima]]></name></author>
+<updated>2011-11-28T18:55:08+00:00</updated>
+<published>2011-11-28T18:55:08+00:00</published>
+<id>/forums/viewtopic.php?t=220&amp;p=1046#p1046</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=220&amp;p=1046#p1046"/>
+<title type="html"><![CDATA[how to load lua bytecode from moai?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=220&amp;p=1046#p1046"><![CDATA[
+Hi! my moai doesn't read lua byte code (output from luac ) but original Lua 5.1 program reads.<br /><br />How to read lua bytecode from moai?<br /><br /><br /><br />My goal is to protect my lua source code from casual copy and paste hacks.<br /><br />I have read /wiki/Protecting_Your_Lua_Files but no example in it.<br /><br />Is it possible to load bytecode in current moai program?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=197">kengo.nakajima</a> — Mon Nov 28, 2011 6:55 pm</p><hr />
+]]></content>
+</entry>
+</feed>

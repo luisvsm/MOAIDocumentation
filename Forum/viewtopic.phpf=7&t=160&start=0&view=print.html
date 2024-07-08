@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - iPhone sample project on xcode 4.2 dosen&#39;t build</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>iPhone sample project on xcode 4.2 dosen&#39;t build</h2>
+		<p><a href="iphone-sample-project-on-xcode-4-2-dosen-t-build-t160/index.html">/forums/iphone-sample-project-on-xcode-4-2-dosen-t-build-t160/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>iPhone sample project on xcode 4.2 dosen&#39;t build</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 22, 2011 2:20 pm</strong></div>
+				<div class="author">by <strong>stefano.linguerri</strong></div>
+				<div class="content">I upgraded to xcode 4.2 and the iPhone samples project doesn't build anymore
+<br />
+<br />
+<br />
+<br />I got a lot of Warning and this error:
+<br />
+<br />
+<br />Base specifier must name a class in ~moai/moai-beta/src/moaiext-iphone/MOAIWebView.h
+<br />
+<br />
+<br />
+<br />After commenting and tring to build I got many other errors on other parts of the code.
+<br />
+<br />
+<br />
+<br />The macosx build works (but lusocket it's not linked).
+<br />
+<br />
+<br />
+<br />HTH</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone sample project on xcode 4.2 dosen&#39;t build</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 22, 2011 2:48 pm</strong></div>
+				<div class="author">by <strong>ugo.landini</strong></div>
+				<div class="content">Apparently solved with these modifications:
+<br />
+<br />
+<br />
+<br />- remove the UIViewController from the MOAIWebView:
+<br />
+<br />class MOAIWebView :
+<br />
+<br />	/*public UIViewController,*/ 
+<br />
+<br />	public MOAIEventSource {
+<br />
+<br />
+<br />
+<br />change the:
+<br />
+<br />UILocalNotification* notification = [[[ NSNotification alloc ] init ] autorelease ];
+<br />
+<br />in:
+<br />
+<br />UILocalNotification* notification = [[[ UILocalNotification alloc ] init ] autorelease ];
+<br />
+<br />
+<br />
+<br />in MOAIApp.mm</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone sample project on xcode 4.2 dosen&#39;t build</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 22, 2011 2:59 pm</strong></div>
+				<div class="author">by <strong>stefano.linguerri</strong></div>
+				<div class="content">Yes Ugo,
+<br />
+<br />
+<br />
+<br />it works :D
+<br />
+<br />
+<br />
+<br />after code changing also re-linking gamekit lib and libz.1.1.3
+<br />
+<br />
+<br />
+<br />thanks</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>iPhone sample project on xcode 4.2 dosen&#39;t build</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 22, 2011 4:02 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">FWIW, our next release should build on Xcode 4.2, iOS SDK 5.0 with no errors/warnings.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

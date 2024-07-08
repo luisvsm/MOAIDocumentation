@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=317&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-01-04T15:33:14+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=317&amp;mode</id>
+<entry>
+<author><name><![CDATA[cedric.darne]]></name></author>
+<updated>2012-01-04T15:33:14+00:00</updated>
+<published>2012-01-04T15:33:14+00:00</published>
+<id>/forums/viewtopic.php?t=317&amp;p=1576#p1576</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=317&amp;p=1576#p1576"/>
+<title type="html"><![CDATA[Jerky translation animation with linear ease mode]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=317&amp;p=1576#p1576"><![CDATA[
+I'm trying to play with setSpeed and setSpan to reduce the jerkiness.<br /><br />Raising the speed helps but the anim runs obviously faster which is not quite the desired effect...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=364">cedric.darne</a> — Wed Jan 04, 2012 3:33 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[cedric.darne]]></name></author>
+<updated>2012-01-04T14:28:21+00:00</updated>
+<published>2012-01-04T14:28:21+00:00</published>
+<id>/forums/viewtopic.php?t=317&amp;p=1575#p1575</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=317&amp;p=1575#p1575"/>
+<title type="html"><![CDATA[Jerky translation animation with linear ease mode]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=317&amp;p=1575#p1575"><![CDATA[
+I understand, the jerkiness may appear because the deltas between x/y loc are short. I'll try to add more steps to my 'path'.<br /><br />About the environment: the jerkiness, for my case, is more visible on android. But by adding frequent MOAISim.getPerformance() I didn't notice frames drops. And I didn't notice this problem on other animations for the same scene. So hopefully it does seem to be a timer issue.<br /><br /><br /><br />Thanks for your help, patrick.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=364">cedric.darne</a> — Wed Jan 04, 2012 2:28 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2012-01-04T13:34:39+00:00</updated>
+<published>2012-01-04T13:34:39+00:00</published>
+<id>/forums/viewtopic.php?t=317&amp;p=1573#p1573</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=317&amp;p=1573#p1573"/>
+<title type="html"><![CDATA[Jerky translation animation with linear ease mode]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=317&amp;p=1573#p1573"><![CDATA[
+Also: there are other things that can cause jerkiness depending on your environment. I'd be really surprised if your simulation is dropping frames, but there are some environments where even a simple game loop can look jerky due to timer issues. There are a lot of tradeoffs around using system time in the sim loop. We've exposed a lot of these in MOAISim, mainly because there's doesn't seem to be a best 'one size fits all' answer.<br /><br />So if you're seeing a lot of hitching and jerking even with a simple, smooth or linear animation then you may need to dig into the way the sim is being updates on your particular platform.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Jan 04, 2012 1:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2012-01-04T13:31:38+00:00</updated>
+<published>2012-01-04T13:31:38+00:00</published>
+<id>/forums/viewtopic.php?t=317&amp;p=1572#p1572</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=317&amp;p=1572#p1572"/>
+<title type="html"><![CDATA[Jerky translation animation with linear ease mode]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=317&amp;p=1572#p1572"><![CDATA[
+I ran the script. Just to double check, I tried it with a different path:<br /><br /><a href="http://pastebin.com/RQj6gqNQ" target="_blank">http://pastebin.com/RQj6gqNQ</a><br /><br />We don't have spline curves at the moment. That may be a feature we add later. For now to smooth out a path you'd need to add more samples... or use another ease type.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Jan 04, 2012 1:31 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[cedric.darne]]></name></author>
+<updated>2012-01-04T13:12:26+00:00</updated>
+<published>2012-01-04T13:12:26+00:00</published>
+<id>/forums/viewtopic.php?t=317&amp;p=1570#p1570</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=317&amp;p=1570#p1570"/>
+<title type="html"><![CDATA[Jerky translation animation with linear ease mode]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=317&amp;p=1570#p1570"><![CDATA[
+Hi,<br /><br /><br /><br />I'm trying to make a 'path' animation for a prop, moving it at several coordinates then looping. But I have a problem: when I use a linear ease mode, the animation looks jerky, as if it was lagging. But with other ease modes the animation is smoother. How can I make my animation smoother while keeping the linear ease mode?<br /><br /><br /><br />Here's a repro script:<br /><br /><blockquote><br /><br /><div>MOAISim.openWindow ( "test", 640, 320 )</div><br /><div>viewport = MOAIViewport.new ()</div><br /><div>viewport:setSize ( 640, 320 )</div><br /><div>viewport:setScale ( 640, 320 )</div><br /><div>layer = MOAILayer2D.new ()</div><br /><div>layer:setViewport ( viewport )</div><br /><div>MOAISim.pushRenderPass ( layer )</div><br /><div></div><br /><div>gfxQuad = MOAIGfxQuad2D.new ()</div><br /><div>gfxQuad:setTexture ( "cathead.png" )</div><br /><div>gfxQuad:setRect ( -64, -64, 64, 64 )</div><br /><div>prop = MOAIProp2D.new ()</div><br /><div>prop:setDeck ( gfxQuad )</div><br /><div>layer:insertProp ( prop )</div><br /><div></div><br /><div>mode = MOAIEaseType.LINEAR</div><br /><div></div><br /><div>curveX = MOAIAnimCurve.new ()</div><br /><div>curveX:reserveKeys ( 5 )</div><br /><div>curveX:setKey ( 1, 0, 0, mode )</div><br /><div>curveX:setKey ( 2, 1, 6, mode )</div><br /><div>curveX:setKey ( 3, 2, -6, mode )</div><br /><div>curveX:setKey ( 4, 3, -12, mode )</div><br /><div>curveX:setKey ( 5, 4, -6, mode )</div><br /><div></div><br /><div>curveY = MOAIAnimCurve.new ()</div><br /><div>curveY:reserveKeys ( 5 )</div><br /><div>curveY:setKey ( 1, 0, 0, mode )</div><br /><div>curveY:setKey ( 2, 1, 6, mode )</div><br /><div>curveY:setKey ( 3, 2, 6, mode )</div><br /><div>curveY:setKey ( 4, 3, -6, mode )</div><br /><div>curveY:setKey ( 5, 4, -6, mode )</div><br /><div></div><br /><div>anim = MOAIAnim.new ()</div><br /><div>anim:reserveLinks ( 2 )</div><br /><div>anim:setLink ( 1, curveX, prop, MOAIProp2D.ATTR_X_LOC )</div><br /><div>anim:setLink ( 2, curveY, prop, MOAIProp2D.ATTR_Y_LOC )</div><br /><div>anim:setMode ( MOAITimer.LOOP )</div><br /><div>anim:start ()</div><br /><br /><br /></blockquote><br /><br /><br />Thanks for your advices.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=364">cedric.darne</a> — Wed Jan 04, 2012 1:12 pm</p><hr />
+]]></content>
+</entry>
+</feed>

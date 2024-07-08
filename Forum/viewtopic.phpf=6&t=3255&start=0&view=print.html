@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - [WiP] Hextraptions</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>[WiP] Hextraptions</h2>
+		<p><a href="hextraptions-t3255/index.html">/forums/hextraptions-t3255/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>[WiP] Hextraptions</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Feb 27, 2016 4:15 pm</strong></div>
+				<div class="author">by <strong>veli</strong></div>
+				<div class="content">I'm working on hexagonal puzzle game based on digital logic and programmable toys. Currently only the core mechanics exist and I don't actually know what the game is about. I'm still experimenting with stuff.<br /><br /><img src="http://i.imgur.com/CiF2oUk.png" alt="Image" /><br /><br />You can place bunch of logical blocks on hexagonal grids and they will be evaluated in cycles. You can also place toys and watch them interact. There is special toy that is controlled by keyboard. This toy in the middle is always trying to orient itself towards the player:<br /><br /><img src="http://i.imgur.com/CMvN1Qb.gif" alt="Image" /><br /><br />Some building blocks and toys are scripted in Lua, but you can also create new empty toy and add custom logic in game. Toys can have components (sight, compass, radio, thruster...) to make sense of their surrounding and to move around.<br /><br />The cool part is that you can enter any toy and get same hexagonal grid. Then you place inputs, outputs and logic blocks to create wiring, and the toy will behave as programmed.<br /><br />This toy moves away from anything that comes near:<br /><img src="http://i.imgur.com/zdS1w5j.gif" alt="Image" /><br />It is wired by simply connecting directional sight sensor to thruster that moves the toy in opposite direction:<br /><img src="http://i.imgur.com/i2RUMg8.png" alt="Image" /><br />You can also see what inputs and outputs are currently active. There is a shortcut to pause/resume game, so you can &quot;debug&quot; your creations.<br /><br />There's still ton of work remaining on GUI, sounds &amp; music, saving &amp; loading, and making an actual game out of it. Still, the core part is progressing quite nicely thanks to awesome powers of Lua and Moai.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: [WiP] Hextraptions</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Feb 28, 2016 12:27 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Looks very nice - I can imagine a game-table with these parts on it, somehow .. hope you'll keep us updated on your progress, very interesting mechanics so far ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: [WiP] Hextraptions</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 01, 2016 3:27 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />I feel like it could be some kind of build your own robot, and then you fight other robots. I am interested in how this progresses.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: [WiP] Hextraptions</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 01, 2016 6:24 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Yeah, like you can build your own hexa-snake robot things, but you have to explore the grid and find the parts first... and maybe some of them get legs/other pods with features, which blow up/enhance other parts, etc.  You could have a 'part attractor' that sucks in hex's off the grid, which could be good - i.e. get things fast or bad - i.e. someone set up the bomb.  <br /><br />Anyway, inspiring stuff .. also fun to see anims embedded, thanks for making that effort ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: [WiP] Hextraptions</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 02, 2016 5:54 pm</strong></div>
+				<div class="author">by <strong>veli</strong></div>
+				<div class="content">Guys, thanks for ideas. I'll work some more on the core part before I can decide what is achievable within this hex-a-verse :)<br /><br />@ibisum, animations are not a lot of effort. I use LiceCap which is a really easy software for recording GIFs. It also works under linux (WINE). I like to keep an archive of such recordings so I can see later track progress between weeks. Here's the recently implemented minimap feature.<br /><img src="http://i.imgur.com/IgvFbVu.gif" alt="Image" /><br />The animation shows the toy that alternately moves forward and rotates, while the minimap shows the view in level above. Because minimap camera tracks the toy, the whole level rotates and toy is fixed.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

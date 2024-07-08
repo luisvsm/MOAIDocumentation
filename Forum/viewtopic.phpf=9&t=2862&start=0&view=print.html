@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Moai for (non-game) app development?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Moai for (non-game) app development?</h2>
+		<p><a href="moai-for-non-game-app-development-t2862/index.html">/forums/moai-for-non-game-app-development-t2862/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Moai for (non-game) app development?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 18, 2014 1:52 pm</strong></div>
+				<div class="author">by <strong>camilo</strong></div>
+				<div class="content">Hello everyone,<br /><br />I am looking for a mobile framework to develop an Android/iOS app. While I tried Cordova and experimented with &quot;native&quot; Android (Java), most of our backend code is Lua (OpenResty), so it seems to make sense to stick to the same language. I prefer to rely on OSS, so, suprisingly to me, Moai looks like the only option.<br /><br />Was wondering what your experience is using MOAI for non-game apps. I need:<br />a) Facebook integration (other social networks would be cool, but are not a priority)<br />b) Geolocation<br />c) Standard GUI elements (infinite lists, input boxes, buttons, checkboxes)<br /><br />The first 2 seem to be, in principle, at least, covered (although looking at the SDK I see there are different classes for iOS and Android fb integration? -- why?), but am worried about the third.<br /><br />Would appreciate if you could share your experiences and comments. Thanks!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Moai for (non-game) app development?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Oct 18, 2014 4:18 pm</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content">The most advanced GUI framework for MOAI is hanappe: <!-- m --><a class="postlink" href="https://github.com/makotok/Hanappe">https://github.com/makotok/Hanappe</a><!-- m --><br />Nice OOP structure and pretty easy to customize and extend. <br /><br />If you decide to go with MOAI, then be ready for possible problems: <br /><ul><li>Hanappe is designed for games (not only mobile), so you'll find that some common mobile widgets are missing. There is no table/list view.</li><li>Input fields can be buggy. This is due mobile API's are not designed to display input fields in OpenGL app without hacks and workarounds.</li><li>You may find that some features are missing in Facebook bindings and you'll need to dive into C++ part to expose missing functionality.</li></ul></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

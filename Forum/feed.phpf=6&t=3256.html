@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=6&amp;t=3256&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2016-04-03T22:32:41+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=6&amp;t=3256&amp;mode</id>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2016-04-03T22:32:41+00:00</updated>
+<published>2016-04-03T22:32:41+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17964#p17964</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17964#p17964"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17964#p17964"><![CDATA[
+There is one bug I know of for tablets, or at least orientation change.  The triple tapping doesn't work in landscape. That I can and will fix.<br /><br />I think this MOAI 1.7.4 and recent *open ssl problems* I will address for all my apps all together.  Soonish....<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Sun Apr 03, 2016 10:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2016-03-30T06:23:32+00:00</updated>
+<published>2016-03-30T06:23:32+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17953#p17953</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17953#p17953"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17953#p17953"><![CDATA[
+Ah, I think this is a bug in the MOAI Android host, in all honesty .. I think this is fixed in 1.7.4 hosts, so I would say that if you want to build this with the new MOAI 1.7.4, I'm happy to test it for you as soon as you give me an .apk.<br /><br />(If you even want to bother with fixing it, well its up to you anyway ..)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Mar 30, 2016 6:23 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2016-03-21T20:18:50+00:00</updated>
+<published>2016-03-21T20:18:50+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17940#p17940</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17940#p17940"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17940#p17940"><![CDATA[
+Hey, ibisum<br /><br />I didn't forget about this, really!  It just took time for me to find a Nexus 7 to borrow.<br /><br />The clock will rotate portrait &lt;-&gt; landscape on this Nexus 7... but unfortunately this one has Android 6.0<br /><br />It may be the combo of Nexus 7 + Android 5.1 just doesn't play well with MOAIGfxDevice.getViewSize()<br /><br />It is that method being used, and checked against, for determining change of orientation.  Greater height than width means portrait, greater width than height means landscape.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Mon Mar 21, 2016 8:18 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2016-03-06T21:05:41+00:00</updated>
+<published>2016-03-06T21:05:41+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17928#p17928</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17928#p17928"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17928#p17928"><![CDATA[
+Let me know if you need anything tested ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sun Mar 06, 2016 9:05 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2016-03-05T18:02:47+00:00</updated>
+<published>2016-03-05T18:02:47+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17927#p17927</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17927#p17927"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17927#p17927"><![CDATA[
+It should support orientation change on a tablet (not a phone though), or at least it does on my Galaxy tablet (Android 4.4).<br /><br />I'll look into that on a 5.1 tablet.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Sat Mar 05, 2016 6:02 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2016-03-05T16:46:45+00:00</updated>
+<published>2016-03-05T16:46:45+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17926#p17926</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17926#p17926"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17926#p17926"><![CDATA[
+Very nice Live Wallpaper - just installed it on my Nexus 7, running Android 5.1.1 and it runs smoothly and quite nicely .. only issue is that it doesn't handle orientation changes very well .. or indeed at all.  Is that by design, or a bug on the 5.1.1 of MOAI, somehow .. ?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sat Mar 05, 2016 4:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2016-03-02T00:05:28+00:00</updated>
+<published>2016-03-02T00:05:28+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17917#p17917</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17917#p17917"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17917#p17917"><![CDATA[
+Thank you, Ezra.  I'm really trying hard to push my &quot;design&quot; abilities because for so long I've been a hopeless neckbeard developer.  I'm slowly coming to grips with layers and vector graphics and anti-aliasing.<br /><br />At the very least, I hope my live wallpapers help illustrate just how flexible the MOAI system is.<br /><br />PS: permanent MOAI attribution!  But it's small scale on the hour dial, in the same vein as &quot;Swiss Made&quot;.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Wed Mar 02, 2016 12:05 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2016-03-01T15:25:02+00:00</updated>
+<published>2016-03-01T15:25:02+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17913#p17913</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17913#p17913"/>
+<title type="html"><![CDATA[Re: Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17913#p17913"><![CDATA[
+~<br />I like the art, and the feel of it <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Tue Mar 01, 2016 3:25 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[jglascoe]]></name></author>
+<updated>2016-02-28T16:39:48+00:00</updated>
+<published>2016-02-28T16:39:48+00:00</published>
+<id>/forums/viewtopic.php?t=3256&amp;p=17911#p17911</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3256&amp;p=17911#p17911"/>
+<title type="html"><![CDATA[Another Clock LWP]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3256&amp;p=17911#p17911"><![CDATA[
+This clock has four dials: seconds, minutes, hours, and days.  It features &quot;real&quot; gear interactions and a modified escapement.<br /><br /><!-- m --><a class="postlink" href="https://play.google.com/store/apps/details?id=com.jayglascoe.grahamclockfree">https://play.google.com/store/apps/deta ... mclockfree</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=2109">jglascoe</a> — Sun Feb 28, 2016 4:39 pm</p><hr />
+]]></content>
+</entry>
+</feed>

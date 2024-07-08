@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=5&amp;t=574&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-10-02T00:28:46+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=5&amp;t=574&amp;mode</id>
+<entry>
+<author><name><![CDATA[TMQuinn]]></name></author>
+<updated>2012-10-02T00:28:46+00:00</updated>
+<published>2012-10-02T00:28:46+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=6777#p6777</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=6777#p6777"/>
+<title type="html"><![CDATA[Re: MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=6777#p6777"><![CDATA[
+So I ended up just creating a MOAITextBox with my required with and an arbitrary really huge height value. I then getStringBounds on the text box to get the correct height. While this works, (providing my content is larger than the arbitrarily huge height of it), I don't like it. Any chance we could get some functionality in MOAITextBox that does this natively?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1068">TMQuinn</a> — Tue Oct 02, 2012 12:28 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[TMQuinn]]></name></author>
+<updated>2012-09-28T21:18:13+00:00</updated>
+<published>2012-09-28T21:18:13+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=6722#p6722</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=6722#p6722"/>
+<title type="html"><![CDATA[Re: MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=6722#p6722"><![CDATA[
+I think what @siverson101 was looking for was something to calculate the height of a textbox, given a width, some text and a style... I'm working on something that will do this, but I'm curious if it's already being planned in a Moai SDK release...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1068">TMQuinn</a> — Fri Sep 28, 2012 9:18 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[siverson101]]></name></author>
+<updated>2012-03-21T03:21:12+00:00</updated>
+<published>2012-03-21T03:21:12+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=2815#p2815</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=2815#p2815"/>
+<title type="html"><![CDATA[Re: MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=2815#p2815"><![CDATA[
+Thank you for the information. I am looking forward to the launch.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=783">siverson101</a> — Wed Mar 21, 2012 3:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dana]]></name></author>
+<updated>2012-03-19T23:14:56+00:00</updated>
+<published>2012-03-19T23:14:56+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=2791#p2791</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=2791#p2791"/>
+<title type="html"><![CDATA[Re: MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=2791#p2791"><![CDATA[
+The issue with the text aliasing when center aligned will also be fixed in 1.0.<br /><br />You're right in that getRect returns the size of the text box, not necessarily the size of the text that it contains. As you're already doing, the getStringBounds function should return the dimensions of the text.<br /><br />Although I am wondering if you're only looking for the height in order to do the centering yourself? If this is the case, it sounds like come 1.0 when vertical alignment and the aliasing from center alignment is fixed, you may not even need this.<br /><br />The plan is to launch 1.0 on Friday.<br /><br />Let me know how it goes.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=767">dana</a> — Mon Mar 19, 2012 11:14 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[siverson101]]></name></author>
+<updated>2012-03-19T20:05:28+00:00</updated>
+<published>2012-03-19T20:05:28+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=2787#p2787</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=2787#p2787"/>
+<title type="html"><![CDATA[Re: MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=2787#p2787"><![CDATA[
+I am glad to hear about the vertical align.<br /><br />A flag is needed to indicate that a whole number is wanted when doing alignments. Right now, when I center align, some text is aliased because of an odd width. I am forced to do my own center justifying.<br /><br /><blockquote><div><cite>dana wrote:</cite><br />To get the size of the TextBox, you should be able to call textbox:getRect () and it'll return the dimensions of the TextBox. Is this what you were wanting, or am I misunderstanding?<br /></div></blockquote><br /><br />I wanted a line height or a total height. If I set the size of the TextBox and then call getRect() will it return the size I set it to or the actual size of the text in the TextBox? I am currently using TextBox:getStringBounds(1, string.len(text)) to figure out how to move the TextBox so it is centered horizontally and vertically.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=783">siverson101</a> — Mon Mar 19, 2012 8:05 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dana]]></name></author>
+<updated>2012-03-19T19:07:40+00:00</updated>
+<published>2012-03-19T19:07:40+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=2785#p2785</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=2785#p2785"/>
+<title type="html"><![CDATA[Re: MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=2785#p2785"><![CDATA[
+Hi silverson,<br /><br />In 1.0, the implementation of the TextBox class will be changed substantially. Among the changes is an option for a vertical alignment as you requested. You will set the vertical alignment by passing in the alignment as the second parameter to setAlignment. I can go into the other TextBox changes for 1.0 if you are interested in them, also.<br /><br />To get the size of the TextBox, you should be able to call textbox:getRect () and it'll return the dimensions of the TextBox. Is this what you were wanting, or am I misunderstanding?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=767">dana</a> — Mon Mar 19, 2012 7:07 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[siverson101]]></name></author>
+<updated>2012-03-19T20:06:10+00:00</updated>
+<published>2012-03-19T03:18:37+00:00</published>
+<id>/forums/viewtopic.php?t=574&amp;p=2775#p2775</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=574&amp;p=2775#p2775"/>
+<title type="html"><![CDATA[MOAITextBox vertical alignment]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=574&amp;p=2775#p2775"><![CDATA[
+I would like to have MOAITextBox vertical alignment and also a way to find out the height of the MOAITextBox.<br /><br />setAlignment could accept a second parameter for vertical alignment.<br /><br />getLineSize could return a second value for height like:<br /><br />local pxWidth, pxHeight = TextBox:getLineSize()<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=783">siverson101</a> — Mon Mar 19, 2012 3:18 am</p><hr />
+]]></content>
+</entry>
+</feed>

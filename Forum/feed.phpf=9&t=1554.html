@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1554&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-01-14T22:11:27-07:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1554&amp;mode</id>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-01-14T22:11:27-07:00</updated>
+<published>2013-01-14T22:11:27-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8464#p8464</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8464#p8464"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8464#p8464"><![CDATA[
+@dbrain<br /><br />Thank you. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> <br /><br />I was in a hurry to implement.<br />There may be problems with the details.<br /><br />Set the UV, I have removed the edge. (Rounding error has been concerned ...)<br />You can also copy the MOAIImage, remove the edge.<br />That way might be nice in some cases.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Mon Jan 14, 2013 10:11 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dbrain]]></name></author>
+<updated>2013-01-14T21:31:10-07:00</updated>
+<published>2013-01-14T21:31:10-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8462#p8462</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8462#p8462"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8462#p8462"><![CDATA[
+I managed to full screen it without animation using prop:setScl(SCREEN_WIDTH / imageWidth, SCREEN_HEIGHT / imageHeight) if anyone else is following.<br /><br />That's really awesome makotok1123. Didn't realise you were actually reading the transparent edging to work out where to stretch (new to lua and moai, took me a second).<br /><br />EDIT: I'm also rounding the scaled X/Y up to 2 decimal places as there seemed to be some rounding error that made the edges lose a pixel or two.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1268">dbrain</a> — Mon Jan 14, 2013 9:31 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dbrain]]></name></author>
+<updated>2013-01-14T21:05:34-07:00</updated>
+<published>2013-01-14T21:05:34-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8461#p8461</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8461#p8461"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8461#p8461"><![CDATA[
+Oh, wow.. thanks makotok1123. That look's awesome.<br />Is there a nice way to make it fill the full screen without a stretch animation? I noticed all of the StretchPatch2D examples had a scale in them. I guess I could setScale instead of moveScl, will have to look into how to make that fill the viewport.<br /><br />Should be enough to go on with anyway.. thanks heaps!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1268">dbrain</a> — Mon Jan 14, 2013 9:05 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-01-14T05:27:00-07:00</updated>
+<published>2013-01-14T05:27:00-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8455#p8455</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8455#p8455"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8455#p8455"><![CDATA[
+I tried to implement a simple NinePatche.<br />Do you think there is?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Mon Jan 14, 2013 5:27 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dbrain]]></name></author>
+<updated>2013-01-13T19:19:01-07:00</updated>
+<published>2013-01-13T19:19:01-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8449#p8449</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8449#p8449"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8449#p8449"><![CDATA[
+Thanks makotok1123. Is it? Do I define that kind of thing in rows/columns?<br />The way I understand it is that creates a grid and scales the intersect between a colStretch=true row and a colStretch=true column. Does this mean to make it work I would have to define say 100 columns (to split my image by 5px) and work out which part of 100 is the stretch area? Same with rows.<br /><br />Android description is here: <!-- m --><a class="postlink" href="http://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch">http://developer.android.com/guide/topi ... nine-patch</a><!-- m --><br /><br />Here's the android 9patched image to be more clear about what I'm after. There's a 1px transparent border, black pixels in there define the stretch area.<br />bgTest2.9.png<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1268">dbrain</a> — Sun Jan 13, 2013 7:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-01-13T11:56:40-07:00</updated>
+<published>2013-01-13T11:56:40-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8441#p8441</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8441#p8441"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8441#p8441"><![CDATA[
+<blockquote><div><cite>dbrain wrote:</cite><br />Thanks ibisum. I actually had a look at this before posting, but it wasn't much help.<br /><br />The image I'm trying to 9 patch I essentially want to scale a 5px section horizontally (starting at X: 167px Y: 0) and a 5px section vertically (starting at X: 0 Y: 124px). Looking at most of the samples it looks like MOAIStretchPatch2D creates a grid and stretches one of the grid items rather than the kind of adhoc &quot;stretch these areas&quot; I'm looking for.<br /><br />reserveUVRects &amp; setUVRect may be what I'm after but I can't work how to use them to achieve what I'm after.<br /></div></blockquote><br /><br />Hello. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> <br /><br />Is the same thing you want to achieve as well NinePatch of Hanappe.<br />I think the ratio is just different.<br />Therefore, if you specify the part you want to stretch, it will work well.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Sun Jan 13, 2013 11:56 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dbrain]]></name></author>
+<updated>2013-01-13T11:21:37-07:00</updated>
+<published>2013-01-13T11:21:37-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8440#p8440</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8440#p8440"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8440#p8440"><![CDATA[
+Thanks ibisum. I actually had a look at this before posting, but it wasn't much help.<br /><br />The image I'm trying to 9 patch I essentially want to scale a 5px section horizontally (starting at X: 167px Y: 0) and a 5px section vertically (starting at X: 0 Y: 124px). Looking at most of the samples it looks like MOAIStretchPatch2D creates a grid and stretches one of the grid items rather than the kind of adhoc &quot;stretch these areas&quot; I'm looking for.<br /><br />reserveUVRects &amp; setUVRect may be what I'm after but I can't work how to use them to achieve what I'm after.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1268">dbrain</a> — Sun Jan 13, 2013 11:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2013-01-13T07:42:27-07:00</updated>
+<published>2013-01-13T07:42:27-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8438#p8438</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8438#p8438"/>
+<title type="html"><![CDATA[Re: Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8438#p8438"><![CDATA[
+I don't have an answer to your question about MOAIStretchPatch2D, never used it directly myself, but there is strong 9patch support in the Hanappe framework for MOAI:<br /><br />    <!-- m --><a class="postlink" href="https://github.com/makotok/Hanappe.git">https://github.com/makotok/Hanappe.git</a><!-- m --><br /><br />    See:  hanappe-samples/bin/samples/display/ninepatch_sample.lua<br />    And: hanappe-framework/src/hp/display/NinePatch.lua<br /><br />.. which uses MOAIStretchPatch2D, and might give you some clues.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sun Jan 13, 2013 7:42 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dbrain]]></name></author>
+<updated>2013-01-13T06:25:14-07:00</updated>
+<published>2013-01-13T06:25:14-07:00</published>
+<id>/forums/viewtopic.php?t=1554&amp;p=8437#p8437</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1554&amp;p=8437#p8437"/>
+<title type="html"><![CDATA[Translating Android 9patch into MOAIStretchPatch2D]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1554&amp;p=8437#p8437"><![CDATA[
+Hello,<br /><br />Sorry if this is the wrong forum. I'm new to MOAI.<br />I was wondering if anyone could give me a good how to / example on how to stretch my image, as Android would with a 9patch, using MOAIStretchPatch2D.<br /><br />Android 9patches you draw black pixels in a 1 pixel transparent border around the image. This tells Android which lines are safe to scale and keeps the rest at it's current size.<br />MOAIStretchPatch2D talks in columns, rows and uvrects as far as scaling goes. How does this translate?<br /><br />E.g. say I have a white square 100x100 image with a 25px block of colour in each corner. How would I tell MOAIStretchPatch2D to fill the screen, stretching the white but keeping the colours at 25px in each corner?<br /><br />Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1268">dbrain</a> — Sun Jan 13, 2013 6:25 am</p><hr />
+]]></content>
+</entry>
+</feed>

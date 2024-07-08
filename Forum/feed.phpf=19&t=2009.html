@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=19&amp;t=2009&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-08-21T01:45:24+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=19&amp;t=2009&amp;mode</id>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-08-21T01:45:24+00:00</updated>
+<published>2013-08-21T01:45:24+00:00</published>
+<id>/forums/viewtopic.php?t=2009&amp;p=11266#p11266</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2009&amp;p=11266#p11266"/>
+<title type="html"><![CDATA[Re: Samples in Windows, Game scores]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2009&amp;p=11266#p11266"><![CDATA[
+~<br />I am sure it is something simple that I just overlooked but I could never get the run.bat to work on xp. Thats why I wrote the loader.<br /><br />if you go to:<br />command-prompt(cmd) and type:<br />cd %MOAI_BIN% <br />does it change to the correct directory?<br /><br />The loader just makes and runs new bat file with absolute paths.<br />newRun.bat<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">title cmdWORD</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">D:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd D:\moai_app\word_moai\game\lua\</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">D:\moai-sdk\moai-sdk-1.4p0\moai-sdk-1.4p0\hosts\vs2010\moai-untz\Debug\moai-untz D:\moai_app\word_moai\game\lua\\config.lua D:\moai_app\word_moai\game\lua\\main.lua</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Wed Aug 21, 2013 1:45 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ch55]]></name></author>
+<updated>2013-08-20T22:22:37+00:00</updated>
+<published>2013-08-20T22:22:37+00:00</published>
+<id>/forums/viewtopic.php?t=2009&amp;p=11264#p11264</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2009&amp;p=11264#p11264"/>
+<title type="html"><![CDATA[Re: Samples in Windows, Game scores]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2009&amp;p=11264#p11264"><![CDATA[
+Thanks for the info,<br />I'll try it, but  any other ideas out there?<br />I didn't really want to start a project, I just wanted to look at the samples in XP (not online), nice and slow.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1485">ch55</a> — Tue Aug 20, 2013 10:22 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-08-19T01:51:10+00:00</updated>
+<published>2013-08-19T01:51:10+00:00</published>
+<id>/forums/viewtopic.php?t=2009&amp;p=11221#p11221</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2009&amp;p=11221#p11221"/>
+<title type="html"><![CDATA[Re: Samples in Windows, Game scores]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2009&amp;p=11221#p11221"><![CDATA[
+use code tags.<br /><br />You can try my launcher if you want, its done in pascal. I probably wont finish it any time soon.<br /><br /><ul><li> <!-- m --><a class="postlink" href="http://ezraanderson.com/moai/launcher/moai_lanuch.rar">http://ezraanderson.com/moai/launcher/moai_lanuch.rar</a><!-- m --></li></ul><br />1. edit MyIni.ini to use the correct paths.<br />2. drag the the samples folder onto the forum it should launch the sample<br />3. ctr-r restarts your project.<br /><br />I mostly use xp for development.<br /><br /><br />----------------------------------------------------------<br /><blockquote class="uncited"><div><br />Also.... for the purpose of showing scores (and/or numbers) from games, what actually handles<br />that part of it? Is it Moai or Lua. Can php somehow be connected to Moai or Lua?<br /></div></blockquote><br /><br />You can use lua --&gt; MOAIHttpTask, to post and get from your php scripts running on your server.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Mon Aug 19, 2013 1:51 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ch55]]></name></author>
+<updated>2013-08-17T23:33:32+00:00</updated>
+<published>2013-08-17T23:33:32+00:00</published>
+<id>/forums/viewtopic.php?t=2009&amp;p=11175#p11175</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2009&amp;p=11175#p11175"/>
+<title type="html"><![CDATA[Samples in Windows, Game scores]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2009&amp;p=11175#p11175"><![CDATA[
+I tried looking at the samples in moai sdk in windows xp using some advice I picked up<br />off the web (info from last year).  Needless to say it didn't work.<br /><br />I followed the instructions to the letter, (but this is windows).<br /><br />I started off getting <br /><br />The   MOAI_CONFIG environment variable either doesn't exist or it's pointing to <br />an invalid path<br />please point it at a folder containing config.lua<br /><br />After putting up an environment variable, moving some folders around, etc.<br />like the following:<br /><br />&quot;So lets simply replace the relevant paths…<br /><br />change this line…<br /><br />if not exist “%MOAI_CONFIG%” (<br /><br />to this…<br /><br />if not exist “config\config.lua” (<br /><br />and change this line…<br /><br />“%MOAI_BIN%\moai” “%MOAI_CONFIG%\config.lua” “main.lua”<br /><br />to this…<br /><br />“%MOAI_BIN%\moai” “config\config.lua” “main.lua”<br /><br />Okay. Now we just have to modify the config.lua file slightly.<br /><br />Change this line…<br /><br />package.path = package.path .. ‘;../../../src/lua-modules/?.lua’<br /><br />to this…<br /><br />package.path = package.path .. ‘;../../moai-sdk/include/lua-modules/moai/?.lua’<br /><br />All we’re doing in all of these instances is changing the locations of the various <br />components to reflect our setup.&quot;<br /><br />I was using sublime2 for the editor.<br /><br />I STILL got:<br /><br />The   MOAI_CONFIG environment variable either doesn't exist or it's pointing to <br />an invalid path<br />please point it at a folder containing config.lua<br /><br />I also got  trying to run the exe file<br />MSVCP100.dll not found<br /><br />This was about trying to open/view just one sample.<br /><br />Is there any way (2 environment variables?) so that one can see ALL the samples <br />in Moa sdk IN windows xp????   I'm sure it probably works in Linux, but <br />what about windows xp????<br /><br />Also....  for the purpose of showing scores (and/or numbers) from games, what actually handles<br />that part of it?  Is it Moai or Lua.  Can php somehow be connected to Moai or Lua?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1485">ch55</a> — Sat Aug 17, 2013 11:33 pm</p><hr />
+]]></content>
+</entry>
+</feed>

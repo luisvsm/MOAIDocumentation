@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=6&amp;t=236&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-06-22T10:29:58+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=6&amp;t=236&amp;mode</id>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-22T10:29:58+00:00</updated>
+<published>2012-06-22T10:29:58+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4828#p4828</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4828#p4828"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4828#p4828"><![CDATA[
+I just wanted to report in that I've submitted a pull request for our changes to the moaigui framework, which includes a number of new features:<br /><br />* linegraph widget added to the project (you're welcome! <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br />* methods added to allow the loading of a layout and stashing as a data, for ease of switching between multiple gui layouts<br />* multilayoutdemo.lua added to project to demonstrate a) switching between multiple layouts, and b) the linegraph widget<br />* textStyle property now added to all widgets - specify a base textstyle, or use a custom one from the theme<br /><br />Hope this contribution is of use, and I hope you like the pull request derick!  <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />My fork with these changes (until derick merges the pull request) is available here:<br /><br /><!-- m --><a class="postlink" href="https://github.com/seclorum/moaigui">https://github.com/seclorum/moaigui</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Fri Jun 22, 2012 10:29 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-20T07:38:03+00:00</updated>
+<published>2012-06-20T07:38:03+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4762#p4762</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4762#p4762"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4762#p4762"><![CDATA[
+Sorry derick, I've gotten a bit confused with all our changes to moaigui in the last few weeks .. and haven't really sorted out what is original moaigui code and what is stuff that was added by our team as we worked on the Nichtraucher app.  <br /><br />I will prepare a pull request with my changes - including getLines() as well as the loadLayoutFromData() method I mentioned elsewhere (which is very, very useful when dealing with multiple input forms..).  Stay tuned, patch is imminent..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Jun 20, 2012 7:38 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[derickdong]]></name></author>
+<updated>2012-06-19T16:18:32+00:00</updated>
+<published>2012-06-19T16:18:32+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4741#p4741</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4741#p4741"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4741#p4741"><![CDATA[
+<blockquote><div><cite>andrew.lundell wrote:</cite><br />One final question, is it possible to make a multi-line edit box?.<br /></div></blockquote><br />No, edit boxes do not currently have that capability.<br /><br />@ibisum<br />Is the function getLines something you've added? I don't seem to have that in my version. What does it do?<br /><br />When working on this fix, I turned on textbox debug lines, by adding the following code:<br /><br />MOAIDebugLines.setStyle ( MOAIDebugLines.TEXT_BOX, 1, 1, 1, 1, 1 )<br /><br />Previously, the text wasn't inside the debug line box. Instead, the box appeared directly above the text, which is what was screwing up the hit detection. With the change I made, the text now correctly appears inside the debug line box.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=288">derickdong</a> — Tue Jun 19, 2012 4:18 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-19T08:12:15+00:00</updated>
+<published>2012-06-19T08:12:15+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4724#p4724</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4724#p4724"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4724#p4724"><![CDATA[
+Derick:  Shouldn't this fix (to text.lua):<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">diff --git a/gui/text.lua b/gui/text.lua</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">index b19c1c4..4ebfcab <span style="">100644</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">--- a/gui/text.lua</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+++ b/gui/text.lua</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@@ -<span style="">32</span>,<span style="">6</span> +<span style="">32</span>,<span style="">11</span> @@</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        VERSION: <span style="">0.2</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        MOAI VERSION: v1.0 r3</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+       UPDATED: <span style="">6</span>-<span style="">18</span>-<span style="">12</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+       MOAI VERSION: v1.2</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+       - Was not properly setting the rect for textbox in setRect<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        NOTES</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        - MOAITextBox does not seem to handle setVisible properly, so we blank out the</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">          string when hiding, and restore it when showing.</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">@@ -<span style="">104</span>,<span style="">7</span> +<span style="">109</span>,<span style="">7</span> @@ function _M.Text:setRect<span class="br0">&#40;</span>width, align<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        if <span class="br0">&#40;</span>nil ~= self._textStyle<span class="br0">&#41;</span> then</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                local scale = self._textStyle:getSize<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                self._height = scale + scale / <span style="">6</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">-               self._textBox:setRect<span class="br0">&#40;</span><span style="">0</span>, self._height, self._width, <span style="">0</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">+               self._textBox:setRect<span class="br0">&#40;</span><span style="">0</span>, -self._height, self._width, <span style="">0</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        end</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> end</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />.. be this instead?<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">function _M.Text:setRect<span class="br0">&#40;</span>width, align<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        self._width = width</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        if <span class="br0">&#40;</span>nil ~= self._textStyle<span class="br0">&#41;</span> then</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                local scale = self._textStyle:getSize<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                local lines = self:getLines<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                self._height = scale + scale / <span style="">6</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                self._textBox:setRect<span class="br0">&#40;</span><span style="">0</span>, self._height * lines, self._width, <span style="">0</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        end</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">end</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br /><br />??<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Tue Jun 19, 2012 8:12 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[andrew.lundell]]></name></author>
+<updated>2012-06-19T02:34:21+00:00</updated>
+<published>2012-06-19T02:34:21+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4714#p4714</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4714#p4714"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4714#p4714"><![CDATA[
+This fixes a lot! Thank you very much!<br /><br />One final question, is it possible to make a multi-line edit box?<br /><br />To be honest, I can't find what's <span style="font-weight: bold">stopping</span> it from being multi-line, so I'm at a loss what change to make.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=249">andrew.lundell</a> — Tue Jun 19, 2012 2:34 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[derickdong]]></name></author>
+<updated>2012-06-18T20:15:28+00:00</updated>
+<published>2012-06-18T20:15:28+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4704#p4704</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4704#p4704"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4704#p4704"><![CDATA[
+It seems there was a problem with the way the rect was being set for the textboxes used to display text. Frankly, I'm a little surprised text was being displayed at all. Download the project from here, and see if it works for you. I didn't really use 1.1, as it caused too many problems with my other project. It was primarily tested against 1.0, and I've done a bit of testing with 1.2, so I imagine there won't be any problems with 1.1.<br /><br /><a href="https://github.com/derickd/moaigui/downloads" class="postlink">https://github.com/derickd/moaigui/downloads</a><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=288">derickdong</a> — Mon Jun 18, 2012 8:15 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[andrew.lundell]]></name></author>
+<updated>2012-06-18T01:15:11+00:00</updated>
+<published>2012-06-18T01:15:11+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4660#p4660</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4660#p4660"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4660#p4660"><![CDATA[
+Hmm. I'm noticing that text boxes are occasionally showing the same problem.  So I may have some larger problem.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=249">andrew.lundell</a> — Mon Jun 18, 2012 1:15 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[andrew.lundell]]></name></author>
+<updated>2012-06-18T00:18:19+00:00</updated>
+<published>2012-06-18T00:18:19+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4655#p4655</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4655#p4655"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4655#p4655"><![CDATA[
+I'm using the version of MOAIGui that came with Moai1.1. Haven't upgraded to 1.2 yet.<br /><br />I'm using my own code. I don't seem to notice the problem in the demos, but I also notice that the demos have a LOT of white space between lines in the list, I wonder if that has anything to do with it.<br /><br />Here is how I'm adding items to the list ...<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        for ii = <span style="">1</span>,<span style="">5</span> do</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                row = wlist:addRow<span class="br0">&#40;</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                row:getCell<span class="br0">&#40;</span><span style="">1</span><span class="br0">&#41;</span>:setImage<span class="br0">&#40;</span> resources.getPath<span class="br0">&#40;</span>&quot;check box.png&quot;<span class="br0">&#41;</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                row:setDim<span class="br0">&#40;</span><span style="">90</span>,<span style="">5</span><span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                row:getCell<span class="br0">&#40;</span><span style="">2</span><span class="br0">&#41;</span>:setText<span class="br0">&#40;</span> &quot;Overdue ToDo item #&quot; .. ii <span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                row:getCell<span class="br0">&#40;</span><span style="">2</span><span class="br0">&#41;</span>:setTextAlignment<span class="br0">&#40;</span>row:getCell<span class="br0">&#40;</span><span style="">2</span><span class="br0">&#41;</span>.TEXT_ALIGN_LEFT, row:getCell<span class="br0">&#40;</span><span style="">2</span><span class="br0">&#41;</span>.TEXT_ALIGN_CENTER<span class="br0">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        end</div></li><br /></ol></code></dd></dl><br /><br />And in the layout ... <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                        widgetlist1 = <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                widget = &quot;widget list&quot;,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                pos = <span class="br0">&#123;</span><span style="">0</span>, <span style="">0</span><span class="br0">&#125;</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                dim = <span class="br0">&#123;</span><span style="">100</span>, <span style="">90</span><span class="br0">&#125;</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                selectionImage = &quot;selection image.png&quot;,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                maxSelect = <span style="">1</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                rowHeight = <span style="">6</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                columns = <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                        <span class="br0">&#123;</span>&quot;X&quot;, <span style="">5</span> , &quot;image&quot; <span class="br0">&#125;</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                        <span class="br0">&#123;</span>&quot;Todo List&quot;, <span style="">65</span>, &quot;label&quot;<span class="br0">&#125;</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                                <span class="br0">&#125;</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                        <span class="br0">&#125;</span>,</div></li><br /></ol></code></dd></dl><br /><br />Thanks for any help.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=249">andrew.lundell</a> — Mon Jun 18, 2012 12:18 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[derickdong]]></name></author>
+<updated>2012-06-17T16:39:26+00:00</updated>
+<published>2012-06-17T16:39:26+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4649#p4649</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4649#p4649"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4649#p4649"><![CDATA[
+What version of MOAI are you using? In the past, there had been problems with values returned by that function. As far as I can tell, though, the most recent versions are working properly. Also, what version of the GUI are you using? Are you using the project that's included with the MOAI download? I don't recommend using that; instead, download the project using the link in this thread. Are you running the examples that come with the project, or is this some of your own code? If your own, would it be possible to see the code that's giving you the problem?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=288">derickdong</a> — Sun Jun 17, 2012 4:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[andrew.lundell]]></name></author>
+<updated>2012-06-17T09:59:06+00:00</updated>
+<published>2012-06-17T09:59:06+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4643#p4643</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4643#p4643"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4643#p4643"><![CDATA[
+Hmm... I seem to have a problem with click detection.<br /><br />The buttons work fine.   But the &quot;WidgetList&quot; usually (but not always) gives me an off-by-one error.   (To select, or pass a click event to the 3rd element, I have to click on the 2nd element.  One slot above.)<br /><br />As far as I can tell, _partition:propListForPoint(..) is returning the wrong values, but I can't fathom why.<br /><br />Is anyone else having this trouble?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=249">andrew.lundell</a> — Sun Jun 17, 2012 9:59 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-14T18:30:49+00:00</updated>
+<published>2012-06-14T18:30:49+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4586#p4586</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4586#p4586"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4586#p4586"><![CDATA[
+Glad you got it sorted joarb!  Hope you'll share more details with your progress as you make it.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Jun 14, 2012 6:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[joarb]]></name></author>
+<updated>2012-06-14T17:50:39+00:00</updated>
+<published>2012-06-14T17:50:39+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4585#p4585</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4585#p4585"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4585#p4585"><![CDATA[
+Thank you for your answer ibisum! It makes a lot of sense. I take it from your answer that there is no way to get scrolling work from an external event loop. Since I got the injection of position/mouse clicks to work so easily, and subsequently hovering and button clicks to work fairly easy, I was hoping scrolling would be just as easy.<br /><br />I got the scrolling to work when I added the layer to the moaigui layermgr, so I'm going to explore that avenue a little further. Thanks again! <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=437">joarb</a> — Thu Jun 14, 2012 5:50 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-13T20:04:43+00:00</updated>
+<published>2012-06-13T20:04:43+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4561#p4561</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4561#p4561"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4561#p4561"><![CDATA[
+I think the problem is you're removing moaigui's layer from the render list.  You have to add it, if you've already got one elsewhere, or go in the other direction, and add another Layer array to the RenderTable.  Without inclusion in this array, moaiguis layers won't be rendered.  And without inclusion in the render loop, updates (such as are necessary in scrolling) won't be visible. <br /><br />Another thing is the issue of input events and hit-testing, and so on.  moaigui needs to be layer 1 in the scene - see the readme.txt for why this is so, and how to retrieve the gui layer when you need it.  You can of course add other layers to the RenderMgr, its just that gui has to be layer 1.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Wed Jun 13, 2012 8:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[joarb]]></name></author>
+<updated>2012-06-13T18:29:47+00:00</updated>
+<published>2012-06-13T18:29:47+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4557#p4557</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4557#p4557"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4557#p4557"><![CDATA[
+First of all, thanks Derick for a great framework. Nice job!<br /><br />I'm implementing moaigui in tandem with the state-manager from the WolfClicker tutorial. It's all pretty sweet so far, however, I've run into a little something that I don't know how to resolve.<br /><br />Since the state-manager requires me to pass all layers to it in order for it to behave nicely, I've removed the adding of the layer created by gui.GUI to the MOAIRenderMngr to avoid any rendering conflicts. In other words; this is how my refreshRenderTable in moaiguis layermgr.lua looks like:<dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> <span style="color: #aa9900; font-weight: bold;">function</span> refreshRenderTable<span style="color: #66cc66;">&#40;</span>layerList<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #808080; font-style: italic;">--MOAIRenderMgr.setRenderTable(layerList)</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /></ol></code></dd></dl>Otherwise, I'm following the samples pretty closely. I've managed to pass in user input from the event loop of the state-manager framework, so buttons are pressed, hovered, etc. <br /><br />Here's my event loop:<dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mainMenu<span style="color: #66cc66;">.</span>onInput <span style="color: #66cc66;">=</span> <span style="color: #aa9900; font-weight: bold;">function</span> <span style="color: #66cc66;">&#40;</span> self <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">local</span> x<span style="color: #66cc66;">,</span> y<span style="color: #66cc66;">,</span> tapCount <span style="color: #66cc66;">=</span> inputmgr<span style="color: #66cc66;">:</span>getTouch <span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        mainMenu<span style="color: #66cc66;">.</span>g<span style="color: #66cc66;">:</span>injectMouseMove <span style="color: #66cc66;">&#40;</span> x<span style="color: #66cc66;">,</span> y <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span> inputmgr<span style="color: #66cc66;">:</span>down <span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">or</span> inputmgr<span style="color: #66cc66;">:</span>isDown <span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                mainMenu<span style="color: #66cc66;">.</span>g<span style="color: #66cc66;">:</span>injectMouseButtonDown <span style="color: #66cc66;">&#40;</span> globalData<span style="color: #66cc66;">.</span>inputconstants<span style="color: #66cc66;">.</span>LEFT_MOUSE_BUTTON <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">else</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                mainMenu<span style="color: #66cc66;">.</span>g<span style="color: #66cc66;">:</span>injectMouseButtonUp <span style="color: #66cc66;">&#40;</span> globalData<span style="color: #66cc66;">.</span>inputconstants<span style="color: #66cc66;">.</span>LEFT_MOUSE_BUTTON <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /></ol></code></dd></dl> where inputmgr is the inputmgr as seen at <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/blob/master/samples/tutorials/WolfClicker/modules/input-manager.lua">https://github.com/moai/moai-dev/blob/m ... anager.lua</a><!-- m --> and mainMenu.g is the handle to the initialized gui engine, i.e. the result from gui.GUI.<br /><br />Unfortunatley, I'm not able to scroll the elements in a widgetlist. (Or more precisely, sometimes the list is scrolled a few pixels, but never by any significant amount - and certainly not like in the samples.) So the question becomes: is it possible to pass to moaigui something similar to moais isDown? Or is there another way to achieve scrolling a widgetlist by dragging of the scrollbar thumb? Any help is greatly appreciated. Thanks! <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=437">joarb</a> — Wed Jun 13, 2012 6:29 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-10T10:34:46+00:00</updated>
+<published>2012-06-10T10:34:46+00:00</published>
+<id>/forums/viewtopic.php?t=236&amp;p=4424#p4424</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=236&amp;p=4424#p4424"/>
+<title type="html"><![CDATA[Re: GUI]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=236&amp;p=4424#p4424"><![CDATA[
+In the patch that I will submit this week, we have added the ability to apply a text style to any GUI element .. its not currently possible in the existing version, but is an easy thing to add if you want to DIY instead of wait for our patch.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sun Jun 10, 2012 10:34 am</p><hr />
+]]></content>
+</entry>
+</feed>

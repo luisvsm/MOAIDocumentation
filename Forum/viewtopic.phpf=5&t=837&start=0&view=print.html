@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - MoonScript (CoffeeScript for Lua)</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>MoonScript (CoffeeScript for Lua)</h2>
+		<p><a href="moonscript-coffeescript-for-lua-t837/index.html">/forums/moonscript-coffeescript-for-lua-t837/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>MoonScript (CoffeeScript for Lua)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed May 30, 2012 1:30 pm</strong></div>
+				<div class="author">by <strong>superlukas</strong></div>
+				<div class="content"><blockquote class="uncited"><div>MoonScript is a dynamic scripting language that compiles into Lua. It gives you the power of the fastest scripting language combined with a rich set of features.<br /><br />MoonScript can either be compiled into Lua and run at a later time, or it can be dynamically compiled and run using the moonloader. It’s as simple as <span style="font-style: italic">require &quot;moonscript&quot;</span> in order to have Lua understand how to load and run any MoonScript file.<br /><br />Because it compiles right into Lua code, it is completely compatible with alternative Lua implementations like LuaJIT, and it is also compatible with all existing Lua code and libraries. [...]<br /><br />MoonScript provides a clean syntax using significant whitespace that avoids all the keyword noise typically seen in a Lua script. [...] It also adds table comprehensions, implicit return on functions, classes, inheritance, scope management statements import &amp; export, and a convenient object creation statement called <span style="font-style: italic">with</span>.<br /><br /><a href="http://moonscript.org/" class="postlink"><span style="font-weight: bold">moonscript.org</span></a></div></blockquote><br /><br />Never used MoonScript or CoffeeScript but I'm a big fan of LESS. What do you guys think?<br /><br />// <a href="http://pastebin.com/x69XtAmZ" class="postlink">Mac OS X setup</a></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoonScript (CoffeeScript for Lua)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed May 30, 2012 3:34 pm</strong></div>
+				<div class="author">by <strong>superlukas</strong></div>
+				<div class="content"><span style="font-style: italic">I hope you don't mind the double post. I want to keep the first one clean.</span><br /><br />I ported <a href="https://github.com/moai/moai-dev/blob/master/samples/tutorials/WolfClicker/modules/state-manager.lua" class="postlink">state-manager.lua</a> to MoonScript.<br /><br /><a href="http://pastebin.com/3J617nYj" class="postlink">stateManager.moon</a><br /><a href="http://pastebin.com/snZNygdU" class="postlink">stateManager.lua</a> (added some line breaks)<br /><br />Just wanted to give you guys a quick example. Not sure if I like MoonScript or not.<br />Some things are pretty cool, some are really weird...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoonScript (CoffeeScript for Lua)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed May 30, 2012 9:21 pm</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">Moonscript looks very interesting. We haven't had a chance to dig into it, but I did exchange a couple of emails with the author, Leaf. I will ask him to join this thread.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoonScript (CoffeeScript for Lua)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 31, 2012 1:16 pm</strong></div>
+				<div class="author">by <strong>superlukas</strong></div>
+				<div class="content">I spent the morning porting a little more code to MoonScript and I think I stick with it for now. I like the function syntax (looks like Haskell) and it forces you to really think about scoping. (Implicit return feels like a good idea, too).<br /><br />You don't have to use the fancy syntax if you don't want to, eg:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=5&amp;t=837&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print foo!</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print foo()</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print( foo! )</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">print( foo() )</div></li><br /></ol></code></dd></dl><br /><br />The only thing that really bothers me is the backslash<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=5&amp;t=837&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">quad\setUVRect 0, 0, 1, 1</div></li><br /></ol></code></dd></dl><br /><br /><a href="http://hastebin.com/nigogafeve.moon" class="postlink">Here is a little breakdown of the things I like</a><br />Have fun<br /><br />// Some more<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=5&amp;t=837&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">import sin, cos, atan2, sqrt, deg, random from math</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">someFunc = (a, b) =&gt;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">local fomeFunc = function(self, a, b)</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

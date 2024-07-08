@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Pixel Animation Morphing</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Pixel Animation Morphing</h2>
+		<p><a href="pixel-animation-morphing-t2398/index.html">/forums/pixel-animation-morphing-t2398/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+		
+			<div class="post">
+				<h3>Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 07, 2013 3:37 am</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Been fascinated by this tech called &quot;DMorph&quot;:<br /><br />DMorph: <!-- m --><a class="postlink" href="http://www.youtube.com/watch?v=x15Ir-rplT8">http://www.youtube.com/watch?v=x15Ir-rplT8</a><!-- m --><br />The Executive: <!-- m --><a class="postlink" href="http://www.youtube.com/watch?v=H2wZsgePIz0">http://www.youtube.com/watch?v=H2wZsgePIz0</a><!-- m --><br /><br />Something like this would drastically cut down on the amount of sprites I have to draw by hand, or just give more frames to work with for better animations.  After a brief exchange with RiverMan, got this juicy tidbit:<br /><br /><blockquote class="uncited"><div>The algorithm is similar to morphing software used for movies like Terminator 2, but with added flexibility and optimization. You can read up on the general approach here: <!-- m --><a class="postlink" href="http://en.wikipedia.org/wiki/Morphing">http://en.wikipedia.org/wiki/Morphing</a><!-- m --><br /><br />Our implementation runs in real-time in-game. It doesn't generate a spritesheet, but rather takes an existing spritesheet and makes it animate smoothly.<br /><br />Basically the idea is to set up a polygon mesh on the first frame, and then copy that mesh to the second frame, but with the vertices moved around to reflect the change in shape and position of different elements of the sprite. Your frame number then becomes a floating point value that is used to interpolate between these two meshes. To render it, you multitexture both the first and second frame onto the interpolated mesh, using a mix() shader to adjust how much each texture is showing through based on the frame number.</div></blockquote><br /><br />Something like this would be a fantastic addition to MOAI; something that, perhaps, creates a TileDeck2D out of two or more Textures, matching user meshes (?) and a desired frame count. <br /><br />Can anyone offer a more details and thoughts on how this might be achieved?  <br /><br />This could very well be something worthy of a bounty...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 07, 2013 12:38 pm</strong></div>
+				<div class="author">by <strong>scottwb</strong></div>
+				<div class="content">Just a thought - you might be able to achieve similar using the spine library:<br /><br /><a href="http://esotericsoftware.com" class="postlink">http://esotericsoftware.com</a><br /><br />We've used them in Sugar Candy Rush to produce most of the character animations and also 'morph' the buttons to make then have a jelly wobble effect.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 07, 2013 4:48 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Awesome, thanks scott... I'll try it out.  I thought it would be better to have these written to files first anyways.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 07, 2013 5:17 pm</strong></div>
+				<div class="author">by <strong>akak</strong></div>
+				<div class="content">As I reckon there are some options available:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=16&amp;t=2398&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">- Generate sprites beforehand: using gimp-gap package (Video -&gt; Morph menu).</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">- Real time generation</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; - With shape hints</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; The method you mentioned. Unfortunately MOAIMesh documentation states it doesn't support grid drawing. But if it would the deal is to specify such MOAIVertexFormata that it contains 2 vec3 per each vertex and then just interpolate with mix() position in vertex shader and blend color in fragment shader.</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp;Of course if mesh is small you can construct it out of adjacent props.</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; - Without shape hints</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; Probably all work should be done in fragment shader: for each pixel march thru both textures to find out edges of the image and interpolate depending on the distance to the edges from the current pixel.</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; Most expensive method and probably not the best looking one but it won't require any hints.</div></li><br /></ol></code></dd></dl><br /><br /><br /><!-- m --><a class="postlink" href="https://en.wikipedia.org/wiki/Key_frame#As_applied_to_shape_transformations">https://en.wikipedia.org/wiki/Key_frame ... formations</a><!-- m --><br /><br />PS forum formatting is killing me</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 07, 2013 11:11 pm</strong></div>
+				<div class="author">by <strong>btatarov</strong></div>
+				<div class="content">Is Spine worth the money? I've been following the project for a while now.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 07, 2013 11:27 pm</strong></div>
+				<div class="author">by <strong>scottwb</strong></div>
+				<div class="content">We backed it in the kickstarter days.<br /><br />Have to say it's pretty cool, cuts down on the number of sprite sheets and makes it easy for the gfx guys to create animations.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 08, 2013 3:14 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Seems Spine is useful for certain things, like character animations, but I'm doing animations that require morphing, like objects changing into other shapes.  Unless I missed a feature of Spine that does morphing.<br /><br />akak I did take a look at GIMP GAP but I'm not certain it is the right solution either.  But maybe I should actually try it and see what happens on low-res sprites.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 09, 2013 11:52 am</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content">Well you have to create a mesh with the same shape as the octopus. And then for the next frame another mesh has to be created with the same vertex indexes but in the new positions. And then interpolate between these vertex locations. Interpolating is easy enough, but the creation of the meshes would be some handiwork. I guess this is done outside of the game, in some tool. It could probably be done in game through some algoritm as well but that would be a pretty damn advanced and well polished algoritm. Have you seen the latest spine kickstarter? It has some mesh outline function thingy that is similar, but I don't think its made to interpolate between different texture frames.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 09, 2013 1:29 pm</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">I am not sure about pixel morphing, this looks to me much easier to do using animated mesh.<br /><br />As @JDance said you should create first a custom mesh, ideally in some 3D program. Lets call it mesh1 - this will represent your character on animation frame 1 (start position)<br />Then for the end position (ie. Frame 2) you should create another version of the same mesh, moving vertices into new positions. Ideally you don't want to add or remove vertices, just move them around.<br /><br />The trick is to store both positions for each vertex in MOAIMesh, and then create vertex shader that will read both, and then interpolate between them, using the parameter between 0 and 1 that you forward as a float uniform to the shader ( 0 = frame1, 1 = frame2, and everything in between will tween vertices).<br /><br /><br />That would mean that you should create MOAIMesh in such a way that the MOAIVertexFormat has two sets of vertex coordinates.<br />That means that you should declare index twice:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=16&amp;t=2398&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">vertex_format<span style="color: #66cc66;">:</span>declareCoord <span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span> MOAIVertexFormat<span style="color: #66cc66;">.</span>GL_FLOAT<span style="color: #66cc66;">,</span> <span style="color: #cc66cc;">3</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">vertex_format<span style="color: #66cc66;">:</span>declareCoord <span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">2</span><span style="color: #66cc66;">,</span> MOAIVertexFormat<span style="color: #66cc66;">.</span>GL_FLOAT<span style="color: #66cc66;">,</span> <span style="color: #cc66cc;">3</span> <span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br />So then later you should try to write your vertex format in following fashion:<br />vertex1_frame_1_xyz<br />vertex1_frame_2_xyz<br />vertex1_uv<br />vertex1_normal_xyz (if you need to peform normal-dependent stuff such as lighting)<br />vertex1_color (if you need to additionally tint themes)<br /><br />You should also set the vertex attribute two times for the shader, ie:<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=16&amp;t=2398&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;shader<span style="color: #66cc66;">:</span>setVertexAttribute<span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span> <span style="color: #ff6666;">&quot;vertex_pos_0&quot;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;shader<span style="color: #66cc66;">:</span>setVertexAttribute<span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">2</span><span style="color: #66cc66;">,</span> <span style="color: #ff6666;">&quot;vertex_pos_1&quot;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;shader<span style="color: #66cc66;">:</span>setVertexAttribute<span style="color: #66cc66;">&#40;</span> <span style="color: #cc66cc;">3</span><span style="color: #66cc66;">,</span> <span style="color: #ff6666;">&quot;vertex_uv&quot;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">etc<span style="color: #66cc66;">...</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />and then don't forget to add a variable that you can change from Lua code, that will tell shader<br />how much to interpolate (ie. 0-1):<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=16&amp;t=2398&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;shader<span style="color: #66cc66;">:</span>declareUniformFloat<span style="color: #66cc66;">&#40;</span> NNN<span style="color: #66cc66;">,</span> <span style="color: #ff6666;">&quot;light_range&quot;</span><span style="color: #66cc66;">,</span> MOAIShader<span style="color: #66cc66;">.</span>UNIFORM_FLOAT <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br />where NNN depends on how many unfiroms you declare before this line...<br />Hope this gives you the right direction <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 09, 2013 7:32 pm</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content">Wow great answer!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 10, 2013 8:55 am</strong></div>
+				<div class="author">by <strong>akak</strong></div>
+				<div class="content"><blockquote><div><cite>nosheet wrote:</cite>The trick is to store both positions for each vertex in MOAIMesh, and then...<br /></div></blockquote><br /><br />How do you draw grid with MOAIMesh?<br /><br /><blockquote class="uncited"><div>MOAIMesh Class Reference<br /><br />Loads a texture and renders the contents of a vertex buffer. Grid drawing not supported.<br />Constants<br />MOAIMesh.GL_POINTS<br />MOAIMesh.GL_LINES<br />MOAIMesh.GL_TRIANGLES<br />MOAIMesh.GL_LINE_LOOP<br />MOAIMesh.GL_LINE_STRIP<br />MOAIMesh.GL_TRIANGLE_FAN<br />MOAIMesh.GL_TRIANGLE_STRIP</div></blockquote></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 10, 2013 3:59 pm</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">I am not sure I understand correctly what you mean by drawing a grid, can you please elaborate a bit?<br /><br />As for mesh drawing methods, I normally  use MOAIMesh.GL_TRIANGLES, unless I need to do a particular shape (like linear shapes), in which case I might use GL_TRIANGLE_STRIP. Also, some shapes like circles you can use GL_TRIANGLE_FAN.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 30, 2013 7:30 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">Well I haven't done any work towards a MOAI-level-solution since it is more of a nice-to-have feature than a necessity.<br /><br />But I did notice GIMP 2.8 has a &quot;Cage Transform&quot; tool which (kinda) does this.  <br />Unfortunately it adds antialiasing so it's not of much use for low-res art.<br />Another problem is borders, of which you'd want to retain a 1 or 2 pixelwidth, these do not transform in a common-sense way, must be cleaned up by hand, and for a MOAI-level-solution might need a separate grid definition for morphing.<br /><br />Anyways any users of GIMP should be upgrading to 2.8 since it adds Layer Groups which can be a time-saver.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Apr 09, 2014 3:56 pm</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content"><blockquote><div><cite>btatarov wrote:</cite>Is Spine worth the money? I've been following the project for a while now.</div></blockquote><br />I've baked Spine at the first Kickstarter. Now it costs $249 for professional. Spine is very nice tool, with good UI and workflow. <br /><br />Spine will support deformable meshes and skinning. Also, IK support is scheduled. Then we'll get the ultimate tool for 2d animation. With FFD, meshes and IK it will be definitely worth $249. <br /><br />I'll update my Spine bindings when official generic C-runtime will support new features.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 24, 2014 9:45 am</strong></div>
+				<div class="author">by <strong>RurouniGPL</strong></div>
+				<div class="content">Hi!<br /><br />Does the Spine library work with all the features of the current version of the software? Currently I use Spriter... but I don't have much time to write a parser so if Spine works OK we will migrate to it.<br /><br />Thank you!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 24, 2014 2:32 pm</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content"><blockquote><div><cite>RurouniGPL wrote:</cite>Does the Spine library work with all the features of the current version of the software?</div></blockquote>I use it in production. It can be updated easily to reflect current feature set of official C-runtime. Here is a glimpse on what's supported and what's not:<br /><br /><span style="font-weight: bold">Supported:</span><br /><ul><li>Lua bindings. Loading of json skeleton format and spine texture atlas</li><li>Skins, animation tracks, setters for attachments per slot, animation events - start, stop, custom events from editor with parameters</li><li>Overriding animations with MOAI classes - each bone can be represented as MOAITransform (with hierarchy), so you can bind any MOAIProp to spine bones and vice versa (driving bones with MOAIAnim). Slots can be represented as MOAIColor (for color animations)</li><li>Mesh and skinned mesh attachments</li></ul><br /><span style="font-weight: bold">Not supported:</span><br /><ul><li>Inverse-kinematics. Don't need this right now, but I'll add this if you want</li><li>Low-level bindings. Some features may be missing from lua-bindings. Like updating skeleton manually (I've solved it by adding step() function to MOAIAction, since it's very convenient for other actions too). If you find something missing - please drop me a mail or create an issue on github.</li><li>Missing API for manual creation of spine objects: skeletons, bones, slots, attachments</li></ul></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 25, 2014 11:10 am</strong></div>
+				<div class="author">by <strong>RurouniGPL</strong></div>
+				<div class="content">Wow!!!<br /><br />I'm evaluating if it's worth the cost of the software + redoing all the animations on Spine. Now with Spriter we export to TPS... generating huge sprite sheets.<br /><br />Thank you!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 25, 2014 2:16 pm</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content">TexturePacker supports spine atlas format. I use TP to output spine atlases from my asset pipeline shell script (Spine does not have a command-line interface). <br /><br />The price question is very tricky thou. Price is high, but it's one time charge including all future updates. I've baked first kickstarter, so got a copy for $30.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 28, 2014 12:17 pm</strong></div>
+				<div class="author">by <strong>RurouniGPL</strong></div>
+				<div class="content">I think I will buy an &quot;Essential&quot; license to test it... it's $69...  <img src="images/smilies/icon_neutral.gif" alt=":|" title="Neutral" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Pixel Animation Morphing</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 28, 2014 3:06 pm</strong></div>
+				<div class="author">by <strong>Vavius</strong></div>
+				<div class="content">Found those animations today in Spine docs. Shows the power of free-form deformation. <br /><br /><br /><img src="http://esotericsoftware.com/img/spine-user-guide/meshes/edges1.png" alt="Image" /><br /><img src="http://esotericsoftware.com/img/spine-user-guide/meshes/edges1.gif" alt="Image" /><br /><br /><br /><img src="http://esotericsoftware.com/img/spine-user-guide/meshes/edges2.png" alt="Image" /><br /><img src="http://esotericsoftware.com/img/spine-user-guide/meshes/edges2.gif" alt="Image" /></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

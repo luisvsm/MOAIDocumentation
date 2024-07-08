@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=3173&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2015-09-02T19:30:10+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=3173&amp;mode</id>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2015-09-02T19:30:10+00:00</updated>
+<published>2015-09-02T19:30:10+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17582#p17582</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17582#p17582"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17582#p17582"><![CDATA[
+~<br />The work looks great naturally <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Wed Sep 02, 2015 7:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[halfnelson]]></name></author>
+<updated>2015-08-22T00:18:38+00:00</updated>
+<published>2015-08-22T00:18:38+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17555#p17555</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17555#p17555"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17555#p17555"><![CDATA[
+<!-- m --><a class="postlink" href="https://github.com/moaiforge/host-stirfirestudios-sdl/tree/master/sledge">https://github.com/moaiforge/host-stirf ... ter/sledge</a><!-- m --> is full of this stuff, and based of 1.5, and in production on a cross platform steam game.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=943">halfnelson</a> — Sat Aug 22, 2015 12:18 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-08-21T04:03:03+00:00</updated>
+<published>2015-08-21T04:03:03+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17554#p17554</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17554#p17554"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17554#p17554"><![CDATA[
+Have updated SDL joystick code, adding 2 extra parameters to the joystick callback for more support.  <br />- x,y - two values whose meaning depends on event id (already there before)<br />- which - id of joystick<br />- id - id of event (AXIS, BUTTON_UP, etc)<br /><!-- m --><a class="postlink" href="https://wiki.libsdl.org/CategoryJoystick">https://wiki.libsdl.org/CategoryJoystick</a><!-- m --><br /><br />Files touched:<br />- MOAIJoystickSensor.h<br />- MOAIJoystickSensor.cpp<br />- MOAIInputMgr.h<br />- MOAIInputMgr.cpp<br />- host-sdl/SDLHost.cpp<br />Might commit it, but just learned something new that kinda invalidates most of my work done so far...<br /><br />Apparently you're supposed to skip over the SDL joystick class (more-or-less) and use <span style="font-weight: bold">GameController</span> instead!<br /><!-- m --><a class="postlink" href="https://wiki.libsdl.org/CategoryGameController#Introduction">https://wiki.libsdl.org/CategoryGameCon ... troduction</a><!-- m --><br /><br />Why?  It maps funky controllers into more reasonable schemes:<br /><!-- m --><a class="postlink" href="http://hg.libsdl.org/SDL/file/tip/src/joystick/SDL_gamecontrollerdb.h">http://hg.libsdl.org/SDL/file/tip/src/j ... rollerdb.h</a><!-- m --><br /><br />Also of interest, making a gamepad rumble:<br /><!-- m --><a class="postlink" href="https://wiki.libsdl.org/CategoryForceFeedback">https://wiki.libsdl.org/CategoryForceFeedback</a><!-- m --><br /><br />Users were having trouble with our game's joystick system (thanks <span style="font-weight: bold">adolson</span>):<br /><!-- m --><a class="postlink" href="http://steamcommunity.com/app/378410/discussions/1/530649887208671708/">http://steamcommunity.com/app/378410/di ... 208671708/</a><!-- m --><br /><br />So now, it would be nice to pass this stuff from C++ to Lua:<br />- Num of Joysticks<br />- Num of Axis,Buttons,Name for gamepad N<br />- Open/Close gamepad N<br />- Rumble gamepad N<br />- Callbacks for newly discovered/removed joysticks<br /><br />Anyone interested in adding this chunk of stuff to MOAI, passing from SDL host?  It's not too hard, but I'm short on time.<br />Will pay.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Fri Aug 21, 2015 4:03 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-08-19T14:02:35+00:00</updated>
+<published>2015-08-19T14:02:35+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17548#p17548</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17548#p17548"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17548#p17548"><![CDATA[
+<span style="font-weight: bold">*whew*</span><br /><br />That was the problem!  Thanks!!!   <img src="images/smilies/icon_e_confused.gif" alt=":?" title="Confused" /> <br /><br />I'll submit my changes again to 1.5 when I'm done.  The joystick stuff isn't that hard but getting used to some parts of the framework is tricky for me!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Wed Aug 19, 2015 2:02 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Vavius]]></name></author>
+<updated>2015-08-19T08:21:25+00:00</updated>
+<published>2015-08-19T08:21:25+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17547#p17547</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17547#p17547"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17547#p17547"><![CDATA[
+line 54: <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="c" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #666666; font-style: italic;">// here you set ref to the 4th argument</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">self<span style="color: #339933;">-&gt;</span>mOnStick.<span style="color: #202020;">SetRef</span> <span style="color: #009900;">&#40;</span> state<span style="color: #339933;">,</span> <span style="color: #0000dd;">4</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #666666; font-style: italic;">// should be like this</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #666666; font-style: italic;">// (first argument is self, second is callback sensor:setCallback(callback))</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">self<span style="color: #339933;">-&gt;</span>mOnStick.<span style="color: #202020;">SetRef</span> <span style="color: #009900;">&#40;</span> state<span style="color: #339933;">,</span> <span style="color: #0000dd;">2</span> <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1427">Vavius</a> — Wed Aug 19, 2015 8:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-08-19T05:59:29+00:00</updated>
+<published>2015-08-19T05:59:29+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17546#p17546</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17546#p17546"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17546#p17546"><![CDATA[
+After looking into joystick support, there are a lot of different SDL event types to pass through.  So instead of making 10+ different input handlers, it makes sense to add more arguments to the existing joystick code:<br /><br />x,y = existing floats, still used depending on type of input event<br />which = which joystick is it?  int<br />event = which event is it? int <br /><br />// 1-BUTTON_DOWN, 2-BUTTON_UP, 3-AXIS, 4-NUM_JOYS, 5-JOY_ADD, 6-JOY_REMOVE, 7-NAME, 8-NUM_AXIS, 9-NUM_BUTTONS, 10-NUM_BALLS<br /><br />MOAIJoystickSensor.cpp: <!-- m --><a class="postlink" href="http://pastebin.com/7tSLPxSE">http://pastebin.com/7tSLPxSE</a><!-- m --><br /><br />Unfortunately it doesn't work, it compiles, but when run does: &quot;attempt to call a number value&quot; with an uninformative stack trace.  This leads me to believe I messed up on the Lua interface.  There were a lot of other files I changed but if anyone sees anything wrong with the first one please let me know.  If it looks good I can keep posting more code...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Wed Aug 19, 2015 5:59 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-07-21T02:05:08+00:00</updated>
+<published>2015-07-21T02:05:08+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17445#p17445</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17445#p17445"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17445#p17445"><![CDATA[
+Some improvements by ftsf (Boxen):<br /><br /><!-- m --><a class="postlink" href="https://gist.github.com/ftsf/f13f86f0cbaf6b30ef51">https://gist.github.com/ftsf/f13f86f0cbaf6b30ef51</a><!-- m --><br /><br />Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Tue Jul 21, 2015 2:05 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-07-16T21:02:53+00:00</updated>
+<published>2015-07-16T21:02:53+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17420#p17420</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17420#p17420"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17420#p17420"><![CDATA[
+I've updated it, so now I get basic 1.6 functionality on 1.5<br /><br />Includes:<br />- joystick w/dpad<br />- mouse wheel<br />- SDL fullscreen<br />- resizable window<br /><br />There is a bunch of stuff missing but this is a pretty decent upgrade.<br /><br />Now to make better joystick code that works across 1.5/1.6 (no c++11 or whatever) that supports analog sticks, hotplug, proper button routing, etc<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu Jul 16, 2015 9:02 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-07-16T17:39:20+00:00</updated>
+<published>2015-07-16T17:39:20+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17417#p17417</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17417#p17417"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17417#p17417"><![CDATA[
+Managed to shoehorn in most of the 1.6 SDL host into 1.5!<br /><br /><!-- m --><a class="postlink" href="https://github.com/naturally-intelligent/moai-dev/blob/master/src/host-sdl/SDLHost.cpp">https://github.com/naturally-intelligen ... DLHost.cpp</a><!-- m --><br /><br />NOTES:<br />- Need to copy in the KeyCodeMapping.* files from 1.6 host-sdl<br />- Had to comment out the joystick class and be more direct with it.<br />- Had to comment out the SetScreenDPI section for Linux (xcb library missing?).<br />- Had to comment out some new Keyboard stuff (MoaiKeyCode)<br /><br />Joystick does work same as 1.6 - one joystick, no hotplug.<br /><br />PROBLEM:<br />- SDL fullscreen isn't working, uses 1/4 of the screen, bottom-left corner.<br />- SDL screen maximizes across all multimonitors<br /><br />This is mostly just an experiment on my part.  It isn't the solution...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu Jul 16, 2015 5:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-07-16T12:30:44+00:00</updated>
+<published>2015-07-16T12:30:44+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17411#p17411</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17411#p17411"/>
+<title type="html"><![CDATA[Re: The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17411#p17411"><![CDATA[
+From my initial tests it looks like the 1.6 joystick classes aren't incompatible with 1.5 because 1.6 is using a newer C++11 format, so they won't compile together.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Thu Jul 16, 2015 12:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[naturally]]></name></author>
+<updated>2015-07-14T18:49:42+00:00</updated>
+<published>2015-07-14T18:49:42+00:00</published>
+<id>/forums/viewtopic.php?t=3173&amp;p=17407#p17407</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=3173&amp;p=17407#p17407"/>
+<title type="html"><![CDATA[The Gamepad/Joystick Project]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=3173&amp;p=17407#p17407"><![CDATA[
+A few of us are working on adding better gamepad/joystick support to MOAI 1.5/1.6 SDL hosts.<br /><br />This is a thread to track progress and post updates!<br /><br />Some goals:<br />- Joystick support across 1.5 and 1.6<br />- Analog pads support<br />- Linux compatibility<br />- Hotplug support (nice-to-have)<br /><br />All of this has been solved in the Stirfire host, except Linux support, so we may pull code from there.  Linux support for joystick is no different than Windows, so the code should be compatible.  All contributions will be put into mainline MOAI github.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1551">naturally</a> — Tue Jul 14, 2015 6:49 pm</p><hr />
+]]></content>
+</entry>
+</feed>

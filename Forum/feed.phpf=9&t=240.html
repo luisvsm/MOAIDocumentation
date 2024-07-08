@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=240&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-01-14T15:01:24-07:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=240&amp;mode</id>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2013-01-14T15:01:24-07:00</updated>
+<published>2013-01-14T15:01:24-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=8460#p8460</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=8460#p8460"/>
+<title type="html"><![CDATA[Re: MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=8460#p8460"><![CDATA[
+To answer your second question, that second -1 flips the prop in the y direction.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Mon Jan 14, 2013 3:01 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[leoq]]></name></author>
+<updated>2013-01-10T09:35:21-07:00</updated>
+<published>2013-01-10T09:35:21-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=8400#p8400</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=8400#p8400"/>
+<title type="html"><![CDATA[Re: MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=8400#p8400"><![CDATA[
+I am new to moai and confused by the same tiltmap-animated sample.<br /><br />Where does the code specify the indice of the grid that should have the animation effect?<br /><br />I understand that in the following code the first &quot;2&quot; is the 2nd frame and the second &quot;2&quot; is the second image in the tiltmap which should be updated to.  But which images should be updated?<br /><br />curve:setKey ( 2, 0.25, 2, MOAIEaseType.FLAT )<br /><br />A second question is about prop:setScl ( 1, -1 ). What's the use of  the negative y scale here? I change it to positive and there seems no difference in the output.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1265">leoq</a> — Thu Jan 10, 2013 9:35 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2012-06-01T16:34:13-07:00</updated>
+<published>2012-06-01T16:34:13-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=4305#p4305</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=4305#p4305"/>
+<title type="html"><![CDATA[Re: MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=4305#p4305"><![CDATA[
+Awesome, thanks so much.  I loaded up the project in VS2010 today and the code is really helpful in understanding how the whole system works.  I would recommend anyone who is seriously interested in MOAI should grab the trial for VS2010 or Xcode and take a look at the code - based on how much it helped my understanding of things.<br /><br />-Bobby<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Fri Jun 01, 2012 4:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Kyrra]]></name></author>
+<updated>2012-05-31T14:13:15-07:00</updated>
+<published>2012-05-31T14:13:15-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=4287#p4287</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=4287#p4287"/>
+<title type="html"><![CDATA[Re: MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=4287#p4287"><![CDATA[
+From what I can see in these files, the below constants may apply (I could be completely wrong though):<br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-beta/blob/master/src/moaicore/MOAITileFlags.h">https://github.com/moai/moai-beta/blob/ ... ileFlags.h</a><!-- m --><br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-beta/blob/master/src/moaicore/MOAIGridSpace.h">https://github.com/moai/moai-beta/blob/ ... ridSpace.h</a><!-- m --><br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="c" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 XFLIP                          <span style="color: #339933;">=</span> <span style="color: #208080;">0x20000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 YFLIP                          <span style="color: #339933;">=</span> <span style="color: #208080;">0x40000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 HIDDEN                         <span style="color: #339933;">=</span> <span style="color: #208080;">0x80000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 FLIP_MASK                      <span style="color: #339933;">=</span> <span style="color: #208080;">0x60000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 FLAGS_MASK                     <span style="color: #339933;">=</span> <span style="color: #208080;">0xf0000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 CODE_MASK                      <span style="color: #339933;">=</span> <span style="color: #208080;">0x0fffffff</span><span style="color: #339933;">;</span></div></li><br /></ol></code></dd></dl><br />and<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="c" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 REPEAT_X                       <span style="color: #339933;">=</span> <span style="color: #208080;">0x00000001</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 REPEAT_Y                       <span style="color: #339933;">=</span> <span style="color: #208080;">0x00000002</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 STAGGER_FLAG                   <span style="color: #339933;">=</span> <span style="color: #208080;">0x80000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 STAGGER_MASK                   <span style="color: #339933;">=</span> <span style="color: #208080;">0x80000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 SHAPE_MASK                     <span style="color: #339933;">=</span> <span style="color: #208080;">0x7FFFFFFF</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 RECT_SHAPE                     <span style="color: #339933;">=</span> <span style="color: #208080;">0x00000000</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 DIAMOND_SHAPE                  <span style="color: #339933;">=</span> <span style="color: #208080;">0x00000001</span> <span style="color: #339933;">|</span> STAGGER_FLAG<span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 OBLIQUE_SHAPE                  <span style="color: #339933;">=</span> <span style="color: #208080;">0x00000002</span><span style="color: #339933;">;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #993333;">static</span> <span style="color: #993333;">const</span> u32 HEX_SHAPE                      <span style="color: #339933;">=</span> <span style="color: #208080;">0x00000003</span> <span style="color: #339933;">|</span> STAGGER_FLAG<span style="color: #339933;">;</span></div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=903">Kyrra</a> — Thu May 31, 2012 2:13 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2012-05-29T02:58:11-07:00</updated>
+<published>2012-05-29T02:58:11-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=4245#p4245</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=4245#p4245"/>
+<title type="html"><![CDATA[Re: MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=4245#p4245"><![CDATA[
+I have a couple questions about the Tile flags:<br /><br />How many bits are used in the mask?  You mention the following flags:<br /><br />0x08 - (1000) hidden<br />0x04 - (0100) yflip<br />0x02 - (0010) xflip<br /><br />I'm assuming you could set all of these with:<br /><br />0x0E - (1110) hidden, yflip, xflip<br /><br />In the example you use 0x20000001 - which doesn't seem to be setting any of the flags you mentioned.  Is this a typo for what should be 0x02000001?  Thanks and awesome SDK!<br /><br />-Bobby<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Tue May 29, 2012 2:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-07T17:04:25-07:00</updated>
+<published>2011-12-07T17:04:25-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=1165#p1165</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=1165#p1165"/>
+<title type="html"><![CDATA[MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=1165#p1165"><![CDATA[
+Glad you are enjoying Moai! <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-laugh.gif" alt="Laugh" /><br /><br />When you're initializing your tile deck you can specify an optional offset and tile size. So something like:<br /><br />tiledeck:setSize ( 8, 8, 32, 32, 1, 1, 30, 30 )<br /><br />would specify a tile size of 30x30 offset 1, 1 from the corner of a 32x32 cell in a grid 8 cells wide and 8 cells tall. Note that the grid does not have to fill the texture. In our games we've been using mostly 64x64 tiles with a one pixel 'bleed' around them. So the artists leave some room at the edge of the texture to account for the bleed. The cell size is 66x66 with the 1, 1 offset to get a 64x64 tile.<br /><br />Let me know if that makes sense.<br /><br />(Actually, I think that the cell, offset and tile dimensions need to be in UV coordinates... so divide the parameters above by your texture dimensions.)<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Wed Dec 07, 2011 5:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rpx854218f1e3922e618ade70a59bc2d63b]]></name></author>
+<updated>2011-12-06T15:58:35-07:00</updated>
+<published>2011-12-06T15:58:35-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=1151#p1151</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=1151#p1151"/>
+<title type="html"><![CDATA[MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=1151#p1151"><![CDATA[
+Thanks for the reply Patrick, I wasn't aware that tiles had flags. The hidden flag sounds like it will be particularly useful. On a slightly related topic: I'm trying to parse Tiled's lua output to create MOAIGrids and a MOAITileDeck2D. The Tiled format allows tilesets to have spaces and margins to prevent bleeding. How would I go about setting up the tiledeck to take that blank space between tiles into account?<br /><br /><br /><br />Thanks for help, I'm really digging Moai so far!<br /><br /><br /><br />- Rob<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=326">rpx854218f1e3922e618ade70a59bc2d63b</a> — Tue Dec 06, 2011 3:58 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-12-06T10:21:25-07:00</updated>
+<published>2011-12-06T10:21:25-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=1149#p1149</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=1149#p1149"/>
+<title type="html"><![CDATA[MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=1149#p1149"><![CDATA[
+0x20000001 is just setting the flags on that tile. The flags we support today are xFlip, yFlip and 'hidden' - 0x02, 0x04 and 0x08 respectively. There are a few more flags coming soon.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Tue Dec 06, 2011 10:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rpx854218f1e3922e618ade70a59bc2d63b]]></name></author>
+<updated>2011-12-05T16:05:56-07:00</updated>
+<published>2011-12-05T16:05:56-07:00</published>
+<id>/forums/viewtopic.php?t=240&amp;p=1135#p1135</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=240&amp;p=1135#p1135"/>
+<title type="html"><![CDATA[MOAIGrid confusion]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=240&amp;p=1135#p1135"><![CDATA[
+Hey Guys,<br /><br /><br /><br />I'm getting my feet wet learning Moai and am a bit puzzled about MOAIGrid. In the tilemap-animated example the first setRow line looks like this:<br /><br /><br /><br />grid:setRow ( 1,     0x00000001, 0x00000002, 0x00000003, 0x00000004, 0x00000005, 0x00000006, 0x00000007, 0x20000001 )<br /><br /><br /><br />What is the significance of using 0x20000001 over 0x00000001?<br /><br /><br /><br />Thanks for the help!<br /><br />- Rob<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=326">rpx854218f1e3922e618ade70a59bc2d63b</a> — Mon Dec 05, 2011 4:05 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1528&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-01-10T16:41:15+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1528&amp;mode</id>
+<entry>
+<author><name><![CDATA[KaKaVip]]></name></author>
+<updated>2013-01-10T16:41:15+00:00</updated>
+<published>2013-01-10T16:41:15+00:00</published>
+<id>/forums/viewtopic.php?t=1528&amp;p=8401#p8401</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1528&amp;p=8401#p8401"/>
+<title type="html"><![CDATA[Re: How to Pause and Resume Game ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1528&amp;p=8401#p8401"><![CDATA[
+Hi Poetwen,<br />     Thank you ^^!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1205">KaKaVip</a> — Thu Jan 10, 2013 4:41 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[poetowen]]></name></author>
+<updated>2013-01-07T19:30:53+00:00</updated>
+<published>2013-01-07T19:30:53+00:00</published>
+<id>/forums/viewtopic.php?t=1528&amp;p=8364#p8364</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1528&amp;p=8364#p8364"/>
+<title type="html"><![CDATA[Re: How to Pause and Resume Game ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1528&amp;p=8364#p8364"><![CDATA[
+Hi KaKaVip,<br />I received your email, and here is the code I used.<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- Pause</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">oldRoot <span style="color: #66cc66;">=</span> MOAIActionMgr<span style="color: #66cc66;">.</span>getRoot <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIActionMgr<span style="color: #66cc66;">.</span>setRoot <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> thread <span style="color: #66cc66;">=</span> MOAIThread<span style="color: #66cc66;">.</span>new <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">thread<span style="color: #66cc66;">:</span>run <span style="color: #66cc66;">&#40;</span> doPaused <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- doPaused</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> doPaused <span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  MOAIInputMgr<span style="color: #66cc66;">.</span>device<span style="color: #66cc66;">.</span>touch<span style="color: #66cc66;">:</span>setCallback<span style="color: #66cc66;">&#40;</span> onTouchEvent <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- Resume</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIActionMgr<span style="color: #66cc66;">.</span>setRoot <span style="color: #66cc66;">&#40;</span> oldRoot <span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><br />Hope it helps. <img src="images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=284">poetowen</a> — Mon Jan 07, 2013 7:30 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bartoleo]]></name></author>
+<updated>2013-01-03T15:29:32+00:00</updated>
+<published>2013-01-03T15:29:32+00:00</published>
+<id>/forums/viewtopic.php?t=1528&amp;p=8330#p8330</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1528&amp;p=8330#p8330"/>
+<title type="html"><![CDATA[Re: How to Pause and Resume Game ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1528&amp;p=8330#p8330"><![CDATA[
+You must pause your 'actions' (animations, box2dworld... etc) 'manually' via yourobject:pause(true)<br />when you want to resume actions then you can call yourobject:pause(false)<br />I have a Gamestate for Pause to draw Pause on screen and wait for touch/keys to resume game<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=939">bartoleo</a> — Thu Jan 03, 2013 3:29 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[KaKaVip]]></name></author>
+<updated>2013-01-03T09:52:33+00:00</updated>
+<published>2013-01-03T09:52:33+00:00</published>
+<id>/forums/viewtopic.php?t=1528&amp;p=8328#p8328</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1528&amp;p=8328#p8328"/>
+<title type="html"><![CDATA[How to Pause and Resume Game ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1528&amp;p=8328#p8328"><![CDATA[
+I'm looking for this.Can you help me?  <img src="/forums/images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /> <br />I do not see any function in the Moai SDK talking about this !<br /><br />Thank all,<br />KaKaVip<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1205">KaKaVip</a> — Thu Jan 03, 2013 9:52 am</p><hr />
+]]></content>
+</entry>
+</feed>

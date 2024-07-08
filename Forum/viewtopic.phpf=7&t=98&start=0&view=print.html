@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Moai SDK 0.5 Beta (revision 1)</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Moai SDK 0.5 Beta (revision 1)</h2>
+		<p><a href="moai-sdk-0-5-beta-revision-1-t98/index.html">/forums/moai-sdk-0-5-beta-revision-1-t98/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Moai SDK 0.5 Beta (revision 1)</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Aug 15, 2011 10:02 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">The latest release of Moai SDK has some big additions to it. The first is integration with the virtual file system PhysFS. The second is an improved rendering engine that supports both OpenGL ES 1.1 and 2.0 as well as desktop OpenGL. The OpenGL rewrite was no small feat, but we’ve been able to add it with minimal impact to the Lua framework in terms of backward compatibility.
+<br /><!--more-->
+<br />Here’s are some highlights of what’s changed. There’s a more comprehensive list in the release notes, and of course a full list in our github repo log.
+<br />
+<br />- MOAIFont serialization - you can rip your fonts as part of your build process.
+<br />- First pass of OpenGL programmable pipeline integration
+<br />- First pass of PhysFS integration
+<br />- Fixed GLUT bug causing processor over-use when in the background
+<br />- Added support for offscreen rendering (MOAIFrameBuffer)
+<br />- Added support for interlaced PNGs
+<br />- Modified iOS sample host to create GLES 2 context with a fallback to GLES 1.1
+<br />- Improvements to untz (streaming sounds, fixes on all supported platforms)
+<br />- Updated Flash jsfl export commants to handle offset registration points
+<br />- Removed upper limit on props per layer
+<br />
+<br />PhysFS allows you to mount any .zip archive as a file system extension. This is a major improvement in Moai app deployment under the Android host.
+<br />
+<br />For now we’ve implemented PhysFS as an alternative file system. You can load data into the Lua runtime via MOAIFileSystem. Right now, PhysFS is separate from Moai’s internal file system operations, so if you want to use it you’ll need to first load your data into string and then pass them to Moai. In a future release, we will integrate PhysFS more tightly with Moai so this will no longer be necessary.
+<br />
+<br />The move to support OpenGL ES 2.0 brings with it GLSL shaders. Internally, Moai checks to see if the OpenGL context supports the programmable pipeline, falling back on fixed function only if none is available. To make this possible we undertook a fairly major refactoring of Moai’s rendering engine. If you looked under the hood of the original implementation, you probably noticed a fair amount of redundancy between the graphics classes in uslsext and those in moaicore. In our new version, the original uslsext classes were absorbed into moaicore and consolidated under the clearer (I feel) notion of a MOAIGfxDevice.
+<br />
+<br />The original Moai Deck objects now render with built-in default shaders, so no changes to scripts that use them are necessary. You can attach your own, custom shaders to Decks or Props. You can also use MOAIMesh, MOAIVertexBuffer and MOAIVertexFormat to create custom vertex configurations for use with your shaders.
+<br />
+<br />MOAISimpleShader is gone; now there is only MOAIShader. The color and blend mode provided by MOAISimpleShader have been absorbed into MOAIProp2D.
+<br />
+<br />MOAIShader represents a GLSL program with both a vertex and fragment shader. You can create custom Moai dependency graph Attributes on MOAIShader and bind them to your program’s uniforms. In this way you can animate shader parameters as you would any other Attribute in Moai. You can also attach any number of MOAITransform objects to your shader. Alternatively, you can configure Moai to map matrices directly from its CPU transformation pipeline to your shader uniforms.
+<br />
+<br />Another new feature (though not OpenGL ES 2.0 specific) is support for off-screen frame buffers. To use this feature, simply initialize a MOAITexture as an off-screen buffer and attach it to a MOAILayer2D. The layer will render into the texture every frame.
+<br />
+<br />Moai’s graphic engine still caches OpenGL state and only invokes the graphics hardware on an actual state change. As before, most geometry is queued in a vertex buffer maintained by MOAIGfxDevice and only pushed to hardware on a state change. As the Moai Deck objects perform their vertex transformations on the CPU, drawing to hardware is usually only necessary when a texture, vertex format or shader changes (or when the vertex buffer is full).
+<br />
+<br />There are still some new features to be added. For example, more options to control how MOAILayer2D renders its contents. Right now, contents are sorted by priority and rendered with no depth buffer. We’ll be adding other sorting schemes (sort by X or Y axis, sort by shader and/or texture ID, etc.) and the ability to turn sorting off (using the depth buffer instead). We also need to support configuration and use of OpenGL’s stencil buffer.
+<br />
+<br />A contributor called to my attention the fact that more than a few devices require the OpenGL context to be destroyed and recreated. We’ll be adding support for this behavior soon. If there is anyone currently blocked on this, let me know.
+<br />
+<br />As you experiment with this new release, please remember that it’s our first after some pretty aggressive changes. We’ve tested it against all of our samples on a number of devices as well as our internal games in development with good results. That said, YMMV, particularly on Android hardware. As always, feedback and bug reports are appreciated.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

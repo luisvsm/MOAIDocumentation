@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1322&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-10-23T21:27:29+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1322&amp;mode</id>
+<entry>
+<author><name><![CDATA[me_app]]></name></author>
+<updated>2012-10-23T21:27:29+00:00</updated>
+<published>2012-10-23T21:27:29+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7104#p7104</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7104#p7104"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7104#p7104"><![CDATA[
+i hope the rapanui guys can fix that maybe too;) Thank you for your help this community is great..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1083">me_app</a> — Tue Oct 23, 2012 9:27 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-10-23T20:54:55+00:00</updated>
+<published>2012-10-23T20:54:55+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7101#p7101</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7101#p7101"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7101#p7101"><![CDATA[
+No worries.  In looking, it seems NaCL on Moai had some socket related issues: <!-- l --><a class="postlink-local" href="google-chrome-native-client-t147/index.html">google-chrome-native-client-t147/</a><!-- l --><br /><br />It appears Rapanui is just using the sockets library for a millisecond fidelity timer, and it is only used in less than a handful of locations.  So your best bet would be to replace those calls with something else.<br /><br />Most calls look like:<br />socket.gettime() * 1000<br /><br />You can probably get away with swapping for os.clock() calls instead.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Tue Oct 23, 2012 8:54 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[me_app]]></name></author>
+<updated>2012-10-23T20:48:41+00:00</updated>
+<published>2012-10-23T20:48:41+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7100#p7100</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7100#p7100"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7100#p7100"><![CDATA[
+Thanks man for checking it out...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1083">me_app</a> — Tue Oct 23, 2012 8:48 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-10-23T20:44:14+00:00</updated>
+<published>2012-10-23T20:44:14+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7099#p7099</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7099#p7099"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7099#p7099"><![CDATA[
+It's Sockets.<br /><br />Rapanui uses the sockets library, which isn't allowed under NaCL.<br /><br />To brute force it ( and god only knows what code you break ), do a find in the Rapanui libraries for:<br /><br />require&quot;socket&quot;<br /><br />And comment it out.  There are about 3 occurrences.  Once you do that, you game runs just fine in NaCL.  Or at least, the first screen loads.  Oddly enough, all of the code making use of sockets had nothing to do with networking, and was used exclusively for the gettime() method.  Something I imagine that you could easily substitute out a non-socket library version of.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Tue Oct 23, 2012 8:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[me_app]]></name></author>
+<updated>2012-10-23T19:32:02+00:00</updated>
+<published>2012-10-23T19:32:02+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7098#p7098</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7098#p7098"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7098#p7098"><![CDATA[
+My windows host is working. i pm you with an download link for the zip file. Thank you for checking it out...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1083">me_app</a> — Tue Oct 23, 2012 7:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-10-23T16:52:38+00:00</updated>
+<published>2012-10-23T16:52:38+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7096#p7096</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7096#p7096"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7096#p7096"><![CDATA[
+Did you use the binaries I provided?  It should just be a matter of copying your working lua project code into the same directory as the nacl host, then registering and running it in chrome.<br /><br />Your source works in the normal windows host right?  If so, if you'd like, zip it all up and put it somewhere I can dl it and I'll check it out.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Tue Oct 23, 2012 4:52 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[me_app]]></name></author>
+<updated>2012-10-23T16:26:32+00:00</updated>
+<published>2012-10-23T16:26:32+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7094#p7094</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7094#p7094"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7094#p7094"><![CDATA[
+sure but i cant get it working with rapanui not sure why..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1083">me_app</a> — Tue Oct 23, 2012 4:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-10-23T16:06:58+00:00</updated>
+<published>2012-10-23T16:06:58+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7093#p7093</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7093#p7093"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7093#p7093"><![CDATA[
+No, but isn't Rapanui written entirely in Lua?  IF so, I see no reason it shouldn't just work. <br /><br /><br />(Famous last words).<br /><br />Looking at Rapanui is on my todo list...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Tue Oct 23, 2012 4:06 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[me_app]]></name></author>
+<updated>2012-10-23T15:07:17+00:00</updated>
+<published>2012-10-23T15:07:17+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7091#p7091</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7091#p7091"/>
+<title type="html"><![CDATA[Re: Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7091#p7091"><![CDATA[
+Have you tested it with rapanui? Great tutorial i got this working with Moai samples a while ago...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1083">me_app</a> — Tue Oct 23, 2012 3:07 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Serapth]]></name></author>
+<updated>2012-10-23T01:53:54+00:00</updated>
+<published>2012-10-23T01:53:54+00:00</published>
+<id>/forums/viewtopic.php?t=1322&amp;p=7082#p7082</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1322&amp;p=7082#p7082"/>
+<title type="html"><![CDATA[Guide: Using Moai with Chrome]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1322&amp;p=7082#p7082"><![CDATA[
+<a href="http://www.gamefromscratch.com/post/2012/10/22/Using-Moai-with-Chrome-(-NaCL-(-Native-Client-(-Inception-moment-there-)-)-).aspx" class="postlink">Using Chrome with Google Chrome Native Client</a><br /><br />This guide shows how to build a Native Client game and the Moai host for running your application in Chrome.<br /><br />There is currently one small problem, I have an <a href="trouble-building-chrome-nacl-host-scons-t1321/index.html" class="postlink">outstanding question</a> out looking for an answer.  For some reason, at least on Windows, the scons script doesn't seem to work with the Repository() paths provided.  I know almost nothing about scons, but I never managed to fix it.  The easy brute force solution is to just copy the three directories of source to your scons directory, but once I have another work around, I will update to the more elegant solution.<br /><br />Or, you could just download the compiled host I provide and go from there.  The guide then talks about the various files you need to create, how to setup Chrome, etc.<br /><br />Hope it proves useful to some of you.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1054">Serapth</a> — Tue Oct 23, 2012 1:53 am</p><hr />
+]]></content>
+</entry>
+</feed>

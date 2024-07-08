@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=6&amp;t=1526&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-01-03T15:20:51+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=6&amp;t=1526&amp;mode</id>
+<entry>
+<author><name><![CDATA[bartoleo]]></name></author>
+<updated>2013-01-03T15:20:51+00:00</updated>
+<published>2013-01-03T15:20:51+00:00</published>
+<id>/forums/viewtopic.php?t=1526&amp;p=8329#p8329</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1526&amp;p=8329#p8329"/>
+<title type="html"><![CDATA[Re: Physical experiment (similar to Tower of Goo)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1526&amp;p=8329#p8329"><![CDATA[
+<blockquote><div><cite>dooms101 wrote:</cite><br />img = MOAIImage.new()<br /><br />img:load( 'img.png', MOAIImage.PREMULTIPLY_ALPHA )<br /></div></blockquote><br />thank you it worked!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=939">bartoleo</a> — Thu Jan 03, 2013 3:20 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dooms101]]></name></author>
+<updated>2013-01-03T07:27:11+00:00</updated>
+<published>2013-01-03T07:27:11+00:00</published>
+<id>/forums/viewtopic.php?t=1526&amp;p=8325#p8325</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1526&amp;p=8325#p8325"/>
+<title type="html"><![CDATA[Re: Physical experiment (similar to Tower of Goo)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1526&amp;p=8325#p8325"><![CDATA[
+I didn't check your code yet but if you're having trouble with alpha transparency not working then you should try adding the MOAIImage.PREMULTIPLY_ALPHA flag when you're loading an image. Like so:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">img <span style="color: #66cc66;">=</span> MOAIImage<span style="color: #66cc66;">.</span>new<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">img<span style="color: #66cc66;">:</span>load<span style="color: #66cc66;">&#40;</span> <span style="color: #ff6666;">'img.png'</span><span style="color: #66cc66;">,</span> MOAIImage<span style="color: #66cc66;">.</span>PREMULTIPLY_ALPHA <span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><br />The flag also works with MOAIImageTexture in case you're using that instead of MOAIImage.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=852">dooms101</a> — Thu Jan 03, 2013 7:27 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[bartoleo]]></name></author>
+<updated>2013-01-03T01:13:05+00:00</updated>
+<published>2013-01-03T01:13:05+00:00</published>
+<id>/forums/viewtopic.php?t=1526&amp;p=8319#p8319</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1526&amp;p=8319#p8319"/>
+<title type="html"><![CDATA[Physical experiment (similar to Tower of Goo)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1526&amp;p=8319#p8319"><![CDATA[
+I'm coding a little experiment to learn Box2d in Moai...<br />it's similar (it's 100 times uglier) to Tower of Goo<br />I have problems with png and alpha (the cloud prop being drawn all white)<br /><a href="http://github.com/bartoleo/physics-moai" class="postlink">http://github.com/bartoleo/physics-moai</a><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=939">bartoleo</a> — Thu Jan 03, 2013 1:13 am</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - &#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>&#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</h2>
+		<p><a href="path-too-long-un-zipping-beta-0-8-release-3-on-windows-t183/index.html">/forums/path-too-long-un-zipping-beta-0-8-release-3-on-windows-t183/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>&#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 07, 2011 11:16 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Unzipping "moai-moai-beta-Version-0.8-Beta-Revision-8-0-g401389d.zip" on Windows Vista gave this error:
+<br />
+<br />
+<br />
+<br />"Error 0x80010135: Path too long"
+<br />
+<br />
+<br />
+<br />For these 3 files:
+<br />
+<br />
+<br />TJ Virtual Goods-own-target-headers.hmap
+<br />
+<br />TJ Virtual Goods-all-target-headers.hmap
+<br />
+<br />TJ Virtual Goods.LinkFileList
+<br />
+<br />
+<br />
+<br />Without further investigation, I am assuming these files are for Macintosh, and thus the error.
+<br />
+<br />I was unsuccessful in finding this feedback in the forums or wiki, which is why I am posting.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>&#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 07, 2011 11:31 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">You are correct. Those are part of the Tapjoy SDK and only used by iOS. Wasn't aware they were breaking unzip on Windows. Will see what we can do.
+<br />
+<br />But for that, did the rest of the unzip work for you? Or are you blocked?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>&#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 07, 2011 11:33 am</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">FWIW it works OK on Windows 7 using the built-in Microsoft zip utility.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>&#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 07, 2011 12:46 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Not blocked! 
+<br />
+<br />
+<br />
+<br />The <strong>VS2008 Solution</strong> is building <strong>Debug </strong>OK (except for <em>"RtAudio.cpp(3521) : fatal error C1083: Cannot open include file: 'dsound.h': No such file or directory"</em>, which I am currently assuming is a DirectX path issue).
+<br />
+<br />
+<br />
+<br />A note that I too used the Windows built-in Zip utility, in Windows Vista (.e. "Extract All…"), to get the "Path too long" errors.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>&#34;Path Too Long&#34; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 08, 2011 12:02 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Yes, sounds like a DirectX path issue. Did you find the readme about adding the DirectX paths to Visual Studio? (Decided to do it that way instead of in the project itself since people may have DirectX installed in different places...)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Feb 24, 2012 5:06 pm</strong></div>
+				<div class="author">by <strong>LisaVayn</strong></div>
+				<div class="content">I want to share with all those who are victim of such long path files<br />Long path files are those files which have a path having charcters more than the limit allowed by windows,ie approx 200<br />Whenever we want to change,delete,move,cut,omit,share or install such file windows give error like file is copy write protected,it is used by some other application or user,is blocked etc<br />First way is to change file name but it dont work<br />Second way is to delete such file by holding shift but it also dont work<br />Third way is to use a tool which embeds into core and resolves such long path,there are many tools available both freeware and shareware,here are some with their destination websites:<br />1.First of all is robocopy which is a tool given by microsoft for copying and xcopying files using command line interface,this robust tool boostes copy procedure but is leaste effective for long path files,i will rate it 1 star<br />2.Second one is pathlongtool available at pathlong.com,it is rated 2 star because it has limited functionality in case of mapping and changing such files<br />3.Third one is Long path support Api,this is a complex tool for advanced users having complex accessibilities,i will rate it as 2 star,it is avilable at file32.com<br />4.Fourth tool is bitchip file gear,it is a file copy gearer which cannot map and delete long path files but is extremely useful in gearing copying of such files,rated as 3 star.It is available at file32.com<br />5.The most effective and efficient is longpathtool availabe at <!-- m --><a class="postlink" href="http://www.longpathtool.com">http://www.longpathtool.com</a><!-- m --> ,it is a small,smart and quick to use software which can be easily downloaded from its site,it has optimum functionality and it can change,search,map from network,omit,copy,install and delete such long path file effectively being rated as 5 star</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 13, 2012 9:24 pm</strong></div>
+				<div class="author">by <strong>BenBrown</strong></div>
+				<div class="content">I had the similiar problem and finally I found solution:  <a href="http://LongPathTool.com" class="postlink">http://LongPathTool.com</a></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Mar 24, 2012 5:28 am</strong></div>
+				<div class="author">by <strong>LeeRoy</strong></div>
+				<div class="content">Hi Guys, just to update you, finally I found a way to solve it<br />Do you have error messages?, like :<br /><br />* Path too long<br />* Error cannot delete file: cannot read from source file or disk<br />* Cannot delete file: Access is denied<br />* There has been a sharing violation.<br />* Cannot delete file or folder The file name you specified is not valid or too long. Specify a different file name.<br /><br />For that I tried it with: <!-- m --><a class="postlink" href="http://longpathtool.com/">http://longpathtool.com/</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Aug 29, 2013 3:19 pm</strong></div>
+				<div class="author">by <strong>sweety9804</strong></div>
+				<div class="content">Please try <span style="font-weight: bold">longpathtool</span> and get the solution of above relevant issue.It was really helped me to get the right solution which worked for me.<br /><br /><br />Thanks<br />Sweety</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 26, 2014 11:36 am</strong></div>
+				<div class="author">by <strong>patrick8</strong></div>
+				<div class="content">Hi <br /><br />I suggest to try &quot;Long Path Tool&quot; program .<br /><br />before I have problem cannot unzip file because file name too long. and after I found long path tool and now my problem solved<br /><br />Thanks<br /><br />Patrick</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: &quot;Path Too Long&quot; un-zipping Beta 0.8 Release 3 on Windows</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Oct 27, 2015 10:44 am</strong></div>
+				<div class="author">by <strong>robertvo</strong></div>
+				<div class="content">I really should have found Long Path Tool myself. Great One... Its very helpful people to resolve this problem!</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

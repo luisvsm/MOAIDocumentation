@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - HOW TO BUILD APK IN WINDOWS</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>HOW TO BUILD APK IN WINDOWS</h2>
+		<p><a href="how-to-build-apk-in-windows-t1693/index.html">/forums/how-to-build-apk-in-windows-t1693/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>2</strong></div>
+		
+			<div class="post">
+				<h3>HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 06, 2013 10:47 am</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">Hi , <br />    <br />   * sorry for my english .<br /> <br />   i am new one to Moai Sdk , i follow the Instructions mentioned in the form to test Moai sdk , it successfully run in my laptop(run.bat file in samples folder),then i try to build it for anroid , i get the error , which i attached here , so please help me to overcome this error.<br /><br />my laptop config: W7 64bit , 2Gen i5</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 06, 2013 3:33 pm</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">Inb4 anyone says &quot;Install Linux&quot;.<br /><br />Try to open a cygwin shell at least once. cd into the build directory and try running the .sh script from there.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Mar 06, 2013 9:52 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">Hi bullno1,<br /><br />i tried the method you mentioned , and still i got the same error , please find the screen shot files of my project directory path from below mentioed drop box link<br /><br /><!-- m --><a class="postlink" href="https://www.dropbox.com/s/6ssoj0dvu0ef4wf/Files.zip?m">https://www.dropbox.com/s/6ssoj0dvu0ef4wf/Files.zip?m</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 07, 2013 12:36 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">just looking at the screen shot<br />'adb' is not recognized as an internal or external command.<br /><br />i would assume that the andriod sdk/ or java is not installed, or the path to the andriod sdk or java is wrong<br /><br />example of my paths/varibles<br />control-panel/systems/advanced/enviormental varibles/<br /><br />add to the begining of the paths<br />C:\cygwin\bin;<br />D:\ant\bin;<br />C:\Program Files\Android\android-sdk\platform-tools;<br />C:\Program Files\Android\android-sdk\tools;<br />D:\moai-sdk\android-ndk-r8d-windows\android-ndk-r8d;<br /><br />and make a new varilble for java<br />JAVA_HOME C:\Program Files\Java\jdk1.7.0_06<br /><br />set paths java<br /><!-- m --><a class="postlink" href="http://bharatsoft.blogspot.ca/2010/08/setting-path-and-classpath-in-javahow.html">http://bharatsoft.blogspot.ca/2010/08/s ... vahow.html</a><!-- m --><br /><br />set paths ant<br /><!-- m --><a class="postlink" href="http://ant.apache.org/manual/install.html#setup">http://ant.apache.org/manual/install.html#setup</a><!-- m --><br /><br />set path andriod tools<br /><!-- m --><a class="postlink" href="http://mangohq.com/2011/01/android-setting-up-environment-variable-in-windows/">http://mangohq.com/2011/01/android-sett ... n-windows/</a><!-- m --><br /><br /><br />make andriod tutorial<br /><!-- m --><a class="postlink" href="http://192.168.20.226:3000/wiki/index.php?title=Building_Moai_Games_For_Android_Devices">/wiki/index.php?title ... id_Devices</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 07, 2013 9:29 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">hi,<br /><br />  after i gone through ezraanderson mentioned instruction , i got the new error , i attached the error here . please help me to overcome all this errors.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 07, 2013 10:09 pm</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">Does running cygwin as administrator help?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 07, 2013 11:36 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">how do i run cygwin as administrator , pls help</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Mar 08, 2013 8:27 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">i run the cygwin as administrator , and still get the same error message posted before.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Mar 08, 2013 8:31 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">can any one sen me a hello moai , android build file(ecllipse import) for testing</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Mar 09, 2013 3:50 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">if you are still getting the permission-denied error, cygwin is probably still not getting the right permissions. try open cygwin as administrator then running the script from inside . <br /><br /><br />try the solutions in this forum<br /><br /><!-- l --><a class="postlink-local" href="permission-denied-t542/index.html">permission-denied-t542/</a><!-- l --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 10, 2013 12:11 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">i run the script using cygwin as admin and get new error , i tried to resolve this but i cant find any solution , please any one help.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 10, 2013 1:59 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">try google mate<br /><br />download cpio and put it in the same directory as cygwin<br /><br /><!-- m --><a class="postlink" href="http://cygwin.com/packages/">http://cygwin.com/packages/</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 10, 2013 8:59 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">i installed the cpio and get new error again.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Mar 10, 2013 9:24 pm</strong></div>
+				<div class="author">by <strong>makotok1123</strong></div>
+				<div class="content">Cygwin is difficult to use.<br />run-host.sh can be replaced by the ant.<br />Contents are easy as copy and replace the string.<br />I'll try to create in my spare time.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 11, 2013 1:30 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">then how can i build apk , please any one help me .</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Mar 11, 2013 4:56 pm</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">Use Linux.  Its a lot easier and you can run the Android SDK/NDK tools in a VM.  Seriously, its just easier.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 12, 2013 1:00 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">@ ibisum<br /><br />Does building in linux use multi-cores? <br /><br />The only downfall i have with building  in windows is that it is really slow it seams to only use one cpu core.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 12, 2013 2:18 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I'm sure there's some way to tell the Android SDK to use cores, but I wouldn't know it - I find the build times more than acceptable.<br /><br />I know its not a 'smart' suggestion, but really .. building MOAI for Android with the Linux tools is really a lot easier.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Mar 12, 2013 12:20 pm</strong></div>
+				<div class="author">by <strong>simeonaronk</strong></div>
+				<div class="content">i am new to linux , and where from i start using linux for moai</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: HOW TO BUILD APK IN WINDOWS</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Mar 21, 2013 9:28 pm</strong></div>
+				<div class="author">by <strong>spectralcanine</strong></div>
+				<div class="content">The issue here is that the sh file is using the Cygwin find command, but because of the Path variable it ends up using Window's find command.<br /><br />Go to your environment variables (Right click on My Computer -&gt; Settings  -&gt; Advanced system settings -&gt; Environment Variables).<br />In the System Variables list, find PATH. Add the path to your Cygwin binary folder at the very beginning, so that it gets searched before Windows itself.<br /><br />This should fix all the &quot;File not found -  .?*&quot; errors, and probably leading to everything else to work too.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>2</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

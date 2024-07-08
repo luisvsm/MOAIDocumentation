@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - propListForPoint returns unexpected results</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>propListForPoint returns unexpected results</h2>
+		<p><a href="proplistforpoint-returns-unexpected-results-t303/index.html">/forums/proplistforpoint-returns-unexpected-results-t303/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 3:31 pm</strong></div>
+				<div class="author">by <strong>lledwichau</strong></div>
+				<div class="content">I have a simple screen system going using images as buttons and have been happily using Partition:propForPoint without a problem.  As the system gets more complicated I am attempting to use Partition:propListForPoint but the results returned are random and useless.
+<br />
+<br />
+<br />
+<br />I would expect the list returned to include each prop beneath the point, however I usually get a single random prop from the partition.  At the least I would expect the result to include the result from Partition:propForPoint.
+<br />
+<br />
+<br />
+<br />Is there something that needs to be setup to make this work?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 6:11 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Any luck with <a href="http://192.168.20.226:3000/docs/class_m_o_a_i_partition.html#acae225f18d88e6008556a0868632b9dd" target="_blank">sortedPropListForPoint</a> ?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 6:56 pm</strong></div>
+				<div class="author">by <strong>lledwichau</strong></div>
+				<div class="content">no, it returns the same seemingly random list.
+<br />
+<br />
+<br />
+<br />I searched the forums a little more deeply and found a few posts about Partition:reserveLayer but the results of that were even worse.
+<br />
+<br />
+<br />
+<br />Can anyone confirm that these functions perform as indicated, they return a list of all props under the current position?
+<br />
+<br />
+<br />
+<br />Alternatively is anything else needed to setup layer/viewport/partition?
+<br />
+<br />
+<br />
+<br />Code Snippet:
+<br />
+<br />
+<br />
+<br />viewport = MOAIViewport.new ()
+<br />viewport:setSize ( SCREEN_WIDTH, SCREEN_HEIGHT )
+<br />viewport:setScale ( SCREEN_UNITS_X, SCREEN_UNITS_Y )
+<br />
+<br />uiLayer = MOAILayer2D.new ()
+<br />uiLayer:setViewport ( viewport )
+<br />MOAISim.pushRenderPass ( uiLayer )
+<br />
+<br />
+<br />
+<br />screenUIPartition = MOAIPartition.new ()
+<br />
+<br />uiLayer:setPartition ( screenUIPartition )</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 7:02 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">In the distant past, I too was getting unexpected results.  I assumed the sorted version would fix it, but before trying it, I re-organized my props so that all the buttons were on top.  Ultimately, I, too, will need to be able to click on props underneath other props reliably.
+<br />
+<br />I hope you will consider creating a sample with the issue in <a href="http://pastebin.com/" target="_blank">pastebin</a>, so we can all try/fix it. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 7:14 pm</strong></div>
+				<div class="author">by <strong>lledwichau</strong></div>
+				<div class="content">So I did something similar.  I modified the Pick sample and proved that the call works, it returns the list of props under the cursor.  Note that when all 5 images were stacked it crashes, 3 of 3, also the picking fails when there are 4 in the stack, returns a double entry.
+<br />
+<br />
+<br />
+<br />I just have to figure out where my code deviates, however given the above crash, I might have to look into manually performing the pick.
+<br />
+<br />
+<br />
+<br />Below is the edited callback function for the crash. To repro just drag all the images on top of each other and crash.
+<br />
+<br />
+<br />
+<br />function clickCallback ( down )
+<br />   
+<br />    if down then
+<br />       
+<br />        pick = partition:propForPoint ( mouseX, mouseY )
+<br />       
+<br />        pickList = partition:propListForPoint  ( mouseX, mouseY )
+<br />        for pickKey, pickValue in pairs ( pickList ) do
+<br />       
+<br />            print ( "Key: " .. pickKey .. ", Value: " .. pickValue.name )
+<br />        end
+<br />       
+<br />        if pick then
+<br />            print ( pick.name )
+<br />            pick:setPriority ( priority )
+<br />            priority = priority + 1
+<br />            pick:moveScl ( 0.25, 0.25, 0.125, MOAIEaseType.EASE_IN )
+<br />        end
+<br />    else
+<br />        if pick then
+<br />            pick:moveScl ( -0.25, -0.25, 0.125, MOAIEaseType.EASE_IN )
+<br />            pick = nil
+<br />        end
+<br />    end
+<br />end</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 7:20 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content"><blockquote>
+<br />when all 5 images were stacked it crashes, 3 of 3, also the picking fails when there are 4 in the stack, returns a double entry.
+<br />
+<br /></blockquote>
+<br /><img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-surprised.gif" alt="Surprised" /> ??</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 9:30 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Excellent, thanks. I ran your script and saw the repro. Will see what's going on and get you a fix ASAP.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 9:54 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Bah... found the mistake. Just a dumb regression on my part. Fixed now. Will be in the next release. Or, if you are building from source, the fix was just pushed up to moai-dev/integration, MOAIPartitionResultBuffer.cpp lines 161-165.
+<br />
+<br />As always, thanks for your patience and for reporting this stuff.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 9:59 pm</strong></div>
+				<div class="author">by <strong>mervills.email</strong></div>
+				<div class="content">While we are on this subject... why does this return nil?
+<br />
+<br /><a href="http://pastebin.com/ca8KRidZ" target="_blank">http://pastebin.com/ca8KRidZ</a>
+<br />
+<br />Is it the same error, or am I missing something obvious?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 10:03 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Nice job pastebin'ing.  Helps us all help each other.
+<br />
+<br />You have to create the partition:
+<br />
+<br /><blockquote>
+<br />
+<br />partition = MOAIPartition.new ()
+<br />layer:setPartition ( partition )
+<br />
+<br /></blockquote>
+<br />On the rough chance it is not enough, then the simulation has to do its step; to prove, could try blocking on an action before propForPoint.
+<br />
+<br />BTW, I actually don't even know what the partition does/is.  But I do know I need it to read touches/clicks.  I've been able to interchange partitions and layers, but now I only use it for propForPoint. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 10:19 pm</strong></div>
+				<div class="author">by <strong>mervills.email</strong></div>
+				<div class="content">Your original post about blocking on an action did the trick, as I said in the pastebin file, inserting a prop onto the layer forces partition creation.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 10:33 pm</strong></div>
+				<div class="author">by <strong>mervills.email</strong></div>
+				<div class="content">Here is what the code looks like now: <a href="http://pastebin.com/7cit78EZ" target="_blank">http://pastebin.com/7cit78EZ</a>
+<br />
+<br />
+<br />
+<br />As for what a partition does, I defer to the documentation: Class for optimizing spatial queries against sets of primitives
+<br />
+<br />
+<br />
+<br />Could use a more straightforward name though, or even better: integration into the layer class. (I.E. layer:propForPoint(x,y) )</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 10:36 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Cool, perhaps MOAIThread.blockOnAction( action ) instead of "while action:isBusy () do coroutine:yield () end"</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 10:42 pm</strong></div>
+				<div class="author">by <strong>mervills.email</strong></div>
+				<div class="content">Of course.
+<br />
+<br />I just ripped that code out of the docs for a quick test. XD</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 30, 2011 4:46 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content"><strong>Mervill said: </strong>
+<br /><blockquote>
+<br />As for what a partition does, I defer to the documentation: Class for optimizing spatial queries against sets of primitives
+<br />
+<br />Could use a more straightforward name though, or even better: integration into the layer class. (I.E. layer:propForPoint(x,y) )
+<br />
+<br /></blockquote>
+<br />So it's a <a href="http://en.wikipedia.org/wiki/Quadtree" target="_blank">quad tree</a>?  I'm not understanding what it does more then match x,y to all objects...?  I need to investigate the code.  I feel I should have figured out what it does by just looking at it, and yet I don't. <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-embarassed.gif" alt="Embarassed" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>propListForPoint returns unexpected results</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 30, 2011 6:12 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">It's just a multi-level grid, nothing fancy. You have to set the number of grid levels and cell sizes yourself. You can use it to model a quad tree or (if it makes more sense for your game) a two- or three- level coarse/fine grid setup.
+<br />
+<br />Props have three kinds of dimensionality for the purpose of placement in the partition: empty, bounded and global. Empty is used for props that scale down to 0 or have uninitialized rects. Bounded is for props with normal rectangles and global is for props that should be returned for every query - things like tile maps with wrapping turned on.
+<br />
+<br />One quirk of our implementation is that each grid level rolls over at the edges. This means you don't have to worry about going off the edge of the partition, but you can wind up with distant objects stacked on top of each other in the same cell. These objects will turn up when walking the partition but get culled out by the broad phase check.
+<br />
+<br />FWIW, we wound up never using anything but the default 'one big list' partition for Wolf Toss... unless you have thousands of objects and are doing lots of spatial queries you probably don't need to worry much about it.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

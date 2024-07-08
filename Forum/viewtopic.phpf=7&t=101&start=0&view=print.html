@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Alpha modulation without MOAISimpleShader</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Alpha modulation without MOAISimpleShader</h2>
+		<p><a href="alpha-modulation-without-moaisimpleshader-t101/index.html">/forums/alpha-modulation-without-moaisimpleshader-t101/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Alpha modulation without MOAISimpleShader</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 17, 2011 3:41 pm</strong></div>
+				<div class="author">by <strong>david.given</strong></div>
+				<div class="content">I've just got the Moai 0.5 SDK.
+<br />
+<br />My game, of course, now no longer works due to API changes. The main one is that I've been using MOAISimpleShader a lot to change the alpha value of a prop:
+<br />
+<br />
+<br />
+<br /><p style="padding-left: 30px">﻿﻿local shader = MOAISimpleShader.new()
+<br />
+<br /></p><p style="padding-left: 30px">	shader:setBlendMode(MOAISimpleShader.GL_ONE, MOAISimpleShader.GL_ONE_MINUS_SRC_ALPHA)
+<br />
+<br /></p><p style="padding-left: 30px">	shader:setColor(1, 1, 1, a)
+<br />
+<br /></p><p style="padding-left: 30px">prop:setShader(shader)
+<br />
+<br /></p><p style="padding-left: 30px">
+<br />
+<br />I can now change the colour of the shader, and the transparency of the prop changes.
+<br />
+<br />Now that MOAISimpleShader's gone, what's the recommended (and GLES 1 compatible) way of achieving this effect? I have tried changing the alpha value of the prop colour, but it appears to have no effect. The 0.4 docs that ship with the SDK refer to MOAIProp2D::setBlendMode(), but that doesn't seem to be present in the 0.5 beta. Any suggestions?
+<br />
+<br />This is all running via wine on Linux, by the way.
+<br /></p></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha modulation without MOAISimpleShader</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 17, 2011 3:48 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Hey, sorry about the breaking change. You should be able to do prop:setColor and prop:setBlendMode... so if that's not working, something must have slipped through the cracks. I am slammed until later this evening, but will look and that and try to get a fix pushed up to moai-dev ASAP.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha modulation without MOAISimpleShader</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 17, 2011 11:38 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">OK, wasn't able to reproduce the alpha problem. It appears the alpha is set and blended correctly. Moai's default blend mode is for premultiplied alpha, so if you are just setting the alpha alone you may not see any effect if your prop is over a dark background. You can either scale all color components to create the dissolve effect or switch your blend mode. Which brings me to...
+<br />
+<br />Turns out setBlendMode must have gotten lost in the shuffle. The function was there, but not in MOAIProp2D's function table. That's been fixed and pushed up to moai-dev. Will have a new binary release that incorporates it (and some other fixes/additions) over the weekend or first thing next week.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha modulation without MOAISimpleShader</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Aug 18, 2011 3:15 am</strong></div>
+				<div class="author">by <strong>david.given</strong></div>
+				<div class="content">Ah, of course --- I'm not used to premultiplied alpha, and I was using prop-color to test with, which renders againsta  black background...
+<br />
+<br />Thanks!</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

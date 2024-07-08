@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1129&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-08-23T16:10:07+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1129&amp;mode</id>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2012-08-23T16:10:07+00:00</updated>
+<published>2012-08-23T16:10:07+00:00</published>
+<id>/forums/viewtopic.php?t=1129&amp;p=6088#p6088</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1129&amp;p=6088#p6088"/>
+<title type="html"><![CDATA[Re: Remove tiles from tilemap dynamically in Hanappe?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1129&amp;p=6088#p6088"><![CDATA[
+Indeed, I hope that they can change dynamically.<br />I modified to be able to dynamically change the tile in the future.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Thu Aug 23, 2012 4:10 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[BlueByLiquid]]></name></author>
+<updated>2012-08-19T20:25:48+00:00</updated>
+<published>2012-08-19T20:25:48+00:00</published>
+<id>/forums/viewtopic.php?t=1129&amp;p=6040#p6040</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1129&amp;p=6040#p6040"/>
+<title type="html"><![CDATA[Re: Remove tiles from tilemap dynamically in Hanappe?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1129&amp;p=6040#p6040"><![CDATA[
+Hi makotok,<br /><br />I believe you are saying you cannot remove tiles from the Tileset Layers, correct?<br /><br />I was hoping for something like cocos2d removeTileAt(x, y) and addtileat(x,y,tileset) I may have to write that myself.<br />Thank you for your help!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=879">BlueByLiquid</a> — Sun Aug 19, 2012 8:25 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2012-08-19T15:35:37+00:00</updated>
+<published>2012-08-19T15:35:37+00:00</published>
+<id>/forums/viewtopic.php?t=1129&amp;p=6036#p6036</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1129&amp;p=6036#p6036"/>
+<title type="html"><![CDATA[Re: Remove tiles from tilemap dynamically in Hanappe?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1129&amp;p=6036#p6036"><![CDATA[
+Hi, BlueByLiquid.<br /><br />I'm sorry so long if there is a mistranslation.<br /><br />Objects can be deleted.<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- case1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> object1 <span style="color: #66cc66;">=</span> mapView<span style="color: #66cc66;">:</span>findObjectByName<span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;name&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">object1<span style="color: #66cc66;">:</span>setLayer<span style="color: #66cc66;">&#40;</span><span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--object1:setVisible(false)</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">-- case2</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> object2 <span style="color: #66cc66;">=</span> mapView<span style="color: #66cc66;">.</span>objectLayers<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">.</span>objects<span style="color: #66cc66;">&#91;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#93;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">object2<span style="color: #66cc66;">:</span>setLayer<span style="color: #66cc66;">&#40;</span><span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--object2:setVisible(false)</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />For Tileset Layer, etc. hidden layer unit is possible.<br />There is room for improvement of only the tiles can not be deleted.<br /><br />Hanappe is a structure that can be inherited partially.<br />Whether you want to generate a class that inherits from the TMXMapView,<br />From another file to change the behavior of the TMXMapView is possible.<br /><br />RPGMapView has to change the behavior it inherits the TMXMapView.<br />This will be the reference.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Sun Aug 19, 2012 3:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[BlueByLiquid]]></name></author>
+<updated>2012-08-19T04:28:19+00:00</updated>
+<published>2012-08-19T04:28:19+00:00</published>
+<id>/forums/viewtopic.php?t=1129&amp;p=6027#p6027</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1129&amp;p=6027#p6027"/>
+<title type="html"><![CDATA[Remove tiles from tilemap dynamically in Hanappe?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1129&amp;p=6027#p6027"><![CDATA[
+I have tiles in my tilemap I want to remove (for example if someone shoots a door) and all I see is ways to remove objects or the tilesets but not the tiles themselves. For example if I have a door tile at x,y 5,5 and git gets shot I want to change the tileset to something else or remove it entirely from the map.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=879">BlueByLiquid</a> — Sun Aug 19, 2012 4:28 am</p><hr />
+]]></content>
+</entry>
+</feed>

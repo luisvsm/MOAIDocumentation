@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=158&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-10-22T15:44:28+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=158&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-10-22T15:44:28+00:00</updated>
+<published>2011-10-22T15:44:28+00:00</published>
+<id>/forums/viewtopic.php?t=158&amp;p=741#p741</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=158&amp;p=741#p741"/>
+<title type="html"><![CDATA[MOAITileDeck2D and non pow2 images in macosx and iphone behaves in different ways]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=158&amp;p=741#p741"><![CDATA[
+The UVs would need to be scaled to respect the proportional change - that's why you're seeing a 'shift.' If you detect the iPhone case before you call tileLib:setSize, you can use an extended version of that function to align your image grid over a subset of the bigger texture. You can actually do some pretty wild things with the extended set size including selecting an arbitrary source grid from UV space and adding padding between tiles.<br /><br />That said, best practice IMHO (and what we do here) is to use the common denominator: all square, power of two textures (and as few of those as possible). That will make sure you can run on any GL hardware. If you pre-pad, empty spaces on images compress out and won't bloat up your app bundle. It will also help your load time. For our projects here we like to use big 1024x1024 textures and pack everything we can into them. All characters one one big sprite sheet, for example.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Sat Oct 22, 2011 3:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stefano.linguerri]]></name></author>
+<updated>2011-10-22T08:13:23+00:00</updated>
+<published>2011-10-22T08:13:23+00:00</published>
+<id>/forums/viewtopic.php?t=158&amp;p=736#p736</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=158&amp;p=736#p736"/>
+<title type="html"><![CDATA[MOAITileDeck2D and non pow2 images in macosx and iphone behaves in different ways]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=158&amp;p=736#p736"><![CDATA[
+We found that the MOAITileDeck2D in macosx and iphone behaves in different ways:<br /><br />We used the code of anim-flipbook with a little change:<br /><br />MOAISim.openWindow("test", 320, 480)<br /><br />viewport = MOAIViewport.new()<br />viewport:setSize(320, 480)<br />viewport:setScale(320, 480)<br /><br />layer = MOAILayer2D.new()<br />layer:setViewport(viewport)<br />MOAISim.pushRenderPass(layer)<br /><br />tileLib = MOAITileDeck2D.new()<br />image = MOAIImage.new()<br />image:load("images/lilia.png", MOAIImage.TRUECOLOR + MOAIImage.PREMULTIPLY_ALPHA)<br /><br /><br />tileLib:setTexture(image)<br />-- the tiles are 3 col x 4 rows<br />tileLib:setSize(3, 4)<br /><br />-- bigger area to show the frame<br />tileLib:setRect(-32, -32, 32, 32)<br /><br />prop = MOAIProp2D.new()<br />prop:setDeck(tileLib)<br />layer:insertProp(prop)<br /><br />curve = MOAIAnimCurve.new()<br /><br />curve:reserveKeys(5)<br />curve:setKey(1, 0.00, 1, MOAIEaseType.FLAT)<br />curve:setKey(2, 0.25, 2, MOAIEaseType.FLAT)<br />curve:setKey(3, 0.50, 3, MOAIEaseType.FLAT)<br />curve:setKey(4, 0.75, 4, MOAIEaseType.FLAT)<br />curve:setKey(5, 1.00, 1, MOAIEaseType.FLAT)<br /><br />anim = MOAIAnim:new()<br />anim:reserveLinks(1)<br />anim:setLink(1, curve, prop, MOAIProp2D.ATTR_INDEX)<br />anim:setMode(MOAITimer.LOOP)<br />anim:start()<br /><br />The sprite used is a "Final Fantasy old school" like<br /><br />We used a 96wx128h image as spritesheet, non quad pow2 image. It works fine in macosx moai build but it doesn't work in the iphone simulator (black square in the center, we used a background image for debug)<br /><br />If we do image:padToPow2() the image shows up but (as expeted) all frames are "shifted"<br /><br />As I know we need to pow2 normal image to show up them, do we have to trick with pow2 and UV to do a workaround on iphone?<br /><br />Any hint?<br /><br />thanks in advance<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=126">stefano.linguerri</a> — Sat Oct 22, 2011 8:13 am</p><hr />
+]]></content>
+</entry>
+</feed>

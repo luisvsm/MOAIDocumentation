@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Attention Community? Moai-dev-community fork?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Attention Community? Moai-dev-community fork?</h2>
+		<p><a href="attention-community-moai-dev-community-fork-t1468/index.html">/forums/attention-community-moai-dev-community-fork-t1468/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 08, 2012 1:12 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">Hello to the active community members! This is a new thread to moot a moai-dev-community fork from moai-dev we can collectively add to without directly involving Zipline as they're busy people. <br /><br />I am not a git expert by any means, but I believe a moai-dev-community fork with several custodians is possible. <br /><br />I imagine it would be good to find several active community members with knowledge in the relevant platforms that would be willing to contribute some time to vet contributions that could be pulled into the moai-dev-community repo. There is already a lot of great forks of moai-dev, containing some very useful code as well as separate repositories with MOAI related tools you won't find unless you search the forums for them. <br /><br />In a perfect world those would be in one place we could could use, and contribute to together as a community.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 08, 2012 9:33 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">I think it would be helpful if we could coordinate this with Zipline/core-devs .. I mean, its definitely true that we need a community-maintained branch to work on, clear.  But whether this should be a distinct fork from moai-dev, or a new branch into which pull requests can be merged before integration with mainline .. I dunno.<br /><br />I'd hope that some of the core devs in Zipline could give us some direction here.  The problem is there are getting to be too many forks of MOAI to keep track of - and as a community we need a common, stable branch to work with (so we can support each other of course) - so how best to deal with this situation?  I vote that we try to get all the branch/fork mess cleaned up, and then Zipline gets us a branch on main moai-dev that some of us can maintain in preparation for integration - sort of a &quot;community front door&quot; ..</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 5:31 pm</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content">What are the really pressing things that need to be fixed/pushed into moai right now? I think such a list could help put this in perspective. I mean, can we afford waiting for zipline to get more active in Moai (if they will)?<br /><br />In my development I have these big issues that have not been solved in the main repo:<br /><ul><li><span style="font-weight: bold">Vertex buffers malfunction on graphic context reset </span> (ex posted a fix here on forum that we're not sure if it's &quot;good enough&quot;)</li><li><span style="font-weight: bold">Erroneous 3D-prop culling</span> (I can afford to just shut off culling in my game so I did that, and I'm not good enough in 3D to fix it properly. Could reproduce this in a sample if needed)</li><li><span style="font-weight: bold">Chrome host is out of date</span> (as adam acknowledged in this thread: <!-- l --><a class="postlink-local" href="chrome-host-questions-t1451/index.html">chrome-host-questions-t1451/</a><!-- l --> .. so this might be something thats being worked on)</li></ul><br />I'm not using linux myself but there seems to be a lot of talk about that. And maybe the simple collision-detection thing.<br /><br />If we get a community branch going I think we should be careful with adding big features, so as not to bloat the engine. Only carefully selected and well coded features should be added, along with bug fixes and enriching of existing features.<br /><br />Right now if I notice a documentation error, I won't do a pull request on it because I don't want to bother zipline any more then absolutely necessary. This is really something that could change and allow for a overall quality increase of Moai SDK.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 7:46 pm</strong></div>
+				<div class="author">by <strong>dooms101</strong></div>
+				<div class="content">Anyway we could get a community maintained API reference and a more centralized tutorial/sample code source? There's a lot of good code out there just kind of floating around that would be really useful to a new dev coming to MOAI, it would be great if we could just provide a single link to a Wiki site that had all the documentation they need.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 12, 2012 12:33 am</strong></div>
+				<div class="author">by <strong>stun</strong></div>
+				<div class="content">It's a shame MOAI snippets isn't a more active repository of a lot of this stuff. I should really contribute a few bits and pieces to that site as it seems like a logical place to capture at least code samples. I don't know who runs the site (I assume somebody on this forum), but perhaps it could be extended with a wiki as well.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 12, 2012 9:30 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">If the site you are talking about is <!-- m --><a class="postlink" href="http://moaisnippets.info/">http://moaisnippets.info/</a><!-- m --> - I run it!  <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" />  I set it up to capture stuff I see in the forum over time, there are a lot of snippets still buried in this forum.  Please help me with mining them!  <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 16, 2012 8:05 am</strong></div>
+				<div class="author">by <strong>BlueByLiquid</strong></div>
+				<div class="content">You couldn't actually have a community maintained fork if you ever wanted to submit it to Zipline. The reason is that Zipline's agreement requires you to transfer ownership of code to Zipline. The problem is that whoever owns the repository does not own the copyright to ALL of the code in the fork and therefore cannot submit it to Zipline for a pull request. It wouldn't even work to make sure that everyone who works on it has signed the agreement (don't get me started on that as it is confusing as can be involving ). The only way would be to have an agreement like Zipline and have ownership transferred to the maintainer of the fork (I don't think that would happen). What needs to happen is Zipline change their licensing terms to the actual terms like Canonical uses (which they do not despite claiming they do. See below) where you are only giving Ziplines distribution rights now the ownership of the copyright. <br /><br />Also while on the subject UNLIKE what they claim, Zipline DOES NOT use the same approach and agreement Ubuntu uses. Under Canonical's Ubuntu's agreement &quot;The existing contribution owner continues to own their copyright.&quot; Under Zipline's agreement you are giving Zipline ownership of the copyright and they are giving you distribution rights which is the exact opposite of Canonical's terms. I couldn't imagine why ANYONE would agree to that but to each their own. I think Zipline should really remove the false statement that they follow Ubuntu's method as it could easily give someone the sense that &quot;it's ok because Ubuntu's doing it.&quot; (though you should always read your contracts kids!). But better yet would be for Zipline to actually conform to their claims of matching Canonical's agreement and accept distribution rights not demanding ownership of your code.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Attention Community? Moai-dev-community fork?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 16, 2012 4:04 pm</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">IMHO, what we as a community need to do:<br /><br />- A proper build tool and project templating tool. Copy and paste project template is not fun. We can take a look at Erlang's rebar. From creating project, downloading dependency to building and deployment, unit testing. Everything requires a simple command. Users can extend the tools and add more commands to it. Don't like command line? A GUI can be built on top of it.<br />- A library convention. Moai already has it. On the Android side, it's easy to include a library from another directory. I'm not sure about iOS. We just need a convention of how to organize (pure lua) addon library. So that a few lines in the project config file will add it to the project.<br />- A proper plugin interface. Hacking source to add third party plugins only work for you. We need to let other people replicate the process too. IMO, this can be done through templating the host's source code. Plugins will have to declare the codes they want to inject into the host so that a project can be built. With plugins, we can choose what we need and discard the rest.<br />- Native bridge. Both Objective C and Java can be called dynamically from Lua. Java has LuaJava, and there's ObjectiveC Lua bridge too. If it is bound to Moai, most of the problems of using platform specific libraries and codes will go away. The performance will not be as good as native binding but for most libraries, it will be fine.<br />- A good host template. The &quot;official&quot; one is an example (a good one even), it should be treated as such. People shouldn't deploy it and expect things to work.<br /><br />Rather than building a community fork, I suggest that we build a community toolset (build tool, templates, plugin frameworks). They are totally separate from Moai. With a plugin interface, features can be added, removed at will without touching the source. For bug fixes, it is easy to make your own personal fork, create your own branch and merge the patches you want. Then you can point the above mentioned project tool to your own folder and build. That's the thing about git, everything is decentralized, you pick what you want from the community. With a common way to do things, if something works for you, it works for everyone. Bugfixes should be treated differently from feature enhancement.<br /><br />I suggest this because I can tell from the forum that a lot of people have extremely inefficient workflow and bad project setup. Once again, the Moai SDK shows you examples, it's organized in a way that can show case multiple projects. Most people work on a single project at at time. We need to set a good example of what a typical <span style="font-weight: bold">game</span> project looks like. Combine it with good tools to customize. I strongly suggest we take a look at rebar. It's one of the best project tool out there.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=23&amp;t=1421&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-12-02T16:45:16+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=23&amp;t=1421&amp;mode</id>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2012-12-02T16:45:16+00:00</updated>
+<published>2012-12-02T16:45:16+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7699#p7699</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7699#p7699"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7699#p7699"><![CDATA[
+It would be nice to see MOAI get some audio love of any sort.  It would seem that the features you guys are talking about would be great to have.  That being said, I haven't spent any time actually updating any of the MOAI library code - only reading it for my own edification.  I'm also swamped with work as producer/programmer on the project we're currently working on and am stuck in lua-land for the foreseeable future.  I'd like to help out in some capacity and will have more time when we move onto the audio side of things in about a month.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Sun Dec 02, 2012 4:45 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-12-01T10:12:51+00:00</updated>
+<published>2012-12-01T10:12:51+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7664#p7664</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7664#p7664"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7664#p7664"><![CDATA[
+Okay .. I've looked at it, and I see no reason why we can't add SFXR to MOAI and have a great sound-generation solution, cross-platform-wise:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">On Linux, we can use parts of sfxr-dssi:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">htps://github.com/smbolton/sfxr-dssi</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">On iOS, csfxr:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">https://github.com/nevyn/cfxr</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">On Android:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">https://github.com/boblemarin/SFXR-for-Android</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />These resources sort of support the idea of just having sfxr ported on all mobile platforms and available as a common lib, anyway.  That would be good work to do, except .. who has time?<br /><br />But, on a more immediate basis, I will continue to investigate the idea of just having sfxr functioning as a cross-platform noise-synth for MOAI.  I think it makes a lot of sense, and may enable other synth engines to be dropped in easily, sample-playback, etc.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sat Dec 01, 2012 10:12 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-11-30T16:23:13+00:00</updated>
+<published>2012-11-30T16:23:13+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7640#p7640</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7640#p7640"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7640#p7640"><![CDATA[
+Well, its not a lot of work to do sample-playback in the host, its just that the sound API for MOAI is patchy anyway and the hosts in their current form have differing requirements than, it seems, most of us.  Professional Sound API's in the gamedev world are .. well .. everyone has their chosen flavor, it seems.<br /><br />Anyway, my chosen flavor is to just use a little synth .. with parameters similar to many MIDI synths .. and render the frames of audio as possible in a separate thread, away from the MOAI realm.  It is quite easy to implement on CoreAudio and in fact the whole callback mechanism for both CoreAudio and AndroidNDK-style sound-gen are compatible enough to where most of the boring work is the platform glue code setup just to be able to run a single synthesize_audio_frame() library call..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Fri Nov 30, 2012 4:23 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[speeder]]></name></author>
+<updated>2012-11-30T16:04:19+00:00</updated>
+<published>2012-11-30T16:04:19+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7639#p7639</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7639#p7639"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7639#p7639"><![CDATA[
+One reason I did not switched to moai earlier, is that one of the apps I was making is a music box (with a tracker-like file format I developed, within Corona SDK limitations).<br /><br />I will still want to port that thing one day to moai... If everything in my company runs well, you might count on me for helping the sound side of moai...<br /><br />I want to use something that supports pitch and volume envelopes, and also some basic filtering (low-pass, high-pass, etc...). For example it would be awesome to make a game where you can shut a door, and it uses low-pass on the sound effects of the outside so you hear like a closed door really sounds like.<br /><br />But the pitch-shift is the absolute mininum, and I also tried to hack untz (and I do not even made a single moai sample work) and failed.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1113">speeder</a> — Fri Nov 30, 2012 4:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-11-30T07:37:54+00:00</updated>
+<published>2012-11-30T07:37:54+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7633#p7633</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7633#p7633"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7633#p7633"><![CDATA[
+I'm not using UNTZ or anything like that - I have a small synth library which generates audio, similar to something like sfxr that runs under both Android and OSX audio subsystems, and I pass parameters to it like a MIDI device - with MIDI CC #'s and so on.  This synth is something I developed outside the context of MOAI - I just wanted to point out that you can do sound in the MOAI hosts, but you have to set it up yourself.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Fri Nov 30, 2012 7:37 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2012-11-29T20:14:23+00:00</updated>
+<published>2012-11-29T20:14:23+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7626#p7626</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7626#p7626"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7626#p7626"><![CDATA[
+<blockquote><div><cite>nosheet wrote:</cite><br />@ibisum, do you use MOAIAudioSampler with UNTZ system? It works on Android too? It would be great if you could give us a bit more details, sounds interesting.<br /></div></blockquote><br /><br />I'm with nosheet, any advice you can give would be appreciated.  Thanks!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Thu Nov 29, 2012 8:14 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2012-11-29T17:46:00+00:00</updated>
+<published>2012-11-29T17:46:00+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7622#p7622</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7622#p7622"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7622#p7622"><![CDATA[
+@ibisum, do you use MOAIAudioSampler with UNTZ system? It works on Android too? It would be great if you could give us a bit more details, sounds interesting.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Thu Nov 29, 2012 5:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-11-29T12:46:17+00:00</updated>
+<published>2012-11-29T12:46:17+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7613#p7613</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7613#p7613"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7613#p7613"><![CDATA[
+For my sound needs, I just use a synthesizer coded in native iOS for CoreAudio and control it from the MOAI environment.  Bonus thing is, it also runs and sounds the same in Android, and there aren't a lot of files to maintain - just small patch sets.<br /><br />But of course everyones needs are different.. the sound side of MOAI needs a bit of love, though.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Nov 29, 2012 12:46 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2012-11-28T19:32:37+00:00</updated>
+<published>2012-11-28T19:32:37+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7599#p7599</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7599#p7599"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7599#p7599"><![CDATA[
+Here's a summary of my todays attempt:<br />- Untz appears that by its design makes sound pitch changes impossible. Maybe I misunderstood something, but if it depends on fixed sample rate, as it appears to be, then nothing can be done. Anyway, since I couldn't find absolutely no documentation on Untz itself, or almost any other page on entire Internet that gives it a mention, I gave up on the idea of modifying Untz.<br /><br />- I spent a few hours trying to implement the *** truly fantastic *** ObjectAL library, but couldn't make it to work due to some apparently trivial ObjectiveC problems that I couldn't know how to fix. Until I get some answer on ObjectAL's forum, I give up on this too.<br /><br />At any rate, I abandoned idea to work more on this until I really get to need this feature very badly, and in that case I will make a quick Moai wrapper for the super-old SoundEngine API written by Apple back in 2008. It is very simple and straightforward, simple C++ with no ObjectiveC headaches. Although no longer supported by Apple, seems to still be working as my 3-year old game that use it still works on all devices and versions of iOS.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Wed Nov 28, 2012 7:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2012-11-28T18:13:41+00:00</updated>
+<published>2012-11-28T18:13:41+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7598#p7598</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7598#p7598"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7598#p7598"><![CDATA[
+<blockquote><div><cite>nosheet wrote:</cite><br />&quot;Imagine you're making a car game. Pitch manipulation lets you change the sound of the car so that it goes up in pitch as you push the gas pedal. Or, if you're making a simple &quot;Labyrinth&quot; kinda game, same thing, as the rolling ball changes speed, you can get very realistic effect by changing the pitch of sound according to ball speed. Without being able to change sound pitch, we can never even get close to make these sounds, so our options are to either go mute or implement other sound library of our choice.<br /><br />Or for any other sound effect, like lasers or explosions in space shooters, or elements break on collision in &quot;Angry Birds&quot;, everytime you play a sound you'd want to vary its pitch (and volume) a bit, to avoid annoying endless repetition of the same sound effect (unless you are making a ZX Spectrum-like retro title).<br /></div></blockquote><br /><br />Thanks for the great examples - we do indeed use beam type effects (including lasers) and would benefit from this as well - although, for our game they are more infrequent, so repetition isn't as large of a concern.<br /><br />I'm glad to hear that the basics of Untz seem to be intact.  I'm curious to follow along with whatever you decide to implement because we're still about a month off me working on adding in the audio.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Wed Nov 28, 2012 6:13 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2012-11-28T11:20:21+00:00</updated>
+<published>2012-11-28T11:20:21+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7592#p7592</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7592#p7592"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7592#p7592"><![CDATA[
+... just before I jump into OpenAL, I will investigate UNTZ sound and see if I change the sample rate of a sample, it should play with different pitch... I hope this works, it would save a lot of time...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Wed Nov 28, 2012 11:20 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2012-11-28T11:09:46+00:00</updated>
+<published>2012-11-28T11:09:46+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7591#p7591</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7591#p7591"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7591#p7591"><![CDATA[
+&quot;how broken Untz really is?&quot; &gt;&gt;<br />Not sure yet, just out of the box it works on OSX host, and not working on iOS, but there is a super easy fix, there's another forum post here that solves it (basically, just find in MoaiView.mm a line AKUUntzInit(); and uncomment ifdef around it).<br />There are other forum posts saying that some file formats don't work with Android.<br /><br />Just looking at Untz API it looks pretty fine, I like implementation of seek/moveVolume, etc... which is consistent with MOAIAction way of doing things, but I find that it so painfully lacks pitch manipulation that I am now looking into implementing OpenAL instead, which is a pain in the ass.<br />So the lack of possibility to change the sound pitch renders Untz pretty useless for me, and I believe for many developers,  and here's why  pretty much most of the games/apps need this very basic feature:<br /><br />Imagine you're making a car game. Pitch manipulation lets you change the sound of the car so that it goes up in pitch as you push the gas pedal. Or, if you're making a simple &quot;Labyrinth&quot; kinda game, same thing, as the rolling ball changes speed, you can get very realistic effect by changing the pitch of sound according to ball speed. Without being able to change sound pitch, we can never even get close to make these sounds, so our options are to either go mute or implement other sound library of our choice.<br /><br />Or for any other sound effect, like lasers or explosions in space shooters, or elements break on collision in &quot;Angry Birds&quot;, everytime you play a sound you'd want to vary its pitch (and volume) a bit, to avoid annoying endless repetition of the same sound effect (unless you are making a ZX Spectrum-like retro title).<br /><br />Since my primary target is iOS, as I wrote above, I will probably try and implement OpenAL, and then I'll make a Sound Manager in lua that will resort to basic UNTZ when running app in OSX/Windows (to have at least some sound while developing) and then on device it will call OpenAL API instead.<br /><br />As I said I so strongly prefer not doing this, that if anyone has any suggestion I'm very eager to hear <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br />Cheers<br />N<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Wed Nov 28, 2012 11:09 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhoster]]></name></author>
+<updated>2012-11-28T05:23:46+00:00</updated>
+<published>2012-11-28T05:23:46+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7587#p7587</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7587#p7587"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7587#p7587"><![CDATA[
+I'm not even trying to think about the audio now, but soon enough, I'll need to add some basic audio - a background music that fades in and out, with some simple sound effects.  I'm *hoping* that there is some type of free implementation that will achieve that.  I'd be curious to know what solutions are currently available and just how broken Untz really is?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=909">rhoster</a> — Wed Nov 28, 2012 5:23 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nosheet]]></name></author>
+<updated>2012-11-27T09:58:51+00:00</updated>
+<published>2012-11-27T09:58:51+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7572#p7572</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7572#p7572"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7572#p7572"><![CDATA[
+Thanks for the link and the info <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br />OpenAL is no longer open source?  <img src="images/smilies/icon_e_surprised.gif" alt=":o" title="Surprised" />  I didn't know about that.<br />I have to see how much time I will have available to pursue this. I assume making a bridge to OpenAL for iOS (which is my primary target platform) wouldn't take me almost any time at all as I already did it before for another engine. However, since my dev environment include OSX and Windows, I might not have time to look around and update these hosts.<br />Will keep you informed about my OpenAL whereabouts.<br />Meanwhile, anybody did anything more advanced with Untz?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=912">nosheet</a> — Tue Nov 27, 2012 9:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2012-11-27T02:33:08+00:00</updated>
+<published>2012-11-27T02:33:08+00:00</published>
+<id>/forums/viewtopic.php?t=1421&amp;p=7569#p7569</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1421&amp;p=7569#p7569"/>
+<title type="html"><![CDATA[Re: UNTZ : Can we change the sound pitch ?]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1421&amp;p=7569#p7569"><![CDATA[
+I wouldn't say 'worked extensively', but I have modified the FMOD code from 1.3 so that it actually works: <!-- m --><a class="postlink" href="https://github.com/c0d3monk33/moai-dev">https://github.com/c0d3monk33/moai-dev</a><!-- m --><br /><br />Having said that given FMOD is really a commercial product I'd love to see an OpenAL bridge for MOAI. Feel like collaborating? I haven't really investigated writing one because I got FMOD working with 32 channels after a few days of effort. OpenAL seems to have a bit of a checkered history too, as it's no longer open source. Would you be looking at OpenAL 'Soft' for MOAI?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Tue Nov 27, 2012 2:33 am</p><hr />
+]]></content>
+</entry>
+</feed>

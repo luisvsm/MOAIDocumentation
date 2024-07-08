@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Handling screen resize - setListener callback not working?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Handling screen resize - setListener callback not working?</h2>
+		<p><a href="handling-screen-resize-setlistener-callback-not-working-t2387/index.html">/forums/handling-screen-resize-setlistener-callback-not-working-t2387/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Handling screen resize - setListener callback not working?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 28, 2013 4:23 pm</strong></div>
+				<div class="author">by <strong>BacioiuC</strong></div>
+				<div class="content">I'm trying to handle the resize-ing of a MOAI Window and rescale everything based on the resize event. I tried setting a listener to the GFXDevice.EVENT_RESIZE and a callback but the callback is never triggered. Example:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=2387&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIGfxDevice<span style="color: #66cc66;">.</span>setListener<span style="color: #66cc66;">&#40;</span>MOAIGfxDevice<span style="color: #66cc66;">.</span>EVENT_RESIZE<span style="color: #66cc66;">,</span> OnScreenResize <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> OnScreenResize<span style="color: #66cc66;">&#40;</span>width<span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;THIS&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;WIDTH: &quot;</span><span style="color: #66cc66;">..</span>width<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot; HEIGHT: &quot;</span><span style="color: #66cc66;">..</span>height<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot;&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl><br /><br />Running the standard MOAI 1.4.0p build. Any ideas what might have gone south?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Handling screen resize - setListener callback not workin</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 29, 2013 1:02 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br /> switch the order.<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=7&amp;t=2387&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> OnScreenResize<span style="color: #66cc66;">&#40;</span>width<span style="color: #66cc66;">,</span> height<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;THIS&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000aa;">print</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff6666;">&quot;WIDTH: &quot;</span><span style="color: #66cc66;">..</span>width<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot; HEIGHT: &quot;</span><span style="color: #66cc66;">..</span>height<span style="color: #66cc66;">..</span><span style="color: #ff6666;">&quot;&quot;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIGfxDevice<span style="color: #66cc66;">.</span>setListener<span style="color: #66cc66;">&#40;</span>MOAIGfxDevice<span style="color: #66cc66;">.</span>EVENT_RESIZE<span style="color: #66cc66;">,</span> OnScreenResize <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Handling screen resize - setListener callback not workin</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Nov 29, 2013 9:32 am</strong></div>
+				<div class="author">by <strong>BacioiuC</strong></div>
+				<div class="content">Thanks, it works.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

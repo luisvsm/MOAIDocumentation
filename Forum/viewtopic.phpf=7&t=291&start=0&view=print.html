@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Alpha not applied with MOAIDraw.</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Alpha not applied with MOAIDraw.</h2>
+		<p><a href="alpha-not-applied-with-moaidraw-t291/index.html">/forums/alpha-not-applied-with-moaidraw-t291/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 26, 2011 9:07 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content"><a href="http://192.168.20.226:3000/docs/class_m_o_a_i_gfx_device.html#a6bc4ae09569266a3abf3681ecd4b9f6c" target="_blank">MOAIGfxDevice.setPenColor</a> is not applying Alpha (ex. 0.5) with MOAIDraw.fillRect, at least not on Win32.
+<br />
+<br />I did not post this in the <a href="http://192.168.20.226:3000/forums/bug-reports/" target="_blank">Bug Reports</a> forum because I am not sure if this <a href="http://www.urbandictionary.com/define.php?term=pebcak" target="_blank">PEBCAK</a>, or a legitimate issue.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 26, 2011 5:46 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Alpha with setPenColor and fillRect does appear to be partially working for me.  At 0.5, there is some transparency.  However, 0.001 looks the same as 0.5, as in, not faint at all ... ?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Dec 26, 2011 7:50 pm</strong></div>
+				<div class="author">by <strong>mervills.email</strong></div>
+				<div class="content">Would love to help but I can't find any documentation relating to MOAIDraw... what are the function arguments for MOAIDraw.fillRect?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 3:06 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">I, too, did not find the documentation for the MOAIDraw API, so <a href="http://192.168.20.226:3000/forums/bug-reports/moaidraw-not-included-in-online-docs/" target="_blank">posted it in the Bug Reports forum</a>.
+<br />
+<br />The function arguments for fillRect are in the GitHub project, in <a href="https://github.com/moai/moai-dev/blob/master/src/moaicore/MOAIDraw.cpp" target="_blank">MOAIDraw.cpp</a>.
+<br />
+<br />I believe this issue involves the pen color.  There is a commit, on Dec. 20, titled "<a href="https://github.com/moai/moai-dev/compare/cf861f335a...362fa615de" target="_blank">fixed pen color bug</a>...", but have not confirmed this is related.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 3:19 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Will check into it. Moai's graphics objects (should) default to a blend mode that expects premultiplied alpha. Are your test colors using premultiplied alpha?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 3:27 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">I am a little unclear on how to determine if my test colors are using premultiplied alpha. >doh!<
+<br />Here is the code:
+<br />
+<br /><blockquote>
+<br />MOAIGfxDevice.setPenColor ( 0, 1, 1, 0.5 )
+<br />MOAIDraw.fillRect ( x1,y1, x2,y2 )
+<br />
+<br /></blockquote>
+<br />If I set the Alpha to, for example, 0.001 instead of 0.5, it visually appears the same, i.e. not faint at all, just a little transparency.
+<br />
+<br />I can attempt to create a short script file that reproduces the issue.  I wanted to check first to determine if I was not setting a blend mode or such, to get my expected results. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 3:53 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Premultipled alpha just means you multiply the R, G, B components of your color with A. So to get a cyan with 50% opacity you'd do:
+<br />
+<br />MOAIGfxDevice.setPenColor ( 0, 0.5, 0.5, 0.5 ) -- 50% transparent cyan
+<br />
+<br />Specifying your colors this way (with the proper blending mode) also lets you control the additive quality of a color. So:
+<br />
+<br />MOAIGfxDevice.setPenColor ( 0, 1, 1, 1 ) -- opaque
+<br />
+<br />MOAIGfxDevice.setPenColor ( 0, 1, 1, 0 ) -- additive
+<br />
+<br />Will look identical on a black or dark background, but on a textured background the latter color should appear to be additive whereas the former should appear to be opaque. The difference may be more obvious with darker colors:
+<br />
+<br />MOAIGfxDevice.setPenColor ( 0, 0.25, 0.25, 1 ) -- opaque
+<br />
+<br />MOAIGfxDevice.setPenColor ( 0, 0.25, 0.25, 0 ) -- additive</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 3:56 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Understood.  How do I set the blend mode for fillRect?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 4:02 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">The blend mode lives in the MOAIProp2D. If I recall correctly, the MOAIDraw samples uses a MOAIScriptDeck with a callback for immediate mode drawing. So you'd just use MOAIProp2D's setBlendMode (). You can pass that one of the presets (MOAIProp2D.BLEND_NORMAL, MOAIProp2D.BLEND_ADD, MOAIProp2D.BLEND_MULTIPLY) or a proper OpenGL blend mode - all the expected OpenGL consts should be exposed through MOAIProp2D.
+<br />
+<br />But I'm pretty sure the prop's blend mode defaults to the right one for premultiplied alpha (src = GL_ONE, dst = GL_ONE_MINUS_SRC_ALPHA).</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 4:08 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content"><div>
+<br />Ah, so does this mean to draw 2 rects with different draw modes in one Draw Callback, I would change the prop, that owns the ScriptDeck, to the correct blend mode before <em>each </em>fillRect, in the Draw Callback?  Or would I need 2 different ScriptDecks and Props.
+<br />
+<br />
+<br />Patrick, thank you tremendously for your insights.  Based on the tests and the feedback, I do think I am experiencing an alpha issue, and will look to resolve it and post the results. 
+<br />
+<br /></div></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 4:18 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Hmmm. I would need to expose a setBlendMode on MOAIGfxDevice for you. Right now the prop sets the blend mode prior to doing any drawing from the deck... so you would need two props.
+<br />
+<br />There's a lot more drawing state (textures, shaders, pipeline transforms, etc.) that could be exposed depending on how far you want to go with immediate mode drawing. What's there now is still pretty preliminary...
+<br />
+<br />Let me know if this is mission critical for you and I will prioritize accordingly.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 4:27 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Ah.  We use fillRect for "health bars".  One of our games has multiple "resources" (i.e. currently, 6 "bars").  The bars change colors based on their value (gee.. red is low..).  But what we really need, is to be able to set the vertex colors, to have a subtle gradient from, say, red to orange, on the bar.  This is not done so well by scaling a texture...  Any thoughts on setting vertex colors, or "Street Fighter" bars in general (<a href="http://edwardrayes.files.wordpress.com/2011/07/178123-street-fighter-alpha-3-playstation-screenshot-due-to-the-fast1.png" target="_blank">click here for sample</a>)?  Or does iOS not even support that (shows you what I know)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 4:41 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">It does, but MOAIDraw doesn't expose it right now. One workaround would be to use MOAIMesh with a custom vertex format. That will let you specify per-vertex color and/or uv.
+<br />
+<br />I've made a note to beef up MOAIDraw... sounds like a pretty important use case!</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 27, 2011 5:31 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">If I set the alpha channel of the 3 setPenColor calls in the "scriptDeck" sample to any number less than 1 (ex. 0.0, 0.001, 0.1, 0.5), the lines remain opaque.
+<br />
+<br />However, if I add prop:setBlendMode( MOAIProp2D.BLEND_MULTIPLY ) the lines will disappear, no matter what the value of alpha (ex. 0.0, 1.0) (??)
+<br />
+<br />The <strong>default </strong><em>appears </em>to be BLEND_NORMAL, which, in this case, <span style="text-decoration: underline">ignores</span> the alpha channel. (?)
+<br />
+<br />BLEND_ADD does appear to work as I would expect (the RGB * A is added to the pixel) </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 1:06 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">In the "<strong>scriptDeck</strong>" sample, it appears that there is no current need for the <strong>setRect </strong>on the <strong>MOAIScriptDeck</strong>.  The <strong>MOAIDraw</strong> functions do not appear to respect this "window", and draw just as they are instructed; no problem there, just confirming that the line in the sample may be redundant (remove?), or that I am incorrect.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 5:54 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">The MOAIScriptDeck's setRect actually sets the deck's broad phase rectangle for placement in the layer partition and for view culling. It's not intended to be a clipping window or anything - you are free to draw any shape you want inside or outside of the rect. But if you don't have a rect then the partition will treat the object as though it is dimensionless and will put it in the 'empties' list so it will not be returned by any spatial query or get drawn by the layer.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 28, 2011 6:01 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Very good to know, thank you very much.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 30, 2011 4:28 pm</strong></div>
+				<div class="author">by <strong>anddrewscott</strong></div>
+				<div class="content">What is MOAIDraw for? Is it vector shapes? </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 30, 2011 4:31 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">(review the <strong><a href="https://github.com/moai/moai-dev/tree/master/samples/basics/scriptDeck" target="_blank">scriptDeck</a> </strong>sample included in the project)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Alpha not applied with MOAIDraw.</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 30, 2011 4:44 pm</strong></div>
+				<div class="author">by <strong>anddrewscott</strong></div>
+				<div class="content">Thank you very much.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

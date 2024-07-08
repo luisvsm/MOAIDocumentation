@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=24&amp;t=2942&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2014-12-18T08:48:57+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=24&amp;t=2942&amp;mode</id>
+<entry>
+<author><name><![CDATA[alex1line]]></name></author>
+<updated>2014-12-18T08:48:57+00:00</updated>
+<published>2014-12-18T08:48:57+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16258#p16258</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16258#p16258"/>
+<title type="html"><![CDATA[Re: Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16258#p16258"><![CDATA[
+Thank you! Your recipe look like working. At least it works for purchase test product &quot;android.test.purchased&quot;<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1662">alex1line</a> — Thu Dec 18, 2014 8:48 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[orkj]]></name></author>
+<updated>2014-12-16T17:35:07+00:00</updated>
+<published>2014-12-16T17:35:07+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16257#p16257</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16257#p16257"/>
+<title type="html"><![CDATA[Re: Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16257#p16257"><![CDATA[
+I got this working now.<br /><br />I am on master built around 1.5.2 some time, with just one specific customization (not related).<br /><br />Since the repo is private, i can not post the actual commit, but here is a summary.<br /><br />- Changed google-billing to google-billingv3 in settings-global.sh<br />- Changed MOAIBilling.requestPurchase(product) to MOAIBilling.purchaseProduct(product, BILLINGV3_PRODUCT_INAPP)<br />- Removed MOAIBilling.setPublicKey(KEY)<br />- To get the supported callback as backward compatible as possible, just added this: <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> supported <span style="color: #66cc66;">=</span> MOAIBilling<span style="color: #66cc66;">.</span>checkInAppSupported<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">onBillingSupported<span style="color: #66cc66;">&#40;</span>supported<span style="color: #66cc66;">&#41;</span> <span style="color: #808080; font-style: italic;">-- This used to be a listener.</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br />- Changed the code about &quot;if not MOAIBilling.checkBillingSupported () then&quot; to &quot;if not MOAIBilling.checkInAppSupported() then&quot;<br /><br />Then, the things I struggled with the most:<br />At first I was only allowed to make test purchases, which was strange, because when I used v2 I was only able to make &quot;real&quot; purchases. I then removed my account from the tests list (on <!-- m --><a class="postlink" href="https://play.google.com/apps/publish/?dev_acc=">https://play.google.com/apps/publish/?dev_acc=</a><!-- m -->&lt;NUMBER&gt;#ProfilePlace) and waited a few hours. Then it worked.<br /><br />Then the next problem. I was not able to buy any &quot;non-managed&quot; products I had test purchased before. First I thought this was related to them becoming subscriptions or something in v3, but seems that you have to &quot;consume&quot; the earlier purchases before you can buy some new ones.<br />So since all my products are consumables, I just consumed all of them with no effect in the game, and it worked. I suspect this would not be a problem for users just upgrading, but more of a problem if you install the app again with v3 in it.<br /><br />Anyway, seems to work now. Just pushed a new version to the play store, so hopefully that will be fine now. Not that I actually sell anything of these IAP anyway <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><br /><br />Hope that helps someone!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1253">orkj</a> — Tue Dec 16, 2014 5:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[alex1line]]></name></author>
+<updated>2014-12-14T22:33:50+00:00</updated>
+<published>2014-12-14T22:33:50+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16229#p16229</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16229#p16229"/>
+<title type="html"><![CDATA[Re: Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16229#p16229"><![CDATA[
+Unfortunately I get error &quot;MOAIBillingAndroid: Unable to find static java method getPurchasedProducts&quot; even after including &quot;google-billingv3&quot; in file settings-global.sh<br />I am on tag Version-1.5.2-binary-desktop<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1662">alex1line</a> — Sun Dec 14, 2014 10:33 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[orkj]]></name></author>
+<updated>2014-12-14T22:21:04+00:00</updated>
+<published>2014-12-14T22:21:04+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16228#p16228</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16228#p16228"/>
+<title type="html"><![CDATA[Re: Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16228#p16228"><![CDATA[
+hm. nice reminder.<br /><br />Looking at this commit a long time ago, things seems like it should be almost ready: <!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/commit/64b75f4ca0fd91b4bef6667538df4c08a5d3a12b">https://github.com/moai/moai-dev/commit ... 08a5d3a12b</a><!-- m --><br /><br />So I tried to just switch &quot;google-billing&quot; to &quot;google-billingv3&quot; in my settings-global.sh file and use the new functions. Specifically purchaseProduct instead of requestPurchase and using checkInAppSupported and manually calling the callback I had for support result before.<br /><br />Now this was very smooth. I got my test purchases through and all is well, seemingly. <br /><br />But the part with setPublicKey does not work. The method is not implemented. Should it be? Should I be doing something else here? Anyone that has this working (pseudo code or real code very welcome) ;p<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1253">orkj</a> — Sun Dec 14, 2014 10:21 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2014-12-13T23:57:57+00:00</updated>
+<published>2014-12-13T23:57:57+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16172#p16172</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16172#p16172"/>
+<title type="html"><![CDATA[Re: Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16172#p16172"><![CDATA[
+~<br />Not sure if it works by just changing the files, but should be relatively simple to get to work<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Sat Dec 13, 2014 11:57 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[alex1line]]></name></author>
+<updated>2014-12-13T16:44:52+00:00</updated>
+<published>2014-12-13T16:44:52+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16170#p16170</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16170#p16170"/>
+<title type="html"><![CDATA[Re: Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16170#p16170"><![CDATA[
+Keep in mind the Google said:<br /><blockquote class="uncited"><div><br />We plan to turn off the In-app Billing Version 2 service on January 27, 2015, after which time users will no longer be able to purchase in-app items and subscriptions through the Version 2 API.<br /></div></blockquote><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1662">alex1line</a> — Sat Dec 13, 2014 4:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[alex1line]]></name></author>
+<updated>2014-12-13T13:50:16+00:00</updated>
+<published>2014-12-13T13:50:16+00:00</published>
+<id>/forums/viewtopic.php?t=2942&amp;p=16168#p16168</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=2942&amp;p=16168#p16168"/>
+<title type="html"><![CDATA[Google In-app Billing v3]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=2942&amp;p=16168#p16168"><![CDATA[
+Does Google In-app Billing <span style="font-weight: bold">v3</span> work for MOAI on Android? Where can I see sample lua code for using v3 API?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1662">alex1line</a> — Sat Dec 13, 2014 1:50 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=48&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-06-17T12:34:34+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=48&amp;mode</id>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-17T12:34:34+00:00</updated>
+<published>2011-06-17T12:34:34+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=200#p200</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=200#p200"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=200#p200"><![CDATA[
+"That said, you might want to work in retina coordinates for everything and downsample by changing to a smaller viewport for older devices."<br /><br />INDEED.  Perfect.  That's exactly the way I think about pixels, resolution and scaling on iOS.  Start at the better, degrade for the lesser.  <br /><br />You're a legend.<br /><br />Thank you!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Fri Jun 17, 2011 12:34 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-17T12:16:30+00:00</updated>
+<published>2011-06-17T12:16:30+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=199#p199</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=199#p199"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=199#p199"><![CDATA[
+OK. Found and fixed. Here's what was happening:<br /><br />The default behavior of Apple's native viewport is to always use a 320 x 480 coordinate system. This means that there's a 1 to 1 correlation between viewport units and pixels on older iPhone display. On retina display devices, the framework maintains backward compatibility be automatically adding a transform to the viewport's layer to scale its coordinate system while rendering. So if you're using native controls, you still specify them in 320 x 480 coordinates, but they render at 640 x 960.<br /><br />This works fine for anything native. The problem comes in when we render to an OpenGL viewport. Apparently, OpenGL first renders to the smaller 320 x 480 surface, then the result is stretched out to 640 x 960. The net effect is to downsample the graphics, then scale them to fit. This is why your textures look as though they've been derezzed: they have! OpenGL first renders them at half the resolution, then Quartz (I guess) stretches them out to fill the screen.<br /><br />To fix this sorry state of affairs, I have updated the host app's OpenGL view to remove the device specific scale factor so the viewport dimensions will now (correctly) correspond to pixels and OpenGL will render at the correct resolution. I'll be pushing this out with the next release (looking like early next week), but for now you can add the code yourself. Here's how to do it:<br /><br />If you haven't already, make a copy of the iPhone Xcode project and source. Since you're going to be changing it, you don't want to deal with conflicts next time you pull from git. After you do this, open the Xcode project and locate OpenGLView.mm under the 'Classes' folder. This file contains a method called 'createContext' (should be line 83). Right above the last line of the function (line 105) add the following code:<br /><br /><br /><br /><br /><p class="p1">if ([[ UIScreen mainScreen ] respondsToSelector: @selector ( scale )]) {<br /><br /></p><p class="p1">    CGFloat appContentScaleFactor = [[ UIScreen mainScreen ] scale ];<br /><br /></p><p class="p1">    if ([ glLayer respondsToSelector: @selector ( setContentsScale: )]) {<br /><br /></p><p class="p1">        glLayer.contentsScale = appContentScaleFactor;<br /><br /></p><p class="p1">    }<br /><br /></p><p class="p1">}<br /><br /></p><p class="p1"><br /><br /></p><p class="p1">This will remove any magic scaling the UI framework is doing to the OpenGL layer. Now, when you set up your drawing in Moai, do viewport:setSize ( 960, 640 ) instead of viewport:setSize ( 480, 320 ). Everything else we've said about the scale holds true: you can still set your scale to be any coordinate system you're comfortable with. The only thing that changes here is the viewport size. That said, you might want to work in retina coordinates for everything and downsample by changing to a smaller viewport for older devices.<br /><br /></p><p class="p1">Below find a revised example and the test images it uses (yours and a smaller one of my design). I've tested this here on the simulator and on a retina device and both looked correct.<br /><br /></p><p class="p1">Thanks again for tracking this down and helping us find the solution. Sorry it took so much of your time!<br /><br /><br /></p><p class="p1"><br /><br /></p><p class="p1">viewport = MOAIViewport.new ()<br /><br /></p><p class="p1">viewport:setSize ( 640, 960 )<br /><br /></p><p class="p1">viewport:setScale ( 640, 960 )<br /><br /></p><p class="p2"><br /><br /></p><p class="p1">layer = MOAILayer2D.new ()<br /><br /></p><p class="p1">layer:setViewport ( viewport )<br /><br /></p><p class="p1">MOAISim.pushRenderPass ( layer )<br /><br /></p><p class="p2"><br /><br /></p><p class="p1">gfxQuad = MOAIGfxQuad2D.new ()<br /><br /></p><p class="p1">gfxQuad:setTexture ( "testimage.png" )<br /><br /></p><p class="p1">gfxQuad:setRect ( -512, -512, 512, 512 )<br /><br /></p><p class="p2"><br /><br /></p><p class="p1">prop = MOAIProp2D.new ()<br /><br /></p><p class="p1">prop:setDeck ( gfxQuad )<br /><br /></p><p class="p1">layer:insertProp ( prop )<br /><br /></p><p class="p2"><br /><br /></p><p class="p1">gfxQuad = MOAIGfxQuad2D.new ()<br /><br /></p><p class="p1">gfxQuad:setTexture ( "testpattern.png" )<br /><br /></p><p class="p1">gfxQuad:setRect ( -128, -128, 128, 128 )<br /><br /></p><p class="p2"><br /><br /></p><p class="p1">prop = MOAIProp2D.new ()<br /><br /></p><p class="p1">prop:setDeck ( gfxQuad )<br /><br /></p><p class="p1">layer:insertProp ( prop )<br /><br /></p><p class="p1"><br /><br /></p><p class="p1"><img src="http://192.168.20.226:3000/wp-content/forum-image-uploads/patrick/testpattern.png" alt="" width="256" height="256" /><br /><br /></p><p class="p1"><img src="http://192.168.20.226:3000/wp-content/forum-image-uploads/patrick/testimage.png" alt="" width="1024" height="1024" /><br /></p><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Fri Jun 17, 2011 12:16 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-17T11:20:07+00:00</updated>
+<published>2011-06-17T11:20:07+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=197#p197</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=197#p197"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=197#p197"><![CDATA[
+That's wonderful news.  I feel my time not wasted.<br /><br />I'm not sure what was next on my agenda.  Perhaps a beer.  Or wine.  Or both.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Fri Jun 17, 2011 11:20 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-17T10:46:48+00:00</updated>
+<published>2011-06-17T10:46:48+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=196#p196</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=196#p196"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=196#p196"><![CDATA[
+Ah! Excellent!<br /><br />I did some more testing this morning with a similar image. Good news! You have indeed uncovered a legitimate glitch that I've been able to reproduce. I also have a pretty decent theory as to what's going on.<br /><br />I am going to hammer on this today and get back to you with either an updated iPhone host or a Lua workaround. In the mean time, don't let this visual problem hang you up. There's probably nothing else to do on your end. I'd say... move on to the next thing or just sit tight. Will have this bug fix and post here again with an explanation of what was causing it soon.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Fri Jun 17, 2011 10:46 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-17T01:13:16+00:00</updated>
+<published>2011-06-17T01:13:16+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=195#p195</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=195#p195"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=195#p195"><![CDATA[
+I've found a particularly brutal image to do testing with.  A UV map assist ;)  This should highlight anything that OpenGL is doing to textures/images at the pixel level.<br /><br /><img src="http://i.imgur.com/VyfLs.jpg" alt="STEVEWHO?" width="1024" height="1024" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Fri Jun 17, 2011 1:13 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-16T23:42:29+00:00</updated>
+<published>2011-06-16T23:42:29+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=194#p194</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=194#p194"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=194#p194"><![CDATA[
+Puzzling indeed. I will check it out on a retina device tomorrow. At home just with my old 3GS now.<br /><br />Haha. I did spend some time in Singapore. Though Maneki Neko is no stranger to Seattle, either.<br /><br />More tomorrow...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Thu Jun 16, 2011 11:42 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-16T23:36:54+00:00</updated>
+<published>2011-06-16T23:36:54+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=193#p193</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=193#p193"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=193#p193"><![CDATA[
+oh. You're going to hate me.  Go to bed.  I suggest.  It's still pixelated as though about half rez on the device.  Nice pic btw!  You been to Japan or China before?  They're everywhere here abouts.<br /><br />here it be:<br /><br /><img src="http://i.imgur.com/obF4I.png" alt="on screen wealthcat" width="640" height="960" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Thu Jun 16, 2011 11:36 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-16T23:26:37+00:00</updated>
+<published>2011-06-16T23:26:37+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=192#p192</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=192#p192"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=192#p192"><![CDATA[
+Also: in my own experience, I haven't found rebuilding to be necessary when changing your assets or scripts in Xcode. The IDE seems to do a pretty good job of grabbing the latest stuff. A full rebuild is really a measure of last resort. Before doing that, you can right click on the asset in question and choose 'touch' from the menu. Failing that, you can just clean and rebuild the target (w/o dependencies).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Thu Jun 16, 2011 11:26 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-16T23:12:15+00:00</updated>
+<published>2011-06-16T23:12:15+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=191#p191</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=191#p191"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=191#p191"><![CDATA[
+OK... here's the code and image I am using. Have tested this in the simulator using both regular and retina display (w/ no code changes). Looks fine here. If it looks OK on your device, then it's the image dimensions causing the problem.<br /><br /><br /><br />viewport = MOAIViewport.new ()<br /><br />viewport:setSize ( 320, 480 )<br /><br />viewport:setScale ( 320, 480 )<br /><br /><br /><br />layer = MOAILayer2D.new ()<br /><br />layer:setViewport ( viewport )<br /><br />MOAISim.pushRenderPass ( layer )<br /><br /><br /><br />gfxQuad = MOAIGfxQuad2D.new ()<br /><br />gfxQuad:setTexture ( "maneki.png" )<br /><br /><br />gfxQuad:setRect ( -128, -128, 128, 128 )<br /><br /><br /><br />prop = MOAIProp2D.new ()<br /><br />prop:setDeck ( gfxQuad )<br /><br />layer:insertProp ( prop )<br /><br /><br /><br /><img src="http://192.168.20.226:3000/wp-content/forum-image-uploads/patrick/maneki.png" alt="" width="512" height="512" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Thu Jun 16, 2011 11:12 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-16T23:04:47+00:00</updated>
+<published>2011-06-16T23:04:47+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=190#p190</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=190#p190"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=190#p190"><![CDATA[
+This upscaling before downscaling makes perfect sense.  Because it's not a perfect downscale to half size.  That would create noticeable square artifacts, whereas these have a slight, not intentional, anti-aliasing to them.<br /><br />  To confirm it, I've just dropped the original image into Photoshop and brute force upscaled it to 1024 height, constraining proportions, then downscaled it to 512 height, and matched the pixels to the screen grab.  It's the same pattern.  This is for sure something like what is happening.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Thu Jun 16, 2011 11:04 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-16T22:55:41+00:00</updated>
+<published>2011-06-16T22:55:41+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=189#p189</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=189#p189"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=189#p189"><![CDATA[
+There's a chance that's the problem. OpenGL loves power of 2 textures. For all we know, the OpenGL implementation on your device is stretching your image out to the next nearest power of 2 then downsampling - which would introduce artifacts. On older devices, non power of 2 textures wouldn't work at all.<br /><br />I'm adding a retina display sample to the project now. I will post the code here and the image I'm using so you can try it with your device. If it works for you, then we'll have a smoking gun and can fix your problem.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Thu Jun 16, 2011 10:55 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-16T22:55:23+00:00</updated>
+<published>2011-06-16T22:55:23+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=188#p188</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=188#p188"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=188#p188"><![CDATA[
+and may I just add.  THANKYOU!  For the attention and effort on this minor piddle little puddle of tears that is me trying to learn.  THANKYOU BOTH!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Thu Jun 16, 2011 10:55 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-16T22:52:25+00:00</updated>
+<published>2011-06-16T22:52:25+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=187#p187</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=187#p187"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=187#p187"><![CDATA[
+and here's an image capture off the iPod 4th gen.<br /><br /><img src="http://i.imgur.com/rbK5J.png" alt="capture." width="640" height="960" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Thu Jun 16, 2011 10:52 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dissidently]]></name></author>
+<updated>2011-06-16T22:49:15+00:00</updated>
+<published>2011-06-16T22:49:15+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=186#p186</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=186#p186"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=186#p186"><![CDATA[
+argh. No, it's not a power of 2.  It's a 640x960 image. this is it.<br /><br /><img src="http://i.imgur.com/LBzTO.png" alt="original" width="640" height="960" /><br /><br />What I see on screen, on the device, is half the resolution, most noticeable on the diagonal of the 7 and the lines of the hash.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=136">dissidently</a> — Thu Jun 16, 2011 10:49 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-06-16T22:40:24+00:00</updated>
+<published>2011-06-16T22:40:24+00:00</published>
+<id>/forums/viewtopic.php?t=48&amp;p=185#p185</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=48&amp;p=185#p185"/>
+<title type="html"><![CDATA[Retina Display Settings Screen Space Quirk]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=48&amp;p=185#p185"><![CDATA[
+I should point out - openWindow is ignored by the mobile hosts.<br /><br />Also: in slightly more technical terms, the native iPhone views that render Moai apply their own 2x scale to everything when targeting retina display. So if you set your viewport to 640 x 960, it will be scaled again (behind the scenes) all the way up to 1280 x 1920 - and render off the edge of the screen.<br /><br />The viewport scale (from setScale) only affects your world coordinates. So it can be whatever you want. It could be 2 x 3 if you wanted. All that would need to change is what you pass in to setRect. The dimensions specified by setScale will stretch (or shrink) to fill the entire viewport.<br /><br />OpenGL will render as much of the texture as it can in pixels. If your texture is smaller than the number of pixels that fill the rect, it will be stretched (and look blocky). If it is bigger, then it will be downsampled and look grainy or blurry (depending on your texture filtering options).<br /><br />I'm a bit mystified as to why your texture appears to be getting downrezzed. That's not something I've seen before. I'm curious... is it a power of 2? The expected behavior (and the behavior we've seen here) is that if you leave all of your coordinates 320 x 480 and simply replace the cathead with a double resolution image, it will display correctly on retina display devices, with no pixels artifacts.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Thu Jun 16, 2011 10:40 pm</p><hr />
+]]></content>
+</entry>
+</feed>

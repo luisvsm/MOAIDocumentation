@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=738&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-06-22T21:17:35+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=738&amp;mode</id>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-06-22T21:17:35+00:00</updated>
+<published>2012-06-22T21:17:35+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=4839#p4839</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=4839#p4839"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=4839#p4839"><![CDATA[
+Guys, what do you think is the best approach to moving Linux cmake files forward?  Are you guys tracking moai-dev and/or moai-beta from zipline, and going to try to get them to adopt it for future releases, or  .. ?<br /><br />I wish I could get losinggenerations' tree/cmake stuff checked out - for some reason its visible in the github web interface but not included when I do a checkout .. I would like to try both approaches and see which is easier to maintain and keep in sync with the main -dev changes.  I really believe we should try to get Linux support in MOAI as stable as possible.. anyone else with me on that, at least?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Fri Jun 22, 2012 9:17 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[recastrodiaz]]></name></author>
+<updated>2012-05-29T20:55:49+00:00</updated>
+<published>2012-05-29T20:55:49+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=4258#p4258</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=4258#p4258"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=4258#p4258"><![CDATA[
+Thanks a lot for the great work ! I have no more excuses not to finish my game this time  <img src="/forums/images/smilies/icon_lol.gif" alt=":lol:" title="Laughing" /> <br /><br />Just a note. I'm using arch linux 32 bits and I had to add pthread, rt, ssl and crypto to the linker to successfully compile moai. My src/hosts/CMakeLists.txt now looks like this:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="cmake" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><a href="http://www.cmake.org/cmake/help/cmake2.6docs.html#command:target_link_libraries"><span style="color: #1f3f81; font-style: bold;">target_link_libraries</span></a><span style="color: #197d8b;">(</span>gluthost</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    aku</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    moaicore</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    utf8</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    jansson</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    pthread</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    rt</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    ssl</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    crypto</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #b08000;">${OPENGL_LIBRARIES}</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #b08000;">${GLUT_LIBRARIES}</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    GLEW</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #197d8b;">)</span></div></li><br /></ol></code></dd></dl><br />I also had problems compiling MOAI with Chipmunk support, as the newest chipmunk's github code is completely out of sync with MOAI's lua wrappers, and I couldn't find a suitable precompiled package. Anyway, to remove Chipmunk support I changed the following files:<br /><br />src/config-default/moaicore-config.h<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="cpp" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339900;">#ifndef USE_CHIPMUNK</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #339900;">#define USE_CHIPMUNK 0 </span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339900;">#endif</span></div></li><br /></ol></code></dd></dl><br /><br />Removed all MOAICp source files in src/moai-core/CMakeLists.txt and removed chipmunk from the linker:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="cpp" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">add_library<span style="color: #008000;">&#40;</span>moaicore STATIC</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    MOAI...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #339900;"># MOAICpArbiter.cpp</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #339900;"># MOAICpXX.XX</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    ...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #008000;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">target_link_libraries<span style="color: #008000;">&#40;</span>moaicore</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    Box2D</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    tinyxml</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    jpeg</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    png</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    $<span style="color: #008000;">&#123;</span>CURL_LIBRARIES<span style="color: #008000;">&#125;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    $<span style="color: #008000;">&#123;</span>FREETYPE_LIBRARIES<span style="color: #008000;">&#125;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #008000;">&#41;</span></div></li><br /></ol></code></dd></dl><br /><br />Finally I commented out the MOAICpSpace include in src/moaicore/MOAILayer.cpp<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="cpp" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339900;">#include &lt;moaicore/MOAICamera.h&gt;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #666666;">// #include &lt;moaicore/MOAICpSpace.h&gt;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #339900;">#include &lt;moaicore/MOAIDebugLines.h&gt;</span></div></li><br /></ol></code></dd></dl><br /><br />I think it would be nice to have a CMake option to enable/disable chipmunk support. What do you think ?<br />Thanks again !<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=769">recastrodiaz</a> — Tue May 29, 2012 8:55 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[spacepluk]]></name></author>
+<updated>2012-05-17T20:50:32+00:00</updated>
+<published>2012-05-17T20:50:32+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3984#p3984</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3984#p3984"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3984#p3984"><![CDATA[
+Hi owennewo,<br />You've just remind me that I wanted to update the first post with the exact steps, but for some reason I can't edit it anymore...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=825">spacepluk</a> — Thu May 17, 2012 8:50 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[owennewo]]></name></author>
+<updated>2012-05-17T20:39:26+00:00</updated>
+<published>2012-05-17T20:39:26+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3983#p3983</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3983#p3983"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3983#p3983"><![CDATA[
+Thanks very much - +1 for putting amd64  in mainline.   The anim-basic sample is twirling.<br /><br />I'm new to git - I did the following:  <br /><br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="shell" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">git clone -b linux-cmake-amd64 git://github.com/spacepluk/moai-beta.git</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd moai-beta</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">git checkout linux-cmake-amd64</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"># Compile:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">mkdir build</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd build</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cmake ..</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make -j4</div></li><br /></ol></code></dd></dl><br /><br /><br />I think the git checkout was probably optional as it said I was already on amd64 branch (because of -b flag in git clone I guess).<br /><br />For newbies, to run a sample:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd samples/anim/anim-basic</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> ../../../build/src/hosts/gluthost ../../config/config.lua main.lua</div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=887">owennewo</a> — Thu May 17, 2012 8:39 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-05-15T08:18:32+00:00</updated>
+<published>2012-05-15T08:18:32+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3949#p3949</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3949#p3949"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3949#p3949"><![CDATA[
+You no longer need to run the pre-built gluthost binary - if you check out the moai-dev repo, and switch to either linux-cmake or linux-cmake-amd64 branches (depending on what you need), you should be able to build the binary yourself, natively.  It would be helpful to know if you can - or cannot - do this, since the Linux cmake situation is targeted for inclusion in moai- mainline as soon as possible, and if there are any other issues, we should fix 'em.<br /><br />I have mostly been developing my MOAI apps on Mac OSX over the last year, but have switched to Linux for 50% of my development time (i.e. the hacking I do on my home machine, which is a fat Linux box) now that we have Linux host building.  On both platforms, I have settled on using Sublime Text 2 as my editor/IDE .. it can be set up with tab-completion, has superior project navigation features, and I've made a custom build rule that runs my MOAI project directly from the editor - this is a very, very smooth configuration and I highly recommend it.  Of course, if you come from a world where the IDE does everything for you, there will be some things missing, but for the most part you can do quite well with SublimeText2.  My build package looks like this:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">aaa-jv:MOAI j$ cat ~/Library/Application\ Support/Sublime\ Text\ <span style="">2</span>/Packages/User/Lua_MOAI.sublime-build </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        &quot;cmd&quot;: &amp;#<span style="">91</span>;&quot;/Users/j/bin/moai-<span style="">1.0</span>&quot;, &quot;$<span class="br0">&#123;</span>file<span class="br0">&#125;</span>&quot;&amp;#<span style="">93</span>;,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        &quot;file_regex&quot;: &quot;^<span class="br0">&#40;</span>...*?<span class="br0">&#41;</span>:<span class="br0">&#40;</span>&amp;#<span style="">91</span>;<span style="">0</span>-<span style="">9</span>&amp;#<span style="">93</span>;*<span class="br0">&#41;</span>:?<span class="br0">&#40;</span>&amp;#<span style="">91</span>;<span style="">0</span>-<span style="">9</span>&amp;#<span style="">93</span>;*<span class="br0">&#41;</span>&quot;,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        &quot;line_regex&quot;: &quot;^<span class="br0">&#40;</span>...*?<span class="br0">&#41;</span>:<span class="br0">&#40;</span>&amp;#<span style="">91</span>;<span style="">0</span>-<span style="">9</span>&amp;#<span style="">93</span>;*<span class="br0">&#41;</span>:?<span class="br0">&#40;</span>&amp;#<span style="">91</span>;<span style="">0</span>-<span style="">9</span>&amp;#<span style="">93</span>;*<span class="br0">&#41;</span>&quot;,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        &quot;working_dir&quot;: &quot;$<span class="br0">&#123;</span>file_path<span class="br0">&#125;</span>&quot;,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        &quot;selector&quot;: &quot;source.lua&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span class="br0">&#125;</span> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />(EDIT: the code tags on this bulletin-board replace [ and ] chars with #091/#093.. dunno whats up with that, but FYI..)<br /><br />The same package works on Linux (just update the path from /User to /home to point to the right binary) and it works just as smoothly to boot.  I don't have a 'config.lua' file - for my projects, all config is onboard in the project sources, so there is no need to load it extra.  With this package, I cmd-B (Mac) or ctrl-B (Linux) and my MOAI project just runs.  Very comfortable.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Tue May 15, 2012 8:18 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[owennewo]]></name></author>
+<updated>2012-05-14T22:44:23+00:00</updated>
+<published>2012-05-14T22:44:23+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3939#p3939</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3939#p3939"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3939#p3939"><![CDATA[
+I was about ready to give up on MOAI until I read this thread.  All sorted now <br />(Ubuntu 12.04 64bit).  <br /><br />Like others I'm using the gluthost from that drop box link as I was getting &quot;wrong ELF&quot; errors without it.  Apart from that I didn't need to do much else (no changes to header files, etc).<br /><br />Anyone got any tips on development process on linux.  What IDE/text editor are you guys using? Are you testing from the command line (e.g. ../../bin/gluthost ../config/config.lua ./main.lua) or have you got some other tricks.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=887">owennewo</a> — Mon May 14, 2012 10:44 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-05-14T02:50:34+00:00</updated>
+<published>2012-05-14T02:50:34+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3920#p3920</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3920#p3920"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3920#p3920"><![CDATA[
+IMO, digging into lua bytecode format is not simple. It might change when we upgrade to lua 5.2. A module loader which can load encrypted source code sounds better. Bytecode format after all, is still open. Encryption algorithm and keys are not (not really).<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Mon May 14, 2012 2:50 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[zeldin]]></name></author>
+<updated>2012-05-13T14:51:16+00:00</updated>
+<published>2012-05-13T14:51:16+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3913#p3913</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3913#p3913"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3913#p3913"><![CDATA[
+Ah, now I see the header file is just a hexdump of the output from luac.  Well, that makes it easy.  Header file for PPC32 attached.  <img src="/forums/images/smilies/icon_e_smile.gif" alt=":-)" title="Smile" /><br /><br />I agree that a simple way to fix this for moai.lua is to just compile in the source instead.  However, I'm thinking that this might be an issue for game scripts as well.  Some game developers may want to ship their scripts as bytecode to make them more difficult to read or modify.  But that makes the game unportable.  So maybe a custom bytecode exporter/importer which generates portable bytecode files would be a good addition to the MOAI framework?  Maybe there already is one out there (with a suitable license) which could be used, that somebody here knows of?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=884">zeldin</a> — Sun May 13, 2012 2:51 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[zeldin]]></name></author>
+<updated>2012-05-13T14:10:34+00:00</updated>
+<published>2012-05-13T14:10:34+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3912#p3912</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3912#p3912"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3912#p3912"><![CDATA[
+<blockquote><div><cite>spacepluk wrote:</cite><br />The culprit was the precompiled bytecode present in src/lua-headers/moai_lua.h.  I guess the best solution would be to let lua compile at runtime instead of embedding the non-portable bytecode in the c header.  But for now, you can just replace moai_lua.h with the one attached before compiling on 64bit systems.<br /></div></blockquote><br />Which tool is used to generate this header file?  I have the same problem, but unfortunately I can't use your alternate header file either, because in my case it isn't the number of bits which are mismatching, but the endianness (I'm on a MacMini G4, which is 32 bit but big endian).<br /><br />Thanks for your work!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=884">zeldin</a> — Sun May 13, 2012 2:10 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-05-13T11:05:05+00:00</updated>
+<published>2012-05-13T11:05:05+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3911#p3911</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3911#p3911"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3911#p3911"><![CDATA[
+Thats some sort of oddball typo.  I noticed it once or twice myself - change cpArbiteGetDepth to cpArbiterGetDepth and it will build fine.  Dunno why it was missed, seems the sort of thing that would've come up a lot earlier in some other build environments.<br /><br />Also, be sure you're on the linux-cmake-amd64 branch, by the way ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Sun May 13, 2012 11:05 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[nemrod]]></name></author>
+<updated>2012-05-12T22:13:16+00:00</updated>
+<published>2012-05-12T22:13:16+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3906#p3906</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3906#p3906"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3906#p3906"><![CDATA[
+Thanks for working on this! I'm new to Moai and after reading the basics on the wiki I was a bit disappointed when I discovered there was no Linux support. :/<br /><br />I'm trying to build it on a 64-bit Arch installation but am running into this error when running make -j4:<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&amp;#<span style="">91</span>; <span style="">53</span>%&amp;#<span style="">93</span>; &amp;#<span style="">91</span>; <span style="">54</span>%&amp;#<span style="">93</span>; Building CXX object src/moaicore/CMakeFiles/moaicore.dir/MOAICpArbiter.cpp.o</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Building CXX object src/moaicore/CMakeFiles/moaicore.dir/MOAICpBody.cpp.o</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">In file included from /foobar/moai-beta/src/moaicore/MOAITextBox.h:<span style="">10</span>:<span style="">0</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                 from /foobar/moai-beta/src/moaicore/moaicore.h:<span style="">120</span>,</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">                 from /foobar/moai-beta/src/moaicore/moaicore.cpp:<span style="">6</span>:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/foobar/moai-beta/src/moaicore/MOAITextStyle.h:<span style="">59</span>:<span style="">15</span>: warning: ‘MOAITextDesigner’ is already a friend of ‘MOAITextStyle’ &amp;#<span style="">91</span>;enabled by default&amp;#<span style="">93</span>;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/foobar/moai-beta/src/moaicore/MOAICpArbiter.cpp: In static member function ‘static int MOAICpArbiter::_getContactDepth<span class="br0">&#40;</span>lua_State*<span class="br0">&#41;</span>’:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">/foobar/moai-beta/src/moaicore/MOAICpArbiter.cpp:<span style="">46</span>:<span style="">52</span>: error: ‘cpArbiteGetDepth’ was not declared in this scope</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make&amp;#<span style="">91</span>;<span style="">2</span>&amp;#<span style="">93</span>;: *** &amp;#<span style="">91</span>;src/moaicore/CMakeFiles/moaicore.dir/MOAICpArbiter.cpp.o&amp;#<span style="">93</span>; Error <span style="">1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make&amp;#<span style="">91</span>;<span style="">2</span>&amp;#<span style="">93</span>;: *** Waiting for unfinished jobs....</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make&amp;#<span style="">91</span>;<span style="">1</span>&amp;#<span style="">93</span>;: *** &amp;#<span style="">91</span>;src/moaicore/CMakeFiles/moaicore.dir/all&amp;#<span style="">93</span>; Error <span style="">2</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">make: *** &amp;#<span style="">91</span>;all&amp;#<span style="">93</span>; Error <span style="">2</span></div></li><br /></ol></code></dd></dl><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=882">nemrod</a> — Sat May 12, 2012 10:13 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[thebullno1]]></name></author>
+<updated>2012-05-07T12:32:54+00:00</updated>
+<published>2012-05-07T12:32:54+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3747#p3747</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3747#p3747"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3747#p3747"><![CDATA[
+Can we just embed the compatibility moai.lua file as a string? It might take a few extra ms to compile but the compatibility will be much better.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=171">thebullno1</a> — Mon May 07, 2012 12:32 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-05-07T11:01:43+00:00</updated>
+<published>2012-05-07T11:01:43+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3744#p3744</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3744#p3744"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3744#p3744"><![CDATA[
+Great work spacepluk!  I have confirmed that this fix makes 64-bit based builds work just fine, no problems.  I can now throw away the 32-bit libs hack and stay on amd64 for future testing .. <img src="images/smilies/icon_e_wink.gif" alt=";)" title="Wink" /><br /><br />EDIT: MOAI-dev's/Zipline-Folks: PLEASE merge this fix for Linux builds into moai-dev as soon as possible!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Mon May 07, 2012 11:01 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[spacepluk]]></name></author>
+<updated>2012-05-07T13:43:50+00:00</updated>
+<published>2012-05-07T10:24:39+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3743#p3743</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3743#p3743"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3743#p3743"><![CDATA[
+I've finally found the problem on 64bit systems <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br /><br />The culprit was the precompiled bytecode present in src/lua-headers/moai_lua.h.  I guess the best solution would be to let lua compile at runtime instead of embedding the non-portable bytecode in the c header.  But for now, you can just replace moai_lua.h with the one attached before compiling on 64bit systems.<br /><br />Saludoss<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=825">spacepluk</a> — Mon May 07, 2012 10:24 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[framp]]></name></author>
+<updated>2012-05-06T20:39:52+00:00</updated>
+<published>2012-05-06T20:39:52+00:00</published>
+<id>/forums/viewtopic.php?t=738&amp;p=3739#p3739</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=738&amp;p=3739#p3739"/>
+<title type="html"><![CDATA[Re: MOAI on Debian]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=738&amp;p=3739#p3739"><![CDATA[
+This is awesome!<br /><br />Hope this time it will get integrated in the official repository together with the other building systems <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br />Thank you a bunch<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=751">framp</a> — Sun May 06, 2012 8:39 pm</p><hr />
+]]></content>
+</entry>
+</feed>

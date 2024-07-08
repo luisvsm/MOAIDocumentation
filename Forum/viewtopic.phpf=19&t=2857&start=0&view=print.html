@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Example DirectX Joystick Host code?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Example DirectX Joystick Host code?</h2>
+		<p><a href="example-directx-joystick-host-code-t2857/index.html">/forums/example-directx-joystick-host-code-t2857/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Example DirectX Joystick Host code?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Oct 16, 2014 8:11 pm</strong></div>
+				<div class="author">by <strong>Ascorbius</strong></div>
+				<div class="content">Hi Guys,<br /><br />Has anyone built a host which can use a joystick without using SDL?<br /><br />I'm taking my first baby steps in hacking the untz host to pieces to add additional controllers and keys... at a bit of a loss though when it comes to adding joystick/controller support.<br /><br />I could really use someone to appear with some fanfare with some completed/working code and an example of how to use it in the lua if different from the keyboard code. <img src="images/smilies/icon_e_smile.gif" alt=":-)" title="Smile" /><br /><br />Think of it not as me being lazy, but more along the lines of I'm overwhelmed at the moment with other tasks and I'd really like a quick win on this.<br /><br />The Untz host uses DirectX and while I've used SDL in the past, I'd prefer not to have to mess around with things too much.<br />If I'm being an idiot, please feel free to tell me so.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Example DirectX Joystick Host code?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Oct 16, 2014 9:42 pm</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />Look at the host and how it registers mouse clicks these is the same way of implemented the joystick call from the host to lua.<br /><br />The joystick implementation in Moai-core fully supports analog-sticks and buttons, just lacks the code in the host.<br /><br />I personally changed the joystick parts of my moai host because I didn't want to register something for each button and each analog-stick.<br /><br /><span style="font-weight: bold">Ezra's gamepad method.</span><br /><ul><li> <!-- l --><a class="postlink-local" href="gamepad-in-moai-core-t1996/index.html">gamepad-in-moai-core-t1996/</a><!-- l --></li></ul></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Example DirectX Joystick Host code?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Oct 17, 2014 2:13 am</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content"><!-- m --><a class="postlink" href="https://github.com/moaiforge/host-stirfirestudios-sdl">https://github.com/moaiforge/host-stirfirestudios-sdl</a><!-- m --><br /><br />The stirfire studios people made this sweet host (which should still function compiled against 1.5) it has gamepad and joystick support that you might use.  <br /><br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/wiki/Using-External-Hosts">https://github.com/moai/moai-dev/wiki/U ... rnal-Hosts</a><!-- m --> is a very short how to on compiling it.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

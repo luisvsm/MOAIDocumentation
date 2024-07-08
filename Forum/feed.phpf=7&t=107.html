@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=7&amp;t=107&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2011-08-23T10:07:08+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=7&amp;t=107&amp;mode</id>
+<entry>
+<author><name><![CDATA[patrick]]></name></author>
+<updated>2011-08-23T10:07:08+00:00</updated>
+<published>2011-08-23T10:07:08+00:00</published>
+<id>/forums/viewtopic.php?t=107&amp;p=468#p468</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=107&amp;p=468#p468"/>
+<title type="html"><![CDATA[Level Reset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=107&amp;p=468#p468"><![CDATA[
+Sweet! Thanks for sharing that. Can't wait to see the game. <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=107">patrick</a> — Tue Aug 23, 2011 10:07 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dlannan68]]></name></author>
+<updated>2011-08-23T06:00:32+00:00</updated>
+<published>2011-08-23T06:00:32+00:00</published>
+<id>/forums/viewtopic.php?t=107&amp;p=466#p466</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=107&amp;p=466#p466"/>
+<title type="html"><![CDATA[Level Reset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=107&amp;p=466#p466"><![CDATA[
+Ok. Found the problem :)  Sorry to reply to self, but I think this is a worthwhile 'gotcha' to remember.<br /><br />I needed to apply :stop() to the Space before releasing it (setting to nil, then doing a collect).<br /><br />Obviously the update functions still held a reference and so the space wasnt properly being removed - this is a good thing, so now my levels all reload without memory issues.<br /><br />Cheers,<br /><br />Dave<br /><br />PS. Loving Moai.. this is a great little toolkit.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=202">dlannan68</a> — Tue Aug 23, 2011 6:00 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[dlannan68]]></name></author>
+<updated>2011-08-23T03:43:58+00:00</updated>
+<published>2011-08-23T03:43:58+00:00</published>
+<id>/forums/viewtopic.php?t=107&amp;p=465#p465</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=107&amp;p=465#p465"/>
+<title type="html"><![CDATA[Level Reset]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=107&amp;p=465#p465"><![CDATA[
+Hi All,<br /><br />I am well into developing a little game, that is coming along really well. I have built a level builder and now I am onto the general management of levels in the game. I have two main questions:<br /><br />1. Whats the appropriate method for reseting the CpSpace?<br /><br />2. Are there any objects in the API that need special considerations when de-allocating, de-referencing when restarting a level?<br /><br />At the moment I have found around a 200KB leak per level to try and sort out, and I have it closely locked down to a handful of possibilities. Considering I am only allocating around 4 objects in the level which are physics based this should be easy to track down. Any idea's/method to help resolve this would be greatly appreciated.<br /><br />Cheers,<br /><br />Dave.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=202">dlannan68</a> — Tue Aug 23, 2011 3:43 am</p><hr />
+]]></content>
+</entry>
+</feed>

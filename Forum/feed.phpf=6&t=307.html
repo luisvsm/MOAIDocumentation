@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=6&amp;t=307&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-01-15T22:48:21+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=6&amp;t=307&amp;mode</id>
+<entry>
+<author><name><![CDATA[ignisdeveloper]]></name></author>
+<updated>2013-01-15T22:48:21+00:00</updated>
+<published>2013-01-15T22:48:21+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=8475#p8475</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=8475#p8475"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=8475#p8475"><![CDATA[
+I've got a little question about a button I created with RNFactory.createButton. I've been creating images from an atlas with RNFactory.createImage. I am able to change the image source by looking up the numberInAtlas of the desired image and setting image.frame = numberInAtlas. For some reason this process doesn't seem to work with buttons created through RNFactory.createButton. I've tried explicitly setting button.isAnim = true, to no avail. My goal is to have a button that changes it's image based on some value in the game.<br /><br />I know I could use a workaround and just declare this as an image then set a touch event with it, but I rather like the button syntax combining the text with the button. Any ideas?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1004">ignisdeveloper</a> — Tue Jan 15, 2013 10:48 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ankharlyn]]></name></author>
+<updated>2012-12-17T05:06:05+00:00</updated>
+<published>2012-12-17T05:06:05+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=8104#p8104</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=8104#p8104"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=8104#p8104"><![CDATA[
+<blockquote><div><cite>Sherlock wrote:</cite><br />Hi<br /><br />Wonder if someone could tell me how to remove and eventlistener from an object, i.e. one that was created like this:<br /><br />playBtn:addEventListener(&quot;touch&quot;, fnPlayTouch)<br /><br />thanks<br /><br />Sean Sherlock<br /></div></blockquote><br />I think you can probably just set fnPlayTouch to nil, as from what I've seen in the Rapanui code, it checks handler functions to see if they're nil.<br /><br />I might be wrong about that though <img src="images/smilies/icon_razz.gif" alt=":P" title="Razz" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1241">ankharlyn</a> — Mon Dec 17, 2012 5:06 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Sherlock]]></name></author>
+<updated>2012-12-09T01:37:09+00:00</updated>
+<published>2012-12-09T01:37:09+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=7879#p7879</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=7879#p7879"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=7879#p7879"><![CDATA[
+Hi<br /><br />Wonder if someone could tell me how to remove and eventlistener from an object, i.e. one that was created like this:<br /><br />playBtn:addEventListener(&quot;touch&quot;, fnPlayTouch)<br /><br />thanks<br /><br />Sean Sherlock<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1218">Sherlock</a> — Sun Dec 09, 2012 1:37 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Sherlock]]></name></author>
+<updated>2012-12-03T02:01:24+00:00</updated>
+<published>2012-12-03T02:01:24+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=7711#p7711</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=7711#p7711"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=7711#p7711"><![CDATA[
+Hi<br /><br />I'm having difficulty in positioning text on a screen. I've put together a scene file that shows the problem:<br /><br />aScene = {}<br /><br />local sceneSplashGroup = RNGroup:new()<br /><br />function aScene.onCreate()<br /><br />bestText = RNFactory.createBitmapText(&quot;BEST SCORE&quot;, {<br />    image = &quot;kromasky.png&quot;,<br />    charcodes = &quot; ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789:;?!\&quot;%',.&quot;,<br />    top = 55,<br />    left = 10,<br />    charWidth = 16,<br />    charHeight = 16<br />})<br />bestText.x = 200;<br />bestText.y = 200;<br />sceneSplashGroup:insert(bestText)<br />print(&quot;bestText.y01 = &quot;..bestText.y)<br />bestScore = RNFactory.createBitmapText(tostring(2309), {<br />    image = &quot;kromasky.png&quot;,<br />    charcodes = &quot; ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789:;?!\&quot;%',.&quot;,<br />    top = 55,<br />    left = 10,<br />    charWidth = 16,<br />    charHeight = 16<br />})<br />bestScore.x = bestText.x;<br />bestScore.y = bestText.y + 64;<br />sceneSplashGroup:insert(bestScore)<br />print(&quot;bestText.y02 = &quot;..bestText.y)<br /><br />thisText = RNFactory.createBitmapText(&quot;THIS SCORE&quot;, {<br />    image = &quot;kromasky.png&quot;,<br />    charcodes = &quot; ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789:;?!\&quot;%',.&quot;,<br />    top = 55,<br />    left = 10,<br />    charWidth = 16,<br />    charHeight = 16<br />})<br />thisText.x = bestText.x+100   --screenWidth - playBtn.originalWidth*2;<br />thisText.y = bestText.y;<br />print(&quot;bestText.y03 = &quot;..bestText.y)<br />sceneSplashGroup:insert(thisText)<br /><br />thisScore = RNFactory.createBitmapText(tostring(1947), {<br />    image = &quot;kromasky.png&quot;,<br />    charcodes = &quot; ABCDEFGHIJKLMNOPQRSTUVWXYZ/0123456789:;?!\&quot;%',.&quot;,<br />    top = 55,<br />    left = 10,<br />    charWidth = 16,<br />    charHeight = 16<br />})<br />thisScore.x = thisText.x;<br />thisScore.y = thisText.y + 64;<br />print(&quot;bestText.y04 = &quot;..bestText.y)<br />sceneSplashGroup:insert(thisScore)<br /><br />    return sceneSplashGroup<br />end<br /><br />function aScene.onEnd()<br />    for i = 1, table.getn(sceneSplashGroup.displayObjects), 1 do<br />        sceneSplashGroup.displayObjects[1]:remove();<br />    end<br />-- optionally remove atlas<br />end<br /><br />return aScene<br /><br /><br />The four print statements show the following results:<br />bestText.y01 = 200<br />bestText.y02 = 119<br />bestText.y03 = 55<br />bestText.y04 = 119<br /><br />If anyone can tell me what I've done wrong, I'd much appreciate it.<br /><br />All the best<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1218">Sherlock</a> — Mon Dec 03, 2012 2:01 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[KaKaVip]]></name></author>
+<updated>2012-11-27T04:34:23+00:00</updated>
+<published>2012-11-27T04:34:23+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=7570#p7570</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=7570#p7570"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=7570#p7570"><![CDATA[
+Hi Friends,<br /><br />How to Pause &amp; Resume game with Rapanui ?<br />and How to create screen loading game ?<br />Thank all ^^ ! <br /><br />It's great if you have example code  <img src="images/smilies/icon_mrgreen.gif" alt=":mrgreen:" title="Mr. Green" />  <img src="images/smilies/icon_mrgreen.gif" alt=":mrgreen:" title="Mr. Green" />  <img src="images/smilies/icon_mrgreen.gif" alt=":mrgreen:" title="Mr. Green" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1205">KaKaVip</a> — Tue Nov 27, 2012 4:34 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[rhapsodixx]]></name></author>
+<updated>2012-10-23T09:38:35+00:00</updated>
+<published>2012-10-23T09:38:35+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=7086#p7086</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=7086#p7086"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=7086#p7086"><![CDATA[
+i tried to register at <!-- m --><a class="postlink" href="http://rapanui.byethost24.com/">http://rapanui.byethost24.com/</a><!-- m -->, but i havent got any activation mail yet, should we change the host ? <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1149">rhapsodixx</a> — Tue Oct 23, 2012 9:38 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mrzapp]]></name></author>
+<updated>2012-10-17T06:28:05+00:00</updated>
+<published>2012-10-17T06:28:05+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=7021#p7021</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=7021#p7021"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=7021#p7021"><![CDATA[
+Tally ho, good chaps!<br /><br />I propose that we create a wiki documentation based on the sample files.<br />This would be a good way to lure over some more developers.<br /><br />If you want to contribute, it's on <!-- m --><a class="postlink" href="http://rapanui.byethost24.com/">http://rapanui.byethost24.com/</a><!-- m --><br />We can always change host if necessary.<br />Please let me know if you have any thoughts on it<br /><br />Cheers!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1140">mrzapp</a> — Wed Oct 17, 2012 6:28 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ignisdeveloper]]></name></author>
+<updated>2012-10-15T20:35:43+00:00</updated>
+<published>2012-10-15T20:35:43+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6995#p6995</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6995#p6995"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6995#p6995"><![CDATA[
+I ran into the same issue. If I remember correctly, I could just install the lua socket library from the Ubuntu software centre and everything seemed to work just fine. It has been a couple months though, so take this with a grain of salt. Everything is working under my system at the moment though.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1004">ignisdeveloper</a> — Mon Oct 15, 2012 8:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[vladpalos]]></name></author>
+<updated>2012-10-15T10:58:48+00:00</updated>
+<published>2012-10-15T10:58:48+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6989#p6989</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6989#p6989"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6989#p6989"><![CDATA[
+I have the same &quot;lua/socket&quot; problem under linux. <br />I am using the github.com/moai/moai-dev repository.<br /><br />Any help would be apreciated!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1137">vladpalos</a> — Mon Oct 15, 2012 10:58 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[btatarov]]></name></author>
+<updated>2012-10-06T12:50:52+00:00</updated>
+<published>2012-10-06T12:50:52+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6880#p6880</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6880#p6880"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6880#p6880"><![CDATA[
+I rewrote all my code where I have parentGroup = xxx. After seeing the source of RNGroup:insert() method, I understood why this is not needed. Thanks for the answer, mattfortunati.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1114">btatarov</a> — Sat Oct 06, 2012 12:50 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[mattfortunati]]></name></author>
+<updated>2012-10-06T01:53:48+00:00</updated>
+<published>2012-10-06T01:53:48+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6871#p6871</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6871#p6871"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6871#p6871"><![CDATA[
+Hi btatarov,<br /><br />you can insert animations into groups after their creation.<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> group<span style="color: #66cc66;">=</span>RNGroup<span style="color: #66cc66;">:</span>new<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">local</span> aChar <span style="color: #66cc66;">=</span> RNFactory<span style="color: #66cc66;">.</span>createAnim<span style="color: #66cc66;">&#40;</span>self<span style="color: #66cc66;">.</span>image<span style="color: #66cc66;">,</span> <span style="color: #66cc66;">&#123;</span> sizex <span style="color: #66cc66;">=</span> charWidth<span style="color: #66cc66;">,</span> sizey <span style="color: #66cc66;">=</span> charHeight <span style="color: #66cc66;">&#125;</span> <span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">group<span style="color: #66cc66;">:</span>insert<span style="color: #66cc66;">&#40;</span>aChar<span style="color: #66cc66;">&#41;</span></div></li><br /></ol></code></dd></dl><br /><br />The auto-add into groups is just an old and deprecated way to do this.<br /><br />Have a nice day,<br /><br />Mattia<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=135">mattfortunati</a> — Sat Oct 06, 2012 1:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[btatarov]]></name></author>
+<updated>2012-10-05T21:57:01+00:00</updated>
+<published>2012-10-05T21:57:01+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6863#p6863</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6863#p6863"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6863#p6863"><![CDATA[
+Also in RNBitmapText:printText, this change should be made:<br /><br />local aChar = RNFactory.createAnim(self.image, { sizex = charWidth, sizey = charHeight } ) with ability to add parentGroup.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1114">btatarov</a> — Fri Oct 05, 2012 9:57 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[btatarov]]></name></author>
+<updated>2012-10-05T21:22:31+00:00</updated>
+<published>2012-10-05T21:22:31+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6861#p6861</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6861#p6861"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6861#p6861"><![CDATA[
+When I dug into RNFactory.createAnim() method, I saw that the functionality for parentGroup is not yet implemented. Is it that hard to put it into a user defined group like you do with RNFactory.createImage()? I'm asking because I'm using the director and really need to insert my animation into the scene group. Here is a simple idea:<br /><br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">function</span> RNFactory<span style="color: #66cc66;">.</span>createAnim<span style="color: #66cc66;">&#40;</span>image<span style="color: #66cc66;">,</span> params<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">local</span> sizex<span style="color: #66cc66;">,</span> sizey<span style="color: #66cc66;">,</span> left<span style="color: #66cc66;">,</span> top<span style="color: #66cc66;">,</span> scaleX<span style="color: #66cc66;">,</span> scaleY<span style="color: #66cc66;">,</span> parentGroup</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    sizex <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    sizey <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    top <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">0</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    left <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">0</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    scaleX <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    scaleY <span style="color: #66cc66;">=</span> <span style="color: #cc66cc;">1</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    parentGroup <span style="color: #66cc66;">=</span> RNFactory<span style="color: #66cc66;">.</span>mainGroup</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>scaleX <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            scaleX <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>scaleX</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>scaleY <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            scaleY <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>scaleY</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>left <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            left <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>left</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>top <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            top <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>top</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>sizex <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            sizex <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>sizex</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>sizey <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            sizey <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>sizey</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">if</span> <span style="color: #66cc66;">&#40;</span>params<span style="color: #66cc66;">.</span>parentGroup <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span><span style="color: #66cc66;">&#41;</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">            parentGroup <span style="color: #66cc66;">=</span> params<span style="color: #66cc66;">.</span>parentGroup</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">local</span> o <span style="color: #66cc66;">=</span> RNObject<span style="color: #66cc66;">:</span>new<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">local</span> o<span style="color: #66cc66;">,</span> deck <span style="color: #66cc66;">=</span> o<span style="color: #66cc66;">:</span>initWithAnim2<span style="color: #66cc66;">&#40;</span>image<span style="color: #66cc66;">,</span> sizex<span style="color: #66cc66;">,</span> sizey<span style="color: #66cc66;">,</span> scaleX<span style="color: #66cc66;">,</span> scaleY<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    o<span style="color: #66cc66;">.</span>x <span style="color: #66cc66;">=</span> left</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    o<span style="color: #66cc66;">.</span>y <span style="color: #66cc66;">=</span> top</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    RNFactory<span style="color: #66cc66;">.</span>screen<span style="color: #66cc66;">:</span>addRNObject<span style="color: #66cc66;">&#40;</span>o<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">if</span> parentGroup <span style="color: #66cc66;">~=</span> <span style="color: #aa9900;">nil</span> <span style="color: #aa9900; font-weight: bold;">then</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">        parentGroup<span style="color: #66cc66;">:</span>insert<span style="color: #66cc66;">&#40;</span>o<span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #aa9900; font-weight: bold;">return</span> o<span style="color: #66cc66;">,</span> deck</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #aa9900; font-weight: bold;">end</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />Will this work?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1114">btatarov</a> — Fri Oct 05, 2012 9:22 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[caponet]]></name></author>
+<updated>2012-10-05T05:53:59+00:00</updated>
+<published>2012-10-05T05:53:59+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6847#p6847</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6847#p6847"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6847#p6847"><![CDATA[
+Ok, I'm starting a new thread. I don't know if It should be in the &quot;Made with Moai&quot; section. Admins, feel free to move it to the right place...<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1122">caponet</a> — Fri Oct 05, 2012 5:53 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ibisum]]></name></author>
+<updated>2012-10-04T11:20:40+00:00</updated>
+<published>2012-10-04T11:20:40+00:00</published>
+<id>/forums/viewtopic.php?t=307&amp;p=6839#p6839</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=307&amp;p=6839#p6839"/>
+<title type="html"><![CDATA[Re: RapaNui: a new, open-source, high-level programming fram]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=307&amp;p=6839#p6839"><![CDATA[
+I think it warrants its own thread: Rapanui helped you find this bug in the build of your MOAI host, but isn't directly responsible/involved in the issue.  On investigation, none of my Linux hosts have socket support either .. I am using shadowmints effort to keep things sane, but maybe there are some considerations about direct socket i/o under linux that aren't yet asserted in the Linux cmake/build scenario.  I don't know.  Lets talk about it elsewhere ..<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=262">ibisum</a> — Thu Oct 04, 2012 11:20 am</p><hr />
+]]></content>
+</entry>
+</feed>

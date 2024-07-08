@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - MOAI and full-screen</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>MOAI and full-screen</h2>
+		<p><a href="moai-and-full-screen-t198/index.html">/forums/moai-and-full-screen-t198/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 14, 2011 8:51 am</strong></div>
+				<div class="author">by <strong>jeremy.gabriele</strong></div>
+				<div class="content">Hi,
+<br />
+<br />
+<br />
+<br />I'd like to create a full-screen app on windows, and I'm wondering if there were a way to make a "real" full-screen (maybe with viewports we could create a big enough view but there will still remain the borders). Is there a way to do that ?
+<br />
+<br />
+<br />
+<br />Thanks and keep up the good work ! :).
+<br />
+<br />
+<br />
+<br />Jeremy.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 14, 2011 9:09 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">The glut sample host we ship with the NDK has primitive full screen support, but for a commercial desktop app I'd definitely recommend you provide your own native host. If you already have an OpenGL desktop app that runs full screen you should be able to re-purpose that pretty easily.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 15, 2011 12:18 am</strong></div>
+				<div class="author">by <strong>jeremy.gabriele</strong></div>
+				<div class="content">Ok thanks ! :). Just need to find that OpenGL desktop app ^^.
+<br />
+<br />
+<br />
+<br />Another question : can we play sounds properly on Windows 7 or do we need to add this feature to our host as well ?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 15, 2011 2:09 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Untz should work fine on Windows 7. You'll need to install the DirectX SDK and to compile moai-untz instead of moai. There's a readme in the solution folder about how to set it up.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 15, 2011 4:56 am</strong></div>
+				<div class="author">by <strong>jeremy.gabriele</strong></div>
+				<div class="content">Ok thanks for your quick answer !</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 17, 2011 5:39 am</strong></div>
+				<div class="author">by <strong>jeremy.gabriele</strong></div>
+				<div class="content">Hi again,
+<br />
+<br />
+<br />
+<br />As my plan is just to make a "proof of concept", I tried to use Glut (at least MOAISim, I guess it's Glut behind) and called the
+<br />MOAISim.enterFullscreenMode() function to make a full-screen app. This works fine, but I'd like to adjust my viewport to the full-screen mode, and it does not. I tried viewport:setSize ( <strong> </strong>MOAISim.getDeviceSize() ) but it seems like getDeviceSize() still refer to the windowed mode. How can I do ?
+<br />
+<br />
+<br />
+<br />Another question, is there a way to get an event when an animation is finished ? I tried something like this :
+<br />
+<br /><p style="padding-left: 30px"><em><span style="color: #339966">-- create the curve and the anim</span></em>
+<br />
+<br /></p><p style="padding-left: 30px">rollCurve = MOAIAnimCurve.new ()
+<br />rollCurve:reserveKeys ( 2 )
+<br />rollCurve:setKey ( 1, 0, 0 )
+<br />rollCurve:setKey ( 2, 1, 64, MOAIEaseType.LINEAR )
+<br />animStart = MOAIAnim.new ()
+<br />animStart:reserveLinks ( 1 )
+<br />animStart:setLink ( 1, tile.rollCurve, tile.prop, MOAIProp2D.ATTR_Y_LOC, true )
+<br />
+<br /></p><p style="padding-left: 30px">
+<br />local function onKeyframe( timeStop, value ) print(timeStop) end <em><span style="color: #339966">-- callback</span></em>
+<br />animStart:setListener(MOAITimer.EVENT_TIMER_KEYFRAME, onKeyframe)<em> <span style="color: #339966">-- set the listener ?</span></em>
+<br />
+<br /></p><p style="padding-left: 30px"><span style="color: #339966"><span style="color: #000000">animStart:start()</span></span><em><span style="color: #339966">
+<br /></span></em>
+<br />
+<br />The animation works fine, but this does not print anything. What am I missing here ?
+<br />
+<br />
+<br />
+<br />Thanks,
+<br />
+<br />
+<br />
+<br />Jeremy.
+<br /></p></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 17, 2011 7:42 am</strong></div>
+				<div class="author">by <strong>jeremy.gabriele</strong></div>
+				<div class="content">I've found the answer to my second question: the event to look at is MOAIAction.EVENT_STOP, not MOAITimer.EVENT_TIMER_KEYFRAME (by the way, what's the use of this one ?).
+<br />
+<br />
+<br />
+<br />Still didn't find a way to solve the first problem...</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 17, 2011 12:27 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Yes, EVENT_STOP or EVENT_TIMER_LOOP are the right ones to look at. EVENT_TIMER_KEYFRAME is a little ad hoc... you can attach a curve to a timer and use EVENT_TIMER_KEYFRAME to get a callback whenever a keyframe is encountered. So You can use it to do things like time sound effects with animation. Like I said, a little ad hoc.
+<br />
+<br />I will look into full screen mode on glut. Will add a demo for that before next release.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 18, 2012 5:55 am</strong></div>
+				<div class="author">by <strong>klomer</strong></div>
+				<div class="content">Was there any followup on this?  I've run into the same issue - the fullscreen view is using the windowed mode size to find the center of the screen (so centered textboxes appear offset in fullscreen mode, etc).<br /><br />--code<br />screenWidth = 1280<br />screenHeight = 1024<br /><br />MOAISim.openWindow ( &quot;newProject&quot;, screenWidth, screenHeight )<br /><br />viewport = MOAIViewport.new ()<br />viewport:setSize ( screenWidth, screenHeight )<br />viewport:setScale ( screenWidth, screenHeight )<br />MOAISim.enterFullscreenMode ()</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Jun 18, 2012 9:16 am</strong></div>
+				<div class="author">by <strong>ibisum</strong></div>
+				<div class="content">You will have to address full-screen mode in the *HOST* sources, not in any MOAI sources.  The host sources are configured to get a GL View window set up and instantiated within the context of the outer 'container' for each platform - for Android, its based on the Layout config, and for iOS its based on the bundle settings for the project.  If you want full-screen with no menu-bar, you have to tell both iOS and Android to do it, in the host, before it will make any sense in the MOAI environment.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Jun 19, 2012 3:04 am</strong></div>
+				<div class="author">by <strong>klomer</strong></div>
+				<div class="content">Thanks for the reply.  I neglected to mention I was only seeing this on the PC.  Where is the host config?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MOAI and full-screen</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Jun 21, 2012 3:54 am</strong></div>
+				<div class="author">by <strong>klomer</strong></div>
+				<div class="content">Bump?  Has anyone else fixed full screen on the PC?</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - MoaiNao: run your script on android without building</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>MoaiNao: run your script on android without building</h2>
+		<p><a href="moainao-run-your-script-on-android-without-building-t695/index.html">/forums/moainao-run-your-script-on-android-without-building-t695/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Apr 17, 2012 2:50 am</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">Building for Android has not been pleasant. It takes quite an amount of time for big projects. Simulators are not perfect. That's why I created MoaiNao to make on device testing easier.<br /><br /><a href="http://www.host-a.net/u/bullno1/moainao.zip" class="postlink">Download</a><br /><br /><span style="font-weight: bold">How to use:</span><br /><span style="font-style: italic">Prerequisites</span><br /><ol style="list-style-type: decimal"><li>Install MoaiNao-debug.apk</li><li>Make an adb connection either through wifi or usb</li><li>Make sure that usb mass storage is <span style="font-weight: bold"><span style="text-decoration: underline"><span style="font-style: italic">off</span></span></span> or the device is in MTP mode</li></ol><br /><span style="font-style: italic">The slow way:</span><br /><ol style="list-style-type: decimal"><li>Zip your project files such that main.lua is at the root of the archive (refer to sample-project/sample.moai)</li><li>Change the extension to .moai</li><li>Copy the file to somewhere you can reach in your sdcard</li><li>Use a file manager to locate and open the file</li><li>Choose Moai Nao (portrait) or Moai Nao (landscape)</li></ol><br /><span style="font-style: italic">The quick way:</span>(it is faster in the long run, just a bit of initial setup)<br /><ol style="list-style-type: decimal"><li>Make sure 7z.exe (<!-- m --><a class="postlink" href="http://www.7-zip.org/">http://www.7-zip.org/</a><!-- m -->) is in your PATH</li><li>Give your project a structure similar to sample-project</li><li>Edit settings.bat to change the bundle name</li><li>Adjust the path in include.txt</li><li>Edit launch-on-device.bat to match your desired orientation (instructions provided in the file)</li><li>Run deploy-to-device.bat everytime you want to test on device</li><li>Cheeze burgerzzz ... errr, I mean profit!!  <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /> </li></ol><br /><span style="font-style: italic">What the scripts do:</span><br /><ul><li>settings.bat edit this to change your bundle name</li><li>launch-on-device.bat simply launchs MoaiNao on the device and makes it open your bundle. Use this script whenever you want to relaunch your app and do not want to repackage resources (nothing is changed since the last run)</li><li>deploy-to-device.bat packages your resources using include.txt and exclude.txt as input, pushes it to your device using adb push and then calls launch-on-device.bat</li></ul><br /><span style="font-weight: bold">Other notes:</span><br /><ul><li>deploy-to-device pushes your .moai file to /data/local/tmp so there's no guarantee that it will stays there</li><li>All your bundles are run under the same app (MoaiNao) so they share the document and cache directory, remember to clean it if you use MoaiNao for multiple bundles. &quot;Moai Nao Settings&quot; inside the app drawer redirects you to the setting page to do this.</li><li>deploy-to-device.bat use update mode (the u parameter) for fast updating of the archive. It does not take into account deleted files. Delete your local .moai file for a full repackage.</li><li>Please pardon my lol-cat-lish</li></ul><br /><span style="font-weight: bold">Future work:</span><br /><ul><li>Investigate adb sync for even faster update.</li></ul><br />A github project will be set up soon.<br /><br />Haz fun nao, bai.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Apr 21, 2012 1:22 am</strong></div>
+				<div class="author">by <strong>todd</strong></div>
+				<div class="content">Thanks - this is awesome! We are going to fire it up and try it here!  <img src="images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue May 01, 2012 5:00 pm</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content"><blockquote><div><cite>todd wrote:</cite>Thanks - this is awesome! We are going to fire it up and try it here!  <img src="images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /></div></blockquote><br />Glad to hear that. Does it work for you?<br /><br />Github project is up: <!-- m --><a class="postlink" href="https://github.com/bullno1/MoaiNao">https://github.com/bullno1/MoaiNao</a><!-- m --></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu May 31, 2012 8:12 am</strong></div>
+				<div class="author">by <strong>dooms101</strong></div>
+				<div class="content">This is a great contribution to the community! It makes testing on my Android phone super easy and I can call it with a short keystroke in Sublime 2. How do you set this up with the decoda debugger? It would be great to have a debugger integrated into some sort of IDE.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Jun 02, 2012 8:48 am</strong></div>
+				<div class="author">by <strong>nosheet</strong></div>
+				<div class="content">This looks great. Would this theoretically work on OSX too, provided that the proper shell scripts would be written instead of .bat files, or there are limitations - I've seen that file transfer between OSX and android devices is very quirky to say at least. Did anybody try this on OSX ?<br />Thanks <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Jun 03, 2012 10:33 am</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content"><blockquote><div><cite>dooms101 wrote:</cite>This is a great contribution to the community! It makes testing on my Android phone super easy and I can call it with a short keystroke in Sublime 2. How do you set this up with the decoda debugger? It would be great to have a debugger integrated into some sort of IDE.</div></blockquote><br />Decoda is designed to debug a <span style="font-weight: bold">Windows</span> program by hooking to the lua state (which it finds using the pdb file). It will not work for Android.<br /><br /><blockquote class="uncited"><div>This looks great. Would this theoretically work on OSX too, provided that the proper shell scripts would be written instead of .bat files, or there are limitations - I've seen that file transfer between OSX and android devices is very quirky to say at least. Did anybody try this on OSX ?<br />Thanks</div></blockquote><br />It should work in theory. All I did was zipping the resources and send it to the device. 7z was used since I find it easy to configure. 7z should work on Mac too.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 5:10 pm</strong></div>
+				<div class="author">by <strong>shrike</strong></div>
+				<div class="content">Hi, I've tried to make moai run on android but without any success... First I've tried from Mac OS using the host provided with MOAI sdk. Then I've tried with your MoaiNao build, but again without any result. <br /><br />When I execute &quot;launch-on-device.bat&quot; I just get a black screen for a while. That's the output of logcat that seems to be related with the execution:<br /><br />I/MoaiLog (10786): Loading libmoai.so<br />I/MoaiLog (10786): MoaiActivity onCreate: activity CREATED<br />I/MoaiLog (10786): MoaiCrittercism onCreate: Initializing Crittercism<br />I/MoaiLog (10786): MoaiFacebook onCreate: Initializing Facebook<br />I/MoaiLog (10786): MoaiGoogleBilling onCreate: Initializing Google Billing<br />I/MoaiLog (10786): MoaiGooglePush onCreate: Initializing Google Push<br />I/MoaiLog (10786): MoaiTapjoy onCreate: Initializing Tapjoy<br />I/DEBUG   (  223): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***<br />I/DEBUG   (  223): Build fingerprint: 'samsung/GT-P7310/GT-P7310:3.2/HTJ85B/XXKJ4:user/release-keys'<br />I/DEBUG   (  223): pid: 10786, tid: 10786  &gt;&gt;&gt; com.bullno1.moainao &lt;&lt;&lt;<br />I/DEBUG   (  223): signal 4 (SIGILL), code 1 (ILL_ILLOPC), fault addr 81ba3c88<br />I/DEBUG   (  223):  r0 00000000  r1 00000000  r2 81a683f4  r3 81a6851c<br />I/DEBUG   (  223):  r4 becd32c8  r5 00000000  r6 7f800000  r7 42c80000<br />I/DEBUG   (  223):  r8 00001cec  r9 81d0fd90  10 00002440  fp fffffe90<br />I/DEBUG   (  223):  ip 00000000  sp becd32b8  lr 81a6ee64  pc 81ba3c88  cpsr 60000010<br />I/DEBUG   (  223):  d0  4060200000000000  d1  3ff0000043295555<br />I/DEBUG   (  223):  d2  4e166fea42be891d  d3  42c8000000650ff0<br />I/DEBUG   (  223):  d4  4179f4c660000000  d5  4068e00000000000<br />I/DEBUG   (  223):  d6  000000c77bd8ba27  d7  0000000000000000<br />I/DEBUG   (  223):  d8  0000000000000000  d9  0000000000000000<br />I/DEBUG   (  223):  d10 0000000000000000  d11 0000000000000000<br />I/DEBUG   (  223):  d12 0000000000000000  d13 0000000000000000<br />I/DEBUG   (  223):  d14 0000000000000000  d15 0000000000000000<br />I/DEBUG   (  223):  scr 60000012<br />I/DEBUG   (  223): <br />I/DEBUG   (  223):          #00  pc 003a3c88  /data/data/com.bullno1.moainao/lib/libmoai.so (cosf)<br />I/DEBUG   (  223):          #01  lr 81a6ee64  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223): <br />I/DEBUG   (  223): libc base address: aff00000<br />I/DEBUG   (  223): <br />I/DEBUG   (  223): code around pc:<br />I/DEBUG   (  223): 81ba3c68 e92d4010 ec510b30 ebf63947 ec410b30 <br />I/DEBUG   (  223): 81ba3c78 eef77be0 ee170a90 e8bd8010 ee070a90 <br />I/DEBUG   (  223): 81ba3c88 eef70ae7 e92d4010 ec510b30 ebf63bde <br />I/DEBUG   (  223): 81ba3c98 ec410b30 eef77be0 ee170a90 e8bd8010 <br />I/DEBUG   (  223): 81ba3ca8 ee070a90 eef70ae7 e92d4010 ec510b30 <br />I/DEBUG   (  223): <br />I/DEBUG   (  223): code around lr:<br />I/DEBUG   (  223): 81a6ee44 e59d1000 e28dd008 ea04d39e e92d4070 <br />I/DEBUG   (  223): 81a6ee54 e1a04000 e1a00001 e1a05001 eb04d387 <br />I/DEBUG   (  223): 81a6ee64 e1a06000 e1a00005 eb04d2ec e5846000 <br />I/DEBUG   (  223): 81a6ee74 e5840004 e1a00004 e8bd8070 e24dd008 <br />I/DEBUG   (  223): 81a6ee84 e92d4010 ed2d8b08 e24dd008 ed9daa0e <br />I/DEBUG   (  223): <br />I/DEBUG   (  223): stack:<br />I/DEBUG   (  223):     becd3278  001d7460  <br />I/DEBUG   (  223):     becd327c  00000000  <br />I/DEBUG   (  223):     becd3280  0000001b  <br />I/DEBUG   (  223):     becd3284  aff46454  <br />I/DEBUG   (  223):     becd3288  001d7470  <br />I/DEBUG   (  223):     becd328c  00000000  <br />I/DEBUG   (  223):     becd3290  00001cec  <br />I/DEBUG   (  223):     becd3294  81d0fd90  <br />I/DEBUG   (  223):     becd3298  00002440  <br />I/DEBUG   (  223):     becd329c  aff13393  /system/lib/libc.so<br />I/DEBUG   (  223):     becd32a0  00001cec  <br />I/DEBUG   (  223):     becd32a4  81d0fd90  <br />I/DEBUG   (  223):     becd32a8  00002440  <br />I/DEBUG   (  223):     becd32ac  00000001  <br />I/DEBUG   (  223):     becd32b0  df002777  <br />I/DEBUG   (  223):     becd32b4  e3a070ad  <br />I/DEBUG   (  223): #00 becd32b8  becd32c8  <br />I/DEBUG   (  223):     becd32bc  001d40a0  <br />I/DEBUG   (  223):     becd32c0  7f800000  <br />I/DEBUG   (  223):     becd32c4  81a68508  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223):     becd32c8  42c80000  <br />I/DEBUG   (  223):     becd32cc  00001cec  <br />I/DEBUG   (  223):     becd32d0  81d0fd90  <br />I/DEBUG   (  223):     becd32d4  001d40a0  <br />I/DEBUG   (  223):     becd32d8  00000000  <br />I/DEBUG   (  223):     becd32dc  81a685f0  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223):     becd32e0  7f800000  <br />I/DEBUG   (  223):     becd32e4  001d40a0  <br />I/DEBUG   (  223):     becd32e8  81a6ae0c  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223):     becd32ec  81a68660  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223):     becd32f0  001d4028  <br />I/DEBUG   (  223):     becd32f4  00000000  <br />I/DEBUG   (  223):     becd32f8  81a6ae0c  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223):     becd32fc  81a6b710  /data/data/com.bullno1.moainao/lib/libmoai.so<br />I/DEBUG   (  223): dumpstate /data/log/dumpstate_app_native.txt</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 5:14 pm</strong></div>
+				<div class="author">by <strong>thebullno1</strong></div>
+				<div class="content">This is the release build. There's no debug symbol so there's not much I can tell from this crash log. Can you make a debug build of MoaiNao and test it?<br /><br />Edit: after a bit of googling, I found this: <!-- m --><a class="postlink" href="http://www.codedojo.com/?p=1509">http://www.codedojo.com/?p=1509</a><!-- m --><br />You should upgrade your ndk and build a new MoaiNao. I remembered creating the binary with an old NDK.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: MoaiNao: run your script on android without building</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 09, 2012 6:07 pm</strong></div>
+				<div class="author">by <strong>shrike</strong></div>
+				<div class="content">Thanks a lot! I'll give it a try as soon as possible and I'let you know about the results!</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

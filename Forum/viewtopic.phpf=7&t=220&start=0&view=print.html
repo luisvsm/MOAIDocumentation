@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - how to load lua bytecode from moai?</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>how to load lua bytecode from moai?</h2>
+		<p><a href="how-to-load-lua-bytecode-from-moai-t220/index.html">/forums/how-to-load-lua-bytecode-from-moai-t220/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>how to load lua bytecode from moai?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Nov 28, 2011 6:55 pm</strong></div>
+				<div class="author">by <strong>kengo.nakajima</strong></div>
+				<div class="content">Hi! my moai doesn't read lua byte code (output from luac ) but original Lua 5.1 program reads.
+<br />
+<br />How to read lua bytecode from moai?
+<br />
+<br />
+<br />
+<br />My goal is to protect my lua source code from casual copy and paste hacks.
+<br />
+<br />I have read /wiki/Protecting_Your_Lua_Files but no example in it.
+<br />
+<br />Is it possible to load bytecode in current moai program?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>how to load lua bytecode from moai?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Nov 29, 2011 1:14 am</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">It is. We're doing it for our own games, in fact. One gotcha is that Moai still uses Lua 5.1.3, so if you are using luac from Lua 5.1.4 it won't run. Try using the luac included in the Visual Studio project (or a 5.1.3 binary).
+<br />
+<br />You can also use string.dump to convert files to bytecode from inside Lua itself. Check out samples/basics/util-serialize-to-header for an example.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>how to load lua bytecode from moai?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 02, 2011 1:01 pm</strong></div>
+				<div class="author">by <strong>kengo.nakajima</strong></div>
+				<div class="content">Hi.
+<br />
+<br />Finally resolved. Thank you for help!
+<br />
+<br />
+<br />
+<br />This is what i've done:
+<br />
+<br />
+<br />
+<br />to save:
+<br />
+<br />f = loadfile("main.lua")
+<br />
+<br />of = io.open("hoge.luac","w")
+<br />
+<br />s = string.dump(f)
+<br />
+<br />of:write(s)
+<br />
+<br />of:close()
+<br />
+<br />
+<br />
+<br />to load:
+<br />
+<br />f=loadfile("hoge.luac")
+<br />
+<br />f()</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>how to load lua bytecode from moai?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Fri Dec 02, 2011 1:01 pm</strong></div>
+				<div class="author">by <strong>kengo.nakajima</strong></div>
+				<div class="content">Hi.
+<br />
+<br />Finally resolved. Thank you for help!
+<br />
+<br />
+<br />
+<br />This is what i've done:
+<br />
+<br />
+<br />
+<br />to save:
+<br />
+<br />f = loadfile("main.lua")
+<br />
+<br />of = io.open("hoge.luac","w")
+<br />
+<br />s = string.dump(f)
+<br />
+<br />of:write(s)
+<br />
+<br />of:close()
+<br />
+<br />
+<br />
+<br />to load:
+<br />
+<br />f=loadfile("hoge.luac")
+<br />
+<br />f()</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>how to load lua bytecode from moai?</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sun Dec 04, 2011 8:19 pm</strong></div>
+				<div class="author">by <strong>patrick</strong></div>
+				<div class="content">Great, glad it worked out! <img src="http://192.168.20.226:3000/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

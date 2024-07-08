@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1461&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-09-26T17:35:17+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1461&amp;mode</id>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-09-26T17:35:17+00:00</updated>
+<published>2013-09-26T17:35:17+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11721#p11721</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11721#p11721"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11721#p11721"><![CDATA[
+@n2oula<br /><br /><blockquote class="uncited"><div><br />MOAI 1.4, the scene transitions (slide left and right) animations are not working anymore,<br /></div></blockquote><br /><br />See.<br /><!-- m --><a class="postlink" href="https://github.com/makotok/Hanappe/wiki/FAQ">https://github.com/makotok/Hanappe/wiki/FAQ</a><!-- m --><br /><br /><blockquote class="uncited"><div><br />the memory issues are still there (textures are not being released)<br /></div></blockquote><br /><br />Certainly, the failure of internal texture MOAITextBox is not released there was a long time ago.<br />I feel like the modified once to.<br /><br />Also Flower Library, does not release as much as possible MOAIFont.<br />That that might be involved.<br />However, I do not know you do not look at the source of your things concrete.<br /><br /><!-- m --><a class="postlink" href="https://github.com/moai/moai-dev/issues/718">https://github.com/moai/moai-dev/issues/718</a><!-- m --><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Thu Sep 26, 2013 5:35 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[btatarov]]></name></author>
+<updated>2013-09-26T12:41:58+00:00</updated>
+<published>2013-09-26T12:41:58+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11718#p11718</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11718#p11718"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11718#p11718"><![CDATA[
+@n2oula: MOAI <img src="/forums/images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1114">btatarov</a> — Thu Sep 26, 2013 12:41 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-09-26T09:34:53+00:00</updated>
+<published>2013-09-26T09:34:53+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11716#p11716</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11716#p11716"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11716#p11716"><![CDATA[
+Thank you @btatarov<br />By latest git repo you meant latest repo of Flower or MOAI? <br />And this would fix transitions?<br /><br />Thank you<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Thu Sep 26, 2013 9:34 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[btatarov]]></name></author>
+<updated>2013-09-25T17:45:41+00:00</updated>
+<published>2013-09-25T17:45:41+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11708#p11708</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11708#p11708"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11708#p11708"><![CDATA[
+Transitions never worked with MOAI 1.4 due to not being able to transform layers I think. You can use latest git repo though, it works there. As for the memory issues just check on how to release (free) textures with plain MOAI. Flower has nothing special for dealing with this and I can confirm that it's not retaining any non-used textures if you build your code correctly. I was really frustrated with this at first, too but later saw that it was my code that had a memory leak.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1114">btatarov</a> — Wed Sep 25, 2013 5:45 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-09-25T10:23:25+00:00</updated>
+<published>2013-09-25T10:23:25+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11695#p11695</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11695#p11695"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11695#p11695"><![CDATA[
+@makotok1123<br /><br />The main problem is that after updating to MOAI 1.4, the scene transitions (slide left and right) animations are not working anymore, and the memory issues are still there (textures are not being released)<br />I am using Flower 2.1.2<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Wed Sep 25, 2013 10:23 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-09-24T16:05:07+00:00</updated>
+<published>2013-09-24T16:05:07+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11681#p11681</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11681#p11681"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11681#p11681"><![CDATA[
+@n2oula <br /><br />At the moment, what is the What is the problem?<br />Can you sort out the problem?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Tue Sep 24, 2013 4:05 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-09-24T10:46:45+00:00</updated>
+<published>2013-09-24T10:46:45+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11674#p11674</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11674#p11674"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11674#p11674"><![CDATA[
+@ezraanderson <br />Thank you for replying <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><br />Problem is Flower was perfect for everything in my game except memory management <img src="images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /><br /><br />@makotok1123<br />Any clue?<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Tue Sep 24, 2013 10:46 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-09-23T16:16:28+00:00</updated>
+<published>2013-09-23T16:16:28+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11658#p11658</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11658#p11658"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11658#p11658"><![CDATA[
+@ n2oula<br /><br />I am not familiar with flower, and my guess is these are flower related questions so I am unable to offer any suggestions <img src="images/smilies/icon_e_sad.gif" alt=":(" title="Sad" /> <br /><br />I recommend learning as much Moai as you can before deciding to use flower as a higher level framework <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Mon Sep 23, 2013 4:16 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-09-23T06:47:44+00:00</updated>
+<published>2013-09-23T06:47:44+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11654#p11654</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11654#p11654"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11654#p11654"><![CDATA[
+No clue? <img src="/forums/images/smilies/icon_e_biggrin.gif" alt=":D" title="Very Happy" /><br /><br />UPDATE:<br />Touch events are being caught.<br />BUT, not in their presumed locations,<br />For example, when I touch a point of the screen, the response of the screen is 200 pixels to the right, 100 pixels to the top (so it's impossible to touch the buttons, textfields... whenever I touch them in their respective locations)<br /><br />Maybe something has to be changed in Flower?<br /><br />UPDATE2:<br />I have to rotate the device / the simulator screen by 180º and everything gets in place and works properly... <br /><br />Now back to my main issue.. Textures still seem not to be released even on MOAI 1.4<br />I still have the same memory usage.<br />And worse, Slide Right / Slide Left scene animations seem to have gone. As if I was using Flower 2.1.1 on MOAI 1.4.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Mon Sep 23, 2013 6:47 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-09-20T06:00:03+00:00</updated>
+<published>2013-09-20T06:00:03+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11633#p11633</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11633#p11633"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11633#p11633"><![CDATA[
+Thank you all for your precious answers.<br /><br />It turns out I had to fix some imports concerning the libraries.<br />Now that I am probably running MOAI 1.4 (the fact being  AKUSetFrameBuffer ( mFramebuffer ); is now working), I am facing a new issue.<br />The game starts in the simulator, the music comes in with the main menu, but I am UNABLE to click any button / images.<br />Seems that the touch listeners are gone, I never had this issue with 1.3<br /><br />What could cause this?<br /><br />Thanks again<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Fri Sep 20, 2013 6:00 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-09-19T17:22:55+00:00</updated>
+<published>2013-09-19T17:22:55+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11629#p11629</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11629#p11629"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11629#p11629"><![CDATA[
+MoaiView --&gt; you need to change the line <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="xcode" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">//THIS IS THE CORRECT LINE FOR 1.3</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">AKUSetDefaultFrameBuffer(mFramebuffer )</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">//THIS IS THE CORRECT LINE FOR 1.4p0</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">AKUSetFrameBuffer ( mFramebuffer );</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />LUA --&gt; this will tell you which version you are running<br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="lua" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--THIS IS THE CORRECT SYNTAX FOR 1.3</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIGfxDevice<span style="color: #66cc66;">.</span>setClearColor<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;">--THIS IS THE CORRECT SYNTAX FOR 1.4p0</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">MOAIGfxDevice<span style="color: #66cc66;">.</span>getFrameBuffer<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">:</span>setClearColor<span style="color: #66cc66;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">0</span><span style="color: #66cc66;">,</span><span style="color: #cc66cc;">1</span><span style="color: #66cc66;">&#41;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> </div></li><br /></ol></code></dd></dl><br /><br />It appears you are still running 1.3<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Thu Sep 19, 2013 5:22 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-09-19T17:19:30+00:00</updated>
+<published>2013-09-19T17:19:30+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11628#p11628</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11628#p11628"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11628#p11628"><![CDATA[
+<blockquote><div><cite>n2oula wrote:</cite><br />Ok thanks, something positive till now, I could run the game without errors in Xcode so I suppose that I am on MOAI 1.4, but as soon as the main first scene is supposed to show in the simulator, I get a bright pink full screen with the following error in the console (I never got this error when I was on MOAI 1.3):<br /><br /><blockquote class="uncited"><div>./flower.lua:1138: attempt to call field 'setRenderTable' (a nil value)<br />stack traceback:<br />./flower.lua:1138 in function 'updateRenderTable'<br />./flower.lua:1152 in function 'callback'<br />./flower.lua:821 in function 'call'<br />./flower.lua:948 in function 'dispatchEvent'<br />./flower.lua:989 in function 'func'<br />./flower.lua:454 in function &lt;./flower.lua:452&gt;<br /></div></blockquote><br /><br /></div></blockquote>[/quote]<br /><br />The above error occurs with version of the old MoaiSDK.<br />MOAIRenderMgr.setRenderTable does not exist in the old version.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Thu Sep 19, 2013 5:19 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[makotok1123]]></name></author>
+<updated>2013-09-19T17:22:11+00:00</updated>
+<published>2013-09-19T16:41:28+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11627#p11627</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11627#p11627"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11627#p11627"><![CDATA[
+@n2oula<br />Hi.<br /><br />Flower will continue to cache the MOAIFont that was used once.<br />There is a possibility that this effect does not release the internal texture.<br /><br />Basically, in order to maximize the performance, is called the preloadGlyphs function.<br />If you use only alphanumeric characters, it does not dynamically generated texture.<br />Therefore, there is no internal texture that is generated many times.<br /><br />How internal texture has been generated in your game?<br />If it is generated frequently, there is some cause.<br /><br />If you sent me the source to me, it is possible to investigate the cause.<br /><br />EDIT:<br />Continue to cache the MOAIFont It is intentional.<br />Because fonts reuses frequently, it is necessary to continue to cache while long time.<br /><br />Problem of memory usage has not happened in the range to be used by me.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=369">makotok1123</a> — Thu Sep 19, 2013 4:41 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[n2oula]]></name></author>
+<updated>2013-09-19T09:21:58+00:00</updated>
+<published>2013-09-19T09:21:58+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11621#p11621</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11621#p11621"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11621#p11621"><![CDATA[
+Ok thanks, something positive till now, I could run the game without errors in Xcode so I suppose that I am on MOAI 1.4, but as soon as the main first scene is supposed to show in the simulator, I get a bright pink full screen with the following error in the console (I never got this error when I was on MOAI 1.3):<br /><br /><blockquote class="uncited"><div><br />./flower.lua:1138: attempt to call field 'setRenderTable' (a nil value)<br />stack traceback:<br />./flower.lua:1138 in function 'updateRenderTable'<br />./flower.lua:1152 in function 'callback'<br />./flower.lua:821 in function 'call'<br />./flower.lua:948 in function 'dispatchEvent'<br />./flower.lua:989 in function 'func'<br />./flower.lua:454 in function &lt;./flower.lua:452&gt;<br /></div></blockquote><br /><br />I am using Flower 2.1.2<br />Edit: <br />I have commented the following line in MoaiView.mm in order to be able to run the game: <br />AKUSetFrameBuffer ( mFramebuffer );<br />If I uncomment it I get the following error:<br /><br /><blockquote class="uncited"><div><br />Undefined symbols for architecture i386:<br />  &quot;AKUSetDefaultFrameBuffer(unsigned int)&quot;, referenced from:<br />      -[MoaiView moaiInit:] in MoaiView.o<br />ld: symbol(s) not found for architecture i386<br />clang: error: linker command failed with exit code 1<br /></div></blockquote><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1416">n2oula</a> — Thu Sep 19, 2013 9:21 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[ezraanderson]]></name></author>
+<updated>2013-09-19T07:49:47+00:00</updated>
+<published>2013-09-19T07:49:47+00:00</published>
+<id>/forums/viewtopic.php?t=1461&amp;p=11620#p11620</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1461&amp;p=11620#p11620"/>
+<title type="html"><![CDATA[Re: Lightweight library.(Flower)]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1461&amp;p=11620#p11620"><![CDATA[
+You need to fix Header Search Paths to point to the new files<br /><br />\moai-dev-Version-1.4p0\src\lua-headers\<br />\moai-dev-Version-1.4p0\src\aku\<br /><br />Or delete Header Search Paths, except for --&gt; include --&gt; then add the folders to the project directory<br />\moai-dev-Version-1.4p0\src\lua-headers\moai_lua.h<br />\moai-dev-Version-1.4p0\src\aku\*.*<br /><br />You will then need to fix a couple line of code in MoaiView.<br /><br />ie:AKUSetFrameBuffer ( mFramebuffer );<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1202">ezraanderson</a> — Thu Sep 19, 2013 7:49 am</p><hr />
+]]></content>
+</entry>
+</feed>

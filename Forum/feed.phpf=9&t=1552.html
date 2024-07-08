@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=9&amp;t=1552&amp;mode" />
+
+<title>Moai Forum | The mobile platform for pro game developers</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2013-01-14T07:41:06+00:00</updated>
+
+<author><name><![CDATA[Moai Forum | The mobile platform for pro game developers]]></name></author>
+<id>/forums/feed.php?f=9&amp;t=1552&amp;mode</id>
+<entry>
+<author><name><![CDATA[paulclinger]]></name></author>
+<updated>2013-01-14T07:41:06+00:00</updated>
+<published>2013-01-14T07:41:06+00:00</published>
+<id>/forums/viewtopic.php?t=1552&amp;p=8453#p8453</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1552&amp;p=8453#p8453"/>
+<title type="html"><![CDATA[Re: ZeroBrane and Moai problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1552&amp;p=8453#p8453"><![CDATA[
+<blockquote><div><cite>kubuk wrote:</cite><br />Ok. I put files in one of the &quot;standard&quot; folders and it works now, but it doesn't show images, when I am trying to run it from ZeroBrane Studio. It works well, when I am running it from .bat file.<br /></div></blockquote><br /><br />kubuk, you may want to check on two things. First of all, if you specify the custom location for your moai executable, make sure you specify the path to moai executable: I have an example in cfg/user-sample.lua:<br /><br />-- to specify full path to moai *executable* if it's not in one of PATH folders<br />path.moai = 'd:/lua/moai/moai'<br /><br />you can also specify 'd:/lua/moai/moai.exe' (but it should work without the extension too). This is probably why you are getting &quot;access denied&quot;.<br /><br />As to loading images and fonts, make sure that the project folder location (in the project pane on the left) points to your project folder. This folder will be set as the current one when you start your project from ZBS, so your script will find all the additional files it needs to load. <br /><br />I've posted some details here (<!-- m --><a class="postlink" href="http://notebook.kulchenko.com/zerobrane/moai-debugging-with-zerobrane-studio">http://notebook.kulchenko.com/zerobrane ... ane-studio</a><!-- m -->), but I'll make it clear that the path should be to the executable. Let me know if you run into any other issues.<br /><br />Paul.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1048">paulclinger</a> — Mon Jan 14, 2013 7:41 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kubuk]]></name></author>
+<updated>2013-01-14T04:10:21+00:00</updated>
+<published>2013-01-14T04:10:21+00:00</published>
+<id>/forums/viewtopic.php?t=1552&amp;p=8450#p8450</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1552&amp;p=8450#p8450"/>
+<title type="html"><![CDATA[Re: ZeroBrane and Moai problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1552&amp;p=8450#p8450"><![CDATA[
+I checked and UAC is on &quot;never notify&quot; setting.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1270">kubuk</a> — Mon Jan 14, 2013 4:10 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[stun]]></name></author>
+<updated>2013-01-14T01:43:45+00:00</updated>
+<published>2013-01-14T01:43:45+00:00</published>
+<id>/forums/viewtopic.php?t=1552&amp;p=8447#p8447</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1552&amp;p=8447#p8447"/>
+<title type="html"><![CDATA[Re: ZeroBrane and Moai problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1552&amp;p=8447#p8447"><![CDATA[
+At a guess I'd say perhaps it's some annoying Windows 7 UAC security feature getting in your way. Perhaps run Zero Brane as 'Administrator', or turn off UAC.<br /><br />I use ZBS on my Window 7 laptop without difficulty and my source is under C:/Users/xxx/ etc. etc. but then I have turned my Windows 7 UAC off.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1009">stun</a> — Mon Jan 14, 2013 1:43 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kubuk]]></name></author>
+<updated>2013-01-14T00:05:03+00:00</updated>
+<published>2013-01-14T00:05:03+00:00</published>
+<id>/forums/viewtopic.php?t=1552&amp;p=8446#p8446</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1552&amp;p=8446#p8446"/>
+<title type="html"><![CDATA[Re: ZeroBrane and Moai problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1552&amp;p=8446#p8446"><![CDATA[
+Ok. I put files in one of the &quot;standard&quot; folders and it works now, but it doesn't show images, when I am trying to run it from ZeroBrane Studio. It works well, when I am running it from .bat file.<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1270">kubuk</a> — Mon Jan 14, 2013 12:05 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[kubuk]]></name></author>
+<updated>2013-01-13T04:28:11+00:00</updated>
+<published>2013-01-13T04:28:11+00:00</published>
+<id>/forums/viewtopic.php?t=1552&amp;p=8430#p8430</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=1552&amp;p=8430#p8430"/>
+<title type="html"><![CDATA[ZeroBrane and Moai problem]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=1552&amp;p=8430#p8430"><![CDATA[
+Hello.<br />I am trying to run my project with ZeroBrane and I have an error <br /><dl class="codebox"><dt>Code: </dt><dd><code style="line-height: 30%;"><ol class="text" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">---------------------------</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"> Error</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">---------------------------</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">Execution of command '&quot;c:/xxx/moai/bin/win32&quot; &quot;C:\Users\xxx\Documents\moai\xxx\main.lua&quot;' failed (error 5: access is denied.)</div></li><br /></ol></code></dd></dl><br /><br />I use Window 7 and I was trying doing things with user.lua file, Firewall (don't know why) etc. <br /><br />Thank you. <img src="images/smilies/icon_e_smile.gif" alt=":)" title="Smile" /><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=1270">kubuk</a> — Sun Jan 13, 2013 4:28 am</p><hr />
+]]></content>
+</entry>
+</feed>

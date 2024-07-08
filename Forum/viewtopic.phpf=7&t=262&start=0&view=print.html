@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum | The mobile platform for pro game developers &bull; View topic - Detect if iPhone or iPad</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum | The mobile platform for pro game developers</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Detect if iPhone or iPad</h2>
+		<p><a href="detect-if-iphone-or-ipad-t262/index.html">/forums/detect-if-iphone-or-ipad-t262/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 13, 2011 3:06 pm</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">Most likely discussed before (I did not find the reference), is it possible, with Moai, to detect if user is on iPad or iPhone?  If so, will the detection support all resolution cases (i.e. iPhone 3, iPhone 4, iPad 2, iPad 3 (supposedly shipping in Feb.) ?
+<br />
+<br />
+<br />
+<br />I truly appreciate any assistance/direction on this matter.  Thank you very much.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 14, 2011 9:17 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">I'm trying to support the different resolutions of iPad and iPhone.  
+<br />
+<br />Currently I have an App for each, because I have not yet figured out how to detect the device resolution.  
+<br />
+<br />When I use <a href="http://192.168.20.226:3000/docs/class_m_o_a_i_sim.html#a3c000fa0da9d436b0043dc13a7277efd" target="_blank">MOAISim.getDeviceSize</a>(), it appears to just return what I set it to in <a href="http://192.168.20.226:3000/docs/class_m_o_a_i_sim.html#aa182c08fe9c2ab1bccf4efc3bfa9589a" target="_blank">MOAISim.openWindow</a>().
+<br />
+<br />
+<br />
+<br />For iPad I am currently doing:
+<br />
+<br /><blockquote>
+<br />SCREEN_WIDTH = 1024
+<br />SCREEN_HEIGHT = 768
+<br />viewport:setSize ( SCREEN_WIDTH, SCREEN_HEIGHT )
+<br />	viewport:setScale ( SCREEN_WIDTH, -SCREEN_HEIGHT )
+<br />
+<br /></blockquote>
+<br />
+<br />
+<br />and for iPhone:
+<br />
+<br /><blockquote>
+<br />SCREEN_WIDTH = 1024
+<br />SCREEN_HEIGHT = 768
+<br />viewport:setSize ( 480, 320 )
+<br />	viewport:setScale ( SCREEN_WIDTH, -SCREEN_HEIGHT )
+<br />
+<br /></blockquote>
+<br />In the App Store, "<strong><a href="http://www.ziplinegames.com/games/wolf-toss/" target="_blank">Wolf Toss</a></strong>" is listed as an App for both iPhone and iPad.  How do I do this in 1 App?  Are my settings right?  Does this address all models of iOS, including the coming iPad 3?
+<br />
+<br />Please excuse my n00bness to Moai in relation to iOS resolutions.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 14, 2011 10:18 am</strong></div>
+				<div class="author">by <strong>eric</strong></div>
+				<div class="content">The way we do this in Wolf Toss is we first have two nibs - one for iPhone/iPod and one for iPad. You can see an example of this in the iOS sample host ( two nibs titled: MainWindow-iPad.xib, MainWindow-iPhone.xib ). In the Info.plist file, you can then set which nib to use on which device. We have the iPhone nib used for 'Main nib file base name' and 'Main nib file base name (iPhone)' and use the iPad nib for 'Main nib file base name (iPad)'.
+<br />
+<br />
+<br />
+<br />Then in the didFinishLaunchingWithOptions method in AppDelegate.mm, we run different scripts based on whether or not we are on the iPhone or iPad.
+<br />
+<br /><blockquote>
+<br /><p class="p1">if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+<br />
+<br /></p><p class="p2"><span>	</span>[ mMoaiView run:@"code/platform-ipad.lua" ];
+<br />
+<br /></p><p class="p3">		}
+<br />
+<br /></p><p class="p3">		else {
+<br />
+<br /></p><p class="p2"><span>	</span>[ mMoaiView run:@"code/platform-iphone.lua" ];
+<br />
+<br /></p><p class="p3">		}
+<br />
+<br /></p></blockquote>
+<br /><p class="p3">Inside those platform files is where we set our screen size. The UI_USER_INTERFACE_IDIOM macro is for deploying to iOS versions less than 3.2. If you are sticking with 3.2 or greater, then you can safely use -[UIDevice userInterfaceIdiom] directly.
+<br />
+<br /><blockquote>
+<br />
+<br />
+<br /></blockquote></p></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Dec 14, 2011 10:38 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">(perfect, thanks!)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 17, 2011 3:23 am</strong></div>
+				<div class="author">by <strong>develop</strong></div>
+				<div class="content">If someone is looking for an all-LUA approach to distinguish, you seem to be able to use
+<br />
+<br /><em>MOAIEnvironment.getDevModel()</em>
+<br />
+<br />Compare the returned string to the devices you want to support:
+<br />
+<br /><em>if MOAIEnvironment.getDevModel():find("iPad") then	</em>
+<br />
+<br /><em>   -- Runs on iPad	</em>
+<br />
+<br /><em>   SCREEN_WIDTH = 768	</em>
+<br />
+<br /><em>   SCREEN_HEIGHT = 1024</em>
+<br />
+<br /><em>else	</em>
+<br />
+<br /><em>   -- Runs on iPhone	</em>
+<br />
+<br /><em>   SCREEN_WIDTH = 320	</em>
+<br />
+<br /><em>   SCREEN_HEIGHT = 480</em>
+<br />
+<br /><em>end</em></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 17, 2011 8:37 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">The 480/320 trick does not appear to work on iPhone 4, it may need 960/640 (the image only takes a quarter of the screen).  I thought it worked because it shows up correctly in the iOS Simulator.
+<br />
+<br />Nice work on this tip though.  I wonder if we are able to use it to determine if a PC, Mac, Android, and/or Chrome?  That would be even more useful to make changes on input and display (ex. right mouse button, full-screen mode, etc).  
+<br />
+<br />I believe iPad3 has even higher resolution. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 17, 2011 9:40 am</strong></div>
+				<div class="author">by <strong>develop</strong></div>
+				<div class="content">Testing in the iPhone Simulator (set to Retina device) shows that 
+<br />
+<br /><em>MOAIEnvironment.getDevModel()</em>
+<br />
+<br />returns 
+<br />
+<br /><strong>iPhone Simulator</strong>
+<br />
+<br />for both iPhone3 as well as iPhone4+.
+<br />
+<br />
+<br />
+<br />Thanks for bringing that to my attention. Let's see if we can spot some other parameters that can help differentiate these devices.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Dec 17, 2011 10:00 am</strong></div>
+				<div class="author">by <strong>bonozogames</strong></div>
+				<div class="content">If we could get the device's resolution in Lua somehow.
+<br />
+<br />I'm supporting Win32, Mac, Android, and Chrome as well. </div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Detect if iPhone or iPad</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Dec 20, 2011 8:36 am</strong></div>
+				<div class="author">by <strong>anddrewscott</strong></div>
+				<div class="content"><a href="http://192.168.20.226:3000/docs/class_m_o_a_i_environment.html#af3cb857740f4be1f33932fe53a70b14b" target="_blank">/docs/class_.....e53a70b14b</a>
+<br />
+<br />Do getScreenSize and/or getViewSize work on device? a thought.</div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

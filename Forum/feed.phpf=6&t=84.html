@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-gb">
+<link rel="self" type="application/atom+xml" href="http://192.168.20.226:3000/forums/feed.php?f=6&amp;t=84&amp;mode" />
+
+<title>Moai Forum</title>
+<subtitle>The mobile platform for pro game developers</subtitle>
+<link href="http://192.168.20.226:3000/forums/index.php" />
+<updated>2012-03-05T21:00:01+00:00</updated>
+
+<author><name><![CDATA[Moai Forum]]></name></author>
+<id>/forums/feed.php?f=6&amp;t=84&amp;mode</id>
+<entry>
+<author><name><![CDATA[recastrodiaz]]></name></author>
+<updated>2012-03-05T21:00:01+00:00</updated>
+<published>2012-03-05T21:00:01+00:00</published>
+<id>/forums/viewtopic.php?t=84&amp;p=2631#p2631</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=84&amp;p=2631#p2631"/>
+<title type="html"><![CDATA[Re: Fun with Particles]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=84&amp;p=2631#p2631"><![CDATA[
+I had to change the image size to a multiple of 2^n to make it work on my windows host. Otherwise it worked like a charm. Well done !<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=769">recastrodiaz</a> — Mon Mar 05, 2012 9:00 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[Dwi]]></name></author>
+<updated>2012-01-06T09:28:49+00:00</updated>
+<published>2012-01-06T09:28:49+00:00</published>
+<id>/forums/viewtopic.php?t=84&amp;p=1603#p1603</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=84&amp;p=1603#p1603"/>
+<title type="html"><![CDATA[Fun with Particles]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=84&amp;p=1603#p1603"><![CDATA[
+<img src="/wp-content/forum-smileys/sf-smile.gif" alt="Smile" /> nice . :) thanks , it is very useful for me<br />already try . work like charm<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=363">Dwi</a> — Fri Jan 06, 2012 9:28 am</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[todd]]></name></author>
+<updated>2011-07-28T21:40:21+00:00</updated>
+<published>2011-07-28T21:40:21+00:00</published>
+<id>/forums/viewtopic.php?t=84&amp;p=375#p375</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=84&amp;p=375#p375"/>
+<title type="html"><![CDATA[Fun with Particles]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=84&amp;p=375#p375"><![CDATA[
+Thanks Christian!<p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=102">todd</a> — Thu Jul 28, 2011 9:40 pm</p><hr />
+]]></content>
+</entry>
+<entry>
+<author><name><![CDATA[christianklepac]]></name></author>
+<updated>2011-07-27T17:25:46+00:00</updated>
+<published>2011-07-27T17:25:46+00:00</published>
+<id>/forums/viewtopic.php?t=84&amp;p=369#p369</id>
+<link href="http://192.168.20.226:3000/forums/viewtopic.php?t=84&amp;p=369#p369"/>
+<title type="html"><![CDATA[Fun with Particles]]></title>
+
+<content type="html" xml:base="/forums/viewtopic.php?t=84&amp;p=369#p369"><![CDATA[
+Hi all, I recently found the need to whip up some quick particle effects for my current project. I dug through the SDK and some example code, and finally got some good results. I'm posting the contents of my main.lua file here in case anyone else might find it useful. This is really basic, there's a ton more you can do, but if you're totally lost (like I was) this could help point you in the right direction.<br /><br /><br /><br />To run it, you'll need a 10x10 pixel white .png called "spark.png" in the same folder as main.lua, plus a .ttf of your choice (don't forget to change the loadfromTTF line to reference your own font), and a run.bat (if you're on Windows). <br /><br /><br /><br /> <pre>------------------------------<br />-- Window, viewport, and layer<br />------------------------------<br />MOAISim.openWindow ( "Particles", 320, 480 )<br /><br />viewport = MOAIViewport.new ()<br />viewport:setSize ( 320, 480 )<br />viewport:setScale ( 320, 480 )<br /><br />layer = MOAILayer2D.new ()<br />layer:setViewport ( viewport )<br />MOAISim.pushRenderPass ( layer )<br /><br />------------------------------<br />-- Instructional textbox<br />------------------------------<br />font = MOAIFont.new ()<br />charcodes = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,:;!?()&/-'<br />font:loadFromTTF ( 'GenBasR.ttf', charcodes, 16, 163 )<br /><br />textbox = MOAITextBox.new ()<br />textbox:setString ( "Press TAB to surge" )<br />textbox:setFont ( font )<br />textbox:setTextSize ( font:getScale ())<br />textbox:setRect ( -150, -230, 150, 230 )<br />textbox:setYFlip ( true )<br />layer:insertProp ( textbox )<br /><br />------------------------------<br />-- Deck for particles<br />------------------------------<br />-- a white 10x10 .png<br />sparkDeck = MOAIGfxQuad2D.new ()<br />sparkDeck:setTexture ( "spark.png" )<br />sparkDeck:setRect ( -5, -5, 5, 5 )<br /><br />------------------------------<br />-- Particle scripts<br />------------------------------<br /><br />-- pack registers for scripts<br />reg1 = MOAIParticleScript.packReg ( 1 )<br />reg2 = MOAIParticleScript.packReg ( 2 )<br />reg3 = MOAIParticleScript.packReg ( 3 )<br />reg4 = MOAIParticleScript.packReg ( 4 )<br />reg5 = MOAIParticleScript.packReg ( 5 )<br />CONST = MOAIParticleScript.packConst<br /><br /> ----------<br /> --init script<br /> ----------<br />sparkInitScript = MOAIParticleScript.new ()<br />-- this takes the registers you created above and turns them into random number generators<br />-- returning values between the last two parameters<br />sparkInitScript:randVec ( reg1, reg2, CONST(12), CONST(128) )<br />sparkInitScript:rand ( reg3, CONST(-90), CONST(90) )<br />sparkInitScript:rand ( reg4, CONST(0.5), CONST(1.2) )<br /><br />----------<br />-- render script<br />----------<br />sparkRenderScript = MOAIParticleScript.new ()<br />--this makes the sprite appear<br />sparkRenderScript:sprite ()<br />-- this controls the amount your particle cloud will spread out over the x axis<br />-- and how fast / smooth it spreads. Note it is getting a random value from<br />-- one of the script registers<br />sparkRenderScript:easeDelta( MOAIParticleScript.PARTICLE_X, CONST(0), reg1, MOAIEaseType.SHARP_EASE_IN )<br />-- this does the same over the y axis<br />sparkRenderScript:easeDelta( MOAIParticleScript.PARTICLE_Y, CONST(0), reg2, MOAIEaseType.SHARP_EASE_IN )<br />-- this sets a random starting rotation for each particle<br />sparkRenderScript:set ( MOAIParticleScript.SPRITE_ROT, reg3 )<br />-- this applies a random amount of rotation to each particle during its lifetime<br />sparkRenderScript:ease ( MOAIParticleScript.SPRITE_ROT, CONST(0), reg3, MOAIEaseType.LINEAR )<br />-- this makes the particle fade out near the end of its lifetime<br />sparkRenderScript:ease ( MOAIParticleScript.SPRITE_OPACITY, CONST(1), CONST(0), MOAIEaseType.SHARP_EASE_OUT )<br />-- this makes each particle randomly bigger or smaller than the original size<br />sparkRenderScript:set( MOAIParticleScript.SPRITE_X_SCL, reg4 )<br />sparkRenderScript:set( MOAIParticleScript.SPRITE_Y_SCL, reg4 )<br /><br />------------------------------<br />-- Particle system<br />------------------------------<br />sparkSystem = MOAIParticleSystem.new ()<br />-- max num of particles, size of each<br />sparkSystem:reserveParticles ( 64, 10 )<br />-- max num of sprites<br />sparkSystem:reserveSprites ( 64 )<br />sparkSystem:reserveStates ( 1 )<br />-- deck can be set like a prop<br />sparkSystem:setDeck ( sparkDeck )<br />sparkSystem:start ()<br />-- particle system can be inserted like a prop<br />layer:insertProp ( sparkSystem )<br /><br />------------------------------<br />-- Particle forces<br />------------------------------<br />gravity = MOAIParticleForce.new ()<br />gravity:initLinear ( 0, -100 )<br />gravity:setType( MOAIParticleForce.FORCE )<br /><br />------------------------------<br />-- Particle state<br />------------------------------<br />-- a state holds a particle cloud's lifetime, physics properties<br />-- and which scripts govern its behavior<br />sparkState = MOAIParticleState.new ()<br />-- particle lifetime, random between the two values in seconds<br />sparkState:setTerm ( 0.5, 2 )<br />sparkState:setInitScript ( sparkInitScript )<br />sparkState:setRenderScript ( sparkRenderScript )<br />sparkState:pushForce (gravity)<br /><br />-- sets the system to this state<br />sparkSystem:setState ( 1, sparkState )<br /><br />------------------------------<br />-- Thread for user input<br />------------------------------<br />mainThread = MOAIThread.new ()<br />mainThread:run(<br />function()<br />local run = true<br />while run do<br />coroutine.yield()<br />if MOAIInputMgr.device.keyboard:keyDown(9) then -- Tab<br />-- parameters for surge<br />-- 1 : number of sprites emitted<br />-- 2, 3 : (x, y) origin point of particle cloud<br />-- 4, 5 : (x, y) destination point for particle cloud drift<br />-- Note that I'm manually applying a small X-direction movement here<br />-- but the downward movement is a result of the particle force<br />-- defined as 'gravity' above<br />sparkSystem:surge(64, 0, 0, 25, 0)<br />end<br />end<br />end<br />)<br /><br /></pre><p>Statistics: Posted by <a href="http://192.168.20.226:3000/forums/memberlist.php?mode=viewprofile&amp;u=145">christianklepac</a> — Wed Jul 27, 2011 5:25 pm</p><hr />
+]]></content>
+</entry>
+</feed>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - Samples in Windows, Game scores</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>Samples in Windows, Game scores</h2>
+		<p><a href="samples-in-windows-game-scores-t2009/index.html">/forums/samples-in-windows-game-scores-t2009/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>Samples in Windows, Game scores</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Sat Aug 17, 2013 11:33 pm</strong></div>
+				<div class="author">by <strong>ch55</strong></div>
+				<div class="content">I tried looking at the samples in moai sdk in windows xp using some advice I picked up<br />off the web (info from last year).  Needless to say it didn't work.<br /><br />I followed the instructions to the letter, (but this is windows).<br /><br />I started off getting <br /><br />The   MOAI_CONFIG environment variable either doesn't exist or it's pointing to <br />an invalid path<br />please point it at a folder containing config.lua<br /><br />After putting up an environment variable, moving some folders around, etc.<br />like the following:<br /><br />&quot;So lets simply replace the relevant paths…<br /><br />change this line…<br /><br />if not exist “%MOAI_CONFIG%” (<br /><br />to this…<br /><br />if not exist “config\config.lua” (<br /><br />and change this line…<br /><br />“%MOAI_BIN%\moai” “%MOAI_CONFIG%\config.lua” “main.lua”<br /><br />to this…<br /><br />“%MOAI_BIN%\moai” “config\config.lua” “main.lua”<br /><br />Okay. Now we just have to modify the config.lua file slightly.<br /><br />Change this line…<br /><br />package.path = package.path .. ‘;../../../src/lua-modules/?.lua’<br /><br />to this…<br /><br />package.path = package.path .. ‘;../../moai-sdk/include/lua-modules/moai/?.lua’<br /><br />All we’re doing in all of these instances is changing the locations of the various <br />components to reflect our setup.&quot;<br /><br />I was using sublime2 for the editor.<br /><br />I STILL got:<br /><br />The   MOAI_CONFIG environment variable either doesn't exist or it's pointing to <br />an invalid path<br />please point it at a folder containing config.lua<br /><br />I also got  trying to run the exe file<br />MSVCP100.dll not found<br /><br />This was about trying to open/view just one sample.<br /><br />Is there any way (2 environment variables?) so that one can see ALL the samples <br />in Moa sdk IN windows xp????   I'm sure it probably works in Linux, but <br />what about windows xp????<br /><br />Also....  for the purpose of showing scores (and/or numbers) from games, what actually handles<br />that part of it?  Is it Moai or Lua.  Can php somehow be connected to Moai or Lua?</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Samples in Windows, Game scores</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Mon Aug 19, 2013 1:51 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">use code tags.<br /><br />You can try my launcher if you want, its done in pascal. I probably wont finish it any time soon.<br /><br /><ul><li> <!-- m --><a class="postlink" href="http://ezraanderson.com/moai/launcher/moai_lanuch.rar">http://ezraanderson.com/moai/launcher/moai_lanuch.rar</a><!-- m --></li></ul><br />1. edit MyIni.ini to use the correct paths.<br />2. drag the the samples folder onto the forum it should launch the sample<br />3. ctr-r restarts your project.<br /><br />I mostly use xp for development.<br /><br /><br />----------------------------------------------------------<br /><blockquote class="uncited"><div>Also.... for the purpose of showing scores (and/or numbers) from games, what actually handles<br />that part of it? Is it Moai or Lua. Can php somehow be connected to Moai or Lua?</div></blockquote><br /><br />You can use lua --&gt; MOAIHttpTask, to post and get from your php scripts running on your server.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Samples in Windows, Game scores</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Tue Aug 20, 2013 10:22 pm</strong></div>
+				<div class="author">by <strong>ch55</strong></div>
+				<div class="content">Thanks for the info,<br />I'll try it, but  any other ideas out there?<br />I didn't really want to start a project, I just wanted to look at the samples in XP (not online), nice and slow.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Samples in Windows, Game scores</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Aug 21, 2013 1:45 am</strong></div>
+				<div class="author">by <strong>ezraanderson</strong></div>
+				<div class="content">~<br />I am sure it is something simple that I just overlooked but I could never get the run.bat to work on xp. Thats why I wrote the loader.<br /><br />if you go to:<br />command-prompt(cmd) and type:<br />cd %MOAI_BIN% <br />does it change to the correct directory?<br /><br />The loader just makes and runs new bat file with absolute paths.<br />newRun.bat<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=19&amp;t=2009&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">title cmdWORD</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">D:</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cd D:\moai_app\word_moai\game\lua\</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">D:\moai-sdk\moai-sdk-1.4p0\moai-sdk-1.4p0\hosts\vs2010\moai-untz\Debug\moai-untz D:\moai_app\word_moai\game\lua\\config.lua D:\moai_app\word_moai\game\lua\\main.lua</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>

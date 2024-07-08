@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-gb" xml:lang="en-gb">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="en-gb" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="noindex" />
+
+<title>Moai Forum &bull; View topic - [SOLVED] Android version stuck on 2.3.3 / API 10</title>
+
+<link href="styles/proFormell/theme/print.css" rel="stylesheet" type="text/css" />
+<link type="image/vnd.microsoft.icon" rel="shortcut icon" href="styles/proFormell/theme/images/favicon.ico">
+</head>
+
+<body id="phpbb">
+<div id="wrap">
+	<a id="top" name="top" accesskey="t"></a>
+
+	<div id="page-header">
+		<h1>Moai Forum</h1>
+		<p>The mobile platform for pro game developers<br /><a href="index.html">/forums/</a></p>
+
+		<h2>[SOLVED] Android version stuck on 2.3.3 / API 10</h2>
+		<p><a href="android-version-stuck-on-2-3-3-api-10-t2906/index.html">/forums/android-version-stuck-on-2-3-3-api-10-t2906/</a></p>
+	</div>
+
+	<div id="page-body">
+		<div class="page-number">Page <strong>1</strong> of <strong>1</strong></div>
+		
+			<div class="post">
+				<h3>[SOLVED] Android version stuck on 2.3.3 / API 10</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 19, 2014 10:00 pm</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">How do you get the host to use a newer version?<br /><br />Tried substituting inside built host AndroidManifest.xml: <br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=17&amp;t=2906&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="xml" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;uses-sdk</span> <span style="color: #000066;">android:minSdkVersion</span>=<span style="color: #ff0000;">&quot;15&quot;</span> <span style="color: #000066;">android:targetSdkVersion</span>=<span style="color: #ff0000;">&quot;19&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #808080; font-style: italic;">&lt;!--uses-sdk android:minSdkVersion=&quot;8&quot;/--&gt;</span></div></li><br /></ol></code></dd></dl><br /><br />but get this warning:<br /><br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=17&amp;t=2906&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="bash" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>gettarget<span style="color: #7a0874; font-weight: bold;">&#93;</span> Project Target: &nbsp; Android 2.3.3</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>gettarget<span style="color: #7a0874; font-weight: bold;">&#93;</span> API level: &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">10</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #7a0874; font-weight: bold;">&#91;</span>gettarget<span style="color: #7a0874; font-weight: bold;">&#93;</span> WARNING: Attribute minSdkVersion <span style="color: #000000; font-weight: bold;">in</span> AndroidManifest.xml <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">15</span><span style="color: #7a0874; font-weight: bold;">&#41;</span> is higher than the project target API level <span style="color: #7a0874; font-weight: bold;">&#40;</span><span style="color: #000000;">10</span><span style="color: #7a0874; font-weight: bold;">&#41;</span></div></li><br /></ol></code></dd></dl><br /><br />Installing 4.3.3 API 19 via Android updater didn't seem to have an effect.<br /><br /><img src="images/smilies/icon_e_confused.gif" alt=":?" title="Confused" /></div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Android version stuck on 2.3.3 / API 10</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Wed Nov 19, 2014 11:28 pm</strong></div>
+				<div class="author">by <strong>halfnelson</strong></div>
+				<div class="content">look for the string android-10 in all files in the project folder. I had same issue previously and remember that had something to do with it (but can remember the exact fix sorry)</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: Android version stuck on 2.3.3 / API 10</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 20, 2014 2:09 am</strong></div>
+				<div class="author">by <strong>naturally</strong></div>
+				<div class="content">That did the trick, thanks once more.</div>
+			</div>
+			<hr />
+		
+			<div class="post">
+				<h3>Re: [SOLVED] Android version stuck on 2.3.3 / API 10</h3>
+				<div class="date"><img src="styles/proFormell/imageset/icon_post_target.gif" width="11" height="9" alt="Post" title="Post" />Posted: <strong>Thu Nov 20, 2014 8:07 am</strong></div>
+				<div class="author">by <strong>JDance</strong></div>
+				<div class="content">If you are using a new Android Studio build which is based on Gradle this setting is found in the build.gradle file. I had problems with this as well because my manifest changes were not updated in play store. If you are using gradle/studio just remove &lt;uses-sdk&gt; from the manifest because its just overwritten with gradle settings anyway.<br /><br />build.gradle<br /><dl class="codebox"><dt>Code: <a href="viewtopic.php%3Ff=17&amp;t=2906&amp;start=0&amp;view=print.html#" onclick="selectCode(this); return false;">Select all</a></dt><dd><code style="line-height: 30%;"><ol class="" style="font-family:monospace;"><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">apply plugin: 'com.android.application'</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">android <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; compileSdkVersion <span style="">20</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; buildToolsVersion &quot;20.0.0&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; defaultConfig <span class="br0">&#123;</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; applicationId &quot;se.skyturns&quot;</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; minSdkVersion <span style="">11</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; targetSdkVersion <span style="">19</span></div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">...</div></li><br /><li style="line-height: 50%;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><br /></ol></code></dd></dl></div>
+			</div>
+			<hr />
+		
+	</div>
+
+	<div id="page-footer">
+		<div class="page-number">All times are UTC <br />Page <strong>1</strong> of <strong>1</strong></div>
+		<div class="copyright">Powered by phpBB&reg; Forum Software &copy; phpBB Group<br />http://www.phpbb.com/</div>
+	</div>
+</div>
+
+</body>
+</html>
